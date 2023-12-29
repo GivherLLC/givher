@@ -7,7 +7,18 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    colors: {
+      navySmoke: '#2E363E',
+      mauvelous: '#C6AFC0',
+      softOpal: '#F8F9EE',
+      electricYellow: '#FCFC62',
+    },
     extend: {
+      fontFamily: {
+        ramenson: ['Ramenson'],
+        visby: ['Visby'],
+        visbyBold: ['VisbyBold'],
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

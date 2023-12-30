@@ -13,8 +13,7 @@ export default function Navbar({scrollTo}:ChildComponentProps){
             <Image
             src={yellowLogo}
             alt="Givher Logo"
-            width={50}
-            height={24}
+            width={75}
             priority
             />
             </a>

@@ -7,7 +7,7 @@
     "build": "next build",
     "set-script build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "next lint"
   },
   "dependencies": {
     "gh-pages": "^6.1.1",

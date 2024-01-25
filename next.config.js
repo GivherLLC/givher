@@ -27,6 +27,11 @@ if (isGithubActions) {
 
   assetPrefix = `/${repo}/`
   basePath = `/${repo}`
+
+  console.log(`repo: ${repo}`)
+  console.log(`repo: ${assetPrefix}`)
+  console.log(`repo: ${basePath}`)
+
 }
 
 module.exports = {

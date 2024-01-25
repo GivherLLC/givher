@@ -8,20 +8,14 @@
 //     basePath: basePath,
 // }
 
-const isGithubActions = process.env.GITHUB_ACTIONS || false
-
-let assetPrefix = ''
-let basePath = '/'
-
-if (isGithubActions) {
-  // trim off `<owner>/`
-  const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, '')
-
-  assetPrefix = `/${repo}/`
-  basePath = `/${repo}`
-}
+const isGithubActions = process.env.GITHUB_ACTIONS || false;
 
 module.exports = {
-  assetPrefix: assetPrefix,
-  basePath: basePath,
-}
+  // Other configurations...
+
+  // Set basePath conditionally
+  basePath: isGithubActions ? `/${process.env.GITHUB_REPOSITORY.replace(/.*?\//, '')}` : '',
+
+  // Set assetPrefix conditionally
+  assetPrefix: isGithubActions ? `/${process.env.GITHUB_REPOSITORY.replace(/.*?\//, '')}/` : '',
+};

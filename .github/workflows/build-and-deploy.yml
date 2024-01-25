@@ -10,8 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Set Base Path
-        run: echo "NEXT_PUBLIC_BASE_PATH=/$GITHUB_REPOSITORY" >> $GITHUB_ENV  
       - uses: actions/checkout@v3
 
       - uses: actions/setup-node@v3

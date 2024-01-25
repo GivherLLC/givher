@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import useScreenSize from '../hooks/useScreenSize';
-
+import { getImagePath } from "@/utils/imagePath";
 
 export default function Navbar({scrollTo}:{scrollTo:(sectionId:string)=>void}){
     const screenSize = useScreenSize();
@@ -28,7 +28,7 @@ export default function Navbar({scrollTo}:{scrollTo:(sectionId:string)=>void}){
             <div className="flex flex-row justify-between p-3 bg-navySmoke relative">
                 <button onClick={()=>{scrollToTop()}}>
                     <img
-                        src="../images/GIVHER_Primary_ElectricYellow.png"
+                        src={getImagePath("GIVHER_Primary_ElectricYellow.png")}
                         alt="Givher Logo"
                         width={75}
                         />

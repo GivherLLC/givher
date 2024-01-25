@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import useScreenSize from '../hooks/useScreenSize';
+import { getImagePath } from '@/utils/imagePath';
 
 type HomepageProps = {
     scrollToSection: string | null,
@@ -30,7 +31,7 @@ export default function Homepage({scrollToSection, handleScrollComplete}:Homepag
             <div className='flex flex-col gap-10 xl:gap-5 bg-softOpal h-full md:h-[calc(100vh-59px)] p-5 xl:p-20'>
                 <div className="flex flex-1 justify-center items-center pt-10 xl:pt-0">
                     <img
-                        src="../images/GIVHER_Primary_NavySmoke.png"
+                        src={getImagePath("GIVHER_Primary_NavySmoke.png")}
                         alt="Givher Logo"
                         className="w-full max-w-[1000px]"
                         width={1024}
@@ -40,7 +41,7 @@ export default function Homepage({scrollToSection, handleScrollComplete}:Homepag
                 <div className='flex items-center justify-center gap-[30px]'>
                     <a href="mailto:alina@givher.com" aria-label="Email Alina Hernandez">
                     <LazyLoadImage
-                            src="../images/mail-icon.png"
+                            src={getImagePath("mail-icon.png")}
                             alt="mail"
                             width={30}
                             height={30}
@@ -49,7 +50,7 @@ export default function Homepage({scrollToSection, handleScrollComplete}:Homepag
                     </a>
                     <a href="https://www.instagram.com/givherllc/" target="_blank" aria-label="Givher Instagram" rel="noreferrer">
                     <LazyLoadImage
-                            src="../images/ig-icon.png"
+                            src={getImagePath("ig-icon.png")}
                             alt="mail"
                             width={30}
                             height={30}
@@ -77,7 +78,7 @@ export default function Homepage({scrollToSection, handleScrollComplete}:Homepag
                         {screenSize.width < 1280 && (
                         <div className="flex items-center justify-center w-4/6 xl:w-1/2 pb-10 xl:pt-0 xl:self-end">
                             <LazyLoadImage
-                                src="../images/alina-crop-mobile.png"
+                                src={getImagePath("alina-crop-mobile.png")}
                                 className="w-full self-end"
                                 alt="Alina Hernandez"
                                 effect="blur"
@@ -100,7 +101,7 @@ export default function Homepage({scrollToSection, handleScrollComplete}:Homepag
                         {screenSize.width >= 1280 && (
                         <div className="flex items-center justify-center w-4/6 xl:w-1/2 xl:self-end">
                             <LazyLoadImage
-                                src="../images/alina-crop.png"
+                                src={getImagePath("alina-crop.png")}
                                 className="w-[95%] self-end"
                                 wrapperClassName='w-full h-full flex items-end'
                                 alt="Alina Hernandez"
@@ -116,7 +117,7 @@ export default function Homepage({scrollToSection, handleScrollComplete}:Homepag
                         {screenSize.width < 1280 && (
                         <div className="flex items-center justify-center w-4/6 xl:w-1/2 pb-10 xl:pt-0 xl:self-end">
                             <LazyLoadImage
-                                src="../images/jay-headshot-mobile.png"
+                                src={getImagePath("jay-headshot-mobile.png")}
                                 className="w-full self-end"
                                 alt="Jay Franco"
                                 effect="blur"
@@ -128,12 +129,12 @@ export default function Homepage({scrollToSection, handleScrollComplete}:Homepag
                         {screenSize.width >= 1280 && (
                         <div className="flex items-center justify-center w-4/6 xl:w-1/2 xl:self-end">
                         <LazyLoadImage
-                                src="../images/jay-headshot.png"
+                                src={getImagePath("jay-headshot.png")}
                                 className="w-[95%] self-end"
                                 wrapperClassName='w-full h-full flex items-end'
                                     alt="Jay Franco"
                                 effect="blur"
-                                placeholderSrc="../images/jay-headshot-placeholder.png"
+                                placeholderSrc={getImagePath("jay-headshot-placeholder.png")}
                             />
                         </div>
                         )}
@@ -163,7 +164,7 @@ export default function Homepage({scrollToSection, handleScrollComplete}:Homepag
                         <div className='flex items-center justify-center gap-[20px]'>
                             <a href="mailto:alina@givher.com" aria-label="Email Alina Hernandez" className='flex items-center'>
                                 <LazyLoadImage
-                                    src="../images/mail-icon.png"
+                                    src={getImagePath("mail-icon.png")}
                                     alt="mail"
                                     className="w-full"
                                     width={20}
@@ -173,7 +174,7 @@ export default function Homepage({scrollToSection, handleScrollComplete}:Homepag
                             </a>
                             <a href="https://www.instagram.com/givherllc/" target="_blank" aria-label="Givher Instagram" rel="noreferrer">
                                 <LazyLoadImage
-                                    src="../images/ig-icon.png"
+                                    src={getImagePath("ig-icon.png")}
                                     alt="mail"
                                     width={20}
                                     height={20}

@@ -8,8 +8,6 @@
     "set-script build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next export",
-    "set-script": "next export"
   },
   "dependencies": {
     "gh-pages": "^6.1.1",

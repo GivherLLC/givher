@@ -12,9 +12,9 @@ jobs:
     steps:
       - name: Set Base Path
         run: echo "NEXT_PUBLIC_BASE_PATH=/$GITHUB_REPOSITORY" >> $GITHUB_ENV  
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: 18
           cache: npm

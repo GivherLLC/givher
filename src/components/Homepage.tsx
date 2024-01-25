@@ -172,7 +172,7 @@ export default function Homepage({scrollToSection, handleScrollComplete}:Homepag
                                     effect="blur"
                                     />
                             </a>
-                            <a href="https://www.instagram.com/givherllc/" target="_blank" aria-label="Givher Instagram" rel="noreferrer">
+                            <a href="https://www.instagram.com/givherllc/" target="_blank" aria-label="Givher Instagram" rel="noreferrer" className='flex items-center'>
                                 <LazyLoadImage
                                     src={getImagePath("ig-icon.png")}
                                     alt="mail"

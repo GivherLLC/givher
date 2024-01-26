@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Head from 'next/head'
+import { getImagePath } from '@/utils/imagePath'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,6 +20,10 @@ export default function RootLayout({
     <html lang="en">
       <Head>
         <link rel="icon" href="favicon.ico" />
+        <meta property='og:title' content='Givher - Political Hospitality'/>
+        <meta property='og:description' content="Givher LLC is a dynamic and forward-thinking company specializing in fundraising, event development, and political hospitality."/>
+        <meta property='og:image' content={getImagePath('preview-link-image.png')}/>
+        <meta property='og:url' content='www.givher.com'/>
       </Head>
       <body className={inter.className}>{children}</body>
     </html>

@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Givher Political Hospitality',
-  description: 'Givher, a dynamic consulting firm based in California, empowers change-makers through political hospitality. Founded by a non-binary, female-presenting person of color, Givher embodies a fresh perspective and a commitment to diversity, equity, and inclusion.',
+  description: 'Givher LLC is a dynamic and forward-thinking company specializing in fundraising, event development, and political hospitality.',
 }
 
 export default function RootLayout({

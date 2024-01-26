@@ -22,8 +22,9 @@ export default function RootLayout({
         <link rel="icon" href="favicon.ico" />
         <meta property='og:title' content='Givher - Political Hospitality'/>
         <meta property='og:description' content="Givher LLC is a dynamic and forward-thinking company specializing in fundraising, event development, and political hospitality."/>
-        <meta property='og:image' content={getImagePath('preview-link-image.png')}/>
-        <meta property='og:url' content='www.givher.com'/>
+        <meta property='og:image' content="https://leighdahlin.github.io/givher/images/preview-link-image.png"/>
+        <meta property='og:url' content='https://www.givher.com'/>
+        <meta property="og:type" content="website" />
       </Head>
       <body className={inter.className}>{children}</body>
     </html>

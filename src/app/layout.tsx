@@ -1,15 +1,12 @@
-import type { Metadata } from 'next'
+'use client'
+
 import { Inter } from 'next/font/google'
 import './globals.css'
-import Head from 'next/head'
-import { getImagePath } from '@/utils/imagePath'
+import { HelmetProvider } from 'react-helmet-async'
+import { Helmet } from 'react-helmet-async'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata: Metadata = {
-  title: 'Givher Political Hospitality',
-  description: 'Givher LLC is a dynamic and forward-thinking company specializing in fundraising, event development, and political hospitality.',
-}
 
 export default function RootLayout({
   children,
@@ -17,16 +14,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+    <HelmetProvider>
     <html lang="en">
-      <Head>
+      <Helmet>
         <link rel="icon" href="favicon.ico" />
-        <meta property='og:title' content='Givher - Political Hospitality'/>
-        <meta property='og:description' content="Givher LLC is a dynamic and forward-thinking company specializing in fundraising, event development, and political hospitality."/>
-        <meta property='og:image' content="https://leighdahlin.github.io/givher/images/preview-link-image.png"/>
-        <meta property='og:url' content='https://www.givher.com'/>
-        <meta property="og:type" content="website" />
-      </Head>
+        <meta property='title' content='Givher Political Hospitality'/>
+        <meta property='description' content='Givher LLC is a dynamic and forward-thinking company specializing in fundraising, event development, and political hospitality.'/>
+      </Helmet>
       <body className={inter.className}>{children}</body>
     </html>
+    </HelmetProvider>
   )
 }

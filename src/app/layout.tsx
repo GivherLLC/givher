@@ -1,9 +1,9 @@
-'use client'
+// 'use client'
 
 import { Inter } from 'next/font/google'
 import './globals.css'
-import { HelmetProvider } from 'react-helmet-async'
-import { Helmet } from 'react-helmet-async'
+// import { HelmetProvider } from 'react-helmet-async'
+// import { Helmet } from 'react-helmet-async'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,15 +14,24 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <HelmetProvider>
+    // <HelmetProvider>
     <html lang="en">
-      <Helmet>
+      <head>
         <link rel="icon" href="favicon.ico" />
+        <title>Givher Political Hospitality</title>
         <meta name='description' content='Givher LLC is a dynamic and forward-thinking company specializing in fundraising, event development, and political hospitality.'/>
+        <meta property='og:title' content='Givher - Political Hospitality'/>
+        <meta property='og:description' content="Givher LLC is a dynamic and forward-thinking company specializing in fundraising, event development, and political hospitality."/>
+        <meta property='og:image' content="https://leighdahlin.github.io/givher/images/preview-link-image.png"/>
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property='og:url' content='https://leighdahlin.github.io/givher/'/>
+        <meta property="og:type" content="website" />
         <meta name="keywords" content="Alina Hernandez, Givher, Political Hospitality, Consultant"></meta>
-      </Helmet>
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
-    </HelmetProvider>
+    // </HelmetProvider>
   )
 }

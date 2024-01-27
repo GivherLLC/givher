@@ -1,9 +1,5 @@
-// 'use client'
-
 import { Inter } from 'next/font/google'
 import './globals.css'
-// import { HelmetProvider } from 'react-helmet-async'
-// import { Helmet } from 'react-helmet-async'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,7 +10,6 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    // <HelmetProvider>
     <html lang="en">
       <head>
         <link rel="icon" href="favicon.ico" />
@@ -32,6 +27,5 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>{children}</body>
     </html>
-    // </HelmetProvider>
   )
 }

@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
 
 const Navbar = dynamic(() => import('../components/Navbar'), { ssr: false });
@@ -12,12 +12,7 @@ export default function Home() {
   };
   const handleScrollComplete = () => {
     setScrollToSection(null);
-  };
-
-  useEffect(() => {
-    console.log(document.head.innerHTML);
-  }, []);
-  
+  };  
 
   return (
     <>

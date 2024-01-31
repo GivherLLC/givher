@@ -13,9 +13,9 @@
 
 // }
 
-// module.exports = {
-//   output: 'export',
-//   assetPrefix: assetPrefix,
-//   basePath: basePath,
-// }
+module.exports = {
+  output: 'export',
+  // assetPrefix: assetPrefix,
+  // basePath: basePath,
+}
 

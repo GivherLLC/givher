@@ -31,6 +31,7 @@ export default function Navbar({scrollTo}:{scrollTo:(sectionId:string)=>void}){
                         src={getImagePath("GIVHER_Primary_ElectricYellow.png")}
                         alt="Givher Logo"
                         width={75}
+                        height={35}
                         />
                 </button>
                 <nav className="flex flex-row space-x-8 font-visbyBold items-center">
@@ -41,7 +42,7 @@ export default function Navbar({scrollTo}:{scrollTo:(sectionId:string)=>void}){
                             <button onClick={()=>{scrollTo('contact')}} className="text-electricYellow hover:text-softOpal">Contact</button>
                         </>
                     ):(
-                        <button onClick={()=>{setNavOpen(!navOpen)}} className="flex flex-col items-center justify-between w-[22px] h-[20px] p-0">
+                        <button onClick={()=>{setNavOpen(!navOpen)}} className="flex flex-col items-center justify-between w-[22px] h-[20px] p-0" aria-label="Open/Close Menu">
                             <div className="h-[2px] w-full bg-electricYellow"/>
                             <div className="h-[2px] w-full bg-electricYellow"/>
                             <div className="h-[2px] w-full bg-electricYellow"/>

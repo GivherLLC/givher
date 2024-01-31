@@ -40,7 +40,7 @@ export default function Homepage({scrollToSection, handleScrollComplete}:Homepag
                         />
                 </div>
                 <div className='flex items-center justify-center gap-[30px]'>
-                    <a href={`mailto:${homepageData.contactEmail}`} aria-label="Email Alina Hernandez">
+                    <a href={`mailto:${homepageData.contactEmail}`} aria-label="Email Alina Hernandez" role="button">
                     <img
                             src={getImagePath("mail-icon.png")}
                             alt="mail"
@@ -48,7 +48,7 @@ export default function Homepage({scrollToSection, handleScrollComplete}:Homepag
                             height={30}
                             />
                     </a>
-                    <a href="https://www.instagram.com/givherllc/" target="_blank" aria-label="Givher Instagram" rel="noreferrer">
+                    <a href="https://www.instagram.com/givherllc/" target="_blank" aria-label="Givher Instagram" rel="noreferrer" role="button">
                     <img
                             src={getImagePath("ig-icon.png")}
                             alt="mail"
@@ -151,7 +151,7 @@ export default function Homepage({scrollToSection, handleScrollComplete}:Homepag
                         <div>{homepageData.contactPhoneNumber}</div>
                         <div>{homepageData.contactEmail}</div>
                         <div className='flex items-center justify-center gap-[20px]'>
-                            <a href={`mailto:${homepageData.contactEmail}`} aria-label="Email Alina Hernandez" className='flex items-center'>
+                            <a href={`mailto:${homepageData.contactEmail}`} aria-label="Email Alina Hernandez" className='flex items-center' role="button">
                                 <LazyLoadImage
                                     src={getImagePath("mail-icon.png")}
                                     alt="mail"
@@ -161,7 +161,7 @@ export default function Homepage({scrollToSection, handleScrollComplete}:Homepag
                                     effect="blur"
                                     />
                             </a>
-                            <a href="https://www.instagram.com/givherllc/" target="_blank" aria-label="Givher Instagram" rel="noreferrer" className='flex items-center'>
+                            <a href="https://www.instagram.com/givherllc/" target="_blank" aria-label="Givher Instagram" rel="noreferrer" className='flex items-center' role="button">
                                 <LazyLoadImage
                                     src={getImagePath("ig-icon.png")}
                                     alt="mail"

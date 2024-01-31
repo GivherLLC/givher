@@ -18,7 +18,9 @@ export default function Home() {
     <>
       <div className="flex flex-col">
         <Navbar scrollTo={scrollTo}/>
-        <Homepage scrollToSection={scrollToSection} handleScrollComplete={handleScrollComplete}/>
+        <div className='h-screen w-screen bg-softOpal'>
+          <Homepage scrollToSection={scrollToSection} handleScrollComplete={handleScrollComplete}/>
+        </div>
       </div>
     </>
 

@@ -29,7 +29,7 @@ export default function Homepage({scrollToSection, handleScrollComplete}:Homepag
 
     return (
         <main>
-            <div className='flex flex-col gap-10 xl:gap-5 bg-softOpal h-full md:h-[calc(100vh-59px)] p-5 xl:p-20'>
+            <div className='flex flex-col gap-10 xl:gap-5 bg-softOpal h-full md:min-h-[calc(100vh-59px)] p-5 xl:p-20'>
                 <div className="flex flex-1 justify-center items-center pt-10 xl:pt-0">
                     <img
                         src={getImagePath("GIVHER_Primary_NavySmoke.png")}
@@ -41,26 +41,24 @@ export default function Homepage({scrollToSection, handleScrollComplete}:Homepag
                 </div>
                 <div className='flex items-center justify-center gap-[30px]'>
                     <a href={`mailto:${homepageData.contactEmail}`} aria-label="Email Alina Hernandez">
-                    <LazyLoadImage
+                    <img
                             src={getImagePath("mail-icon.png")}
                             alt="mail"
                             width={30}
                             height={30}
-                            effect="blur"
                             />
                     </a>
                     <a href="https://www.instagram.com/givherllc/" target="_blank" aria-label="Givher Instagram" rel="noreferrer">
-                    <LazyLoadImage
+                    <img
                             src={getImagePath("ig-icon.png")}
                             alt="mail"
                             width={30}
                             height={30}
-                            effect="blur"
                             />
                     </a>    
                 </div>
             </div>
-            <div id="about" className="scroll-mt-[59px] flex flex-1 flex-col justify-center items-center bg-mauvelous font-visby h-full xl:h-[calc(100vh-59px)]">
+            <div id="about" className="scroll-mt-[59px] flex flex-1 flex-col justify-center items-center bg-mauvelous font-visby h-full xl:min-h-[calc(100vh-59px)]">
                 <div className='flex flex-1 flex-col justify-center items-center w-5/6 max-w-screen-xl pt-10 pb-10'>
                 <h1 className="font-ramenson text-navySmoke text-2xl md:text-6xl self-start pb-4">About</h1>
                 <div className="flex flex-col justify-center items-center space-y-5 text-justify text-sm md:text-base">
@@ -85,7 +83,7 @@ export default function Homepage({scrollToSection, handleScrollComplete}:Homepag
                         </div>
                         )}
                         <div className='flex flex-1 flex-col justify-center items-center xl:w-1/2 sm:pl-0 pb-10 xl-pb-0'>
-                            <h1 className="font-ramenson text-electricYellow text-2xl md:text-6xl md:leading-[1.25] md:h-[190px] md:flex md:items-end self-start pb-4">Alina Hernandez</h1>
+                            <h1 className="font-ramenson text-electricYellow text-2xl md:text-6xl md:leading-[1.25] xl:h-[190px] xl:flex xl:items-end self-start pb-4">Alina Hernandez</h1>
                             <h2 className="font-visbyBold text-softOpal text-xl md:text-4xl self-start">Founder and Principal</h2>
                             <div className="h-1 bg-electricYellow w-1/6 self-start mb-6 mt-3"/>
                             <div className="flex flex-col justify-center items-center space-y-5">
@@ -95,7 +93,7 @@ export default function Homepage({scrollToSection, handleScrollComplete}:Homepag
                             </div>
                         </div>
                         {screenSize.width >= 1280 && (
-                        <div className="flex items-center justify-center w-4/6 xl:w-1/2 xl:self-end">
+                        <div className="flex items-center justify-center w-4/6 xl:w-[40%] xl:self-end">
                             <LazyLoadImage
                                 src={getImagePath("alina-crop.png")}
                                 className="w-[95%] self-end"
@@ -135,7 +133,7 @@ export default function Homepage({scrollToSection, handleScrollComplete}:Homepag
                         </div>
                         )}
                         <div className='flex flex-1 flex-col justify-center items-center xl:w-1/2 sm:pl-0 pb-10 xl-pb-0'>
-                            <h1 className="font-ramenson text-navySmoke text-2xl md:text-6xl leading-loose md:h-[120px] md:flex md:items-end self-start pb-4">Jay Franco</h1>
+                            <h1 className="font-ramenson text-navySmoke text-2xl md:text-6xl md:leading-[1.25] xl:h-[120px] xl:flex xl:items-end self-start pb-4">Jay Franco</h1>
                             <h2 className="font-visbyBold text-softOpal text-xl md:text-4xl self-start">Fundraising Associate</h2>
                             <div className="h-1 bg-electricYellow w-1/6 self-start mb-6 mt-3"/>
                             <div className="flex flex-col justify-center items-center space-y-5">

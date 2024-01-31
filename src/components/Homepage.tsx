@@ -71,7 +71,7 @@ export default function Homepage({scrollToSection, handleScrollComplete}:Homepag
                 </div>
             </div>
             <div id="team" className="scroll-mt-[59px]">
-                <div className="flex justify-center h-full xl:h-[calc(100vh-59px)] bg-navySmoke">
+                <div className="flex justify-center h-full xl:min-h-[calc(100vh-59px)] bg-navySmoke">
                     <div className="flex flex-col xl:flex-row items-center xl:items-between xl:space-x-5 w-5/6 max-w-screen-xl pt-10 xl:pt-0 xl:gap-10">
                         {screenSize.width < 1280 && (
                         <div className="flex items-center justify-center w-4/6 xl:w-1/2 pb-10 xl:pt-0 xl:self-end">
@@ -85,7 +85,7 @@ export default function Homepage({scrollToSection, handleScrollComplete}:Homepag
                         </div>
                         )}
                         <div className='flex flex-1 flex-col justify-center items-center xl:w-1/2 sm:pl-0 pb-10 xl-pb-0'>
-                            <h1 className="font-ramenson text-electricYellow text-2xl md:text-6xl self-start pb-4">Alina Hernandez</h1>
+                            <h1 className="font-ramenson text-electricYellow text-2xl md:text-6xl md:leading-[1.25] md:h-[190px] md:flex md:items-end self-start pb-4">Alina Hernandez</h1>
                             <h2 className="font-visbyBold text-softOpal text-xl md:text-4xl self-start">Founder and Principal</h2>
                             <div className="h-1 bg-electricYellow w-1/6 self-start mb-6 mt-3"/>
                             <div className="flex flex-col justify-center items-center space-y-5">
@@ -108,7 +108,7 @@ export default function Homepage({scrollToSection, handleScrollComplete}:Homepag
                         )}
                     </div>
                 </div>
-                <div className="flex justify-center h-full xl:h-[calc(100vh-59px)] bg-mauvelous">
+                <div className="flex justify-center h-full xl:min-h-[calc(100vh-59px)] bg-mauvelous">
                 <div className="flex flex-col xl:flex-row items-center xl:items-between xl:space-x-5 pt-10 xl:pt-0 xl:gap-10 w-5/6 max-w-screen-xl">
                         {screenSize.width < 1280 && (
                         <div className="flex items-center justify-center w-4/6 xl:w-1/2 pb-10 xl:pt-0 xl:self-end">
@@ -135,7 +135,7 @@ export default function Homepage({scrollToSection, handleScrollComplete}:Homepag
                         </div>
                         )}
                         <div className='flex flex-1 flex-col justify-center items-center xl:w-1/2 sm:pl-0 pb-10 xl-pb-0'>
-                            <h1 className="font-ramenson text-navySmoke text-2xl md:text-6xl self-start pb-4">Jay Franco</h1>
+                            <h1 className="font-ramenson text-navySmoke text-2xl md:text-6xl leading-loose md:h-[120px] md:flex md:items-end self-start pb-4">Jay Franco</h1>
                             <h2 className="font-visbyBold text-softOpal text-xl md:text-4xl self-start">Fundraising Associate</h2>
                             <div className="h-1 bg-electricYellow w-1/6 self-start mb-6 mt-3"/>
                             <div className="flex flex-col justify-center items-center space-y-5">

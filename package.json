@@ -2,6 +2,7 @@
   "name": "givher",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://www.givher.com",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

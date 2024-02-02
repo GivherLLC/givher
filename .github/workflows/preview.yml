@@ -10,6 +10,9 @@ on:
       - reopened
       - synchronize
 
+permissions:
+  contents: write
+
 concurrency: preview-${{ github.ref }}
 
 jobs:

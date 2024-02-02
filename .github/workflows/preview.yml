@@ -10,9 +10,6 @@ on:
       - reopened
       - synchronize
 
-permissions:
-  contents: write
-
 concurrency: preview-${{ github.ref }}
 
 jobs:
@@ -21,7 +18,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          node-version: 18
 
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: npm
+  
       - name: Install and Build
         run: |
           npm ci

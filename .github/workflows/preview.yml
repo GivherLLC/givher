@@ -28,7 +28,7 @@ jobs:
         uses: rossjrw/pr-preview-action@v1.4.6
         with:
           token: ${{secrets.GITHUB_TOKEN}}
-          source-dir: out
+          source-dir: /.next
           preview-branch: gh-pages
           umbrella-dir: pr-preview
           action: auto

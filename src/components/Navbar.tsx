@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import useScreenSize from '../hooks/useScreenSize';
-import { getImagePath } from "@/utils/imagePath";
+import { getImagePath } from "../utils/imagePath";
 
 export default function Navbar({scrollTo}:{scrollTo:(sectionId:string)=>void}){
     const screenSize = useScreenSize();

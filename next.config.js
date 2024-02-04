@@ -15,21 +15,21 @@ console.log("++++++++++++++++++++++++++++")
 console.log(`isGithubActions: ${isGithubActions}`)
 console.log("----------------------------")
 
-let assetPrefix = ''
-let basePath = ''
+// let assetPrefix = ''
+// let basePath = ''
 
-if(isGithubActions){
-  const isDeployPR = process.env.GITHUB_WORKFLOW || false;
-  if(isDeployPR){
-    const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, '')
-    assetPrefix = `/${repo}`
-    basePath = `/${repo}`
-  }
-}
+// if(isGithubActions){
+//   const isDeployPR = process.env.GITHUB_WORKFLOW || false;
+//   if(isDeployPR){
+//     const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, '')
+//     assetPrefix = `/${repo}`
+//     basePath = `/${repo}`
+//   }
+// }
 
 module.exports = {
   output: 'export',
-  assetPrefix: assetPrefix,
-  basePath: basePath,
+  // assetPrefix: assetPrefix,
+  // basePath: basePath,
 }
 

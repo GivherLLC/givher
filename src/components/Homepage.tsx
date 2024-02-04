@@ -3,8 +3,8 @@ import React, { useEffect } from 'react';
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import useScreenSize from '../hooks/useScreenSize';
-import { getImagePath } from '@/utils/imagePath';
 import homepageData from "../data/homepage.json";
+import { getImagePath } from '../utils/imagePath';
 
 type HomepageProps = {
     scrollToSection: string | null,

@@ -16,11 +16,9 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex flex-col">
+      <div className="flex flex-col min-h-screen bg-softOpal">
         <Navbar scrollTo={scrollTo}/>
-        <div className='h-screen bg-softOpal'>
           <Homepage scrollToSection={scrollToSection} handleScrollComplete={handleScrollComplete}/>
-        </div>
       </div>
     </>
 

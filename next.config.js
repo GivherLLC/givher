@@ -6,7 +6,7 @@ let assetPrefix = ''
 let basePath = ''
 
 if(isGithubActions){
-  const isDeployPR = process.env.GITHUB_WORKFLOW || false;
+  const isDeployPR = process.env.GITHUB_WORKFLOW === 'Deploy PR previews';
   if(isDeployPR){
     const prRef = process.env.GITHUB_REF_NAME.split("/")[0];
     console.log(process.env.GITHUB_REF_NAME)

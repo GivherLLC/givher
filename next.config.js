@@ -11,21 +11,22 @@ console.log(process.env.GITHUB_ACTIONS)
 console.log("++++++++++++++++++++++++++++")
 console.log("process.env")
 console.log(process.env)
-console.log("++++++++++++++++++++++++++++")
-console.log(`isGithubActions: ${isGithubActions}`)
 console.log("----------------------------")
 
 // let assetPrefix = ''
 // let basePath = ''
 
-// if(isGithubActions){
-//   const isDeployPR = process.env.GITHUB_WORKFLOW || false;
-//   if(isDeployPR){
-//     const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, '')
-//     assetPrefix = `/${repo}`
-//     basePath = `/${repo}`
-//   }
-// }
+if(isGithubActions){
+  const isDeployPR = process.env.GITHUB_WORKFLOW || false;
+  if(isDeployPR){
+    const prRef = process.env.GITHUB_REF_NAME.split("/")[0];
+    console.log(process.env.GITHUB_REF_NAME)
+    console.log(process.env.GITHUB_REF_NAME.split("/"))
+    console.log(`GITHUB REF: ${prRef}`)
+    assetPrefix = `/pr-preview/pr-${prRef}`
+    basePath = `/pr-preview/pr-${prRef}`
+  }
+}
 
 module.exports = {
   output: 'export',

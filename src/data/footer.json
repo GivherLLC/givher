@@ -1,0 +1,45 @@
+{
+    "logoSrc":"/images/footer/footer-logo.png",
+    "darkModeLogoSrc":"/images/footer-logo-darkmode.png",
+    "iconLinks":[
+        {
+            "iconImageSrc":"/images/footer/ig-icon.png",
+            "darkmodeSrc":"/images/footer/ig-icon-darkmode.png",
+            "iconImageAlt":"Instagram icon",
+            "iconLink":"https://www.instagram.com/givherllc/"
+        },
+        {
+            "iconImageSrc":"/images/footer/mail-icon.png",
+            "darkmodeSrc":"/images/footer/mail-icon-darkmode.png",
+            "iconImageAlt":"Email icon",
+            "iconLink":"`mailto:alina@givher.com"
+        },
+        {
+            "iconImageSrc":"/images/footer/phone-icon.png",
+            "darkmodeSrc":"/images/footer/phone-icon-darkmode.png",
+            "iconImageAlt":"Phone icon",
+            "iconLink":"tel:+916-296-4656"
+        }
+    ],
+    "buttonTitle":"SIGN UP NOw FOR EVENT UPDATES",
+    "buttonText":"Sign Up",
+    "buttonLink":"/contact/",
+    "pageLinks":[
+        {
+            "linkText":"Events",
+            "link":"/events/"
+        },
+        {
+            "linkText":"Clients",
+            "link":"/clients/"
+        },
+        {
+            "linkText":"Contact",
+            "link":"/contact/"
+        },
+        {
+            "linkText":"Marketing Kit",
+            "link":""
+        }
+    ]
+}

@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import useScreenSize from '../hooks/useScreenSize';
 import { getImagePath } from "../utils/imagePath";
 
-export default function Navbar({scrollTo}:{scrollTo:(sectionId:string)=>void}){
+export default function Navbar(){
     const screenSize = useScreenSize();
     const [navOpen, setNavOpen] = useState(false);
 
@@ -25,27 +25,35 @@ export default function Navbar({scrollTo}:{scrollTo:(sectionId:string)=>void}){
 
     return (
         <header className="sticky top-0 z-40 shadow-lg">
-            <div className="flex flex-row justify-between p-3 bg-navySmoke relative">
+            <div className="flex flex-row justify-between p-[1rem] bg-softOpal dark:bg-navySmoke relative">
                 <button onClick={()=>{scrollToTop()}}>
                     <img
-                        src={getImagePath("GIVHER_Primary_ElectricYellow.png")}
+                        src="/images/GIVHER_Primary_NavySmoke.png"
                         alt="Givher Logo"
                         width={75}
                         height={35}
+                        className="dark:hidden"
+                        />
+                    <img
+                        src="/images/GIVHER_Primary_ElectricYellow.png"
+                        alt="Givher Logo"
+                        width={75}
+                        height={35}
+                        className="hidden dark:block"
                         />
                 </button>
-                <nav className="flex flex-row space-x-8 font-visbyBold items-center">
+                <nav className="flex flex-row gap-[1rem] font-medium items-center">
                     {screenSize.width > 640 ? (
                         <>
-                            <button onClick={()=>{scrollTo('about')}} className="text-electricYellow hover:text-softOpal">About</button>
-                            <button onClick={()=>{scrollTo('team')}} className="text-electricYellow hover:text-softOpal">Team</button>
-                            <button onClick={()=>{scrollTo('contact')}} className="text-electricYellow hover:text-softOpal">Contact</button>
+                            <button className="text:softOpal dark:text-electricYellow hover:font-bold w-[64px] transition ease-in-out">About</button>
+                            <button className="text:softOpal dark:text-electricYellow hover:font-bold w-[64px] transition ease-in-out">Team</button>
+                            <button className="text:softOpal dark:text-electricYellow hover:font-bold w-[64px] transition ease-in-out">Contact</button>
                         </>
                     ):(
                         <button onClick={()=>{setNavOpen(!navOpen)}} className="flex flex-col items-center justify-between w-[22px] h-[20px] p-0" aria-label="Open/Close Menu">
-                            <div className="h-[2px] w-full bg-electricYellow"/>
-                            <div className="h-[2px] w-full bg-electricYellow"/>
-                            <div className="h-[2px] w-full bg-electricYellow"/>
+                            <div className="h-[2px] w-full bg-navySmoke dark:bg-electricYellow"/>
+                            <div className="h-[2px] w-full bg-navySmoke dark:bg-electricYellow"/>
+                            <div className="h-[2px] w-full bg-navySmoke dark:bg-electricYellow"/>
                         </button>
                     )}
                 </nav>

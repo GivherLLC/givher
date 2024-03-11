@@ -1,0 +1,58 @@
+{
+    "events": [
+      {
+        "clientName":"California Legislative LGBTQ Foundation",
+        "eventName":"Pride Celebration",
+        "eventDateString":"July 11th - July 13th",
+        "firstDayOfEvent": "07/11/2025",
+        "eventDescription":[
+         "The California Legislative LGBTQ Foundation invites you to join the 4th annual Pride Celebration in San Diego at the Pendry Hotel located in the Gaslamp for a colorful event including: Thursday Dinner, Friday Pride Brunch, and golf or spa."
+            ],
+          "boldedEventInformation":[
+            "Please remit checks to: California Legislative LGBTQ Foundation",
+            "Mail to: 5445 Madison Avenue, Sacramento, CA 95841"
+            ],
+        "eventLocation":"San Diego, CA",
+        "eventLocationTime":null,
+        "eventPdfSrc":"/pdfs/pride-celebration-07112025.pdf",
+        "eventButtonName":"RSVP",
+        "eventButtonLink":"mailto:alina@givher.com"
+      },
+      {
+        "clientName":"California Legislative LGBTQ Foundation",
+        "eventName":"Pride Celebration",
+        "eventDateString":"July 11th - July 13th",
+        "firstDayOfEvent": "07/11/2025",
+        "eventDescription":[
+         "The California Legislative LGBTQ Foundation invites you to join the 4th annual Pride Celebration in San Diego at the Pendry Hotel located in the Gaslamp for a colorful event including: Thursday Dinner, Friday Pride Brunch, and golf or spa."
+            ],
+          "boldedEventInformation":[
+            "Please remit checks to: California Legislative LGBTQ Foundation",
+            "Mail to: 5445 Madison Avenue, Sacramento, CA 95841"
+            ],
+        "eventLocation":"San Diego, CA",
+        "eventLocationTime":null,
+        "eventPdfSrc":"/pdfs/pride-celebration-07112025.pdf",
+        "eventButtonName":"RSVP",
+        "eventButtonLink":"mailto:alina@givher.com"
+      },
+      {
+        "clientName":"California Legislative LGBTQ Foundation",
+        "eventName":"Pride Celebration",
+        "eventDateString":"July 11th - July 13th",
+        "firstDayOfEvent": "07/11/2025",
+        "eventDescription":[
+         "The California Legislative LGBTQ Foundation invites you to join the 4th annual Pride Celebration in San Diego at the Pendry Hotel located in the Gaslamp for a colorful event including: Thursday Dinner, Friday Pride Brunch, and golf or spa."
+            ],
+          "boldedEventInformation":[
+            "Please remit checks to: California Legislative LGBTQ Foundation",
+            "Mail to: 5445 Madison Avenue, Sacramento, CA 95841"
+            ],
+        "eventLocation":"San Diego, CA",
+        "eventLocationTime":null,
+        "eventPdfSrc":"/pdfs/pride-celebration-07112025.pdf",
+        "eventButtonName":"RSVP",
+        "eventButtonLink":"mailto:alina@givher.com"
+      }
+    ]
+  }

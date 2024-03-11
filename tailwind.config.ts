@@ -13,6 +13,9 @@ const config: Config = {
       mauvelous: '#C6AFC0',
       softOpal: '#F8F9EE',
       electricYellow: '#FCFC62',
+      black: "#000000",
+      shadowColor:"rgba(0,0,0,.15)",
+      grey: '#d3d5d7',
     },
     extend: {
       fontFamily: {
@@ -24,6 +27,15 @@ const config: Config = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      },
+      keyframes: {
+        'float': {
+          '100%': { transform: 'translate(calc(-50% - 1.25rem))' }
+        }
+      },
+      boxShadow: {
+        'custom-shadow': '0 4px 20px 0 rgba(0,0,0,0.15)',
+        'custom-shadow-darkmode': '0 4px 20px 0 rgba(248,249,238,0.15)'
       },
     },
   },

@@ -1,25 +1,22 @@
-'use client'
-import React, { useState } from 'react';
+import React from 'react';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
+import Script from 'next/script';
 
-const Navbar = dynamic(() => import('../components/Navbar'), { ssr: false });
-const Homepage = dynamic(() => import('../components/Homepage'), { ssr: false });
+const GlobalLayout = dynamic(() => import('../components/GlobalLayout'), { ssr: false });
+const Homepage = dynamic(() => import('../components/home/HomepageV2'), { ssr: false });
 
-export default function Home() {
-  const [scrollToSection, setScrollToSection] = useState<null | string>(null);
-  const scrollTo = (sectionId:string) => {
-    setScrollToSection(sectionId);
-  };
-  const handleScrollComplete = () => {
-    setScrollToSection(null);
-  };  
-
+export default function Home() { 
   return (
     <>
-      <div className="flex flex-col min-h-screen bg-softOpal">
-        <Navbar scrollTo={scrollTo}/>
-          <Homepage scrollToSection={scrollToSection} handleScrollComplete={handleScrollComplete}/>
-      </div>
+      <GlobalLayout>
+      <Link
+          rel="stylesheet"
+          href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+        />
+        <Script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></Script>
+        <Homepage/>
+      </GlobalLayout>
     </>
 
   )

@@ -1,18 +1,145 @@
 {
-  "givherBio": [
-    "Givher LLC is a dynamic and forward-thinking company specializing in fundraising, event development, and political hospitality. Founded and led by Alina Hernandez, a robust policy and advocacy leader, Givher LLC provides services to non-profit organizations, political action committees, and advocacy groups in achieving their missions and expanding their impact. Partnering with Givher LLC will help elevate your mission and add the extra flare you never knew you were missing.",
-    "At the heart of Givher LLC's mission is a commitment to effective and innovative fundraising strategies. Understanding the unique challenges in securing financial support, Givher LLC offers a comprehensive suite of services tailored to each client's specific objectives. These services include developing personalized fundraising plans, identifying new avenues for donor development, organizing engaging fundraising events, and managing donor relationships to foster long-term loyalty and support.",
-    "In addition to fundraising, Givher LLC excels in event development. Recognizing the critical role of events in raising awareness and engaging stakeholders, Givher LLC takes a holistic approach to event planning and execution. From conceptualizing event themes that resonate with an organization's mission and values to managing every detail of the event lifecycle — including venue selection, marketing, program design, and logistics — Givher LLC ensures each event is well-organized, memorable, and lucrative.",
-    "Combining Alina's experience in public policy, technology, and various artistic and educational pursuits, their diverse background provides a rich and unique perspective that guides the company's approach. With a passion for advancing equality and representation, Givher LLC is not just a service provider but a partner committed to empowering its clients and contributing to positive social change."
+  "video":{
+    "videoTitle":"Contribute. Cultivate. Connect.",
+    "videoDescription":"At Givher, we specialize in fundraising, event development, and political hospitality",
+    "videoButtonText":"Contact",
+    "videoButtonLink":"/contact/"
+  },
+  "logos": [
+    {
+      "logoSrc":"/images/home/client-logos/asian-american-pacific-islander-foundation.png",
+      "logoSrcDarkMode":"",
+      "logoAlt":"Asian American & Pacific Islander Legislative Caucus Foundation"
+    },
+    {
+      "logoSrc":"/images/home/client-logos/california-lgbtq-foundation.png",
+      "logoSrcDarkMode":"",
+      "logoAlt":"California LGBTQ Foundation"
+    },
+    {
+      "logoSrc":"/images/home/client-logos/micro-dosing-collective.png",
+      "logoSrcDarkMode":"",
+      "logoAlt":"Micro Dosing Collective"
+    },
+    {
+      "logoSrc":"/images/home/client-logos/new-california-coalition.png",
+      "logoSrcDarkMode":"",
+      "logoAlt":"New California Coalition"
+    },
+    {
+      "logoSrc":"/images/home/client-logos/planned-parenthood.png",
+      "logoSrcDarkMode":"",
+      "logoAlt":"Planned Parenthood Affiliates of California"
+    },
+    {
+      "logoSrc":"/images/home/client-logos/sacramento-lgbt.png",
+      "logoSrcDarkMode":"",
+      "logoAlt":"Sacramento LGBT Community Center"
+    }
   ],
-  "alinaBio": [
-    "Alina Hernandez (she/they) is known for their quiet yet influential presence. With a gift for making people feel heard and valued, Alina treats each individual with the star quality they inherently possess. This approach resonates deeply in every space they occupy. Alina's philosophy on life and strategy in the workplace is refreshingly unconventional. Alina is a unique example of authenticity, living a life marked by joy, creativity, and an unyielding commitment to treating everyone with kindness and respect.",
-    "As the founder and principal of Givher LLC, Alina has demonstrated exceptional leadership in fundraising, event development, and political hospitality, leveraging their extensive background in policy and advocacy. Before founding Givher LLC, Alina played pivotal roles in advancing equality and civil rights, notably as Principal Consultant for the California Legislative LGBTQ Caucus and President of the Capitol LGBTQ Association. This blend of personal attributes and professional accomplishments makes Alina Hernandez an exemplary leader, uniquely equipped to guide Givher LLC toward impactful and meaningful success."
-  ],
-  "jayBio": [
-    "Jay Franco is a community advocate residing on Miwok/Nisenan land. He has gained much of his experience as a field coordinator working within many local grassroots initiatives focused on social justice and community development. The most notable of these experiences was a nearly decade-long effort to establish a fund for equitable youth programs and prevention services in the City of Sacramento. His efforts, alongside the Sac Kids First Coalition, were captured in the award-winning documentary, 'City Rising: Youth & Democracy,' produced by KCET/PBS SoCal.",
-    "He participated in various community-led workshops and fellowships aimed to develop regional leaders with a racial-equity lens. He received training in youth mental health first aid and previously led after school programs for high schoolers centered around socio-emotional awareness and civic empowerment.He recently finished a Capitol internship with the California Assembly in which he provided constituent services and legislative research for the office of Assemblymember David Alvarez (AD 80). He currently serves as the Treasurer for the youth advocacy organization, Youth Forward. He looks forward to continuing his work as a supporter of initiatives that help build a healthy and thriving environment for all."
-  ],
-  "contactPhoneNumber": "916-296-4656",
-  "contactEmail": "alina@givher.com"
+  "services":{
+    "servicesCarouselTitle":"What Givher Can Do For You",
+    "sevicesCarouselCards":[
+      {
+        "cardTitle":"Fundraising",
+        "cardDescription":"Professional Fundraising Services for Planned Parenthood Education Fund: is pivotal in sustaining and expanding essential services and contributing to the mission of PPAC. Givher LLC offers expertise in developing effective fundraising strategies to help you achieve your goals. Our fundraising services will encompass the following:",
+        "cardImageSrc":"/images/home/services/fundraising.png",
+        "cardImageAlt":"A group of people fundraising for a cause",
+        "cardLinkText":"View Clients",
+        "cardLink":"/clients/"
+      },
+      {
+        "cardTitle":"Event Management",
+        "cardDescription":"Event Development Services: Events are vital for raising awareness, educating, and engaging communities. Givher provides comprehensive event development services to make these events effective and memorable.",
+        "cardImageSrc":"/images/home/services/event-management.png",
+        "cardImageAlt":"Three people at a table drinking and enjoying an event",
+        "cardLinkText":"View Events",
+        "cardLink":"/events/"
+      },
+      {
+        "cardTitle":"General Consulting",
+        "cardDescription":"General Consulting Services: With extensive experience in the legislature, event development, partnering with campaigns, and navigating internal and external politics, Givher has the expertise to implement processes, mentor staff, advise on political strategy and help to create a road map for accomplishing Planned Parenthood’s existing goals.",
+        "cardImageSrc":"/images/home/services/general-consulting.png",
+        "cardImageAlt":"Two people having a meeting",
+        "cardLinkText":"View Team",
+        "cardLink":"/team/"
+      }
+    ]
+  },
+  "featuredEvents": {
+    "title":"Upcoming Events"
+  },
+  "about":{
+    "aboutTitle":"About Us",
+    "aboutUsSections":[
+      {
+        "sectionTitle":"Forward Thinking",
+        "sectionText":"Givher LLC is a dynamic and forward-thinking company specializing in fundraising, event development, and political hospitality. Founded and led by Alina Hernandez, a robust policy and advocacy leader, Givher LLC provides services to non-profit organizations, political action committees, and advocacy groups in achieving their missions and expanding their impact. Partnering with Givher LLC will help elevate your mission and add the extra flare you never knew you were missing.",
+        "sectionImageSrc":"/images/home/about/forward-thinking.png",
+        "sectionImageSrcDarkMode":"/images/home/about/forward-thinking-darkmode.png",
+        "sectionImageAlt":"Outline drawing of a camping tent"
+      },
+      {
+        "sectionTitle":"Effective and Innovative",
+        "sectionText":"At the heart of Givher LLC's mission is a commitment to effective and innovative fundraising strategies. Understanding the unique challenges in securing financial support, Givher LLC offers a comprehensive suite of services tailored to each client's specific objectives. These services include developing personalized fundraising plans, identifying new avenues for donor development, organizing engaging fundraising events, and managing donor relationships to foster long-term loyalty and support.",
+        "sectionImageSrc":"/images/home/about/effective-and-innovative.png",
+        "sectionImageSrcDarkMode":"/images/home/about/effective-and-innovative-darkmode.png",
+        "sectionImageAlt":"Outline drawing of sunglasses"
+      },
+      {
+        "sectionTitle":"Raising Awareness",
+        "sectionText":"In addition to fundraising, Givher LLC excels in event development. Recognizing the critical role of events in raising awareness and engaging stakeholders, Givher LLC takes a holistic approach to event planning and execution. From conceptualizing event themes that resonate with an organization's mission and values to managing every detail of the event lifecycle — including venue selection, marketing, program design, and logistics — Givher LLC ensures each event is well-organized, memorable, and lucrative.",
+        "sectionImageSrc":"/images/home/about/raising-awareness.png",
+        "sectionImageSrcDarkMode":"/images/home/about/raising-awareness-darkmode.png",
+        "sectionImageAlt":"Outline drawing of a flashlight"
+      },
+      {
+        "sectionTitle":"Unique Perspective",
+        "sectionText":"Combining Alina's experience in public policy, technology, and various artistic and educational pursuits, their diverse background provides a rich and unique perspective that guides the company's approach. With a passion for advancing equality and representation, Givher LLC is not just a service provider but a partner committed to empowering its clients and contributing to positive social change.",
+        "sectionImageSrc":"/images/home/about/unique-perspective.png",
+        "sectionImageSrcDarkMode":"/images/home/about/unique-perspective-darkmode.png",
+        "sectionImageAlt":"Outline drawing of a camera"
+      }
+    ]
+  },
+  "eventCarousel":{
+    "eventCarouselTitle":"Givher Events",
+    "eventCarouselImages":[
+      {
+        "imageSrc":"/images/home/event-carousel/1.png",
+        "imageAlt":"People watching fireworks"
+      },
+      {
+        "imageSrc":"/images/home/event-carousel/2.png",
+        "imageAlt":"A group of people dancing at an event"
+      },
+      {
+        "imageSrc":"/images/home/event-carousel/3.png",
+        "imageAlt":"Four pepole taking a picture at a photo booth"
+      },
+      {
+        "imageSrc":"/images/home/event-carousel/4.png",
+        "imageAlt":"People dancing outside"
+      },
+      {
+        "imageSrc":"/images/home/event-carousel/5.png",
+        "imageAlt":"A group toasting with wine glasses"
+      },
+      {
+        "imageSrc":"/images/home/event-carousel/6.png",
+        "imageAlt":"Five people laughing surrounded by glitter"
+      },
+      {
+        "imageSrc":"/images/home/event-carousel/7.png",
+        "imageAlt":"Three champagne glasses being filled"
+      },
+      {
+        "imageSrc":"/images/home/event-carousel/8.png",
+        "imageAlt":"Fireworks over a city"
+      }
+    ]
+  },
+  "form":{
+    "contactFormTitle":"Sign Up for Event Updates"
+  }
 }

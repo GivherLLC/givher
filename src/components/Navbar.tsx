@@ -2,11 +2,13 @@
 
 import React, { useState, useEffect } from "react";
 import useScreenSize from '../hooks/useScreenSize';
-import { getImagePath } from "../utils/imagePath";
+import Link from "next/link";
 
 export default function Navbar(){
     const screenSize = useScreenSize();
     const [navOpen, setNavOpen] = useState(false);
+    const [darkMode, setDarkMode] = useState(false);
+    const [mounted, setMounted] = useState(false);
 
     const scrollToTop = () => {
         const topElement = document.body;
@@ -23,10 +25,30 @@ export default function Navbar(){
         }
     },[navOpen])
 
+    useEffect(() => {
+        setMounted(true); // Set mounted to true after component mounts
+      }, []);
+
+    useEffect(() => {
+        // Check local storage for user preference
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+        setDarkMode(isDarkMode);
+      }, []);
+    
+      useEffect(() => {
+        // Update local storage when dark mode changes
+        if (mounted) {
+          localStorage.setItem('darkMode', darkMode.toString());
+          // Apply or remove 'dark' class from <body> based on darkMode state
+          document.body.classList.toggle('dark', darkMode);
+        }
+      }, [darkMode, mounted]);
+
     return (
-        <header className="sticky top-0 z-40 shadow-lg">
-            <div className="flex flex-row justify-between p-[1rem] bg-softOpal dark:bg-navySmoke relative">
+        <header className="sticky top-0 z-40 shadow-lg bg-softOpal dark:bg-navySmoke flex justify-center">
+            <div className="max-w-[85.75rem] w-full flex flex-row justify-between py-[1rem] mx-[0.625rem] lg:mx-[1.5625rem] relative">
                 <button onClick={()=>{scrollToTop()}}>
+                    <Link href="/">
                     <img
                         src="/images/GIVHER_Primary_NavySmoke.png"
                         alt="Givher Logo"
@@ -41,14 +63,43 @@ export default function Navbar(){
                         height={35}
                         className="hidden dark:block"
                         />
+                    </Link>    
                 </button>
+                <div
+                    data-id="dark mode toggle"
+                    className="flex justify-center items-center gap-[1rem]"
+                >
+
+                    <label
+                    id="switch"
+                    className="relative inline-block w-[60px] h-[34px]"
+                    >
+                    <input
+                        type="checkbox"
+                        onChange={() => {
+                        setDarkMode(!darkMode);
+                        }}
+                        className="h-[0px] w-[0px]"
+                    />
+                    <span
+                        id="slider round"
+                        className={`absolute cursor-pointer rounded-[34px] top-0 left-0 right-0 bottom-0 transition before:absolute before:h-[26px] before:w-[26px] before:left-[4px] before:bottom-[4px] before:transition-all before:rounded-[50%] ${
+                        darkMode
+                            ? 'bg-softOpal before:bg-mauvelous before:translate-x-[26px]'
+                            : 'bg-grey before:bg-softOpal'
+                        }`}
+                    ></span>
+                    
+                    </label>
+                    <p className="text-black dark:text-mauvelous">Dark Mode</p>
+                </div>
                 <nav className="flex flex-row gap-[1rem] font-medium items-center">
                     {screenSize.width > 640 ? (
-                        <>
-                            <button className="text:softOpal dark:text-electricYellow hover:font-bold w-[64px] transition ease-in-out">About</button>
-                            <button className="text:softOpal dark:text-electricYellow hover:font-bold w-[64px] transition ease-in-out">Team</button>
-                            <button className="text:softOpal dark:text-electricYellow hover:font-bold w-[64px] transition ease-in-out">Contact</button>
-                        </>
+                        <ul className="flex justify-center items-center gap-[1rem]">
+                            <li><button className="text:softOpal dark:text-electricYellow hover:font-bold w-[64px] transition ease-in-out">About</button></li>
+                            <li><button className="text:softOpal dark:text-electricYellow hover:font-bold w-[64px] transition ease-in-out">Team</button></li>
+                            <li><button className="text:softOpal dark:text-electricYellow hover:font-bold w-[64px] transition ease-in-out">Contact</button></li>
+                        </ul>
                     ):(
                         <button onClick={()=>{setNavOpen(!navOpen)}} className="flex flex-col items-center justify-between w-[22px] h-[20px] p-0" aria-label="Open/Close Menu">
                             <div className="h-[2px] w-full bg-navySmoke dark:bg-electricYellow"/>

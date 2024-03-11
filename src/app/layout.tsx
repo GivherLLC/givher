@@ -1,18 +1,49 @@
-import React from 'react'
+'use client'
+
+import React, {useEffect} from 'react'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import Script from 'next/script';
+import Head from 'next/head';
 
 const inter = Inter({ subsets: ['latin'] })
-
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  
+  useEffect(() => {
+    function toggleDarkMode() {
+      const now = new Date();
+      const hour = now.getHours();
+      const isNightTime = hour < 6 || hour >= 18; // Assume night time between 6pm and 6am
+
+      if (isNightTime) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    }
+
+    toggleDarkMode(); // Call toggleDarkMode() when the component mounts
+
+    // Optionally, call toggleDarkMode() periodically to update dark mode based on the time
+    const intervalId = setInterval(toggleDarkMode, 60000); // Update every minute
+
+    return () => {
+      clearInterval(intervalId); // Clear interval when component unmounts
+    };
+  }, []);
+
   return (
     <html lang="en">
-      <head>
+      <Head>
+      <link
+          rel="stylesheet"
+          href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+        />
         <link rel="icon" href="favicon.ico" />
         <title>Givher Political Hospitality</title>
         <meta name='description' content='Givher LLC is a dynamic and forward-thinking company specializing in fundraising, event development, and political hospitality.'/>
@@ -25,8 +56,9 @@ export default function RootLayout({
         <meta property='og:url' content='https://www.givher.com/'/>
         <meta property="og:type" content="website" />
         <meta name="keywords" content="Alina Hernandez, Givher, Political Hospitality, Consultant"></meta>
-      </head>
+      </Head>
       <body className={inter.className}>{children}</body>
+      <Script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></Script>
     </html>
   )
 }

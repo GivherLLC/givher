@@ -1,5 +1,4 @@
 import React from "react";
-// import dynamic from 'next/dynamic';
 
 import homepageData from "../../data/homepage.json";
 import eventsData from "../../data/events.json";
@@ -11,14 +10,6 @@ import UpcomingEvents from "./UpcomingEvents";
 import AboutUs from "./AboutUs";
 import EventsCarousel from "./EventsCarousel";
 import Form from "./Form";
-
-// const HeroVideo = dynamic(() => import('./HeroVideo'), { ssr: false });
-// const FloatingLogos = dynamic(() => import('./FloatingLogos'), { ssr: false });
-// const Services = dynamic(() => import('./Services'), { ssr: false });
-// const UpcomingEvents = dynamic(() => import('./UpcomingEvents'), { ssr: false });
-// const AboutUs = dynamic(() => import('./AboutUs'), { ssr: false });
-// const EventsCarousel = dynamic(() => import('./EventsCarousel'), { ssr: false });
-// const Form = dynamic(() => import('./Form'), { ssr: false });
 
 export default function Homepage(){
     const {video, logos, services, featuredEvents, about, eventCarousel, form} = homepageData;

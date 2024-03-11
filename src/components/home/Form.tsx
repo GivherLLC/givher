@@ -1,8 +1,6 @@
 import React from "react";
 import { getAssetPath } from "@/utils/assetPath";
-// import dynamic from "next/dynamic";
 import GoogleForm from "../GoogleForm";
-// const GoogleForm = dynamic(() => import('../GoogleForm'), { ssr: false });
 
 export default function HomepageForm({title}:{title:string}){
     return (

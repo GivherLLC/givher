@@ -1,11 +1,8 @@
 import React from "react";
 import { getAssetPath } from "@/utils/assetPath";
 import footerData from "../data/footer.json";
-// import dynamic from 'next/dynamic';
 import Link from "next/link";
 import ButtonLink from "../components/common/ButtonLink";
-
-// const ButtonLink = dynamic(() => import('../components/common/ButtonLink'), { ssr: false });
 
 export default function Footer(){
     return (

@@ -1,19 +1,16 @@
 import React from "react";
-// import dynamic from "next/dynamic";
 import ServiceCard from "./ServiceCard";
-// const ServiceCard = dynamic(() => import('./ServiceCard'), { ssr: false });
 
 type ServicesProps = {
-        servicesCarouselTitle: string;
-        sevicesCarouselCards: {
-            cardTitle: string;
-            cardDescription: string;
-            cardImageSrc: string;
-            cardImageAlt: string;
-            cardLinkText: string;
-            cardLink:string;
-        }[]
-    
+    servicesCarouselTitle: string;
+    sevicesCarouselCards: {
+        cardTitle: string;
+        cardDescription: string;
+        cardImageSrc: string;
+        cardImageAlt: string;
+        cardLinkText: string;
+        cardLink:string;
+    }[]
 }
 
 export default function Services({services}:{services:ServicesProps}){

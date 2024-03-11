@@ -1,9 +1,6 @@
 import React from "react";
 import { getAssetPath } from "@/utils/assetPath";
-// import dynamic from "next/dynamic";
 import ArrowLink from "../common/ArrowLink";
-// const ArrowLink = dynamic(() => import('../common/ArrowLink'), { ssr: false });
-
 
 type ServiceCardProps = {
     cardTitle: string;

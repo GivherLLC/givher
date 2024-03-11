@@ -22,8 +22,8 @@ export default function AboutUs({aboutInfo}:{aboutInfo:AboutUsProps}){
                     {aboutUsSections.map((s,i)=>{
                         const even = i % 2 === 0;
                         return (
-                            <div key={s.sectionTitle} className={`w-full flex gap-[4rem] flex-col-reverse ${even ? "lg:flex-row":"lg:flex-row-reverse"} justify-between mx-auto lg:mx-0`}>
-                                <div className={`flex flex-col gap-[1rem] max-w-[500px] mt-[2rem] items-start mx-auto lg:mx-0`}>
+                            <div key={s.sectionTitle} className={`w-full flex gap-[1rem] lg:gap-[4rem] flex-col-reverse ${even ? "lg:flex-row":"lg:flex-row-reverse"} justify-between mx-auto lg:mx-0`}>
+                                <div className={`flex flex-col gap-[1rem] max-w-[500px] lg:mt-[2rem] items-start mx-auto lg:mx-0`}>
                                     <h2 className="inline  pb-[1rem] border-b-[15px] border-mauvelous dark:border-electricYellow text-black dark:text-softOpal">{s.sectionTitle}</h2>
                                     <p className="h-full flex items-center text-black dark:text-softOpal">{s.sectionText}</p>
                                 </div>

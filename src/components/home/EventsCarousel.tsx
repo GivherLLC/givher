@@ -36,6 +36,7 @@ export default function EventsCarousel({events}:{events:EventsCarouselProps}){
                             alt={c.imageAlt}
                             width={297}
                             height={390}
+                            className="rounded-[15px]"
                         />
                     </div>
                 </div>                    

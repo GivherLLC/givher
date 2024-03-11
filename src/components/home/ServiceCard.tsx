@@ -24,27 +24,26 @@ export default function ServiceCard({serviceCard}:{serviceCard:ServiceCardProps}
     return (
         <div
         data-id="card"
-        className="carousel-cell w-/2 mr-[2rem]"
+        className="carousel-cell w-/2 mr-[2rem] bg-black rounded-[15px]"
       >
         <div className="group relative overflow-hidden rounded-[15px]">
           <img
             data-flickity-lazyload
             src={getAssetPath(cardImageSrc)}
             alt={cardImageAlt}
-            className="group-hover:scale-[1.1] transition duration-400 ease-in-out overflow-hidden"
+            className="md:group-hover:scale-[1.1] transition duration-400 ease-in-out overflow-hidden"
             height={545}
             width={430}
           />
-          <div className="absolute top-[250px] left-0 p-5 translate-y-[200px] group-hover:translate-y-0 flex flex-col justify-end transition duration-400 ease-in-out">
+          <div className="absolute bottom-[50px] md:bottom-[unset] md:top-[250px] left-0 p-5 md:translate-y-[200px] md:group-hover:translate-y-0 flex flex-col justify-end transition duration-400 ease-in-out">
             <h2 className="text-softOpal font-semibold pb-2">
               {cardTitle}
             </h2>
-            <div className="transition duration-400 opacity-0 ease-in-out group-hover:opacity-100">
-            <p className="text-softOpal mb-[1rem] leading-[1.35rem]">
+            <div className="transition duration-400 opacity-100 md:opacity-0 ease-in-out md:group-hover:opacity-100">
+            <p className="text-softOpal mb-[1rem] leading-[1.35rem] hidden md:block">
               {cardDescription}
             </p>
-            <ArrowLink text={cardLinkText} color={"softOpal"} darkModeColor={"black"} link={cardLink}/>
-
+            <ArrowLink text={cardLinkText} color={"softOpal"} darkModeColor={"softOpal"} link={cardLink}/>
             </div>
           </div>
         </div>

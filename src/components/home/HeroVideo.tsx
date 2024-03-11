@@ -1,4 +1,5 @@
 import React from "react";
+import { getAssetPath } from "@/utils/assetPath";
 import ButtonLink from "../common/ButtonLink";
 
 type HeroVideoProps = {
@@ -31,7 +32,7 @@ export default function HeroVideo({data}:HeroVideoProps){
                     loop
                     muted
                     playsInline
-                    src="/videos/givher-video.hevc.mp4"
+                    src={getAssetPath("/videos/givher-video.hevc.mp4")}
                     className="w-full h-full bg-black object-cover absolute overflow-clip top-0 opacity-75"
                     />
 

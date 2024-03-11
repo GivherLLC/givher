@@ -1,4 +1,5 @@
 import React from "react";
+import { getAssetPath } from "@/utils/assetPath";
 
 type EventsCarouselProps = {
     eventCarouselTitle: string;
@@ -31,7 +32,7 @@ export default function EventsCarousel({events}:{events:EventsCarouselProps}){
                     <div className="rounded-[15px]">
                         <img
                             data-flickity-lazyload
-                            src={c.imageSrc}
+                            src={getAssetPath(c.imageSrc)}
                             alt={c.imageAlt}
                             width={297}
                             height={390}

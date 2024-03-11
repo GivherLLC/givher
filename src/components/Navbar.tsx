@@ -2,17 +2,26 @@
 
 import React, { useState, useEffect } from "react";
 import { getAssetPath } from "@/utils/assetPath";
+import useIsMobile from "@/hooks/useIsMobile";
 import Link from "next/link";
 
 export default function Navbar(){
     const [navOpen, setNavOpen] = useState(false);
     // const [darkMode, setDarkMode] = useState(false);
     const [mounted, setMounted] = useState(false);
+    const isMobile = useIsMobile(768);
 
     const scrollToTop = () => {
         const topElement = document.body;
         topElement.scrollIntoView({ behavior: 'smooth' });
     }
+
+    useEffect(() => {
+        if (navOpen && !isMobile) {
+          setNavOpen(false);
+        }
+      }, [isMobile, navOpen]);
+    
 
     useEffect(()=>{
         //prevent scrolling behind the nav on mobile

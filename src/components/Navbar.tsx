@@ -1,11 +1,10 @@
 'use client'
 
 import React, { useState, useEffect } from "react";
-import useScreenSize from '../hooks/useScreenSize';
+import { getAssetPath } from "@/utils/assetPath";
 import Link from "next/link";
 
 export default function Navbar(){
-    const screenSize = useScreenSize();
     const [navOpen, setNavOpen] = useState(false);
     const [darkMode, setDarkMode] = useState(false);
     const [mounted, setMounted] = useState(false);
@@ -50,14 +49,14 @@ export default function Navbar(){
                 <button onClick={()=>{scrollToTop()}}>
                     <Link href="/">
                     <img
-                        src="/images/GIVHER_Primary_NavySmoke.png"
+                        src={getAssetPath("/images/GIVHER_Primary_NavySmoke.png")}
                         alt="Givher Logo"
                         width={75}
                         height={35}
                         className="dark:hidden"
                         />
                     <img
-                        src="/images/GIVHER_Primary_ElectricYellow.png"
+                        src={getAssetPath("/images/GIVHER_Primary_ElectricYellow.png")}
                         alt="Givher Logo"
                         width={75}
                         height={35}
@@ -94,19 +93,16 @@ export default function Navbar(){
                     <p className="text-black dark:text-mauvelous">Dark Mode</p>
                 </div>
                 <nav className="flex flex-row gap-[1rem] font-medium items-center">
-                    {screenSize.width > 640 ? (
-                        <ul className="flex justify-center items-center gap-[1rem]">
-                            <li><button className="text:softOpal dark:text-electricYellow hover:font-bold w-[64px] transition ease-in-out">About</button></li>
-                            <li><button className="text:softOpal dark:text-electricYellow hover:font-bold w-[64px] transition ease-in-out">Team</button></li>
-                            <li><button className="text:softOpal dark:text-electricYellow hover:font-bold w-[64px] transition ease-in-out">Contact</button></li>
-                        </ul>
-                    ):(
-                        <button onClick={()=>{setNavOpen(!navOpen)}} className="flex flex-col items-center justify-between w-[22px] h-[20px] p-0" aria-label="Open/Close Menu">
-                            <div className="h-[2px] w-full bg-navySmoke dark:bg-electricYellow"/>
-                            <div className="h-[2px] w-full bg-navySmoke dark:bg-electricYellow"/>
-                            <div className="h-[2px] w-full bg-navySmoke dark:bg-electricYellow"/>
-                        </button>
-                    )}
+                    <ul className="hidden sm:flex justify-center items-center gap-[1rem]">
+                        <li><button className="text:softOpal dark:text-electricYellow hover:font-bold w-[64px] transition ease-in-out">About</button></li>
+                        <li><button className="text:softOpal dark:text-electricYellow hover:font-bold w-[64px] transition ease-in-out">Team</button></li>
+                        <li><button className="text:softOpal dark:text-electricYellow hover:font-bold w-[64px] transition ease-in-out">Contact</button></li>
+                    </ul>
+                    <button onClick={()=>{setNavOpen(!navOpen)}} className="flex sm:hidden flex-col items-center justify-between w-[22px] h-[20px] p-0" aria-label="Open/Close Menu">
+                        <div className="h-[2px] w-full bg-navySmoke dark:bg-electricYellow"/>
+                        <div className="h-[2px] w-full bg-navySmoke dark:bg-electricYellow"/>
+                        <div className="h-[2px] w-full bg-navySmoke dark:bg-electricYellow"/>
+                    </button>
                 </nav>
             </div>
             {navOpen && (

@@ -1,4 +1,5 @@
 import React from "react";
+import { getAssetPath } from "@/utils/assetPath";
 // import dynamic from "next/dynamic";
 import ArrowLink from "../common/ArrowLink";
 // const ArrowLink = dynamic(() => import('../common/ArrowLink'), { ssr: false });
@@ -31,7 +32,7 @@ export default function ServiceCard({serviceCard}:{serviceCard:ServiceCardProps}
         <div className="group relative overflow-hidden rounded-[15px]">
           <img
             data-flickity-lazyload
-            src={cardImageSrc}
+            src={getAssetPath(cardImageSrc)}
             alt={cardImageAlt}
             className="group-hover:scale-[1.1] transition duration-400 ease-in-out overflow-hidden"
             height={545}

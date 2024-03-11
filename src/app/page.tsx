@@ -15,7 +15,6 @@ export default function Home() {
               href="https://unpkg.com/flickity@2/dist/flickity.min.css"
             />
             <Script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></Script>
-
       </head>
       <GlobalLayout>
         <Homepage/>

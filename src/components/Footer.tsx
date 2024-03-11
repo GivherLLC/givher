@@ -1,4 +1,5 @@
 import React from "react";
+import { getAssetPath } from "@/utils/assetPath";
 import footerData from "../data/footer.json";
 // import dynamic from 'next/dynamic';
 import Link from "next/link";
@@ -13,15 +14,15 @@ export default function Footer(){
             <div className="max-w-[85.75rem] w-full py-[4rem] mx-[0.625rem] md:px-[1.5625rem] flex justify-center">
                 <div className="w-full flex flex-col-reverse md:flex-row gap-[2rem] md:gap-[0rem] items-center md:items-start justify-center">
                     <div className="w-full md:w-1/3 flex justify-center md:justify-start">
-                        <img src={footerData.logoSrc} alt="Givher Logo" className="dark:hidden"/>
-                        <img src={footerData.darkModeLogoSrc} alt="Givher Logo" className="hidden dark:block"/>
+                        <img src={getAssetPath(footerData.logoSrc)} alt="Givher Logo" className="dark:hidden"/>
+                        <img src={getAssetPath(footerData.darkModeLogoSrc)} alt="Givher Logo" className="hidden dark:block"/>
                     </div>
                     <div className="w-full md:w-1/3 flex flex-col-reverse md:flex-col items-center justify-between gap-[2rem] mb-[1rem] md:mb-[0rem]">
                         <div data-id="footer-icons" className="flex gap-[2rem]">
                             {footerData.iconLinks.map((i)=>(
                                 <a key={i.iconImageAlt} href={i.iconLink}>
-                                    <img src={i.iconImageSrc} alt={i.iconImageAlt} height={30} width={30} className="dark:hidden hover:scale-[1.1] transition-transform ease-in-out"/>
-                                    <img src={i.darkmodeSrc} alt={i.iconImageAlt} height={30} width={30} className="hidden dark:block hover:scale-125 hover:scale-[1.1] transition-transform ease-in-out"/>
+                                    <img src={getAssetPath(i.iconImageSrc)} alt={i.iconImageAlt} height={30} width={30} className="dark:hidden hover:scale-[1.1] transition-transform ease-in-out"/>
+                                    <img src={getAssetPath(i.darkmodeSrc)} alt={i.iconImageAlt} height={30} width={30} className="hidden dark:block hover:scale-125 hover:scale-[1.1] transition-transform ease-in-out"/>
                                 </a>
                             ))}
                         </div>

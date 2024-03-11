@@ -1,7 +1,7 @@
 import React from "react";
-import dynamic from "next/dynamic";
-
-const EventButton = dynamic(() => import('../common/EventButton'), { ssr: false });
+// import dynamic from "next/dynamic";
+import EventButton from "../common/EventButton";
+// const EventButton = dynamic(() => import('../common/EventButton'), { ssr: false });
 
 type EventCardProps = {
     clientName:string;

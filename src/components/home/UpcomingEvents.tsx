@@ -1,8 +1,9 @@
 import React from "react";
-import dynamic from "next/dynamic";
-
-const ArrowLink = dynamic(() => import('../common/ArrowLink'), { ssr: false });
-const EventCard = dynamic(() => import('../common/EventCard'), { ssr: false });
+// import dynamic from "next/dynamic";
+import ArrowLink from "../common/ArrowLink";
+import EventCard from "../common/EventCard";
+// const ArrowLink = dynamic(() => import('../common/ArrowLink'), { ssr: false });
+// const EventCard = dynamic(() => import('../common/EventCard'), { ssr: false });
 
 type HomepageEventsProps = {
     clientName:string;

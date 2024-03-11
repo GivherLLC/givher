@@ -1,7 +1,7 @@
 import React from "react";
-import dynamic from "next/dynamic";
-
-const GoogleForm = dynamic(() => import('../GoogleForm'), { ssr: false });
+// import dynamic from "next/dynamic";
+import GoogleForm from "../GoogleForm";
+// const GoogleForm = dynamic(() => import('../GoogleForm'), { ssr: false });
 
 export default function HomepageForm({title}:{title:string}){
     return (

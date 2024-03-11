@@ -1,9 +1,9 @@
 import React from 'react';
-import dynamic from 'next/dynamic';
-
-const Navbar = dynamic(() => import('../components/Navbar'), { ssr: false });
-const Footer = dynamic(() => import('../components/Footer'), { ssr: false });
-
+// import dynamic from 'next/dynamic';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+// const Navbar = dynamic(() => import('../components/Navbar'), { ssr: false });
+// const Footer = dynamic(() => import('../components/Footer'), { ssr: false });
 
 export default function GlobalLayout({
   children,

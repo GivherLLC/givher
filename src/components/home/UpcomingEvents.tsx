@@ -1,9 +1,6 @@
 import React from "react";
-// import dynamic from "next/dynamic";
 import ArrowLink from "../common/ArrowLink";
 import EventCard from "../common/EventCard";
-// const ArrowLink = dynamic(() => import('../common/ArrowLink'), { ssr: false });
-// const EventCard = dynamic(() => import('../common/EventCard'), { ssr: false });
 
 type HomepageEventsProps = {
     clientName:string;
@@ -26,8 +23,8 @@ export default function events({title, events}:{title:string, events: HomepageEv
             <div className="flex flex-col w-full items-center justify-center gap-[2.5rem] px-[0.625rem] md:px-[1.5625rem]">
                 <h1 className="font-ramenson text-navySmoke dark:text-softOpal">{title}</h1>
                 <div className="flex flex-col lg:flex-row justify-center lg:justify-between gap-[1rem] items-center w-full max-w-[85.75rem]">
-                    {events.map((e)=>(
-                        <EventCard key={`${e.clientName}-${e.eventName}-${e.firstDayOfEvent}`} event={e}/>
+                    {events.map((e, i)=>(
+                        <EventCard key={`${i}-${e.clientName}-${e.eventName}-${e.firstDayOfEvent}`} event={e}/>
                     ))}
                 </div>
                 <div className="flex justify-center items-center">

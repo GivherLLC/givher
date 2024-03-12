@@ -102,24 +102,26 @@ export default function Navbar(){
                     <p className="text-black dark:text-mauvelous">Dark Mode</p>
                 </div> */}
                 <nav className="flex flex-row gap-[1rem] font-medium items-center">
-                    <ul className="hidden sm:flex justify-center items-center gap-[1rem]">
-                        <li><button className="text-softOpal dark:text-electricYellow hover:font-bold w-[64px] transition ease-in-out">About</button></li>
-                        <li><button className="text-softOpal dark:text-electricYellow hover:font-bold w-[64px] transition ease-in-out">Team</button></li>
-                        <li><button className="text-softOpal dark:text-electricYellow hover:font-bold w-[64px] transition ease-in-out">Contact</button></li>
+                    <ul className="hidden sm:flex justify-center items-center gap-[3rem]">
+                        <li className="w-[66px] flex justify-center"><a href="/clients/" className="text-navySmoke dark:text-electricYellow hover:font-bold transition-font duration-200 ease-in-out">Clients</a></li>
+                        <li className="w-[66px] flex justify-center"><a href="/events/" className="text-navySmoke dark:text-electricYellow hover:font-bold transition-font duration-200 ease-in-out">Events</a></li>
+                        <li className="w-[66px] flex justify-center"><a href="/team/" className="text-navySmoke dark:text-electricYellow hover:font-bold transition-font duration-200 ease-in-out">Team</a></li>
+                        <li className="w-[66px] flex justify-center"><a href="/contact/" className="text-navySmoke dark:text-electricYellow hover:font-bold transition-font duration-200 ease-in-out">Contact</a></li>
                     </ul>
-                    <button onClick={()=>{setNavOpen(!navOpen)}} className="flex sm:hidden flex-col items-center justify-between w-[22px] h-[20px] p-0" aria-label="Open/Close Menu">
-                        <div className="h-[2px] w-full bg-navySmoke dark:bg-electricYellow"/>
-                        <div className="h-[2px] w-full bg-navySmoke dark:bg-electricYellow"/>
-                        <div className="h-[2px] w-full bg-navySmoke dark:bg-electricYellow"/>
+                    <button type="button" onClick={()=>{setNavOpen(!navOpen)}} className="flex sm:hidden relative flex-col items-center justify-between h-[50px] w-[50px] p-0 ml-auto" aria-label="Open/Close Menu">
+                        <div className={`h-[2px] w-full bg-navySmoke dark:bg-electricYellow absolute right-[50%] max-w-[20px] top-[50%] transition-all duration-250 ease-in mt-[-5px] ${navOpen ? "transform -translate-x-1/2 -translate-y-1/2 rotate-[-45deg] mt-0":""}`}/>
+                        <div className={`h-[2px] w-full bg-navySmoke dark:bg-electricYellow absolute right-[50%] max-w-[20px] top-[50%] transition-all duration-250 ease-in ${navOpen ? "opacity-0":""}`}/>
+                        <div className={`h-[2px] w-full bg-navySmoke dark:bg-electricYellow absolute right-[50%] max-w-[20px] top-[50%] transition-all duration-250 ease-in mt-[5px] ${navOpen ? "transform -translate-x-1/2 -translate-y-1/2 rotate-45 mt-0":""}`}/>
                     </button>
                 </nav>
             </div>
             {navOpen && (
                     <div className="fixed top-[58px] h-screen w-screen bg-softOpal dark:bg-navySmoke">
                         <nav className="flex flex-col items-center font-visbyBold gap-10 p-5">
-                            <a href="#about" onClick={()=>{setNavOpen(!navOpen)}} className="text-navySmoke dark:text-electricYellow hover:text-softOpal">About</a>
-                            <a href="#team" onClick={()=>{setNavOpen(!navOpen)}} className="text-navySmoke dark:text-electricYellow hover:text-softOpal">Team</a>
-                            <a href="#contact" onClick={()=>{setNavOpen(!navOpen)}} className="text-navySmoke dark:text-electricYellow hover:text-softOpal">Contact</a>
+                            <a href="/clients/" onClick={()=>{setNavOpen(!navOpen)}} className="text-navySmoke dark:text-electricYellow hover:text-navySmoke">Clients</a>
+                            <a href="/events/" onClick={()=>{setNavOpen(!navOpen)}} className="text-navySmoke dark:text-electricYellow hover:text-navySmoke">Events</a>
+                            <a href="/team/" onClick={()=>{setNavOpen(!navOpen)}} className="text-navySmoke dark:text-electricYellow hover:text-navySmoke">Team</a>
+                            <a href="/contact/" onClick={()=>{setNavOpen(!navOpen)}} className="text-navySmoke dark:text-electricYellow hover:text-navySmoke">Contact</a>
                         </nav>
                     </div>
                 )}

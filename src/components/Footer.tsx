@@ -1,5 +1,6 @@
 import React from "react";
 import { getAssetPath } from "@/utils/assetPath";
+import { getLinkPath } from "@/utils/linkPath";
 import footerData from "../data/footer.json";
 import Link from "next/link";
 import ButtonLink from "../components/common/ButtonLink";
@@ -32,7 +33,7 @@ export default function Footer(){
                         <ul className="w-full flex flex-col items-center md:items-end">
                             {footerData.pageLinks.map((l)=>(
                                 <li key={l.linkText} className="text-navySmoke dark:text-softOpal font-medium hover:font-bold transition ease-in-out mb-[1rem] w-[110px] text-center md:text-left">
-                                    <Link href={l.link}>{l.linkText}</Link>
+                                    <Link href={getLinkPath(l.link)}>{l.linkText}</Link>
                                 </li>
                             ))}
                         </ul>

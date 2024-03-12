@@ -24,7 +24,7 @@ export default function events({title, events}:{title:string, events: HomepageEv
                 <h1 className="font-ramenson text-navySmoke dark:text-softOpal">{title}</h1>
                 <div className={`flex flex-col lg:flex-row justify-center ${events.length < 3 ? "":"lg:justify-between"} gap-[1rem] items-center w-full max-w-[85.75rem]`}>
                     {events.map((e, i)=>(
-                        <EventCard key={`${i}-${e.clientName}-${e.eventName}-${e.firstDayOfEvent}`} event={e}/>
+                        <EventCard key={`${i}-${e.clientName}-${e.eventName}-${e.firstDayOfEvent}`} event={e} type="homepage"/>
                     ))}
                 </div>
                 <div className="flex justify-center items-center">

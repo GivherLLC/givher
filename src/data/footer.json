@@ -12,7 +12,7 @@
             "iconImageSrc":"/images/footer/mail-icon.png",
             "darkmodeSrc":"/images/footer/mail-icon-darkmode.png",
             "iconImageAlt":"Email icon",
-            "iconLink":"`mailto:alina@givher.com"
+            "iconLink":"mailto:alina@givher.com"
         },
         {
             "iconImageSrc":"/images/footer/phone-icon.png",

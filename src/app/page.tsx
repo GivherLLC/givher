@@ -1,5 +1,3 @@
-'use client'
-
 import React from 'react';
 import GlobalLayout from '@/components/GlobalLayout';
 import Homepage from '@/components/home/HomepageV2';

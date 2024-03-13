@@ -2,6 +2,7 @@ import React from "react";
 import { getAssetPath } from "@/utils/assetPath";
 import GoogleForm from "../GoogleForm";
 import contactData from "../../data/contactInfo.json";
+import Link from "next/link";
 
 export default function ContactPage(){
     return (
@@ -11,12 +12,12 @@ export default function ContactPage(){
                 <div className="flex flex-col lg:flex-row w-full">
                     <div className="w-full lg:w-1/2 flex flex-col items-center gap-[2rem] mt-[2rem]">
                         <h1 className="font-ramenson text-navySmoke dark:text-softOpal">{contactData.contactPageTitle}</h1>
-                        <a href="tel:+916-296-4656">
+                        <Link href="tel:+916-296-4656">
                             <p>{contactData.contactPhoneNumber}</p>
-                        </a>
-                        <a href="mailto:alina@givher.com">
+                        </Link>
+                        <Link href="mailto:alina@givher.com">
                             <p>{contactData.contactEmail}</p>
-                        </a>
+                        </Link>
                     </div>
                     <div className="w-full lg:w-1/2 flex justify-center">
                         <GoogleForm/>

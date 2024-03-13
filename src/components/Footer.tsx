@@ -1,6 +1,5 @@
 import React from "react";
 import { getAssetPath } from "@/utils/assetPath";
-import { getLinkPath } from "@/utils/linkPath";
 import footerData from "../data/footer.json";
 import Link from "next/link";
 import ButtonLink from "../components/common/ButtonLink";
@@ -18,10 +17,10 @@ export default function Footer(){
                     <div className="w-full md:w-1/3 flex flex-col-reverse md:flex-col items-center justify-between gap-[2rem] mb-[1rem] md:mb-[0rem]">
                         <div data-id="footer-icons" className="flex gap-[2rem]">
                             {footerData.iconLinks.map((i)=>(
-                                <a key={i.iconImageAlt} href={i.iconLink}>
+                                <Link key={i.iconImageAlt} href={i.iconLink}>
                                     <img src={getAssetPath(i.iconImageSrc)} alt={i.iconImageAlt} height={30} width={30} className="dark:hidden hover:scale-[1.1] transition-transform ease-in-out"/>
                                     <img src={getAssetPath(i.darkmodeSrc)} alt={i.iconImageAlt} height={30} width={30} className="hidden dark:block hover:scale-125 hover:scale-[1.1] transition-transform ease-in-out"/>
-                                </a>
+                                </Link>
                             ))}
                         </div>
                         <div className="flex flex-col items-center justify-between gap-[2rem]">
@@ -33,7 +32,7 @@ export default function Footer(){
                         <ul className="w-full flex flex-col items-center md:items-end">
                             {footerData.pageLinks.map((l)=>(
                                 <li key={l.linkText} className="text-navySmoke dark:text-softOpal font-medium hover:font-bold transition ease-in-out mb-[1rem] w-[110px] text-center md:text-left">
-                                    <Link href={getLinkPath(l.link)}>{l.linkText}</Link>
+                                    <Link href={l.link}>{l.linkText}</Link>
                                 </li>
                             ))}
                         </ul>

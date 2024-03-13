@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import { getAssetPath } from "@/utils/assetPath";
-// import { getLinkPath } from "@/utils/linkPath";
 import useIsMobile from "@/hooks/useIsMobile";
 import Link from "next/link";
 

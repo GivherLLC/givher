@@ -1,9 +1,10 @@
 'use client'
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import teamData from "../../data/team.json";
 import { getAssetPath } from "@/utils/assetPath";
 import ArrowButton from "../common/ArrowButton";
+import Link from "next/link";
 
 export default function TeamPage(){
     const {title, alina, jay} = teamData;
@@ -37,10 +38,10 @@ export default function TeamPage(){
                             <div className="h-[3px] w-[50px] bg-navySmoke dark:bg-electricYellow"/>
                             <div data-id="alina-icons" className="flex gap-[2rem] mb-[1rem]">
                                 {alina.iconLinks.map((i)=>(
-                                    <a key={i.iconImageAlt} href={i.iconLink}>
+                                    <Link key={i.iconImageAlt} href={i.iconLink}>
                                         <img src={getAssetPath(i.iconImageSrc)} alt={i.iconImageAlt} height={27} width={27} className="dark:hidden hover:scale-[1.1] transition-transform ease-in-out"/>
                                         <img src={getAssetPath(i.darkmodeSrc)} alt={i.iconImageAlt} height={27} width={27} className="hidden dark:block hover:scale-125 hover:scale-[1.1] transition-transform ease-in-out"/>
-                                    </a>
+                                    </Link>
                                 ))}
                         </div>
                         <ArrowButton text="View Bio" color="black" darkModeColor="softOpal" onClickFunction={()=>{setShowBio('Alina')}}/>
@@ -55,10 +56,10 @@ export default function TeamPage(){
                             <div className="h-[3px] w-[50px] bg-navySmoke dark:bg-electricYellow"/>
                             <div data-id="jay-icons" className="flex gap-[2rem] mb-[1rem]">
                                 {jay.iconLinks.map((i)=>(
-                                    <a key={i.iconImageAlt} href={i.iconLink}>
+                                    <Link key={i.iconImageAlt} href={i.iconLink}>
                                         <img src={getAssetPath(i.iconImageSrc)} alt={i.iconImageAlt} height={27} width={27} className="dark:hidden hover:scale-[1.1] transition-transform ease-in-out"/>
                                         <img src={getAssetPath(i.darkmodeSrc)} alt={i.iconImageAlt} height={27} width={27} className="hidden dark:block hover:scale-125 hover:scale-[1.1] transition-transform ease-in-out"/>
-                                    </a>
+                                    </Link>
                                 ))}
                             </div>
                             <ArrowButton text="View Bio" color="black" darkModeColor="softOpal" onClickFunction={()=>{setShowBio('Jay')}}/>

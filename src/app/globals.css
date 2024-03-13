@@ -153,6 +153,54 @@ body {
   margin-right: 10px;
 }
 
+/* Featured Events Carousel */
+
+.featured-carousel .flickity-viewport {
+  overflow: hidden;
+  position: relative;
+  cursor: grab;
+  box-sizing: border-box;
+}
+
+.featured-carousel .carousel-cell {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  width: 80%;
+  max-width: 450px;
+}
+
+.featured-carousel .carousel-cell img {
+  aspect-ratio: 1;
+  display: block;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 2;
+  opacity: 1;
+}
+.featured-carousel .carousel-cell:first-child:has(~.is-selected:last-child) img,
+.featured-carousel .carousel-cell.is-selected+.carousel-cell img {
+  opacity: 0.5;
+  transform: scale(.87);
+}
+
+#carousel-content-inner .carousel-content {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+
+#carousel-content-inner .carousel-content.active {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+    transform: translateY(0);
+    transition: all .5s;
+}
+
 
 @media(min-width: 1372px){
   .services-carousel .flickity-page-dots {

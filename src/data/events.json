@@ -1,4 +1,13 @@
 {
+    "clientImages":{
+      "Asian American & Pacific Islander Legislative Caucus Foundation":"aa-pi-legislative-caucus.png",
+      "California Legislative LGBTQ Foundation":"califonria-lgbtq-foundation.png",
+      "Micro Dosing Collective":"micro-dosing-collective.png",
+      "New California Coalition":"ncc.png",
+      "Planned Parenthood Alliace of California":"planned-parenthood.png",
+      "Sacramento LGBT Community Center":"sacramento-lgbtq",
+      "Givher Featured Image":"givher.png"
+    },
     "comingSoon":[
       {
         "clientName":"",

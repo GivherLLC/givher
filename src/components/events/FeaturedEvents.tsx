@@ -1,54 +1,129 @@
-import React from "react";
+'use client'
+import React, { useMemo, useState, useCallback } from "react";
 import { getAssetPath } from "@/utils/assetPath";
 import EventButton from "../common/EventButton";
+import { EventType, FeaturedEventType } from "@/types/types";
+import eventsData from "../../data/events.json";
 
-type FeaturedEventsProps = {
-    clientName:string;
-    eventName:string;
-    eventDateString:string;
-    firstDayOfEvent:string;
-    eventDescription:string[];
-    boldedEventInformation:string[]
-    eventLocation:string;
-    eventLocationTime:string | null;
-    eventPdfSrc:string | null;
-    eventButtonName:string;
-    eventButtonLink:string;
-}[]
+type FeaturedEventsProps = EventType[];
 
 export default function FeaturedEvents({events}:{events:FeaturedEventsProps}){
+    const {clientImages}: { clientImages: { [key: string]: string } } = eventsData;
+
+    const [activeSlide, setActiveSlide] = useState(0);
+
+    const convertToFeaturedEvent = (event: EventType) => {
+        const { clientName, eventName, eventDateString: eventDate, eventLocation, eventButtonName, eventButtonLink } = event;
+        const clientImage = clientImages[clientName];
+    
+        return {
+            eventName,
+            eventDate,
+            eventLocation,
+            eventButtonName,
+            eventButtonLink,
+            clientImage,
+        };
+    };
+
+    const featuredEvents = useMemo(()=>{
+        let featured: FeaturedEventType[] = [
+            {
+                eventName: "Upcoming Events",
+                eventDate: "",
+                eventLocation: "",
+                eventButtonName: "View Events",
+                eventButtonLink: "#events",
+                clientImage: "givher.png",
+            },
+        ];
+        if(events.length < 3){
+            const addEvents = events.map((e)=>(convertToFeaturedEvent(e)));
+            featured = [...featured, ...addEvents]
+        }
+        return featured;
+
+    },[events]);
+
+    const totalSlides = useMemo(()=>{
+        return featuredEvents.length;
+    },[featuredEvents])
+
+    const nextSlide = useCallback(()=>{
+        if(activeSlide < totalSlides - 1){
+            setActiveSlide(activeSlide + 1)
+        } else {
+            setActiveSlide(0)
+        }
+    },[activeSlide, totalSlides])
+
+    const prevSlide = useCallback(()=>{
+        if(activeSlide === 0){
+            setActiveSlide(totalSlides - 1)
+        } else {
+            setActiveSlide(activeSlide - 1)
+        }
+    },[activeSlide, totalSlides])
+
+
     return (
         <div className="bg-softOpal dark:bg-navySmoke py-[2.5rem] flex justify-center relative">
             <div className="relative w-full flex flex-col items-center justify-center gap-[2.5rem] max-w-[85.75rem] mx-[0.625rem] lg:mx-[1.5625rem]">
-                <div id="carousel-inner" className="w-full flex items-center mx-auto gap-[70px]">
-                    <div id="carousel-content-container" className="w-[40%] h-full grid grid-rows-[1fr,52px] gap-[2rem]">
-                        <div id="carousel-content-inner" className="flex items-center">
+                <div id="carousel-inner" className="w-full grid grid-cols-[1fr,minmax(auto,675px)] items-center justify-between gap-[70px] ml-[calc(max(0px, (100% - 1440px) / 2))]">
+                    <div id="carousel-content-container" className="h-full grid grid-rows-[1fr,52px] gap-[2rem] box-border">
+                        <div id="carousel-content-inner" className="flex items-center box-border">
                             {/* EVENTS WILL BE MAPPED HERE */}
-                            <div className="relative flex flex-col items-start">
-                                <h1 className="font-ramenson text-navySmoke dark:text-softOpal pb-[2rem]">Upcoming Events</h1>
-                                <p></p>
+                            {featuredEvents.map((e, i)=>{
+                                return (
+                                <div key={i} className={`carousel-content relative flex flex-col items-start ${activeSlide === i ? "active":""}`}>
+                                    <h1 className="font-ramenson text-navySmoke dark:text-softOpal pb-[2rem] text-[3rem]">{e.eventName}</h1>
+                                    <p className="border-box my-[10px] text-black dark:text-softOpal opacity-70"> </p>
+                                    <EventButton text={e.eventButtonName} link={e.eventButtonLink} bg="electricYellow"/>
+                                </div>
+                                )
+                            })}
+                            {/* <div className="relative flex flex-col items-start">
+                                <h1 className="font-ramenson text-navySmoke dark:text-softOpal pb-[2rem] text-[3rem]">Upcoming Events</h1>
+                                <p className="border-box my-[10px] text-black dark:text-softOpal opacity-70"> </p>
                                 <EventButton text="View Events" link="#events" bg="electricYellow"/>
-                            </div>
+                            </div> */}
                         </div>
-                        <div id="carousel-content-btn" className="self-end flex items-center gap-[120px] mt-[24px]">
+                        <div id="carousel-content-btn" className="self-end flex items-center gap-[120px] mb-[2rem]">
                             <div className="flex gap-[24px]">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="overflow-hidden transform rotate-[180deg] color-black cursor-pointer align-middle">
-                                    <path d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8Z" fill="currentColor"></path>
-                                </svg> 
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="overflow-hidden color-black cursor-pointer align-middle">
-                                    <path d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8Z" fill="currentColor"></path>
-                                </svg> 
+                                <button type="button" data-id="prev" onClick={()=>{prevSlide()}}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="overflow-hidden transform rotate-[180deg] color-black cursor-pointer align-middle">
+                                        <path d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8Z" fill="currentColor"></path>
+                                    </svg> 
+                                </button>
+                                <button type="button" data-id="next" onClick={()=>{nextSlide()}}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="overflow-hidden color-black cursor-pointer align-middle">
+                                        <path d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8Z" fill="currentColor"></path>
+                                    </svg> 
+                                </button>
                             </div>
                         </div>
                     </div>
                     {/* THIS WILL START FLICKITY CAROUSEL is-draggable*/}
-                    <div id="carousel-image-container" className="relative w-[60%] flex justify-end">
-                        <img src={getAssetPath("/images/events/paint-splatter-large.png")} height="435" width="595" className="absolute left-[15%] bottom-[-10%] z-0"/>
-                            {/* EVENT IMAGES WILL BE MAPPED HERE */}
-                            <div className="z-15 relative">
-                                <img height="450" width="450" src={getAssetPath("/images/events/featured/featured-givher.png")}/>
-                            </div>
-                    </div>
+                    {/* <div id="carousel-image-container" className="featured-carousel relative flex justify-end"> */}
+
+                        <div 
+                            className="main-carousel featured-carousel" 
+                            data-flickity='{ "cellAlign":"left", "cellSelector": ".carousel-cell", "contain": true, "imagesLoaded": true, "prevNextButtons": false, "pageDots": false, "percentPosition": false, "wrapAround": true}'
+                            >
+                        <img src={getAssetPath("/images/events/paint-splatter-large.png")} height="435" width="595" className="absolute left-[-30%] bottom-[-15%] z-0"/>
+
+                            {featuredEvents.map((e,i)=>{
+                                return (
+                                    <div key={i} data-id={i} className="carousel-cell">
+                                        <img height="450" width="450" src={`/images/events/client-images/${e.clientImage}`} alt={e.eventName}/>
+                                    </div>
+                                )
+                            })}
+                            {/* <div className="carousel-cell z-5 relative">
+                                <img height="450" width="450" src={getAssetPath("/images/events/client-images/givher.png")}/>
+                            </div> */}
+                        </div>
+                    {/* </div> */}
                 </div>
             </div>
         </div>

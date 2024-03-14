@@ -1,4 +1,6 @@
-import React from "react";
+'use client'
+
+import React, { useEffect } from "react";
 import { getAssetPath } from "@/utils/assetPath";
 
 type EventsCarouselProps = {
@@ -6,12 +8,29 @@ type EventsCarouselProps = {
     eventCarouselImages: {
         imageSrc: string;
         imageAlt: string;
-        }[]
-    
+    }[]
 }
 
 export default function EventsCarousel({events}:{events:EventsCarouselProps}){
     const {eventCarouselTitle, eventCarouselImages} = events;
+
+    useEffect(() => {
+        const Flickity = require('flickity-imagesloaded');
+        const flkty = new Flickity('.event-carousel', {
+          cellAlign: "left",
+          contain: true,
+          imagesLoaded: true,
+          prevNextButtons: true,
+          percentPosition: false,
+          wrapAround: true,
+        });
+    
+        // Cleanup event listeners and destroy Flickity instance on component unmount
+        return () => {
+          flkty.destroy();
+        };
+      }, []); // Empty dependency array ensures the effect runs only once on mount
+
 
     return (
         <div className="bg-softOpal dark:bg-navySmoke py-[2.5rem] flex justify-center">
@@ -19,10 +38,7 @@ export default function EventsCarousel({events}:{events:EventsCarouselProps}){
             <h1 className="font-ramenson text-navySmoke dark:text-softOpal text-center">
             {eventCarouselTitle}
             </h1>
-            <div
-                className="main-carousel event-carousel"
-                data-flickity='{ "freeScroll": true, "contain": true, "imagesLoaded": true, "prevNextButtons": true, "percentPosition": false, "wrapAround":true }'
-                >
+            <div className="event-carousel relative">
                 {eventCarouselImages.map((c, i) => (
                 <div
                     key={i}
@@ -31,12 +47,11 @@ export default function EventsCarousel({events}:{events:EventsCarouselProps}){
                     >
                     <div className="rounded-[15px]">
                         <img
-                            data-flickity-lazyload
                             src={getAssetPath(c.imageSrc)}
                             alt={c.imageAlt}
                             width={297}
                             height={390}
-                            className="rounded-[15px]"
+                            className="rounded-[15px] flickity-lazyloaded"
                         />
                     </div>
                 </div>                    

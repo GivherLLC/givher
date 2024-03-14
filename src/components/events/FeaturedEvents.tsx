@@ -1,5 +1,5 @@
 'use client'
-import React, { useMemo, useState, useCallback } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { getAssetPath } from "@/utils/assetPath";
 import EventButton from "../common/EventButton";
 import { EventType, FeaturedEventType } from "@/types/types";
@@ -10,7 +10,7 @@ type FeaturedEventsProps = EventType[];
 export default function FeaturedEvents({events}:{events:FeaturedEventsProps}){
     const {clientImages}: { clientImages: { [key: string]: string } } = eventsData;
 
-    const [activeSlide, setActiveSlide] = useState(0);
+    const [activeIndex, setActiveIndex] = useState(0);
 
     const convertToFeaturedEvent = (event: EventType) => {
         const { clientName, eventName, eventDateString: eventDate, eventLocation, eventButtonName, eventButtonLink } = event;
@@ -45,25 +45,48 @@ export default function FeaturedEvents({events}:{events:FeaturedEventsProps}){
 
     },[events]);
 
-    const totalSlides = useMemo(()=>{
-        return featuredEvents.length;
-    },[featuredEvents])
-
-    const nextSlide = useCallback(()=>{
-        if(activeSlide < totalSlides - 1){
-            setActiveSlide(activeSlide + 1)
-        } else {
-            setActiveSlide(0)
+    useEffect(() => {
+        const Flickity = require('flickity-imagesloaded');
+        const flkty = new Flickity('.carousel', {
+          cellAlign: "left",
+          cellSelector: ".carousel-cell",
+          imagesLoaded: true,
+          prevNextButtons: false,
+          pageDots: false,
+          percentPosition: false,
+          wrapAround: true,
+          dragThreshold: 5,
+          selectedAttraction: 0.2,
+          friction: 0.8
+        });
+    
+        // Add event listeners to custom buttons
+        const prevButton = document.querySelector('.custom-prev-button');
+        if (prevButton) {
+          prevButton.addEventListener('click', () => {
+            flkty.previous();
+          });
         }
-    },[activeSlide, totalSlides])
-
-    const prevSlide = useCallback(()=>{
-        if(activeSlide === 0){
-            setActiveSlide(totalSlides - 1)
-        } else {
-            setActiveSlide(activeSlide - 1)
+    
+        const nextButton = document.querySelector('.custom-next-button');
+        if (nextButton) {
+          nextButton.addEventListener('click', () => {
+            flkty.next();
+          });
         }
-    },[activeSlide, totalSlides])
+    
+        // Listen for the 'select' event
+        flkty.on('select', () => {
+          const activeIndex = flkty.selectedIndex;
+          setActiveIndex(activeIndex);
+        });
+    
+        // Cleanup event listeners and destroy Flickity instance on component unmount
+        return () => {
+          flkty.off('select');
+          flkty.destroy();
+        };
+      }, []); // Empty dependency array ensures the effect runs only once on mount
 
 
     return (
@@ -72,30 +95,24 @@ export default function FeaturedEvents({events}:{events:FeaturedEventsProps}){
                 <div id="carousel-inner" className="w-full grid grid-cols-[1fr,minmax(auto,675px)] items-center justify-between gap-[70px] ml-[calc(max(0px, (100% - 1440px) / 2))]">
                     <div id="carousel-content-container" className="h-full grid grid-rows-[1fr,52px] gap-[2rem] box-border">
                         <div id="carousel-content-inner" className="flex items-center box-border">
-                            {/* EVENTS WILL BE MAPPED HERE */}
                             {featuredEvents.map((e, i)=>{
                                 return (
-                                <div key={i} className={`carousel-content relative flex flex-col items-start ${activeSlide === i ? "active":""}`}>
+                                <div key={i} className={`carousel-content relative flex flex-col items-start transform translate-y-[50px] ${activeIndex === i ? "active transition-all duration-500 transform translate-y-0":""}`}>
                                     <h1 className="font-ramenson text-navySmoke dark:text-softOpal pb-[2rem] text-[3rem]">{e.eventName}</h1>
                                     <p className="border-box my-[10px] text-black dark:text-softOpal opacity-70"> </p>
                                     <EventButton text={e.eventButtonName} link={e.eventButtonLink} bg="electricYellow"/>
                                 </div>
                                 )
                             })}
-                            {/* <div className="relative flex flex-col items-start">
-                                <h1 className="font-ramenson text-navySmoke dark:text-softOpal pb-[2rem] text-[3rem]">Upcoming Events</h1>
-                                <p className="border-box my-[10px] text-black dark:text-softOpal opacity-70"> </p>
-                                <EventButton text="View Events" link="#events" bg="electricYellow"/>
-                            </div> */}
                         </div>
                         <div id="carousel-content-btn" className="self-end flex items-center gap-[120px] mb-[2rem]">
                             <div className="flex gap-[24px]">
-                                <button type="button" data-id="prev" onClick={()=>{prevSlide()}}>
+                                <button type="button" data-id="prev" className="custom-prev-button">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="overflow-hidden transform rotate-[180deg] color-black cursor-pointer align-middle">
                                         <path d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8Z" fill="currentColor"></path>
                                     </svg> 
                                 </button>
-                                <button type="button" data-id="next" onClick={()=>{nextSlide()}}>
+                                <button type="button" data-id="next" className="custom-next-button">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="overflow-hidden color-black cursor-pointer align-middle">
                                         <path d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8Z" fill="currentColor"></path>
                                     </svg> 
@@ -103,27 +120,17 @@ export default function FeaturedEvents({events}:{events:FeaturedEventsProps}){
                             </div>
                         </div>
                     </div>
-                    {/* THIS WILL START FLICKITY CAROUSEL is-draggable*/}
-                    {/* <div id="carousel-image-container" className="featured-carousel relative flex justify-end"> */}
-
-                        <div 
-                            className="main-carousel featured-carousel" 
-                            data-flickity='{ "cellAlign":"left", "cellSelector": ".carousel-cell", "contain": true, "imagesLoaded": true, "prevNextButtons": false, "pageDots": false, "percentPosition": false, "wrapAround": true}'
-                            >
+                    <div className="carousel featured-carousel relative">
                         <img src={getAssetPath("/images/events/paint-splatter-large.png")} height="435" width="595" className="absolute left-[-30%] bottom-[-15%] z-0"/>
 
                             {featuredEvents.map((e,i)=>{
                                 return (
                                     <div key={i} data-id={i} className="carousel-cell">
-                                        <img height="450" width="450" src={`/images/events/client-images/${e.clientImage}`} alt={e.eventName}/>
+                                        <img height="450" width="450" src={`/images/events/client-images/${e.clientImage}`} alt={e.eventName} className="flickity-lazyloaded"/>
                                     </div>
                                 )
                             })}
-                            {/* <div className="carousel-cell z-5 relative">
-                                <img height="450" width="450" src={getAssetPath("/images/events/client-images/givher.png")}/>
-                            </div> */}
-                        </div>
-                    {/* </div> */}
+                    </div>
                 </div>
             </div>
         </div>

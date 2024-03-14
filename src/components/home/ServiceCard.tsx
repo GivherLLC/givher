@@ -31,7 +31,7 @@ export default function ServiceCard({serviceCard}:{serviceCard:ServiceCardProps}
             data-flickity-lazyload
             src={getAssetPath(cardImageSrc)}
             alt={cardImageAlt}
-            className="md:group-hover:scale-[1.1] transition duration-400 ease-in-out overflow-hidden"
+            className="flickity-lazyloaded md:group-hover:scale-[1.1] transition duration-400 ease-in-out overflow-hidden"
             height={545}
             width={430}
           />

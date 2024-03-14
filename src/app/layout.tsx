@@ -3,7 +3,6 @@
 import React, {useEffect} from 'react'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import Script from 'next/script';
 import Head from 'next/head';
 
 const inter = Inter({ subsets: ['latin'] })
@@ -40,10 +39,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-      <link
-          rel="stylesheet"
-          href="https://unpkg.com/flickity@2/dist/flickity.min.css"
-        />
         <link rel="icon" href="favicon.ico" />
         <title>Givher Political Hospitality</title>
         <meta name='description' content='Givher LLC is a dynamic and forward-thinking company specializing in fundraising, event development, and political hospitality.'/>
@@ -58,7 +53,6 @@ export default function RootLayout({
         <meta name="keywords" content="Alina Hernandez, Givher, Political Hospitality, Consultant"></meta>
       </Head>
       <body className={inter.className}>{children}</body>
-      <Script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></Script>
     </html>
   )
 }

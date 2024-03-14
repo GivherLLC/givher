@@ -18,6 +18,7 @@ type EventCardProps = {
 }
 
 export default function EventCard({event,type}:{event:EventCardProps, type:"events-page"|"homepage"|"detail-page"}){
+    const path = event.eventName.replace(/\s+/g, '-').toLowerCase();
     return (
         <div className="flex flex-col gap-[1.5rem] border border-navySmoke dark:border-softOpal rounded-[10px] py-[2.5rem] px-[1.5rem] h-full w-full sm:h-[400px] sm:w-[400px] shadow-custom-shadow dark:shadow-custom-shadow-darkmode">
             <div className="flex flex-col gap-[1.5rem]">
@@ -27,7 +28,7 @@ export default function EventCard({event,type}:{event:EventCardProps, type:"even
             </div>
             <div className="flex h-full items-center flex-wrap gap-x-[1.5rem]">
                 {type !== "events-page" && (<EventButton text={event.eventButtonName} link={event.eventButtonLink} bg="electricYellow"/>)}
-                <EventButton text={type === "events-page"? "View Details":"Learn More"} link={`/events/${event.clientName}/${event.eventName}-${event.firstDayOfEvent}/`} bg="mauvelous"/>
+                <EventButton text={type === "events-page"? "View Details":"Learn More"} link={`/events/${path}`} bg="mauvelous"/>
             </div>
         </div>
     )

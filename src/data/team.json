@@ -5,22 +5,10 @@
       "title":"Principal",
       "iconLinks":[
         {
-          "iconImageSrc":"/images/footer/phone-icon.png",
-          "darkmodeSrc":"/images/footer/phone-icon-darkmode.png",
-          "iconImageAlt":"Phone icon",
-          "iconLink":"tel:+916-296-4656"
-        },
-        {
             "iconImageSrc":"/images/footer/mail-icon.png",
             "darkmodeSrc":"/images/footer/mail-icon-darkmode.png",
             "iconImageAlt":"Email icon",
             "iconLink":"`mailto:alina@givher.com"
-        },
-        {
-          "iconImageSrc":"/images/team/linkedin-icon.png",
-          "darkmodeSrc":"/images/team/linkedin-icon-darkmode.png",
-          "iconImageAlt":"LinkedIn icon",
-          "iconLink":""
         }
     ],
       "bio": [
@@ -33,22 +21,10 @@
       "title":"Fundraising Associate",
       "iconLinks":[
         {
-          "iconImageSrc":"/images/footer/phone-icon.png",
-          "darkmodeSrc":"/images/footer/phone-icon-darkmode.png",
-          "iconImageAlt":"Phone icon",
-          "iconLink":""
-        },
-        {
             "iconImageSrc":"/images/footer/mail-icon.png",
             "darkmodeSrc":"/images/footer/mail-icon-darkmode.png",
             "iconImageAlt":"Email icon",
             "iconLink":"`mailto:jay@givher.com"
-        },
-        {
-          "iconImageSrc":"/images/team/linkedin-icon.png",
-          "darkmodeSrc":"/images/team/linkedin-icon-darkmode.png",
-          "iconImageAlt":"LinkedIn icon",
-          "iconLink":""
         }
     ],
       "bio": [

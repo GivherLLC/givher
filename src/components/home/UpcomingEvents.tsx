@@ -11,8 +11,8 @@ type HomepageEventsProps = {
     boldedEventInformation:string[]
     eventLocation:string;
     eventLocationTime:string | null;
-    eventPdfSrc:string | null;
-    eventButtonName:string;
+    eventPdfLink:string | null;
+    eventButtonText:string;
     eventButtonLink:string;
 }[]
 

@@ -10,10 +10,12 @@
     },
     "comingSoon":[
       {
-        "clientName":"",
-        "eventName":"",
-        "eventButtonName":"Get Event Updates",
-        "eventButtonLink":"/contact/"
+        "clientName":"Asian American & Pacific Islander Legislative Caucus Foundation",
+        "eventName":"New Event!",
+        "eventButtonText":"Get Event Updates",
+        "eventButtonLink":"/contact/",
+        "eventDateString": "",
+        "eventLocation":""
       }
     ],
     "events": [
@@ -31,9 +33,10 @@
             ],
         "eventLocation":"San Diego, CA",
         "eventLocationTime":null,
-        "eventPdfSrc":"/pdfs/pride-celebration-07112025.pdf",
-        "eventButtonName":"RSVP",
-        "eventButtonLink":"mailto:alina@givher.com"
+        "eventPdfLink":"/pdfs/pride-celebration-07112025.pdf",
+        "eventButtonText":"RSVP",
+        "eventButtonLink":"mailto:alina@givher.com",
+        "detailImage":"/images/events/detail-page-images/1.png"
       },
       {
         "clientName":"California Legislative LGBTQ Foundation",
@@ -44,14 +47,15 @@
          "A Western-themed event celebrating the 2024 LGBTQ+ Pride Month honorees, including a separate VIP reception to meet them."
             ],
           "boldedEventInformation":[
-            "",
-            ""
+            "Please remit checks to: California Legislative LGBTQ Foundation",
+            "Mail to: 5445 Madison Avenue, Sacramento, CA 95841"
             ],
         "eventLocation":"Tiger",
         "eventLocationTime":null, 
-        "eventPdfSrc":"/pdfs/pride-celebration-07112025.pdf",
-        "eventButtonName":"RSVP",
-        "eventButtonLink":"mailto:alina@givher.com"
+        "eventPdfLink":"/pdfs/pride-celebration-07112025.pdf",
+        "eventButtonText":"RSVP",
+        "eventButtonLink":"mailto:alina@givher.com",
+        "detailImage":"/images/events/detail-page-images/2.png"
       }
     ]
   }

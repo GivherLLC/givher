@@ -217,4 +217,9 @@ body {
   .flickity-button {
     display: none;
   }
+
+  .featured-carousel .carousel-cell img {
+    height: 80%;
+    width: 80%;
+  }
 }

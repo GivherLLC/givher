@@ -1,0 +1,30 @@
+{
+    "comingSoon":[
+        {
+          "clientName":"",
+          "eventName":"",
+          "eventButtonText":"Get Event Updates",
+          "eventButtonLink":"/contact"
+        }
+      ],
+      "events":[
+        {
+            "clientName":"",
+            "eventName":"",
+            "eventDateString":"",
+            "firstDayOfEvent": "",
+            "eventDescription":[
+             ""
+                ],
+              "boldedEventInformation":[
+                ""
+                ],
+            "eventLocation":"",
+            "eventLocationTime":"",
+            "eventPdfLink":"",
+            "eventButtonText":"",
+            "eventButtonLink":"",
+            "detailImage":""
+        }
+      ]
+}

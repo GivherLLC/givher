@@ -7,16 +7,26 @@ export type EventType = {
     boldedEventInformation:string[]
     eventLocation:string;
     eventLocationTime:string | null;
-    eventPdfSrc:string | null;
-    eventButtonName:string;
+    eventPdfLink:string;
+    eventButtonText:string;
     eventButtonLink:string;
+    detailImage:string;
 }
 
 export type FeaturedEventType = {
     eventName: string;
-    eventDate: string;
     eventLocation: string;
-    eventButtonName: string;
+    eventDateString: string;
+    eventButtonText: string;
     eventButtonLink: string;
     clientImage: string;
+}
+
+export type ComingSoonEventType = {
+    clientName:string;
+    eventName:string;
+    eventButtonText:string;
+    eventButtonLink:string;
+    eventDateString:string;
+    eventLocation:string;
 }

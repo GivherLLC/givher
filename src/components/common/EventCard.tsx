@@ -1,34 +1,21 @@
 import React from "react";
-// import dynamic from "next/dynamic";
 import EventButton from "../common/EventButton";
-// const EventButton = dynamic(() => import('../common/EventButton'), { ssr: false });
+import { EventType, ComingSoonEventType } from "@/types/types";
 
-type EventCardProps = {
-    clientName:string;
-    eventName:string;
-    eventDateString:string;
-    firstDayOfEvent:string;
-    eventDescription:string[];
-    boldedEventInformation:string[]
-    eventLocation:string;
-    eventLocationTime:string | null;
-    eventPdfSrc:string | null;
-    eventButtonName:string;
-    eventButtonLink:string;
-}
+type EventCardProps = EventType | ComingSoonEventType;
 
-export default function EventCard({event,type}:{event:EventCardProps, type:"events-page"|"homepage"|"detail-page"}){
+export default function EventCard({event,type}:{event:EventCardProps, type:"all-events"|"homepage"|"detail-page"|"coming-soon"}){
     const path = event.eventName.replace(/\s+/g, '-').toLowerCase();
     return (
-        <div className="flex flex-col gap-[1.5rem] border border-navySmoke dark:border-softOpal rounded-[10px] py-[2.5rem] px-[1.5rem] h-full w-full sm:h-[400px] sm:w-[400px] shadow-custom-shadow dark:shadow-custom-shadow-darkmode">
-            <div className="flex flex-col gap-[1.5rem]">
+        <div className={`flex flex-col gap-[1.5rem] sm:gap-[0rem] border border-navySmoke dark:border-softOpal rounded-[10px] py-[2.5rem] px-[1.5rem] h-content w-full max-w-[400px] max-h-[400px] ${type === "detail-page" || type === "coming-soon" ? "sm:h-[300px]":"sm:h-[400px]"} sm:w-[400px] shadow-custom-shadow dark:shadow-custom-shadow-darkmode`}>
+            <div className="h-[50%] flex flex-col gap-[1rem]">
                 <h3 className="font-ramenson text-navySmoke text-xl dark:text-softOpal">{event.eventName}</h3>
-                <p className="pl-[1rem] text-navySmoke dark:text-softOpal">{event.eventDateString} | {event.eventLocation}</p>
-                <p className="uppercase text-navySmoke font-bold dark:text-softOpal">{event.clientName}</p>
+                {type !== "coming-soon" && 'eventDateString' in event && 'eventLocation' in event && <p className="pl-[1rem] text-navySmoke dark:text-softOpal">{event.eventDateString} | {event.eventLocation}</p>}
+                {type !== "detail-page" && <p className="uppercase text-navySmoke font-bold dark:text-softOpal">{event.clientName}</p>}
             </div>
-            <div className="flex h-full items-center flex-wrap gap-x-[1.5rem]">
-                {type !== "events-page" && (<EventButton text={event.eventButtonName} link={event.eventButtonLink} bg="electricYellow"/>)}
-                <EventButton text={type === "events-page"? "View Details":"Learn More"} link={`/events/${path}`} bg="mauvelous"/>
+            <div className="h-[50%] flex items-center flex-wrap gap-x-[1.5rem] gap-y-[1rem]">
+                {type !== "all-events" &&  (<EventButton text={event.eventButtonText} link={event.eventButtonLink} bg="electricYellow"/>)}
+                {type !== "coming-soon" &&<EventButton text={type === "all-events"? "View Details":"Learn More"} link={`/events/detail/${path}`} bg="mauvelous"/>}
             </div>
         </div>
     )

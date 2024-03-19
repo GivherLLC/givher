@@ -2,7 +2,7 @@ import React from 'react';
 import GlobalLayout from '@/components/GlobalLayout';
 import EventsPage from '@/components/events/EventsPage';
 
-export default function Home() { 
+export default function EventsMainPage() { 
   return (
     <>
       <GlobalLayout>

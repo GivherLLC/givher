@@ -1,5 +1,4 @@
 import React from "react";
-import ArrowLink from "../common/ArrowLink";
 import EventCard from "../common/EventCard";
 import { EventType } from "@/types/types";
 

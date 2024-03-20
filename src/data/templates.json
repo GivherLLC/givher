@@ -26,5 +26,20 @@
             "eventButtonLink":"",
             "detailImage":""
         }
-      ]
+      ],
+      "clients": [
+          {
+              "clientName:":"",
+              "clientImageSrc":"",
+              "clientWebsite":"",
+              "clientW9Src":""
+          }
+      ],
+      "testimonials": [
+        {
+            "quoteeName":"",
+            "quote":"",
+            "organization":""
+        }
+    ]
 }

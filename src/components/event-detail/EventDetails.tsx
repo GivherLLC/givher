@@ -1,7 +1,6 @@
 import React from "react";
 import { getAssetPath } from "@/utils/assetPath";
 import { EventType } from "@/types/types";
-import eventsData from "../../data/events.json";
 import ArrowLink from "../common/ArrowLink";
 
 export default function EventDetails({event}:{event:EventType}){

@@ -30,3 +30,9 @@ export type ComingSoonEventType = {
     eventDateString:string;
     eventLocation:string;
 }
+
+export type TestimonialType = {
+    quoteeName: string;
+    quote: string;
+    organization: string;
+}

@@ -24,7 +24,7 @@ export default function Footer(){
                             ))}
                         </div>
                         <div className="flex flex-col items-center justify-between gap-[2rem]">
-                            <h2 className="text-navySmoke dark:text-softOpal uppercase font-bold text-center">SIGN UP NOw FOR EVENT UPDATES</h2>
+                            <h2 className="text-navySmoke dark:text-softOpal uppercase font-bold text-center max-w-[375px]">SIGN UP NOw FOR EVENT UPDATES</h2>
                             <ButtonLink type="flat" bg="mauvelous" darkModeBg="electricYellow" text="Sign Up" link="/contact/" />
                         </div>
                     </div>

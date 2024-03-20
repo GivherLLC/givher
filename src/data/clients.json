@@ -52,7 +52,11 @@
             "quoteeName":"First Last",
             "quote":"We should have a minimum of three quotes for this section. If we get more, we should turn this into a carousel that user’s can scroll through to see all the wonderful things clients say about Givher",
             "organization":"Very Important Client"
+        },
+        {
+            "quoteeName":"Carousel Test",
+            "quote":"More than 3 cards results in a carousel on the web browser. Testing how this is viewed ensures a good user experience.",
+            "organization":"Another One"
         }
-
     ]
 }

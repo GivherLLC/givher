@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function Navbar(){
     const [navOpen, setNavOpen] = useState(false);
-    // const [darkMode, setDarkMode] = useState(false);
+    const [darkMode, setDarkMode] = useState(false);
     const [mounted, setMounted] = useState(false);
     const isMobile = useIsMobile(768);
 
@@ -37,20 +37,20 @@ export default function Navbar(){
         setMounted(true); // Set mounted to true after component mounts
       }, []);
 
-    // useEffect(() => {
-    //     // Check local storage for user preference
-    //     const isDarkMode = localStorage.getItem('darkMode') === 'true';
-    //     setDarkMode(isDarkMode);
-    //   }, []);
+    useEffect(() => {
+        // Check local storage for user preference
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+        setDarkMode(isDarkMode);
+      }, []);
     
-    //   useEffect(() => {
-    //     // Update local storage when dark mode changes
-    //     if (mounted) {
-    //       localStorage.setItem('darkMode', darkMode.toString());
-    //       // Apply or remove 'dark' class from <body> based on darkMode state
-    //       document.body.classList.toggle('dark', darkMode);
-    //     }
-    //   }, [darkMode, mounted]);
+      useEffect(() => {
+        // Update local storage when dark mode changes
+        if (mounted) {
+          localStorage.setItem('darkMode', darkMode.toString());
+          // Apply or remove 'dark' class from <body> based on darkMode state
+          document.body.classList.toggle('dark', darkMode);
+        }
+      }, [darkMode, mounted]);
 
     return (
         <header className="sticky top-0 z-40 shadow-lg bg-softOpal dark:bg-navySmoke flex justify-center">
@@ -73,7 +73,7 @@ export default function Navbar(){
                         />
                     </Link>    
                 </button>
-                {/* <div
+                <div
                     data-id="dark mode toggle"
                     className="flex justify-center items-center gap-[1rem]"
                 >
@@ -100,7 +100,7 @@ export default function Navbar(){
                     
                     </label>
                     <p className="text-black dark:text-mauvelous">Dark Mode</p>
-                </div> */}
+                </div>
                 <nav className="flex flex-row gap-[1rem] font-medium items-center">
                     <ul className="hidden sm:flex justify-center items-center gap-[3rem]">
                         <li className="w-[66px] flex justify-center"><Link href="/clients/" className="text-navySmoke dark:text-electricYellow hover:font-bold transition-font duration-200 ease-in-out">Clients</Link></li>

@@ -5,7 +5,8 @@ export type EventType = {
     firstDayOfEvent:string;
     eventDescription:string[];
     boldedEventInformation:string[]
-    eventLocation:string;
+    eventCity:string;
+    eventLocation: string | null;
     eventLocationTime:string | null;
     eventPdfLink:string;
     eventButtonText:string;
@@ -15,7 +16,7 @@ export type EventType = {
 
 export type FeaturedEventType = {
     eventName: string;
-    eventLocation: string;
+    eventCity: string;
     eventDateString: string;
     eventButtonText: string;
     eventButtonLink: string;
@@ -28,7 +29,7 @@ export type ComingSoonEventType = {
     eventButtonText:string;
     eventButtonLink:string;
     eventDateString:string;
-    eventLocation:string;
+    eventCity:string;
 }
 
 export type TestimonialType = {

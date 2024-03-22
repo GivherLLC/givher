@@ -17,20 +17,20 @@ export default function FeaturedEvents({events}:{events:FeaturedEventsProps}){
             {
                 eventName: "Upcoming Events",
                 eventDateString: "",
-                eventLocation: "",
+                eventCity: "",
                 eventButtonText: "View Events",
                 eventButtonLink: "#events",
                 clientImage: "givher.png",
             },
         ];
         const addEvents = events.map((e)=>{
-            const { clientName, eventName, eventDateString, eventLocation, eventButtonText, eventButtonLink } = e;
+            const { clientName, eventName, eventDateString, eventCity, eventButtonText, eventButtonLink } = e;
             const clientImage = clientImages[clientName];
         
             return {
                 eventName,
                 eventDateString,
-                eventLocation,
+                eventCity,
                 eventButtonText,
                 eventButtonLink,
                 clientImage,
@@ -101,7 +101,7 @@ export default function FeaturedEvents({events}:{events:FeaturedEventsProps}){
                                         <div className="flex gap-[1rem] mb-[1rem]">
                                             <p className="border-box text-black dark:text-softOpal font-semibold">{e.eventDateString}</p>
                                             <div className="border-box text-black dark:text-softOpal font-semibold border-l border-[1.5px] border-black"/>
-                                            <p className="border-box text-black dark:text-softOpal font-semibold">{e.eventLocation}</p>
+                                            <p className="border-box text-black dark:text-softOpal font-semibold">{e.eventCity}</p>
                                         </div>
                                     )}
                                     </div>

@@ -9,7 +9,7 @@ type HomepageEventsProps = {
     firstDayOfEvent:string;
     eventDescription:string[];
     boldedEventInformation:string[]
-    eventLocation:string;
+    eventCity:string;
     eventLocationTime:string | null;
     eventPdfLink:string | null;
     eventButtonText:string;

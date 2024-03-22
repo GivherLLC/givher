@@ -17,7 +17,7 @@ export default function Footer(){
                     <div className="w-full md:w-1/3 flex flex-col-reverse md:flex-col items-center justify-between gap-[2rem] mb-[1rem] md:mb-[0rem]">
                         <div data-id="footer-icons" className="flex gap-[2rem]">
                             {footerData.iconLinks.map((i)=>(
-                                <Link key={i.iconImageAlt} href={i.iconLink}>
+                                <Link key={i.iconImageAlt} href={i.iconLink} target="_blank">
                                     <img src={getAssetPath(i.iconImageSrc)} alt={i.iconImageAlt} height={30} width={30} className="dark:hidden hover:scale-[1.1] transition-transform ease-in-out"/>
                                     <img src={getAssetPath(i.darkmodeSrc)} alt={i.iconImageAlt} height={30} width={30} className="hidden dark:block hover:scale-125 hover:scale-[1.1] transition-transform ease-in-out"/>
                                 </Link>

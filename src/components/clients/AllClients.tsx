@@ -18,12 +18,12 @@ export default function AllClients(){
                                 <p className="text-softOpal">{c.clientName}</p>
                                 <div className="flex justify-between">
                                     {c.clientWebsite && (
-                                        <Link className={`bg-electricYellow p-[0.75rem] min-w-[120px] rounded-[.5rem] font-medium text-black text-center`} href={c.clientWebsite}>
+                                        <Link className={`bg-electricYellow p-[0.75rem] min-w-[120px] rounded-[.5rem] font-medium text-black text-center`} href={c.clientWebsite} target="_blank">
                                             Website
                                         </Link>
                                     )}
                                     {c.clientW9Src && (
-                                        <Link className={`bg-softOpal p-[0.75rem] min-w-[120px] rounded-[.5rem] font-medium text-black text-center`} href={c.clientW9Src}>
+                                        <Link className={`bg-softOpal p-[0.75rem] min-w-[120px] rounded-[.5rem] font-medium text-black text-center`} href={c.clientW9Src} target="_blank">
                                            W-9
                                         </Link>
                                     )}

@@ -14,8 +14,8 @@
         "eventName":"New Event!",
         "eventButtonText":"Get Event Updates",
         "eventButtonLink":"/contact/",
-        "eventDateString": "",
-        "eventLocation":""
+        "eventDateString": "Coming soon!",
+        "eventCity":"TBD"
       }
     ],
     "events": [
@@ -31,7 +31,8 @@
             "Please remit checks to: California Legislative LGBTQ Foundation",
             "Mail to: 5445 Madison Avenue, Sacramento, CA 95841"
             ],
-        "eventLocation":"San Diego, CA",
+        "eventCity":"San Diego",
+        "eventLocation": null,
         "eventLocationTime":null,
         "eventPdfLink":"/pdfs/pride-celebration-07112025.pdf",
         "eventButtonText":"RSVP",
@@ -50,7 +51,8 @@
             "Please remit checks to: California Legislative LGBTQ Foundation",
             "Mail to: 5445 Madison Avenue, Sacramento, CA 95841"
             ],
-        "eventLocation":"Tiger",
+        "eventCity":"Sacramento",
+        "eventLocation": "Tiger",
         "eventLocationTime":null, 
         "eventPdfLink":"/pdfs/pride-celebration-07112025.pdf",
         "eventButtonText":"RSVP",

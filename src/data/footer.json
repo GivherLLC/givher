@@ -1,5 +1,5 @@
 {
-    "logoSrc":"/images/footer/footer-logo.png",
+    "logoSrc":"/images/footer/footer-logo-4.png",
     "darkModeLogoSrc":"/images/footer/footer-logo-darkmode.png",
     "iconLinks":[
         {
@@ -39,7 +39,7 @@
         },
         {
             "linkText":"Marketing Kit",
-            "link":""
+            "link":"https://drive.google.com/drive/folders/1MqXIb1rcy_O-UdC0dOmAWMTCrQfycC8D?usp=sharing"
         }
     ]
 }

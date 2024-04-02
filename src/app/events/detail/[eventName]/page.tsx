@@ -37,7 +37,13 @@ export default function EventsDetailPage ({params: {eventName}}:EventDetailPageP
 };
 
 export async function generateStaticParams() {
-  const events = eventsData.events;
+  const events = eventsData.events.filter((event)=> {
+    const currentDate = new Date();
+      // Convert the string date to a Date object
+      const eventDate = new Date(event.firstDayOfEvent);
+      // Compare the event date with the current date
+      return eventDate >= currentDate;
+  });
 
    return events.map(event => ({
       eventName: event.eventName.replace(/\s+/g, '-').toLowerCase()

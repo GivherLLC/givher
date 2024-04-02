@@ -117,7 +117,7 @@ export default function Navbar(){
             </div>
             {navOpen && (
                     <div className="fixed top-[58px] h-screen w-screen bg-softOpal dark:bg-navySmoke">
-                        <nav className="flex flex-col items-center font-visbyBold gap-10 p-5">
+                        <nav className="flex flex-col items-center font-visbyBold gap-10 px-5 py-10">
                             <Link href="/clients/" onClick={()=>{setNavOpen(!navOpen)}} className="text-navySmoke dark:text-electricYellow hover:text-navySmoke">Clients</Link>
                             <Link href="/events/" onClick={()=>{setNavOpen(!navOpen)}} className="text-navySmoke dark:text-electricYellow hover:text-navySmoke">Events</Link>
                             <Link href="/team/" onClick={()=>{setNavOpen(!navOpen)}} className="text-navySmoke dark:text-electricYellow hover:text-navySmoke">Team</Link>

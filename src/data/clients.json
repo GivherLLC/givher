@@ -2,37 +2,37 @@
     "clients": [
         {
             "clientName":"Asian and Pacific Islander Legislative Caucus Foundation",
-            "clientImageSrc":"/images/clients/clients-aapi-legislative-caucus.png",
+            "clientImageSrc":"/images/clients/clients-aapi-legislative-caucus-1.png",
             "clientWebsite":"",
             "clientW9Src":"https://drive.google.com/file/d/1qxwMDz3f7tpNexPcmdU0jq1C3LC7Ll6d/view?usp=drive_link"
         },
         {
             "clientName":"California LGBTQ Foundation",
-            "clientImageSrc":"/images/clients/clients-califnornia-lgbtq-foundation.png",
+            "clientImageSrc":"/images/clients/clients-califnornia-lgbtq-foundation-1.png",
             "clientWebsite":"https://calgbtfoundation.org/",
             "clientW9Src":"https://drive.google.com/drive/folders/1bI5bqfKpwBaYnuqOpwVkPIFFdeXtK88Y?usp=drive_link"
         },
         {
             "clientName":"Micro Dosing Collective",
-            "clientImageSrc":"/images/clients/clients-micro-dosing-collective.png",
+            "clientImageSrc":"/images/clients/clients-micro-dosing-collective-1.png",
             "clientWebsite":"https://www.microdosingcollective.org/",
             "clientW9Src":""
         },
         {
             "clientName":"New California Coalition",
-            "clientImageSrc":"/images/clients/clients-ncc.png",
+            "clientImageSrc":"/images/clients/clients-ncc-1.png",
             "clientWebsite":"https://www.newcaliforniacoalition.org/",
             "clientW9Src":""
         },
         {
             "clientName":"Planned Parenthood Affiliates of California",
-            "clientImageSrc":"/images/clients/clients-planned-parenthood.png",
+            "clientImageSrc":"/images/clients/clients-planned-parenthood-1.png",
             "clientWebsite":"https://www.plannedparenthoodaction.org/planned-parenthood-affiliates-california",
             "clientW9Src":""
         },
         {
             "clientName":"Sacramento LGBT Community Center",
-            "clientImageSrc":"/images/clients/clients-sacramento-lgbt-community-center.png",
+            "clientImageSrc":"/images/clients/clients-sacramento-lgbt-community-center-1.png",
             "clientWebsite":"https://saccenter.org/",
             "clientW9Src":"https://drive.google.com/file/d/1M7ymgly3MYgP-vUpFnk41uYjz8tiBMeB/view?usp=drive_link"
         }

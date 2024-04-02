@@ -12,7 +12,7 @@ export default function GlobalLayout({
       <div>
         <div className="flex flex-col justify-between min-h-screen bg-off-white dark:bg-dark-blue">
           <Navbar />
-          <main className="block min-h-[100vh - 291px] bg-off-white dark:bg-dark-blue">
+          <main className="block min-h-[calc(100vh-291px)] bg-off-white dark:bg-dark-blue">
             {children}
           </main>
           <Footer/>

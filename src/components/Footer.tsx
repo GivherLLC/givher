@@ -11,7 +11,7 @@ export default function Footer(){
             <div className="max-w-[85.75rem] w-full py-[4rem] mx-[0.625rem] md:px-[1.5625rem] flex justify-center">
                 <div className="w-full flex flex-col-reverse md:flex-row gap-[2rem] md:gap-[0rem] items-center md:items-start justify-center">
                     <div className="w-full md:w-1/3 flex justify-center md:justify-start">
-                        <img src={getAssetPath(footerData.logoSrc)} alt="Givher Logo" className="dark:hidden"/>
+                        <img src={getAssetPath(footerData.logoSrc)} alt="Givher Logo" className="dark:hidden" height={190} width={174}/>
                         <img src={getAssetPath(footerData.darkModeLogoSrc)} alt="Givher Logo" className="hidden dark:block"/>
                     </div>
                     <div className="w-full md:w-1/3 flex flex-col-reverse md:flex-col items-center justify-between gap-[2rem] mb-[1rem] md:mb-[0rem]">

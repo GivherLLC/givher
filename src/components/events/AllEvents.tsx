@@ -1,23 +1,10 @@
 import React from "react";
-import EventCard from "../common/EventCard";
 import EventButton from "../common/EventButton";
 import EventsFilter from "./EventsFilter";
+import { EventType } from "@/types/types";
 
-type AllEventsProps = {
-    clientName:string;
-    eventName:string;
-    eventDateString:string;
-    firstDayOfEvent:string;
-    eventDescription:string[];
-    boldedEventInformation:string[]
-    eventCity:string;
-    eventLocationTime:string | null;
-    eventPdfLink:string | null;
-    eventButtonText:string;
-    eventButtonLink:string;
-}[]
 
-export default function AllEvents({events}:{events:AllEventsProps}){
+export default function AllEvents({events}:{events:EventType[]}){
     return (
         <div id="events" className="bg-softOpal dark:bg-navySmoke py-[2.5rem] flex justify-center">
             <div className="flex flex-col w-full justify-center gap-[1rem] max-w-[85.75rem] mx-[0.625rem] lg:mx-[1.5625rem]">
@@ -28,7 +15,7 @@ export default function AllEvents({events}:{events:AllEventsProps}){
                         <EventButton text="Sign Up" link="/contact" bg="mauvelous"/>
                     </div>
                 ):(
-                    <EventsFilter/>
+                    <EventsFilter events={events}/>
                 )}
             </div>
         </div>

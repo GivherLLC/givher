@@ -10,9 +10,9 @@ export default function GlobalLayout({
   return (
     <>
       <div>
-        <div className="flex flex-col justify-between min-h-screen bg-off-white dark:bg-dark-blue">
+        <div className="flex flex-col justify-between min-h-screen bg-softOpal dark:bg-navySmoke">
           <Navbar />
-          <main className="block min-h-[calc(100vh-291px)] bg-off-white dark:bg-dark-blue">
+          <main className="h-full flex flex-col flex-grow bg-softOpal dark:bg-navySmoke">
             {children}
           </main>
           <Footer/>

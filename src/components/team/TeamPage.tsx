@@ -31,7 +31,7 @@ export default function TeamPage(){
                 <h1 className="font-ramenson text-navySmoke dark:text-softOpal">{title}</h1>
                 <div className="w-full flex flex-col xl:flex-row justify-between gap-[5rem] py-[2rem]">
                     <div data-id="alina" className="flex flex-col md:flex-row xl:flex-col justify-center items-center gap-[2rem] xl:gap-[1rem] w-full xl:w-1/2">
-                        <img onMouseEnter={()=>{handleMouseEnter('Alina')}} onMouseLeave={handleMouseLeave} src={getAssetPath("/images/team/alina-headshot.png")} alt="Alina Hernandez headshot" className="w-[60%] max-w-[420px] mb-[1rem]"/>
+                        <img onMouseEnter={()=>{handleMouseEnter('Alina')}} onMouseLeave={handleMouseLeave} src={getAssetPath("/images/team/alina-headshot.png")} height={420} width={420} alt="Alina Hernandez headshot" className="w-[60%] max-w-[420px] mb-[1rem]"/>
                         <div className="flex flex-col gap-[1rem] justify-center items-center">
                             <h2 className="font-ramenson text-navySmoke dark:text-electricYellow text-[2rem] text-center">Alina<br/>Hernandez</h2>
                             <p className="text-mauvelous dark:text-softOpal text-[1.5rem] text-center font-semibold">{alina.title}</p>
@@ -40,7 +40,7 @@ export default function TeamPage(){
                                 {alina.iconLinks.map((i)=>(
                                     <Link key={i.iconImageAlt} href={i.iconLink}>
                                         <img src={getAssetPath(i.iconImageSrc)} alt={i.iconImageAlt} height={27} width={27} className="dark:hidden hover:scale-[1.1] transition-transform ease-in-out"/>
-                                        <img src={getAssetPath(i.darkmodeSrc)} alt={i.iconImageAlt} height={27} width={27} className="hidden dark:block hover:scale-125 hover:scale-[1.1] transition-transform ease-in-out"/>
+                                        <img src={getAssetPath(i.darkmodeSrc)} alt={i.iconImageAlt} height={27} width={27} className="hidden dark:block hover:scale-[1.1] transition-transform ease-in-out"/>
                                     </Link>
                                 ))}
                         </div>
@@ -49,7 +49,7 @@ export default function TeamPage(){
                         </div>
                     </div>
                     <div data-id="jay" className="flex flex-col md:flex-row xl:flex-col justify-center items-center gap-[2rem] xl:gap-[1rem] w-full xl:w-1/2">
-                        <img onMouseEnter={()=>{handleMouseEnter('Jay')}} onMouseLeave={handleMouseLeave} src={getAssetPath("/images/team/jay-headshot.png")} alt="Jay Franco headshot" className=" w-[60%] max-w-[420px] mb-[1rem]"/>
+                        <img onMouseEnter={()=>{handleMouseEnter('Jay')}} onMouseLeave={handleMouseLeave} src={getAssetPath("/images/team/jay-headshot.png")} height={420} width={420} alt="Jay Franco headshot" className=" w-[60%] max-w-[420px] mb-[1rem]"/>
                         <div className="flex flex-col gap-[1rem] justify-center items-center">
                             <h2 className="font-ramenson text-navySmoke dark:text-electricYellow text-[2rem] text-center">Jay<br/>Franco</h2>
                             <p className="text-mauvelous dark:text-softOpal text-[1.5rem] text-center font-semibold">{jay.title}</p>
@@ -58,7 +58,7 @@ export default function TeamPage(){
                                 {jay.iconLinks.map((i)=>(
                                     <Link key={i.iconImageAlt} href={i.iconLink}>
                                         <img src={getAssetPath(i.iconImageSrc)} alt={i.iconImageAlt} height={27} width={27} className="dark:hidden hover:scale-[1.1] transition-transform ease-in-out"/>
-                                        <img src={getAssetPath(i.darkmodeSrc)} alt={i.iconImageAlt} height={27} width={27} className="hidden dark:block hover:scale-125 hover:scale-[1.1] transition-transform ease-in-out"/>
+                                        <img src={getAssetPath(i.darkmodeSrc)} alt={i.iconImageAlt} height={27} width={27} className="hidden dark:block hover:scale-[1.1] transition-transform ease-in-out"/>
                                     </Link>
                                 ))}
                             </div>

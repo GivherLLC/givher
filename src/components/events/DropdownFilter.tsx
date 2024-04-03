@@ -17,7 +17,7 @@ const DropdownFilter: React.FC<DropdownFilterProps> = ({ options, selected, onSe
   };
 
   return (
-    <div className='relative flex items-center'>
+    <div className='relative flex items-center w-fit'>
     <select
       onChange={handleChange}
       className={`bg-softOpal dark:bg-navySmoke text-navySmoke dark:text-softOpal font-medium w-full ${selected ? "w-full":"max-w-[100px]"} cursor-pointer text-ellipsis overflow-hidden whitespace-nowrap pr-[30px] focus:outline-none border-none`}

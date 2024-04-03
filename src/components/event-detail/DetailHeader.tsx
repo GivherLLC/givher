@@ -21,7 +21,7 @@ export default function DetailHeader({event}:{event:EventType}){
                     </div>
                 </div>
                 <div className="w-full md:w-1/2 flex justify-center">
-                    <img height="450" width="450" src={getAssetPath(`/images/events/client-images/${clientImage}`)} alt={eventName} className="w-[60%] sm:w-[unset]"/>
+                    <img height={450} width={450} src={getAssetPath(`/images/events/client-images/${clientImage}`)} alt={eventName} className="w-[60%] sm:w-[unset]"/>
                 </div>
             </div>
         </div>

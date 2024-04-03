@@ -126,12 +126,12 @@ export default function FeaturedEvents({events}:{events:FeaturedEventsProps}){
                         </div>
                     </div>
                     <div className="carousel featured-carousel order-1 md:order-2 relative h-full md:h-[366px]">
-                        <img src={getAssetPath("/images/events/paint-splatter-large.png")} alt="paint splatter" height="435" width="595" className="hidden md:block md:absolute left-[-30%] bottom-[-15%] z-0"/>
+                        <img src={getAssetPath("/images/events/paint-splatter-large.png")} alt="paint splatter" height={435} width={595} className="hidden md:block md:absolute left-[-30%] bottom-[-15%] z-0"/>
 
                             {featuredEvents.map((e,i)=>{
                                 return (
                                     <div key={i} data-id={i} className="carousel-cell">
-                                        <img height="450" width="450" src={getAssetPath(`/images/events/client-images/${e.clientImage}`)} alt={e.eventName} className="flickity-lazyloaded"/>
+                                        <img height={450} width={450} src={getAssetPath(`/images/events/client-images/${e.clientImage}`)} alt={e.eventName} className="flickity-lazyloaded"/>
                                     </div>
                                 )
                             })}

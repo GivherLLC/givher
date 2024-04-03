@@ -15,15 +15,26 @@ export default function Homepage(){
     const {video, logos, services, featuredEvents, about, eventCarousel, form} = homepageData;
     const { events } = eventsData;
 
-    //Need to add util that goes through events data and grabs the 3 events that are coming up
-    //Need to handle case of less than 3 events in data
+    const currentDate = new Date().getTime();
+    const upcomingEvents = events.sort((a, b) => {
+        const dateA = new Date(a.firstDayOfEvent).getTime();
+        const dateB = new Date(b.firstDayOfEvent).getTime();
+        // Exclude past events during sorting
+        return dateA >= currentDate ? (dateB >= currentDate ? dateA - dateB : -1) : 1;
+    }).filter(event => {
+        const eventDate = new Date(event.firstDayOfEvent).getTime();
+        // Exclude events happening on the current day
+        return eventDate > currentDate;
+    }).slice(0, 3);
 
     return (
         <>
             <HeroVideo data={video}/>
             <FloatingLogos logos={logos}/>
             <Services services={services}/>
-            <UpcomingEvents title={featuredEvents.title} events={events}/>
+            {!!upcomingEvents.length && (
+                <UpcomingEvents title={featuredEvents.title} events={upcomingEvents}/>
+            )}
             <AboutUs aboutInfo={about}/>
             <EventsCarousel events={eventCarousel}/>
             <Form title={form.contactFormTitle}/>

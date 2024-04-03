@@ -16,7 +16,7 @@ type HomepageEventsProps = {
     eventButtonLink:string;
 }[]
 
-export default function events({title, events}:{title:string, events: HomepageEventsProps}){
+export default function UpcomingEvents({title, events}:{title:string, events: HomepageEventsProps}){
 
     return (
         <div className="bg-softOpal dark:bg-navySmoke py-[2.5rem] flex justify-center">

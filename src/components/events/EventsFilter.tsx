@@ -6,6 +6,7 @@ import { EventType } from '@/types/types';
 import EventCard from '../common/EventCard';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import useIsMobile from '@/hooks/useIsMobile';
 
 export default function EventsFilter({events}:{events:EventType[]}){
   const [selectedCity, setSelectedCity] = useState<string>('');
@@ -14,6 +15,7 @@ export default function EventsFilter({events}:{events:EventType[]}){
   const today = new Date()
   const [startDate, setStartDate] = useState<null | Date>(null);
   const [endDate, setEndDate] = useState<null | Date>(null);
+  const isMobile = useIsMobile(768);
 
   const filteredEvents = useMemo(()=>{
     return  events.filter((event: EventType) =>
@@ -66,7 +68,7 @@ export default function EventsFilter({events}:{events:EventType[]}){
         <div className={`flex flex-col md:flex-row justify-start ${events.length < 3 ? "md:justify-center": "md:justify-end"} gap-[2rem] max-w-[398px] md:max-w-[unset] md:pr-[5rem] flex-wrap`}>
           <DropdownFilter options={cities} selected={selectedCity} onSelect={handleCitySelect} placeholder='City'/>
           <DropdownFilter options={clients} selected={selectedClient} onSelect={handleClientSelect} placeholder='Client'/>
-          <div className='relative flex gap-[1rem] items-center'>
+          <div className='relative flex gap-[1rem] items-center w-fit'>
                 {!startDate && !endDate && (
                   <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -97,6 +99,7 @@ export default function EventsFilter({events}:{events:EventType[]}){
                   minDate={today}
                   dateFormat="MM/dd/yyyy"
                   closeOnScroll={true}
+                  {...(isMobile && { withPortal: true })}
                   className={`${startDate && endDate ? "min-w-[225px]":"max-w-[150px]"} custom-date-picker-container cursor-pointer font-medium color-black focus:outline-none bg-softOpal text-navySmoke dark:text-softOpal dark:bg-navySmoke placeholder:text-black dark:placeholder:text-softOpal`}
                   />   
               {startDate && endDate && (
@@ -110,7 +113,7 @@ export default function EventsFilter({events}:{events:EventType[]}){
       )}
           </div>
           
-          <div className='relative flex gap-[1rem]'>
+          <div className='relative flex gap-[1rem] w-fit'>
                   <svg  
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -130,7 +133,7 @@ export default function EventsFilter({events}:{events:EventType[]}){
               {searchQuery && (
                   <button
                   onClick={()=>{setSearchQuery('')}}
-                  className="absolute right-[25px] p-0 ml-auto h-[15px] w-[15px]"
+                  className="h-[15px] w-[15px]"
                   >
                       <div className={`h-[2px] w-full bg-navySmoke dark:bg-softOpal transform translate-y-[25%] rotate-[-45deg]`}/>
                       <div className={`h-[2px] w-full bg-navySmoke dark:bg-softOpal transform -translate-y-[50%] rotate-45`}/>

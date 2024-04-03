@@ -12,7 +12,7 @@ export default function Footer(){
                 <div className="w-full flex flex-col-reverse md:flex-row gap-[2rem] md:gap-[0rem] items-center md:items-start justify-center">
                     <div className="w-full md:w-1/3 flex justify-center md:justify-start">
                         <img src={getAssetPath(footerData.logoSrc)} alt="Givher Logo" className="dark:hidden" height={190} width={174}/>
-                        <img src={getAssetPath(footerData.darkModeLogoSrc)} alt="Givher Logo" className="hidden dark:block"/>
+                        <img src={getAssetPath(footerData.darkModeLogoSrc)} alt="Givher Logo" className="hidden dark:block" height={190} width={174}/>
                     </div>
                     <div className="w-full md:w-1/3 flex flex-col-reverse md:flex-col items-center justify-between gap-[2rem] mb-[1rem] md:mb-[0rem]">
                         <div data-id="footer-icons" className="flex gap-[2rem]">

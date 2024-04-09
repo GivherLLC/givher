@@ -38,11 +38,11 @@
     }
   ],
   "services":{
-    "servicesCarouselTitle":"What Givher Can Do For You",
+    "servicesCarouselTitle":"Elevate Your Mission With Us",
     "sevicesCarouselCards":[
       {
-        "cardTitle":"Fundraising",
-        "cardDescription":"Professional Fundraising Services for Planned Parenthood Education Fund: is pivotal in sustaining and expanding essential services and contributing to the mission of PPAC. Givher LLC offers expertise in developing effective fundraising strategies to help you achieve your goals. Our fundraising services will encompass the following:",
+        "cardTitle":"Professional Fundraising",
+        "cardDescription":"Fundraising is pivotal in sustaining and expanding essential services and contributing to the mission of your brand. Givher offers expertise in developing effective fundraising strategies to help you achieve your goals.",
         "cardImageSrc":"/images/home/services/fundraising.png",
         "cardImageAlt":"A group of people fundraising for a cause",
         "cardLinkText":"View Clients",
@@ -50,7 +50,7 @@
       },
       {
         "cardTitle":"Event Management",
-        "cardDescription":"Event Development Services: Events are vital for raising awareness, educating, and engaging communities. Givher provides comprehensive event development services to make these events effective and memorable.",
+        "cardDescription":"Events are vital for raising awareness, educating, and engaging communities. Givher provides comprehensive event development services to make events effective and memorable.",
         "cardImageSrc":"/images/home/services/event-management.png",
         "cardImageAlt":"Three people at a table drinking and enjoying an event",
         "cardLinkText":"View Events",
@@ -58,7 +58,7 @@
       },
       {
         "cardTitle":"General Consulting",
-        "cardDescription":"General Consulting Services: With extensive experience in the legislature, event development, partnering with campaigns, and navigating internal and external politics, Givher has the expertise to implement processes, mentor staff, advise on political strategy and help to create a road map for accomplishing Planned Parenthood’s existing goals.",
+        "cardDescription":"With extensive experience in the legislature, event development, partnering with campaigns, and navigating internal and external politics, Givher has the expertise to implement processes, mentor staff, advise on political strategy, and help to create a road map for accomplishing your existing goals.",
         "cardImageSrc":"/images/home/services/general-consulting.png",
         "cardImageAlt":"Two people having a meeting",
         "cardLinkText":"View Team",
@@ -140,6 +140,6 @@
     ]
   },
   "form":{
-    "contactFormTitle":"Sign Up for Event Updates"
+    "contactFormTitle":"Sign Up for Event and Fundraising Updates"
   }
 }

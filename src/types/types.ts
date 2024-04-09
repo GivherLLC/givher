@@ -8,7 +8,7 @@ export type EventType = {
     eventCity:string;
     eventLocation: string | null;
     eventLocationTime:string | null;
-    eventPdfLink:string;
+    eventFlyerLink:string;
     eventButtonText:string;
     eventButtonLink:string;
     detailImage:string;

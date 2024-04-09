@@ -21,25 +21,29 @@
             "iconLink":"tel:+916-296-4656"
         }
     ],
-    "buttonTitle":"SIGN UP NOw FOR EVENT UPDATES",
+    "buttonTitle":"SIGN UP NOw FOR EVENT AND FUNDRAISING UPDATES",
     "buttonText":"Sign Up",
     "buttonLink":"/contact/",
     "pageLinks":[
         {
             "linkText":"Events",
-            "link":"/events/"
+            "link":"/events/",
+            "external": false
         },
         {
             "linkText":"Clients",
-            "link":"/clients/"
+            "link":"/clients/",
+            "external": false
         },
         {
             "linkText":"Contact",
-            "link":"/contact/"
+            "link":"/contact/",
+            "external": false
         },
         {
             "linkText":"Marketing Kit",
-            "link":"https://drive.google.com/drive/folders/1MqXIb1rcy_O-UdC0dOmAWMTCrQfycC8D?usp=sharing"
+            "link":"https://drive.google.com/drive/folders/1MqXIb1rcy_O-UdC0dOmAWMTCrQfycC8D?usp=sharing",
+            "external": true
         }
     ]
 }

@@ -10,10 +10,10 @@
             "clientName":"California LGBTQ Foundation",
             "clientImageSrc":"/images/clients/clients-califnornia-lgbtq-foundation-1.png",
             "clientWebsite":"https://calgbtfoundation.org/",
-            "clientW9Src":"https://drive.google.com/drive/folders/1bI5bqfKpwBaYnuqOpwVkPIFFdeXtK88Y?usp=drive_link"
+            "clientW9Src":"https://drive.google.com/file/d/1La9Fw963eO2LgYuJBn114nh7wDB36N3I/view?usp=sharing"
         },
         {
-            "clientName":"Micro Dosing Collective",
+            "clientName":"Microdosing Collective",
             "clientImageSrc":"/images/clients/clients-micro-dosing-collective-1.png",
             "clientWebsite":"https://www.microdosingcollective.org/",
             "clientW9Src":""
@@ -39,24 +39,14 @@
     ],
     "testimonials": [
         {
-            "quoteeName":"First Last",
-            "quote":"Quote from client that highlights the benefits of using Givher. Let’s aim for three to four sentences. We don’t want it to be too long. But we also want it to be long enough to show to have some good content.",
-            "organization":"Loves Givher"
+            "quoteeName":"Andrea Deveau",
+            "quote":"Working with Alina has been an absolute pleasure and an incredibly rewarding experience. Alina's creativity knows no bounds, and her dedication to every project she takes on is truly inspiring. Look no further if you're looking for someone who will elevate your efforts to new heights. With Alina at the helm, success is not only possible but inevitable.",
+            "organization":"Deveau Burr Group"
         },
         {
-            "quoteeName":"Loooooong Naaaaaaame",
-            "quote":"This one is going to be shorter. All the quotes will be different lengths, so we want to make sure the design accounts for that.",
-            "organization":"Looooooong Companyyyyyyy Nammmmmmeeeeee"
-        },
-        {
-            "quoteeName":"First Last",
-            "quote":"We should have a minimum of three quotes for this section. If we get more, we should turn this into a carousel that user’s can scroll through to see all the wonderful things clients say about Givher",
-            "organization":"Very Important Client"
-        },
-        {
-            "quoteeName":"Carousel Test",
-            "quote":"More than 3 cards results in a carousel on the web browser. Testing how this is viewed ensures a good user experience.",
-            "organization":"Another One"
+            "quoteeName":"Chris Bollinger",
+            "quote":"Givher LLC is an exceptional organization. Alina treats every donor like a VIP, ensuring we're informed, engaged, and genuinely appreciated. I feel my donations are part of a larger movement towards positive change.",
+            "organization":"Bollinger Government Affairs"
         }
     ]
 }

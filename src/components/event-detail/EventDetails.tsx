@@ -4,7 +4,7 @@ import { EventType } from "@/types/types";
 import ArrowLink from "../common/ArrowLink";
 
 export default function EventDetails({event}:{event:EventType}){
-    const { eventName, eventDescription, eventPdfLink, boldedEventInformation, detailImage  } = event;
+    const { eventName, eventDescription, eventFlyerLink, boldedEventInformation, detailImage  } = event;
 
     return (
         <div className="bg-softOpal dark:bg-navySmoke py-[4.5rem] flex justify-center overflow-hidden">
@@ -12,7 +12,7 @@ export default function EventDetails({event}:{event:EventType}){
                 <div className="w-full max-w-[615px] lg:w-1/2 flex flex-col gap-[1rem]">
                     <h1 className="font-ramenson text-navySmoke dark:text-softOpal">{eventName}</h1>
                     <div className="flex">
-                        <ArrowLink text="View Flyer" color="black" darkModeColor="softOpal" link={eventPdfLink} borderColor="mauvelous"/>
+                        <ArrowLink text="View Flyer" color="black" darkModeColor="softOpal" link={eventFlyerLink} borderColor="mauvelous" />
                     </div>
                     <div className="flex flex-col items-center lg:items-start">
                     {eventDescription.map((p,i)=>(

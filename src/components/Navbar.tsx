@@ -34,13 +34,33 @@ export default function Navbar(){
     },[navOpen])
 
     useEffect(() => {
-        setMounted(true); // Set mounted to true after component mounts
+        function toggleDarkMode() {
+          const storedDarkMode = localStorage.getItem('darkMode');
+          const isNightTime = () => {
+            const now = new Date();
+            const hour = now.getHours();
+            return hour < 6 || hour >= 18; // Assume night time between 6pm and 6am
+          };
+    
+          if (storedDarkMode === 'true' || (storedDarkMode === null && isNightTime())) {
+            setDarkMode(true);
+          } else {
+            setDarkMode(false);
+          }
+        }
+    
+        toggleDarkMode(); // Call toggleDarkMode() when the component mounts
+    
+        // Optionally, call toggleDarkMode() periodically to update dark mode based on the time
+        const intervalId = setInterval(toggleDarkMode, 60000); // Update every minute
+    
+        return () => {
+          clearInterval(intervalId); // Clear interval when component unmounts
+        };
       }, []);
-
-    useEffect(() => {
-        // Check local storage for user preference
-        const isDarkMode = localStorage.getItem('darkMode') === 'true';
-        setDarkMode(isDarkMode);
+    
+      useEffect(() => {
+        setMounted(true); // Set mounted to true after component mounts
       }, []);
     
       useEffect(() => {

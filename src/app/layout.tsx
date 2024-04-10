@@ -1,6 +1,4 @@
-'use client'
-
-import React, {useEffect} from 'react'
+import React from 'react'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Head from 'next/head';
@@ -12,36 +10,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  
-  useEffect(() => {
-    function toggleDarkMode() {
-      const storedDarkMode = localStorage.getItem('darkMode');
-  
-      if (storedDarkMode === 'true') {
-        document.documentElement.classList.add('dark');
-      } else {
-        const now = new Date();
-        const hour = now.getHours();
-        const isNightTime = hour < 6 || hour >= 18; // Assume night time between 6pm and 6am
-  
-        if (isNightTime) {
-          document.documentElement.classList.add('dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-        }
-      }
-    }
-  
-    toggleDarkMode(); // Call toggleDarkMode() when the component mounts
-  
-    // Optionally, call toggleDarkMode() periodically to update dark mode based on the time
-    const intervalId = setInterval(toggleDarkMode, 60000); // Update every minute
-  
-    return () => {
-      clearInterval(intervalId); // Clear interval when component unmounts
-    };
-  }, []);
-  
   
   return (
     <html lang="en">

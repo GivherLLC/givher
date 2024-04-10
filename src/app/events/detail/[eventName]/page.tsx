@@ -2,6 +2,7 @@ import React from "react";
 import eventsData from "../../../../data/events.json";
 import EventDetailPage from "@/components/event-detail/EventDetailPage";
 import GlobalLayout from "@/components/GlobalLayout";
+import Head from "next/head";
 
 type EventDetailPageProps = {
   params: {
@@ -22,9 +23,19 @@ export default function EventsDetailPage ({params: {eventName}}:EventDetailPageP
   });
   if(event){
     return (
+      <>
+      <Head>
+        <title>{`Givher Event - ${event.eventName}`}</title>
+        <meta name='description' content={`Event details for ${event.clientName}'s event ${event.eventName} on ${event.eventDateString}`}/>
+        <meta property='og:title' content={`Givher Event - ${event.eventName}`}/>
+        <meta property='og:description' content={`Event details for ${event.clientName}'s event ${event.eventName} on ${event.eventDateString}`}/>
+        <meta property='og:url' content={`https://www.givher.com/events/detail/${eventName}`}/>
+      </Head>
       <GlobalLayout>
         <EventDetailPage event={event}/>
       </GlobalLayout>
+
+      </>
     );
   }
   return (

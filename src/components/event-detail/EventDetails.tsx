@@ -11,8 +11,9 @@ export default function EventDetails({event}:{event:EventType}){
             <div className="flex flex-col lg:flex-row w-full items-center justify-center gap-[2.5rem] max-w-[85.75rem] mx-[0.625rem] lg:mx-[1.5625rem]">
                 <div className="w-full max-w-[615px] lg:w-1/2 flex flex-col gap-[1rem]">
                     <h1 className="font-ramenson text-navySmoke dark:text-softOpal">{eventName}</h1>
+                    {event.postponed && <div className="text-red">* Event Postponed</div>}
                     <div className="flex">
-                        <ArrowLink text="View Flyer" color="black" darkModeColor="softOpal" link={eventFlyerLink} borderColor="mauvelous" />
+                        <ArrowLink text="View Flyer" color="black" darkModeColor="softOpal" link={eventFlyerLink} borderColor="mauvelous" openNewTab={true}/>
                     </div>
                     <div className="flex flex-col items-center lg:items-start">
                     {eventDescription.map((p,i)=>(

@@ -16,7 +16,8 @@ const config: Config = {
       black: "#000000",
       shadowColor:"rgba(0,0,0,.15)",
       grey: '#d3d5d7',
-      white: "#ffffff"
+      white: "#ffffff",
+      red: "#DC143C",
     },
     extend: {
       fontFamily: {

@@ -8,16 +8,7 @@
       "Sacramento LGBT Community Center":"sacramento-lgbtq",
       "Givher Featured Image":"givher.png"
     },
-    "comingSoon":[
-      {
-        "clientName":"Asian American & Pacific Islander Legislative Caucus Foundation",
-        "eventName":"New Event!",
-        "eventButtonText":"Get Event Updates",
-        "eventButtonLink":"/contact/",
-        "eventDateString": "Coming soon!",
-        "eventCity":"TBD"
-      }
-    ],
+    "comingSoon":[],
     "events": [
       {
         "clientName":"California LGBTQ Foundation",
@@ -37,7 +28,8 @@
         "eventFlyerLink":"https://www.canva.com/design/DAFfJ8NmO3I/oE0kQt9ENV20EOUvGCyHsw/view?utm_content=DAFfJ8NmO3I&utm_campaign=designshare&utm_medium=link&utm_source=editor",
         "eventButtonText":"RSVP",
         "eventButtonLink":"mailto:alina@givher.com",
-        "detailImage":"/images/events/detail-page-images/1.png"
+        "detailImage":"/images/events/detail-page-images/2.png",
+        "postponed":false
       },
       {
         "clientName":"California LGBTQ Foundation",
@@ -57,7 +49,8 @@
         "eventFlyerLink":"https://www.canva.com/design/DAFuevwuvUI/jA5EzWVubUWc1uSlE9u7TQ/view?utm_content=DAFuevwuvUI&utm_campaign=designshare&utm_medium=link&utm_source=editor",
         "eventButtonText":"RSVP",
         "eventButtonLink":"mailto:alina@givher.com",
-        "detailImage":"/images/events/detail-page-images/2.png"
+        "detailImage":"/images/events/detail-page-images/outlaws-trailblazers-detail.jpeg",
+        "postponed":false
       }
     ]
   }

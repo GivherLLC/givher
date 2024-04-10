@@ -7,29 +7,34 @@ import ComingSoon from "./ComingSoon";
 
 export default function EventsPage(){
 
-    const shownEvents = eventsData.events.filter((event)=> {
-        const currentDate = new Date();
-          // Convert the string date to a Date object
-          const eventDate = new Date(event.firstDayOfEvent);
-          // Compare the event date with the current date
-          return eventDate >= currentDate;
-      }); 
+    const shownEvents = eventsData.events
+    .filter(event => {
+      const currentDate = new Date();
+      const eventDate = new Date(event.firstDayOfEvent);
+      // Include events that are occurring today or in the future
+      // Include postponed events regardless of whether they are in the past or future
+      return (!event.postponed && eventDate >= currentDate) || (event.postponed);
+    })
+    .sort((a, b) => {
+      const timestampA = new Date(a.firstDayOfEvent).getTime();
+      const timestampB = new Date(b.firstDayOfEvent).getTime();
+      return timestampA - timestampB;
+    });
 
-    //TO DO: create utility to handle grabbing featured events
-    //Need to ask Alina how she wants this  
-    const featuredEvents = useMemo(()=>{
+    //Pulls 4 events from list of events and coming soon events
+    const featuredEvents = useMemo(() => {
         const comingSoonEvents = eventsData.comingSoon;
-
-        if(eventsData.events.length < 3){
-            if(comingSoonEvents){
-                return [...shownEvents, ...comingSoonEvents];
-
-            }
-            return shownEvents;
+        const firstFiveEvents = eventsData.events.slice(0, 4);
+      
+        if (firstFiveEvents.length < 4 && comingSoonEvents) {
+          const remainingEventsCount = 4 - firstFiveEvents.length;
+          const additionalComingSoonEvents = comingSoonEvents.slice(0, remainingEventsCount);
+          return [...firstFiveEvents, ...additionalComingSoonEvents];
         }
-        return shownEvents;
-    },[shownEvents])
-
+      
+        return firstFiveEvents;
+      }, []);
+      
     return (
         <div className="min-h-[calc(100vh-360px)] bg-softOpal dark:bg-navySmoke">
             <FeaturedEvents events={featuredEvents}/>

@@ -12,6 +12,7 @@ export type EventType = {
     eventButtonText:string;
     eventButtonLink:string;
     detailImage:string;
+    postponed: boolean;
 }
 
 export type FeaturedEventType = {

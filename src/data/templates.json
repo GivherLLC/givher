@@ -1,11 +1,13 @@
 {
     "comingSoon":[
-        {
-          "clientName":"",
-          "eventName":"",
-          "eventButtonText":"Get Event Updates",
-          "eventButtonLink":"/contact"
-        }
+      {
+        "clientName":"",
+        "eventName":"",
+        "eventButtonText":"Get Event Updates",
+        "eventButtonLink":"/contact/",
+        "eventDateString": "TBD",
+        "eventCity":"TBD"
+      }
       ],
       "events":[
         {
@@ -24,7 +26,8 @@
             "eventFlyerLink":"",
             "eventButtonText":"",
             "eventButtonLink":"",
-            "detailImage":""
+            "detailImage":"",
+            "postponed":false
         }
       ],
       "clients": [

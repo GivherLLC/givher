@@ -12,10 +12,10 @@ export default function ContactPage(){
                 <div className="flex flex-col lg:flex-row w-full">
                     <div className="w-full lg:w-1/2 flex flex-col items-center gap-[2rem] mt-[2rem]">
                         <h1 className="font-ramenson text-navySmoke dark:text-softOpal">{contactData.contactPageTitle}</h1>
-                        <Link href="tel:+916-296-4656">
+                        <Link href="tel:+916-296-4656" className="text-navySmoke dark:text-softOpal">
                             <p>{contactData.contactPhoneNumber}</p>
                         </Link>
-                        <Link href="mailto:alina@givher.com">
+                        <Link href="mailto:alina@givher.com" className="text-navySmoke dark:text-softOpal">
                             <p>{contactData.contactEmail}</p>
                         </Link>
                     </div>

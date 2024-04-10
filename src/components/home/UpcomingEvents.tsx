@@ -1,22 +1,9 @@
 import React from "react";
 import ArrowLink from "../common/ArrowLink";
 import EventCard from "../common/EventCard";
+import { EventType } from "@/types/types";
 
-type HomepageEventsProps = {
-    clientName:string;
-    eventName:string;
-    eventDateString:string;
-    firstDayOfEvent:string;
-    eventDescription:string[];
-    boldedEventInformation:string[]
-    eventCity:string;
-    eventLocationTime:string | null;
-    eventFlyerLink:string | null;
-    eventButtonText:string;
-    eventButtonLink:string;
-}[]
-
-export default function UpcomingEvents({title, events}:{title:string, events: HomepageEventsProps}){
+export default function UpcomingEvents({title, events}:{title:string, events: EventType[]}){
 
     return (
         <div className="bg-softOpal dark:bg-navySmoke py-[2.5rem] flex justify-center">

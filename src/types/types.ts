@@ -31,6 +31,7 @@ export type ComingSoonEventType = {
     eventButtonLink:string;
     eventDateString:string;
     eventCity:string;
+    postponed:boolean;
 }
 
 export type TestimonialType = {

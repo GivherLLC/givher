@@ -6,7 +6,8 @@
         "eventButtonText":"Get Event Updates",
         "eventButtonLink":"/contact/",
         "eventDateString": "TBD",
-        "eventCity":"TBD"
+        "eventCity":"TBD",
+        "postponed":false
       }
       ],
       "events":[

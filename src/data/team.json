@@ -8,7 +8,7 @@
             "iconImageSrc":"/images/footer/mail-icon.png",
             "darkmodeSrc":"/images/footer/mail-icon-darkmode.png",
             "iconImageAlt":"Email icon",
-            "iconLink":"`mailto:alina@givher.com"
+            "iconLink":"mailto:alina@givher.com"
         }
     ],
       "bio": [
@@ -24,7 +24,7 @@
             "iconImageSrc":"/images/footer/mail-icon.png",
             "darkmodeSrc":"/images/footer/mail-icon-darkmode.png",
             "iconImageAlt":"Email icon",
-            "iconLink":"`mailto:jay@givher.com"
+            "iconLink":"mailto:jay@givher.com"
         }
     ],
       "bio": [

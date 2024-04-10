@@ -8,9 +8,9 @@ export default function Home() {
     <>
       <Head>
         <title>Givher | Current and Past Clients</title>
-        <meta name='description' content='Explore the list of organizations and advocacy groups that partner with Givher LLC for fundraising and event development services.'/>
+        <meta name='description' content='Explore the list of organizations and advocacy groups that partner with Givher for fundraising and event development services.'/>
         <meta property='og:title' content='Givher | Current and Past Clients'/>
-        <meta property='og:description' content="Explore the list of organizations and advocacy groups that partner with Givher LLC for fundraising and event development services."/>
+        <meta property='og:description' content="Explore the list of organizations and advocacy groups that partner with Givher for fundraising and event development services."/>
         <meta property='og:url' content='https://www.givher.com/clients'/>
       </Head>
       <GlobalLayout>

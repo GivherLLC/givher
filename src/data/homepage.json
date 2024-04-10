@@ -74,28 +74,28 @@
     "aboutUsSections":[
       {
         "sectionTitle":"Forward Thinking",
-        "sectionText":"Givher LLC is a dynamic and forward-thinking company specializing in fundraising, event development, and political hospitality. Founded and led by Alina Hernandez, a robust policy and advocacy leader, Givher LLC provides services to non-profit organizations, political action committees, and advocacy groups in achieving their missions and expanding their impact. Partnering with Givher LLC will help elevate your mission and add the extra flare you never knew you were missing.",
+        "sectionText":"Givher is a dynamic and forward-thinking company specializing in fundraising, event development, and political hospitality. Founded and led by Alina Hernandez, a robust policy and advocacy leader, Givher provides services to non-profit organizations, political action committees, and advocacy groups in achieving their missions and expanding their impact. Partnering with Givher will help elevate your mission and add the extra flare you never knew you were missing.",
         "sectionImageSrc":"/images/home/about/forward-thinking.png",
         "sectionImageSrcDarkMode":"/images/home/about/forward-thinking-darkmode.png",
         "sectionImageAlt":"Outline drawing of a camping tent"
       },
       {
         "sectionTitle":"Effective and Innovative",
-        "sectionText":"At the heart of Givher LLC's mission is a commitment to effective and innovative fundraising strategies. Understanding the unique challenges in securing financial support, Givher LLC offers a comprehensive suite of services tailored to each client's specific objectives. These services include developing personalized fundraising plans, identifying new avenues for donor development, organizing engaging fundraising events, and managing donor relationships to foster long-term loyalty and support.",
+        "sectionText":"At the heart of Givher's mission is a commitment to effective and innovative fundraising strategies. Understanding the unique challenges in securing financial support, Givher offers a comprehensive suite of services tailored to each client's specific objectives. These services include developing personalized fundraising plans, identifying new avenues for donor development, organizing engaging fundraising events, and managing donor relationships to foster long-term loyalty and support.",
         "sectionImageSrc":"/images/home/about/effective-and-innovative.png",
         "sectionImageSrcDarkMode":"/images/home/about/effective-and-innovative-darkmode.png",
         "sectionImageAlt":"Outline drawing of sunglasses"
       },
       {
         "sectionTitle":"Raising Awareness",
-        "sectionText":"In addition to fundraising, Givher LLC excels in event development. Recognizing the critical role of events in raising awareness and engaging stakeholders, Givher LLC takes a holistic approach to event planning and execution. From conceptualizing event themes that resonate with an organization's mission and values to managing every detail of the event lifecycle — including venue selection, marketing, program design, and logistics — Givher LLC ensures each event is well-organized, memorable, and lucrative.",
+        "sectionText":"In addition to fundraising, Givher excels in event development. Recognizing the critical role of events in raising awareness and engaging stakeholders, Givher takes a holistic approach to event planning and execution. From conceptualizing event themes that resonate with an organization's mission and values to managing every detail of the event lifecycle — including venue selection, marketing, program design, and logistics — Givher ensures each event is well-organized, memorable, and lucrative.",
         "sectionImageSrc":"/images/home/about/raising-awareness.png",
         "sectionImageSrcDarkMode":"/images/home/about/raising-awareness-darkmode.png",
         "sectionImageAlt":"Outline drawing of a flashlight"
       },
       {
         "sectionTitle":"Unique Perspective",
-        "sectionText":"Combining Alina's experience in public policy, technology, and various artistic and educational pursuits, their diverse background provides a rich and unique perspective that guides the company's approach. With a passion for advancing equality and representation, Givher LLC is not just a service provider but a partner committed to empowering its clients and contributing to positive social change.",
+        "sectionText":"Combining Alina's experience in public policy, technology, and various artistic and educational pursuits, their diverse background provides a rich and unique perspective that guides the company's approach. With a passion for advancing equality and representation, Givher is not just a service provider but a partner committed to empowering its clients and contributing to positive social change.",
         "sectionImageSrc":"/images/home/about/unique-perspective.png",
         "sectionImageSrcDarkMode":"/images/home/about/unique-perspective-darkmode.png",
         "sectionImageAlt":"Outline drawing of a camera"

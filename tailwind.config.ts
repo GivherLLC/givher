@@ -18,6 +18,7 @@ const config: Config = {
       grey: '#d3d5d7',
       white: "#ffffff",
       red: "#DC143C",
+      overlay: "rgba(0,0,0,.75)",
     },
     extend: {
       fontFamily: {

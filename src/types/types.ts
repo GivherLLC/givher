@@ -39,3 +39,16 @@ export type TestimonialType = {
     quote: string;
     organization: string;
 }
+
+export type TeamMember = {
+    name: string;
+    title: string;
+    imageSrc: string;
+    iconLinks: {
+        iconImageSrc: string;
+        darkmodeSrc: string;
+        iconImageAlt:string;
+        iconLink: string;
+    }[];
+    bio: string[];
+}

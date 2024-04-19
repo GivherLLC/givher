@@ -2,6 +2,7 @@ import React from "react";
 
 import homepageData from "../../data/homepage.json";
 import eventsData from "../../data/events.json";
+import { lazy } from 'react';
 
 import HeroVideo from "./HeroVideo";
 import FloatingLogos from "./FloatingLogos";
@@ -9,7 +10,7 @@ import Services from "./Services";
 import UpcomingEvents from "./UpcomingEvents";
 import AboutUs from "./AboutUs";
 import EventsCarousel from "./EventsCarousel";
-import Form from "./Form";
+const Form = lazy(() => import('./Form'));
 
 export default function Homepage(){
     const {video, logos, services, featuredEvents, about, eventCarousel, form} = homepageData;

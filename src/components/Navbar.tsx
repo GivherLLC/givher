@@ -80,16 +80,16 @@ export default function Navbar(){
                     <img
                         src={getAssetPath("/images/givher-logo-navySmoke.png")}
                         alt="Givher Logo"
-                        width={105}
-                        height={65}
-                        className="dark:hidden"
+                        width={210}
+                        height={92}
+                        className="dark:hidden max-w-[105px]"
                         />
                     <img
                         src={getAssetPath("/images/givher-logo-electricYellow.png")}
                         alt="Givher Logo"
-                        width={105}
-                        height={65}
-                        className="hidden dark:block"
+                        width={210}
+                        height={92}
+                        className="hidden dark:block max-w-[105px]"
                         />
                     </Link>    
                 </button>

@@ -32,6 +32,7 @@ export default function HeroVideo({data}:HeroVideoProps){
                     loop
                     muted
                     playsInline
+                    aria-hidden={true}
                     src={getAssetPath("/videos/givher-video.hevc.mp4")}
                     className="w-full h-full bg-black object-cover absolute overflow-clip top-0 opacity-75"
                     />

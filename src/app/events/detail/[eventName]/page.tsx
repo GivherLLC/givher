@@ -3,6 +3,7 @@ import eventsData from "../../../../data/events.json";
 import EventDetailPage from "@/components/event-detail/EventDetailPage";
 import GlobalLayout from "@/components/GlobalLayout";
 import Head from "next/head";
+import { Metadata } from "next";
 
 type EventDetailPageProps = {
   params: {
@@ -12,6 +13,36 @@ type EventDetailPageProps = {
 
 const getEventParam = (eventName:string)=>{
   return eventName.replace(/\s+/g, '-').toLowerCase();
+}
+
+export async function generateMetadata({params: {eventName}}:EventDetailPageProps): Promise<Metadata> {
+  const decodedUrlParam = decodeURIComponent(eventName);
+
+  const events = eventsData.events;
+  const event = events.find((e)=>{
+    return (getEventParam(e.eventName) === decodedUrlParam)
+  });
+
+  if(event){
+    const title = `${event.eventName} | Givher Event`;
+    const description = `Event details for ${event.clientName}'s event ${event.eventName} on ${event.eventDateString}`;
+    const url = `/events/detail/${eventName}`;
+  return {
+    title: title,
+    description: description,
+    openGraph: {
+      title: title,
+      description: description,
+      url: url,
+      siteName: 'Givher',
+      type: 'website',
+      }
+  }
+} else {
+  return {
+    title: 'Event Not Found',
+  }
+}
 }
 
 export default function EventsDetailPage ({params: {eventName}}:EventDetailPageProps) {

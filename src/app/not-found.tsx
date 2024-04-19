@@ -2,6 +2,12 @@ import React from 'react';
 import GlobalLayout from '@/components/GlobalLayout';
 import ButtonLink from '@/components/common/ButtonLink';
 
+export async function generateMetadata() {
+  return {
+    title: 'Page Not Found',
+  }
+}
+
 export default function NotFound() {
   return (
     <GlobalLayout>

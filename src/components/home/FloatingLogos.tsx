@@ -18,13 +18,13 @@ export default function FloatingLogos({logos}:FloatingLogosProps){
                     <div className="flex flex-col w-full gap-[2.5rem] max-w-[85.75rem] overflow-hidden custom-mask">
                         <div className="flex  gap-[2rem] w-full animate-[float_20s_linear_infinite]">
                         {logos.map((l, i)=>(
-                            <img key={`1-${i}`} alt={l.logoAlt} width={200} height={80} src={getAssetPath(l.logoSrc)}/>
+                            <img loading="lazy" key={`1-${i}`} alt={l.logoAlt} width={200} height={80} src={getAssetPath(l.logoSrc)}/>
                         ))}
                         {logos.map((l, i)=>(
-                            <img key={`2-${i}`} alt={l.logoAlt} width={200} height={80} src={getAssetPath(l.logoSrc)}/>
+                            <img loading="lazy" key={`2-${i}`} alt={l.logoAlt} width={200} height={80} src={getAssetPath(l.logoSrc)}/>
                         ))}
                         {logos.map((l, i)=>(
-                            <img key={`3-${i}`} alt={l.logoAlt} width={200} height={80} src={getAssetPath(l.logoSrc)}/>
+                            <img loading="lazy" key={`3-${i}`} alt={l.logoAlt} width={200} height={80} src={getAssetPath(l.logoSrc)}/>
                         ))}
                         </div>
                     </div>

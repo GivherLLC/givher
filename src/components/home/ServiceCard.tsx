@@ -34,6 +34,7 @@ export default function ServiceCard({serviceCard}:{serviceCard:ServiceCardProps}
             className="flickity-lazyloaded md:group-hover:scale-[1.1] transition duration-400 ease-in-out overflow-hidden"
             height={545}
             width={430}
+            loading="lazy"
           />
           <div className="absolute bottom-[50px] md:bottom-[unset] md:top-[250px] left-0 p-5 md:translate-y-[200px] md:group-hover:translate-y-0 flex flex-col justify-end transition duration-400 ease-in-out">
             <h2 className="text-softOpal font-semibold pb-2">

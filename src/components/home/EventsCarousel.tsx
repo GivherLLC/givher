@@ -52,6 +52,7 @@ export default function EventsCarousel({events}:{events:EventsCarouselProps}){
                             width={297}
                             height={390}
                             className="rounded-[15px] flickity-lazyloaded"
+                            loading="lazy"
                         />
                     </div>
                 </div>                    

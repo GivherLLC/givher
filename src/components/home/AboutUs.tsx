@@ -28,8 +28,8 @@ export default function AboutUs({aboutInfo}:{aboutInfo:AboutUsProps}){
                                     <p className="h-full flex items-center text-black dark:text-softOpal">{s.sectionText}</p>
                                 </div>
                                 <div className={`w-full flex justify-center items-center ${even ? "lg:justify-end":"lg:justify-start"}`}>
-                                    <img src={getAssetPath(s.sectionImageSrc)} alt={s.sectionImageAlt} height={237.5} width={500} className="sm:max-w-[300px] lg:max-w-[500px] xl:max-w-[600px] max-h-[285px] dark:hidden"/>
-                                    <img src={getAssetPath(s.sectionImageSrcDarkMode)} alt={s.sectionImageAlt} height={237.5} width={500} className="max-w-[300px] lg:max-w-[500px] xl:max-w-[600px] max-h-[285px] hidden dark:block"/>
+                                    <img loading="lazy" src={getAssetPath(s.sectionImageSrc)} alt={s.sectionImageAlt} height={237.5} width={500} className="sm:max-w-[300px] lg:max-w-[500px] xl:max-w-[600px] max-h-[285px] dark:hidden"/>
+                                    <img loading="lazy" src={getAssetPath(s.sectionImageSrcDarkMode)} alt={s.sectionImageAlt} height={237.5} width={500} className="max-w-[300px] lg:max-w-[500px] xl:max-w-[600px] max-h-[285px] hidden dark:block"/>
                                 </div>
                             </div>
                         )

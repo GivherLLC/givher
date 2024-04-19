@@ -1,9 +1,13 @@
 import React from "react";
 import { EventType } from "@/types/types";
 import DetailHeader from "./DetailHeader";
-import EventDetails from "./EventDetails";
 import UpcomingClientEvents from "./UpcomingClientEvents";
 import eventData from "../../data/events.json";
+
+import { lazy } from 'react';
+
+const EventDetails = lazy(() => import('./EventDetails'));
+
 
 export default function EventDetailPage({event}:{event:EventType}){
     const client = event.clientName;

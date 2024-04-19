@@ -2,8 +2,12 @@
 import React, { useMemo } from "react";
 import FeaturedEvents from "./FeaturedEvents";
 import eventsData from "../../data/events.json";
-import AllEvents from "./AllEvents";
 import ComingSoon from "./ComingSoon";
+
+import { lazy } from 'react';
+
+const AllEvents = lazy(() => import('./AllEvents'));
+
 
 export default function EventsPage(){
 

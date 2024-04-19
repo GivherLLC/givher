@@ -6,10 +6,10 @@ import { lazy } from 'react';
 
 import HeroVideo from "./HeroVideo";
 import FloatingLogos from "./FloatingLogos";
-import Services from "./Services";
 import UpcomingEvents from "./UpcomingEvents";
 import AboutUs from "./AboutUs";
-import EventsCarousel from "./EventsCarousel";
+const Services = lazy(() => import('./Services'));
+const EventsCarousel = lazy(() => import('./EventsCarousel'));
 const Form = lazy(() => import('./Form'));
 
 export default function Homepage(){

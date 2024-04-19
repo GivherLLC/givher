@@ -83,6 +83,7 @@ export default function Navbar(){
                         width={210}
                         height={92}
                         className="dark:hidden max-w-[105px]"
+                        loading="eager"
                         />
                     <img
                         src={getAssetPath("/images/givher-logo-electricYellow.png")}
@@ -90,6 +91,7 @@ export default function Navbar(){
                         width={210}
                         height={92}
                         className="hidden dark:block max-w-[105px]"
+                        loading="eager"
                         />
                     </Link>    
                 </button>
@@ -103,6 +105,8 @@ export default function Navbar(){
                     className="relative inline-block w-[60px] h-[34px]"
                     >
                     <input
+                        aria-label="Dark Mode"
+                        aria-labelledby="Dark Mode"
                         type="checkbox"
                         onChange={() => {
                         setDarkMode(!darkMode);

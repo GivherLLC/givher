@@ -6,7 +6,7 @@ import { EventType } from "@/types/types";
 
 export default function AllEvents({events}:{events:EventType[]}){
     return (
-        <div id="events" className="bg-softOpal dark:bg-navySmoke py-[2.5rem] flex justify-center">
+        <div id="events" className="bg-softOpal dark:bg-navySmoke my-[2.5rem] flex justify-center">
             <div className="flex flex-col w-full justify-center gap-[1rem] max-w-[85.75rem] mx-[0.625rem] lg:mx-[1.5625rem]">
                 <h1 className="font-ramenson text-navySmoke dark:text-softOpal">Events</h1>
                 {!events.length ? (

@@ -28,20 +28,20 @@ export default function TeamPage(){
                 <div className={`w-full flex flex-col flex-wrap xl:flex-row gap-[5rem] ${teamMembers.length > 2 ? "justify-between":"justify-around"}`}>
                     {teamMembers.map((t,i)=>(
                     <div key={t.name} data-id={t.name} className="xl:max-w-[25%] flex flex-col md:flex-row xl:flex-col justify-center items-center gap-[2rem] xl:gap-[1rem] w-full">
-                        <img onClick={()=>{setShowBio(teamMembers[i])}} src={getAssetPath(t.imageSrc)} height={420} width={420} alt="Jay Franco headshot" className="w-full max-w-[400px] mb-[1rem] cursor-pointer"/>
+                        <img loading="eager" onClick={()=>{setShowBio(teamMembers[i])}} src={getAssetPath(t.imageSrc)} height={420} width={420} alt="Jay Franco headshot" className="w-full max-w-[400px] mb-[1rem] cursor-pointer"/>
                         <div className="flex flex-col gap-[1rem] justify-center items-center">
                             <h2 className="font-ramenson text-navySmoke dark:text-electricYellow text-[2rem] text-center">{t.name}</h2>
-                            <p className="text-mauvelous dark:text-softOpal text-[1.5rem] text-center font-semibold">{t.title}</p>
-                            <div className="h-[3px] w-[50px] bg-navySmoke dark:bg-electricYellow"/>
+                            <p className="text-navySmoke dark:text-softOpal text-[1.25rem] text-center">{t.title}</p>
+                            <div className="h-[3px] w-[50px] bg-mauvelous"/>
                             <div data-id="jay-icons" className="flex gap-[2rem] mb-[1rem]">
                                 {t.iconLinks.map((i)=>(
                                     <Link key={i.iconImageAlt} href={i.iconLink}>
-                                        <img src={getAssetPath(i.iconImageSrc)} alt={i.iconImageAlt} height={27} width={27} className="dark:hidden hover:scale-[1.1] transition-transform ease-in-out"/>
-                                        <img src={getAssetPath(i.darkmodeSrc)} alt={i.iconImageAlt} height={27} width={27} className="hidden dark:block hover:scale-[1.1] transition-transform ease-in-out"/>
+                                        <img loading="eager" src={getAssetPath(i.iconImageSrc)} alt={i.iconImageAlt} height={27} width={27} className="dark:hidden hover:scale-[1.1] transition-transform ease-in-out"/>
+                                        <img loading="eager" src={getAssetPath(i.darkmodeSrc)} alt={i.iconImageAlt} height={27} width={27} className="hidden dark:block hover:scale-[1.1] transition-transform ease-in-out"/>
                                     </Link>
                                 ))}
+                                <ArrowButton text="View Bio" color="black" darkModeColor="softOpal" onClickFunction={()=>{setShowBio(teamMembers[i])}}/>
                             </div>
-                            <ArrowButton text="View Bio" color="black" darkModeColor="softOpal" onClickFunction={()=>{setShowBio(teamMembers[i])}}/>
                         </div>
                     </div>
                     ))}
@@ -56,14 +56,14 @@ export default function TeamPage(){
                                 </button>
                                 <div className="flex flex-col md:flex-row gap-[1.5rem]">
                                     <div className="flex flex-col items-center gap-[1rem]">
-                                        <img src={getAssetPath(showBio.imageSrc)} height={420} width={420} alt="Jay Franco headshot" className="max-w-[325px] mb-[1rem] cursor-pointer"/>
+                                        <img loading="lazy" src={getAssetPath(showBio.imageSrc)} height={420} width={420} alt="Jay Franco headshot" className="max-w-[325px] mb-[1rem] cursor-pointer"/>
                                         <h2 className="font-ramenson text-black dark:text-softOpal text-[1.5rem]">{showBio.name}</h2>
                                         <p className="text-black dark:text-softOpal text-[1rem]">{showBio.title}</p>
                                         <div data-id="jay-icons" className="flex gap-[2rem]">
                                             {showBio.iconLinks.map((i)=>(
                                                 <Link key={i.iconImageAlt} href={i.iconLink}>
-                                                    <img src={getAssetPath(i.iconImageSrc)} alt={i.iconImageAlt} height={27} width={27} className="w-[20px] h-[20px] dark:hidden hover:scale-[1.1] transition-transform ease-in-out"/>
-                                                    <img src={getAssetPath(i.darkmodeSrc)} alt={i.iconImageAlt} height={27} width={27} className="w-[20px] h-[20px] hidden dark:block hover:scale-[1.1] transition-transform ease-in-out"/>
+                                                    <img loading="lazy" src={getAssetPath(i.iconImageSrc)} alt={i.iconImageAlt} height={27} width={27} className="w-[20px] h-[20px] dark:hidden hover:scale-[1.1] transition-transform ease-in-out"/>
+                                                    <img loading="lazy" src={getAssetPath(i.darkmodeSrc)} alt={i.iconImageAlt} height={27} width={27} className="w-[20px] h-[20px] hidden dark:block hover:scale-[1.1] transition-transform ease-in-out"/>
                                                 </Link>
                                             ))}
                                         </div>

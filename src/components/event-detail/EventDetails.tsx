@@ -27,8 +27,8 @@ export default function EventDetails({event}:{event:EventType}){
                     </div>
                 </div>
                 <div className="w-full lg:w-1/2 relative flex justify-center lg:justify-left">
-                    <img height={311} width={322} src={getAssetPath("/images/events/paint-splatter-small.png")} alt="paint splatter" className="absolute left-[30%] lg:left-[-23%] bottom-[-23%] z-0"/>
-                    <img height={385} width={615} src={getAssetPath(detailImage)} alt={eventName} className="relative z-8"/>
+                    <img loading="lazy" height={311} width={322} src={getAssetPath("/images/events/paint-splatter-small.png")} alt="paint splatter" className="absolute left-[30%] lg:left-[-23%] bottom-[-23%] z-0"/>
+                    <img loading="lazy" height={385} width={615} src={getAssetPath(detailImage)} alt={eventName} className="relative z-8"/>
                 </div>
             </div>
         </div>

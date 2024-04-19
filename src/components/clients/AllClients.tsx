@@ -13,7 +13,7 @@ export default function AllClients(){
                 <div className="flex flex-wrap gap-[2rem] justify-center lg:justify-start">
                     {clients.map((c)=>(
                         <div key={c.clientName} className="group relative">
-                            <img src={getAssetPath(c.clientImageSrc)} alt={`${c.clientName} logo`} width={280} height={175} className="rounded-[20px] border border-1 border-mauvelous"/>
+                            <img loading="eager" src={getAssetPath(c.clientImageSrc)} alt={`${c.clientName} logo`} width={280} height={175} className="rounded-[20px] border border-1 border-mauvelous"/>
                             <div className="absolute top-0 rounded-[20px] hidden group-hover:flex bg-opacity-80 bg-navySmoke h-full w-full px-[1rem] py-[1.5rem] flex-col justify-between">
                                 <p className="text-softOpal">{c.clientName}</p>
                                 <div className="flex justify-between">

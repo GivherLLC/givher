@@ -127,10 +127,10 @@ export default function Navbar(){
                 </div>
                 <nav className="flex flex-row gap-[1rem] font-medium items-center">
                     <ul className="hidden md:flex justify-center items-center gap-[3rem]">
-                        <li className="w-[66px] flex justify-center"><Link href="/clients/" className="text-navySmoke dark:text-electricYellow hover:font-bold transition-font duration-200 ease-in-out">Clients</Link></li>
-                        <li className="w-[66px] flex justify-center"><Link href="/events/" className="text-navySmoke dark:text-electricYellow hover:font-bold transition-font duration-200 ease-in-out">Events</Link></li>
-                        <li className="w-[66px] flex justify-center"><Link href="/team/" className="text-navySmoke dark:text-electricYellow hover:font-bold transition-font duration-200 ease-in-out">Team</Link></li>
-                        <li className="w-[66px] flex justify-center"><Link href="/contact/" className="text-navySmoke dark:text-electricYellow hover:font-bold transition-font duration-200 ease-in-out">Contact</Link></li>
+                        <li className="w-[66px] flex justify-center"><Link href="/clients/" className="text-navySmoke dark:text-electricYellow hover:font-semibold transition-font duration-200 ease-in-out">Clients</Link></li>
+                        <li className="w-[66px] flex justify-center"><Link href="/events/" className="text-navySmoke dark:text-electricYellow hover:font-semibold transition-font duration-200 ease-in-out">Events</Link></li>
+                        <li className="w-[66px] flex justify-center"><Link href="/team/" className="text-navySmoke dark:text-electricYellow hover:font-semibold transition-font duration-200 ease-in-out">Team</Link></li>
+                        <li className="w-[66px] flex justify-center"><Link href="/contact/" className="text-navySmoke dark:text-electricYellow hover:font-semibold transition-font duration-200 ease-in-out">Contact</Link></li>
                     </ul>
                     <button type="button" onClick={()=>{setNavOpen(!navOpen)}} className="flex md:hidden relative flex-col items-center justify-between h-[50px] w-[50px] p-0 ml-auto" aria-label="Open/Close Menu">
                         <div className={`h-[2px] w-full bg-navySmoke dark:bg-electricYellow absolute right-[50%] max-w-[20px] top-[50%] transition-all duration-250 ease-in ${navOpen ? "transform -translate-x-1/2 -translate-y-1/2 rotate-[-45deg] mt-0":"mt-[-5px]"}`}/>

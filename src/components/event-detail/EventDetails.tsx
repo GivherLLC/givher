@@ -2,6 +2,7 @@ import React from "react";
 import { getAssetPath } from "@/utils/assetPath";
 import { EventType } from "@/types/types";
 import ArrowLink from "../common/ArrowLink";
+import eventsData from "../../data/events.json";
 
 export default function EventDetails({event}:{event:EventType}){
     const { eventName, eventDescription, eventFlyerLink, boldedEventInformation, detailImage  } = event;
@@ -11,7 +12,7 @@ export default function EventDetails({event}:{event:EventType}){
             <div className="flex flex-col lg:flex-row w-full items-center justify-center gap-[2.5rem] max-w-[85.75rem] mx-[0.625rem] lg:mx-[1.5625rem]">
                 <div className="w-full max-w-[615px] lg:w-1/2 flex flex-col gap-[1rem]">
                     <h1 className="font-ramenson text-navySmoke dark:text-softOpal">{eventName}</h1>
-                    {event.postponed && <div className="text-red">* Event Postponed</div>}
+                    {event.postponed && <div className="text-red">{eventsData.postponedEventText}</div>}
                     <div className="flex">
                         <ArrowLink text="View Flyer" color="black" darkModeColor="softOpal" link={eventFlyerLink} borderColor="mauvelous" openNewTab={true}/>
                     </div>

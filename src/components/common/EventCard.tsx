@@ -1,6 +1,7 @@
 import React from "react";
 import EventButton from "../common/EventButton";
 import { EventType, ComingSoonEventType } from "@/types/types";
+import eventsData from "../../data/events.json";
 
 type EventCardProps = EventType | ComingSoonEventType;
 
@@ -17,7 +18,7 @@ export default function EventCard({event,type}:{event:EventCardProps, type:"all-
                 {type !== "coming-soon" && 'eventDateString' in event && 'eventCity' in event && (
                     <div className="pl-[1rem] text-navySmoke dark:text-softOpal h-[48px] overflow-hidden">
                         <p className="overflow-ellipsis" style={{ display: '-webkit-box', WebkitBoxOrient: 'vertical', WebkitLineClamp: 2 }}>
-                        {event.eventDateString} | {event.eventCity} <span className="text-red">{event.postponed && "* Event Postponed"}</span>
+                        {event.eventDateString} | {event.eventCity} <span className="text-red">{event.postponed && `${eventsData.postponedEventText}`}</span>
                         </p>
                     </div>                
                     )}

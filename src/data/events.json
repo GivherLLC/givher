@@ -8,7 +8,17 @@
       "Sacramento LGBT Community Center":"sacramento-lgbtq",
       "Givher Featured Image":"givher.png"
     },
+    "comingSoonEventsSectionTitle":"Coming Soon",
     "comingSoon":[],
+    "givherFeaturedEvent": [{
+      "eventName": "Upcoming Events",
+      "eventDateString": "",
+      "eventCity": "",
+      "eventButtonText": "View Events",
+      "eventButtonLink": "#events",
+      "clientImage": "givher.png"
+    }],
+    "allEventsSectionTitle":"Events",
     "events": [
       {
         "clientName":"California LGBTQ Foundation",
@@ -52,5 +62,7 @@
         "detailImage":"/images/events/detail-page-images/outlaws-trailblazers-detail.jpeg",
         "postponed":false
       }
-    ]
+    ],
+    "postponedEventText": "* Event Postponed",
+    "clientEventPageUpcomingEventsTitle":"Upcoming Events"
   }

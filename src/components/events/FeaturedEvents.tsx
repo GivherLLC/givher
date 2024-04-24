@@ -8,21 +8,12 @@ import eventsData from "../../data/events.json";
 type FeaturedEventsProps = (EventType | ComingSoonEventType)[];
 
 export default function FeaturedEvents({events}:{events:FeaturedEventsProps}){
-    const {clientImages}: { clientImages: { [key: string]: string } } = eventsData;
+    const {clientImages, givherFeaturedEvent }: { clientImages: { [key: string]: string }, givherFeaturedEvent:FeaturedEventType[] } = eventsData;
 
     const [activeIndex, setActiveIndex] = useState(0);
 
     const featuredEvents = useMemo(()=>{
-        let featured: FeaturedEventType[] = [
-            {
-                eventName: "Upcoming Events",
-                eventDateString: "",
-                eventCity: "",
-                eventButtonText: "View Events",
-                eventButtonLink: "#events",
-                clientImage: "givher.png",
-            },
-        ];
+        let featured: FeaturedEventType[] = givherFeaturedEvent;
         const addEvents = events.map((e)=>{
             const { clientName, eventName, eventDateString, eventCity, eventButtonText, eventButtonLink } = e;
             const clientImage = clientImages[clientName];
@@ -40,7 +31,7 @@ export default function FeaturedEvents({events}:{events:FeaturedEventsProps}){
 
         return featured;
 
-    },[events, clientImages]);
+    },[givherFeaturedEvent, events, clientImages]);
 
     useEffect(() => {
         const Flickity = require('flickity-imagesloaded');

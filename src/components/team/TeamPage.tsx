@@ -8,7 +8,7 @@ import Link from "next/link";
 import { TeamMember } from "@/types/types";
 
 export default function TeamPage(){
-    const {title, teamMembers} = teamData;
+    const {teamPageTitle, teamMembers} = teamData;
     const [showBio, setShowBio] = useState<null | TeamMember>(null);
 
     useEffect(()=>{
@@ -24,7 +24,7 @@ export default function TeamPage(){
     return (
         <div className="bg-white dark:bg-navySmoke py-[2.5rem] flex justify-center">
             <div className="relative flex flex-col w-full items-center justify-center gap-[2.5rem] max-w-[85.75rem] px-[0.625rem] md:px-[1.5625rem]">
-                <h1 className="font-ramenson text-navySmoke dark:text-softOpal">{title}</h1>
+                <h1 className="font-ramenson text-navySmoke dark:text-softOpal">{teamPageTitle}</h1>
                 <div className={`w-full flex flex-col flex-wrap xl:flex-row gap-[5rem] ${teamMembers.length > 2 ? "justify-between":"justify-around"}`}>
                     {teamMembers.map((t,i)=>(
                     <div key={t.name} data-id={t.name} className="xl:max-w-[25%] flex flex-col md:flex-row xl:flex-col justify-center items-center gap-[2rem] xl:gap-[1rem] w-full">

@@ -23,7 +23,7 @@ export default function HeroVideo({data}:HeroVideoProps){
                     <div className="h-full flex flex-col items-center justify-end pb-[50px] gap-[2.5rem]">
                         <h1 className="font-ramenson text-softOpal">{videoTitle}</h1>
                         <p className="text-softOpal max-w-[350px]">{videoDescription}</p>
-                        <ButtonLink type="flat" bg="softOpal" darkModeBg="transparent" text={videoButtonText} link={videoButtonLink}/>
+                        <ButtonLink bg="softOpal" darkModeBg="transparent" text={videoButtonText} link={videoButtonLink}/>
                     </div>
                 </div>
                 <video

@@ -36,7 +36,7 @@ export default function Services({services}:{services:ServicesProps}){
     return (
         <div className="bg-mauvelous dark:bg-navySmoke py-[2.5rem] flex justify-center">
         <div className="flex flex-col gap-[2.5rem] justify-center w-full max-w-[85.75rem] mx-[0.625rem] md:mx-[1.5625rem] overflow-hidden">
-            <h1 className="font-ramenson text-navySmoke text-center">
+            <h1 className="font-ramenson text-navySmoke dark:text-softOpal text-center">
             {servicesCarouselTitle}
             </h1>
             <div className="services-carousel">

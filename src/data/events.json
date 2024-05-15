@@ -5,7 +5,7 @@
       "Microdosing Collective":"micro-dosing-collective.png",
       "New California Coalition":"ncc.png",
       "Planned Parenthood Alliace of California":"planned-parenthood.png",
-      "Sacramento LGBT Community Center":"sacramento-lgbtq",
+      "Sacramento LGBT Community Center":"sacramento-lgbtq.png",
       "Givher Featured Image":"givher.png"
     },
     "comingSoonEventsSectionTitle":"Coming Soon",
@@ -35,7 +35,8 @@
         "eventCity":"San Diego",
         "eventLocation": null,
         "eventLocationTime":null,
-        "eventFlyerLink":"https://www.canva.com/design/DAFfJ8NmO3I/oE0kQt9ENV20EOUvGCyHsw/view?utm_content=DAFfJ8NmO3I&utm_campaign=designshare&utm_medium=link&utm_source=editor",
+        "eventLink":"https://www.canva.com/design/DAFfJ8NmO3I/oE0kQt9ENV20EOUvGCyHsw/view?utm_content=DAFfJ8NmO3I&utm_campaign=designshare&utm_medium=link&utm_source=editor",
+        "eventLinkText":"View Flyer",
         "eventButtonText":"RSVP",
         "eventButtonLink":"mailto:alina@givher.com",
         "detailImage":"/images/events/detail-page-images/pride-celebration.png",
@@ -56,10 +57,33 @@
         "eventCity":"Sacramento",
         "eventLocation": "Tiger",
         "eventLocationTime":null, 
-        "eventFlyerLink":"https://www.canva.com/design/DAFuevwuvUI/jA5EzWVubUWc1uSlE9u7TQ/view?utm_content=DAFuevwuvUI&utm_campaign=designshare&utm_medium=link&utm_source=editor",
+        "eventLink":"https://www.canva.com/design/DAFuevwuvUI/jA5EzWVubUWc1uSlE9u7TQ/view?utm_content=DAFuevwuvUI&utm_campaign=designshare&utm_medium=link&utm_source=editor",
+        "eventLinkText":"View Flyer",
         "eventButtonText":"RSVP",
         "eventButtonLink":"mailto:alina@givher.com",
         "detailImage":"/images/events/detail-page-images/outlaws-trailblazers-detail.jpeg",
+        "postponed":false
+      },
+      {
+        "clientName":"Sacramento LGBT Community Center",
+        "eventName":"Sacramento Pride 2024",
+        "eventDateString":"June 8 - 9",
+        "firstDayOfEvent": "06/08/2024",
+        "eventDescription":[
+         "Sacramento Pride Weekend events are produced by the Sacramento LGBT Community Center. We work to support the health and wellness of the most marginalized, advocate for equity and justice, and building a culturally rich LGBTQ+ community."
+            ],
+          "boldedEventInformation":[
+            "Tickets On Sale Now For",
+            "Sacramento Pride March & Festival 2024!"
+            ],
+        "eventCity":"Sacramento",
+        "eventLocation": "Capitol Mall",
+        "eventLocationTime":null,
+        "eventLink":"https://sacramentopride.org/",
+        "eventLinkText":"View Website",
+        "eventButtonText":"Get Tickets",
+        "eventButtonLink":"https://sacramentopride.org/tickets/",
+        "detailImage":"/images/events/detail-page-images/sacramento-pride-2024.png",
         "postponed":false
       }
     ],

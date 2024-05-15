@@ -5,7 +5,7 @@ import ArrowLink from "../common/ArrowLink";
 import eventsData from "../../data/events.json";
 
 export default function EventDetails({event}:{event:EventType}){
-    const { eventName, eventDescription, eventFlyerLink, boldedEventInformation, detailImage  } = event;
+    const { eventName, eventDescription, eventLink, eventLinkText, boldedEventInformation, detailImage  } = event;
 
     return (
         <div className="bg-softOpal dark:bg-navySmoke py-[4.5rem] flex justify-center overflow-hidden">
@@ -14,7 +14,7 @@ export default function EventDetails({event}:{event:EventType}){
                     <h1 className="font-ramenson text-navySmoke dark:text-softOpal">{eventName}</h1>
                     {event.postponed && <div className="text-red">{eventsData.postponedEventText}</div>}
                     <div className="flex">
-                        <ArrowLink text="View Flyer" color="black" darkModeColor="softOpal" link={eventFlyerLink} borderColor="mauvelous" openNewTab={true}/>
+                        <ArrowLink text={eventLinkText} color="black" darkModeColor="softOpal" link={eventLink} borderColor="mauvelous" openNewTab={true}/>
                     </div>
                     <div className="flex flex-col items-center lg:items-start">
                     {eventDescription.map((p,i)=>(

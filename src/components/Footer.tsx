@@ -25,20 +25,22 @@ export default function Footer(){
                         </div>
                         <div className="flex flex-col items-center justify-between gap-[2rem]">
                             <h2 className="text-navySmoke dark:text-softOpal uppercase font-bold text-center max-w-[375px]">{footerData.buttonTitle}</h2>
-                            <ButtonLink type="flat" bg="mauvelous" darkModeBg="electricYellow" text="Sign Up" link="/contact/" />
+                            <ButtonLink bg="mauvelous" darkModeBg="electricYellow" text="Sign Up" link="/contact/" />
                         </div>
                     </div>
-                    <div className="w-full md:w-1/3">
-                        <ul className="w-full flex flex-col items-center md:items-end">
+                    <div className="w-full h-full md:w-1/3 md:flex md:flex-col md:justify-between">
+                        <ul className="w-full flex flex-col items-center md:items-end h-full">
                             {footerData.pageLinks.map((l)=>(
                                 <li key={l.linkText} className="text-navySmoke dark:text-softOpal font-medium hover:font-semibold transition ease-in-out mb-[1rem] w-[110px] text-center md:text-left">
                                     <Link href={l.link} {...(l.external ? { target: "_blank" } : {})}>{l.linkText}</Link>
                                 </li>
                             ))}
                         </ul>
+                        <div className="text-sm text-right hidden md:block">Made with &#128420; by <Link href="https://leighdahlin.com/" className="underline" target="_blank">Leigh Dahlin</Link></div>
                     </div>
                 </div>
             </div>
+            <div className="text-sm text-righ mb-[1rem] block md:hidden">Made with &#128420; by <Link href="https://leighdahlin.com/" className="underline" target="_blank">Leigh Dahlin</Link></div>
         </footer>
     )
 }

@@ -33,10 +33,18 @@ export default function EventsPage(){
         if (firstFiveEvents.length < 4 && comingSoonEvents) {
           const remainingEventsCount = 4 - firstFiveEvents.length;
           const additionalComingSoonEvents = comingSoonEvents.slice(0, remainingEventsCount);
-          return [...firstFiveEvents, ...additionalComingSoonEvents];
+          return [...firstFiveEvents, ...additionalComingSoonEvents].sort((a, b) => {
+            const timestampA = new Date(a.firstDayOfEvent).getTime();
+            const timestampB = new Date(b.firstDayOfEvent).getTime();
+            return timestampA - timestampB;
+          });
         }
       
-        return firstFiveEvents;
+        return firstFiveEvents.sort((a, b) => {
+          const timestampA = new Date(a.firstDayOfEvent).getTime();
+          const timestampB = new Date(b.firstDayOfEvent).getTime();
+          return timestampA - timestampB;
+        });
       }, []);
       
     return (

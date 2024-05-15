@@ -24,7 +24,7 @@ export default function ServiceCard({serviceCard}:{serviceCard:ServiceCardProps}
     return (
         <div
         data-id="card"
-        className="carousel-cell w-/2 mr-[2rem] bg-black rounded-[15px]"
+        className="carousel-cell w-/2 mr-[2rem] rounded-[15px]"
       >
         <div className="group relative overflow-hidden rounded-[15px]">
           <img

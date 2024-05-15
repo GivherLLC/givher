@@ -40,7 +40,24 @@
   }
 }
 
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.5;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
 body {
+  font-family: Visby, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-display: swap;
   height: 100%;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -49,4 +66,161 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+.custom-mask {
+  -webkit-mask: linear-gradient(90deg, transparent, #fff 10% 80%, transparent);
+  mask: linear-gradient(90deg, transparent, #fff 10% 80%, transparent); /* Standard syntax */
+}
+
+/* Flickity */
+
+.flickity-page-dots {
+  height: 75px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  
+}
+
+.dot:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  border-radius: 15px;
+  background-color: grey;
+  transition: transform 0.3s ease-in-out;
+}
+
+.dot.is-selected {
+  background-color: #F8F9EE;
+}
+
+.event-carousel .dot.is-selected {
+  background-color: #C6AFC0;
+}
+
+/* https://stackoverflow.com/questions/42714116/how-to-hide-border-flickity-in-chrome */
+/*This is bad for accessability, need to add focus to dots or nav*/
+.flickity-enabled:focus {
+  outline: none;
+}
+
+.main-carousel {
+  position: relative;
+}
+
+.flickity-button {
+  background: #F8F9EE;
+  border: 1px solid #2E363E;
+  padding: 7px;
+  border-radius: 10px;
+}
+
+.flickity-button-icon {
+  fill: #2E363E;
+}
+
+.flickity-button:disabled {
+  display: none;
+}
+
+.flickity-button:disabled .flickity-button-icon {
+  fill: black;
+}
+
+.flickity-prev-next-button {
+  width: 50px;
+  height: 50px;
+}
+
+.previous {
+  position: absolute;
+  left: 0;
+  top: 40%;
+  margin-left: 10px;
+}
+
+.next {
+  position: absolute;
+  right: 0;
+  top: 40%;
+  margin-right: 10px;
+}
+
+/* Featured Events Carousel */
+
+.featured-carousel .flickity-viewport {
+  overflow: hidden;
+  position: relative;
+  cursor: grab;
+  box-sizing: border-box;
+}
+
+.featured-carousel .carousel-cell {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  width: 80%;
+  max-width: 450px;
+}
+
+.featured-carousel .carousel-cell img {
+  aspect-ratio: 1;
+  display: block;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 2;
+  opacity: 1;
+  transition: opacity 0s,transform .4s,-webkit-transform .4s;
+}
+.featured-carousel .carousel-cell:first-child:has(~.is-selected:last-child) img,
+.featured-carousel .carousel-cell.is-selected+.carousel-cell img {
+  opacity: 0.5;
+  transform: scale(.87);
+}
+
+#carousel-content-inner .carousel-content {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+
+#carousel-content-inner .carousel-content.active {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+    transform: translateY(0);
+    transition: all .5s;
+}
+
+@media(min-width: 1372px){
+  .services-carousel .flickity-page-dots {
+    display: none;
+  } 
+}
+
+@media(max-width: 768px){
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  .flickity-button {
+    display: none;
+  }
+
+  .featured-carousel .carousel-cell img {
+    height: 80%;
+    width: 80%;
+  }
 }

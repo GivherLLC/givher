@@ -1,0 +1,53 @@
+{
+    "clientsSectionTitle": "Current and Past Clients",
+    "clients": [
+        {
+            "clientName":"Asian and Pacific Islander Legislative Caucus Foundation",
+            "clientImageSrc":"/images/clients/clients-aapi-legislative-caucus-1.png",
+            "clientWebsite":"",
+            "clientW9Src":"https://drive.google.com/file/d/1uH484sH4hKbHHKddIxJzHbGiIP7mF_ln/view?usp=sharing"
+        },
+        {
+            "clientName":"California LGBTQ Foundation",
+            "clientImageSrc":"/images/clients/clients-califnornia-lgbtq-foundation-1.png",
+            "clientWebsite":"https://calgbtfoundation.org/",
+            "clientW9Src":"https://drive.google.com/file/d/1La9Fw963eO2LgYuJBn114nh7wDB36N3I/view?usp=sharing"
+        },
+        {
+            "clientName":"Microdosing Collective",
+            "clientImageSrc":"/images/clients/clients-micro-dosing-collective-1.png",
+            "clientWebsite":"https://www.microdosingcollective.org/",
+            "clientW9Src":""
+        },
+        {
+            "clientName":"Planned Parenthood Affiliates of California",
+            "clientImageSrc":"/images/clients/clients-planned-parenthood-1.png",
+            "clientWebsite":"https://www.plannedparenthoodaction.org/planned-parenthood-affiliates-california",
+            "clientW9Src":""
+        },
+        {
+            "clientName":"Sacramento LGBT Community Center",
+            "clientImageSrc":"/images/clients/clients-sacramento-lgbt-community-center-1.png",
+            "clientWebsite":"https://saccenter.org/",
+            "clientW9Src":"https://drive.google.com/file/d/1M7ymgly3MYgP-vUpFnk41uYjz8tiBMeB/view?usp=sharing"
+        }
+    ],
+    "testimonalsSectionTitle":"",
+    "testimonials": [
+        {
+            "quoteeName":"Andrea Deveau",
+            "quote":"Working with Alina has been an absolute pleasure and an incredibly rewarding experience. Alina's creativity knows no bounds, and her dedication to every project she takes on is truly inspiring. Look no further if you're looking for someone who will elevate your efforts to new heights. With Alina at the helm, success is not only possible but inevitable.",
+            "organization":"Deveau Burr Group"
+        },
+        {
+            "quoteeName":"Chris Bollinger",
+            "quote":"Givher LLC is an exceptional organization. Alina treats every donor like a VIP, ensuring we're informed, engaged, and genuinely appreciated. I feel my donations are part of a larger movement towards positive change.",
+            "organization":"Bollinger Government Affairs"
+        },
+        {
+            "quoteeName":"Assemblymember Evan Low",
+            "quote":"Givher transformed our fundraising and event management! Their tailored approach and top-notch support made a real difference for us. We're beyond grateful! 🌟",
+            "organization":"API Legislative Caucus Foundation"
+        }
+    ]
+}

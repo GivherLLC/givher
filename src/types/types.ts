@@ -7,7 +7,6 @@ export type EventType = {
     boldedEventInformation:string[]
     eventCity:string;
     eventLocation: string | null;
-    eventLocationTime:string | null;
     eventLink:string;
     eventLinkText:string;
     eventButtonText:string;

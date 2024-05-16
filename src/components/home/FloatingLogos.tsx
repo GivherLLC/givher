@@ -4,7 +4,6 @@ import { getAssetPath } from "@/utils/assetPath";
 type FloatingLogosProps = {
     logos: {
         logoSrc: string;
-        logoSrcDarkMode: string;
         logoAlt:string
     }[]
 }

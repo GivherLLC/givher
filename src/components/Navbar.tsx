@@ -82,7 +82,7 @@ export default function Navbar(){
                         alt="Givher Logo"
                         width={210}
                         height={92}
-                        className="dark:hidden max-w-[105px]"
+                        className="dark:hidden max-w-[105px] image-rendering-crisp-edges"
                         loading="eager"
                         />
                     <img
@@ -90,7 +90,7 @@ export default function Navbar(){
                         alt="Givher Logo"
                         width={210}
                         height={92}
-                        className="hidden dark:block max-w-[105px]"
+                        className="hidden dark:block max-w-[105px] image-rendering-crisp-edges"
                         loading="eager"
                         />
                     </Link>    
@@ -111,7 +111,7 @@ export default function Navbar(){
                         onChange={() => {
                         setDarkMode(!darkMode);
                         }}
-                        className="h-[0px] w-[0px]"
+                        className="h-[0px] w-[0px] appearance-none"
                     />
                     <span
                         id="slider round"
@@ -120,8 +120,8 @@ export default function Navbar(){
                             ? 'bg-softOpal before:bg-mauvelous before:translate-x-[26px]'
                             : 'bg-grey before:bg-softOpal'
                         }`}
-                    ></span>
-                    
+                    >
+                    </span>
                     </label>
                     <p className="text-black dark:text-mauvelous">Dark Mode</p>
                 </div>

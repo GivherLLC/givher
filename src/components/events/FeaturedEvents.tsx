@@ -101,20 +101,23 @@ export default function FeaturedEvents({events}:{events:FeaturedEventsProps}){
                                 )
                             })}
                         </div>
-                        <div id="carousel-content-btn" className="self-end flex items-center gap-[120px] mb-[1rem] md:mb-[2rem]">
-                            <div className="flex gap-[24px]">
-                                <button type="button" data-id="prev" aria-label="Previous Event" className="custom-prev-button">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="overflow-hidden transform rotate-[180deg] text-black dark:text-softOpal cursor-pointer align-middle">
-                                        <path d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8Z" fill="currentColor"></path>
-                                    </svg> 
-                                </button>
-                                <button type="button" data-id="next" aria-label="Next Event" className="custom-next-button">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="overflow-hidden text-black dark:text-softOpal cursor-pointer align-middle">
-                                        <path d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8Z" fill="currentColor"></path>
-                                    </svg> 
-                                </button>
-                            </div>
-                        </div>
+                        {featuredEvents.length > 1 && (
+                                                    <div id="carousel-content-btn" className="self-end flex items-center gap-[120px] mb-[1rem] md:mb-[2rem]">
+                                                    <div className="flex gap-[24px]">
+                                                        <button type="button" data-id="prev" aria-label="Previous Event" className="custom-prev-button">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="overflow-hidden transform rotate-[180deg] text-black dark:text-softOpal cursor-pointer align-middle">
+                                                                <path d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8Z" fill="currentColor"></path>
+                                                            </svg> 
+                                                        </button>
+                                                        <button type="button" data-id="next" aria-label="Next Event" className="custom-next-button">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="overflow-hidden text-black dark:text-softOpal cursor-pointer align-middle">
+                                                                <path d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8Z" fill="currentColor"></path>
+                                                            </svg> 
+                                                        </button>
+                                                    </div>
+                                                </div>
+                        )}
+
                     </div>
                     <div className="carousel featured-carousel order-1 md:order-2 relative h-full max-h-[410px]">
                         <img loading="eager" src={getAssetPath("/images/events/paint-splatter-large.png")} alt="paint splatter" height={435} width={595} className="hidden md:block md:absolute left-[-30%] bottom-[-15%] z-0"/>

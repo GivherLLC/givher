@@ -16,6 +16,8 @@
             "eventName":"",
             "eventDateString":"",
             "firstDayOfEvent": "",
+            "lastDayOfEvent": "",
+            "timeZone": "",
             "eventDescription":[
              ""
                 ],

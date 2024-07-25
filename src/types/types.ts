@@ -3,6 +3,8 @@ export type EventType = {
     eventName:string;
     eventDateString:string;
     firstDayOfEvent:string;
+    lastDayOfEvent:string | null;
+    timeZone: string;
     eventDescription:string[];
     boldedEventInformation:string[]
     eventCity:string;

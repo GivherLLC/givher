@@ -25,6 +25,8 @@
         "eventName":"Pride Celebration",
         "eventDateString":"July 11th - July 13th",
         "firstDayOfEvent": "07/11/2024",
+        "lastDayOfEvent":"07/13/2024",
+        "timeZone": "PST",
         "eventDescription":[
          "The California LGBTQ Foundation invites you to join the 4th annual Pride Celebration in San Diego at the Pendry Hotel located in the Gaslamp for a colorful event including: Thursday Dinner, Friday Pride Brunch, and golf or spa."
             ],
@@ -46,6 +48,8 @@
         "eventName":"Outlaws & Trailblazers: Pride Month Celebration",
         "eventDateString":"June 3rd",
         "firstDayOfEvent": "06/03/2024",
+        "lastDayOfEvent": null,
+        "timeZone": "PST",
         "eventDescription":[
          "A Western-themed event celebrating the 2024 LGBTQ+ Pride Month honorees, including a separate VIP reception to meet them."
             ],
@@ -67,6 +71,8 @@
         "eventName":"Sacramento Pride 2024",
         "eventDateString":"June 8 - 9",
         "firstDayOfEvent": "06/08/2024",
+        "lastDayOfEvent":"06/09/2024",
+        "timeZone": "PST",
         "eventDescription":[
          "Sacramento Pride Weekend events are produced by the Sacramento LGBT Community Center. We work to support the health and wellness of the most marginalized, advocate for equity and justice, and building a culturally rich LGBTQ+ community."
             ],

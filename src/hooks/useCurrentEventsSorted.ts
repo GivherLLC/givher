@@ -26,8 +26,8 @@ const useCurrentEventsSorted = () => {
         const lastDayString = format(lastDay, 'yyyy-MM-dd');
 
         // Adjust for current date in the same time zone
-        const includeEvent = (!event.postponed && (currentDateString >= firstDayString && currentDateString <= lastDayString)) || event.postponed;
-
+        const includeEvent = !event.postponed && (currentDateString >= firstDayString && currentDateString <= lastDayString);
+        
         return includeEvent;
       })
       .sort((a, b) => {

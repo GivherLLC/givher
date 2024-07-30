@@ -25,6 +25,7 @@
                 ""
                 ],
             "eventCity":"",
+            "eventLocation":"",
             "eventLink":"",
             "eventLinkText": "",
             "eventButtonText":"",

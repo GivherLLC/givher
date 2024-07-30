@@ -21,74 +21,28 @@
     "allEventsSectionTitle":"Events",
     "events": [
       {
-        "clientName":"California LGBTQ Foundation",
-        "eventName":"Pride Celebration",
-        "eventDateString":"July 11th - July 13th",
-        "firstDayOfEvent": "07/11/2024",
-        "lastDayOfEvent":"07/13/2024",
-        "timeZone": "PST",
-        "eventDescription":[
-         "The California LGBTQ Foundation invites you to join the 4th annual Pride Celebration in San Diego at the Pendry Hotel located in the Gaslamp for a colorful event including: Thursday Dinner, Friday Pride Brunch, and golf or spa."
-            ],
-          "boldedEventInformation":[
-            "Please remit checks to: California LGBTQ Foundation",
-            "Mail to: 5445 Madison Avenue, Sacramento, CA 95841"
-            ],
-        "eventCity":"San Diego",
-        "eventLocation": null,
-        "eventLink":"https://www.canva.com/design/DAFfJ8NmO3I/oE0kQt9ENV20EOUvGCyHsw/view?utm_content=DAFfJ8NmO3I&utm_campaign=designshare&utm_medium=link&utm_source=editor",
-        "eventLinkText":"View Flyer",
-        "eventButtonText":"RSVP",
-        "eventButtonLink":"mailto:alina@givher.com",
-        "detailImage":"/images/events/detail-page-images/pride-celebration.png",
-        "postponed":false
-      },
-      {
-        "clientName":"California LGBTQ Foundation",
-        "eventName":"Outlaws & Trailblazers: Pride Month Celebration",
-        "eventDateString":"June 3rd",
-        "firstDayOfEvent": "06/03/2024",
-        "lastDayOfEvent": null,
-        "timeZone": "PST",
-        "eventDescription":[
-         "A Western-themed event celebrating the 2024 LGBTQ+ Pride Month honorees, including a separate VIP reception to meet them."
-            ],
-          "boldedEventInformation":[
-            "Please remit checks to: California LGBTQ Foundation",
-            "Mail to: 5445 Madison Avenue, Sacramento, CA 95841"
-            ],
-        "eventCity":"Sacramento",
-        "eventLocation": "Tiger",
-        "eventLink":"https://www.canva.com/design/DAFuevwuvUI/jA5EzWVubUWc1uSlE9u7TQ/view?utm_content=DAFuevwuvUI&utm_campaign=designshare&utm_medium=link&utm_source=editor",
-        "eventLinkText":"View Flyer",
-        "eventButtonText":"RSVP",
-        "eventButtonLink":"mailto:alina@givher.com",
-        "detailImage":"/images/events/detail-page-images/outlaws-trailblazers-detail.jpeg",
-        "postponed":false
-      },
-      {
-        "clientName":"Sacramento LGBT Community Center",
-        "eventName":"Sacramento Pride 2024",
-        "eventDateString":"June 8 - 9",
-        "firstDayOfEvent": "06/08/2024",
-        "lastDayOfEvent":"06/09/2024",
-        "timeZone": "PST",
-        "eventDescription":[
-         "Sacramento Pride Weekend events are produced by the Sacramento LGBT Community Center. We work to support the health and wellness of the most marginalized, advocate for equity and justice, and building a culturally rich LGBTQ+ community."
-            ],
-          "boldedEventInformation":[
-            "Tickets On Sale Now For",
-            "Sacramento Pride March & Festival 2024!"
-            ],
-        "eventCity":"Sacramento",
-        "eventLocation": "Capitol Mall",
-        "eventLink":"https://sacramentopride.org/",
-        "eventLinkText":"View Website",
-        "eventButtonText":"Get Tickets",
-        "eventButtonLink":"https://sacramentopride.org/tickets/",
-        "detailImage":"/images/events/detail-page-images/sacramento-pride-2024.png",
-        "postponed":false
-      }
+            "clientName":"Planned Parenthood Alliace of California",
+            "eventName":"Pink Renaissance",
+            "eventDateString":"9/7/24",
+            "firstDayOfEvent": "09/07/2024",
+            "lastDayOfEvent": null,
+            "timeZone": "PST",
+            "eventDescription":[
+             "Join PPAC as we reflect on half a century of advocacy and protecting and expanding access to sexual and reproductive health care for millions of Californians. It's a time to honor our past accomplishments and look forward to the future with renewed dedication."
+                ],
+              "boldedEventInformation":[
+                "Pay online at https://app01.us.bill.com/p/plannedparenthoodaffiliatesofcalifornia",
+"For questions, please email Serina Correa at serina.correa@ppacca.org.",
+"Planned Parenthood Affiliates of California is a 501(c)(4) organization and donations are not tax deductible."
+                ],
+            "eventCity":"Sacramento, CA",
+            "eventLink":"",
+            "eventLinkText": "",
+            "eventButtonText":"Get Individual Tickets",
+            "eventButtonLink":"https://www.eventbrite.com/e/pink-renaissance-tickets-956517318047?utm-campaign=social&utm-content=attendeeshare&utm-medium=discovery&utm-term=listing&utm-source=cp&aff=ebdsshcopyurl",
+            "detailImage":"/images/events/PPAC_PinkRenaissance_EventDetailPageImate.png",
+            "postponed":false
+        }
     ],
     "postponedEventText": "* Event Postponed",
     "clientEventPageUpcomingEventsTitle":"Upcoming Events"

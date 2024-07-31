@@ -3,7 +3,7 @@
       "Asian American & Pacific Islander Legislative Caucus Foundation":"aa-pi-legislative-caucus.png",
       "California LGBTQ Foundation":"califonria-lgbtq-foundation.png",
       "Microdosing Collective":"micro-dosing-collective.png",
-      "Planned Parenthood Alliace of California":"planned-parenthood.png",
+      "Planned Parenthood Affiliates of California":"planned-parenthood.png",
       "Sacramento LGBT Community Center":"sacramento-lgbtq.png",
       "Givher Featured Image":"givher.png"
     },
@@ -20,7 +20,7 @@
     "allEventsSectionTitle":"Events",
     "events": [
       {
-            "clientName":"Planned Parenthood Alliace of California",
+            "clientName":"Planned Parenthood Affiliates of California",
             "eventName":"Pink Renaissance",
             "eventDateString":"9/7/24",
             "firstDayOfEvent": "09/07/2024",

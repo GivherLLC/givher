@@ -25,7 +25,7 @@ export default function Footer(){
                         </div>
                         <div className="flex flex-col items-center justify-between gap-[2rem]">
                             <h2 className="text-navySmoke dark:text-softOpal uppercase font-bold text-center max-w-[375px]">{footerData.buttonTitle}</h2>
-                            <ButtonLink bg="mauvelous" darkModeBg="electricYellow" text="Sign Up" link="/contact/" />
+                            <ButtonLink bg="mauvelous" darkModeBg="electricYellow" text="Sign Up" link="/signup4emails" />
                         </div>
                     </div>
                     <div className="w-full h-full md:w-1/3 md:flex md:flex-col md:justify-between">

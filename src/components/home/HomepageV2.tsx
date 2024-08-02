@@ -12,7 +12,6 @@ import useCurrentEventsSorted from "@/hooks/useCurrentEventsSorted";
 
 const Services = lazy(() => import('./Services'));
 const EventsCarousel = lazy(() => import('./EventsCarousel'));
-const Form = lazy(() => import('./Form'));
 
 export default function Homepage(){
     const {video, logos, services, featuredEvents, about, eventCarousel, form} = homepageData;
@@ -30,7 +29,6 @@ export default function Homepage(){
             )}
             <AboutUs aboutInfo={about}/>
             <EventsCarousel events={eventCarousel}/>
-            <Form title={form.contactFormTitle}/>
         </>
     )
 }

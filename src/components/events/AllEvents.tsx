@@ -13,7 +13,7 @@ export default function AllEvents({events}:{events:EventType[]}){
                 {!events.length ? (
                     <div className="h-full flex flex-col justify-center md:justify-start items-start gap-[1.5rem]">
                         <p className="text-black dark:text-softOpal">We do not have any events right now. Sign up for updates to receive information about future events.</p>
-                        <EventButton text="Sign Up" link="/contact" bg="mauvelous"/>
+                        <EventButton text="Sign Up" link="/signup4emails" bg="mauvelous"/>
                     </div>
                 ):(
                     <EventsFilter events={events}/>

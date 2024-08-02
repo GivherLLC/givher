@@ -1,16 +1,14 @@
 import React from "react";
 import { getAssetPath } from "@/utils/assetPath";
-import GoogleForm from "../GoogleForm";
 import contactData from "../../data/contactInfo.json";
 import Link from "next/link";
 
 export default function ContactPage(){
     return (
-        <div className="bg-mauvelous dark:bg-navySmoke py-[2.5rem] flex justify-center">
-            <div className="relative w-full flex flex-col w-full items-center justify-center gap-[2.5rem] max-w-[85.75rem] mx-[0.625rem] lg:mx-[1.5625rem]">
-                <img loading="eager" src={getAssetPath("/images/geometric-pattern.png")} alt="geometric pattern" width={1000} height={294} className="w-full max-w-[85.75rem] absolute bottom-0 z-0 hidden md:block"/>
+        <div className="bg-mauvelous dark:bg-navySmoke py-[1rem] md:py-[2.5rem] flex justify-center min-h-[calc(100vh-679px)] md:min-h-[calc(100vh-410px)]">
+            <div className="max-w-[85.75rem] flex flex-col gap-[1.5rem] mx-[0.625rem] lg:mx-[1.5625rem]">
                 <div className="flex flex-col lg:flex-row w-full">
-                    <div className="w-full lg:w-1/2 flex flex-col items-center gap-[2rem] mt-[2rem]">
+                    <div className="flex flex-col items-center gap-[2rem] mt-[2rem] mx-auto">
                         <h1 className="font-ramenson text-navySmoke dark:text-softOpal">{contactData.contactPageTitle}</h1>
                         <Link href="tel:+916-296-4656" className="text-navySmoke dark:text-softOpal">
                             <p>{contactData.contactPhoneNumber}</p>
@@ -19,9 +17,9 @@ export default function ContactPage(){
                             <p>{contactData.contactEmail}</p>
                         </Link>
                     </div>
-                    <div className="w-full lg:w-1/2 flex justify-center">
-                        <GoogleForm/>
-                    </div>
+                </div>
+                <div className="flex justify-center items-end flex-1">
+                    <img loading="eager" src={getAssetPath("/images/geometric-pattern.png")} alt="geometric pattern" width={1000} height={294} className="w-full md:w-[60%]"/>
                 </div>
             </div>
         </div>

@@ -11,7 +11,7 @@ export default function EventCard({event,type}:{event:EventCardProps, type:"all-
         <div className={`flex flex-col gap-[1.5rem] sm:gap-[0rem] border border-navySmoke dark:border-softOpal rounded-[10px] py-[2.5rem] px-[1.5rem] h-content w-full max-w-[400px] max-h-[429px] ${type === "detail-page" || type === "coming-soon" ? "sm:h-[300px]":"sm:h-[400px]"} sm:w-[400px] shadow-custom-shadow dark:shadow-custom-shadow-darkmode`}>
             <div className="lg:h-[50%] flex flex-col gap-[1rem]">
                 <div className="h-[56px] overflow-hidden">
-                    <p className="overflow-ellipsis font-ramenson text-navySmoke text-xl dark:text-softOpal" style={{ display: '-webkit-box', WebkitBoxOrient: 'vertical', WebkitLineClamp: 2 }}>
+                    <p className="overflow-ellipsis font-visbyBold text-navySmoke text-xl dark:text-softOpal" style={{ display: '-webkit-box', WebkitBoxOrient: 'vertical', WebkitLineClamp: 2 }}>
                         {event.eventName}
                     </p>
                 </div>

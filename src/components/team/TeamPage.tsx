@@ -24,13 +24,13 @@ export default function TeamPage(){
     return (
         <div className="bg-white dark:bg-navySmoke py-[2.5rem] flex justify-center">
             <div className="relative flex flex-col w-full items-center justify-center gap-[2.5rem] max-w-[85.75rem] px-[0.625rem] md:px-[1.5625rem]">
-                <h1 className="font-ramenson text-navySmoke dark:text-softOpal">{teamPageTitle}</h1>
+                <h1 className="font-visbyBold text-navySmoke dark:text-softOpal">{teamPageTitle}</h1>
                 <div className={`w-full flex flex-col flex-wrap xl:flex-row gap-[5rem] ${teamMembers.length > 2 ? "justify-between":"justify-around"}`}>
                     {teamMembers.map((t,i)=>(
                     <div key={t.name} data-id={t.name} className="xl:max-w-[25%] flex flex-col md:flex-row xl:flex-col justify-center items-center gap-[2rem] xl:gap-[1rem] w-full">
                         <img loading="eager" onClick={()=>{setShowBio(teamMembers[i])}} src={getAssetPath(t.imageSrc)} height={420} width={420} alt="Jay Franco headshot" className="w-full max-w-[400px] mb-[1rem] cursor-pointer"/>
                         <div className="flex flex-col gap-[1rem] justify-center items-center">
-                            <h2 className="font-ramenson text-navySmoke dark:text-electricYellow text-[2rem] text-center">{t.name}</h2>
+                            <h2 className="font-visbyBold text-navySmoke dark:text-electricYellow text-[2rem] text-center">{t.name}</h2>
                             <p className="text-navySmoke dark:text-softOpal text-[1.25rem] text-center">{t.title}</p>
                             <div className="h-[3px] w-[50px] bg-mauvelous"/>
                             <div data-id="jay-icons" className="flex gap-[2rem] mb-[1rem]">
@@ -57,7 +57,7 @@ export default function TeamPage(){
                                 <div className="flex flex-col md:flex-row gap-[1.5rem]">
                                     <div className="flex flex-col items-center gap-[1rem]">
                                         <img loading="lazy" src={getAssetPath(showBio.imageSrc)} height={420} width={420} alt="Jay Franco headshot" className="max-w-[325px] mb-[1rem] cursor-pointer"/>
-                                        <h2 className="font-ramenson text-black dark:text-softOpal text-[1.5rem]">{showBio.name}</h2>
+                                        <h2 className="font-visbyBold text-black dark:text-softOpal text-[1.5rem]">{showBio.name}</h2>
                                         <p className="text-black dark:text-softOpal text-[1rem]">{showBio.title}</p>
                                         <div data-id="jay-icons" className="flex gap-[2rem]">
                                             {showBio.iconLinks.map((i)=>(

@@ -15,7 +15,7 @@ export default function DetailHeader({event}:{event:EventType}){
                 <div className="w-full md:w-1/2 flex flex-col gap-[1rem]">
                     <p className="flex justify-center md:justify-start gap-[1rem] flex-wrap"><span className="text-softOpal">{eventDateString}</span><span className="text-electricYellow">{eventCity}</span></p>
                     {event.postponed && <div className="text-red">{eventsData.postponedEventText}</div>}
-                    <h1 className="font-ramenson text-softOpal mb-[2rem] text-center md:text-left">{eventName}</h1>
+                    <h1 className="font-visbyBold text-softOpal mb-[2rem] text-center md:text-left">{eventName}</h1>
                     <div className="flex gap-[1rem] md:items-center justify-center md:justify-start">
                         <ButtonLink openNewTab bg="electricYellow" darkModeBg="electricYellow" text={eventButtonText} link={eventButtonLink}/>
                         <h2 className="uppercase text-softOpal text-[1rem] max-w-[200px] hidden md:block">{clientName}</h2>

@@ -35,7 +35,7 @@ export default function EventsCarousel({events}:{events:EventsCarouselProps}){
     return (
         <div className="bg-softOpal dark:bg-navySmoke py-[2.5rem] flex justify-center">
         <div className="flex flex-col gap-[2.5rem] justify-center w-full max-w-[85.75rem] mx-[0.625rem] md:mx-[1.5625rem] overflow-hidden">
-            <h1 className="font-ramenson text-navySmoke dark:text-softOpal text-center">
+            <h1 className="font-visbyBold text-navySmoke dark:text-softOpal text-center">
             {eventCarouselTitle}
             </h1>
             <div className="event-carousel relative">

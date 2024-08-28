@@ -21,7 +21,7 @@ export default function HeroVideo({data}:HeroVideoProps){
                     className="relative flex flex-col items-center justify-center w-full h-full left-0 mx-auto p-[1.25rem] text-center top-0 z-10"
                     >
                     <div className="h-full flex flex-col items-center justify-end pb-[50px] gap-[2.5rem]">
-                        <h1 className="font-ramenson text-softOpal">{videoTitle}</h1>
+                        <h1 className="font-visbyBold text-softOpal">{videoTitle}</h1>
                         <p className="text-softOpal max-w-[350px]">{videoDescription}</p>
                         <ButtonLink bg="softOpal" darkModeBg="transparent" text={videoButtonText} link={videoButtonLink}/>
                     </div>

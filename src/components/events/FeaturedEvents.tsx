@@ -87,7 +87,7 @@ export default function FeaturedEvents({events}:{events:FeaturedEventsProps}){
                                 return (
                                 <div key={i} className={`carousel-content relative flex flex-col md:gap-[2rem] items-start transform translate-y-[50px] ${activeIndex === i ? "active transition-all duration-500 transform translate-y-0":""}`}>
                                     <div>
-                                    <h1 className="font-ramenson text-navySmoke dark:text-softOpal text-[1.75rem] md:text-[3rem] mb-[1rem]">{e.eventName}</h1>
+                                    <h1 className="font-visbyBold text-navySmoke dark:text-softOpal text-[1.75rem] md:text-[3rem] mb-[1rem]">{e.eventName}</h1>
                                     {e.eventDateString && (
                                         <div className="flex gap-[1rem] mb-[1rem]">
                                             <p className="border-box text-black dark:text-softOpal font-semibold">{e.eventDateString}</p>

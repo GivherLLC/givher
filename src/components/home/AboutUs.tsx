@@ -17,7 +17,7 @@ export default function AboutUs({aboutInfo}:{aboutInfo:AboutUsProps}){
     return (
         <div className="bg-white dark:bg-navySmoke py-[2.5rem] flex justify-center">
             <div className="flex flex-col w-full items-center justify-center gap-[2.5rem] max-w-[85.75rem] mx-[0.625rem] lg:mx-[1.5625rem]">
-                <h1 className="font-ramenson text-navySmoke dark:text-softOpal">{aboutTitle}</h1>
+                <h1 className="font-visbyBold text-navySmoke dark:text-softOpal">{aboutTitle}</h1>
                 <div className="flex flex-col gap-[4rem] lg:gap-[8rem] w-full">
                     {aboutUsSections.map((s,i)=>{
                         const even = i % 2 === 0;

@@ -9,7 +9,7 @@ export default function ContactPage(){
             <div className="max-w-[85.75rem] flex flex-col gap-[1.5rem] mx-[0.625rem] lg:mx-[1.5625rem]">
                 <div className="flex flex-col lg:flex-row w-full">
                     <div className="flex flex-col items-center gap-[2rem] mt-[2rem] mx-auto">
-                        <h1 className="font-ramenson text-navySmoke dark:text-softOpal">{contactData.contactPageTitle}</h1>
+                        <h1 className="font-visbyBold text-navySmoke dark:text-softOpal">{contactData.contactPageTitle}</h1>
                         <Link href="tel:+916-296-4656" className="text-navySmoke dark:text-softOpal">
                             <p>{contactData.contactPhoneNumber}</p>
                         </Link>

@@ -71,7 +71,7 @@ export default function EventsDetailPage({ params: { eventName } }: EventDetailP
   return (
     <GlobalLayout>
       <div className="bg-white dark:bg-navySmoke">
-        <p className="font-ramenson text-mauvelous dark:text-softOpal min-h-[250px]  h-full w-full flex items-center justify-center">Oops! Event not found.</p>
+        <p className="font-visbyBold text-mauvelous dark:text-softOpal min-h-[250px]  h-full w-full flex items-center justify-center">Oops! Event not found.</p>
       </div>
     </GlobalLayout>
   )

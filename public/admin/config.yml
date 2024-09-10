@@ -1,0 +1,224 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: 'public/uploads'
+public_folder: '/uploads'
+
+collections:
+  - name: 'pages'
+    label: 'Pages'
+    files:
+      - label: "Home Page"
+        name: "homePage"
+        file: "home_page.yml"
+        fields:
+          - label: 'Video (Top of Homepage)'
+            name: 'video'
+            widget: 'object'
+            fields:
+              - { label: 'Video Title', name: 'videoTitle', widget: 'string' }
+              - { label: 'Video Description', name: 'videoDescription', widget: 'string' }
+              - { label: 'Video Button Text', name: 'videoButtonText', widget: 'string' }
+              - { label: 'Video Button Link', name: 'videoButtonLink', widget: 'string' }
+          - label: 'Services'
+            name: 'services'
+            widget: 'object'
+            fields:
+              - label: 'Section Title'
+                name: 'servicesCarouselTitle'
+                widget: 'string'
+              - label: 'Carousel Cards'
+                name: 'sevicesCarouselCards'
+                widget: 'list'
+                fields:
+                  - { label: 'Title', name: 'cardTitle', widget: 'string' }
+                  - { label: 'Description', name: 'cardDescription', widget: 'string' }
+                  - { label: 'Background Image', name: 'cardImageSrc', widget: 'string' }
+                  - { label: 'Description of Image', name: 'cardImageAlt', widget: 'string' }
+                  - { label: 'Link Text', name: 'cardLinkText', widget: 'string' }
+                  - { label: 'Link', name: 'cardLink', widget: 'string' }
+          - label: 'Featured Events Section'
+            name: 'featuredEvents'
+            widget: 'object'
+            fields:
+              - { label: 'Featured Events Title', name: 'title', widget: 'string' }
+          - label: 'About Us'
+            name: 'about'
+            widget: 'object'
+            fields:
+              - { label: 'Section Title', name: 'aboutTitle', widget: 'string' }
+              - label: 'About Us Sections'
+                name: 'aboutUsSections'
+                widget: 'list'
+                fields:
+                  - { label: 'Section Title', name: 'sectionTitle', widget: 'string' }
+                  - { label: 'Section Paragraph Text', name: 'sectionText', widget: 'string' }
+                  - { label: 'Section Image', name: 'sectionImageSrc', widget: 'image', allowMultiple: false }
+                  - { label: 'Section Image (Dark Mode)', name: 'sectionImageSrcDarkModet', widget: 'image', allowMultiple: false }
+                  - { label: 'Description of Section Image', name: 'sectionImageAlt', widget: 'string' }
+          - label: 'Event Images Carousel'
+            name: 'eventCarousel'
+            widget: 'object'
+            fields:
+              - { label: 'Section Title', name: 'eventCarouselTitle', widget: 'string' }
+              - label: 'Images + Descriptions for Carousel'
+                name: 'eventCarouselImages'
+                widget: 'list'
+                fields:
+                  - { label: 'Image', name: 'imageSrc', widget: 'image', allowMultiple: false }
+                  - { label: 'Description of Image', name: 'imageAlt', widget: 'string' }
+      - label: "Clients Page"
+        name: "clientPage"
+        file: "client_page.yml"
+        fields:
+          - { label: 'Client Page Title', name: 'clientsSectionTitle', widget: 'string' }
+          - { label: 'Testimonials Section Title', name: 'testimonalsSectionTitle', widget: 'string' }
+          - label: 'Testimonials Carousel'
+            name: 'testimonials'
+            widget: 'list'
+            fields:
+              - { label: 'Quotee Name', name: 'quoteeName', widget: 'string' }
+              - { label: 'Quote', name: 'quote', widget: 'string' }
+              - { label: 'Organization', name: 'organization', widget: 'string' }
+      - label: "Events Pages"
+        name: "eventsPage"
+        file: "events_page.yml"
+        fields:
+          - { label: 'All Events Section Title', name: 'allEventsSectionTitle', widget: 'string' }
+          - { label: 'Events Coming Soon Section Title', name: 'comingSoonEventsSectionTitle', widget: 'string' }
+          - { label: 'Text to Show for Postponed Events', name: 'postponedEventText', widget: 'string' }
+          - { label: 'Events Detail Pages - Upcoming Events Title', name: 'clientEventPageUpcomingEventsTitle', widget: 'string' }
+          - label: 'Givher (Featured Event at Top)'
+            name: 'givherFeaturedEvent'
+            widget: 'object'
+            fields:
+              - { label: 'Title', name: 'eventName', widget: 'string' }
+              - { label: 'Button Text', name: 'eventButtonText', widget: 'string' }
+              - { label: 'Button Link', name: 'eventButtonLink', widget: 'string' }
+              - { label: 'Image', name: 'clientImage', widget: 'image', allowMultiple: false }
+      - label: "Team Page"
+        name: "teamPage"
+        file: "team_page.yml"
+        fields:
+          - { label: 'Team Page Title', name: 'teamPageTitle', widget: 'string' }
+          - label: 'Team Members'
+            name: 'teamMembers'
+            widget: 'list'
+            fields:
+              - { label: 'Team Member Full Name', name: 'name', widget: 'string' }
+              - { label: 'Team Member Title', name: 'title', widget: 'string' }
+              - { label: 'Team Member Image', name: 'imageSrc',  widget: 'image', allowMultiple: false }
+              - label: 'Icon Links'
+                name: 'iconLinks'
+                widget: 'list'
+                fields:
+                  - { label: 'Icon Image', name: 'iconImageSrc',  widget: 'image', allowMultiple: false }
+                  - { label: 'Icon Image (Dark Mode)', name: 'darkmodeSrc',  widget: 'image', allowMultiple: false }
+                  - { label: 'Description of Icon', name: 'iconImageAlt', widget: 'string' }
+                  - { label: 'Icon Link', name: 'iconLink', widget: 'string' }
+              - label: 'Bio'
+                name: 'bio'
+                widget: 'list'
+                fields:
+                  - { label: 'Paragraph (add additional field for each paragraph)', name: 'paragraph',  widget: 'string' }
+      - label: "Contact Page"
+        name: "contactPage"
+        file: "contact_page.yml"
+        fields:
+          - { label: 'Contact Page Title', name: 'contactPageTitle', widget: 'string' }
+          - { label: 'Client Logo', name: 'contactPhoneNumber', widget: 'string' }
+          - { label: 'Client Website', name: 'contactEmail', widget: 'string' }
+          - { label: 'Client W9 Link (Google Drive)', name: 'googleFormLink', widget: 'string' }
+      - label: "Footer"
+        name: "footer"
+        file: "footer.yml"
+        fields:
+          - { label: 'Footer Logo', name: 'footerLogo', widget: 'image', allowMultiple: false }
+          - { label: 'Footer Logo (Dark Mode)', name: 'darkModeLogoSrc', widget: 'image', allowMultiple: false }
+          - label: 'Footer Icons Links'
+            name: 'iconLinks'
+            widget: 'list'
+            fields:
+              - { label: 'Icon Image', name: 'iconImageSrc', widget: 'image', allowMultiple: false }
+              - { label: 'Icon Image (Dark Mode)', name: 'darkmodeSrc', widget: 'image', allowMultiple: false }
+              - { label: 'Description of Icon', name: 'imageAlt', widget: 'string' }
+              - { label: 'Icon Link', name: 'iconLink', widget: 'string' }
+          - { label: 'Title Above Button', name: 'buttonTitle', widget: 'string' }
+          - { label: 'Button Text', name: 'buttonText', widget: 'string' }
+          - { label: 'Button Link', name: 'buttonLink', widget: 'string' }
+          - label: 'Page Links'
+            name: 'pageLinks'
+            widget: 'list'
+            fields:
+              - { label: 'Page Name', name: 'linkText', widget: 'string' }
+              - { label: 'Page Link', name: 'link', widget: 'string' }
+              - { label: 'External Link?', name: 'external', widget: 'boolean' }
+  - name: 'clients'
+    identifier_field: 'clientName'
+    label: 'Clients'
+    folder: 'content/clients'
+    create: true
+    fields:
+      - { label: 'Client Name', name: 'clientName', widget: 'string', required: true }
+      - { label: 'Client Image (Clients Page)', name: 'clientImageSrc', widget: 'image', allow_multiple: false, required: true }
+      - { label: 'Client Logo (Floating Logos - Homepage)', name: 'logoSrc', widget: 'image', allow_multiple: false, required: true }
+      - { label: 'Client Image (Events Page)', name: 'eventsImage', widget: 'image', allow_multiple: false, required: true }
+      - { label: 'Client Website', name: 'clientWebsite', widget: 'string', required: true }
+      - { label: 'Client W9 Link (Google Drive)', name: 'clientW9Src', widget: 'string', required: true }
+  - name: 'events'
+    identifier_field: 'eventName'
+    label: 'Events'
+    folder: 'content/events'
+    create: true
+    fields:
+      - { label: 'Event Name', name: 'eventName', widget: 'string', required: true }
+      - label: 'Client Name'
+        name: 'clientName'
+        widget: 'relation'
+        collection: 'clients'
+        value_field: 'clientName'
+        search_fields: ['clientName']
+        required: true
+      - { label: 'Event Start Date', name: 'firstDayOfEvent', widget: 'datetime', required: true }
+      - { label: 'Event End Date (Multiple Day Events Only)', name: 'lastDayOfEvent', widget: 'datetime', required: false }
+      - { label: 'Event Time Zone', name: 'timeZone', widget: 'datetime', required: true, default: 'PST' }
+      - label: 'Event Description'
+        name: 'eventDescription'
+        widget: 'list'
+        fields:
+          - { label: 'Paragraph (add additional field for each paragraph)', name: 'paragraph',  widget: 'string' }
+      - label: 'Bolded Information'
+        name: 'boldedEventInformation'
+        widget: 'list'
+        fields:
+          - { label: 'Line (add additional field for each line)', name: 'line',  widget: 'string' }
+      - { label: 'Event City', name: 'eventCity', widget: 'string', required: true }
+      - { label: 'Event Location', name: 'eventLocation', widget: 'string', required: true }
+      - { label: 'Event Button Text', name: 'eventButtonText', widget: 'string', required: true }
+      - { label: 'Event Button Link', name: 'eventButtonLink', widget: 'string', required: true }
+      - { label: 'Event Flyer Button Text', name: 'eventLinkText', widget: 'string', required: true }
+      - { label: 'Event Flyer Link', name: 'eventLink', widget: 'string', required: true }
+      - { label: 'Event Detail Page Image', name: 'detailImage', widget: 'image', allowMultiple: false, required: true }
+      - { label: 'Postponed', name: 'postponed', widget: 'boolean', default: false, required: true }
+  - name: 'comingSoon'
+    identifier_field: 'eventName'
+    label: 'Events (Coming Sioon)'
+    folder: 'content/events'
+    create: true
+    fields:
+      - { label: 'Event Name', name: 'eventName', widget: 'string', required: true }
+      - label: 'Client Name'
+        name: 'clientName'
+        widget: 'relation'
+        collection: 'clients'
+        value_field: 'clientName'
+        search_fields: ['clientName']
+        required: true
+      - { label: 'Event Start Date', name: 'firstDayOfEvent', widget: 'datetime', required: false }
+      - { label: 'Event End Date (Multiple Day Events Only)', name: 'lastDayOfEvent', widget: 'datetime', required: false }
+      - { label: 'Event Time Zone', name: 'timeZone', widget: 'datetime', required: false, default: 'PST' }  
+      - { label: 'Event Button Text', name: 'eventButtonText', widget: 'string', required: false }
+      - { label: 'Event Button Link', name: 'eventButtonLink', widget: 'string', required: false }
+      - { label: 'Event City', name: 'eventCity', widget: 'string', required: false }  
+      - { label: 'Postponed', name: 'postponed', widget: 'boolean', default: false, required: true }

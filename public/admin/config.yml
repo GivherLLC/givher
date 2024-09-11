@@ -182,7 +182,7 @@ collections:
         required: true
       - { label: 'Event Start Date', name: 'firstDayOfEvent', widget: 'datetime', required: true }
       - { label: 'Event End Date (Multiple Day Events Only)', name: 'lastDayOfEvent', widget: 'datetime', required: false }
-      - { label: 'Event Time Zone', name: 'timeZone', widget: 'datetime', required: true, default: 'PST' }
+      - { label: 'Event Time Zone', name: 'timeZone', widget: 'string', required: true, default: 'PST' }
       - label: 'Event Description'
         name: 'eventDescription'
         widget: 'list'
@@ -199,11 +199,11 @@ collections:
       - { label: 'Event Button Link', name: 'eventButtonLink', widget: 'string', required: true }
       - { label: 'Event Flyer Button Text', name: 'eventLinkText', widget: 'string', required: true }
       - { label: 'Event Flyer Link', name: 'eventLink', widget: 'string', required: true }
-      - { label: 'Event Detail Page Image', name: 'detailImage', widget: 'image', allowMultiple: false, required: true }
+      - { label: 'Event Detail Page Image (Shown Next to Flyer Link)', name: 'detailImage', widget: 'image', allowMultiple: false, required: true }
       - { label: 'Postponed', name: 'postponed', widget: 'boolean', default: false, required: true }
   - name: 'comingSoon'
     identifier_field: 'eventName'
-    label: 'Events (Coming Sioon)'
+    label: 'Events (Coming Soon)'
     folder: 'content/events'
     create: true
     fields:

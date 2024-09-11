@@ -1,0 +1,117 @@
+video:
+  videoTitle: Contribute. Cultivate. Connect.
+  videoDescription: At Givher, we specialize in fundraising, event development,
+    and political hospitality
+  videoButtonText: Contact
+  videoButtonLink: /contact
+services:
+  sevicesCarouselCards:
+    - cardTitle: Professional Fundraising
+      cardDescription: Fundraising is pivotal in sustaining and expanding essential
+        services and contributing to the mission of your brand. Givher offers
+        expertise in developing effective fundraising strategies to help you
+        achieve your goals.
+      cardImageAlt: A graphic of a man walking with a financial plan in his hands
+      cardLinkText: View Clients
+      cardLink: /clients
+      cardImageSrc: /uploads/fundraising.png
+    - cardTitle: Event Management
+      cardDescription: Events are vital for raising awareness, educating, and engaging
+        communities. Givher provides comprehensive event development services to
+        make events effective and memorable.
+      cardImageAlt: A graphic demonstrating planning
+      cardLinkText: View Events
+      cardLink: /events
+      cardImageSrc: /uploads/event-management.png
+    - cardTitle: General Consulting
+      cardDescription: With extensive experience in the legislature, event
+        development, partnering with campaigns, and navigating internal and
+        external politics, Givher has the expertise to implement processes,
+        mentor staff, advise on political strategy, and help to create a road
+        map for accomplishing your existing goals.
+      cardImageAlt: A graphic of three chat bubbles
+      cardLinkText: View Team
+      cardLink: /team
+      cardImageSrc: /uploads/general-consulting.png
+  servicesCarouselTitle: Elevate Your Mission With Us
+featuredEvents:
+  title: Upcoming Events
+about:
+  aboutUsSections:
+    - sectionTitle: Forward Thinking
+      sectionText: Givher is a dynamic and forward-thinking company specializing in
+        fundraising, event development, and political hospitality. Founded and
+        led by Alina Hernandez, a robust policy and advocacy leader, Givher
+        provides services to non-profit organizations, political action
+        committees, and advocacy groups in achieving their missions and
+        expanding their impact. Partnering with Givher will help elevate your
+        mission and add the extra flare you never knew you were missing.
+      sectionImageSrc: /uploads/forward-thinking.png
+      sectionImageSrcDarkModet: /uploads/forward-thinking-darkmode.png
+      sectionImageAlt: Outline drawing of a brain and heart shaking hands
+    - sectionTitle: Effective and Innovative
+      sectionText: At the heart of Givher's mission is a commitment to effective and
+        innovative fundraising strategies. Understanding the unique challenges
+        in securing financial support, Givher offers a comprehensive suite of
+        services tailored to each client's specific objectives. These services
+        include developing personalized fundraising plans, identifying new
+        avenues for donor development, organizing engaging fundraising events,
+        and managing donor relationships to foster long-term loyalty and
+        support.
+      sectionImageSrc: /uploads/effective-and-innovative.png
+      sectionImageAlt: Outline drawing of a red carpet
+      sectionImageSrcDarkModet: /uploads/effective-and-innovative-darkmode.png
+    - sectionTitle: Raising Awareness
+      sectionText: In addition to fundraising, Givher excels in event development.
+        Recognizing the critical role of events in raising awareness and
+        engaging stakeholders, Givher takes a holistic approach to event
+        planning and execution. From conceptualizing event themes that resonate
+        with an organization's mission and values to managing every detail of
+        the event lifecycle — including venue selection, marketing, program
+        design, and logistics — Givher ensures each event is well-organized,
+        memorable, and lucrative.
+      sectionImageAlt: Outline drawing of a flashlight
+      sectionImageSrc: /uploads/raising-awareness.png
+      sectionImageSrcDarkModet: /uploads/raising-awareness-darkmode.png
+    - sectionTitle: Unique Perspective
+      sectionText: Combining Alina's experience in public policy, technology, and
+        various artistic and educational pursuits, their diverse background
+        provides a rich and unique perspective that guides the company's
+        approach. With a passion for advancing equality and representation,
+        Givher is not just a service provider but a partner committed to
+        empowering its clients and contributing to positive social change.
+      sectionImageAlt: Outline drawing of sunglasses
+      sectionImageSrc: /uploads/unique-perspective.png
+      sectionImageSrcDarkModet: /uploads/unique-perspective-darkmode.png
+  aboutTitle: About Us
+eventCarousel:
+  eventCarouselImages:
+    - imageAlt: Givher event decorations
+      imageSrc: /uploads/1.png
+    - imageAlt: A woman talking at a Givher event
+      imageSrc: /uploads/2.png
+    - imageAlt: A crowd of people hanging out at a Givher event
+      imageSrc: /uploads/3.png
+    - imageAlt: Alina and another person having a great time at a Givher event
+      imageSrc: /uploads/4.png
+    - imageAlt: Two people with a neon sign behind them at a Givher event
+      imageSrc: /uploads/5.png
+    - imageAlt: Two pillows on a couch at a Givher event
+      imageSrc: /uploads/6.png
+    - imageAlt: Alina and another person having a great time at a Givher event
+      imageSrc: /uploads/7.png
+    - imageAlt: A group of people posing on a stairwell at a Givher event
+      imageSrc: /uploads/8.png
+    - imageAlt: Bar decor at a Givher event
+      imageSrc: /uploads/9.png
+    - imageAlt: A group of people posing for a picture outside at a Givher event
+      imageSrc: /uploads/10.png
+    - imageAlt: A neon sign that says United For Diversity
+      imageSrc: /uploads/11.png
+    - imageAlt: Two people with a neon sign behind them at a Givher event
+      imageSrc: /uploads/12.png
+    - imageAlt: Decor at a Givher event
+      imageSrc: /uploads/13.png
+    - imageAlt: Two people posing for a picture at a Givher event
+      imageSrc: /uploads/14.png
+  eventCarouselTitle: Givher Events

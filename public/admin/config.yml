@@ -204,7 +204,7 @@ collections:
   - name: 'comingSoon'
     identifier_field: 'eventName'
     label: 'Events (Coming Soon)'
-    folder: 'content/events'
+    folder: 'content/coming-soon'
     create: true
     fields:
       - { label: 'Event Name', name: 'eventName', widget: 'string', required: true }

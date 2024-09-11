@@ -127,9 +127,9 @@ collections:
         file: "content/pages/contact_page.yml"
         fields:
           - { label: 'Contact Page Title', name: 'contactPageTitle', widget: 'string' }
-          - { label: 'Client Logo', name: 'contactPhoneNumber', widget: 'string' }
-          - { label: 'Client Website', name: 'contactEmail', widget: 'string' }
-          - { label: 'Client W9 Link (Google Drive)', name: 'googleFormLink', widget: 'string' }
+          - { label: 'Contact Phone Number', name: 'contactPhoneNumber', widget: 'string' }
+          - { label: 'Contact Email', name: 'contactEmail', widget: 'string' }
+          - { label: 'Google Form Embed Link', name: 'googleFormLink', widget: 'string' }
       - label: "Footer"
         name: "footer"
         file: "content/footer/footer.yml"

@@ -11,7 +11,7 @@ collections:
     files:
       - label: "Home Page"
         name: "homePage"
-        file: "home_page.yml"
+        file: "content/pages/home_page.yml"
         fields:
           - label: 'Video (Top of Homepage)'
             name: 'video'
@@ -34,7 +34,7 @@ collections:
                 fields:
                   - { label: 'Title', name: 'cardTitle', widget: 'string' }
                   - { label: 'Description', name: 'cardDescription', widget: 'string' }
-                  - { label: 'Background Image', name: 'cardImageSrc', widget: 'string' }
+                  - { label: 'Background Image', name: 'cardImageSrc', widget: 'image', allowMultiple: false }
                   - { label: 'Description of Image', name: 'cardImageAlt', widget: 'string' }
                   - { label: 'Link Text', name: 'cardLinkText', widget: 'string' }
                   - { label: 'Link', name: 'cardLink', widget: 'string' }
@@ -70,7 +70,7 @@ collections:
                   - { label: 'Description of Image', name: 'imageAlt', widget: 'string' }
       - label: "Clients Page"
         name: "clientPage"
-        file: "client_page.yml"
+        file: "content/pages/client_page.yml"
         fields:
           - { label: 'Client Page Title', name: 'clientsSectionTitle', widget: 'string' }
           - { label: 'Testimonials Section Title', name: 'testimonalsSectionTitle', widget: 'string' }
@@ -83,7 +83,7 @@ collections:
               - { label: 'Organization', name: 'organization', widget: 'string' }
       - label: "Events Pages"
         name: "eventsPage"
-        file: "events_page.yml"
+        file: "content/pages/events_page.yml"
         fields:
           - { label: 'All Events Section Title', name: 'allEventsSectionTitle', widget: 'string' }
           - { label: 'Events Coming Soon Section Title', name: 'comingSoonEventsSectionTitle', widget: 'string' }
@@ -99,7 +99,7 @@ collections:
               - { label: 'Image', name: 'clientImage', widget: 'image', allowMultiple: false }
       - label: "Team Page"
         name: "teamPage"
-        file: "team_page.yml"
+        file: "content/pages/team_page.yml"
         fields:
           - { label: 'Team Page Title', name: 'teamPageTitle', widget: 'string' }
           - label: 'Team Members'
@@ -124,15 +124,15 @@ collections:
                   - { label: 'Paragraph (add additional field for each paragraph)', name: 'paragraph',  widget: 'string' }
       - label: "Contact Page"
         name: "contactPage"
-        file: "contact_page.yml"
+        file: "content/pages/contact_page.yml"
         fields:
           - { label: 'Contact Page Title', name: 'contactPageTitle', widget: 'string' }
-          - { label: 'Client Logo', name: 'contactPhoneNumber', widget: 'string' }
-          - { label: 'Client Website', name: 'contactEmail', widget: 'string' }
-          - { label: 'Client W9 Link (Google Drive)', name: 'googleFormLink', widget: 'string' }
+          - { label: 'Contact Phone Number', name: 'contactPhoneNumber', widget: 'string' }
+          - { label: 'Contact Email', name: 'contactEmail', widget: 'string' }
+          - { label: 'Google Form Embed Link', name: 'googleFormLink', widget: 'string' }
       - label: "Footer"
         name: "footer"
-        file: "footer.yml"
+        file: "content/footer/footer.yml"
         fields:
           - { label: 'Footer Logo', name: 'footerLogo', widget: 'image', allowMultiple: false }
           - { label: 'Footer Logo (Dark Mode)', name: 'darkModeLogoSrc', widget: 'image', allowMultiple: false }
@@ -164,8 +164,8 @@ collections:
       - { label: 'Client Image (Clients Page)', name: 'clientImageSrc', widget: 'image', allow_multiple: false, required: true }
       - { label: 'Client Logo (Floating Logos - Homepage)', name: 'logoSrc', widget: 'image', allow_multiple: false, required: true }
       - { label: 'Client Image (Events Page)', name: 'eventsImage', widget: 'image', allow_multiple: false, required: true }
-      - { label: 'Client Website', name: 'clientWebsite', widget: 'string', required: true }
-      - { label: 'Client W9 Link (Google Drive)', name: 'clientW9Src', widget: 'string', required: true }
+      - { label: 'Client Website', name: 'clientWebsite', widget: 'string', required: false }
+      - { label: 'Client W9 Link (Google Drive)', name: 'clientW9Src', widget: 'string', required: false }
   - name: 'events'
     identifier_field: 'eventName'
     label: 'Events'
@@ -182,7 +182,7 @@ collections:
         required: true
       - { label: 'Event Start Date', name: 'firstDayOfEvent', widget: 'datetime', required: true }
       - { label: 'Event End Date (Multiple Day Events Only)', name: 'lastDayOfEvent', widget: 'datetime', required: false }
-      - { label: 'Event Time Zone', name: 'timeZone', widget: 'datetime', required: true, default: 'PST' }
+      - { label: 'Event Time Zone', name: 'timeZone', widget: 'string', required: true, default: 'PST' }
       - label: 'Event Description'
         name: 'eventDescription'
         widget: 'list'
@@ -199,12 +199,12 @@ collections:
       - { label: 'Event Button Link', name: 'eventButtonLink', widget: 'string', required: true }
       - { label: 'Event Flyer Button Text', name: 'eventLinkText', widget: 'string', required: true }
       - { label: 'Event Flyer Link', name: 'eventLink', widget: 'string', required: true }
-      - { label: 'Event Detail Page Image', name: 'detailImage', widget: 'image', allowMultiple: false, required: true }
+      - { label: 'Event Detail Page Image (Shown Next to Flyer Link)', name: 'detailImage', widget: 'image', allowMultiple: false, required: true }
       - { label: 'Postponed', name: 'postponed', widget: 'boolean', default: false, required: true }
   - name: 'comingSoon'
     identifier_field: 'eventName'
-    label: 'Events (Coming Sioon)'
-    folder: 'content/events'
+    label: 'Events (Coming Soon)'
+    folder: 'content/coming-soon'
     create: true
     fields:
       - { label: 'Event Name', name: 'eventName', widget: 'string', required: true }

@@ -73,7 +73,7 @@ collections:
         file: "content/pages/client_page.yml"
         fields:
           - { label: 'Client Page Title', name: 'clientsSectionTitle', widget: 'string' }
-          - { label: 'Testimonials Section Title', name: 'testimonalsSectionTitle', widget: 'string' }
+          - { label: 'Testimonials Section Title', name: 'testimonalsSectionTitle', widget: 'string', required: false }
           - label: 'Testimonials Carousel'
             name: 'testimonials'
             widget: 'list'
@@ -94,8 +94,10 @@ collections:
             widget: 'object'
             fields:
               - { label: 'Title', name: 'eventName', widget: 'string' }
-              - { label: 'Button Text', name: 'eventButtonText', widget: 'string' }
-              - { label: 'Button Link', name: 'eventButtonLink', widget: 'string' }
+              - { label: 'Event City', name: 'eventCity', widget: 'string', required: false }
+              - { label: 'Event Start Date', name: 'firstDayOfEvent', widget: 'datetime', required: false }
+              - { label: 'Button Text', name: 'eventButtonText', widget: 'string', required: true }
+              - { label: 'Button Link', name: 'eventButtonLink', widget: 'string', required: true }
               - { label: 'Image', name: 'clientImage', widget: 'image', allowMultiple: false }
       - label: "Team Page"
         name: "teamPage"

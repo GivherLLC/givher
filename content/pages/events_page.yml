@@ -1,0 +1,11 @@
+allEventsSectionTitle: Events
+comingSoonEventsSectionTitle: Coming Soon
+postponedEventText: '* Event Postponed'
+clientEventPageUpcomingEventsTitle: Upcoming Events
+givherFeaturedEvent:
+  eventName: Upcoming Events
+  eventCity:
+  firstDayOfEvent:
+  eventButtonText: View Events
+  eventButtonLink: '#events'
+  clientImage: /uploads/givher-events-page.png

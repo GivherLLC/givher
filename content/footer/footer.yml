@@ -1,0 +1,31 @@
+footerLogo: /uploads/footer-logo-4.png
+darkModeLogoSrc: /uploads/footer-logo-darkmode.png
+iconLinks:
+  - iconImageSrc: /uploads/ig-icon.png
+    darkmodeSrc: /uploads/ig-icon-darkmode.png
+    imageAlt: Instagram icon
+    iconLink: https://www.instagram.com/givherllc/
+  - iconImageSrc: /uploads/mail-icon.png
+    darkmodeSrc: /uploads/mail-icon-darkmode.png
+    imageAlt: Email icon
+    iconLink: mailto:alina@givher.com
+  - iconImageSrc: /uploads/phone-icon.png
+    darkmodeSrc: /uploads/phone-icon-darkmode.png
+    imageAlt: Phone icon
+    iconLink: tel:+916-296-4656
+buttonTitle: SIGN UP NOW FOR EVENT AND FUNDRAISING UPDATES
+buttonText: Sign Up
+buttonLink: /contact
+pageLinks:
+  - linkText: Events
+    link: /events
+    external: false
+  - linkText: Clients
+    link: /clients
+    external: false
+  - linkText: Contact
+    link: /contact
+    external: false
+  - linkText: Marketing Kit
+    link: https://drive.google.com/drive/folders/1MqXIb1rcy_O-UdC0dOmAWMTCrQfycC8D?usp=sharing
+    external: true

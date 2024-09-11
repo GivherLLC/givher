@@ -1,0 +1,15 @@
+video:
+  videoTitle: Contribute. Cultivate. Connect.
+  videoDescription: At Givher, we specialize in fundraising, event development,
+    and political hospitality
+  videoButtonText: Contact
+  videoButtonLink: /contact
+services:
+  servicesCarouselTitle: Elevate Your Mission With Us
+  sevicesCarouselCards: []
+featuredEvents:
+  title: Upcoming Events
+about:
+  aboutTitle: About Us
+eventCarousel:
+  eventCarouselTitle: Givher Events

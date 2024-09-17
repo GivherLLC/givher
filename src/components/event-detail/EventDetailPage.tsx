@@ -24,7 +24,7 @@ export default function EventDetailPage({event}:{event:EventType}){
             <DetailHeader event={event}/>
             <EventDetails event={event}/>
             {!!clientEvents.length && (
-            <UpcomingClientEvents clientName={client} events={clientEvents}/>
+            <UpcomingClientEvents clientName={client} events={clientEvents} event={event}/>
             )}
         </>
     )

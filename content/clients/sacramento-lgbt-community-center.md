@@ -1,5 +1,5 @@
 ---
-clientName: Planned Parenthood Affiliates of California
+clientName: Sacramento LGBT Community Center
 clientImageSrc: /uploads/clients-sacramento-lgbt-community-center-1.png
 logoSrc: /uploads/hp-sacramento-lgbt-1.png
 eventsImage: /uploads/events-sacramento-lgbtq.png

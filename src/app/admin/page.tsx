@@ -20,6 +20,9 @@ export default function Admin() {
         <script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         <!-- Customize the netlify identity widget to refresh on logout preventing users from using the cms when not logged in and then seeing an error -->
         <script is:inline>netlifyIdentity.on('logout', () => location.reload());</script>
+        <!-- Link the external script for previews -->
+        <script src="/admin/clients-preview.js"></script>
+        <script src="/admin/event-preview.js"></script>
         </body>`,
       }}
     />

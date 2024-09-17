@@ -73,7 +73,7 @@ collections:
         file: "content/pages/client_page.yml"
         fields:
           - { label: 'Client Page Title', name: 'clientsSectionTitle', widget: 'string' }
-          - { label: 'Testimonials Section Title', name: 'testimonalsSectionTitle', widget: 'string' }
+          - { label: 'Testimonials Section Title', name: 'testimonalsSectionTitle', widget: 'string', required: false }
           - label: 'Testimonials Carousel'
             name: 'testimonials'
             widget: 'list'
@@ -94,8 +94,10 @@ collections:
             widget: 'object'
             fields:
               - { label: 'Title', name: 'eventName', widget: 'string' }
-              - { label: 'Button Text', name: 'eventButtonText', widget: 'string' }
-              - { label: 'Button Link', name: 'eventButtonLink', widget: 'string' }
+              - { label: 'Event City', name: 'eventCity', widget: 'string', required: false }
+              - { label: 'Event Start Date', name: 'firstDayOfEvent', widget: 'datetime', required: false }
+              - { label: 'Button Text', name: 'eventButtonText', widget: 'string', required: true }
+              - { label: 'Button Link', name: 'eventButtonLink', widget: 'string', required: true }
               - { label: 'Image', name: 'clientImage', widget: 'image', allowMultiple: false }
       - label: "Team Page"
         name: "teamPage"
@@ -173,6 +175,40 @@ collections:
     create: true
     fields:
       - { label: 'Event Name', name: 'eventName', widget: 'string', required: true }
+      - label: 'Event Start Date'
+        name: 'firstDayOfEvent'
+        widget: 'datetime'
+        required: true
+        format: 'MM.DD.YYYY'
+        time_format: false
+      - label: 'Time of Event (Single Day Events Only)'
+        name: 'eventTime'
+        widget: 'datetime'
+        required: false
+        format: 'HH:mm'
+        time_format: 'HH:mm'
+        date_format: false
+      - label: 'Event End Date (Multiple Day Events Only)'
+        name: 'lastDayOfEvent'
+        widget: 'datetime'
+        required: false
+        format: 'MM.DD.YYYY'
+        time_format: false
+      - label: 'Event Time Zone'
+        name: 'timeZone'
+        widget: 'select'
+        required: true
+        max: 1
+        default: 'America/Los_Angeles'
+        options:
+          - { label: "PT (Los Angeles)", value: "America/Los_Angeles"}
+          - { label: "ET (New York)", value: "America/New_York"}
+          - { label: "MST (Phoenix)", value: "America/Phoenix"}
+          - { label: "MT (Denver)", value: "America/Denver"}
+          - { label: "AKT (Anchorage)", value: "America/Anchorage"}
+          - { label: "HAT (Honolulu)", value: "Pacific/Honolulu"}
+      - { label: 'Event City', name: 'eventCity', widget: 'string', required: true }
+      - { label: 'Event Location', name: 'eventLocation', widget: 'string', required: true }
       - label: 'Client Name'
         name: 'clientName'
         widget: 'relation'
@@ -180,9 +216,8 @@ collections:
         value_field: 'clientName'
         search_fields: ['clientName']
         required: true
-      - { label: 'Event Start Date', name: 'firstDayOfEvent', widget: 'datetime', required: true }
-      - { label: 'Event End Date (Multiple Day Events Only)', name: 'lastDayOfEvent', widget: 'datetime', required: false }
-      - { label: 'Event Time Zone', name: 'timeZone', widget: 'string', required: true, default: 'PST' }
+      - { label: 'Event Button Text', name: 'eventButtonText', widget: 'string', required: true }
+      - { label: 'Event Button Link', name: 'eventButtonLink', widget: 'string', required: true }
       - label: 'Event Description'
         name: 'eventDescription'
         widget: 'list'
@@ -193,10 +228,6 @@ collections:
         widget: 'list'
         fields:
           - { label: 'Line (add additional field for each line)', name: 'line',  widget: 'string' }
-      - { label: 'Event City', name: 'eventCity', widget: 'string', required: true }
-      - { label: 'Event Location', name: 'eventLocation', widget: 'string', required: true }
-      - { label: 'Event Button Text', name: 'eventButtonText', widget: 'string', required: true }
-      - { label: 'Event Button Link', name: 'eventButtonLink', widget: 'string', required: true }
       - { label: 'Event Flyer Button Text', name: 'eventLinkText', widget: 'string', required: true }
       - { label: 'Event Flyer Link', name: 'eventLink', widget: 'string', required: true }
       - { label: 'Event Detail Page Image (Shown Next to Flyer Link)', name: 'detailImage', widget: 'image', allowMultiple: false, required: true }

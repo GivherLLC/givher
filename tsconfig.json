@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "es2015",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
+    "allowJs": true,                // Allow JavaScript files to be compiled
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
@@ -22,10 +22,12 @@
       "@/*": ["./src/*"]
     }
   },
-"include": [
+  "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
+    "**/*.js",         // Add .js files to the include section
+    "**/*.jsx",        // Optionally include .jsx files as well if needed
     ".next/types/**/*.ts",
     "**/*.d.ts"
   ],

@@ -4,8 +4,10 @@ import { EventType } from "@/types/types";
 import eventsData from "../../data/events.json";
 import useCurrentEventsSorted from "@/hooks/useCurrentEventsSorted";
 
-export default function UpcomingClientEvents({events, clientName}:{events: EventType[], clientName:string}){
+export default function UpcomingClientEvents({events, clientName, event }:{ events: EventType[], clientName:string, event: EventType}){
+    const {eventName} = event;
     const currentEvents = useCurrentEventsSorted();
+    const shownEvents = currentEvents.filter((e)=> e.eventName !== eventName).slice(0, 3);;
 
     return (
         <div className="bg-softOpal dark:bg-navySmoke py-[2.5rem] flex justify-center">
@@ -13,7 +15,7 @@ export default function UpcomingClientEvents({events, clientName}:{events: Event
                 <h1 className="font-visbyBold text-navySmoke dark:text-softOpal text-center lg:text-left">{eventsData.clientEventPageUpcomingEventsTitle}</h1>
                 <h2 className="uppercase text-black dark:text-softOpal text-[1rem] text-center lg:text-left">{clientName}</h2>
                 <div className={`flex flex-col lg:flex-row ${events.length < 3 ? "":"lg:justify-between"} gap-[2rem] items-center w-full`}>
-                    {currentEvents.map((e, i)=>(
+                    {shownEvents.map((e, i)=>(
                         <EventCard key={`${i}-${e.clientName}-${e.eventName}-${e.firstDayOfEvent}`} event={e} type="detail-page"/>
                     ))}
                 </div>

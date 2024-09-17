@@ -1,5 +1,5 @@
 ---
-clientName: California LGBTQ Foundation
+clientName: Microdosing Collective
 clientImageSrc: /uploads/clients-micro-dosing-collective-1.png
 logoSrc: /uploads/hp-micro-dosing-collective-1.png
 eventsImage: /uploads/events-micro-dosing-collective.png

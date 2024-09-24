@@ -56,7 +56,7 @@ export default function EventsPageCard({event, postponedEventText, showClientNam
           )}
           <div className="flex items-center flex-wrap gap-x-[1.5rem] gap-y-[1rem]">
               <div className="group relative transition duration-350 before:bg-black before:rounded-[12px] before:h-[calc(100%+3px)] before:w-[calc(100%+3.5px)] before:absolute before:left-0 before:top-0 before:transition before:transform before:translate-x-[2px] before:translate-y-[2px]">
-                  <div className={`bg-mauvelous text-navySmok text-[0.75rem] uppercase font-bold py-[10px] px-[20px] rounded-[12px] border-[3px] border-black relative z-10 block group-hover:transform group-hover:translate-x-[-2px] group-hover:translate-y-[-2px]`}>
+                  <div className={`bg-mauvelous text-navySmoke text-[0.75rem] uppercase font-bold py-[10px] px-[20px] rounded-[12px] border-[3px] border-black relative z-10 block group-hover:transform group-hover:translate-x-[-2px] group-hover:translate-y-[-2px]`}>
                       View Details
                   </div>
               </div> 

@@ -1,6 +1,15 @@
 import React from 'react';
 import GlobalLayout from '@/components/GlobalLayout';
 import ClientsPage from '@/components/clients/ClientsPage';
+import getAllClients from '../../../lib/getAllClients';
+import getClientsPageData from '../../../lib/getClientsPageData';
+import { TestimonialType } from '@/types/types';
+
+export interface ClientsPageData {
+  clientsSectionTitle: string;
+  testimonalsSectionTitle: string;
+  testimonials: TestimonialType[];
+}
 
 export async function generateMetadata() {
   return {
@@ -16,10 +25,13 @@ export async function generateMetadata() {
     }
 }
 
-export default function Home() { 
+export default async function Clients() { 
+  const clients = await getAllClients();
+  const clientsPageData = getClientsPageData();
+
   return (
     <GlobalLayout>
-      <ClientsPage/>
+      <ClientsPage clients={clients} clientsPageData={clientsPageData}/>
     </GlobalLayout>
   )
 }

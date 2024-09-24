@@ -1,7 +1,6 @@
-import { useMemo } from "react";
 import { format } from 'date-fns';
 import { toDate } from 'date-fns-tz';
-import eventsData from "../data/events.json";
+import { EventType } from "@/types/types";
 
 // Helper function to parse a date string in MM/DD/YYYY format
 const parseDateString = (dateString:string, timeZone:string) => {
@@ -10,18 +9,19 @@ const parseDateString = (dateString:string, timeZone:string) => {
   return toDate(date, { timeZone });
 };
 
-const useCurrentEventsSorted = () => {
-  const currentEvents = useMemo(() => {
+const useCurrentEventsSorted = (events:EventType[]) => {
     const currentDate = new Date();
     const currentDateString = format(currentDate, 'yyyy-MM-dd');
 
-    return eventsData.events
+    const sortedEvents = events
       .filter(event => {
         const timeZone = event.timeZone || 'UTC'; // Default to UTC if no timeZone provided
 
         // Parse the event dates using the provided time zone
-        const firstDay = parseDateString(event.firstDayOfEvent, timeZone);
-        const lastDay = event.lastDayOfEvent ? parseDateString(event.lastDayOfEvent, timeZone) : firstDay;
+        const convertFirstDate = event.firstDayOfEvent.split('.').join("/");
+        const firstDay = parseDateString(convertFirstDate, timeZone);
+        const convertLastDate = event.lastDayOfEvent ? event.lastDayOfEvent.split('.').join("/") : convertFirstDate;
+        const lastDay = parseDateString(convertLastDate, timeZone);
         const firstDayString = format(firstDay, 'yyyy-MM-dd');
         const lastDayString = format(lastDay, 'yyyy-MM-dd');
 
@@ -39,9 +39,8 @@ const useCurrentEventsSorted = () => {
         const firstDayB = parseDateString(b.firstDayOfEvent, timeZoneB).getTime();
         return firstDayA - firstDayB;
       });
-  }, []);
 
-  return currentEvents;
+  return sortedEvents;
 };
 
 export default useCurrentEventsSorted;

@@ -1,30 +1,32 @@
 'use client'
 import React, { useMemo, useState, useEffect } from "react";
-import { getAssetPath } from "@/utils/assetPath";
+import Image from "next/image";
 import EventButton from "../common/EventButton";
-import { EventType, FeaturedEventType, ComingSoonEventType } from "@/types/types";
-import eventsData from "../../data/events.json";
+import { EventType, FeaturedEventType } from "@/types/types";
 
-type FeaturedEventsProps = (EventType | ComingSoonEventType)[];
+type FeaturedEventsProps = {
+    events: (EventType)[];
+    clientImages: Record<string, string>;
+    givherFeaturedEvent: FeaturedEventType;
+};
 
-export default function FeaturedEvents({events}:{events:FeaturedEventsProps}){
-    const {clientImages, givherFeaturedEvent }: { clientImages: { [key: string]: string }, givherFeaturedEvent:FeaturedEventType[] } = eventsData;
-
+export default function FeaturedEvents({events, clientImages, givherFeaturedEvent}:FeaturedEventsProps){
     const [activeIndex, setActiveIndex] = useState(0);
 
     const featuredEvents = useMemo(()=>{
-        let featured: FeaturedEventType[] = givherFeaturedEvent;
+        let featured: FeaturedEventType[] = [givherFeaturedEvent];
         const addEvents = events.map((e)=>{
-            const { clientName, eventName, eventDateString, eventCity, eventButtonText, eventButtonLink } = e;
+            const { clientName, eventName, eventCity, eventButtonText, eventButtonLink, firstDayOfEvent, lastDayOfEvent } = e;
             const clientImage = clientImages[clientName];
         
             return {
                 eventName,
-                eventDateString,
                 eventCity,
                 eventButtonText,
                 eventButtonLink,
                 clientImage,
+                firstDayOfEvent,
+                lastDayOfEvent,
             };
         });
         featured = [...featured, ...addEvents]
@@ -88,45 +90,56 @@ export default function FeaturedEvents({events}:{events:FeaturedEventsProps}){
                                 <div key={i} className={`carousel-content relative flex flex-col md:gap-[2rem] items-start transform translate-y-[50px] ${activeIndex === i ? "active transition-all duration-500 transform translate-y-0":""}`}>
                                     <div>
                                     <h1 className="font-visbyBold text-navySmoke dark:text-softOpal text-[1.75rem] md:text-[3rem] mb-[1rem]">{e.eventName}</h1>
-                                    {e.eventDateString && (
+                                    {e.firstDayOfEvent && (
                                         <div className="flex gap-[1rem] mb-[1rem]">
-                                            <p className="border-box text-black dark:text-softOpal font-semibold">{e.eventDateString}</p>
+                                            <p className="border-box text-black dark:text-softOpal font-semibold">{e.firstDayOfEvent}{!!e.lastDayOfEvent && ` - ${e.lastDayOfEvent}`}</p>
                                             <div className="border-box text-black dark:text-softOpal font-semibold border-l border-[1.5px] border-black"/>
                                             <p className="border-box text-black dark:text-softOpal font-semibold">{e.eventCity}</p>
                                         </div>
                                     )}
                                     </div>
-                                    <EventButton text={e.eventButtonText} link={e.eventButtonLink} bg="electricYellow"/>
+                                    <EventButton text={e.eventButtonText} link={e.eventButtonLink} bg="electricYellow" openNewTab={e.eventButtonLink === "#events" ? false: true}/>
                                 </div>
                                 )
                             })}
                         </div>
                         {featuredEvents.length > 1 && (
-                                                    <div id="carousel-content-btn" className="self-end flex items-center gap-[120px] mb-[1rem] md:mb-[2rem]">
-                                                    <div className="flex gap-[24px]">
-                                                        <button type="button" data-id="prev" aria-label="Previous Event" className="custom-prev-button">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="overflow-hidden transform rotate-[180deg] text-black dark:text-softOpal cursor-pointer align-middle">
-                                                                <path d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8Z" fill="currentColor"></path>
-                                                            </svg> 
-                                                        </button>
-                                                        <button type="button" data-id="next" aria-label="Next Event" className="custom-next-button">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="overflow-hidden text-black dark:text-softOpal cursor-pointer align-middle">
-                                                                <path d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8Z" fill="currentColor"></path>
-                                                            </svg> 
-                                                        </button>
-                                                    </div>
-                                                </div>
+                            <div id="carousel-content-btn" className="self-end flex items-center gap-[120px] mb-[1rem] md:mb-[2rem]">
+                            <div className="flex gap-[24px]">
+                                <button type="button" data-id="prev" aria-label="Previous Event" className="custom-prev-button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="overflow-hidden transform rotate-[180deg] text-black dark:text-softOpal cursor-pointer align-middle">
+                                        <path d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8Z" fill="currentColor"></path>
+                                    </svg> 
+                                </button>
+                                <button type="button" data-id="next" aria-label="Next Event" className="custom-next-button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="overflow-hidden text-black dark:text-softOpal cursor-pointer align-middle">
+                                        <path d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8Z" fill="currentColor"></path>
+                                    </svg> 
+                                </button>
+                            </div>
+                        </div>
                         )}
 
                     </div>
                     <div className="carousel featured-carousel order-1 md:order-2 relative h-full max-h-[410px]">
-                        <img loading="eager" src={getAssetPath("/images/events/paint-splatter-large.png")} alt="paint splatter" height={435} width={595} className="hidden md:block md:absolute left-[-30%] bottom-[-15%] z-0"/>
+                        <Image priority={true} src="/images/events/paint-splatter-large.png" alt="paint splatter" height={435} width={595} className="hidden md:block md:absolute left-[-30%] bottom-[-15%] z-0"/>
 
                             {featuredEvents.map((e,i)=>{
                                 return (
                                     <div key={i} data-id={i} className="carousel-cell">
-                                        <img loading="eager" height={450} width={450} src={getAssetPath(`/images/events/client-images/${e.clientImage}`)} alt={e.eventName} className="flickity-lazyloaded"/>
-                                    </div>
+                                        <div>
+                                        <div className="bg-white h-[450px] w-[450px] rounded-2xl p-[2rem] border border-black flex items-center justify-center">
+                                        <Image
+                                            priority={true}
+                                            src={e.clientImage}
+                                            alt={e.eventName}
+                                            width={350}
+                                            height={350}
+                                            className="flickity-lazyloaded object-contain max-w-full max-h-full"
+                                        />
+                                        </div>
+                                        </div>
+                                    </div>  
                                 )
                             })}
                     </div>

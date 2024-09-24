@@ -1,9 +1,12 @@
 import React from "react";
-import eventsData from "../../../../data/events.json";
 import EventDetailPage from "@/components/event-detail/EventDetailPage";
 import GlobalLayout from "@/components/GlobalLayout";
 import Head from "next/head";
 import { Metadata } from "next";
+import getEventNameParam from "@/utils/getEventNameParam";
+import getEventsPageData from "../../../../../lib/getEventsPageData";
+import getAllEvents from "../../../../../lib/getAllEvents";
+import getAllClientImages from "../../../../../lib/getAllClientImages";
 
 type EventDetailPageProps = {
   params: {
@@ -11,21 +14,17 @@ type EventDetailPageProps = {
   }
 }
 
-const getEventParam = (eventName: string) => {
-  return eventName.replace(/\s+/g, '-').toLowerCase();
-}
-
 export async function generateMetadata({ params: { eventName } }: EventDetailPageProps): Promise<Metadata> {
   const decodedUrlParam = decodeURIComponent(eventName);
 
-  const events = eventsData.events || [];
+  const events = await getAllEvents() || [];
   const event = events.find((e) => {
-    return (getEventParam(e.eventName) === decodedUrlParam)
+    return (getEventNameParam(e.eventName) === decodedUrlParam)
   });
 
   if (event) {
     const title = `${event.eventName} | Givher Event`;
-    const description = `Event details for ${event.clientName}'s event ${event.eventName} on ${event.eventDateString}`;
+    const description = `Event details for ${event.clientName}'s event ${event.eventName}`;
     const url = `/events/detail/${eventName}`;
     return {
       title: title,
@@ -45,33 +44,44 @@ export async function generateMetadata({ params: { eventName } }: EventDetailPag
   }
 }
 
-export default function EventsDetailPage({ params: { eventName } }: EventDetailPageProps) {
+export default async function EventsDetailPage({ params: { eventName } }: EventDetailPageProps) {
   const decodedUrlParam = decodeURIComponent(eventName);
+  const eventsPageData = getEventsPageData();
+  const clientImages = await getAllClientImages();
 
-  const events = eventsData.events || [];
+  const events = await getAllEvents() || [];
   const event = events.find((e) => {
-    return (getEventParam(e.eventName) === decodedUrlParam)
+    return (getEventNameParam(e.eventName) === decodedUrlParam)
   });
   if (event) {
+    const client = event.clientName;
+    const clientEvents = events.filter((e)=>{
+        const currentDate = new Date();
+        // Convert the string date to a Date object
+        const eventDate = new Date(e.firstDayOfEvent);
+        // Compare the event date with the current date
+        return eventDate >= currentDate && e.clientName == client && e.eventName !== event.eventName;
+    })
+
     return (
       <>
         <Head>
           <title>{`Givher Event - ${event.eventName}`}</title>
-          <meta name='description' content={`Event details for ${event.clientName}'s event ${event.eventName} on ${event.eventDateString}`} />
+          <meta name='description' content={`Event details for ${event.clientName}'s event ${event.eventName}`} />
           <meta property='og:title' content={`Givher Event - ${event.eventName}`} />
-          <meta property='og:description' content={`Event details for ${event.clientName}'s event ${event.eventName} on ${event.eventDateString}`} />
+          <meta property='og:description' content={`Event details for ${event.clientName}'s event ${event.eventName}`} />
           <meta property='og:url' content={`https://www.givher.com/events/detail/${eventName}`} />
         </Head>
         <GlobalLayout>
-          <EventDetailPage event={event} />
+          <EventDetailPage event={event} clientEvents={clientEvents} postponedEventText={eventsPageData.postponedEventText} upcomingEventsTitle={eventsPageData.clientEventPageUpcomingEventsTitle} clientImages={clientImages}/>
         </GlobalLayout>
       </>
     );
   }
   return (
     <GlobalLayout>
-      <div className="bg-white dark:bg-navySmoke">
-        <p className="font-visbyBold text-mauvelous dark:text-softOpal min-h-[250px]  h-full w-full flex items-center justify-center">Oops! Event not found.</p>
+      <div className="bg-white dark:bg-navySmoke w-full  min-h-[calc(100vh-408px)] flex items-center justify-center">
+        <h1 className="font-visbyBold text-mauvelous dark:text-softOpal">Oops! Event not found.</h1>
       </div>
     </GlobalLayout>
   )
@@ -79,7 +89,7 @@ export default function EventsDetailPage({ params: { eventName } }: EventDetailP
 
 export async function generateStaticParams() {
   const currentDate = new Date();
-  const events = (eventsData.events || [])
+  const events = (await getAllEvents() || [])
     .filter(event => {
       const eventDate = new Date(event.firstDayOfEvent);
       return (!event.postponed && eventDate >= currentDate) || event.postponed;
@@ -96,6 +106,6 @@ export async function generateStaticParams() {
   }
 
   return events.map(event => ({
-    eventName: getEventParam(event.eventName)
+    eventName: getEventNameParam(event.eventName)
   }));
 }

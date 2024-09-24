@@ -1,26 +1,36 @@
 export type EventType = {
-    clientName:string;
+    slug: string;
     eventName:string;
-    eventDateString:string;
     firstDayOfEvent:string;
+    eventTime: string | null;
     lastDayOfEvent:string | null;
     timeZone: string;
-    eventDescription:string[];
-    boldedEventInformation:string[]
     eventCity:string;
     eventLocation: string | null;
-    eventLink:string;
-    eventLinkText:string;
+    clientName:string;
     eventButtonText:string;
     eventButtonLink:string;
+    eventDescription:EventDescriptionItem[] | null;
+    boldedEventInformation:BoldedEventInformationItem[] | null;
+    eventLink:string;
+    eventLinkText:string;
     detailImage:string;
     postponed: boolean;
 }
 
+type EventDescriptionItem = {
+    paragraph: string;
+};
+
+type BoldedEventInformationItem = {
+    line: string;
+};
+
 export type FeaturedEventType = {
     eventName: string;
     eventCity: string;
-    eventDateString: string;
+    firstDayOfEvent: string;
+    lastDayOfEvent:string | null;
     eventButtonText: string;
     eventButtonLink: string;
     clientImage: string;
@@ -53,4 +63,20 @@ export type TeamMember = {
         iconLink: string;
     }[];
     bio: string[];
+}
+
+export type Client = {
+    clientName: string;
+    clientImageSrc: string;
+    clientWebsite: string;
+    clientW9Src: string;
+}
+
+export interface ClientImage {
+    [key: string]: string;
+}
+
+export interface ClientLogo {
+    logoSrc: string;
+    logoAlt: string;
 }

@@ -37,11 +37,6 @@ var ClientPreview = createClass({
         justifyContent: 'space-between',
       };
   
-      const hoverOverlayStyle = {
-        ...overlayStyle,
-        display: 'flex', // Visible on hover
-      };
-  
       const textStyle = {
         color: '#F8F9EE',
         paddingTop: '1.5rem',

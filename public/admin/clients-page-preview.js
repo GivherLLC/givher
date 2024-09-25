@@ -75,13 +75,13 @@ var ClientsPagePreview = createClass({
   
       return h(
         'div',
-        { style: { padding: '2rem', fontFamily: 'Arial', maxWidth: '1200px' } },
+        { style: { fontFamily: 'Arial', maxWidth: '1200px' } },
         h(
             'div',
             {
             style: {
                 backgroundColor: '#F8F9EE',
-                padding: '2.5rem 0',
+                padding: '2.5rem 1rem',
                 display: 'flex',
                 justifyContent: 'center',
                 },

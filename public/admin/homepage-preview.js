@@ -88,7 +88,7 @@ var HomePagePreview = createClass({
   
     return h(
         'div',
-        { style: { padding: '2rem', fontFamily: 'Arial', maxWidth: '1200px' } },
+        { style: { fontFamily: 'Arial', maxWidth: '1200px' } },
       
         // Video Section
         h(
@@ -209,6 +209,8 @@ var HomePagePreview = createClass({
                 {
                 style: {
                     display: 'flex',
+                    gap: '2rem',
+                    justifyContent: 'center',
                     overflow: 'hidden',
                 },
                 },
@@ -217,11 +219,7 @@ var HomePagePreview = createClass({
                     'div',
                     {
                     'data-id': 'card',
-                    style: {
-                        width: '50%',
-                        marginRight: '2rem',
-                        borderRadius: '15px',
-                    },
+                    style: {},
                     },
                     h(
                     'div',
@@ -229,7 +227,6 @@ var HomePagePreview = createClass({
                         style: {
                         position: 'relative',
                         overflow: 'hidden',
-                        borderRadius: '15px',
                         },
                     },
                     h('img', {
@@ -239,6 +236,7 @@ var HomePagePreview = createClass({
                         objectFit: 'cover',
                         height: '372px',
                         width: '315px',
+                        borderRadius: '15px',
                         },
                     }),
                     h(
@@ -314,8 +312,8 @@ var HomePagePreview = createClass({
                     )
                 )
                 )
-            )
-            )
+            ),
+            ),
         ),
   
         // Events Section
@@ -384,7 +382,24 @@ var HomePagePreview = createClass({
                     )  
                   )
               ),
-            )
+            ),
+            h('div', { style: { display: 'flex', gap: '0.5rem' } }, 
+              h(
+                  'a',
+                  {
+                    href: '/events',
+                    style: { borderBottom: '3px solid #C6AFC0', lineHeight: 1.5, textDecoration: 'none', color: 'black' },
+                    target: '_blank',
+                  },
+                  'See All Events'
+                ),
+             h('img', {
+                  src: '/images/common/arrow-black.png',
+                  alt: 'black arrow',
+                  height: '20',
+                  width: '20',
+                }),
+          ),
             ),
 
         // About Us Section with inline styles
@@ -393,7 +408,7 @@ var HomePagePreview = createClass({
             {
             style: {
                 backgroundColor: '#FFFFFF',
-                padding: '2.5rem 0',
+                padding: '2.5rem 1rem',
                 display: 'flex',
                 justifyContent: 'center',
             },

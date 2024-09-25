@@ -24,6 +24,7 @@ export default function Admin() {
         <script src="/admin/clients-preview.js"></script>
         <script src="/admin/event-preview.js"></script>
         <script src="/admin/coming-soon-preview.js"></script>
+        <script src="/admin/homepage-preview.js"></script>
         </body>`,
       }}
     />

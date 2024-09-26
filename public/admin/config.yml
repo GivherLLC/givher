@@ -34,7 +34,7 @@ collections:
                 fields:
                   - { label: 'Title', name: 'cardTitle', widget: 'string' }
                   - { label: 'Description', name: 'cardDescription', widget: 'string' }
-                  - { label: 'Background Image', name: 'cardImageSrc', widget: 'image', allowMultiple: false }
+                  - { label: 'Background Image (430w x 545h)', name: 'cardImageSrc', widget: 'image', allowMultiple: false }
                   - { label: 'Description of Image', name: 'cardImageAlt', widget: 'string' }
                   - { label: 'Link Text', name: 'cardLinkText', widget: 'string' }
                   - { label: 'Link', name: 'cardLink', widget: 'string' }
@@ -54,8 +54,8 @@ collections:
                 fields:
                   - { label: 'Section Title', name: 'sectionTitle', widget: 'string' }
                   - { label: 'Section Paragraph Text', name: 'sectionText', widget: 'string' }
-                  - { label: 'Section Image', name: 'sectionImageSrc', widget: 'image', allowMultiple: false }
-                  - { label: 'Section Image (Dark Mode)', name: 'sectionImageSrcDarkModet', widget: 'image', allowMultiple: false }
+                  - { label: 'Section Image (600w x 285h)', name: 'sectionImageSrc', widget: 'image', allowMultiple: false }
+                  - { label: 'Section Image - Dark Mode (600w x 285h)', name: 'sectionImageSrcDarkModet', widget: 'image', allowMultiple: false }
                   - { label: 'Description of Section Image', name: 'sectionImageAlt', widget: 'string' }
           - label: 'Event Images Carousel'
             name: 'eventCarousel'
@@ -66,7 +66,7 @@ collections:
                 name: 'eventCarouselImages'
                 widget: 'list'
                 fields:
-                  - { label: 'Image', name: 'imageSrc', widget: 'image', allowMultiple: false }
+                  - { label: 'Image (594w x 780h)', name: 'imageSrc', widget: 'image', allowMultiple: false }
                   - { label: 'Description of Image', name: 'imageAlt', widget: 'string' }
       - label: "Clients Page"
         name: "clientPage"
@@ -98,7 +98,7 @@ collections:
               - { label: 'Event Start Date', name: 'firstDayOfEvent', widget: 'datetime', required: false }
               - { label: 'Button Text', name: 'eventButtonText', widget: 'string', required: true }
               - { label: 'Button Link', name: 'eventButtonLink', widget: 'string', required: true }
-              - { label: 'Image', name: 'clientImage', widget: 'image', allowMultiple: false }
+              - { label: 'Image', name: 'clientImage (380w x 348h)', widget: 'image', allowMultiple: false }
       - label: "Team Page"
         name: "teamPage"
         file: "content/pages/team_page.yml"
@@ -110,13 +110,13 @@ collections:
             fields:
               - { label: 'Team Member Full Name', name: 'name', widget: 'string' }
               - { label: 'Team Member Title', name: 'title', widget: 'string' }
-              - { label: 'Team Member Image', name: 'imageSrc',  widget: 'image', allowMultiple: false }
+              - { label: 'Team Member Image (1024w x 1024h)', name: 'imageSrc',  widget: 'image', allowMultiple: false }
               - label: 'Icon Links'
                 name: 'iconLinks'
                 widget: 'list'
                 fields:
-                  - { label: 'Icon Image', name: 'iconImageSrc',  widget: 'image', allowMultiple: false }
-                  - { label: 'Icon Image (Dark Mode)', name: 'darkmodeSrc',  widget: 'image', allowMultiple: false }
+                  - { label: 'Icon Image (80 x 80)', name: 'iconImageSrc',  widget: 'image', allowMultiple: false }
+                  - { label: 'Icon Image - Dark Mode (80 x 80)', name: 'darkmodeSrc',  widget: 'image', allowMultiple: false }
                   - { label: 'Description of Icon', name: 'iconImageAlt', widget: 'string' }
                   - { label: 'Icon Link', name: 'iconLink', widget: 'string' }
               - label: 'Bio'
@@ -136,14 +136,14 @@ collections:
         name: "footer"
         file: "content/footer/footer.yml"
         fields:
-          - { label: 'Footer Logo', name: 'footerLogo', widget: 'image', allowMultiple: false }
-          - { label: 'Footer Logo (Dark Mode)', name: 'darkModeLogoSrc', widget: 'image', allowMultiple: false }
+          - { label: 'Footer Logo (380w x 348h)', name: 'footerLogo', widget: 'image', allowMultiple: false }
+          - { label: 'Footer Logo - Dark Mode (380w x 348h)', name: 'darkModeLogoSrc', widget: 'image', allowMultiple: false }
           - label: 'Footer Icons Links'
             name: 'iconLinks'
             widget: 'list'
             fields:
-              - { label: 'Icon Image', name: 'iconImageSrc', widget: 'image', allowMultiple: false }
-              - { label: 'Icon Image (Dark Mode)', name: 'darkmodeSrc', widget: 'image', allowMultiple: false }
+              - { label: 'Icon Image (80 x 80)', name: 'iconImageSrc', widget: 'image', allowMultiple: false }
+              - { label: 'Icon Image - Dark Mode (80 x 80)', name: 'darkmodeSrc', widget: 'image', allowMultiple: false }
               - { label: 'Description of Icon', name: 'imageAlt', widget: 'string' }
               - { label: 'Icon Link', name: 'iconLink', widget: 'string' }
           - { label: 'Title Above Button', name: 'buttonTitle', widget: 'string' }
@@ -163,7 +163,7 @@ collections:
     create: true
     fields:
       - { label: 'Client Name', name: 'clientName', widget: 'string', required: true }
-      - { label: 'Client Logo', name: 'clientLogo, widget: 'image', allow_multiple: false, required: true }
+      - { label: 'Client Logo (400w)', name: 'clientLogo, widget: 'image', allow_multiple: false, required: true }
       - { label: 'Client Website', name: 'clientWebsite', widget: 'string', required: false }
       - { label: 'Client W9 Link (Google Drive)', name: 'clientW9Src', widget: 'string', required: false }
   - name: 'events'
@@ -228,7 +228,7 @@ collections:
           - { label: 'Line (add additional field for each line)', name: 'line',  widget: 'string' }
       - { label: 'Event Flyer Button Text', name: 'eventLinkText', widget: 'string', required: true }
       - { label: 'Event Flyer Link', name: 'eventLink', widget: 'string', required: true }
-      - { label: 'Event Detail Page Image (Shown Next to Flyer Link)', name: 'detailImage', widget: 'image', allowMultiple: false, required: true }
+      - { label: 'Event Detail Page Image (615w x 385h)', name: 'detailImage', widget: 'image', allowMultiple: false, required: true }
       - { label: 'Postponed', name: 'postponed', widget: 'boolean', default: false, required: true }
   - name: 'comingSoon'
     identifier_field: 'eventName'

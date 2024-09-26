@@ -131,6 +131,11 @@ collections:
           - { label: 'Contact Page Title', name: 'contactPageTitle', widget: 'string' }
           - { label: 'Contact Phone Number', name: 'contactPhoneNumber', widget: 'string' }
           - { label: 'Contact Email', name: 'contactEmail', widget: 'string' }
+      - label: "Sign Up For Emails Page"
+        name: "signUpPage"
+        file: "content/pages/signup_page.yml"
+        fields:
+          - { label: 'Sign Up Page Title', name: 'singupTitle', widget: 'string' }
           - { label: 'Google Form Embed Link', name: 'googleFormLink', widget: 'string' }
       - label: "Footer"
         name: "footer"

@@ -163,9 +163,7 @@ collections:
     create: true
     fields:
       - { label: 'Client Name', name: 'clientName', widget: 'string', required: true }
-      - { label: 'Client Image (Clients Page)', name: 'clientImageSrc', widget: 'image', allow_multiple: false, required: true }
-      - { label: 'Client Logo (Floating Logos - Homepage)', name: 'logoSrc', widget: 'image', allow_multiple: false, required: true }
-      - { label: 'Client Image (Events Page)', name: 'eventsImage', widget: 'image', allow_multiple: false, required: true }
+      - { label: 'Client Logo', name: 'clientLogo, widget: 'image', allow_multiple: false, required: true }
       - { label: 'Client Website', name: 'clientWebsite', widget: 'string', required: false }
       - { label: 'Client W9 Link (Google Drive)', name: 'clientW9Src', widget: 'string', required: false }
   - name: 'events'

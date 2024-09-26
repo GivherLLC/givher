@@ -163,7 +163,7 @@ collections:
     create: true
     fields:
       - { label: 'Client Name', name: 'clientName', widget: 'string', required: true }
-      - { label: 'Client Logo (400w)', name: 'clientLogo, widget: 'image', allow_multiple: false, required: true }
+      - { label: 'Client Logo (400w)', name: 'clientLogo', widget: 'image', allow_multiple: false, required: true }
       - { label: 'Client Website', name: 'clientWebsite', widget: 'string', required: false }
       - { label: 'Client W9 Link (Google Drive)', name: 'clientW9Src', widget: 'string', required: false }
   - name: 'events'
@@ -179,6 +179,7 @@ collections:
         required: true
         format: 'MM.DD.YYYY'
         time_format: false
+      - { label: 'Event Url (ex: givher.com/events/detail/event-url)', name: 'eventSlug', widget: 'string', required: false }
       - label: 'Time of Event (Single Day Events Only)'
         name: 'eventTime'
         widget: 'datetime'
@@ -214,8 +215,10 @@ collections:
         value_field: 'clientName'
         search_fields: ['clientName']
         required: true
-      - { label: 'Event Button Text', name: 'eventButtonText', widget: 'string', required: true }
-      - { label: 'Event Button Link', name: 'eventButtonLink', widget: 'string', required: true }
+      - { label: 'Event Button #1 - Text', name: 'eventButtonTextOne', widget: 'string', required: true }
+      - { label: 'Event Button #1 - Link', name: 'eventButtonLinkOne', widget: 'string', required: true }
+      - { label: 'Event Button #2 - Text', name: 'eventButtonTextTwo', widget: 'string', required: false }
+      - { label: 'Event Button #2 - Link', name: 'eventButtonLinkTwo', widget: 'string', required: false }
       - label: 'Event Description'
         name: 'eventDescription'
         widget: 'list'
@@ -226,8 +229,6 @@ collections:
         widget: 'list'
         fields:
           - { label: 'Line (add additional field for each line)', name: 'line',  widget: 'string' }
-      - { label: 'Event Flyer Button Text', name: 'eventLinkText', widget: 'string', required: true }
-      - { label: 'Event Flyer Link', name: 'eventLink', widget: 'string', required: true }
       - { label: 'Event Detail Page Image (615w x 385h)', name: 'detailImage', widget: 'image', allowMultiple: false, required: true }
       - { label: 'Postponed', name: 'postponed', widget: 'boolean', default: false, required: true }
   - name: 'comingSoon'

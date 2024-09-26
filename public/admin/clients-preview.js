@@ -20,6 +20,7 @@ var ClientPreview = createClass({
       const imageStyle = {
         maxWidth: '100%',
         height: 'auto',
+        borderRadius: '20px',
       };
   
       const overlayStyle = {

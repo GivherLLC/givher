@@ -2,21 +2,24 @@ var ClientPreview = createClass({
     render: function () {
       var entry = this.props.entry;
       var clientName = entry.getIn(['data', 'clientName']);
-      var clientImageSrc = entry.getIn(['data', 'clientImageSrc']);
       var clientWebsite = entry.getIn(['data', 'clientWebsite']);
       var clientW9Src = entry.getIn(['data', 'clientW9Src']);
-      var bg = this.props.getAsset(clientImageSrc);
   
       // Inline styles replacing Tailwind CSS classes
       const containerStyle = {
         position: 'relative',
+        width: '280px',
+        height: '175px',
+        borderRadius: '20px',
+        border: '1px solid #C6AFC0',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       };
   
       const imageStyle = {
-        borderRadius: '20px',
-        border: '1px solid #C6AFC0',
-        width: '280px',
-        height: '175px',
+        maxWidth: '100%',
+        height: 'auto',
       };
   
       const overlayStyle = {
@@ -96,7 +99,7 @@ var ClientPreview = createClass({
           },
           h('img', {
             loading: 'eager',
-            src: bg ? bg.toString() : '',
+            src: this.props.getAsset(entry.getIn(['data', 'clientLogo'])),
             alt: clientName + ' logo',
             style: imageStyle,
           }),
@@ -131,30 +134,33 @@ var ClientPreview = createClass({
           )
         ),
   
-        // New section for Homepage Logo
+        // Homepage Logo
         h(
           'div',
           { style: { marginTop: '40px' } },
-          h('h1', { style: { marginBottom: '20px' } }, 'Homepage Logo'),
+          h('h1', { style: { marginBottom: '20px' } }, 'Homepage Logos'),
           h('img', {
             loading: 'eager',
-            src: this.props.getAsset(entry.getIn(['data', 'logoSrc'])),
+            src: this.props.getAsset(entry.getIn(['data', 'clientLogo'])),
             alt: 'Homepage Logo',
             style: { display: 'block', width: '200px', height: 'auto' },
           })
         ),
   
-        // New section for Events Page
+        // Events Page
         h(
           'div',
           { style: { marginTop: '40px' } },
           h('h1', { style: { marginBottom: '20px' } }, 'Events Page'),
-          h('img', {
-            loading: 'eager',
-            src: this.props.getAsset(entry.getIn(['data', 'eventsImage'])),
-            alt: 'Events Page Image',
-            style: { display: 'block', width: '200px', height: 'auto' },
-          })
+          h ('div', { style: { width: '50%', display: 'flex', justifyContent: 'center', backgroundColor: '#2E363E', padding: '2rem' } }, 
+            h('div', { style: { backgroundColor: 'white', height: '350px', width: '350px', borderRadius: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', padding: '1rem' } }, 
+              h('img', {
+                src: this.props.getAsset(entry.getIn(['data', 'clientLogo'])),
+                alt: 'Events Page Image',
+                style: { display: 'block', width: '300px', height: 'auto' },
+              })
+            ),
+          ),
         )
       );
     },

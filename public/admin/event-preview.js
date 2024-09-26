@@ -273,7 +273,7 @@ var EventPreview = createClass({
             )
           ),
           h ('div', { style: { width: '50%', display: 'flex', justifyContent: 'center' } }, 
-            clientName? h('div', { style: { backgroundColor: '#F8F9EE', height: '350px', width: '350px', borderRadius: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', padding: '1rem' } }, `${clientName} logo`):"",
+            clientName? h('div', { style: { backgroundColor: 'white', height: '350px', width: '350px', borderRadius: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', padding: '1rem' } }, `${clientName} logo`):"",
           )
         ),
   

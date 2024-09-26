@@ -6,13 +6,11 @@ timeZone: America/Los_Angeles
 eventCity: Sacramento, CA
 eventLocation: The Mix Downtown
 clientName: California Primary Care Association
-eventButtonText: Please delete
-eventButtonLink: https://events.givher.com/cpca-pac-30th-anniversary
+eventButtonTextOne: Please delete
+eventButtonLinkOne: https://events.givher.com/cpca-pac-30th-anniversary
 eventDescription:
   - paragraph: Celebrate 30 years of advocacy with us!
 boldedEventInformation: []
-eventLinkText: Ticket & Sponsorship Information
-eventLink: https://events.givher.com/cpca-pac-30th-anniversary
 detailImage: /uploads/cpcalogo.jpg
 postponed: false
 ---

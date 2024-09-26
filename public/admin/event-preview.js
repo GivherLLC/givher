@@ -10,8 +10,10 @@ var EventPreview = createClass({
       var lastDayOfEvent = entry.getIn(['data', 'lastDayOfEvent']);
       var eventCity = entry.getIn(['data', 'eventCity']);
       var eventLocation = entry.getIn(['data', 'eventLocation']);
-      var eventButtonText = entry.getIn(['data', 'eventButtonText']);
-      var eventButtonLink = entry.getIn(['data', 'eventButtonLink']);
+      var eventButtonTextOne = entry.getIn(['data', 'eventButtonTextOne']);
+      var eventButtonLinkOne = entry.getIn(['data', 'eventButtonLinkOne']);
+      var eventButtonTextTwo = entry.getIn(['data', 'eventButtonTextTwo']);
+      var eventButtonLinkTwo = entry.getIn(['data', 'eventButtonLinkTwo']);
       var postponed = entry.getIn(['data', 'postponed']);
       var detailImage = this.props.getAsset(entry.getIn(['data', 'detailImage']));
       var eventDescription = entry.getIn(['data', 'eventDescription']);
@@ -24,29 +26,43 @@ var EventPreview = createClass({
       if(boldedEventInformation){
         boldedInfoArray = boldedEventInformation.toJS();
       }
-      var eventLinkText = entry.getIn(['data', 'eventLinkText']);
-      var eventLink = entry.getIn(['data', 'eventLink']);
-  
+
+      function formatEventTime(militaryTimeString) {
+        // Split the military time string into hours and minutes
+        const [hours, minutes] = militaryTimeString.split(':').map(Number);
+      
+        // Determine whether it's AM or PM
+        const period = hours >= 12 ? 'PM' : 'AM';
+      
+        // Convert the hours to 12-hour format
+        const hours12 = hours % 12 || 12; // Convert 0 (midnight) or 12 (noon) to 12
+      
+        // If the time is exactly on the hour, omit the minutes
+        if (minutes === 0) {
+          return `${hours12} ${period}`;
+        }
+      
+        // Otherwise, return the full formatted time in hh:mm AM/PM format
+        return `${hours12}:${minutes.toString().padStart(2, '0')} ${period}`;
+      }      
+
+      var timeFormatted = eventTime ? formatEventTime(eventTime):"";
+
+
       // Homepage Event Card Styles
       const containerStyle = {
         display: 'flex',
         flexDirection: 'column',
-        gap: '1.5rem',
+        justifyContent: 'space-between',
+        gap: '1rem',
         border: '1px solid #2E363E',
         borderRadius: '10px',
         padding: '2.5rem 1.5rem',
         width: '100%',
-        maxWidth: '400px',
-        maxHeight: '429px',
+        maxWidth: '350px',
+        maxHeight: '398px',
         boxShadow: '0 4px 20px 0 rgba(0,0,0,0.15)',
         backgroundColor: '#F8F9EE',
-      };
-  
-      const cardContentStyle = {
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '1rem',
-        height: '50%',
       };
   
       const eventNameStyle = {
@@ -54,15 +70,16 @@ var EventPreview = createClass({
         color: '#2E363E',
         fontSize: '1.25rem',
         WebkitBoxOrient: 'vertical',
-        WebkitLineClamp: 2,
-        overflow: 'hidden',
+        WebkitLineClamp: 3,
+        overflow: 'ellipsis',
         display: '-webkit-box',
+        fontSize: '23px',
+        lineHeight: 1.5,
+        margin: 0,
       };
   
       const eventInfoStyle = {
-        paddingLeft: '1rem',
         color: '#2E363E',
-        height: '48px',
         overflow: 'hidden',
         display: '-webkit-box',
         WebkitBoxOrient: 'vertical',
@@ -72,18 +89,22 @@ var EventPreview = createClass({
       const clientNameStyle = {
         textTransform: 'uppercase',
         color: '#2E363E',
-        fontWeight: 'bold',
-        maxWidth: '300px'
+        fontWeight: '700',
+        fontSize: '.875rem',
+        maxWidth: '250px',
+        lineHeight: 1.25,
+        margin: 0,
       };
   
       const buttonContainerStyle = {
         display: 'flex',
         flexWrap: 'wrap',
         gap: '1.5rem',
-        height: '50%',
         alignItems: 'center',
+        width: 'fit-content',
+        position: 'relative', // Added this to ensure the button and its content are correctly positioned
       };
-  
+      
       const buttonStyle = (bgColor) => ({
         textTransform: 'uppercase',
         backgroundColor: bgColor,
@@ -92,21 +113,36 @@ var EventPreview = createClass({
         borderRadius: '12px',
         fontWeight: 'bold',
         border: '3px solid black',
-        position: 'relative',
-        zIndex: 10,
+        position: 'relative', // Contains the before span within the button
+        zIndex: 1, // Ensures the button and text are above the before element
         display: 'block',
-        transition: 'transform 0.3s',
+        transition: 'transform 0.3s ease',
         textDecoration: 'none',
+        fontSize: '.75rem',
+        overflow: 'hidden', // Ensures the before span stays inside the button container
+        transform: 'translateZ(0)',
+        willChange: 'transform',
       });
+      
+      const beforeSpanStyle = {
+        content: '""', // Acts like :before content
+        backgroundColor: 'black',
+        borderRadius: '12px',
+        height: 'calc(100% + 3px)', // Slightly larger than the button itself
+        width: 'calc(100% + 3.5px)', // Slightly larger than the button itself
+        position: 'absolute', // Positioned relative to the button
+        left: 0,
+        top: 0,
+        transform: 'translate(2px, 2px)',
+      };
   
       // Detail Page Styles
       const detailPageStyle = {
         backgroundColor: '#2E363E',
-        padding: '2.5rem',
+        padding: '2.5rem 1rem',
         display: 'flex',
         justifyContent: 'center',
         gap: '2rem',
-        maxWidth: '75rem',
         width: '100%'
       };
   
@@ -119,24 +155,27 @@ var EventPreview = createClass({
       };
   
       const descriptionStyle = {
-        backgroundColor: '#F5F5F5',
-        padding: '2.5rem',
+        backgroundColor: '#F8F9EE',
+        padding: '4.5rem 1rem',
         display: 'flex',
         gap: '2rem',
-        maxWidth: '75rem',
-        width: '100%'
+        width: '100%',
       };
   
       const headingStyle = {
-        color: '#F5F5F5',
+        color: '#F8F9EE',
         fontWeight: 'bold',
-        fontSize: '2rem',
+        fontSize: '2.5rem',
+        lineHeight: 1.25,
+        margin: 0,
       };
 
       const detailHeadingStyle = {
         color: '#2E363E',
         fontWeight: 'bold',
-        fontSize: '2rem',
+        fontSize: '2.5rem',
+        lineHeight: 1.25,
+        margin: 0,
       };
   
       const subheadingStyle = {
@@ -153,94 +192,58 @@ var EventPreview = createClass({
         textAlign: 'center',
         alignSelf: 'start',
       };
-
-      function formatEventDate(isoDateString) {
-        const date = new Date(isoDateString);
-      
-        // Options for formatting the date
-        const options = { year: 'numeric', month: 'long', day: 'numeric' };
-      
-        // Return the formatted date
-        return date.toLocaleDateString(undefined, options);
-      }
-
-      function formatEventTime(militaryTimeString) {
-        // Split the military time string into hours and minutes
-        const [hours, minutes] = militaryTimeString.split(':').map(Number);
-      
-        // Determine whether it's AM or PM
-        const period = hours >= 12 ? 'PM' : 'AM';
-      
-        // Convert the hours to 12-hour format
-        const hours12 = hours % 12 || 12; // Convert 0 (midnight) or 12 (noon) to 12
-      
-        // Return the formatted time in hh:mm AM/PM format
-        return `${hours12}:${minutes.toString().padStart(2, '0')} ${period}`;
-      }
-      
-
-      var firstDayFormatted = firstDayOfEvent ? formatEventDate(firstDayOfEvent):"";
-      var lastDayFormatted = lastDayOfEvent ? formatEventDate(lastDayOfEvent):"";
-      var timeFormatted = eventTime ? formatEventTime(eventTime):"";
-  
+        
       return h(
         'div',
-        { style: { padding: '2rem', fontFamily: 'Arial'}},
+        { style: { fontFamily: 'Arial', maxWidth: '1200px'}},
   
         // Header for Homepage Event Card
-        h('h1', { style: { marginBottom: '20px' } }, 'Homepage + Event Page Card'),
+        h('h1', { style: { marginBottom: '20px' } }, 'Event Card (Home Page + Events Page)'),
   
         // Homepage Event Card
         h(
           'div',
           { style: containerStyle },
-          h(
-            'div',
-            { style: cardContentStyle },
-            h('div', { style: { height: '56px', overflow: 'hidden' } },
-              h('p', { style: eventNameStyle }, eventName)
+          h('div', {},
+            h('div', { style: { overflow: 'hidden'} },
+              h('p', { style: eventNameStyle }, eventName),
+            ),
+            h('p', { style: { margin: 0}}, postponed ? h('span', { style: { color: 'red', paddingLeft: '1rem' } }, '* Event Postponed'):"")
             ),
             h(
               'div',
               { style: eventInfoStyle },
-              h(
-                'p',
-                {},
-                firstDayOfEvent,
-                lastDayOfEvent ? ` - ${lastDayOfEvent}` : "",  // Display date range if lastDayFormatted exists
-                eventCity ? ' | ':"",
-                eventCity,
-                postponed ? h('span', { style: { color: 'red', paddingLeft: '1rem' } }, '* Event Postponed'):""
-              )
+              h('div', { style: { display: 'flex', justifyContent: 'space-between'}},
+                h('p', {style: { margin: 0}}, eventLocation),
+                h(
+                  'p',
+                  {style: { margin: 0}},
+                  firstDayOfEvent,
+                  lastDayOfEvent ? ` - ${lastDayOfEvent}` : "",  // Display date range if lastDayFormatted exists
+                ),
+              ),
+
+              h('p',{style: { margin: 0}}, eventCity)
             ),
-            h('p', { style: clientNameStyle }, clientName)
-          ),
-          h(
-            'div',
-            { style: buttonContainerStyle },
-            eventButtonText ?h(
-              'a',
-              {
-                href: eventButtonLink,
-                style: buttonStyle('#FCFC62'),
-                target: '_blank',
-              },
-              eventButtonText
-            ):"",
+            h('p', { style: clientNameStyle }, clientName),
             h(
-              'a',
-              {
-                href: ``,
-                style: buttonStyle('#C6AFC0'),
-                target: '_blank',
-              },
-              'View Details'
+              'div',
+              { style: buttonContainerStyle },
+              h('span', { style: beforeSpanStyle }), // This acts as the :before pseudo-element
+              h(
+                'a',
+                {
+                  href: ``,
+                  style: buttonStyle('#C6AFC0'), // Button's background color
+                  target: '_blank',
+                },
+                'View Details' // Button text content
+              )
             )
-          )
         ),
   
         // Header for Detail Page
-        h('h1', { style: { marginBottom: '20px' } }, 'Detail Page'),
+        h('h1', { style: { padding: '2.5rem 0 20px 0', margin: 0 } }, 'Event Detail Page (View Details)'),
   
         // Detail Page Content
         h(
@@ -250,25 +253,27 @@ var EventPreview = createClass({
             'div',
             { style: detailContainerStyle },
                 h('div', { style: { display: 'flex', gap: '1rem' } }, 
-                    h('p', { style: { color: '#F8F9EE', margin: 0 } }, `${firstDayFormatted ? firstDayFormatted : ""} ${lastDayFormatted ? ` - ${lastDayFormatted}`:""}`),
+                    h('p', { style: { color: '#F8F9EE', margin: 0 } }, `${firstDayOfEvent} ${lastDayOfEvent ? ` - ${lastDayOfEvent}`:""}`),
                     h('p', { style: subheadingStyle }, `${eventLocation? eventLocation : ""}`),
-                    postponed? h('div', { style: { color: 'red' } }, '* Event Postponed'):"",
                 ),
+            postponed? h('div', { style: { color: 'red' } }, '* Event Postponed'):"",
             h('h1', { style: headingStyle }, eventName),
-            h('h1', { style: {color: '#F5F5F5',fontWeight: 'bold', fontSize: '1.5rem', margin: 0 } }, eventCity),
+            h('div', { style: { display: 'flex', gap: '1rem'}},
+              h('h2', { style: { color: '#F8F9EE',fontWeight: 'bold', fontSize: '1.5rem', margin: 0 } }, eventCity),
+              h('h2', { style: { color: '#C6AFC0', fontSize: '1.5rem', textTransform: 'uppercase', margin: 0} }, timeFormatted)
+            ),
             h(
               'div',
               { style: { display: 'flex', gap: '1rem' } },
-              eventButtonText ? h('a', {
-                href: eventButtonLink,
+              eventButtonTextOne ? h('a', {
+                href: eventButtonLinkOne,
                 style: buttonLinkStyle,
                 target: '_blank',
-              }, eventButtonText):"",
-              h('h2', { style: { color: '#F5F5F5', fontSize: '1rem', textTransform: 'uppercase', margin: 0, display: 'flex', alignItems: 'center' } }, timeFormatted)
+              }, eventButtonTextOne):"",
             )
           ),
           h ('div', { style: { width: '50%', display: 'flex', justifyContent: 'center' } }, 
-            clientName? h('div', { style: { backgroundColor: '#F5F5F5', height: '350px', width: '350px', borderRadius: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', padding: '1rem' } }, `${clientName} logo`):"",
+            clientName? h('div', { style: { backgroundColor: 'white', height: '350px', width: '350px', borderRadius: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', padding: '1rem' } }, `${clientName} logo`):"",
           )
         ),
   
@@ -278,53 +283,54 @@ var EventPreview = createClass({
           { style: descriptionStyle },
           h(
             'div',
-            { style: { display: 'flex', flexDirection: 'column', maxWidth: '615px' } },
+            { style: { display: 'flex', flexDirection: 'column', maxWidth: '615px', width: '50%', gap: '1rem' } },
             h('h1', { style: detailHeadingStyle }, eventName),
+            postponed? h('div', { style: { color: 'red' } }, '* Event Postponed'):"",
             h('div', { style: { display: 'flex', gap: '0.5rem' } }, 
-                eventLinkText ? h(
+                h(
                     'a',
                     {
-                      href: eventLink,
-                      style: { borderBottom: '3px solid #C6AFC0', lineHeight: 1.5 },
+                      href: eventButtonLinkTwo ? eventButtonLinkTwo : eventButtonLinkOne,
+                      style: { borderBottom: '3px solid #C6AFC0', lineHeight: 1.5, fontSize: '1rem' },
                       target: '_blank',
                     },
-                    eventLinkText
-                  ):"",
-                eventLinkText ? h('img', {
+                    eventButtonTextTwo ? eventButtonTextTwo : eventButtonTextOne
+                  ),
+                 h('img', {
                     src: '/images/common/arrow-black.png',
                     alt: 'black arrow',
                     height: '20',
                     width: '20',
-                  }):"",
+                  }),
             ),
             eventDescriptionArray ? 
               eventDescriptionArray.map((desc, index) =>
-                h('p', { key: index, style: { color: '#000' } }, desc.paragraph)
+                h('p', { key: index, style: { color: '#000', margin: 0, lineHeight: 1.5, fontSize: '1rem' } }, desc.paragraph)
               ):"",
             boldedInfoArray ?
             boldedInfoArray.map((info, index) => {
                 return (
-                    h('p', { key: index, style: { fontWeight: 'bold' } }, info.line)
+                    h('p', { key: index, style: { fontWeight: 'bold', margin: 0, lineHeight: 1.5, fontSize: '1rem' } }, info.line)
                 )
               }
               ):""
           ),
           h(
             'div',
-            { style: { display: 'flex', alignItems: 'center', position: 'relative' } },
+            { style: { display: 'flex', alignItems: 'center', position: 'relative', width: '50%' } },
             h('img', {
               src: '/images/events/paint-splatter-small.png',
               alt: 'paint splatter',
               height: '311',
               width: '322',
-              style: { position: 'absolute', left: '30%', zIndex: '0' },
+              style: { position: 'absolute', left: '-23%', bottom: '-23%', zIndex: '0' },
             }),
             h('img', {
               src: detailImage ? detailImage.toString() : '',
               alt: eventName,
               height: '385',
               width: '615',
-              style: { position: 'relative', zIndex: '8', maxWidth: '500px', height: 'auto' },
+              style: { position: 'relative', zIndex: '8', maxWidth: '500px', height: 'auto', width: '100%' },
             })
           )
         )

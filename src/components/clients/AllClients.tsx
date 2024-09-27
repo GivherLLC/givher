@@ -8,7 +8,7 @@ type AllClientsProps = {
 }
 
 
-export default async function AllClients({clients, clientsSectionTitle}:AllClientsProps){
+export default function AllClients({clients, clientsSectionTitle}:AllClientsProps){
     return (
         <div className="bg-softOpal dark:bg-navySmoke py-[2.5rem] flex justify-center">
             <div className="flex flex-col w-full items-center justify-center gap-[2.5rem] max-w-[85.75rem] mx-[0.625rem] lg:mx-[1.5625rem]">

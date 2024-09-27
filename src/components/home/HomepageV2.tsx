@@ -9,8 +9,6 @@ import UpcomingEvents from "./UpcomingEvents";
 import AboutUs from "./AboutUs";
 import { EventType, ClientLogo } from "@/types/types";
 
-import useCurrentEventsSorted from "@/hooks/useCurrentEventsSorted";
-
 type HomepageProps = {
   events: EventType[];
   postponedEventText: string;
@@ -22,11 +20,10 @@ const EventsCarousel = lazy(() => import('./EventsCarousel'));
 
 
 
-export default async function Homepage({ events, postponedEventText, clientLogos }:HomepageProps){
+export default function Homepage({ events, postponedEventText, clientLogos }:HomepageProps){
     const {video, services, featuredEvents, about, eventCarousel } = homepageData;
-    const currentEvents = useCurrentEventsSorted(events);
   
-    const upcomingEvents = currentEvents.slice(0, 3);
+    const upcomingEvents = events.slice(0, 3);
 
     return (
         <>

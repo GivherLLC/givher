@@ -7,6 +7,7 @@ import getEventNameParam from "@/utils/getEventNameParam";
 import getEventsPageData from "../../../../../lib/getEventsPageData";
 import getAllEvents from "../../../../../lib/getAllEvents";
 import getAllClientImages from "../../../../../lib/getAllClientImages";
+import getComingsoonEvents from "../../../../../lib/getComingSoonEvents";
 
 type EventDetailPageProps = {
   params: {
@@ -48,6 +49,7 @@ export default async function EventsDetailPage({ params: { eventName } }: EventD
   const decodedUrlParam = decodeURIComponent(eventName);
   const eventsPageData = getEventsPageData();
   const clientImages = await getAllClientImages();
+  const comingSoonEvents = await getComingsoonEvents() || [];
 
   const events = await getAllEvents() || [];
   const event = events.find((e) => {
@@ -56,12 +58,18 @@ export default async function EventsDetailPage({ params: { eventName } }: EventD
   if (event) {
     const client = event.clientName;
     const clientEvents = events.filter((e)=>{
-        const currentDate = new Date();
-        // Convert the string date to a Date object
-        const eventDate = new Date(e.firstDayOfEvent);
-        // Compare the event date with the current date
-        return eventDate >= currentDate && e.clientName == client && e.eventName !== event.eventName;
-    })
+        return e.clientName == client && e.eventName !== event.eventName;
+    }).map((e => ({
+      ...e,
+      comingSoon: false,
+    })));
+
+    const clientsComingSoonEvents = comingSoonEvents.filter((e)=> e.clientName === client).map((e => ({
+      ...e,
+      comingSoon: true,
+    })));
+
+    const upcomingEvents = [...clientEvents, ...clientsComingSoonEvents];
 
     return (
       <>
@@ -73,7 +81,7 @@ export default async function EventsDetailPage({ params: { eventName } }: EventD
           <meta property='og:url' content={`https://www.givher.com/events/detail/${eventName}`} />
         </Head>
         <GlobalLayout>
-          <EventDetailPage event={event} clientEvents={clientEvents} postponedEventText={eventsPageData.postponedEventText} upcomingEventsTitle={eventsPageData.clientEventPageUpcomingEventsTitle} clientImages={clientImages}/>
+          <EventDetailPage event={event} clientEvents={upcomingEvents} postponedEventText={eventsPageData.postponedEventText} upcomingEventsTitle={eventsPageData.clientEventPageUpcomingEventsTitle} clientImages={clientImages}/>
         </GlobalLayout>
       </>
     );

@@ -3,7 +3,7 @@
 import React, { useState, useMemo } from 'react';
 import DropdownFilter from './DropdownFilter';
 import { EventType } from '@/types/types';
-import EventsPageCard from './EventsPageCard';
+import EventCard from '../common/EventCard';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import useIsMobile from '@/hooks/useIsMobile';
@@ -144,7 +144,7 @@ export default function EventsFilter({events, postponedEventText}:{events:EventT
       </div>
       <div className="flex flex-wrap gap-[4rem] min-h-[286px] sm:min-h-[400px]">
          {filteredEvents.map((e: EventType, i: number) => (
-                <EventsPageCard key={`${i}-${e.clientName}-${e.eventName}-${e.firstDayOfEvent}`} event={e} postponedEventText={postponedEventText} showClientName={true}/>
+                <EventCard key={`${i}-${e.clientName}-${e.eventName}-${e.firstDayOfEvent}`} event={e} postponedEventText={postponedEventText} showClientName={true}/>
             ))
         }
         {!filteredEvents.length && (

@@ -4,14 +4,14 @@ import { EventType } from "@/types/types";
 import ButtonLink from "../common/ButtonLink";
 import { ClientImage } from "@/types/types";
 
-export default async function DetailHeader({event, postponedEventText, clientImages}:{event:EventType, postponedEventText:string, clientImages: ClientImage[]}){
+export default function DetailHeader({event, postponedEventText, clientImages}:{event:EventType, postponedEventText:string, clientImages: ClientImage[]}){
     const clientImagesObject = clientImages.reduce<Record<string, string>>((acc, obj) => {
         const [key, value] = Object.entries(obj)[0] as [string, string]; // Type assertion to ensure key-value pair is [string, string]
         acc[key] = value; // Add the key-value pair to the accumulator object
         return acc;
         }, {});
 
-    const { clientName, eventName, eventCity, eventButtonText, eventButtonLink, eventLocation, firstDayOfEvent, lastDayOfEvent, eventTime } = event;
+    const { clientName, eventName, eventCity, eventButtonTextOne, eventButtonLinkOne, eventLocation, firstDayOfEvent, lastDayOfEvent, eventTime } = event;
     const clientImage = clientImagesObject[clientName];
 
     return (
@@ -24,7 +24,7 @@ export default async function DetailHeader({event, postponedEventText, clientIma
                     <h1 className="font-visbyBold text-softOpal mb-[2rem] text-center md:text-left">{eventName}</h1>
                     <h2 className="font-visbyBold text-softOpal text-center md:text-left">{eventCity} {!!eventTime && <span className="text-mauvelous text-2xl font-bold pl-[1rem]">{eventTime}</span>}</h2>  
                     <div className="flex gap-[1rem] md:items-center justify-center md:justify-start">
-                        <ButtonLink openNewTab bg="electricYellow" darkModeBg="electricYellow" text={eventButtonText} link={eventButtonLink}/>
+                        <ButtonLink openNewTab bg="electricYellow" darkModeBg="electricYellow" text={eventButtonTextOne} link={eventButtonLinkOne}/>
                        
                     </div>
                 </div>

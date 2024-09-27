@@ -1,6 +1,6 @@
 import React from "react";
 import ArrowLink from "../common/ArrowLink";
-import HomepageEventCard from "./HomepageEventCard";
+import EventCard from "../common/EventCard";
 import { EventType } from "@/types/types";
 
 export default function UpcomingEvents({title, events, postponedEventText}:{title:string, events: EventType[], postponedEventText:string}){
@@ -11,7 +11,7 @@ export default function UpcomingEvents({title, events, postponedEventText}:{titl
                 <h1 className="font-visbyBold text-navySmoke dark:text-softOpal">{title}</h1>
                 <div className={`flex flex-col lg:flex-row justify-center ${events.length < 3 ? "":"lg:justify-between"} gap-[1rem] items-center w-full max-w-[85.75rem]`}>
                     {events.map((e, i)=>(
-                        <HomepageEventCard key={`${i}-${e.clientName}-${e.eventName}-${e.firstDayOfEvent}`} event={e} postponedEventText={postponedEventText}/>
+                        <EventCard key={`${i}-${e.clientName}-${e.eventName}-${e.firstDayOfEvent}`} event={e} postponedEventText={postponedEventText} showClientName={true}/>
                     ))}
                 </div>
                 <div className="flex justify-center items-center">

@@ -30,61 +30,92 @@ var HomePagePreview = createClass({
         eventCarouselImagesArray = eventCarouselImages.toJS();
     }
 
-          // Homepage Event Card Styles
-          const containerStyle = {
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-            alignItems: 'flex-start',
-            gap: '1.5rem',
-            border: '1px solid #2E363E',
-            borderRadius: '10px',
-            padding: '2.5rem 1.5rem',
-            width: '100%',
-            width: '352px',
-            height: '275px',
-            boxShadow: '0 4px 20px 0 rgba(0,0,0,0.15)',
-            backgroundColor: '#F8F9EE',
-          };
+      // Homepage Event Card Styles
+      const containerStyle = {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        gap: '25px',
+        border: '1px solid #2E363E',
+        borderRadius: '10px',
+        padding: '2.5rem 1.5rem',
+        width: '100%',
+        maxWidth: '350px',
+        maxHeight: '398px',
+        boxShadow: '0 4px 20px 0 rgba(0,0,0,0.15)',
+        backgroundColor: '#F8F9EE',
+      };
+  
+      const eventNameStyle = {
+        fontWeight: 'bold',
+        color: '#2E363E',
+        fontSize: '1.25rem',
+        WebkitBoxOrient: 'vertical',
+        WebkitLineClamp: 3,
+        overflow: 'ellipsis',
+        display: '-webkit-box',
+        fontSize: '23px',
+        lineHeight: 1.5,
+        margin: 0,
+      };
+  
+      const eventInfoStyle = {
+        color: '#2E363E',
+        overflow: 'hidden',
+        display: '-webkit-box',
+        WebkitBoxOrient: 'vertical',
+        WebkitLineClamp: 2,
+      };
+  
+      const clientNameStyle = {
+        textTransform: 'uppercase',
+        color: '#2E363E',
+        fontWeight: '700',
+        fontSize: '.875rem',
+        maxWidth: '250px',
+        lineHeight: 1.25,
+        margin: 0,
+      };
+  
+      const buttonContainerStyle = {
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: '1.5rem',
+        alignItems: 'center',
+        width: 'fit-content',
+        position: 'relative', // Added this to ensure the button and its content are correctly positioned
+      };
       
-          const eventNameStyle = {
-            fontWeight: 'bold',
-            color: '#2E363E',
-            fontSize: '1.25rem',
-            margin: 0
-          };
+      const buttonStyle = (bgColor) => ({
+        textTransform: 'uppercase',
+        backgroundColor: bgColor,
+        color: '#2E363E',
+        padding: '10px 20px',
+        borderRadius: '12px',
+        fontWeight: 'bold',
+        border: '3px solid black',
+        position: 'relative', // Contains the before span within the button
+        zIndex: 1, // Ensures the button and text are above the before element
+        display: 'block',
+        transition: 'transform 0.3s ease',
+        textDecoration: 'none',
+        fontSize: '.75rem',
+        overflow: 'hidden', // Ensures the before span stays inside the button container
+        transform: 'translateZ(0)',
+        willChange: 'transform',
+      });
       
-          const eventInfoStyle = {
-            width: '100%',
-            display: 'flex',
-            justifyContent: 'space-between',
-            gap: '1.5rem',
-          };
-      
-          const clientNameStyle = {
-            textTransform: 'uppercase',
-            color: '#2E363E',
-            fontWeight: 'bold',
-            maxWidth: '300px',
-            paddingBottom: '1.5rem',
-            margin: 0,
-          };
-      
-          const buttonStyle = (bgColor) => ({
-            textTransform: 'uppercase',
-            backgroundColor: bgColor,
-            color: '#2E363E',
-            padding: '10px 20px',
-            borderRadius: '12px',
-            fontWeight: 'bold',
-            border: '3px solid black',
-            position: 'relative',
-            zIndex: 10,
-            display: 'block',
-            transition: 'transform 0.3s',
-            textDecoration: 'none',
-            width: 'fit-content',
-          });    
+      const beforeSpanStyle = {
+        content: '""', // Acts like :before content
+        backgroundColor: 'black',
+        borderRadius: '12px',
+        height: 'calc(100% + 3px)', // Slightly larger than the button itself
+        width: 'calc(100% + 3.5px)', // Slightly larger than the button itself
+        position: 'absolute', // Positioned relative to the button
+        left: 0,
+        top: 0,
+        transform: 'translate(2px, 2px)',
+      };
   
     return h(
         'div',
@@ -321,67 +352,118 @@ var HomePagePreview = createClass({
             h('h1', {style: {color: '#2E363E', fontWeight: 'bold', fontSize: '2rem', margin: 0}}, featuredEventsTitle),
 
             h('div', {style: {display: 'flex', flexDirection: 'row', justifyContent: 'center', gap:'1rem'}},
-                h(
-                    'div',
-                    { style: containerStyle },
-                    h('p', { style: eventNameStyle }, 'Event Name'),
-                    h(
-                      'div',
-                      { style: eventInfoStyle },
-                      h(
-                        'p',
-                        {},
-                        'Punch Bowl Social',
-                        ' | ',
-                        'Sacramento',
-                      ),
-                      h('p', {}, '10/01/2024')
-                    ),
-                    h('div', {},
-                      h('p', { style: clientNameStyle }, 'Client Name'),
-                      h(
-                        'a',
-                        {
-                          href: ``,
-                          style: buttonStyle('#C6AFC0'),
-                          target: '_blank',
-                        },
-                        'View Details'
-                      )  
-                    )
+        // Homepage Event Card
+        h(
+          'div',
+          { style: containerStyle },
+          h('div', {},
+            h('div', { style: { overflow: 'hidden'} },
+              h('p', { style: eventNameStyle }, "Event Name"),
+            ),
+            h('p', { style: { margin: 0}}, h('span', { style: { color: 'red', paddingLeft: '1rem' } }, ''))
+            ),
+            h(
+              'div',
+              { style: eventInfoStyle },
+              h('div', { style: { display: 'flex', justifyContent: 'space-between'}},
+                h('div', { style: {overflow: 'hidden'}},
+                  h('p', {style: { 
+                    margin: 0,         
+                    WebkitBoxOrient: 'vertical',
+                    WebkitLineClamp: 1,
+                    overflow: 'ellipsis',
+                    display: '-webkit-box',
+                    maxWidth: '240px',
+                  }}, 'Punch Bowl Socia'),
                 ),
                 h(
-                  'div',
-                  { style: containerStyle },
-                  h('div', {},
-                    h('p', { style: eventNameStyle }, 'Event Name for a Posponed Event'),
-                    h('div', { style: { color: 'red', paddingTop: '1rem' } }, '* Event Postponed'),  
-                  ),
-                  h(
-                    'div',
-                    { style: eventInfoStyle },
-                    h(
-                      'p',
-                      { style: {width: '50%'} },
-                      'Somewhere Cool',
-                      ' | ',
-                      'Los Angeles',
-                    ),
-                    h('p', { style: {width: '50%'} }, '12/01/2024 - 12/03/2024')
-                  ),
-                  h('div', {},
-                    h('p', { style: clientNameStyle }, 'Another Client Name'),
-                    h(
-                      'a',
-                      {
-                        href: ``,
-                        style: buttonStyle('#C6AFC0'),
-                        target: '_blank',
-                      },
-                      'View Details'
-                    )  
-                  )
+                  'p',
+                  {style: { margin: 0}},
+                  "10/01/2024",
+                ),
               ),
+
+              h('p',{style: { 
+                margin: 0,                     
+                WebkitBoxOrient: 'vertical',
+                WebkitLineClamp: 1,
+                overflow: 'ellipsis',
+                display: '-webkit-box',
+                maxWidth: '240px',
+              }}, 'Sacramento, CA')
+            ),
+            h('p', { style: clientNameStyle }, 'CLIENT NAME'),
+            h(
+              'div',
+              { style: buttonContainerStyle },
+              h('span', { style: beforeSpanStyle }), // This acts as the :before pseudo-element
+              h(
+                'a',
+                {
+                  href: ``,
+                  style: buttonStyle('#C6AFC0'), // Button's background color
+                  target: '_blank',
+                },
+                'View Details' // Button text content
+              )
+            )
+        ),
+        h(
+          'div',
+          { style: containerStyle },
+          h('div', {},
+            h('div', { style: { overflow: 'hidden'} },
+              h('p', { style: eventNameStyle }, "Event Name for a Posponed Event"),
+            ),
+            h('p', { style: { margin: 0}}, h('span', { style: { color: 'red', paddingLeft: '1rem' } }, '* Event Postponed'))
+            ),
+            h(
+              'div',
+              { style: eventInfoStyle },
+              h('div', { style: { display: 'flex', justifyContent: 'space-between'}},
+                h('div', { style: { display: 'flex', flexDirection: 'column'}},
+                  h('div', { style: {overflow: 'hidden'}},
+                    h('p', {style: { 
+                      margin: 0,         
+                      WebkitBoxOrient: 'vertical',
+                      WebkitLineClamp: 1,
+                      overflow: 'ellipsis',
+                      display: '-webkit-box',
+                      maxWidth: '240px',
+                    }}, 'Somewhere Cool'),
+                  ),
+                  h('p',{style: { 
+                    margin: 0,                     
+                    WebkitBoxOrient: 'vertical',
+                    WebkitLineClamp: 1,
+                    overflow: 'ellipsis',
+                    display: '-webkit-box',
+                    maxWidth: '240px',
+                  }}, 'Los Angeles, CA')
+                ),
+                h(
+                  'p',
+                  {style: { margin: 0, maxWidth: '100px'}},
+                  "12/01/2024 - 12/03/2024",
+                ),
+              ),
+            ),
+            h('p', { style: clientNameStyle }, 'ANOTHER CLIENT NAME'),
+            h(
+              'div',
+              { style: buttonContainerStyle },
+              h('span', { style: beforeSpanStyle }), // This acts as the :before pseudo-element
+              h(
+                'a',
+                {
+                  href: ``,
+                  style: buttonStyle('#C6AFC0'), // Button's background color
+                  target: '_blank',
+                },
+                'View Details' // Button text content
+              )
+            )
+        ),
             ),
             h('div', { style: { display: 'flex', gap: '0.5rem' } }, 
               h(

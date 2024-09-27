@@ -18,7 +18,7 @@ var ComingSoonPreview = createClass({
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        gap: '1rem',
+        gap: '25px',
         border: '1px solid #2E363E',
         borderRadius: '10px',
         padding: '2.5rem 1.5rem',
@@ -40,6 +40,7 @@ var ComingSoonPreview = createClass({
         fontSize: '23px',
         lineHeight: 1.5,
         margin: 0,
+        height: '103.5px',
       };
   
       const eventInfoStyle = {
@@ -118,7 +119,14 @@ var ComingSoonPreview = createClass({
             'div',
             { style: eventInfoStyle },
             h('div', { style: { display: 'flex', justifyContent: 'space-between'}},
-                eventCity && h('p',{style: { margin: 0}}, eventCity),
+                eventCity && h('p',{style: 
+                  { margin: 0,         
+                  WebkitBoxOrient: 'vertical',
+                  WebkitLineClamp: 2,
+                  overflow: 'ellipsis',
+                  display: '-webkit-box',
+                  maxWidth: '240px'
+                }}, eventCity),
                 h(
                 'p',
                 {style: { margin: 0}},
@@ -129,39 +137,56 @@ var ComingSoonPreview = createClass({
             ),
             h('p', { style: clientNameStyle }, clientName),
             h('div', { style: { display: 'flex', gap: '1.5rem', flexWrap: 'wrap'}},
-                eventButtonTextOne && 
-                h(
-                    'div',
-                    { style: buttonContainerStyle },
-                    h('span', { style: beforeSpanStyle }), // This acts as the :before pseudo-element
-                    h(
-                        'a',
-                        {
-                        href: eventButtonLinkOne,
-                        style: buttonStyle('#C6AFC0'), // Button's background color
-                        target: '_blank',
-                        },
-                        eventButtonTextOne
-                     )
-        
-                    ),
-            
-            eventButtonTextTwo && 
-            h(
-                'div',
-                { style: buttonContainerStyle },
-                h('span', { style: beforeSpanStyle }), // This acts as the :before pseudo-element
-                h(
-                    'a',
-                    {
-                    href: eventButtonLinkTwo,
-                    style: buttonStyle('#FCFC62'), // Button's background color
-                    target: '_blank',
-                    },
-                    eventButtonTextTwo
+              eventButtonTextOne && 
+              h(
+                  'div',
+                  { style: buttonContainerStyle },
+                  h('span', { style: beforeSpanStyle }), // This acts as the :before pseudo-element
+                  h(
+                      'a',
+                      {
+                      href: eventButtonLinkOne,
+                      style: buttonStyle('#C6AFC0'), // Button's background color
+                      target: '_blank',
+                      },
+                      eventButtonTextOne
                     )
-    
-                ),
+      
+                  ),
+            
+              eventButtonTextTwo && 
+              h(
+                  'div',
+                  { style: buttonContainerStyle },
+                  h('span', { style: beforeSpanStyle }), // This acts as the :before pseudo-element
+                  h(
+                      'a',
+                      {
+                      href: eventButtonLinkTwo,
+                      style: buttonStyle('#FCFC62'), // Button's background color
+                      target: '_blank',
+                      },
+                      eventButtonTextTwo
+                      )
+      
+                  ),
+              
+                  !eventButtonTextOne && !eventButtonLinkOne && !eventButtonTextTwo && !eventButtonLinkTwo && 
+                  h(
+                      'div',
+                      { style: buttonContainerStyle },
+                      h('span', { style: beforeSpanStyle }), // This acts as the :before pseudo-element
+                      h(
+                          'a',
+                          {
+                          href: '/signup4emails',
+                          style: buttonStyle('#FCFC62'), // Button's background color
+                          target: '_blank',
+                          },
+                          "Get Email Updates"
+                          )
+          
+                      ),
 
             ),
         ),

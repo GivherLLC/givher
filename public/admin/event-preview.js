@@ -54,7 +54,7 @@ var EventPreview = createClass({
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        gap: '1rem',
+        gap: '25px',
         border: '1px solid #2E363E',
         borderRadius: '10px',
         padding: '2.5rem 1.5rem',
@@ -168,6 +168,7 @@ var EventPreview = createClass({
         fontSize: '2.5rem',
         lineHeight: 1.25,
         margin: 0,
+        marginBottom: '2rem'
       };
 
       const detailHeadingStyle = {
@@ -191,6 +192,8 @@ var EventPreview = createClass({
         fontWeight: 'bold',
         textAlign: 'center',
         alignSelf: 'start',
+        textDecoration: 'none',
+        color: 'black',
       };
         
       return h(
@@ -214,16 +217,33 @@ var EventPreview = createClass({
               'div',
               { style: eventInfoStyle },
               h('div', { style: { display: 'flex', justifyContent: 'space-between'}},
-                h('p', {style: { margin: 0}}, eventLocation),
+                h('div', { style : { display: 'flex', flexDirection: 'column'}},
+                  h('div', { style: {overflow: 'hidden'}},
+                    h('p', {style: { 
+                      margin: 0,         
+                      WebkitBoxOrient: 'vertical',
+                      WebkitLineClamp: 1,
+                      overflow: 'ellipsis',
+                      display: '-webkit-box',
+                      maxWidth: '240px',
+                    }}, eventLocation),
+                  ),
+                  h('p',{style: { 
+                    margin: 0,                     
+                    WebkitBoxOrient: 'vertical',
+                    WebkitLineClamp: 1,
+                    overflow: 'ellipsis',
+                    display: '-webkit-box',
+                    maxWidth: '240px',
+                  }}, eventCity)
+                ),
                 h(
                   'p',
-                  {style: { margin: 0}},
+                  {style: { margin: 0, width: '100px'}},
                   firstDayOfEvent,
                   lastDayOfEvent ? ` - ${lastDayOfEvent}` : "",  // Display date range if lastDayFormatted exists
                 ),
               ),
-
-              h('p',{style: { margin: 0}}, eventCity)
             ),
             h('p', { style: clientNameStyle }, clientName),
             h(
@@ -291,7 +311,7 @@ var EventPreview = createClass({
                     'a',
                     {
                       href: eventButtonLinkTwo ? eventButtonLinkTwo : eventButtonLinkOne,
-                      style: { borderBottom: '3px solid #C6AFC0', lineHeight: 1.5, fontSize: '1rem' },
+                      style: { borderBottom: '3px solid #C6AFC0', lineHeight: 1.5, fontSize: '1rem', textDecoration: 'none', color: 'black' },
                       target: '_blank',
                     },
                     eventButtonTextTwo ? eventButtonTextTwo : eventButtonTextOne

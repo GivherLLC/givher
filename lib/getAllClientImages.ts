@@ -14,7 +14,7 @@ export default  async function getAllClientImages(): Promise<ClientImage[]> {
       const { data } = matter(fileContents);
   
       return {
-        [data.clientName]: data.eventsImage // Dynamically create the object with clientName as the key
+        [data.clientName]: data.clientLogo // Dynamically create the object with clientName as the key
       };
     });
   }

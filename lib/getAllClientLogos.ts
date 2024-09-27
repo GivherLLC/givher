@@ -12,7 +12,7 @@ export default async function getAllClientLogos() {
       const { data } = matter(fileContents);
   
       return {
-        logoSrc: data.logoSrc,
+        clientLogo: data.clientLogo,
         logoAlt: data.clientName,
       };
     });

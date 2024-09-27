@@ -14,7 +14,7 @@ export default async function getAllClients() {
   
       return {
         clientName: data.clientName,
-        clientImageSrc: data.clientImageSrc,
+        clientLogo: data.clientLogo,
         clientWebsite: data.clientWebsite,
         clientW9Src: data.clientW9Src,
       };

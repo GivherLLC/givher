@@ -1,15 +1,16 @@
 import React from "react";
-import EventButton from "../common/EventButton";
-import { EventType } from "@/types/types";
+import EventButton from "./EventButton";
+import { ComingSoonEventType } from "@/types/types";
 
-export default function HomepageEventCard({event, postponedEventText}:{event:EventType, postponedEventText:string}){
+export default function ComingSoonEventCard({event, postponedEventText, showTag, showClientName }:{event:ComingSoonEventType, postponedEventText:string, showTag: boolean, showClientName: boolean}){
     return (
       <div className={`flex flex-col gap-[1.5rem] sm:gap-[0rem] border border-navySmoke dark:border-softOpal rounded-[10px] py-[2.5rem] px-[1.5rem] h-content w-full max-w-[400px] sm:h-[400px] sm:w-[400px] shadow-custom-shadow dark:shadow-custom-shadow-darkmode`}>
         <div className="flex flex-col justify-between h-full gap-[1rem]">
+         {showTag &&  <p className="self-end text-navySmoke bg-mauvelous px-[1.25rem] py-[0.5rem] rounded-lg text-[0.75rem] uppercase font-bold">Coming Soon</p>}
         <div>
             <div className="overflow-hidden">
               <p
-                className="overflow-ellipsis font-visbyBold text-navySmoke text-[23px] dark:text-softOpal"
+                className="overflow-ellipsis font-visbyBold text-navySmoke text-[23px] dark:text-softOpal h-[103.5px]"
                 style={{
                   display: "-webkit-box",
                   WebkitBoxOrient: "vertical",
@@ -34,7 +35,8 @@ export default function HomepageEventCard({event, postponedEventText}:{event:Eve
                     WebkitLineClamp: 3,
                     }}
             >
-                {event.eventLocation} | {event.eventCity}
+                {event.eventCity && event.eventCity}
+
             </p>
             <p
                 className="overflow-ellipsis max-w-[100px]"
@@ -44,16 +46,25 @@ export default function HomepageEventCard({event, postponedEventText}:{event:Eve
                   WebkitLineClamp: 3,
                   }}
           >
-                {event.firstDayOfEvent}{!!event.lastDayOfEvent && ` - ${event.lastDayOfEvent}`}
+                {event.firstDayOfEvent ? event.firstDayOfEvent : event.timeOfYear? event.timeOfYear : ""}{!!event.lastDayOfEvent && ` - ${event.lastDayOfEvent}`}
             </p>
+            
         </div>
-
-          <p className="uppercase text-navySmoke font-bold text-sm dark:text-softOpal max-w-[250px]">
-            {event.clientName}
-          </p>
+          {showClientName && (
+            <p className="uppercase text-navySmoke font-bold text-sm dark:text-softOpal max-w-[250px]">
+              {event.clientName}
+            </p>          
+          )}
           <div className="flex items-center flex-wrap gap-x-[1.5rem] gap-y-[1rem]">
-          {/* <EventButton text={event.eventButtonText} link={event.eventButtonLink} bg="electricYellow" /> */}
-          <EventButton text="Event Details" link={`/events/detail/${event.slug}`} bg="mauvelous" />
+            {event.eventButtonTextOne && event.eventButtonLinkOne && (
+            <EventButton text={event.eventButtonTextOne} link={event.eventButtonLinkOne} bg="electricYellow" />
+            )}
+            {event.eventButtonTextTwo && event.eventButtonLinkTwo && (
+              <EventButton text={event.eventButtonTextTwo} link={event.eventButtonLinkTwo} bg="mauvelous" />
+            )}
+            {!event.eventButtonTextOne && !event.eventButtonLinkTwo && (
+              <EventButton text="Get Email Updates" link="/signup4emails" bg="electricYellow"/>
+            )}
         </div>
         </div>
     </div>

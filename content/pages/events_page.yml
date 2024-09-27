@@ -6,6 +6,6 @@ givherFeaturedEvent:
   eventName: Upcoming Events
   eventCity:
   firstDayOfEvent:
-  eventButtonText: View Events
-  eventButtonLink: '#events'
+  eventButtonTextOne: View Events
+  eventButtonLinkOne: '#all-events'
   clientImage: /uploads/givher.png

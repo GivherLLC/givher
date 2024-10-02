@@ -178,7 +178,7 @@ collections:
     create: true
     fields:
       - { label: 'Event Name', name: 'eventName', widget: 'string', required: true }
-      - { label: 'Event Url (ex: givher.com/events/detail/event-url)', name: 'eventSlug', widget: 'string', required: false }
+      - { label: 'Event Url (ex: givher.com/events/detail/event-url)', name: 'slug', widget: 'string', required: false }
       - label: 'Event Start Date'
         name: 'firstDayOfEvent'
         widget: 'datetime'

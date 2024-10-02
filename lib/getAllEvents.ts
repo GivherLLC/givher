@@ -26,7 +26,7 @@ async function getAllEvents() {
     const { data } = matter(fileContents);
 
     return {
-      slug: getEventNameParam(data.eventName),
+      slug: data.slug || getEventNameParam(data.eventName),
       eventName: data.eventName,
       firstDayOfEvent: data.firstDayOfEvent,
       lastDayOfEvent: data.lastDayOfEvent,

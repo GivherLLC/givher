@@ -1,38 +1,59 @@
 export type EventType = {
-    clientName:string;
+    slug: string;
     eventName:string;
-    eventDateString:string;
     firstDayOfEvent:string;
+    eventTime: string | null;
     lastDayOfEvent:string | null;
     timeZone: string;
-    eventDescription:string[];
-    boldedEventInformation:string[]
     eventCity:string;
     eventLocation: string | null;
-    eventLink:string;
-    eventLinkText:string;
-    eventButtonText:string;
-    eventButtonLink:string;
+    clientName:string;
+    eventButtonTextOne: string;
+    eventButtonLinkOne: string;
+    eventButtonTextTwo: string | null;
+    eventButtonLinkTwo: string | null;
+    eventDescription:EventDescriptionItem[] | null;
+    boldedEventInformation:BoldedEventInformationItem[] | null;
     detailImage:string;
     postponed: boolean;
 }
 
+export type UpcomingClientEventType = (EventType | ComingSoonEventType) & {
+    comingSoon: boolean;
+  };
+
+type EventDescriptionItem = {
+    paragraph: string;
+};
+
+type BoldedEventInformationItem = {
+    line: string;
+};
+
 export type FeaturedEventType = {
     eventName: string;
-    eventCity: string;
-    eventDateString: string;
-    eventButtonText: string;
-    eventButtonLink: string;
+    eventCity: string | null;
+    eventButtonTextOne: string | null;
+    eventButtonLinkOne: string | null;
     clientImage: string;
+    firstDayOfEvent: string | null;
+    timeOfYear: string | null;
+    lastDayOfEvent:string | null;
+    comingSoon: boolean;
 }
 
 export type ComingSoonEventType = {
     clientName:string;
     eventName:string;
-    eventButtonText:string;
-    eventButtonLink:string;
-    eventDateString:string;
-    eventCity:string;
+    firstDayOfEvent:string | null;
+    lastDayOfEvent:string | null;
+    timeZone: string | null;
+    timeOfYear: string | null;
+    eventButtonTextOne: string | null;
+    eventButtonLinkOne: string | null;
+    eventButtonTextTwo: string | null;
+    eventButtonLinkTwo: string | null;
+    eventCity:string | null;
     postponed:boolean;
 }
 
@@ -53,4 +74,20 @@ export type TeamMember = {
         iconLink: string;
     }[];
     bio: string[];
+}
+
+export type Client = {
+    clientName: string;
+    clientLogo: string;
+    clientWebsite: string;
+    clientW9Src: string;
+}
+
+export interface ClientImage {
+    [key: string]: string;
+}
+
+export interface ClientLogo {
+    clientLogo: string;
+    logoAlt: string;
 }

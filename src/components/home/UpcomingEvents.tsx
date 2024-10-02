@@ -3,7 +3,7 @@ import ArrowLink from "../common/ArrowLink";
 import EventCard from "../common/EventCard";
 import { EventType } from "@/types/types";
 
-export default function UpcomingEvents({title, events}:{title:string, events: EventType[]}){
+export default function UpcomingEvents({title, events, postponedEventText}:{title:string, events: EventType[], postponedEventText:string}){
 
     return (
         <div className="bg-softOpal dark:bg-navySmoke py-[2.5rem] flex justify-center">
@@ -11,7 +11,7 @@ export default function UpcomingEvents({title, events}:{title:string, events: Ev
                 <h1 className="font-visbyBold text-navySmoke dark:text-softOpal">{title}</h1>
                 <div className={`flex flex-col lg:flex-row justify-center ${events.length < 3 ? "":"lg:justify-between"} gap-[1rem] items-center w-full max-w-[85.75rem]`}>
                     {events.map((e, i)=>(
-                        <EventCard key={`${i}-${e.clientName}-${e.eventName}-${e.firstDayOfEvent}`} event={e} type="homepage"/>
+                        <EventCard key={`${i}-${e.clientName}-${e.eventName}-${e.firstDayOfEvent}`} event={e} postponedEventText={postponedEventText} showClientName={true}/>
                     ))}
                 </div>
                 <div className="flex justify-center items-center">

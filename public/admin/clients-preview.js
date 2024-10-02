@@ -20,6 +20,7 @@ var ClientPreview = createClass({
       const imageStyle = {
         maxWidth: '100%',
         height: 'auto',
+        borderRadius: '20px',
       };
   
       const overlayStyle = {
@@ -35,11 +36,6 @@ var ClientPreview = createClass({
         borderRadius: '20px',
         flexDirection: 'column',
         justifyContent: 'space-between',
-      };
-  
-      const hoverOverlayStyle = {
-        ...overlayStyle,
-        display: 'flex', // Visible on hover
       };
   
       const textStyle = {

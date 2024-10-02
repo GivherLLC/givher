@@ -8,7 +8,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import useIsMobile from '@/hooks/useIsMobile';
 
-export default function EventsFilter({events}:{events:EventType[]}){
+export default function EventsFilter({events, postponedEventText}:{events:EventType[], postponedEventText:string}){
   const [selectedCity, setSelectedCity] = useState<string>('');
   const [selectedClient, setSelectedClient] = useState<string>('');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -144,7 +144,7 @@ export default function EventsFilter({events}:{events:EventType[]}){
       </div>
       <div className="flex flex-wrap gap-[4rem] min-h-[286px] sm:min-h-[400px]">
          {filteredEvents.map((e: EventType, i: number) => (
-                <EventCard key={`${i}-${e.clientName}-${e.eventName}-${e.firstDayOfEvent}`} event={e} type="all-events"/>
+                <EventCard key={`${i}-${e.clientName}-${e.eventName}-${e.firstDayOfEvent}`} event={e} postponedEventText={postponedEventText} showClientName={true}/>
             ))
         }
         {!filteredEvents.length && (

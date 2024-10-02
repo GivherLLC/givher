@@ -96,8 +96,8 @@ collections:
               - { label: 'Title', name: 'eventName', widget: 'string' }
               - { label: 'Event City', name: 'eventCity', widget: 'string', required: false }
               - { label: 'Event Start Date', name: 'firstDayOfEvent', widget: 'datetime', required: false }
-              - { label: 'Button Text', name: 'eventButtonText', widget: 'string', required: true }
-              - { label: 'Button Link', name: 'eventButtonLink', widget: 'string', required: true }
+              - { label: 'Button Text', name: 'eventButtonTextOne', widget: 'string', required: true }
+              - { label: 'Button Link', name: 'eventButtonLinkOne', widget: 'string', required: true }
               - { label: 'Image', name: 'clientImage (380w x 348h)', widget: 'image', allowMultiple: false }
       - label: "Team Page"
         name: "teamPage"
@@ -178,7 +178,7 @@ collections:
     create: true
     fields:
       - { label: 'Event Name', name: 'eventName', widget: 'string', required: true }
-      - { label: 'Event Url (ex: givher.com/events/detail/event-url)', name: 'eventSlug', widget: 'string', required: false }
+      - { label: 'Event Url (ex: givher.com/events/detail/event-url)', name: 'slug', widget: 'string', required: false }
       - label: 'Event Start Date'
         name: 'firstDayOfEvent'
         widget: 'datetime'

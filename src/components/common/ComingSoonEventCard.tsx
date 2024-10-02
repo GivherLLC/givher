@@ -1,11 +1,12 @@
 import React from "react";
 import EventButton from "./EventButton";
-import { EventType } from "@/types/types";
+import { ComingSoonEventType } from "@/types/types";
 
-export default function EventCard({event, postponedEventText, showClientName}:{event:EventType, postponedEventText:string, showClientName: boolean}){
+export default function ComingSoonEventCard({event, postponedEventText, showTag, showClientName }:{event:ComingSoonEventType, postponedEventText:string, showTag: boolean, showClientName: boolean}){
     return (
       <div className={`flex flex-col gap-[1.5rem] sm:gap-[0rem] border border-navySmoke dark:border-softOpal rounded-[10px] py-[2.5rem] px-[1.5rem] h-content w-full max-w-[400px] sm:h-[400px] sm:w-[400px] shadow-custom-shadow dark:shadow-custom-shadow-darkmode`}>
         <div className="flex flex-col justify-between h-full gap-[1rem]">
+         {showTag &&  <p className="self-end text-navySmoke bg-mauvelous px-[1.25rem] py-[0.5rem] rounded-lg text-[0.75rem] uppercase font-bold">Coming Soon</p>}
         <div>
             <div className="overflow-hidden">
               <p
@@ -13,7 +14,7 @@ export default function EventCard({event, postponedEventText, showClientName}:{e
                 style={{
                   display: "-webkit-box",
                   WebkitBoxOrient: "vertical",
-                  WebkitLineClamp: showClientName? 3 : 2,
+                  WebkitLineClamp: 3,
                 }}
               >
                 {event.eventName}
@@ -26,52 +27,44 @@ export default function EventCard({event, postponedEventText, showClientName}:{e
             )}
         </div>
           <div className="text-navySmoke dark:text-softOpal h-[48px] overflow-hidden flex justify-between gap-[1rem]">
-            <div className="flex flex-col">
-              <div className="overflow-hidden">
-                <p
-                    className="overflow-ellipsis max-w-[240px]"
-                    style={{
-                        display: "-webkit-box",
-                        WebkitBoxOrient: "vertical",
-                        WebkitLineClamp: 1,
-                        }}
-                >
-                    {event.eventLocation}
-
-                </p>
-            </div>
             <p
                 className="overflow-ellipsis max-w-[240px]"
                 style={{
                     display: "-webkit-box",
                     WebkitBoxOrient: "vertical",
-                    WebkitLineClamp: 1,
+                    WebkitLineClamp: 3,
                     }}
             >
-                {event.eventCity}
+                {event.eventCity && event.eventCity}
 
             </p>
-            </div>
             <p
                 className="overflow-ellipsis max-w-[100px]"
                 style={{
                   display: "-webkit-box",
                   WebkitBoxOrient: "vertical",
-                  WebkitLineClamp: 1,
+                  WebkitLineClamp: 3,
                   }}
           >
-                {event.firstDayOfEvent}{!!event.lastDayOfEvent && ` - ${event.lastDayOfEvent}`}
+                {event.firstDayOfEvent ? event.firstDayOfEvent : event.timeOfYear? event.timeOfYear : ""}{!!event.lastDayOfEvent && ` - ${event.lastDayOfEvent}`}
             </p>
             
         </div>
-
-        {showClientName && (
+          {showClientName && (
             <p className="uppercase text-navySmoke font-bold text-sm dark:text-softOpal max-w-[250px]">
-            {event.clientName}
-            </p>
+              {event.clientName}
+            </p>          
           )}
           <div className="flex items-center flex-wrap gap-x-[1.5rem] gap-y-[1rem]">
-          <EventButton text="Event Details" link={`/events/detail/${event.slug}`} bg="mauvelous" />
+            {event.eventButtonTextOne && event.eventButtonLinkOne && (
+            <EventButton text={event.eventButtonTextOne} link={event.eventButtonLinkOne} bg="electricYellow" />
+            )}
+            {event.eventButtonTextTwo && event.eventButtonLinkTwo && (
+              <EventButton text={event.eventButtonTextTwo} link={event.eventButtonLinkTwo} bg="mauvelous" />
+            )}
+            {!event.eventButtonTextOne && !event.eventButtonLinkTwo && (
+              <EventButton text="Get Email Updates" link="/signup4emails" bg="electricYellow"/>
+            )}
         </div>
         </div>
     </div>

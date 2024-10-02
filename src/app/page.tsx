@@ -1,6 +1,9 @@
 import React from 'react';
 import GlobalLayout from '@/components/GlobalLayout';
 import Homepage from '@/components/home/HomepageV2';
+import getAllEvents from '../../lib/getAllEvents';
+import getEventsPageData from '../../lib/getEventsPageData';
+import getAllClientLogos from '../../lib/getAllClientLogos';
 
 export async function generateMetadata() {
   return {
@@ -16,10 +19,14 @@ export async function generateMetadata() {
     }
 }
 
-export default function Home() { 
+export default async function Home() { 
+  const events = await getAllEvents();
+  const eventsPageData = getEventsPageData();
+  const clientLogos = await getAllClientLogos();
+
   return (
     <GlobalLayout>
-      <Homepage/>
+      <Homepage events={events} postponedEventText={eventsPageData.postponedEventText} clientLogos={clientLogos}/>
     </GlobalLayout>
   )
 }

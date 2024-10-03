@@ -3,6 +3,31 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import getFooterData from '../../lib/getFooterData';
+
+export interface FooterData {
+  footerLogo: string;
+  darkModeLogoSrc: string;
+  iconLinks: IconLink[];
+  buttonTitle: string;
+  buttonText: string;
+  buttonLink: string;
+  pageLinks: PageLink[];
+}
+
+export interface IconLink {
+  iconImageSrc: string;
+  darkmodeSrc: string;
+  imageAlt: string;
+  iconLink: string;
+}
+
+export interface PageLink {
+  linkText: string;
+  link: string;
+  external: boolean;
+}
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,6 +45,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const footerData = getFooterData();
   
   return (
     <html lang="en">
@@ -29,7 +55,7 @@ export default function RootLayout({
           <main className="h-full min-h-[calc(100vh-408px)] flex flex-col flex-grow bg-white dark:bg-navySmoke">
           {children}
           </main>
-          <Footer/>
+          <Footer data={footerData}/>
         </div>
       </body>
     </html>

@@ -1,5 +1,4 @@
 import React from 'react';
-import GlobalLayout from '@/components/GlobalLayout';
 import EventsPage from '@/components/events/EventsPage';
 import getAllEvents from "../../../lib/getAllEvents";
 import getComingsoonEvents from '../../../lib/getComingSoonEvents';
@@ -53,14 +52,12 @@ export default async function EventsPageWrapper() {
   }, {});
 
   return (
-    <GlobalLayout>
     <EventsPage
       events={events}
       eventsPageData={eventsPageData}
       clientImagesObject={clientImagesObject}
       comingSoonEvents={comingSoonEvents}
     />
-    </GlobalLayout>
   );
 }
 

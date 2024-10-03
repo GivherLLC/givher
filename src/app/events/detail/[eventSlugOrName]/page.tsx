@@ -1,6 +1,5 @@
 import React from "react";
 import EventDetailPage from "@/components/event-detail/EventDetailPage";
-import GlobalLayout from "@/components/GlobalLayout";
 import Head from "next/head";
 import { Metadata } from "next";
 import getEventNameParam from "@/utils/getEventNameParam";
@@ -93,7 +92,6 @@ export default async function EventsDetailPage({ params: { eventSlugOrName } }: 
             content={`https://www.givher.com/events/detail/${event.slug}`}  // Use slug for the URL
           />
         </Head>
-        <GlobalLayout>
           <EventDetailPage
             event={event}
             clientEvents={upcomingEvents}
@@ -101,19 +99,16 @@ export default async function EventsDetailPage({ params: { eventSlugOrName } }: 
             upcomingEventsTitle={eventsPageData.clientEventPageUpcomingEventsTitle}
             clientImages={clientImages}
           />
-        </GlobalLayout>
       </>
     );
   }
 
   return (
-    <GlobalLayout>
-      <div className="bg-white dark:bg-navySmoke w-full min-h-[calc(100vh-408px)] flex items-center justify-center">
-        <h1 className="font-visbyBold text-mauvelous dark:text-softOpal">
-          Oops! Event not found.
-        </h1>
-      </div>
-    </GlobalLayout>
+    <div className="bg-white dark:bg-navySmoke w-full min-h-[calc(100vh-408px)] flex items-center justify-center">
+      <h1 className="font-visbyBold text-mauvelous dark:text-softOpal">
+        Oops! Event not found.
+      </h1>
+    </div>
   );
 }
 

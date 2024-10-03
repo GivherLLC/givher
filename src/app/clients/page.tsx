@@ -1,5 +1,4 @@
 import React from 'react';
-import GlobalLayout from '@/components/GlobalLayout';
 import ClientsPage from '@/components/clients/ClientsPage';
 import getAllClients from '../../../lib/getAllClients';
 import getClientsPageData from '../../../lib/getClientsPageData';
@@ -30,8 +29,6 @@ export default async function Clients() {
   const clientsPageData = getClientsPageData();
 
   return (
-    <GlobalLayout>
-      <ClientsPage clients={clients} clientsPageData={clientsPageData}/>
-    </GlobalLayout>
+    <ClientsPage clients={clients} clientsPageData={clientsPageData}/>
   )
 }

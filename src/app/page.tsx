@@ -1,5 +1,4 @@
 import React from 'react';
-import GlobalLayout from '@/components/GlobalLayout';
 import Homepage from '@/components/home/HomepageV2';
 import getAllEvents from '../../lib/getAllEvents';
 import getEventsPageData from '../../lib/getEventsPageData';
@@ -75,8 +74,6 @@ export default async function Home() {
   const clientLogos = await getAllClientLogos();
 
   return (
-    <GlobalLayout>
-      <Homepage homepageInfo={homepageInfo} events={events} postponedEventText={eventsPageData.postponedEventText} clientLogos={clientLogos}/>
-    </GlobalLayout>
+    <Homepage homepageInfo={homepageInfo} events={events} postponedEventText={eventsPageData.postponedEventText} clientLogos={clientLogos}/>
   )
 }

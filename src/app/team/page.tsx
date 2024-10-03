@@ -1,5 +1,4 @@
 import React from 'react';
-import GlobalLayout from '@/components/GlobalLayout';
 import TeamPage from '@/components/team/TeamPage';
 
 export async function generateMetadata() {
@@ -18,9 +17,6 @@ export async function generateMetadata() {
 
 export default function Home() { 
   return (
-    <GlobalLayout>
-      <TeamPage/>
-    </GlobalLayout>
-
+    <TeamPage/>
   )
 }

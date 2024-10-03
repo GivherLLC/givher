@@ -1,5 +1,4 @@
 import React from 'react';
-import GlobalLayout from '@/components/GlobalLayout';
 import SignUpForEmailsForm from '@/components/signup4emails/Form';
 
 export async function generateMetadata() {
@@ -18,8 +17,6 @@ export async function generateMetadata() {
 
 export default function Home() { 
   return (
-    <GlobalLayout>
-      <SignUpForEmailsForm/>
-    </GlobalLayout>
+    <SignUpForEmailsForm/>
   )
 }

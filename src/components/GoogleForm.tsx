@@ -1,11 +1,10 @@
 import React from "react";
-import contactData from "../data/contactInfo.json";
 
-export default function GoogleForm(){
+export default function GoogleForm({formLink}:{formLink:string}){
     return (
         <>
         <div className="z-15 relative w-full flex justify-center pt-[2rem] xl:pt-[1rem]">
-            <iframe title="Givher Event Invite List" src={contactData.googleFormLink} width="640" height="821">Loading…</iframe>
+            <iframe title="Givher Event Invite List" src={formLink} width="640" height="821">Loading…</iframe>
         </div>
         </>
     )

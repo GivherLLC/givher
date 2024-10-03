@@ -135,7 +135,7 @@ collections:
         name: "signUpPage"
         file: "content/pages/signup_page.yml"
         fields:
-          - { label: 'Sign Up Page Title', name: 'singupTitle', widget: 'string' }
+          - { label: 'Sign Up Page Title', name: 'signupTitle', widget: 'string' }
           - { label: 'Google Form Embed Link', name: 'googleFormLink', widget: 'string' }
       - label: "Footer"
         name: "footer"

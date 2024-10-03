@@ -1,11 +1,6 @@
 import React from 'react';
 import SignUpForEmailsForm from '@/components/signup4emails/Form';
-import getSignUpForEmailsPageData from '../../../lib/getSignUpPageData';
-
-export interface SignUpForEmailsData {
-  signupTitle: string;
-  googleFormLink: string;
-}
+import getSignUpForEmailsPageData from '../../../../lib/getSignUpPageData';
 
 export async function generateMetadata() {
   return {

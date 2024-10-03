@@ -1,7 +1,7 @@
 import React from "react";
 import FeaturedEvents from "./FeaturedEvents";
 import ComingSoon from "./ComingSoon";
-import { EventsPageProps } from "@/app/events/page";
+import { EventsPageProps } from "@/types/types";
 import { lazy } from 'react';
 
 const AllEvents = lazy(() => import('./AllEvents'));

@@ -2,7 +2,7 @@ import React from "react";
 import { getAssetPath } from "@/utils/assetPath";
 import Link from "next/link";
 import ButtonLink from "../components/common/ButtonLink";
-import { FooterData } from "@/app/layout";
+import { FooterData } from "@/types/types";
 
 type FooterProps = {
     data: FooterData;

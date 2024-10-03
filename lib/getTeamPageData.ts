@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 import yaml from 'js-yaml';
-import { TeamPageData } from '@/app/team/page';
+import { TeamPageData } from '@/types/types';
 
 // Helper function to load the events page data
 export default function getTeamPageData(): TeamPageData {

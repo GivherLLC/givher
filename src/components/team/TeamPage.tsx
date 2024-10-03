@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import ArrowButton from "../common/ArrowButton";
 import Link from "next/link";
-import { TeamMember, TeamPageData } from "@/app/team/page";
+import { TeamMember, TeamPageData } from "@/types/types";
 
 type TeamPageProps = {
     data: TeamPageData;

@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 import yaml from 'js-yaml';
-import { ContactPageData } from '@/app/contact/page';
+import { ContactPageData } from '@/types/types';
 
 // Helper function to load the events page data
 export default function getContactPageData(): ContactPageData {

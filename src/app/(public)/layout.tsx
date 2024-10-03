@@ -1,33 +1,9 @@
 import React from 'react';
 import { Inter } from 'next/font/google';
-import './globals.css';
+import '../globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import getFooterData from '../../lib/getFooterData';
-
-export interface FooterData {
-  footerLogo: string;
-  darkModeLogoSrc: string;
-  iconLinks: IconLink[];
-  buttonTitle: string;
-  buttonText: string;
-  buttonLink: string;
-  pageLinks: PageLink[];
-}
-
-export interface IconLink {
-  iconImageSrc: string;
-  darkmodeSrc: string;
-  imageAlt: string;
-  iconLink: string;
-}
-
-export interface PageLink {
-  linkText: string;
-  link: string;
-  external: boolean;
-}
-
+import getFooterData from '../../../lib/getFooterData';
 
 const inter = Inter({ subsets: ['latin'] })
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { getAssetPath } from "@/utils/assetPath";
 import Link from "next/link";
-import { ContactPageData } from "@/app/contact/page";
+import { ContactPageData } from "@/types/types";
 
 type ContactPageProps = {
     contactData: ContactPageData;

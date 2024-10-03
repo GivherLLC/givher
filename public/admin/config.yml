@@ -55,7 +55,7 @@ collections:
                   - { label: 'Section Title', name: 'sectionTitle', widget: 'string' }
                   - { label: 'Section Paragraph Text', name: 'sectionText', widget: 'string' }
                   - { label: 'Section Image (600w x 285h)', name: 'sectionImageSrc', widget: 'image', allowMultiple: false }
-                  - { label: 'Section Image - Dark Mode (600w x 285h)', name: 'sectionImageSrcDarkModet', widget: 'image', allowMultiple: false }
+                  - { label: 'Section Image - Dark Mode (600w x 285h)', name: 'sectionImageSrcDarkMode', widget: 'image', allowMultiple: false }
                   - { label: 'Description of Section Image', name: 'sectionImageAlt', widget: 'string' }
           - label: 'Event Images Carousel'
             name: 'eventCarousel'

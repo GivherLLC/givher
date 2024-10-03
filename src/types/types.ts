@@ -1,3 +1,25 @@
+export interface EventsPageData {
+    allEventsSectionTitle: string;
+    comingSoonEventsSectionTitle: string;
+    postponedEventText: string;
+    clientEventPageUpcomingEventsTitle: string;
+    givherFeaturedEvent: FeaturedEventType;
+    comingSoon?: ComingSoonEventType[]; // Optional array for coming soon events
+  }
+  
+export interface EventsPageProps {
+    events: EventType[];
+    comingSoonEvents: ComingSoonEventType[];
+    eventsPageData: EventsPageData;
+    clientImagesObject: ClientImage;
+  }
+
+export type EventDetailPageProps = {
+    params: {
+      eventSlugOrName: string;
+    };
+  };
+
 export type EventType = {
     slug: string;
     eventName:string;
@@ -57,6 +79,12 @@ export type ComingSoonEventType = {
     postponed:boolean;
 }
 
+export interface ClientsPageData {
+    clientsSectionTitle: string;
+    testimonalsSectionTitle: string;
+    testimonials: TestimonialType[];
+  }
+
 export type TestimonialType = {
     quoteeName: string;
     quote: string;
@@ -78,3 +106,107 @@ export interface ClientLogo {
     clientLogo: string;
     logoAlt: string;
 }
+
+export interface ContactPageData {
+    contactPageTitle: string;
+    contactPhoneNumber: string;
+    contactEmail: string;
+}
+
+export interface HomePageData {
+    video: {
+      videoTitle: string;
+      videoDescription: string;
+      videoButtonText: string;
+      videoButtonLink: string;
+    };
+    services: {
+      servicesCarouselTitle: string;
+      sevicesCarouselCards: ServiceCarouselCard[];
+    };
+    featuredEvents: {
+      title: string;
+    };
+    about: {
+      aboutTitle: string;
+      aboutUsSections: AboutUsSection[];
+    };
+    eventCarousel: {
+      eventCarouselTitle: string;
+      eventCarouselImages: EventCarouselImage[];
+    };
+  }
+  
+  export interface ServiceCarouselCard {
+    cardTitle: string;
+    cardDescription: string;
+    cardImageSrc: string;
+    cardImageAlt: string;
+    cardLinkText: string;
+    cardLink: string;
+  }
+  
+  export interface AboutUsSection {
+    sectionTitle: string;
+    sectionText: string;
+    sectionImageSrc: string;
+    sectionImageSrcDarkMode: string;
+    sectionImageAlt: string;
+  }
+  
+  export interface EventCarouselImage {
+    imageSrc: string;
+    imageAlt: string;
+  }
+
+  export interface TeamPageData {
+    teamPageTitle: string;
+    teamMembers: TeamMember[];
+  }
+  
+  export interface TeamMember {
+    name: string;
+    title: string;
+    imageSrc: string;
+    iconLinks: IconLink[];
+    bio: BioParagraph[];
+  }
+  
+  export interface IconLink {
+    iconImageSrc: string;
+    darkmodeSrc: string;
+    iconImageAlt: string;
+    iconLink: string;
+  }
+  
+  export interface BioParagraph {
+    paragraph: string;
+  }
+
+  export interface SignUpForEmailsData {
+    signupTitle: string;
+    googleFormLink: string;
+  }
+
+  export interface FooterData {
+    footerLogo: string;
+    darkModeLogoSrc: string;
+    iconLinks: IconLink[];
+    buttonTitle: string;
+    buttonText: string;
+    buttonLink: string;
+    pageLinks: PageLink[];
+  }
+  
+  export interface IconLink {
+    iconImageSrc: string;
+    darkmodeSrc: string;
+    imageAlt: string;
+    iconLink: string;
+  }
+  
+  export interface PageLink {
+    linkText: string;
+    link: string;
+    external: boolean;
+  }

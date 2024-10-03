@@ -1,14 +1,7 @@
 import React from 'react';
 import ClientsPage from '@/components/clients/ClientsPage';
-import getAllClients from '../../../lib/getAllClients';
-import getClientsPageData from '../../../lib/getClientsPageData';
-import { TestimonialType } from '@/types/types';
-
-export interface ClientsPageData {
-  clientsSectionTitle: string;
-  testimonalsSectionTitle: string;
-  testimonials: TestimonialType[];
-}
+import getAllClients from '../../../../lib/getAllClients';
+import getClientsPageData from '../../../../lib/getClientsPageData';
 
 export async function generateMetadata() {
   return {

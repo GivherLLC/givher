@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 import yaml from 'js-yaml';
-import { SignUpForEmailsData } from '@/app/signup4emails/page';
+import { SignUpForEmailsData } from '@/types/types';
 
 // Helper function to load the events page data
 export default function getSignUpForEmailsPageData(): SignUpForEmailsData {

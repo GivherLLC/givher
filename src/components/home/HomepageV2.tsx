@@ -6,8 +6,7 @@ import HeroVideo from "./HeroVideo";
 import FloatingLogos from "./FloatingLogos";
 import UpcomingEvents from "./UpcomingEvents";
 import AboutUs from "./AboutUs";
-import { EventType, ClientLogo } from "@/types/types";
-import { HomePageData } from "@/app/page";
+import { EventType, ClientLogo, HomePageData } from "@/types/types";
 
 type HomepageProps = {
   homepageInfo: HomePageData;

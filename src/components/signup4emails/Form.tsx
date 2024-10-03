@@ -1,7 +1,7 @@
 import React from "react";
 import { getAssetPath } from "@/utils/assetPath";
 import GoogleForm from "../GoogleForm";
-import { SignUpForEmailsData } from "@/app/signup4emails/page";
+import { SignUpForEmailsData } from "@/types/types";
 
 type SignUpForEmailsProps = {
     data: SignUpForEmailsData

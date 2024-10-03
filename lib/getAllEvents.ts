@@ -5,6 +5,7 @@ import getEventNameParam from "@/utils/getEventNameParam";
 import formatTimeTo12Hour from "@/utils/formatTime";
 import { format } from 'date-fns';
 import { toDate } from 'date-fns-tz';
+import { EventType } from "@/types/types";
 
 // Helper function to parse a date string in MM.DD.YYYY format
 const parseDateString = (dateString: string, timeZone: string) => {
@@ -14,7 +15,7 @@ const parseDateString = (dateString: string, timeZone: string) => {
 };
 
 // Fetch and sort all events
-async function getAllEvents() {
+async function getAllEvents(): Promise<EventType[]> {
   const eventsDirectory = path.join(process.cwd(), 'content/events');
 
   // Check if the directory exists

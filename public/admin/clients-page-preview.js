@@ -295,6 +295,7 @@ var ClientsPagePreview = createClass({
                 style: {
                 zIndex: 10,
                 display: 'flex',
+                justifyContent: 'center',
                 gap: '3rem',
                 overflowX: 'auto', // Enable horizontal scrolling
                 scrollbarWidth: 'thin', // Thin scrollbar for Firefox

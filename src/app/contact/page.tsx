@@ -1,5 +1,12 @@
 import React from 'react';
 import ContactPage from '@/components/contact/ContactPage';
+import getContactPageData from '../../../lib/getContactPageData';
+
+export interface ContactPageData {
+  contactPageTitle: string;
+  contactPhoneNumber: string;
+  contactEmail: string;
+}
 
 export async function generateMetadata() {
   return {
@@ -16,7 +23,9 @@ export async function generateMetadata() {
 }
 
 export default function Home() { 
+  const contactData = getContactPageData();
+
   return (
-    <ContactPage/>
+    <ContactPage contactData={contactData}/>
   )
 }

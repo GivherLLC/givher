@@ -63,19 +63,6 @@ export type TestimonialType = {
     organization: string;
 }
 
-export type TeamMember = {
-    name: string;
-    title: string;
-    imageSrc: string;
-    iconLinks: {
-        iconImageSrc: string;
-        darkmodeSrc: string;
-        iconImageAlt:string;
-        iconLink: string;
-    }[];
-    bio: string[];
-}
-
 export type Client = {
     clientName: string;
     clientLogo: string;

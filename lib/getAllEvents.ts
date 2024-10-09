@@ -16,6 +16,13 @@ const parseDateString = (dateString: string, timeZone: string) => {
 // Fetch and sort all events
 async function getAllEvents() {
   const eventsDirectory = path.join(process.cwd(), 'content/events');
+
+  // Check if the directory exists
+  if (!fs.existsSync(eventsDirectory)) {
+    console.warn("No 'events' directory found.");
+    return []; // Return an empty array if the directory doesn't exist
+  }
+  
   const fileNames = fs.readdirSync(eventsDirectory);
   const currentDate = new Date();
   const currentDateString = format(currentDate, 'yyyy-MM-dd');

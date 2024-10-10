@@ -69,12 +69,13 @@ var EventsPagePreview = createClass({
       color: '#2E363E',
       fontSize: '1.25rem',
       WebkitBoxOrient: 'vertical',
-      WebkitLineClamp: 3,
+      WebkitLineClamp: 2,
       overflow: 'ellipsis',
       display: '-webkit-box',
       fontSize: '23px',
       lineHeight: 1.5,
       margin: 0,
+      height: '69px',
     };
 
     const eventInfoStyle = {

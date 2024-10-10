@@ -1,6 +1,6 @@
 import React from 'react';
-import GlobalLayout from '@/components/GlobalLayout';
 import ContactPage from '@/components/contact/ContactPage';
+import getContactPageData from '../../../../lib/getContactPageData';
 
 export async function generateMetadata() {
   return {
@@ -17,9 +17,9 @@ export async function generateMetadata() {
 }
 
 export default function Home() { 
+  const contactData = getContactPageData();
+
   return (
-    <GlobalLayout>
-      <ContactPage/>
-    </GlobalLayout>
+    <ContactPage contactData={contactData}/>
   )
 }

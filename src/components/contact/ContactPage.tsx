@@ -1,9 +1,13 @@
 import React from "react";
 import { getAssetPath } from "@/utils/assetPath";
-import contactData from "../../data/contactInfo.json";
 import Link from "next/link";
+import { ContactPageData } from "@/types/types";
 
-export default function ContactPage(){
+type ContactPageProps = {
+    contactData: ContactPageData;
+}
+
+export default function ContactPage({contactData}:ContactPageProps){
     return (
         <div className="bg-mauvelous dark:bg-navySmoke py-[1rem] md:py-[2.5rem] flex justify-center min-h-[calc(100vh-679px)] md:min-h-[calc(100vh-410px)]">
             <div className="max-w-[85.75rem] flex flex-col gap-[1.5rem] mx-[0.625rem] lg:mx-[1.5625rem]">

@@ -47,7 +47,7 @@ about:
         expanding their impact. Partnering with Givher will help elevate your
         mission and add the extra flare you never knew you were missing.
       sectionImageSrc: /uploads/forward-thinking.png
-      sectionImageSrcDarkModet: /uploads/forward-thinking-darkmode.png
+      sectionImageSrcDarkMode: /uploads/forward-thinking-darkmode.png
       sectionImageAlt: Outline drawing of a brain and heart shaking hands
     - sectionTitle: Effective and Innovative
       sectionText: At the heart of Givher's mission is a commitment to effective and
@@ -60,7 +60,7 @@ about:
         support.
       sectionImageSrc: /uploads/effective-and-innovative.png
       sectionImageAlt: Outline drawing of a red carpet
-      sectionImageSrcDarkModet: /uploads/effective-and-innovative-darkmode.png
+      sectionImageSrcDarkMode: /uploads/effective-and-innovative-darkmode.png
     - sectionTitle: Raising Awareness
       sectionText: In addition to fundraising, Givher excels in event development.
         Recognizing the critical role of events in raising awareness and
@@ -72,7 +72,7 @@ about:
         memorable, and lucrative.
       sectionImageAlt: Outline drawing of a flashlight
       sectionImageSrc: /uploads/raising-awareness.png
-      sectionImageSrcDarkModet: /uploads/raising-awareness-darkmode.png
+      sectionImageSrcDarkMode: /uploads/raising-awareness-darkmode.png
     - sectionTitle: Unique Perspective
       sectionText: Combining Alina's experience in public policy, technology, and
         various artistic and educational pursuits, their diverse background
@@ -82,7 +82,7 @@ about:
         empowering its clients and contributing to positive social change.
       sectionImageAlt: Outline drawing of sunglasses
       sectionImageSrc: /uploads/unique-perspective.png
-      sectionImageSrcDarkModet: /uploads/unique-perspective-darkmode.png
+      sectionImageSrcDarkMode: /uploads/unique-perspective-darkmode.png
   aboutTitle: About Us
 eventCarousel:
   eventCarouselImages:

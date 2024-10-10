@@ -58,9 +58,8 @@ var EventPreview = createClass({
         border: '1px solid #2E363E',
         borderRadius: '10px',
         padding: '2.5rem 1.5rem',
-        width: '100%',
-        maxWidth: '350px',
-        maxHeight: '398px',
+        width: '350px',
+        height: '300px',
         boxShadow: '0 4px 20px 0 rgba(0,0,0,0.15)',
         backgroundColor: '#F8F9EE',
       };
@@ -70,12 +69,13 @@ var EventPreview = createClass({
         color: '#2E363E',
         fontSize: '1.25rem',
         WebkitBoxOrient: 'vertical',
-        WebkitLineClamp: 3,
+        WebkitLineClamp: 2,
         overflow: 'ellipsis',
         display: '-webkit-box',
         fontSize: '23px',
         lineHeight: 1.5,
         margin: 0,
+        height: '69px',
       };
   
       const eventInfoStyle = {

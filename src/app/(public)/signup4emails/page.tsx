@@ -1,6 +1,6 @@
 import React from 'react';
-import GlobalLayout from '@/components/GlobalLayout';
 import SignUpForEmailsForm from '@/components/signup4emails/Form';
+import getSignUpForEmailsPageData from '../../../../lib/getSignUpPageData';
 
 export async function generateMetadata() {
   return {
@@ -16,10 +16,10 @@ export async function generateMetadata() {
     }
 }
 
-export default function Home() { 
+export default function SignUpForEmails() { 
+  const data = getSignUpForEmailsPageData();
+
   return (
-    <GlobalLayout>
-      <SignUpForEmailsForm/>
-    </GlobalLayout>
+    <SignUpForEmailsForm data={data} />
   )
 }

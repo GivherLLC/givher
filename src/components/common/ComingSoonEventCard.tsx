@@ -4,17 +4,17 @@ import { ComingSoonEventType } from "@/types/types";
 
 export default function ComingSoonEventCard({event, postponedEventText, showTag, showClientName }:{event:ComingSoonEventType, postponedEventText:string, showTag: boolean, showClientName: boolean}){
     return (
-      <div className={`flex flex-col gap-[1.5rem] sm:gap-[0rem] border border-navySmoke dark:border-softOpal rounded-[10px] py-[2.5rem] px-[1.5rem] h-content w-full max-w-[400px] sm:h-[400px] sm:w-[400px] shadow-custom-shadow dark:shadow-custom-shadow-darkmode`}>
+      <div className={`flex flex-col gap-[1.5rem] sm:gap-[0rem] border border-navySmoke dark:border-softOpal rounded-[10px] py-[2.5rem] px-[1.5rem] h-content w-full max-w-[375px] sm:h-[375px] sm:w-[375px] shadow-custom-shadow dark:shadow-custom-shadow-darkmode`}>
         <div className="flex flex-col justify-between h-full gap-[1rem]">
          {showTag &&  <p className="self-end text-navySmoke bg-mauvelous px-[1.25rem] py-[0.5rem] rounded-lg text-[0.75rem] uppercase font-bold">Coming Soon</p>}
         <div>
             <div className="overflow-hidden">
               <p
-                className="overflow-ellipsis font-visbyBold text-navySmoke text-[23px] dark:text-softOpal h-[103.5px]"
+                className="overflow-ellipsis font-visbyBold text-navySmoke text-[23px] dark:text-softOpal h-[69px]"
                 style={{
                   display: "-webkit-box",
                   WebkitBoxOrient: "vertical",
-                  WebkitLineClamp: 3,
+                  WebkitLineClamp: 2,
                 }}
               >
                 {event.eventName}

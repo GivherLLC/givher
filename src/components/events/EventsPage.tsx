@@ -1,7 +1,7 @@
 import React from "react";
 import FeaturedEvents from "./FeaturedEvents";
 import ComingSoon from "./ComingSoon";
-import { EventsPageProps } from "@/app/events/page";
+import { EventsPageProps } from "@/types/types";
 import { lazy } from 'react';
 
 const AllEvents = lazy(() => import('./AllEvents'));
@@ -46,7 +46,7 @@ const EventsPage = ({ events, comingSoonEvents, eventsPageData, clientImagesObje
       <FeaturedEvents events={featuredEvents()} clientImages={clientImagesObject} givherFeaturedEvent={eventsPageData.givherFeaturedEvent}/>
       <AllEvents events={events} postponedEventText={postponedEventText} allEventsSectionTitle={eventsPageData.allEventsSectionTitle}/>
       {!!comingSoonEvents.length && (
-        <ComingSoon comingEvents={comingSoonEvents} postponedEventText={postponedEventText} />
+        <ComingSoon comingEvents={comingSoonEvents} postponedEventText={postponedEventText} title={eventsPageData.clientEventPageUpcomingEventsTitle} />
       )}
     </div>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
-import GlobalLayout from '@/components/GlobalLayout';
 import TeamPage from '@/components/team/TeamPage';
+import getTeamPageData from '../../../../lib/getTeamPageData';
 
 export async function generateMetadata() {
   return {
@@ -17,10 +17,9 @@ export async function generateMetadata() {
 }
 
 export default function Home() { 
-  return (
-    <GlobalLayout>
-      <TeamPage/>
-    </GlobalLayout>
+  const data = getTeamPageData();
 
+  return (
+    <TeamPage data={data}/>
   )
 }

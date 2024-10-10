@@ -2,7 +2,7 @@ import React from "react";
 import AllClients from "./AllClients";
 import { lazy } from 'react';
 import { Client } from "@/types/types";
-import { ClientsPageData } from "@/app/clients/page";
+import { ClientsPageData } from "@/types/types";
 
 const Testimonials = lazy(() => import('./Testimonials'));
 

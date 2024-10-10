@@ -1,16 +1,17 @@
 import path from "path";
 import fs from "fs";
 import matter from "gray-matter";
+import { ComingSoonEventType } from "@/types/types";
 
-async function getComingsoonEvents() {
-  const eventsDirectory = path.join(process.cwd(), 'content/coming-soon');
-    
+async function getComingsoonEvents(): Promise<ComingSoonEventType[]> {
+    const eventsDirectory = path.join(process.cwd(), 'content/coming-soon');
+
   // Check if the directory exists
   if (!fs.existsSync(eventsDirectory)) {
-      console.warn("No 'coming soon' events directory found.");
-      return []; // Return an empty array if the directory doesn't exist
+    console.warn("No 'coming soon events' directory found.");
+    return []; // Return an empty array if the directory doesn't exist
   }
-    
+
     const fileNames = fs.readdirSync(eventsDirectory);
   
     return fileNames.map((fileName) => {

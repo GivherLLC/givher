@@ -65,7 +65,7 @@ export default function EventsFilter({events, postponedEventText}:{events:EventT
   return (
     <div className='custom-date-picker-container flex flex-col gap-[1.5rem]'>
       <div className='w-full mx-auto md:mx-0'>
-        <div className={`flex flex-col md:flex-row justify-start ${events.length < 3 ? "md:justify-center": "md:justify-end"} gap-[2rem] max-w-[398px] md:max-w-[unset] md:pr-[5rem] flex-wrap`}>
+        <div className={`flex flex-col md:flex-row justify-start ${events.length < 3 ? "md:justify-start": "md:justify-center"} gap-[2rem] max-w-[398px] md:max-w-[unset] md:pr-[5rem] flex-wrap`}>
           <DropdownFilter options={cities} selected={selectedCity} onSelect={handleCitySelect} placeholder='City'/>
           <DropdownFilter options={clients} selected={selectedClient} onSelect={handleClientSelect} placeholder='Client'/>
           <div className='relative flex gap-[1rem] items-center w-fit'>

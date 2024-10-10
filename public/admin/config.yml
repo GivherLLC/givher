@@ -85,10 +85,6 @@ collections:
         name: "eventsPage"
         file: "content/pages/events_page.yml"
         fields:
-          - { label: 'All Events Section Title', name: 'allEventsSectionTitle', widget: 'string' }
-          - { label: 'Events Coming Soon Section Title', name: 'comingSoonEventsSectionTitle', widget: 'string' }
-          - { label: 'Text to Show for Postponed Events', name: 'postponedEventText', widget: 'string' }
-          - { label: 'Events Detail Pages - Upcoming Events Title', name: 'clientEventPageUpcomingEventsTitle', widget: 'string' }
           - label: 'Givher (Featured Event at Top)'
             name: 'givherFeaturedEvent'
             widget: 'object'
@@ -98,7 +94,11 @@ collections:
               - { label: 'Event Start Date', name: 'firstDayOfEvent', widget: 'datetime', required: false }
               - { label: 'Button Text', name: 'eventButtonTextOne', widget: 'string', required: true }
               - { label: 'Button Link', name: 'eventButtonLinkOne', widget: 'string', required: true }
-              - { label: 'Image', name: 'clientImage (380w x 348h)', widget: 'image', allowMultiple: false }
+              - { label: 'Image (380w x 348h)', name: 'clientImage', widget: 'image', allowMultiple: false }
+          - { label: 'All Events Section Title', name: 'allEventsSectionTitle', widget: 'string' }
+          - { label: 'Events Coming Soon Section Title', name: 'comingSoonEventsSectionTitle', widget: 'string' }
+          - { label: 'Text to Show for Postponed Events', name: 'postponedEventText', widget: 'string' }
+          - { label: 'Events Detail Pages - Upcoming Events Title', name: 'clientEventPageUpcomingEventsTitle', widget: 'string' }
       - label: "Team Page"
         name: "teamPage"
         file: "content/pages/team_page.yml"

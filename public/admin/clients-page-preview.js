@@ -94,6 +94,7 @@ var ClientsPagePreview = createClass({
                 flexDirection: 'column',
                 gap: '2.5rem',
                 justifyContent: 'center',
+                alignItems: 'center',
                 width: '100%',
                 maxWidth: '85.75rem',
                 margin: '0 0.625rem',
@@ -110,7 +111,7 @@ var ClientsPagePreview = createClass({
                 margin: 0,
                 },
             }, clientsSectionTitle),
-            h('div', { style: { display: 'flex', flexWrap: 'wrap', gap: '2rem'}},
+            h('div', { style: { display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '2rem'}},
                 h(
                     'div',
                     {
@@ -271,6 +272,7 @@ var ClientsPagePreview = createClass({
             style: {
                 display: 'flex',
                 flexDirection: 'column',
+                alignItems: 'center',
                 gap: '2.4rem',
                 backgroundColor: '#C6AFC0',
                 position: 'relative',
@@ -288,6 +290,22 @@ var ClientsPagePreview = createClass({
                 },
                 testimonalsSectionTitle
                 ),
+            // Background Image (Geometric Pattern)
+            h('img', {
+                loading: 'lazy',
+                src: "/images/geometric-pattern.png",
+                alt: 'geometric pattern',
+                width: 2000,
+                height: 788,
+                style: {
+                    width: '100%',
+                    position: 'absolute',
+                    bottom: 0,
+                    maxWidth: '1150px',
+                    height: 'auto',
+                    verticalAlign: 'middle',
+                },
+                }),    
             // Testimonial Cards
             h(
             'div',
@@ -369,23 +387,8 @@ var ClientsPagePreview = createClass({
                 )
             )
             ),
-            // Background Image (Geometric Pattern)
-            h('img', {
-                loading: 'lazy',
-                src: "/images/geometric-pattern.png",
-                alt: 'geometric pattern',
-                width: 2000,
-                height: 788,
-                style: {
-                    width: '100%',
-                    position: 'absolute',
-                    bottom: 0,
-                    zIndex: 0,
-                    maxWidth: '950px',
-                    height: 'auto',
-                },
-                }),
-            
+
+ 
         )
   
       )

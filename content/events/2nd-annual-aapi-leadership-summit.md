@@ -1,5 +1,5 @@
 ---
-eventName: LGBTQ+ Retreat
+eventName: CA LGBTQ+ Retreat in Napa Valley
 firstDayOfEvent: 01.13.2025
 eventTime: 18:00
 lastDayOfEvent: 01.14.2025

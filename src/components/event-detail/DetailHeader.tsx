@@ -22,7 +22,7 @@ export default function DetailHeader({event, postponedEventText, clientImages}:{
                     <p className="flex justify-center md:justify-start gap-[1rem] flex-wrap"><span className="text-softOpal">{firstDayOfEvent}{!!lastDayOfEvent && ` - ${lastDayOfEvent}`}</span><span className="text-electricYellow">{eventLocation}</span></p>
                     {event.postponed && <div className="text-red">{postponedEventText}</div>}
                     <h1 className="font-visbyBold text-softOpal mb-[2rem] text-center md:text-left">{eventName}</h1>
-                    <h2 className="font-visbyBold text-softOpal text-center md:text-left">{eventCity} {!!eventTime && <span className="text-mauvelous text-2xl font-bold pl-[1rem]">{eventTime}</span>}</h2>  
+                    <h2 className="font-visbyBold text-softOpal text-center md:text-left">{eventCity} {!!eventTime && <span className="text-mauvelous text-2xl font-visbyBold pl-[1rem]">{eventTime}</span>}</h2>  
                     <div className="flex gap-[1rem] md:items-center justify-center md:justify-start">
                         <ButtonLink openNewTab bg="electricYellow" darkModeBg="electricYellow" text={eventButtonTextOne} link={eventButtonLinkOne}/>
                        

@@ -40,6 +40,10 @@
   }
 }
 
+html, body {
+  font-family: 'Visby', sans-serif !important;
+}
+
 html {
   scroll-padding-top: 87px;
 }

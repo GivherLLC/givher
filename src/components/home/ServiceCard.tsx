@@ -37,7 +37,7 @@ export default function ServiceCard({serviceCard}:{serviceCard:ServiceCardProps}
             loading="lazy"
           />
           <div className="absolute bottom-[50px] md:bottom-[unset] md:top-[250px] left-0 p-5 md:translate-y-[200px] md:group-hover:translate-y-0 flex flex-col justify-end transition duration-400 ease-in-out">
-            <h2 className="text-softOpal font-semibold pb-2">
+            <h2 className="text-softOpal font-visbyBold pb-2">
               {cardTitle}
             </h2>
             <div className="transition duration-400 opacity-100 md:opacity-0 ease-in-out md:group-hover:opacity-100">

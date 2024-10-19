@@ -13,7 +13,7 @@ export default function TestimonialCard({testimonial}:{testimonial:TestimonialTy
             </q>
             <div>
                 <p>- {testimonial.quoteeName}</p>
-                <p className="text-black dark:text-softOpal font-semibold ml-[0.75rem]">{testimonial.organization}</p>
+                <p className="text-black dark:text-softOpal font-visbyBold ml-[0.75rem]">{testimonial.organization}</p>
             </div>
         </div>
     )

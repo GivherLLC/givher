@@ -28,14 +28,14 @@ export default function Footer({data}:FooterProps){
                             ))}
                         </div>
                         <div className="flex flex-col items-center justify-between gap-[2rem]">
-                            <h2 className="text-navySmoke dark:text-softOpal uppercase font-bold text-center max-w-[375px]">{data.buttonTitle}</h2>
+                            <h2 className="text-navySmoke dark:text-softOpal uppercase font-visbyBold text-center max-w-[375px]">{data.buttonTitle}</h2>
                             <ButtonLink bg="mauvelous" darkModeBg="electricYellow" text="Sign Up" link="/signup4emails" />
                         </div>
                     </div>
                     <div className="w-full h-full md:w-1/3 md:flex md:flex-col md:justify-between">
                         <ul className="w-full flex flex-col items-center md:items-end h-full">
                             {data.pageLinks.map((l)=>(
-                                <li key={l.linkText} className="text-navySmoke dark:text-softOpal font-medium hover:font-semibold transition ease-in-out mb-[1rem] w-[110px] text-center md:text-left">
+                                <li key={l.linkText} className="text-navySmoke dark:text-softOpal  transition ease-in-out opacity-85 font-visbyBold hover:opacity-100 mb-[1rem] w-[110px] text-center md:text-left">
                                     <Link href={l.link} {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}>{l.linkText}</Link>
                                 </li>
                             ))}

@@ -61,7 +61,7 @@ export default function EventCard({event, postponedEventText, showClientName}:{e
         </div>
 
         {showClientName && (
-            <p className="uppercase text-navySmoke font-bold text-sm dark:text-softOpal max-w-[250px]">
+            <p className="uppercase text-navySmoke font-visbyBold text-sm dark:text-softOpal max-w-[250px]">
             {event.clientName}
             </p>
           )}

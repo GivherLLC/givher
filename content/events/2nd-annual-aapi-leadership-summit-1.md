@@ -1,6 +1,6 @@
 ---
 eventName: 2nd Annual AAPI Leadership Summit
-slug: www.aapileadershipsummit.com
+slug: 
 firstDayOfEvent: 12.06.2024
 eventTime: 08:00
 timeZone: America/Los_Angeles
@@ -8,7 +8,7 @@ eventCity: Burbank, CA
 eventLocation: Warner Bros. Studio
 clientName: Asian and Pacific Islander Legislative Caucus Foundation
 eventButtonTextOne: Event Website
-eventButtonLinkOne: www.aapileadershipsummit.com
+eventButtonLinkOne: https://aapileadershipsummit.com/
 eventButtonTextTwo: Individual Tickets
 eventButtonLinkTwo: https://www.eventbrite.com/e/2024-aapi-leadership-summit-tickets-1034045707547?aff=oddtdtcreator
 eventDescription:

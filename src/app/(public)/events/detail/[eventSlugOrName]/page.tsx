@@ -1,6 +1,5 @@
 import React from "react";
 import EventDetailPage from "@/components/event-detail/EventDetailPage";
-import Head from "next/head";
 import { Metadata } from "next";
 import getEventNameParam from "@/utils/getEventNameParam";
 import getEventsPageData from "../../../../../../lib/getEventsPageData";
@@ -67,34 +66,13 @@ export default async function EventsDetailPage({ params: { eventSlugOrName } }: 
     const upcomingEvents = [...clientEvents, ...clientsComingSoonEvents];
 
     return (
-      <>
-        <Head>
-          <title>{`Givher Event - ${event.eventName}`}</title>
-          <meta
-            name="description"
-            content={`Event details for ${event.clientName}'s event ${event.eventName}`}
-          />
-          <meta
-            property="og:title"
-            content={`Givher Event - ${event.eventName}`}
-          />
-          <meta
-            property="og:description"
-            content={`Event details for ${event.clientName}'s event ${event.eventName}`}
-          />
-          <meta
-            property="og:url"
-            content={`https://www.givher.com/events/detail/${event.slug}`}  // Use slug for the URL
-          />
-        </Head>
-          <EventDetailPage
-            event={event}
-            clientEvents={upcomingEvents}
-            postponedEventText={eventsPageData.postponedEventText}
-            upcomingEventsTitle={eventsPageData.clientEventPageUpcomingEventsTitle}
-            clientImages={clientImages}
-          />
-      </>
+      <EventDetailPage
+        event={event}
+        clientEvents={upcomingEvents}
+        postponedEventText={eventsPageData.postponedEventText}
+        upcomingEventsTitle={eventsPageData.clientEventPageUpcomingEventsTitle}
+        clientImages={clientImages}
+      />
     );
   }
 
@@ -123,7 +101,7 @@ export async function generateStaticParams() {
   const params = events.map((event) => {
     return ({
       eventSlugOrName: event.slug || getEventNameParam(event.eventName),  // Prioritize slug for static params
-    })
+    });
   });
 
   return params;

@@ -101,10 +101,10 @@ export default function FeaturedEvents({events, clientImages, givherFeaturedEven
                                 <div key={i} className={`carousel-content relative flex flex-col md:gap-[2rem] items-start transform translate-y-[50px] ${activeIndex === i ? "active transition-all duration-500 transform translate-y-0":""}`}>
                                     <div>
                                     <h1 className="font-visbyBold text-navySmoke dark:text-softOpal mb-[1rem]">{e.eventName}</h1>
-                                        <div className="flex gap-[1rem] mb-[1rem] text-black dark:text-softOpal font-semibold">
-                                            {e.firstDayOfEvent || e.timeOfYear && <p className="border-box text-black dark:text-softOpal font-semibold">{e.firstDayOfEvent ? e.firstDayOfEvent : e.timeOfYear? e.timeOfYear : "" }{!!e.lastDayOfEvent && ` - ${e.lastDayOfEvent}`}</p>}
+                                        <div className="flex gap-[1rem] mb-[1rem] text-black dark:text-softOpal font-visbyBold">
+                                            {e.firstDayOfEvent || e.timeOfYear && <p className="border-box text-black dark:text-softOpal font-visbyBold">{e.firstDayOfEvent ? e.firstDayOfEvent : e.timeOfYear? e.timeOfYear : "" }{!!e.lastDayOfEvent && ` - ${e.lastDayOfEvent}`}</p>}
                                             {(e.firstDayOfEvent || e.timeOfYear) && e.eventCity && <div className="border-box dark:border-softOpal border-l border-[1.5px] border-black"/>}
-                                            {e.eventCity && <p className="border-box text-black dark:text-softOpal font-semibold">{e.eventCity}</p>}
+                                            {e.eventCity && <p className="border-box text-black dark:text-softOpal font-visbyBold">{e.eventCity}</p>}
                                         </div>
                                     </div>
                                     {e.eventButtonTextOne && e.eventButtonLinkOne && <EventButton text={e.eventButtonTextOne} link={e.eventButtonLinkOne ? e.eventButtonLinkOne:""} bg="electricYellow" openNewTab={e.eventButtonLinkOne === "#all-events" ? false: true}/>}

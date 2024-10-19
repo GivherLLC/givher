@@ -24,7 +24,7 @@ export default function EventDetails({event, postponedEventText}:{event:EventTyp
                     </div>
                     <div className="flex flex-col">
                         {!!boldedEventInformation && boldedEventInformation.map((item,i)=>(
-                            <p key={i} className="text-black dark:text-softOpal font-semibold">{item.line}</p>
+                            <p key={i} className="text-black dark:text-softOpal font-visbyBold">{item.line}</p>
                         ))}
                     </div>
                 </div>

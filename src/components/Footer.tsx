@@ -35,7 +35,7 @@ export default function Footer({data}:FooterProps){
                     <div className="w-full h-full md:w-1/3 md:flex md:flex-col md:justify-between">
                         <ul className="w-full flex flex-col items-center md:items-end h-full">
                             {data.pageLinks.map((l)=>(
-                                <li key={l.linkText} className="text-navySmoke dark:text-softOpal  transition ease-in-out opacity-80 hover:opacity-100 mb-[1rem] w-[110px] text-center md:text-left">
+                                <li key={l.linkText} className="text-navySmoke dark:text-softOpal  transition ease-in-out opacity-85 font-visbyBold hover:opacity-100 mb-[1rem] w-[110px] text-center md:text-left">
                                     <Link href={l.link} {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}>{l.linkText}</Link>
                                 </li>
                             ))}

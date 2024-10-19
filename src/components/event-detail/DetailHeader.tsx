@@ -16,7 +16,7 @@ export default function DetailHeader({event, postponedEventText, clientImages}:{
 
     return (
         <div className="bg-navySmoke py-[2.5rem] flex justify-center">
-            <div className="flex flex-col sm:flex-row w-full items-center justify-center gap-[2.5rem] max-w-[85.75rem] mx-[0.625rem] lg:mx-[1.5625rem]">
+            <div className="flex flex-col md:flex-row w-full items-center justify-center gap-[2.5rem] max-w-[85.75rem] mx-[0.625rem] lg:mx-[1.5625rem]">
                 <div className="w-full md:w-1/2 flex flex-col gap-[1rem]">
                 <div className="flex flex-col gap-[0.5rem]"></div>
                     <p className="flex justify-center md:justify-start gap-[1rem] flex-wrap"><span className="text-softOpal">{firstDayOfEvent}{!!lastDayOfEvent && ` - ${lastDayOfEvent}`}</span><span className="text-electricYellow">{eventLocation}</span></p>

@@ -23,6 +23,7 @@ export default function Admin() {
         <!-- Link the external script for previews -->
         <script src="/admin/clients-preview.js"></script>
         <script src="/admin/event-preview.js"></script>
+        <script src="/admin/event-preview-proof-of-concept.js"></script>
         <script src="/admin/coming-soon-preview.js"></script>
         <script src="/admin/homepage-preview.js"></script>
         <script src="/admin/clients-page-preview.js"></script>

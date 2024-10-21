@@ -1,6 +1,5 @@
 ---
 eventName: Pink Circus
-slug: https://events.givher.com/ppacpinkcircus2025
 firstDayOfEvent: 09.06.2025
 timeZone: America/Los_Angeles
 eventCity: Sacramento, CA

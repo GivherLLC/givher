@@ -38,7 +38,7 @@ async function getAllEvents(): Promise<EventType[]> {
       eventName: data.eventName,
       firstDayOfEvent: data.firstDayOfEvent,
       lastDayOfEvent: data.lastDayOfEvent,
-      eventTime: formatTimeTo12Hour(data.eventTime),
+      eventTime: data.eventTime ? formatTimeTo12Hour(data.eventTime): "",
       timeZone: data.timeZone,
       eventCity: data.eventCity,
       eventLocation: data.eventLocation,

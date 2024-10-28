@@ -317,7 +317,7 @@ var EventPreview = createClass({
                     eventButtonTextTwo ? eventButtonTextTwo : eventButtonTextOne
                   ),
                  h('img', {
-                    src: '/images/common/arrow-black.png',
+                    src: '/images/common/arrow-black.svg',
                     alt: 'black arrow',
                     height: '20',
                     width: '20',
@@ -339,7 +339,7 @@ var EventPreview = createClass({
             'div',
             { style: { display: 'flex', alignItems: 'center', position: 'relative', width: '50%' } },
             h('img', {
-              src: '/images/events/paint-splatter-small.png',
+              src: '/images/events/paint-splatter-small.svg',
               alt: 'paint splatter',
               height: '311',
               width: '322',

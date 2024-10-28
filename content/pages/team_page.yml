@@ -4,8 +4,8 @@ teamMembers:
     title: Principal
     imageSrc: /uploads/alina-headshot.png
     iconLinks:
-      - iconImageSrc: /uploads/mail-icon.png
-        darkmodeSrc: /uploads/mail-icon-darkmode.png
+      - iconImageSrc: /uploads/mail-icon.svg
+        darkmodeSrc: /uploads/mail-icon-darkmode.svg
         iconImageAlt: Email icon
         iconLink: mailto:alina@givher.com
     bio:

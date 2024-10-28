@@ -21,6 +21,13 @@ export default function Testimonials({testimonials, testimonalsSectionTitle}:Tes
             wrapAround: false,
             pageDots: true,
           });
+
+          const carouselElement = document.querySelector('.testimonials-carousel');
+          if (carouselElement) {
+              carouselElement.addEventListener('touchstart', () => {}, { passive: true });
+              carouselElement.addEventListener('touchmove', () => {}, { passive: true });
+              carouselElement.addEventListener('wheel', () => {}, { passive: true });
+          }
     
         // Cleanup event listeners and destroy Flickity instance on component unmount
         return () => {

@@ -24,6 +24,14 @@ export default function EventsCarousel({events}:{events:EventsCarouselProps}){
           percentPosition: false,
           wrapAround: true,
         });
+
+        // Modify Flickity's event listeners to be passive for improved scroll performance
+        const carouselElement = document.querySelector('.event-carousel');
+        if (carouselElement) {
+            carouselElement.addEventListener('touchstart', () => {}, { passive: true });
+            carouselElement.addEventListener('touchmove', () => {}, { passive: true });
+            carouselElement.addEventListener('wheel', () => {}, { passive: true });
+        }
     
         // Cleanup event listeners and destroy Flickity instance on component unmount
         return () => {

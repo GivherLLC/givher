@@ -60,6 +60,15 @@ export default function FeaturedEvents({events, clientImages, givherFeaturedEven
           selectedAttraction: 0.2,
           friction: 0.8,
         });
+
+        // Modify Flickity's event listeners to be passive for improved scroll performance
+        const carouselElement = document.querySelector('.carousel');
+        if (carouselElement) {
+            carouselElement.addEventListener('touchstart', () => {}, { passive: true });
+            carouselElement.addEventListener('touchmove', () => {}, { passive: true });
+            carouselElement.addEventListener('wheel', () => {}, { passive: true });
+        }
+        
     
         // Add event listeners to custom buttons
         const prevButton = document.querySelector('.custom-prev-button');

@@ -93,7 +93,7 @@ var SignupPagePreview = createClass({
               },
               h('img', {
                 loading: 'eager',
-                src: "/images/geometric-pattern.png",
+                src: "/images/geometric-pattern.svg",
                 alt: 'geometric pattern',
                 width: 1000,
                 height: 294,

@@ -293,7 +293,7 @@ var ClientsPagePreview = createClass({
             // Background Image (Geometric Pattern)
             h('img', {
                 loading: 'lazy',
-                src: "/images/geometric-pattern.png",
+                src: "/images/geometric-pattern.svg",
                 alt: 'geometric pattern',
                 width: 2000,
                 height: 788,

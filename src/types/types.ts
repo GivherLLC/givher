@@ -81,7 +81,7 @@ export type ComingSoonEventType = {
 
 export interface ClientsPageData {
     clientsSectionTitle: string;
-    testimonalsSectionTitle: string;
+    testimonialsSectionTitle: string;
     testimonials: TestimonialType[];
   }
 

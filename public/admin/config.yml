@@ -73,7 +73,7 @@ collections:
         file: "content/pages/client_page.yml"
         fields:
           - { label: 'Client Page Title', name: 'clientsSectionTitle', widget: 'string' }
-          - { label: 'Testimonials Section Title', name: 'testimonalsSectionTitle', widget: 'string', required: false }
+          - { label: 'Testimonials Section Title', name: 'testimonialsSectionTitle', widget: 'string', required: false }
           - label: 'Testimonials Carousel'
             name: 'testimonials'
             widget: 'list'

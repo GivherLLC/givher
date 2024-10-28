@@ -55,11 +55,12 @@ export default function EventsCarousel({events}:{events:EventsCarouselProps}){
                     >
                     <div className="rounded-[15px]">
                         <Image
-                            src={c.imageSrc}
+                            src={`${c.imageSrc}?w=297&h=390&q=75`}
                             alt={c.imageAlt}
                             width={297}
                             height={390}
                             className="rounded-[15px] flickity-lazyloaded"
+                            sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
                             loading="lazy"
                         />
                     </div>

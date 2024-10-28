@@ -1,9 +1,9 @@
 'use client'
 
 import React, { useState, useEffect } from "react";
-import { getAssetPath } from "@/utils/assetPath";
 import useIsMobile from "@/hooks/useIsMobile";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar(){
     const [navOpen, setNavOpen] = useState(false);
@@ -77,21 +77,21 @@ export default function Navbar(){
             <div className="max-w-[85.75rem] w-full flex flex-row justify-between py-[1rem] mx-[0.625rem] lg:mx-[1.5625rem] relative">
                 <button onClick={()=>{scrollToTop()}}>
                     <Link href="/">
-                    <img
-                        src={getAssetPath("/images/givher-logo-navySmoke.png")}
+                    <Image
+                        src={"/images/givher-logo-navySmoke.png"}
                         alt="Givher Logo"
                         width={210}
                         height={92}
-                        className="dark:hidden max-w-[105px] image-rendering-crisp-edges"
-                        loading="eager"
+                        className="dark:hidden max-w-[105px] h-auto image-rendering-crisp-edges"
+                        priority={true}
                         />
-                    <img
-                        src={getAssetPath("/images/givher-logo-electricYellow.png")}
+                    <Image
+                        src={"/images/givher-logo-electricYellow.png"}
                         alt="Givher Logo"
                         width={210}
                         height={92}
                         className="hidden dark:block max-w-[105px] image-rendering-crisp-edges"
-                        loading="eager"
+                        priority={true}
                         />
                     </Link>    
                 </button>

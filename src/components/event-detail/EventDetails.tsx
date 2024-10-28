@@ -1,5 +1,5 @@
 import React from "react";
-import { getAssetPath } from "@/utils/assetPath";
+import Image from "next/image";
 import { EventType } from "@/types/types";
 import ArrowLink from "../common/ArrowLink";
 
@@ -29,8 +29,8 @@ export default function EventDetails({event, postponedEventText}:{event:EventTyp
                     </div>
                 </div>
                 <div className="w-full lg:w-1/2 relative flex justify-center lg:justify-left">
-                    <img loading="lazy" height={311} width={322} src={getAssetPath("/images/events/paint-splatter-small.png")} alt="paint splatter" className="absolute left-[30%] lg:left-[-23%] bottom-[-23%] z-0"/>
-                    <img loading="lazy" height={385} width={615} src={getAssetPath(detailImage)} alt={eventName} className="relative z-8"/>
+                    <Image loading="lazy" height={311} width={322} src={"/images/events/paint-splatter-small.png"} alt="paint splatter" className="absolute left-[30%] lg:left-[-23%] bottom-[-23%] z-0"/>
+                    <Image loading="lazy" height={385} width={615} src={detailImage} alt={eventName} className="relative z-8"/>
                 </div>
             </div>
         </div>

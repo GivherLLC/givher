@@ -142,7 +142,7 @@ export default function FeaturedEvents({events, clientImages, givherFeaturedEven
                                         <div>
                                         <div className="bg-white w-full h-full max-w-[400px] max-h-[400px] md:max-h-[450px] md:max-w-[450px] rounded-2xl p-[2rem] border border-black flex items-center justify-center">
                                         <Image
-                                            priority={true}
+                                            priority={i === 0 || i === 1}
                                             src={e.clientImage}
                                             alt={e.eventName}
                                             width={350}

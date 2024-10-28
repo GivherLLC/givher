@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect } from "react";
-import { getAssetPath } from "@/utils/assetPath";
+import Image from "next/image";
 
 type EventsCarouselProps = {
     eventCarouselTitle: string;
@@ -46,8 +46,8 @@ export default function EventsCarousel({events}:{events:EventsCarouselProps}){
                     className="carousel-cell w-/2 mr-[2rem]"
                     >
                     <div className="rounded-[15px]">
-                        <img
-                            src={getAssetPath(c.imageSrc)}
+                        <Image
+                            src={c.imageSrc}
                             alt={c.imageAlt}
                             width={297}
                             height={390}

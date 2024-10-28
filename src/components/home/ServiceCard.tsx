@@ -1,5 +1,5 @@
 import React from "react";
-import { getAssetPath } from "@/utils/assetPath";
+import Image from "next/image";
 import ArrowLink from "../common/ArrowLink";
 
 type ServiceCardProps = {
@@ -27,9 +27,9 @@ export default function ServiceCard({serviceCard}:{serviceCard:ServiceCardProps}
         className="carousel-cell w-/2 mr-[2rem] rounded-[15px]"
       >
         <div className="group relative overflow-hidden rounded-[15px]">
-          <img
+          <Image
             data-flickity-lazyload
-            src={getAssetPath(cardImageSrc)}
+            src={cardImageSrc}
             alt={cardImageAlt}
             className="flickity-lazyloaded md:group-hover:scale-[1.1] transition duration-400 ease-in-out overflow-hidden"
             height={545}

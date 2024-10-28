@@ -82,7 +82,7 @@ export default function Navbar(){
                         alt="Givher Logo"
                         width={210}
                         height={92}
-                        className="dark:hidden max-w-[105px] h-auto image-rendering-crisp-edges"
+                        className="dark:hidden max-w-[105px] min-h-[50px] h-auto image-rendering-crisp-edges"
                         priority={true}
                         />
                     <Image
@@ -90,7 +90,7 @@ export default function Navbar(){
                         alt="Givher Logo"
                         width={210}
                         height={92}
-                        className="hidden dark:block max-w-[105px] image-rendering-crisp-edges"
+                        className="hidden dark:block max-w-[105px] min-h-[50px] image-rendering-crisp-edges"
                         priority={true}
                         />
                     </Link>    

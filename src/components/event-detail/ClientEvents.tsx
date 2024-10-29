@@ -7,7 +7,7 @@ type UpcomingComingSoonType = ComingSoonEventType & {
     comingSoon: boolean;
 }
 
-export default function ClientEvents({events, clientName, event, postponedEventText, upcomingEventsTitle }:{ events: ClientEventType[], clientName:string, event: EventType, postponedEventText:string, upcomingEventsTitle:string }){
+export default function ClientEvents({events, clientName, event, postponedEventText }:{ events: ClientEventType[], clientName:string, event: EventType, postponedEventText:string }){
     const { eventName } = event;
     const shownEvents = events.filter((e)=> e.eventName !== eventName).slice(0, 3);
 

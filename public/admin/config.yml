@@ -99,7 +99,6 @@ collections:
           - { label: 'All Events Section Title', name: 'allEventsSectionTitle', widget: 'string' }
           - { label: 'Events Coming Soon Section Title', name: 'comingSoonEventsSectionTitle', widget: 'string' }
           - { label: 'Text to Show for Postponed Events', name: 'postponedEventText', widget: 'string' }
-          - { label: 'Events Detail Pages - Upcoming Events Title', name: 'clientEventPageUpcomingEventsTitle', widget: 'string' }
       - label: "Team Page"
         name: "teamPage"
         file: "content/pages/team_page.yml"

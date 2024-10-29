@@ -2,7 +2,6 @@ export interface EventsPageData {
     allEventsSectionTitle: string;
     comingSoonEventsSectionTitle: string;
     postponedEventText: string;
-    clientEventPageUpcomingEventsTitle: string;
     givherFeaturedEvent: FeaturedEventType;
     comingSoon?: ComingSoonEventType[]; // Optional array for coming soon events
   }
@@ -40,7 +39,7 @@ export type EventType = {
     postponed: boolean;
 }
 
-export type UpcomingClientEventType = (EventType | ComingSoonEventType) & {
+export type ClientEventType = (EventType | ComingSoonEventType) & {
     comingSoon: boolean;
   };
 

@@ -5,7 +5,6 @@ var EventsPagePreview = createClass({
       var allEventsSectionTitle = entry.getIn(['data', 'allEventsSectionTitle']);
       var comingSoonEventsSectionTitle = entry.getIn(['data', 'comingSoonEventsSectionTitle']);
       var postponedEventText = entry.getIn(['data', 'postponedEventText']);
-      var clientEventPageUpcomingEventsTitle = entry.getIn(['data', 'clientEventPageUpcomingEventsTitle']);
       
       var givherFeaturedEvent = entry.getIn(['data', 'givherFeaturedEvent']);   
       
@@ -425,8 +424,7 @@ var EventsPagePreview = createClass({
         flexDirection: 'column',
         gap: '2rem',        
         }},
-        h('h1', {style:{margin: 0, fontSize: '2.5rem'}}, clientEventPageUpcomingEventsTitle),
-        h('h2', {style:{margin: 0, fontSize: '1rem'}}, "The Client's Name"),
+        h('h1', {style:{margin: 0, fontSize: '2.5rem'}},  "The Client's Name"),
         h(
           'div',
           { style: containerStyle },

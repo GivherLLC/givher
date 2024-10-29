@@ -60,6 +60,15 @@ export default function FeaturedEvents({events, clientImages, givherFeaturedEven
           selectedAttraction: 0.2,
           friction: 0.8,
         });
+
+        // Modify Flickity's event listeners to be passive for improved scroll performance
+        const carouselElement = document.querySelector('.carousel');
+        if (carouselElement) {
+            carouselElement.addEventListener('touchstart', () => {}, { passive: true });
+            carouselElement.addEventListener('touchmove', () => {}, { passive: true });
+            carouselElement.addEventListener('wheel', () => {}, { passive: true });
+        }
+        
     
         // Add event listeners to custom buttons
         const prevButton = document.querySelector('.custom-prev-button');
@@ -140,13 +149,13 @@ export default function FeaturedEvents({events, clientImages, givherFeaturedEven
                                 return (
                                     <div key={i} data-id={i} className="carousel-cell">
                                         <div>
-                                        <div className="bg-white w-full h-full max-w-[400px] max-h-[400px] md:max-h-[450px] md:max-w-[450px] rounded-2xl p-[2rem] border border-black flex items-center justify-center">
+                                        <div className="bg-white w-full h-full max-w-[400px] max-h-[350px] md:max-h-[400px] md:max-w-[400px] rounded-2xl p-[1rem] border border-black flex items-center justify-center">
                                         <Image
-                                            priority={true}
+                                            priority={i === 0 || i === 1}
                                             src={e.clientImage}
                                             alt={e.eventName}
-                                            width={350}
-                                            height={350}
+                                            width={325}
+                                            height={325}
                                             className="flickity-lazyloaded object-contain max-w-full max-h-full"
                                         />
                                         </div>

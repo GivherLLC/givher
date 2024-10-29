@@ -66,7 +66,7 @@ export default function EventCard({event, postponedEventText, showClientName}:{e
             </p>
           )}
           <div className="flex items-center flex-wrap gap-x-[1.5rem] gap-y-[1rem]">
-          <EventButton text="Event Details" link={`/events/detail/${event.slug}`} bg="mauvelous" />
+          <EventButton text="Inside the Event" link={`/events/detail/${event.slug}`} bg="mauvelous" />
         </div>
         </div>
     </div>

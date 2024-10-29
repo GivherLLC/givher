@@ -10,7 +10,7 @@ export default function ClientsPage({clients, clientsPageData}:{clients:Client[]
     return (
         <>
            <AllClients clients={clients} clientsSectionTitle={clientsPageData.clientsSectionTitle}/>
-           <Testimonials testimonials={clientsPageData.testimonials} testimonalsSectionTitle={clientsPageData.testimonalsSectionTitle}/>
+           <Testimonials testimonials={clientsPageData.testimonials} testimonialsSectionTitle={clientsPageData.testimonialsSectionTitle}/>
         </>
     )
 }

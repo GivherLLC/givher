@@ -46,7 +46,7 @@ const EventsPage = ({ events, comingSoonEvents, eventsPageData, clientImagesObje
       <FeaturedEvents events={featuredEvents()} clientImages={clientImagesObject} givherFeaturedEvent={eventsPageData.givherFeaturedEvent}/>
       <AllEvents events={events} postponedEventText={postponedEventText} allEventsSectionTitle={eventsPageData.allEventsSectionTitle}/>
       {!!comingSoonEvents.length && (
-        <ComingSoon comingEvents={comingSoonEvents} postponedEventText={postponedEventText} title={eventsPageData.clientEventPageUpcomingEventsTitle} />
+        <ComingSoon comingEvents={comingSoonEvents} postponedEventText={postponedEventText} title={eventsPageData.comingSoonEventsSectionTitle} />
       )}
     </div>
   );

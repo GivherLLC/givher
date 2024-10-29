@@ -192,7 +192,7 @@ var TeamPagePreview = createClass({
                     ),
                     h('img', {
                       loading: 'lazy',
-                      src: '/images/common/arrow-black.png',
+                      src: '/images/common/arrow-black.svg',
                       alt: 'arrow',
                       width: 20,
                       height: 20,

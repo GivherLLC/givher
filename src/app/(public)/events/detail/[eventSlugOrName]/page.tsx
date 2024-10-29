@@ -70,7 +70,6 @@ export default async function EventsDetailPage({ params: { eventSlugOrName } }: 
         event={event}
         clientEvents={upcomingEvents}
         postponedEventText={eventsPageData.postponedEventText}
-        upcomingEventsTitle={eventsPageData.clientEventPageUpcomingEventsTitle}
         clientImages={clientImages}
       />
     );

@@ -1,7 +1,6 @@
 allEventsSectionTitle: Events
-comingSoonEventsSectionTitle: Coming Soon
+comingSoonEventsSectionTitle: Events in the Works
 postponedEventText: '* Event Postponed'
-clientEventPageUpcomingEventsTitle: Upcoming Events
 givherFeaturedEvent:
   eventName: Upcoming Events
   eventCity:

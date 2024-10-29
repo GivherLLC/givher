@@ -15,7 +15,7 @@ export default function ClientCard({clientInfo}:ClientCardProps){
     const {clientName, clientLogo, clientWebsite, clientW9Src} = clientInfo;
     return (
     <div key={clientName} className="group relative bg-white rounded-[20px] border border-1 border-mauvelous flex items-center justify-center w-[280px] h-[175px]">
-        <Image priority={true} src={clientLogo} alt={`${clientName} logo`} width={280} height={175} className="rounded-[20px]"/>
+        <Image priority={true} src={clientLogo} alt={`${clientName} logo`} width={280} height={175} className="rounded-[20px] max-w-[250px] w-auto max-h-[150px] h-auto"/>
         <div className="absolute top-0 rounded-[20px] hidden group-hover:flex bg-opacity-80 bg-navySmoke h-full w-full px-[1rem] py-[1.5rem] flex-col justify-between">
             <p className="text-softOpal">{clientName}</p>
             <div className="flex justify-between">

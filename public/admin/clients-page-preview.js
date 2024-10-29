@@ -3,7 +3,7 @@ var ClientsPagePreview = createClass({
       var entry = this.props.entry;
 
       var clientsSectionTitle = entry.getIn(['data', 'clientsSectionTitle']);
-      var testimonalsSectionTitle = entry.getIn(['data', 'testimonalsSectionTitle']);
+      var testimonialsSectionTitle = entry.getIn(['data', 'testimonialsSectionTitle']);
       var testimonials = entry.getIn(['data', 'testimonials']);
       var testimonialsArray;
       if(testimonials){
@@ -279,7 +279,7 @@ var ClientsPagePreview = createClass({
                 padding: '5rem 1rem'
             },
             },
-            testimonalsSectionTitle && h(
+            testimonialsSectionTitle && h(
                 'h1',
                 {
                     style: {
@@ -288,12 +288,12 @@ var ClientsPagePreview = createClass({
                     margin: 0,
                     },
                 },
-                testimonalsSectionTitle
+                testimonialsSectionTitle
                 ),
             // Background Image (Geometric Pattern)
             h('img', {
                 loading: 'lazy',
-                src: "/images/geometric-pattern.png",
+                src: "/images/geometric-pattern.svg",
                 alt: 'geometric pattern',
                 width: 2000,
                 height: 788,

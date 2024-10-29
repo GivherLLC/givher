@@ -1,5 +1,4 @@
 import React from "react";
-import { getAssetPath } from "@/utils/assetPath";
 import Link from "next/link";
 import { ContactPageData } from "@/types/types";
 
@@ -23,7 +22,7 @@ export default function ContactPage({contactData}:ContactPageProps){
                     </div>
                 </div>
                 <div className="flex justify-center items-end flex-1">
-                    <img loading="eager" src={getAssetPath("/images/geometric-pattern.png")} alt="geometric pattern" width={1000} height={294} className="w-full md:w-[60%]"/>
+                <img src="/images/geometric-pattern.svg" alt="geometric pattern" className="w-full md:w-[60%]" />
                 </div>
             </div>
         </div>

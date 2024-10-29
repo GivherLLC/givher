@@ -15,6 +15,7 @@ services:
       cardLinkText: View Clients
       cardLink: /clients
       cardImageSrc: /uploads/fundraising.png
+      cardImageSrcDarkMode: /uploads/fundraising-darkmode.png
     - cardTitle: Event Management
       cardDescription: Events are vital for raising awareness, educating, and engaging
         communities. Givher provides comprehensive event development services to
@@ -22,7 +23,8 @@ services:
       cardImageAlt: A graphic demonstrating planning
       cardLinkText: View Events
       cardLink: /events
-      cardImageSrc: /uploads/event-management.png
+      cardImageSrc: /uploads/event-management.svg
+      cardImageSrcDarkMode: /uploads/event-management-darkmode.svg
     - cardTitle: General Consulting
       cardDescription: With extensive experience in the legislature, event
         development, partnering with campaigns, and navigating internal and
@@ -32,7 +34,8 @@ services:
       cardImageAlt: A graphic of three chat bubbles
       cardLinkText: View Team
       cardLink: /team
-      cardImageSrc: /uploads/general-consulting.png
+      cardImageSrc: /uploads/consulting.svg
+      cardImageSrcDarkMode: /uploads/consulting-darkmode.svg
   servicesCarouselTitle: Elevate Your Mission With Us
 featuredEvents:
   title: Upcoming Events
@@ -46,8 +49,8 @@ about:
         committees, and advocacy groups in achieving their missions and
         expanding their impact. Partnering with Givher will help elevate your
         mission and add the extra flare you never knew you were missing.
-      sectionImageSrc: /uploads/forward-thinking.png
-      sectionImageSrcDarkMode: /uploads/forward-thinking-darkmode.png
+      sectionImageSrc: /uploads/forward-thinking.svg
+      sectionImageSrcDarkMode: /uploads/forward-thinking-darkmode.svg
       sectionImageAlt: Outline drawing of a brain and heart shaking hands
     - sectionTitle: Effective and Innovative
       sectionText: At the heart of Givher's mission is a commitment to effective and
@@ -58,9 +61,9 @@ about:
         avenues for donor development, organizing engaging fundraising events,
         and managing donor relationships to foster long-term loyalty and
         support.
-      sectionImageSrc: /uploads/effective-and-innovative.png
+      sectionImageSrc: /uploads/effective-and-innovative.svg
       sectionImageAlt: Outline drawing of a red carpet
-      sectionImageSrcDarkMode: /uploads/effective-and-innovative-darkmode.png
+      sectionImageSrcDarkMode: /uploads/effective-and-innovative-darkmode.svg
     - sectionTitle: Raising Awareness
       sectionText: In addition to fundraising, Givher excels in event development.
         Recognizing the critical role of events in raising awareness and
@@ -71,8 +74,8 @@ about:
         design, and logistics — Givher ensures each event is well-organized,
         memorable, and lucrative.
       sectionImageAlt: Outline drawing of a flashlight
-      sectionImageSrc: /uploads/raising-awareness.png
-      sectionImageSrcDarkMode: /uploads/raising-awareness-darkmode.png
+      sectionImageSrc: /uploads/raising-awareness.svg
+      sectionImageSrcDarkMode: /uploads/raising-awareness-darkmode.svg
     - sectionTitle: Unique Perspective
       sectionText: Combining Alina's experience in public policy, technology, and
         various artistic and educational pursuits, their diverse background
@@ -81,8 +84,8 @@ about:
         Givher is not just a service provider but a partner committed to
         empowering its clients and contributing to positive social change.
       sectionImageAlt: Outline drawing of sunglasses
-      sectionImageSrc: /uploads/unique-perspective.png
-      sectionImageSrcDarkMode: /uploads/unique-perspective-darkmode.png
+      sectionImageSrc: /uploads/unique-perspective.svg
+      sectionImageSrcDarkMode: /uploads/unique-perspective-darkmode.svg
   aboutTitle: About Us
 eventCarousel:
   eventCarouselImages:

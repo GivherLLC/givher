@@ -30,7 +30,7 @@ export default function DetailHeader({event, postponedEventText, clientImages}:{
                 </div>
                 <div className="w-full md:w-1/2 flex justify-center">
                 <div className="bg-white h-[450px] w-[450px] rounded-lg flex justify-center items-center">
-                    <Image priority={true} height={450} width={450} src={clientImage} alt={eventName} className="w-full max-w-[400px] rounded-lg"/>
+                    <Image priority={true} height={450} width={450} src={clientImage} alt={eventName} className="w-full max-w-[360px] rounded-lg"/>
                 </div>
                 </div>
             </div>

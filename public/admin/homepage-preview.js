@@ -476,7 +476,7 @@ var HomePagePreview = createClass({
                   'See All Events'
                 ),
              h('img', {
-                  src: '/images/common/arrow-black.png',
+                  src: '/images/common/arrow-black.svg',
                   alt: 'black arrow',
                   height: '20',
                   width: '20',

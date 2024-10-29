@@ -224,6 +224,7 @@ var TeamPagePreview = createClass({
             justifyContent: 'center',
             alignItems: 'center',
             zIndex: 101,
+            maxWidth: '1040px',
             },
         },
         h(

@@ -246,66 +246,78 @@ var HomePagePreview = createClass({
                 },
                 },
                 servicesCarouselCardsArray.map((c, index) =>
-                h(
+                  h(
                     'div',
                     {
-                    'data-id': 'card',
-                    style: {},
-                    },
-                    h(
-                    'div',
-                    {
-                        style: {
-                        position: 'relative',
-                        overflow: 'hidden',
-                        },
-                    },
-                    h('img', {
-                        src: c.cardImageSrc,
-                        alt: c.cardImageAlt,
-                        style: {
-                        objectFit: 'cover',
-                        height: '372px',
-                        width: '315px',
+                      style: {
+                        width: '50%',
                         borderRadius: '15px',
-                        },
-                    }),
+                        backgroundColor: '#F8F9EE',
+                        boxShadow: '0 4px 20px 0 rgba(0,0,0,0.15)', 
+                        overflow: 'hidden',
+                      },
+                    },
                     h(
+                      'div',
+                      {
+                        style: {
+                          padding: '1.5rem',
+                          overflow: 'hidden',
+                          borderRadius: '15px',
+                          display: 'flex',
+                          flexDirection: 'column',
+                        },
+                      },
+                        h('img', {
+                          src: c.cardImageSrc,
+                          alt: c.cardImageAlt,
+                          style: {
+                            objectFit: 'cover',
+                            height: '150px',
+                            width: '150px',
+                            borderRadius: '15px',
+                            overflow: 'hidden',
+                            alignSelf: 'center',
+                            paddingBottom: '1rem',
+                          },
+                        }),
+                        h(
+                          'h2',
+                          {
+                            style: {
+                              fontWeight: 'bold',
+                              paddingTop: '1rem',
+                              paddingBottom: '1rem',
+                              margin: 0,
+                            },
+                          },
+                          c.cardTitle
+                        ),
+                      h(
                         'div',
                         {
-                        style: {
-                            position: 'absolute',
-                            bottom: '0px',
-                            left: '0',
-                            padding: '1.25rem',
+                          style: {
                             display: 'flex',
                             flexDirection: 'column',
                             justifyContent: 'flex-end',
-                        },
-                        },
-                        h('h2', {
-                        style: {
-                            color: '#F8F9EE',
-                            fontWeight: '600',
-                            paddingBottom: '0.5rem',
+                            overflow: 'hidden',
                             margin: 0,
+                          },
                         },
-                        }, c.cardTitle),
                         h(
-                        'div',
-                        {
+                          'div',
+                          {
                             style: {
-                            opacity: '1',
                             },
-                        },
-                        h('p', {
+                          },
+                          h('p', {
                             style: {
-                            color: '#F8F9EE',
-                            marginBottom: '1rem',
-                            lineHeight: '1.35rem',
+                              color: c.isDarkMode ? '#F8F9EE' : '#000000',
+                              marginBottom: '1rem',
+                              lineHeight: '1.35rem',
                             },
-                        }, c.cardDescription),
-                        h(
+                          }, c.cardDescription),
+                          h(
                             'a',
                             {
                               href: c.cardLink,
@@ -315,33 +327,34 @@ var HomePagePreview = createClass({
                                 alignItems: 'center',
                                 textDecoration: 'none',
                               },
-                             target: "_blank",
+                              target: '_blank',
                             },
                             h(
                               'p',
                               {
                                 style: {
-                                  color: '#F8F9EE',
+                                  color: c.isDarkMode ? '#F8F9EE' : '#000000',
                                 },
                               },
                               c.cardLinkText
                             ),
                             h('img', {
                               loading: 'lazy',
-                              src: `/images/common/arrow-softOpal.png`,
-                              height: 20,
-                              width: 20,
+                              src: '/images/common/arrow-black.svg',
                               alt: 'arrow',
                               style: {
                                 display: 'inline-block',
                                 width: '20px',
+                                height: '20px',
                               },
-                            }),
-                          )                                                  
+                            })
+                          )
                         )
+                      )
                     )
-                    )
-                )
+                  )
+                  
+                  
                 )
             ),
             ),

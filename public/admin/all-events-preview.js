@@ -234,9 +234,13 @@ var EventPreview = createClass({
         h(
           'div',
           { style: { marginBottom: '20px', color: 'red' } },
-          h('h3', {}, 'Not All Detail Are Available - This Will Be Shown In the Upcoming Events Section'),
-        )
-        ,        
+          h('h3', {}, 'All Detail Available = false'),
+        ),
+        h(
+          'div',
+          { style: { marginBottom: '20px', color: 'red', maxWidth: '500px' } },
+          h('p', {}, 'Since not all details are available, the event card below will be shown in the "In the Works" section of the event page.'),
+        ),        
         // Event Card (Home Page + Events Page) Section
         h('h1', { style: { marginBottom: '20px' } }, 'Event Card (Home Page + Events Page)'),
         h(
@@ -303,14 +307,23 @@ var EventPreview = createClass({
     return h(
       'div',
       { style: { fontFamily: 'Arial', maxWidth: '1200px' } },
-      
+      h(
+        'div',
+        { style: { marginBottom: '20px', color: 'green' } },
+        h('h3', {}, 'All Detail Available = true'),
+      ),
+      h(
+        'div',
+        { style: { marginBottom: '20px', color: 'green', maxWidth: '500px' } },
+        h('p', {}, 'You must complete the data below. If the minimum data requirements are not met, this event will be shown in the "In the Works" section of the Events page.'),
+      ), 
       // Validation Section (if there are errors)
         // Validation Section
         detailsAvailable ? 
         h(
           'div',
           { style: { marginBottom: '20px' } },
-          h('h3', {}, 'Data Needed to Publish Event Page'),
+          h('h3', {}, 'Minimum Data Requirements:'),
           validationFields.map((item, index) => 
             h('p', { key: index }, 
               item.isValid 
@@ -438,7 +451,7 @@ var EventPreview = createClass({
                   eventButtonTextTwo ? eventButtonTextTwo : eventButtonTextOne
                 ),
                h('img', {
-                  src: '/images/common/arrow-black.png',
+                  src: '/images/common/arrow-black.svg',
                   alt: 'black arrow',
                   height: '20',
                   width: '20',
@@ -460,7 +473,7 @@ var EventPreview = createClass({
           'div',
           { style: { display: 'flex', alignItems: 'center', position: 'relative', width: '50%' } },
           h('img', {
-            src: '/images/events/paint-splatter-small.png',
+            src: '/images/events/paint-splatter-small.svg',
             alt: 'paint splatter',
             height: '311',
             width: '322',
@@ -479,4 +492,4 @@ var EventPreview = createClass({
   }
 });
 
-CMS.registerPreviewTemplate('eventsProofOfConcept', EventPreview);
+CMS.registerPreviewTemplate('allEvents', EventPreview);

@@ -15,8 +15,8 @@ teamMembers:
     title: Fundraising Associate
     imageSrc: /uploads/jay-headshot.png
     iconLinks:
-      - iconImageSrc: /uploads/mail-icon.png
-        darkmodeSrc: /uploads/mail-icon-darkmode.png
+      - iconImageSrc: /uploads/mail-icon.svg
+        darkmodeSrc: /uploads/mail-icon-darkmode.svg
         iconImageAlt: Email icon
         iconLink: mailto:jay@givher.com
     bio:

@@ -141,6 +141,7 @@ export interface HomePageData {
     cardTitle: string;
     cardDescription: string;
     cardImageSrc: string;
+    cardImageSrcDarkMode: string;
     cardImageAlt: string;
     cardLinkText: string;
     cardLink: string;

@@ -34,7 +34,8 @@ collections:
                 fields:
                   - { label: 'Title', name: 'cardTitle', widget: 'string' }
                   - { label: 'Description', name: 'cardDescription', widget: 'string' }
-                  - { label: 'Background Image (430w x 545h)', name: 'cardImageSrc', widget: 'image', allowMultiple: false }
+                  - { label: 'Background Image (450w x 350h)', name: 'cardImageSrc', widget: 'image', allowMultiple: false }
+                  - { label: 'Background Image Dark Mode (350w x 350h)', name: 'cardImageSrcDarkMode', widget: 'image', allowMultiple: false }
                   - { label: 'Description of Image', name: 'cardImageAlt', widget: 'string' }
                   - { label: 'Link Text', name: 'cardLinkText', widget: 'string' }
                   - { label: 'Link', name: 'cardLink', widget: 'string' }

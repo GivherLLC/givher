@@ -15,6 +15,7 @@ services:
       cardLinkText: View Clients
       cardLink: /clients
       cardImageSrc: /uploads/fundraising.png
+      cardImageSrcDarkMode: /uploads/fundraising-darkmode.png
     - cardTitle: Event Management
       cardDescription: Events are vital for raising awareness, educating, and engaging
         communities. Givher provides comprehensive event development services to
@@ -22,7 +23,8 @@ services:
       cardImageAlt: A graphic demonstrating planning
       cardLinkText: View Events
       cardLink: /events
-      cardImageSrc: /uploads/event-management.png
+      cardImageSrc: /uploads/event-management.svg
+      cardImageSrcDarkMode: /uploads/event-management-darkmode.svg
     - cardTitle: General Consulting
       cardDescription: With extensive experience in the legislature, event
         development, partnering with campaigns, and navigating internal and
@@ -32,7 +34,8 @@ services:
       cardImageAlt: A graphic of three chat bubbles
       cardLinkText: View Team
       cardLink: /team
-      cardImageSrc: /uploads/general-consulting.png
+      cardImageSrc: /uploads/consulting.svg
+      cardImageSrcDarkMode: /uploads/consulting-darkmode.svg
   servicesCarouselTitle: Elevate Your Mission With Us
 featuredEvents:
   title: Upcoming Events

@@ -11,11 +11,6 @@ export default function Navbar(){
     const [mounted, setMounted] = useState(false);
     const isMobile = useIsMobile(1024);
 
-    const scrollToTop = () => {
-        const topElement = document.body;
-        topElement.scrollIntoView({ behavior: 'smooth' });
-    }
-
     useEffect(() => {
         if (navOpen && !isMobile) {
           setNavOpen(false);
@@ -75,14 +70,13 @@ export default function Navbar(){
     return (
         <header className="sticky top-0 z-40 shadow-lg bg-softOpal dark:bg-navySmoke flex justify-center">
             <div className="max-w-[85.75rem] w-full flex flex-row justify-between py-[1rem] mx-[0.625rem] lg:mx-[1.5625rem] relative">
-                <button onClick={()=>{scrollToTop()}}>
-                    <Link href="/">
+                <Link href="/" aria-label="Givher Home">
                     <Image
                         src={"/images/givher-logo-navySmoke.png"}
                         alt="Givher Logo"
                         width={210}
                         height={92}
-                        className="dark:hidden max-w-[105px] min-h-[50px] h-auto image-rendering-crisp-edges"
+                        className="dark:hidden w-auto h-[50px] image-rendering-crisp-edges"
                         priority={true}
                         />
                     <Image
@@ -90,11 +84,10 @@ export default function Navbar(){
                         alt="Givher Logo"
                         width={210}
                         height={92}
-                        className="hidden dark:block max-w-[105px] min-h-[50px] image-rendering-crisp-edges"
+                        className="hidden dark:block w-auto h-[50px] image-rendering-crisp-edges"
                         priority={true}
                         />
-                    </Link>    
-                </button>
+                </Link>    
                 <div
                     data-id="dark mode toggle"
                     className="hidden md:flex justify-center items-center gap-[1rem]"

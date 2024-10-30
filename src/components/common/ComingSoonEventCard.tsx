@@ -1,8 +1,8 @@
 import React from "react";
 import EventButton from "./EventButton";
-import { ComingSoonEventType } from "@/types/types";
+import { EventType } from "@/types/types";
 
-export default function ComingSoonEventCard({event, postponedEventText, showTag, showClientName }:{event:ComingSoonEventType, postponedEventText:string, showTag: boolean, showClientName: boolean}){
+export default function ComingSoonEventCard({event, postponedEventText, showTag, showClientName }:{event:EventType, postponedEventText:string, showTag: boolean, showClientName: boolean}){
     return (
       <div className={`flex flex-col gap-[1.5rem] sm:gap-[0rem] border border-navySmoke dark:border-softOpal rounded-[10px] px-[0.75rem] sm:px-[1.5rem] h-content w-full max-w-[375px] ${showClientName? "sm:h-[375px] sm:w-[375px] py-[2.5rem]":"sm:h-[350px] sm:w-[375px] py-[2.5rem] sm:py-[3.5rem]"} shadow-custom-shadow dark:shadow-custom-shadow-darkmode`}>
         <div className="flex flex-col justify-between h-full gap-[1rem]">

@@ -3,15 +3,14 @@ import EventDetailPage from "@/components/event-detail/EventDetailPage";
 import { Metadata } from "next";
 import getEventNameParam from "@/utils/getEventNameParam";
 import getEventsPageData from "../../../../../../lib/getEventsPageData";
-import getAllEvents from "../../../../../../lib/getAllEvents";
+import { getReadyEvents, getNonPastEvents } from "../../../../../../lib/getAllEvents";
 import getAllClientImages from "../../../../../../lib/getAllClientImages";
-import getComingsoonEvents from "../../../../../../lib/getComingSoonEvents";
 import { EventDetailPageProps } from "@/types/types";
 
 export async function generateMetadata({ params: { eventSlugOrName } }: EventDetailPageProps): Promise<Metadata> {
   const decodedParam = decodeURIComponent(eventSlugOrName);
 
-  const events = await getAllEvents() || [];
+  const events = await getReadyEvents() || [];
   const event = events.find((e) => {
     return (e.slug === decodedParam || getEventNameParam(e.eventName) === decodedParam);
   });
@@ -41,34 +40,26 @@ export async function generateMetadata({ params: { eventSlugOrName } }: EventDet
 export default async function EventsDetailPage({ params: { eventSlugOrName } }: EventDetailPageProps) {
   const decodedParam = decodeURIComponent(eventSlugOrName);
   const eventsPageData = getEventsPageData();
-  const clientImages = await getAllClientImages();
-  const comingSoonEvents = await getComingsoonEvents() || [];
+  const [clientImages, nonPastEvents] = await Promise.all([
+    getAllClientImages(),
+    getNonPastEvents()
+  ]);
 
-  const events = await getAllEvents() || [];
-  const event = events.find((e) => {
+  const event = nonPastEvents.find((e) => {
     return (e.slug === decodedParam || getEventNameParam(e.eventName) === decodedParam);
   });
 
   if (event) {
     const client = event.clientName;
-    const clientEvents = events.filter((e) => {
+    const clientEvents = nonPastEvents.filter((e) => {
       return e.clientName === client && e.eventName !== event.eventName;
-    }).map((e) => ({
-      ...e,
-      comingSoon: false,
-    }));
+    });
 
-    const clientsComingSoonEvents = comingSoonEvents.filter((e) => e.clientName === client).map((e) => ({
-      ...e,
-      comingSoon: true,
-    }));
-
-    const upcomingEvents = [...clientEvents, ...clientsComingSoonEvents];
 
     return (
       <EventDetailPage
         event={event}
-        clientEvents={upcomingEvents}
+        clientEvents={clientEvents}
         postponedEventText={eventsPageData.postponedEventText}
         clientImages={clientImages}
       />
@@ -85,23 +76,10 @@ export default async function EventsDetailPage({ params: { eventSlugOrName } }: 
 }
 
 export async function generateStaticParams() {
-  const currentDate = new Date();
-  const events = (await getAllEvents() || [])
-    .filter((event) => {
-      const eventDate = new Date(event.firstDayOfEvent);
-      return (!event.postponed && eventDate >= currentDate) || event.postponed;
-    })
-    .sort((a, b) => {
-      const timestampA = new Date(a.firstDayOfEvent).getTime();
-      const timestampB = new Date(b.firstDayOfEvent).getTime();
-      return timestampA - timestampB;
-    });
-
-  const params = events.map((event) => {
-    return ({
-      eventSlugOrName: event.slug || getEventNameParam(event.eventName),  // Prioritize slug for static params
-    });
-  });
+  const events = await getReadyEvents(); // Only includes fully ready events
+  const params = events.map((event) => ({
+    eventSlugOrName: event.slug || getEventNameParam(event.eventName), // Prioritize slug for static params
+  }));
 
   return params;
-}
+};

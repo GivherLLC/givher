@@ -25,10 +25,10 @@ export default function EventsFilter({events, postponedEventText}:{events:EventT
       searchQuery === '' ||
       event.eventName.toLowerCase().includes(searchQuery.toLowerCase()) ||
       event.clientName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      event.eventCity.toLowerCase().includes(searchQuery.toLowerCase())
+      !!event.eventCity && event.eventCity.toLowerCase().includes(searchQuery.toLowerCase())
     ) &&
-    (!startDate || new Date(event.firstDayOfEvent) >= startDate) &&
-    (!endDate || new Date(event.firstDayOfEvent) <= endDate)
+    (!startDate || event.firstDayOfEvent && new Date(event.firstDayOfEvent) >= startDate) &&
+    (!endDate || event.firstDayOfEvent && new Date(event.firstDayOfEvent) <= endDate)
   );
   },[endDate, searchQuery, selectedCity, selectedClient, startDate, events])
 
@@ -39,7 +39,7 @@ export default function EventsFilter({events, postponedEventText}:{events:EventT
     setEndDate(end);
   };
 
-  const cities: string[] = [...new Set(events.map((event: EventType) => event.eventCity))];
+  const cities: string[] = [...new Set(events.map((event: EventType) => event.eventCity).filter((city): city is string => city !== null))];
   const clients: string[] = [...new Set(events.map((event: EventType) => event.clientName))];
 
   const handleCitySelect = (city: string) => {

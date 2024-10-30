@@ -2,19 +2,10 @@
 import React, { useMemo, useState, useEffect } from "react";
 import Image from "next/image";
 import EventButton from "../common/EventButton";
-import { ComingSoonEventType, EventType, FeaturedEventType } from "@/types/types";
-
-type EventTypeForFeaturedEvents = EventType & {
-    timeOfYear: null,
-    comingSoon: boolean,
-}
-
-type ComingSoonEventTypeForFeaturedEvents = ComingSoonEventType & {
-    comingSoon: boolean,
-}
+import { EventType, FeaturedEventType } from "@/types/types";
 
 type FeaturedEventsProps = {
-    events: (EventTypeForFeaturedEvents | ComingSoonEventTypeForFeaturedEvents)[];
+    events: EventType[];
     clientImages: Record<string, string>;
     givherFeaturedEvent: FeaturedEventType;
 };
@@ -25,10 +16,12 @@ export default function FeaturedEvents({events, clientImages, givherFeaturedEven
     const featuredEvents = useMemo(()=>{
         let featured: FeaturedEventType[] = [givherFeaturedEvent];
         const addEvents = events.map((e)=>{
-            const { clientName, eventName, eventCity, eventButtonTextOne, eventButtonLinkOne, firstDayOfEvent, lastDayOfEvent, timeOfYear, comingSoon } = e;
+            const { available, slug, clientName, eventName, eventCity, eventButtonTextOne, eventButtonLinkOne, firstDayOfEvent, lastDayOfEvent, timeOfYear } = e;
             const clientImage = clientImages[clientName];
         
             return {
+                available,
+                slug,
                 eventName,
                 eventCity,
                 eventButtonTextOne,
@@ -37,7 +30,6 @@ export default function FeaturedEvents({events, clientImages, givherFeaturedEven
                 firstDayOfEvent,
                 timeOfYear,
                 lastDayOfEvent,
-                comingSoon,
             };
         });
         featured = [...featured, ...addEvents]
@@ -118,7 +110,7 @@ export default function FeaturedEvents({events, clientImages, givherFeaturedEven
                                     </div>
                                     {e.eventButtonTextOne && e.eventButtonLinkOne && <EventButton text={e.eventButtonTextOne} link={e.eventButtonLinkOne ? e.eventButtonLinkOne:""} bg="electricYellow" openNewTab={e.eventButtonLinkOne === "#all-events" ? false: true}/>}
                                     {!e.eventButtonTextOne && (
-                                        <EventButton text="Get Email Updates" link="/signup4emails" bg="electricYellow"/>
+                                        <EventButton text={e.available ? "Inside the Event" :"Get Email Updates"} link={e.available ? `/events/detail/${e.slug}` :"/signup4emails"} bg="electricYellow"/>
                                     )}
                                 </div>
                                 )

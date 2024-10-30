@@ -1,5 +1,6 @@
 allEventsSectionTitle: Events
 comingSoonEventsSectionTitle: Events in the Works
+comingSoonEventsSectionSubtitle: Stay tuned for more details on these upcoming events.
 postponedEventText: '* Event Postponed'
 givherFeaturedEvent:
   eventName: Upcoming Events

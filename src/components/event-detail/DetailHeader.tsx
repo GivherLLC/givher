@@ -16,16 +16,17 @@ export default function DetailHeader({event, postponedEventText, clientImages}:{
 
     return (
         <div className="bg-navySmoke py-[2.5rem] flex justify-center">
-            <div className="flex flex-col md:flex-row w-full items-center justify-center gap-[2.5rem] max-w-[85.75rem] mx-[0.625rem] lg:mx-[1.5625rem]">
-                <div className="w-full md:w-1/2 flex flex-col gap-[1rem]">
+            <div className="flex flex-col lg:flex-row w-full items-center justify-between gap-[2.5rem] max-w-[85.75rem] mx-[0.625rem] lg:mx-[1.5625rem]">
+                <div className="w-full lg:w-1/2 flex flex-col gap-[1rem]">
                 <div className="flex flex-col gap-[0.5rem]"></div>
-                    <p className="flex justify-center md:justify-start gap-[1rem] flex-wrap"><span className="text-softOpal">{firstDayOfEvent}{!!lastDayOfEvent && ` - ${lastDayOfEvent}`}</span><span className="text-electricYellow">{eventLocation}</span></p>
+                    <p className="flex justify-center lg:justify-start gap-[1rem] flex-wrap"><span className="text-softOpal">{firstDayOfEvent}{!!lastDayOfEvent && ` - ${lastDayOfEvent}`}</span><span className="text-electricYellow">{eventLocation}</span></p>
                     {event.postponed && <div className="text-red">{postponedEventText}</div>}
-                    <h1 className="font-visbyBold text-softOpal mb-[2rem] text-center md:text-left">{eventName}</h1>
-                    <h2 className="font-visbyBold text-softOpal text-center md:text-left">{eventCity} {!!eventTime && <span className="text-mauvelous text-2xl font-visbyBold pl-[1rem]">{eventTime}</span>}</h2>  
-                    <div className="flex gap-[1rem] md:items-center justify-center md:justify-start">
+                    <h1 className="font-visbyBold text-softOpal mb-[2rem] text-center lg:text-left">{eventName}</h1>
+                    <h2 className="font-visbyBold text-softOpal text-center lg:text-left">{eventCity} {!!eventTime && <span className="text-mauvelous text-2xl font-visbyBold pl-[1rem]">{eventTime}</span>}</h2>  
+                    <div className="flex gap-[1rem] lg:items-center justify-center lg:justify-start">
+                        {eventButtonTextOne && eventButtonLinkOne && (
                         <ButtonLink openNewTab bg="electricYellow" darkModeBg="electricYellow" text={eventButtonTextOne} link={eventButtonLinkOne}/>
-                       
+                        )}
                     </div>
                 </div>
                 <div className="flex justify-center">

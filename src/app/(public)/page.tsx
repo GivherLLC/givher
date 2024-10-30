@@ -1,6 +1,6 @@
 import React from 'react';
 import Homepage from '@/components/home/HomepageV2';
-import getAllEvents from '../../../lib/getAllEvents';
+import { getNonPastEvents, getInTheWorksEvents } from '../../../lib/getAllEvents';
 import getEventsPageData from '../../../lib/getEventsPageData';
 import getAllClientLogos from '../../../lib/getAllClientLogos';
 import getHomePageData from '../../../lib/getHomePageData';
@@ -21,9 +21,13 @@ export async function generateMetadata() {
 
 export default async function Home() { 
   const homepageInfo = getHomePageData();
-  const events = await getAllEvents();
   const eventsPageData = getEventsPageData();
-  const clientLogos = await getAllClientLogos();
+
+  const [events, clientLogos] = await Promise.all([
+    getNonPastEvents(),
+    getAllClientLogos(),
+  ]);
+
 
   return (
     <Homepage homepageInfo={homepageInfo} events={events} postponedEventText={eventsPageData.postponedEventText} clientLogos={clientLogos}/>

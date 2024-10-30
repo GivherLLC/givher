@@ -1,5 +1,5 @@
 import React from "react";
-import { EventType, ClientEventType } from "@/types/types";
+import { EventType } from "@/types/types";
 import DetailHeader from "./DetailHeader";
 import { ClientImage } from "@/types/types";
 
@@ -9,7 +9,7 @@ const EventDetails = lazy(() => import('./EventDetails'));
 const ClientEvents = lazy(()=> import('./ClientEvents'));
 
 
-export default function EventDetailPage({event, clientEvents, postponedEventText, clientImages}:{event:EventType, clientEvents: ClientEventType[], postponedEventText:string, clientImages: ClientImage[]}){
+export default function EventDetailPage({event, clientEvents, postponedEventText, clientImages}:{event:EventType, clientEvents: EventType[], postponedEventText:string, clientImages: ClientImage[]}){
     const client = event.clientName;
 
     return (

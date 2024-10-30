@@ -1,7 +1,6 @@
 import React from 'react';
 import EventsPage from '@/components/events/EventsPage';
-import getAllEvents from "../../../../lib/getAllEvents";
-import getComingsoonEvents from '../../../../lib/getComingSoonEvents';
+import { getReadyEvents, getInTheWorksEvents } from '../../../../lib/getAllEvents';
 import getEventsPageData from "../../../../lib/getEventsPageData";
 import getAllClientImages from "../../../../lib/getAllClientImages";
 
@@ -20,10 +19,14 @@ export async function generateMetadata() {
 }
 
 export default async function EventsPageWrapper() {
-  const events = await getAllEvents();
   const eventsPageData = getEventsPageData();
-  const clientImages = await getAllClientImages();
-  const comingSoonEvents = await getComingsoonEvents();
+
+  const [readyEvents, inTheWorksEvents, clientImages] = await Promise.all([
+    getReadyEvents(),
+    getInTheWorksEvents(),
+    getAllClientImages(),
+  ]);
+
   
   const clientImagesObject = clientImages.reduce<Record<string, string>>((acc, obj) => {
     const [key, value] = Object.entries(obj)[0] as [string, string];
@@ -33,10 +36,10 @@ export default async function EventsPageWrapper() {
 
   return (
     <EventsPage
-      events={events}
+      events={readyEvents}
       eventsPageData={eventsPageData}
       clientImagesObject={clientImagesObject}
-      comingSoonEvents={comingSoonEvents}
+      inTheWorksEvents={inTheWorksEvents}
     />
   );
 }

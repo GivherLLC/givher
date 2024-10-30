@@ -1,8 +1,10 @@
 ---
+available: true
 eventName: The 30th Anniversary 90's PAC Party
 firstDayOfEvent: 10.16.2024
 eventTime: 18:00
 timeZone: America/Los_Angeles
+eventType: PAC
 eventCity: Sacramento, CA
 eventLocation: The Mix Downtown
 clientName: California Primary Care Association

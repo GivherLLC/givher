@@ -1,4 +1,5 @@
 ---
+available: true
 eventName: Pink Circus
 firstDayOfEvent: 09.06.2025
 timeZone: America/Los_Angeles

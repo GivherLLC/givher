@@ -34,12 +34,11 @@ var EventPreview = createClass({
 
       var validationFields = [
         { field: eventName, label: 'Event Name', isValid: !!eventName },
-        { field: clientName, label: 'Client Name', isValid: !!clientName },
         { field: firstDayOfEvent, label: 'Event Start Date', isValid: !!firstDayOfEvent },
         { field: eventCity, label: 'Event City', isValid: !!eventCity },
-        // { field: eventLocation, label: 'Event Location', isValid: !!eventLocation },
-        { field: eventButtonTextOne, label: 'Event Button #1 Text', isValid: !!eventButtonTextOne },
-        { field: eventButtonLinkOne, label: 'Event Button #1 Link', isValid: !!eventButtonLinkOne },
+        { field: eventLocation, label: 'Event Location', isValid: !!eventLocation },
+        { field: clientName, label: 'Client Name', isValid: !!clientName },
+        { field: eventDescription, label: 'Event Description', isValid: !!eventDescription },
         { field: detailImageRaw, label: 'Event Detail Page Image', isValid: !!detailImageRaw },
       ];
       

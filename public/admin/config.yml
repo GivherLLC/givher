@@ -292,7 +292,7 @@ collections:
     fields:
       - { label: 'All Event Details Available', name: 'available', widget: 'boolean', default: false, required: true }
       - { label: 'Event Name', name: 'eventName', widget: 'string', required: true }
-      - { label: 'Event Url (ex: givher.com/events/detail/event-url)', name: 'slug', widget: 'string', required: false }
+      - { label: 'Givher Event Detail Page Url (ex: givher.com/events/detail/[YOUR-INPUT])', hint: '"new-event" would results in url: givher.com/events/detail/new-event', name: 'slug', widget: 'string', required: false }
       - label: 'Event Start Date'
         name: 'firstDayOfEvent'
         widget: 'datetime'
@@ -312,6 +312,7 @@ collections:
         required: false
         format: 'MM.DD.YYYY'
         time_format: false
+      - { label: 'Time of Year (if no date available)', name: 'timeOfYear', widget: 'string', required: false }
       - label: 'Event Time Zone'
         name: 'timeZone'
         widget: 'select'
@@ -325,6 +326,17 @@ collections:
           - { label: "MT (Denver)", value: "America/Denver"}
           - { label: "AKT (Anchorage)", value: "America/Anchorage"}
           - { label: "HAT (Honolulu)", value: "Pacific/Honolulu"}
+      - label: 'Event Type'
+        name: 'eventType'
+        widget: 'select'
+        required: false
+        max: 1
+        options:
+          - { label: "501(c)(3)", value: "501(c)(3)"}
+          - { label: "501(c)(4)", value: "501(c)(4)"}
+          - { label: "PAC", value: "PAC"}
+          - { label: "Ballot Measure", value: "Ballot Measure"}
+          - { label: "Candidate", value: "Candidate"}
       - { label: 'Event City', name: 'eventCity', widget: 'string', required: false }
       - { label: 'Event Location', name: 'eventLocation', widget: 'string', required: false }
       - label: 'Client Name'
@@ -342,7 +354,7 @@ collections:
         name: 'eventDescription'
         widget: 'list'
         fields:
-          - { label: 'Paragraph (add additional field for each paragraph)', name: 'paragraph',  widget: 'string' }
+          - { label: 'Paragraph (add additional field for each paragraph)', name: 'paragraph',  widget: 'string', required: false }
         required: false
       - label: 'Bolded Information'
         name: 'boldedEventInformation'

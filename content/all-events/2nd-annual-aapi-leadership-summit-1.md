@@ -1,9 +1,11 @@
 ---
+available: true
 eventName: 2nd Annual AAPI Leadership Summit
 slug: 
 firstDayOfEvent: 12.06.2024
 eventTime: 08:00
 timeZone: America/Los_Angeles
+eventType: 501(c)(3)
 eventCity: Burbank, CA
 eventLocation: Warner Bros. Studio
 clientName: Asian and Pacific Islander Legislative Caucus Foundation

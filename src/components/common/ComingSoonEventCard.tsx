@@ -4,9 +4,9 @@ import { ComingSoonEventType } from "@/types/types";
 
 export default function ComingSoonEventCard({event, postponedEventText, showTag, showClientName }:{event:ComingSoonEventType, postponedEventText:string, showTag: boolean, showClientName: boolean}){
     return (
-      <div className={`flex flex-col gap-[1.5rem] sm:gap-[0rem] border border-navySmoke dark:border-softOpal rounded-[10px] py-[2.5rem] px-[1.5rem] h-content w-full max-w-[375px] sm:h-[375px] sm:w-[375px] shadow-custom-shadow dark:shadow-custom-shadow-darkmode`}>
+      <div className={`flex flex-col gap-[1.5rem] sm:gap-[0rem] border border-navySmoke dark:border-softOpal rounded-[10px] px-[0.75rem] sm:px-[1.5rem] h-content w-full max-w-[375px] ${showClientName? "sm:h-[375px] sm:w-[375px] py-[2.5rem]":"sm:h-[350px] sm:w-[375px] py-[2.5rem] sm:py-[3.5rem]"} shadow-custom-shadow dark:shadow-custom-shadow-darkmode`}>
         <div className="flex flex-col justify-between h-full gap-[1rem]">
-         {showTag &&  <p className="self-end text-navySmoke bg-mauvelous px-[1.25rem] py-[0.5rem] rounded-lg text-[0.75rem] uppercase font-visbyBold">Details Coming Soon</p>}
+         {/* {showTag &&  <p className="self-end text-navySmoke bg-mauvelous px-[1.25rem] py-[0.5rem] rounded-lg text-[0.75rem] uppercase font-visbyBold">Details Coming Soon</p>} */}
         <div>
             <div className="overflow-hidden">
               <p

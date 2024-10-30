@@ -17,8 +17,8 @@ export default function ClientEvents({events, clientName, event, postponedEventT
 
     return (
         <div className="bg-softOpal dark:bg-navySmoke py-[2.5rem] flex justify-center">
-            <div className="flex flex-col w-full max-w-[85.75rem] mx-[0.625rem] lg:mx-[1.5625rem]">
-                <h1 className="font-visbyBold text-navySmoke dark:text-softOpal text-center lg:text-left mb-[2rem]">{clientName} Events</h1>
+            <div className={`flex flex-col w-full items-center justify-center gap-[2.5rem] px-[0.625rem] md:px-[1.5625rem]`}>
+                <h1 className="font-visbyBold text-navySmoke dark:text-softOpal text-center lg:text-left">{clientName} Events</h1>
                 <div className={`flex flex-col lg:flex-row ${events.length < 3 ? "":"lg:justify-between"} gap-[2rem] items-center w-full`}>
                     {shownEvents.map((e, i)=>{
                         if(!isComingSoonEventType(e)){

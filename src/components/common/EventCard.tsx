@@ -4,7 +4,7 @@ import { EventType } from "@/types/types";
 
 export default function EventCard({event, postponedEventText, showClientName}:{event:EventType, postponedEventText:string, showClientName: boolean}){
     return (
-      <div className={`flex flex-col gap-[1.5rem] sm:gap-[0rem] border border-navySmoke dark:border-softOpal rounded-[10px] px-[1.5rem] h-content w-full max-w-[375px] ${showClientName? "sm:h-[375px] sm:w-[375px] py-[2.5rem]":"sm:h-[350px] sm:w-[375px] py-[3.5rem]"} shadow-custom-shadow dark:shadow-custom-shadow-darkmode`}>
+      <div className={`flex flex-col gap-[1.5rem] sm:gap-[0rem] border border-navySmoke dark:border-softOpal rounded-[10px] px-[0.75rem] sm:px-[1.5rem] h-content w-full max-w-[375px] ${showClientName? "sm:h-[375px] sm:w-[375px] py-[2.5rem]":"sm:h-[350px] sm:w-[375px] py-[2.5rem] sm:py-[3.5rem]"} shadow-custom-shadow dark:shadow-custom-shadow-darkmode`}>
         <div className="flex flex-col justify-between h-full gap-[1rem]">
         <div>
             <div className="overflow-hidden">

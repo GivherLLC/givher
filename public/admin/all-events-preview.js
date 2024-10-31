@@ -4,7 +4,6 @@ var EventPreview = createClass({
 
     // Toggle to indicate if all event details are available
     var detailsAvailable = entry.getIn(['data', 'available']);
-    console.log(detailsAvailable)
     
       // Homepage Event Card fields
       var eventName = entry.getIn(['data', 'eventName']);

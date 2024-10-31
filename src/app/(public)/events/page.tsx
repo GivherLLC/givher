@@ -27,18 +27,11 @@ export default async function EventsPageWrapper() {
     getAllClientImages(),
   ]);
 
-  
-  const clientImagesObject = clientImages.reduce<Record<string, string>>((acc, obj) => {
-    const [key, value] = Object.entries(obj)[0] as [string, string];
-    acc[key] = value;
-    return acc;
-  }, {});
-
   return (
     <EventsPage
       events={readyEvents}
       eventsPageData={eventsPageData}
-      clientImagesObject={clientImagesObject}
+      clientImagesObject={clientImages}
       inTheWorksEvents={inTheWorksEvents}
     />
   );

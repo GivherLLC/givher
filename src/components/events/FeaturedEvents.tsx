@@ -134,23 +134,23 @@ export default function FeaturedEvents({events, clientImages, givherFeaturedEven
                         )}
 
                     </div>
-                    <div className="carousel featured-carousel order-1 md:order-2 relative h-full max-h-[450px]">
+                    <div className="carousel featured-carousel order-1 md:order-2 relative h-full">
                         <Image priority={true} src="/images/events/paint-splatter-large.png" alt="paint splatter" height={435} width={595} className="hidden md:block md:absolute left-[-30%] bottom-[-15%] z-0"/>
 
                             {featuredEvents.map((e,i)=>{
                                 return (
                                     <div key={i} data-id={i} className="carousel-cell">
                                         <div>
-                                        <div className="bg-white w-full h-full max-w-[400px] max-h-[350px] md:max-h-[400px] md:max-w-[400px] rounded-2xl p-[1rem] border border-black flex items-center justify-center">
-                                        <Image
-                                            priority={i === 0 || i === 1}
-                                            src={e.clientImage}
-                                            alt={e.eventName}
-                                            width={325}
-                                            height={325}
-                                            className="flickity-lazyloaded object-contain max-w-full max-h-full"
-                                        />
-                                        </div>
+                                            <div className="bg-white w-full h-full max-w-[350px] max-h-[350px] md:max-h-[400px] md:max-w-[400px] rounded-2xl p-[1rem] border border-black flex items-center justify-center">
+                                            <Image
+                                                priority={i === 0 || i === 1}
+                                                src={e.clientImage}
+                                                alt={e.eventName}
+                                                width={325}
+                                                height={325}
+                                                className="flickity-lazyloaded object-contain max-w-full max-h-full"
+                                            />
+                                            </div>
                                         </div>
                                     </div>  
                                 )

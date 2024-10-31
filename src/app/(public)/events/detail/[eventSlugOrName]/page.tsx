@@ -55,13 +55,14 @@ export default async function EventsDetailPage({ params: { eventSlugOrName } }: 
       return e.clientName === client && e.eventName !== event.eventName;
     });
 
+    const clientImage = clientImages[event.clientName];
 
     return (
       <EventDetailPage
         event={event}
         clientEvents={clientEvents}
         postponedEventText={eventsPageData.postponedEventText}
-        clientImages={clientImages}
+        clientImage={clientImage}
       />
     );
   }

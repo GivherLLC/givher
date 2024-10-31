@@ -2,21 +2,13 @@ import React from "react";
 import Image from "next/image";
 import { EventType } from "@/types/types";
 import ButtonLink from "../common/ButtonLink";
-import { ClientImage } from "@/types/types";
 
-export default function DetailHeader({event, postponedEventText, clientImages}:{event:EventType, postponedEventText:string, clientImages: ClientImage[]}){
-    const clientImagesObject = clientImages.reduce<Record<string, string>>((acc, obj) => {
-        const [key, value] = Object.entries(obj)[0] as [string, string]; // Type assertion to ensure key-value pair is [string, string]
-        acc[key] = value; // Add the key-value pair to the accumulator object
-        return acc;
-        }, {});
-
-    const { clientName, eventName, eventCity, eventButtonTextOne, eventButtonLinkOne, eventLocation, firstDayOfEvent, lastDayOfEvent, eventTime } = event;
-    const clientImage = clientImagesObject[clientName];
+export default function DetailHeader({event, postponedEventText, clientImage}:{event:EventType, postponedEventText:string, clientImage: string}){
+    const { eventName, eventCity, eventButtonTextOne, eventButtonLinkOne, eventLocation, firstDayOfEvent, lastDayOfEvent, eventTime } = event;
 
     return (
         <div className="bg-navySmoke py-[2.5rem] flex justify-center">
-            <div className="flex flex-col lg:flex-row w-full items-center justify-between gap-[2.5rem] max-w-[85.75rem] mx-[0.625rem] lg:mx-[1.5625rem]">
+            <div className="flex flex-col lg:flex-row w-full items-center justify-between gap-[2.5rem] max-w-[615px] lg:max-w-[85.75rem] mx-[0.625rem] lg:mx-[1.5625rem]">
                 <div className="w-full lg:w-1/2 flex flex-col gap-[1rem]">
                 <div className="flex flex-col gap-[0.5rem]"></div>
                     <p className="flex justify-center lg:justify-start gap-[1rem] flex-wrap"><span className="text-softOpal">{firstDayOfEvent}{!!lastDayOfEvent && ` - ${lastDayOfEvent}`}</span><span className="text-electricYellow">{eventLocation}</span></p>

@@ -1,6 +1,6 @@
 import React from "react";
 import FeaturedEvents from "./FeaturedEvents";
-import ComingSoon from "./ComingSoon";
+import InTheWorks from "./InTheWorks";
 import { EventsPageProps } from "@/types/types";
 import { lazy } from 'react';
 
@@ -19,9 +19,9 @@ const EventsPage = ({ events, eventsPageData, clientImagesObject, inTheWorksEven
   return (
     <div className="min-h-[calc(100vh-360px)] bg-softOpal dark:bg-navySmoke">
       <FeaturedEvents events={featuredEvents()} clientImages={clientImagesObject} givherFeaturedEvent={eventsPageData.givherFeaturedEvent}/>
-      <AllEvents events={events} postponedEventText={postponedEventText} allEventsSectionTitle={eventsPageData.allEventsSectionTitle}/>
+      <AllEvents events={events} postponedEventText={postponedEventText} allEventsSectionTitle={eventsPageData.allEventsSectionTitle} clientImages={clientImagesObject}/>
       {!!inTheWorksEvents.length && (
-        <ComingSoon comingEvents={inTheWorksEvents} postponedEventText={postponedEventText} title={eventsPageData.comingSoonEventsSectionTitle} subtitle={eventsPageData.comingSoonEventsSectionSubtitle}/>
+        <InTheWorks comingEvents={inTheWorksEvents} postponedEventText={postponedEventText} title={eventsPageData.comingSoonEventsSectionTitle} subtitle={eventsPageData.comingSoonEventsSectionSubtitle} clientImages={clientImagesObject} />
       )}
     </div>
   );

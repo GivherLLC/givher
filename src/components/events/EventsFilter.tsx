@@ -2,13 +2,13 @@
 
 import React, { useState, useMemo } from 'react';
 import DropdownFilter from './DropdownFilter';
-import { EventType } from '@/types/types';
+import { EventType, ClientImage } from '@/types/types';
 import EventCard from '../common/EventCard';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import useIsMobile from '@/hooks/useIsMobile';
 
-export default function EventsFilter({events, postponedEventText}:{events:EventType[], postponedEventText:string}){
+export default function EventsFilter({events, postponedEventText, clientImages}:{events:EventType[], postponedEventText:string, clientImages: ClientImage}){
   const [selectedCity, setSelectedCity] = useState<string>('');
   const [selectedClient, setSelectedClient] = useState<string>('');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -143,9 +143,11 @@ export default function EventsFilter({events, postponedEventText}:{events:EventT
         </div>
       </div>
       <div className="flex flex-wrap gap-[4rem] min-h-[286px] sm:min-h-[400px]">
-         {filteredEvents.map((e: EventType, i: number) => (
-                <EventCard key={`${i}-${e.clientName}-${e.eventName}-${e.firstDayOfEvent}`} event={e} postponedEventText={postponedEventText} showClientName={true}/>
-            ))
+         {filteredEvents.map((e: EventType, i: number) => {
+          const clientImage = clientImages[e.clientName]
+          return(
+                  <EventCard key={`${i}-${e.clientName}-${e.eventName}-${e.firstDayOfEvent}`} event={e} postponedEventText={postponedEventText} clientLogo={clientImage}/>
+              )})
         }
         {!filteredEvents.length && (
             <div className='flex flex-col h-full w-full justify-center items-center gap-[2rem]'>

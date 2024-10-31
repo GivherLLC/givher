@@ -1,9 +1,9 @@
 import React from "react";
 import EventCard from "../common/EventCard";
-import ComingSoonEventCard from "../common/ComingSoonEventCard";
+import InTheWorksEventCard from "../common/InTheWorksEventCard";
 import { EventType } from "@/types/types";
 
-export default function ClientEvents({events, clientName, event, postponedEventText }:{ events: EventType[], clientName:string, event: EventType, postponedEventText:string }){
+export default function ClientEvents({events, clientName, event, postponedEventText, clientImage }:{ events: EventType[], clientName:string, event: EventType, postponedEventText:string, clientImage: string}){
     const { eventName } = event;
     const shownEvents = events.filter((e)=> e.eventName !== eventName).slice(0, 3);    
 
@@ -15,12 +15,12 @@ export default function ClientEvents({events, clientName, event, postponedEventT
                     {shownEvents.map((e, i)=>{
                         if(e.eventStatus === "inTheWorks"){
                             return (
-                                <ComingSoonEventCard key={`${i}-${e.clientName}-${e.eventName}-${e.firstDayOfEvent}`} event={e} postponedEventText={postponedEventText} showClientName={false} showTag={true}/>
+                                <InTheWorksEventCard key={`${i}-${e.clientName}-${e.eventName}-${e.firstDayOfEvent}`} event={e} postponedEventText={postponedEventText} clientLogo={clientImage} showTag={true}/>
 
                             )
                         } else {
                             return (
-                                <EventCard key={`${i}-${e.clientName}-${e.eventName}-${e.firstDayOfEvent}`} event={e} postponedEventText={postponedEventText} showClientName={false}/>
+                                <EventCard key={`${i}-${e.clientName}-${e.eventName}-${e.firstDayOfEvent}`} event={e} postponedEventText={postponedEventText} clientLogo={clientImage} />
 
                             )
                         }

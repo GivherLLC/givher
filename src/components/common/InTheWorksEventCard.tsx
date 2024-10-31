@@ -1,12 +1,32 @@
 import React from "react";
+import Image from "next/image";
 import EventButton from "./EventButton";
 import { EventType } from "@/types/types";
 
-export default function ComingSoonEventCard({event, postponedEventText, showTag, showClientName }:{event:EventType, postponedEventText:string, showTag: boolean, showClientName: boolean}){
+export default function InTheWorksEventCard({event, postponedEventText, clientLogo, showTag}:{event:EventType, postponedEventText:string, clientLogo: string, showTag: boolean}){
     return (
-      <div className={`flex flex-col gap-[1.5rem] sm:gap-[0rem] border border-navySmoke dark:border-softOpal rounded-[10px] px-[0.75rem] sm:px-[1.5rem] h-content w-full max-w-[375px] ${showClientName? "sm:h-[375px] sm:w-[375px] py-[2.5rem]":"sm:h-[350px] sm:w-[375px] py-[2.5rem] sm:py-[3.5rem]"} shadow-custom-shadow dark:shadow-custom-shadow-darkmode`}>
+      <div className={`flex flex-col gap-[1.5rem] sm:gap-[0rem] border border-navySmoke dark:border-softOpal rounded-[10px] pl-[0.75rem] sm:pl-[1.5rem] pt-[1rem] pb-[2rem] h-content w-full max-w-[375px] shadow-custom-shadow dark:shadow-custom-shadow-darkmode`}>
         <div className="flex flex-col justify-between h-full gap-[1rem]">
-         {/* {showTag &&  <p className="self-end text-navySmoke bg-mauvelous px-[1.25rem] py-[0.5rem] rounded-lg text-[0.75rem] uppercase font-visbyBold">Details Coming Soon</p>} */}
+        <div className="flex justify-between gap-[1rem]">
+            <div className="max-w-[50%] h-[100px] flex items-center dark:bg-softOpal p-[0.5rem] rounded-md">
+              <Image src={clientLogo} width={280} height={175} className="w-auto max-h-[80px]" alt={`${event.clientName} logo`}/>
+            </div>
+            <div className="relative flex flex-col gap-[0.75rem] sm:gap-0 sm:flex-row items-end sm:items-start">
+              {showTag && (
+              <div className="relative font-visbyBold px-[1rem] py-[0.5rem] bg-navySmoke text-softOpal text-[0.85rem] border border-black border-r-0 h-min rounded-l-3xl sm:mr-[-1rem] sm:pr-[1.25rem] z-0">
+                In the Works
+              </div>
+                )}
+              {event.eventType && (
+                <div className="relative font-visbyBold px-[1rem] py-[0.5rem] bg-electricYellow text-black text-[0.85rem] border border-black border-r-0 h-min rounded-l-3xl z-10 w-fit">
+                  {event.eventType}
+                </div>
+              )}
+          </div>
+
+          </div>
+          <div className="pr-[0.75rem] sm:pr-[1.5rem] flex flex-col justify-between h-full gap-[1rem]">
+
         <div>
             <div className="overflow-hidden">
               <p
@@ -50,11 +70,6 @@ export default function ComingSoonEventCard({event, postponedEventText, showTag,
             </p>
             
         </div>
-          {showClientName && (
-            <p className="uppercase text-navySmoke font-visbyBold text-sm dark:text-softOpal max-w-[250px]">
-              {event.clientName}
-            </p>          
-          )}
           <div className="flex items-center flex-wrap gap-x-[1.5rem] gap-y-[1rem]">
             {event.eventButtonTextOne && event.eventButtonLinkOne && (
             <EventButton text={event.eventButtonTextOne} link={event.eventButtonLinkOne} bg="electricYellow" />
@@ -65,6 +80,7 @@ export default function ComingSoonEventCard({event, postponedEventText, showTag,
             {!event.eventButtonTextOne && !event.eventButtonLinkTwo && (
               <EventButton text="Get Email Updates" link="/signup4emails" bg="electricYellow"/>
             )}
+        </div>
         </div>
         </div>
     </div>

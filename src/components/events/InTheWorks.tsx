@@ -16,7 +16,7 @@ export default function InTheWorks({comingEvents, postponedEventText, title, sub
             <div className="flex flex-col w-full justify-center gap-[2.5rem] max-w-[85.75rem] mx-[0.625rem] lg:mx-[1.5625rem]">
                 <div>
                     <h1 className="font-visbyBold text-navySmoke dark:text-softOpal mb-[1rem]">{title}</h1>
-                    <p>{subtitle}</p>
+                    <p className="text-navySmoke dark:text-softOpal">{subtitle}</p>
                 </div>
                 <div className="flex flex-wrap gap-[4rem]">
                     {comingEvents.map((e,i)=>{

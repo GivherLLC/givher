@@ -12,7 +12,7 @@ export default function EventCard({event, postponedEventText, clientLogo}:{event
               <Image src={clientLogo} width={280} height={175} className="w-auto max-h-[80px]" alt={`${event.clientName} logo`}/>
             </div>
             {event.eventType && (
-              <div className="font-visbyBold text-[0.85rem] px-[1rem] py-[0.5rem] bg-electricYellow border border-black border-r-0 h-min rounded-l-3xl">
+              <div className="font-visbyBold text-[0.85rem] px-[1rem] py-[0.5rem] text-navySmoke bg-electricYellow border border-black border-r-0 h-min rounded-l-3xl">
               {event.eventType}
               </div>
             )}

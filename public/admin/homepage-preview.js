@@ -35,12 +35,13 @@ var HomePagePreview = createClass({
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        gap: '25px',
+        gap: '1.05rem',
         border: '1px solid #2E363E',
         borderRadius: '10px',
-        padding: '2.5rem 1.5rem',
-        width: '350px',
-        height: '300px',
+        paddingBottom: '2rem',
+        paddingLeft: '1.5rem',
+        paddingTop: '1rem',
+        width: '375px',
         boxShadow: '0 4px 20px 0 rgba(0,0,0,0.15)',
         backgroundColor: '#F8F9EE',
       };
@@ -57,6 +58,7 @@ var HomePagePreview = createClass({
         lineHeight: 1.5,
         margin: 0,
         height: '69px',
+        paddingRight: '1.5rem',
       };
   
       const eventInfoStyle = {
@@ -65,16 +67,7 @@ var HomePagePreview = createClass({
         display: '-webkit-box',
         WebkitBoxOrient: 'vertical',
         WebkitLineClamp: 2,
-      };
-  
-      const clientNameStyle = {
-        textTransform: 'uppercase',
-        color: '#2E363E',
-        fontWeight: '700',
-        fontSize: '.875rem',
-        maxWidth: '250px',
-        lineHeight: 1.25,
-        margin: 0,
+        paddingRight: '1.5rem',
       };
   
       const buttonContainerStyle = {
@@ -370,71 +363,80 @@ var HomePagePreview = createClass({
           'div',
           { style: containerStyle },
           h('div', {},
-            h('div', { style: { overflow: 'hidden'} },
-              h('p', { style: eventNameStyle }, "Event Name"),
-            ),
-            h('p', { style: { margin: 0}}, h('span', { style: { color: 'red', paddingLeft: '1rem' } }, ''))
-            ),
-            h(
-              'div',
-              { style: eventInfoStyle },
-              h('div', { style: { display: 'flex', justifyContent: 'space-between'}},
-                h('div', { style: {overflow: 'hidden'}},
-                  h('p', {style: { 
-                    margin: 0,         
-                    WebkitBoxOrient: 'vertical',
-                    WebkitLineClamp: 1,
-                    overflow: 'ellipsis',
-                    display: '-webkit-box',
-                    maxWidth: '240px',
-                  }}, 'Punch Bowl Socia'),
-                ),
-                h(
-                  'p',
-                  {style: { margin: 0}},
-                  "10/01/2024",
-                ),
-              ),
-
-              h('p',{style: { 
-                margin: 0,                     
-                WebkitBoxOrient: 'vertical',
-                WebkitLineClamp: 1,
-                overflow: 'ellipsis',
-                display: '-webkit-box',
-                maxWidth: '240px',
-              }}, 'Sacramento, CA')
-            ),
-            h('p', { style: clientNameStyle }, 'CLIENT NAME'),
-            h(
-              'div',
-              { style: buttonContainerStyle },
-              h('span', { style: beforeSpanStyle }), // This acts as the :before pseudo-element
+            h('div', {},
+              h('div', { style: { overflow: 'hidden', display: 'flex', flexDirection: 'column', gap: '1rem'} },
               h(
-                'a',
-                {
-                  href: ``,
-                  style: buttonStyle('#C6AFC0'), // Button's background color
-                  target: '_blank',
-                },
-                'View Details' // Button text content
-              )
-            )
-        ),
-        h(
-          'div',
-          { style: containerStyle },
-          h('div', {},
-            h('div', { style: { overflow: 'hidden'} },
-              h('p', { style: eventNameStyle }, "Event Name for a Posponed Event"),
+                "div",
+                { style: { display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%", gap: "1rem" } },
+                h(
+                  "div",
+                  { style: { display: "flex", justifyContent: "space-between" } },
+                  h(
+                    "div",
+                    {
+                      style: {
+                        width: "50%",
+                        height: "100px",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        padding: "0.5rem",
+                        borderRadius: "0.375rem",
+                      }
+                    },
+                    h(
+                      "div",
+                      {
+                        style: {
+                          width: "100%",
+                          height: "80px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          backgroundColor: "white",
+                          borderRadius: '10px',
+                        }
+                      },
+                      "Client Logo"
+                    )
+                  ),
+                    h(
+                      "div",
+                      {
+                        style: {
+                          fontWeight: "bold",
+                          fontSize: "0.85rem",
+                          padding: "0.5rem 1rem",
+                          backgroundColor: "#FCFC62",
+                          border: "1px solid black",
+                          borderRight: "none",
+                          borderRadius: "1.5rem 0 0 1.5rem",
+                          height: "min-content"
+                        }
+                      },
+                      "501(c)(3)"
+                    )
+                )
+              ),
+            h('p', { style: eventNameStyle }, "Event Name"),
             ),
-            h('p', { style: { margin: 0}}, h('span', { style: { color: 'red', paddingLeft: '1rem' } }, '* Event Postponed'))
-            ),
-            h(
-              'div',
-              { style: eventInfoStyle },
-              h('div', { style: { display: 'flex', justifyContent: 'space-between'}},
-                h('div', { style: { display: 'flex', flexDirection: 'column'}},
+            h('p', { style: { margin: 0}}, "")
+
+          ),
+          ),
+          h(
+            'div',
+            { style: eventInfoStyle },
+            h('div', { style: { display: 'flex', justifyContent: 'space-between'}},
+              h('div', { style: { display: 'flex', alignItems: 'center', gap: '0.5rem'}}, 
+                h(
+                  'img',
+                  {
+                    style: { maxWidth: '20px', height: 'auto' },
+                    src: "/images/common/location-icon.svg"
+                  }
+                ),
+                h('div', { style : { display: 'flex', flexDirection: 'column'}},
                   h('div', { style: {overflow: 'hidden'}},
                     h('p', {style: { 
                       margin: 0,         
@@ -443,7 +445,7 @@ var HomePagePreview = createClass({
                       overflow: 'ellipsis',
                       display: '-webkit-box',
                       maxWidth: '240px',
-                    }}, 'Somewhere Cool'),
+                    }}, "Punch Bowl Social"),
                   ),
                   h('p',{style: { 
                     margin: 0,                     
@@ -452,30 +454,149 @@ var HomePagePreview = createClass({
                     overflow: 'ellipsis',
                     display: '-webkit-box',
                     maxWidth: '240px',
-                  }}, 'Los Angeles, CA')
-                ),
-                h(
-                  'p',
-                  {style: { margin: 0, maxWidth: '100px'}},
-                  "12/01/2024 - 12/03/2024",
+                  }}, "Sacramento, CA")
                 ),
               ),
-            ),
-            h('p', { style: clientNameStyle }, 'ANOTHER CLIENT NAME'),
-            h(
-              'div',
-              { style: buttonContainerStyle },
-              h('span', { style: beforeSpanStyle }), // This acts as the :before pseudo-element
               h(
-                'a',
-                {
-                  href: ``,
-                  style: buttonStyle('#C6AFC0'), // Button's background color
-                  target: '_blank',
-                },
-                'View Details' // Button text content
-              )
+                'p',
+                {style: { margin: 0, width: '100px'}},
+                "10/01/2024"
+              ),
+            ),
+          ),
+          h(
+            'div',
+            { style: buttonContainerStyle },
+            h('span', { style: beforeSpanStyle }), // This acts as the :before pseudo-element
+            h(
+              'a',
+              {
+                href: ``,
+                style: buttonStyle('#C6AFC0'), // Button's background color
+                target: '_blank',
+              },
+              'Inside The Event' // Button text content
             )
+          )
+        ),
+        h(
+          'div',
+          { style: containerStyle },
+          h('div', {},
+            h('div', {},
+              h('div', { style: { overflow: 'hidden', display: 'flex', flexDirection: 'column', gap: '1rem'} },
+              h(
+                "div",
+                { style: { display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%", gap: "1rem" } },
+                h(
+                  "div",
+                  { style: { display: "flex", justifyContent: "space-between" } },
+                  h(
+                    "div",
+                    {
+                      style: {
+                        width: "50%",
+                        height: "100px",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        padding: "0.5rem",
+                        borderRadius: "0.375rem",
+                      }
+                    },
+                    h(
+                      "div",
+                      {
+                        style: {
+                          width: "100%",
+                          height: "80px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          backgroundColor: "white",
+                          borderRadius: '10px',
+                        }
+                      },
+                      "Client Logo"
+                    )
+                  ),
+                    h(
+                      "div",
+                      {
+                        style: {
+                          fontWeight: "bold",
+                          fontSize: "0.85rem",
+                          padding: "0.5rem 1rem",
+                          backgroundColor: "#FCFC62",
+                          border: "1px solid black",
+                          borderRight: "none",
+                          borderRadius: "1.5rem 0 0 1.5rem",
+                          height: "min-content"
+                        }
+                      },
+                      "PAC"
+                    )
+                )
+              ),
+            h('p', { style: eventNameStyle }, "Event Name for a Postponed Event"),
+            ),
+            h('p', { style: { margin: 0}},  h('span', { style: { color: 'red', paddingLeft: '1rem' } }, '* Event Postponed'))
+          ),
+          ),
+          h(
+            'div',
+            { style: eventInfoStyle },
+            h('div', { style: { display: 'flex', justifyContent: 'space-between'}},
+              h('div', { style: { display: 'flex', alignItems: 'center', gap: '0.5rem'}}, 
+                h(
+                  'img',
+                  {
+                    style: { maxWidth: '20px', height: 'auto' },
+                    src: "/images/common/location-icon.svg"
+                  }
+                ),
+                h('div', { style : { display: 'flex', flexDirection: 'column'}},
+                  h('div', { style: {overflow: 'hidden'}},
+                    h('p', {style: { 
+                      margin: 0,         
+                      WebkitBoxOrient: 'vertical',
+                      WebkitLineClamp: 1,
+                      overflow: 'ellipsis',
+                      display: '-webkit-box',
+                      maxWidth: '240px',
+                    }}, "Somewhere Cool"),
+                  ),
+                  h('p',{style: { 
+                    margin: 0,                     
+                    WebkitBoxOrient: 'vertical',
+                    WebkitLineClamp: 1,
+                    overflow: 'ellipsis',
+                    display: '-webkit-box',
+                    maxWidth: '240px',
+                  }}, "Los Angeles, CA")
+                ),
+              ),
+              h(
+                'p',
+                {style: { margin: 0, width: '100px'}},
+                "12/01/2024 - 12/03/2024"
+              ),
+            ),
+          ),
+          h(
+            'div',
+            { style: buttonContainerStyle },
+            h('span', { style: beforeSpanStyle }), // This acts as the :before pseudo-element
+            h(
+              'a',
+              {
+                href: ``,
+                style: buttonStyle('#C6AFC0'), // Button's background color
+                target: '_blank',
+              },
+              'Inside The Event' // Button text content
+            )
+          )
         ),
             ),
             h('div', { style: { display: 'flex', gap: '0.5rem' } }, 

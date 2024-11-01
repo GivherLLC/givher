@@ -4,7 +4,6 @@ var EventPreview = createClass({
 
     // Toggle to indicate if all event details are available
     var detailsAvailable = entry.getIn(['data', 'available']);
-    console.log(detailsAvailable)
     
       // Homepage Event Card fields
       var eventName = entry.getIn(['data', 'eventName']);
@@ -14,6 +13,7 @@ var EventPreview = createClass({
       var lastDayOfEvent = entry.getIn(['data', 'lastDayOfEvent']);
       var eventCity = entry.getIn(['data', 'eventCity']);
       var eventLocation = entry.getIn(['data', 'eventLocation']);
+      var eventType = entry.getIn(['data', 'eventType']);
       var eventButtonTextOne = entry.getIn(['data', 'eventButtonTextOne']);
       var eventButtonLinkOne = entry.getIn(['data', 'eventButtonLinkOne']);
       var eventButtonTextTwo = entry.getIn(['data', 'eventButtonTextTwo']);
@@ -82,9 +82,10 @@ var EventPreview = createClass({
       gap: '25px',
       border: '1px solid #2E363E',
       borderRadius: '10px',
-      padding: '2.5rem 1.5rem',
-      width: '350px',
-      height: '300px',
+      paddingBottom: '2rem',
+      paddingLeft: '1.5rem',
+      paddingTop: '1rem',
+      width: '375px',
       boxShadow: '0 4px 20px 0 rgba(0,0,0,0.15)',
       backgroundColor: '#F8F9EE',
     };
@@ -101,6 +102,7 @@ var EventPreview = createClass({
       lineHeight: 1.5,
       margin: 0,
       height: '69px',
+      paddingRight: '1.5rem',
     };
 
     const eventInfoStyle = {
@@ -109,16 +111,7 @@ var EventPreview = createClass({
       display: '-webkit-box',
       WebkitBoxOrient: 'vertical',
       WebkitLineClamp: 2,
-    };
-
-    const clientNameStyle = {
-      textTransform: 'uppercase',
-      color: '#2E363E',
-      fontWeight: '700',
-      fontSize: '.875rem',
-      maxWidth: '250px',
-      lineHeight: 1.25,
-      margin: 0,
+      paddingRight: '1.5rem',
     };
 
     const buttonContainerStyle = {
@@ -246,34 +239,97 @@ var EventPreview = createClass({
           'div',
           { style: containerStyle },
           h('div', {},
-            h('div', { style: { overflow: 'hidden'} },
-              h('p', { style: eventNameStyle }, eventName),
+            h('div', { style: { overflow: 'hidden', display: 'flex', flexDirection: 'column', gap: '1rem'} },
+            h(
+              "div",
+              { style: { display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%", gap: "1rem" } },
+              h(
+                "div",
+                { style: { display: "flex", justifyContent: "space-between" } },
+                h(
+                  "div",
+                  {
+                    style: {
+                      width: "50%",
+                      height: "100px",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      padding: "0.5rem",
+                      borderRadius: "0.375rem",
+                    }
+                  },
+                  h(
+                    "div",
+                    {
+                      style: {
+                        width: "100%",
+                        height: "80px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        backgroundColor: "white",
+                        borderRadius: '10px',
+                      }
+                    },
+                    "Client Logo"
+                  )
+                ),
+                eventType ?
+                  h(
+                    "div",
+                    {
+                      style: {
+                        fontWeight: "bold",
+                        fontSize: "0.85rem",
+                        padding: "0.5rem 1rem",
+                        backgroundColor: "#FCFC62",
+                        border: "1px solid black",
+                        borderRight: "none",
+                        borderRadius: "1.5rem 0 0 1.5rem",
+                        height: "min-content"
+                      }
+                    },
+                    eventType
+                  ):""
+              )
             ),
-            h('p', { style: { margin: 0}}, postponed ? h('span', { style: { color: 'red', paddingLeft: '1rem' } }, '* Event Postponed'):"")
+          ),
+          h('p', { style: eventNameStyle }, eventName),
+          h('p', { style: { margin: 0}}, postponed ? h('span', { style: { color: 'red', paddingLeft: '1rem' } }, '* Event Postponed'):"")
           ),
           h(
             'div',
             { style: eventInfoStyle },
             h('div', { style: { display: 'flex', justifyContent: 'space-between'}},
-              h('div', { style : { display: 'flex', flexDirection: 'column'}},
-                h('div', { style: {overflow: 'hidden'}},
-                  h('p', {style: { 
-                    margin: 0,         
+              h('div', { style: { display: 'flex', alignItems: 'center', gap: '0.5rem'}}, 
+                h(
+                  'img',
+                  {
+                    style: { maxWidth: '20px', height: 'auto' },
+                    src: "/images/common/location-icon.svg"
+                  }
+                ),
+                h('div', { style : { display: 'flex', flexDirection: 'column'}},
+                  h('div', { style: {overflow: 'hidden'}},
+                    h('p', {style: { 
+                      margin: 0,         
+                      WebkitBoxOrient: 'vertical',
+                      WebkitLineClamp: 1,
+                      overflow: 'ellipsis',
+                      display: '-webkit-box',
+                      maxWidth: '240px',
+                    }}, eventLocation),
+                  ),
+                  h('p',{style: { 
+                    margin: 0,                     
                     WebkitBoxOrient: 'vertical',
                     WebkitLineClamp: 1,
                     overflow: 'ellipsis',
                     display: '-webkit-box',
                     maxWidth: '240px',
-                  }}, eventLocation),
+                  }}, eventCity)
                 ),
-                h('p',{style: { 
-                  margin: 0,                     
-                  WebkitBoxOrient: 'vertical',
-                  WebkitLineClamp: 1,
-                  overflow: 'ellipsis',
-                  display: '-webkit-box',
-                  maxWidth: '240px',
-                }}, eventCity)
               ),
               h(
                 'p',
@@ -283,7 +339,6 @@ var EventPreview = createClass({
               ),
             ),
           ),
-          h('p', { style: clientNameStyle }, clientName),
           h(
             'div',
             { style: buttonContainerStyle },
@@ -292,10 +347,10 @@ var EventPreview = createClass({
               'a',
               {
                 href: ``,
-                style: buttonStyle('#C6AFC0'), // Button's background color
+                style: buttonStyle('#FCFC62'), // Button's background color
                 target: '_blank',
               },
-              'View Details' // Button text content
+              'Get Email Updates' // Button text content
             )
           )
         )
@@ -343,34 +398,98 @@ var EventPreview = createClass({
         'div',
         { style: containerStyle },
         h('div', {},
-          h('div', { style: { overflow: 'hidden'} },
-            h('p', { style: eventNameStyle }, eventName),
-          ),
+          h('div', {},
+            h('div', { style: { overflow: 'hidden', display: 'flex', flexDirection: 'column', gap: '1rem'} },
+            h(
+              "div",
+              { style: { display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%", gap: "1rem" } },
+              h(
+                "div",
+                { style: { display: "flex", justifyContent: "space-between" } },
+                h(
+                  "div",
+                  {
+                    style: {
+                      width: "50%",
+                      height: "100px",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      padding: "0.5rem",
+                      borderRadius: "0.375rem",
+                    }
+                  },
+                  h(
+                    "div",
+                    {
+                      style: {
+                        width: "100%",
+                        height: "80px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        backgroundColor: "white",
+                        borderRadius: '10px',
+                      }
+                    },
+                    "Client Logo"
+                  )
+                ),
+                eventType ?
+                  h(
+                    "div",
+                    {
+                      style: {
+                        fontWeight: "bold",
+                        fontSize: "0.85rem",
+                        padding: "0.5rem 1rem",
+                        backgroundColor: "#FCFC62",
+                        border: "1px solid black",
+                        borderRight: "none",
+                        borderRadius: "1.5rem 0 0 1.5rem",
+                        height: "min-content"
+                      }
+                    },
+                    eventType
+                  ):""
+              )
+            ),
+          h('p', { style: eventNameStyle }, eventName),
+          ),          ),
           h('p', { style: { margin: 0}}, postponed ? h('span', { style: { color: 'red', paddingLeft: '1rem' } }, '* Event Postponed'):"")
         ),
         h(
           'div',
           { style: eventInfoStyle },
           h('div', { style: { display: 'flex', justifyContent: 'space-between'}},
-            h('div', { style : { display: 'flex', flexDirection: 'column'}},
-              h('div', { style: {overflow: 'hidden'}},
-                h('p', {style: { 
-                  margin: 0,         
+            h('div', { style: { display: 'flex', alignItems: 'center', gap: '0.5rem'}}, 
+              h(
+                'img',
+                {
+                  style: { maxWidth: '20px', height: 'auto' },
+                  src: "/images/common/location-icon.svg"
+                }
+              ),
+              h('div', { style : { display: 'flex', flexDirection: 'column'}},
+                h('div', { style: {overflow: 'hidden'}},
+                  h('p', {style: { 
+                    margin: 0,         
+                    WebkitBoxOrient: 'vertical',
+                    WebkitLineClamp: 1,
+                    overflow: 'ellipsis',
+                    display: '-webkit-box',
+                    maxWidth: '240px',
+                  }}, eventLocation),
+                ),
+                h('p',{style: { 
+                  margin: 0,                     
                   WebkitBoxOrient: 'vertical',
                   WebkitLineClamp: 1,
                   overflow: 'ellipsis',
                   display: '-webkit-box',
                   maxWidth: '240px',
-                }}, eventLocation),
+                }}, eventCity)
               ),
-              h('p',{style: { 
-                margin: 0,                     
-                WebkitBoxOrient: 'vertical',
-                WebkitLineClamp: 1,
-                overflow: 'ellipsis',
-                display: '-webkit-box',
-                maxWidth: '240px',
-              }}, eventCity)
             ),
             h(
               'p',
@@ -380,7 +499,6 @@ var EventPreview = createClass({
             ),
           ),
         ),
-        h('p', { style: clientNameStyle }, clientName),
         h(
           'div',
           { style: buttonContainerStyle },
@@ -392,13 +510,13 @@ var EventPreview = createClass({
               style: buttonStyle('#C6AFC0'), // Button's background color
               target: '_blank',
             },
-            'View Details' // Button text content
+            'Inside The Event' // Button text content
           )
         )
       ),
 
       // Event Detail Page Section
-      h('h1', { style: { padding: '2.5rem 0 20px 0', margin: 0 } }, 'Event Detail Page (View Details)'),
+      h('h1', { style: { padding: '2.5rem 0 20px 0', margin: 0 } }, 'Event Detail Page (Inside The Event)'),
       h(
         'div',
         { style: detailPageStyle },

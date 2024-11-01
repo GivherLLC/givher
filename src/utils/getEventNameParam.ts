@@ -1,5 +1,5 @@
-const getEventNameParam = (newsTitle: string) => {
-  return newsTitle
+const getEventNameParam = (eventName: string) => {
+  return eventName
     .toLowerCase() // Convert to lowercase
     .replace(/[’']/g, '') // Remove apostrophes
     .replace(/\s+/g, '-') // Replace spaces with dashes

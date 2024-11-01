@@ -1,14 +1,16 @@
+import { getInTheWorksEvents } from "../../lib/getAllEvents";
+
 export interface EventsPageData {
     allEventsSectionTitle: string;
     comingSoonEventsSectionTitle: string;
+    comingSoonEventsSectionSubtitle: string;
     postponedEventText: string;
     givherFeaturedEvent: FeaturedEventType;
-    comingSoon?: ComingSoonEventType[]; // Optional array for coming soon events
   }
   
 export interface EventsPageProps {
     events: EventType[];
-    comingSoonEvents: ComingSoonEventType[];
+    inTheWorksEvents: EventType[];
     eventsPageData: EventsPageData;
     clientImagesObject: ClientImage;
   }
@@ -19,29 +21,55 @@ export type EventDetailPageProps = {
     };
   };
 
-export type EventType = {
-    slug: string;
+  export type EventTypeData = {
+    available: boolean;
     eventName:string;
-    firstDayOfEvent:string;
+    slug: string;
+    firstDayOfEvent:string | null;
     eventTime: string | null;
     lastDayOfEvent:string | null;
+    timeOfYear: string | null;
     timeZone: string;
-    eventCity:string;
+    eventType: string | null;
+    eventCity:string | null;
     eventLocation: string | null;
     clientName:string;
-    eventButtonTextOne: string;
-    eventButtonLinkOne: string;
+    eventButtonTextOne: string | null;
+    eventButtonLinkOne: string | null;
     eventButtonTextTwo: string | null;
     eventButtonLinkTwo: string | null;
     eventDescription:EventDescriptionItem[] | null;
     boldedEventInformation:BoldedEventInformationItem[] | null;
-    detailImage:string;
+    detailImage:string | null;
     postponed: boolean;
+    hideEvent: boolean;
 }
 
-export type ClientEventType = (EventType | ComingSoonEventType) & {
-    comingSoon: boolean;
-  };
+
+export type EventType = {
+    available: boolean;
+    eventName:string;
+    slug: string;
+    firstDayOfEvent:string | null;
+    eventTime: string | null;
+    lastDayOfEvent:string | null;
+    timeOfYear: string | null;
+    timeZone: string;
+    eventType: string | null;
+    eventCity:string | null;
+    eventLocation: string | null;
+    clientName:string;
+    eventButtonTextOne: string | null;
+    eventButtonLinkOne: string | null;
+    eventButtonTextTwo: string | null;
+    eventButtonLinkTwo: string | null;
+    eventDescription:EventDescriptionItem[] | null;
+    boldedEventInformation:BoldedEventInformationItem[] | null;
+    detailImage:string | null;
+    postponed: boolean;
+    hideEvent: boolean;
+    eventStatus: "event" | "inTheWorks" | "past";
+}
 
 type EventDescriptionItem = {
     paragraph: string;
@@ -52,6 +80,8 @@ type BoldedEventInformationItem = {
 };
 
 export type FeaturedEventType = {
+    available: boolean;
+    slug: string;
     eventName: string;
     eventCity: string | null;
     eventButtonTextOne: string | null;
@@ -60,22 +90,6 @@ export type FeaturedEventType = {
     firstDayOfEvent: string | null;
     timeOfYear: string | null;
     lastDayOfEvent:string | null;
-    comingSoon: boolean;
-}
-
-export type ComingSoonEventType = {
-    clientName:string;
-    eventName:string;
-    firstDayOfEvent:string | null;
-    lastDayOfEvent:string | null;
-    timeZone: string | null;
-    timeOfYear: string | null;
-    eventButtonTextOne: string | null;
-    eventButtonLinkOne: string | null;
-    eventButtonTextTwo: string | null;
-    eventButtonLinkTwo: string | null;
-    eventCity:string | null;
-    postponed:boolean;
 }
 
 export interface ClientsPageData {
@@ -95,6 +109,7 @@ export type Client = {
     clientLogo: string;
     clientWebsite: string;
     clientW9Src: string;
+    hideClient: boolean;
 }
 
 export interface ClientImage {

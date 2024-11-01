@@ -17,6 +17,7 @@ export default async function getAllClients(): Promise<Client[]> {
         clientLogo: data.clientLogo,
         clientWebsite: data.clientWebsite,
         clientW9Src: data.clientW9Src,
+        hideClient: data.hideClient,
       };
     });
   }

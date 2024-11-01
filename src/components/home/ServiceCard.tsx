@@ -17,9 +17,9 @@ export default function ServiceCard({serviceCard}:{serviceCard:ServiceCarouselCa
     return (
         <div
         data-id="card"
-        className="carousel-cell w-/2 mr-[2rem] rounded-[15px] bg-softOpal dark:bg-navySmoke overflow-hidden shadow-custom-shadow dark:shadow-custom-shadow-darkmode m-[1.5rem]"
+        className="carousel-cell w-/2 mr-[1rem] md:mr-[2rem] rounded-[15px] bg-softOpal dark:bg-navySmoke overflow-hidden shadow-custom-shadow dark:shadow-custom-shadow-darkmode m-[1.5rem]"
       >
-        <div className="group rounded-[15px] px-[1.5rem] py-[3rem] overflow-hidden">
+        <div className="group rounded-[15px] px-[1.5rem] pt-[3rem] pb-[2rem] overflow-hidden">
           <div className="md:translate-y-0 md:group-hover:translate-y-[-100px] transition duration-400 ease-in-out">
           <Image
             data-flickity-lazyload
@@ -39,16 +39,16 @@ export default function ServiceCard({serviceCard}:{serviceCard:ServiceCarouselCa
             width={cardTitle === "Professional Fundraising" ? 700: 350}
             loading="lazy"
           />
-            <h2 className={`text-black dark:text-softOpal font-visbyBold py-[1rem] ${cardTitle === "General Consulting"? "md:group-hover:translate-y-[-85px]":"md:group-hover:translate-y-[-65px]"} transition duration-400 ease-in-out`}>
+            <h2 className={`text-black text-center md:text-left text-[1.25rem] md:text-[1.5rem] md:group-hover:text-[1.25rem] dark:text-softOpal font-visbyBold py-[1rem] md:group-hover:translate-y-[-65px] transition duration-400 ease-in-out`}>
               {cardTitle}
             </h2>
             </div>
-          <div className={`absolute bottom-[30px] md:bottom-[unset] md:top-[250px] left-0 px-[1.5rem] ${cardTitle === "General Consulting"? "md:group-hover:translate-y-[-40px]":"md:group-hover:translate-y-[-10px]"} md:translate-y-[200px]  flex flex-col justify-end transition duration-400 ease-in-out overflow-hidden`}>
+          <div className={`md:absolute bottom-[30px] md:bottom-[unset] md:top-[250px] left-0 md:px-[1.5rem] md:group-hover:translate-y-[-20px] md:translate-y-[200px]  flex flex-col justify-end transition duration-400 ease-in-out overflow-hidden`}>
             <div className="transition duration-400 opacity-100 md:opacity-0 ease-in-out md:group-hover:opacity-100">
-            <p className="text-black dark:text-softOpal mb-[1rem] leading-[1.35rem] hidden md:block">
+            <p className="text-black text-[0.9rem] dark:text-softOpal mb-[0.5rem] leading-[1.35rem] hidden md:block">
               {cardDescription}
             </p>
-            <ArrowLink text={cardLinkText} color={"black"} darkModeColor={"softOpal"} link={cardLink}/>
+            <ArrowLink text={cardLinkText} color={"black"} darkModeColor={"softOpal"} link={cardLink} className="justify-center md:justify-start text-[0.9rem]"/>
             </div>
           </div>
         </div>

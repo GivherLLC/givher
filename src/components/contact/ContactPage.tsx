@@ -8,7 +8,7 @@ type ContactPageProps = {
 
 export default function ContactPage({contactData}:ContactPageProps){
     return (
-        <div className="bg-mauvelous dark:bg-navySmoke py-[1rem] md:py-[2.5rem] flex justify-center min-h-[calc(100vh-679px)] md:min-h-[calc(100vh-410px)]">
+        <div className="min-h-[calc(100vh-400px)] md:min-h-[calc(100vh-82px)] bg-mauvelous dark:bg-navySmoke py-[1rem] md:py-[2.5rem] flex justify-center">
             <div className="max-w-[85.75rem] flex flex-col gap-[1.5rem] mx-[0.625rem] lg:mx-[1.5625rem]">
                 <div className="flex flex-col lg:flex-row w-full">
                     <div className="flex flex-col items-center gap-[2rem] mt-[2rem] mx-auto">

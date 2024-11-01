@@ -5,7 +5,7 @@ import getEventNameParam from "@/utils/getEventNameParam";
 import formatTimeTo12Hour from "@/utils/formatTime";
 import { format } from 'date-fns';
 import { toDate } from 'date-fns-tz';
-import { EventType } from "@/types/types";
+import { EventType, EventTypeData } from "@/types/types";
 
 // Helper function to parse a date string in MM.DD.YYYY format
 const parseDateString = (dateString: string, timeZone: string) => {
@@ -16,7 +16,7 @@ const parseDateString = (dateString: string, timeZone: string) => {
 
 // Fetch and sort all events
 async function getAllEvents(): Promise<EventType[]> {
-  const eventsDirectory = path.join(process.cwd(), 'content/events');
+  const eventsDirectory = path.join(process.cwd(), 'content/all-events');
 
   // Check if the directory exists
   if (!fs.existsSync(eventsDirectory)) {
@@ -33,24 +33,67 @@ async function getAllEvents(): Promise<EventType[]> {
     const fileContents = fs.readFileSync(filePath, 'utf8');
     const { data } = matter(fileContents);
 
+    function formatSlug(slug:string | null) {
+      if (!slug) {
+        return '';
+      }
+    
+      return slug.trim().toLowerCase().replace(/\s+/g, '-');
+    }
+
+    function getEventStatus(data: EventTypeData): "past" | "inTheWorks" | "event" {
+      const requiredFields = [
+        data.available,
+        data.eventName,
+        data.firstDayOfEvent,
+        data.eventCity,
+        data.eventLocation,
+        data.clientName,
+        data.eventDescription,
+        data.detailImage,
+      ];
+    
+      const currentDate = new Date();
+      const eventStartDate = data.firstDayOfEvent ? new Date(data.firstDayOfEvent) : null;
+      const eventEndDate = data.lastDayOfEvent ? new Date(data.lastDayOfEvent) : eventStartDate;
+    
+      // Check if the event is past
+      if (eventStartDate && eventStartDate < currentDate && (!eventEndDate || eventEndDate < currentDate)) {
+        return "past";
+      }
+    
+      // Check if the event is "inTheWorks"
+      if (!data.available || requiredFields.some(field => field === null)) {
+        return "inTheWorks";
+      }
+    
+      // Otherwise, the event is considered "event"
+      return "event";
+    }    
+    
     return {
-      slug: data.slug || getEventNameParam(data.eventName),
+      available: data.available,
       eventName: data.eventName,
-      firstDayOfEvent: data.firstDayOfEvent,
-      lastDayOfEvent: data.lastDayOfEvent,
-      eventTime: data.eventTime ? formatTimeTo12Hour(data.eventTime): "",
+      slug: formatSlug(data.slug) || getEventNameParam(data.eventName),
+      firstDayOfEvent: data.firstDayOfEvent || null,
+      eventTime: data.eventTime ? formatTimeTo12Hour(data.eventTime): null,
+      lastDayOfEvent: data.lastDayOfEvent || null,
+      timeOfYear: data.timeOfYear || null,
       timeZone: data.timeZone,
-      eventCity: data.eventCity,
-      eventLocation: data.eventLocation,
+      eventType: data.eventType || null,
+      eventCity: data.eventCity || null,
+      eventLocation: data.eventLocation || null,
       clientName: data.clientName,
-      eventButtonTextOne: data.eventButtonTextOne,
-      eventButtonLinkOne: data.eventButtonLinkOne,
-      eventButtonTextTwo: data.eventButtonTextTwo,
-      eventButtonLinkTwo: data.eventButtonLinkTwo,
-      eventDescription: data.eventDescription,
-      boldedEventInformation: data.boldedEventInformation,
-      detailImage: data.detailImage,
+      eventButtonTextOne: data.eventButtonTextOne || null,
+      eventButtonLinkOne: data.eventButtonLinkOne || null,
+      eventButtonTextTwo: data.eventButtonTextTwo || null,
+      eventButtonLinkTwo: data.eventButtonLinkTwo || null,
+      eventDescription: data.eventDescription || null,
+      boldedEventInformation: data.boldedEventInformation || null,
+      detailImage: data.detailImage || null,
       postponed: data.postponed,
+      hideEvent: data.hideEvent,
+      eventStatus: getEventStatus(data as EventTypeData),
     };
   });
 
@@ -84,4 +127,28 @@ async function getAllEvents(): Promise<EventType[]> {
   return sortedEvents;
 }
 
-export default getAllEvents;
+//returns only events will all info that generate a detail page
+async function getReadyEvents(): Promise<EventType[]> {
+  const allEvents = await getAllEvents();
+  return allEvents.filter(event => event.eventStatus === "event");
+}
+
+//returns all events that are not in the past
+async function getInTheWorksEvents(): Promise<EventType[]> {
+  const allEvents = await getAllEvents();
+  return allEvents.filter(event => event.eventStatus === "inTheWorks");
+}
+
+//returns all events that are not in the past
+async function getNonPastEvents(): Promise<EventType[]> {
+  const allEvents = await getAllEvents();
+  return allEvents.filter(event => event.eventStatus !== "past");
+}
+
+//returns only events that are in the past
+async function getPastEvents(): Promise<EventType[]> {
+  const allEvents = await getAllEvents();
+  return allEvents.filter(event => event.eventStatus === "past");
+}
+
+export { getNonPastEvents, getPastEvents, getReadyEvents, getInTheWorksEvents };

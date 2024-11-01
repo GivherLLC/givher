@@ -23,10 +23,15 @@ eventDescription:
   - paragraph: "5k - 4 VIP reception entires, logo representation, drink tickets,
       and verbal recognition. "
   - paragraph: Event will open to the public at 6:00 pm. Program will start at 6:30 pm.
+  - paragraph: To ensure your entry, please RSVP and secure your spot on the guest
+      list. See you there!
 boldedEventInformation:
-  - line: Join us for this exciting event, which is completely free to the public!
-      To ensure your entry, please RSVP and secure your spot on the guest list.
-      See you there!
+  - line: Attendance at this event by a public official will constitute acceptance
+      of a reportable gift. The Internal Revenue Service recognizes the
+      California LGBTQ Foundation as a Section 501(c)(3) public charity. Gifts
+      to the California LGBTQ Foundation are tax-deductible in the U.S.A. The
+      Federal Tax ID# is 38-0805115. The California LGBTQ Foundation does not
+      endorse, support, or oppose candidates for public office.
 detailImage: /uploads/img_3458.jpg
 postponed: false
 hideEvent: false

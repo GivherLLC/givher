@@ -13,12 +13,12 @@ export default function InTheWorksEventCard({event, postponedEventText, clientLo
             </div>
             <div className="relative flex flex-col gap-[0.75rem] xl:gap-0 xl:flex-row items-end xl:items-start">
               {showTag && (
-              <div className="relative font-visbyBold px-[1rem] py-[0.5rem] bg-navySmoke text-softOpal text-[0.85rem] border border-black border-r-0 h-min rounded-l-3xl xl:mr-[-1rem] xl:pr-[1.25rem] z-0">
+              <div className="relative font-visbyBold px-[1rem] py-[0.5rem] bg-navySmoke dark:bg-mauvelous dark:text-navySmoke text-softOpal text-[0.85rem] border border-black border-r-0 h-min rounded-l-3xl xl:mr-[-1rem] xl:pr-[1.25rem] z-0">
                 In the Works
               </div>
                 )}
               {event.eventType && (
-                <div className="relative font-visbyBold px-[1rem] py-[0.5rem] bg-electricYellow text-black text-[0.85rem] border border-black border-r-0 h-min rounded-l-3xl z-10 w-fit">
+                <div className="relative font-visbyBold px-[1rem] py-[0.5rem] bg-electricYellow text-navySmoke text-[0.85rem] border border-black border-r-0 h-min rounded-l-3xl z-10 w-fit">
                   {event.eventType}
                 </div>
               )}

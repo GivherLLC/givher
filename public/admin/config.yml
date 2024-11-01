@@ -82,7 +82,7 @@ collections:
               - { label: 'Quotee Name', name: 'quoteeName', widget: 'string' }
               - { label: 'Quote', name: 'quote', widget: 'string' }
               - { label: 'Organization', name: 'organization', widget: 'string' }
-      - label: "Events Pages"
+      - label: "Events Page"
         name: "eventsPage"
         file: "content/pages/events_page.yml"
         fields:

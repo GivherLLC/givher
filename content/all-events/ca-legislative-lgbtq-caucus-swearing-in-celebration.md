@@ -12,8 +12,12 @@ eventDescription:
   - paragraph: Join the California LGBTQ Foundation to celebrate the swearing-in of
       the newest members of the California Legislative LGBTQ+ Caucus at
       Sacramento's newest lounge, Good Luck Lounge.
+  - paragraph: Sponsorship opportunities are available and will include an Exclusive
+      VIP Sponsor only reception from 5:00 pm - 5:30 pm.
+  - paragraph: Event will open to the public at 6:00 pm. Program will start at 6:30 pm.
 boldedEventInformation:
   - line: SAVE TIME AT THE DOOR AND RSVP EARLY
 detailImage: /uploads/img_3458.jpg
 postponed: false
+hideEvent: true
 ---

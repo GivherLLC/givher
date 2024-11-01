@@ -47,17 +47,39 @@ export default function InTheWorksEventCard({event, postponedEventText, clientLo
             )}
         </div>
           <div className="text-navySmoke dark:text-softOpal h-[48px] overflow-hidden flex justify-between gap-[1rem]">
-            <p
-                className="overflow-ellipsis max-w-[240px]"
-                style={{
-                    display: "-webkit-box",
-                    WebkitBoxOrient: "vertical",
-                    WebkitLineClamp: 3,
-                    }}
-            >
-                {event.eventCity && event.eventCity}
+          <div className={`flex gap-[0.5rem] ${!event.eventCity || !event.eventLocation? "items-start":"items-center"}`}>
+                <Image loading="lazy" alt="location icon" src={`/images/common/location-icon.svg`} height={60} width={40} className="max-w-[20px]"/>
+                <div className="flex flex-col">
+                  <div className="overflow-hidden">
+                    {event.eventLocation && (
+                      <p
+                        className="overflow-ellipsis max-w-[240px]"
+                        style={{
+                            display: "-webkit-box",
+                            WebkitBoxOrient: "vertical",
+                            WebkitLineClamp: 1,
+                            }}
+                    >
+                        {event.eventLocation}
 
-            </p>
+                    </p>
+                    )}
+                </div>
+                {event.eventCity && (
+                  <p
+                    className="overflow-ellipsis max-w-[240px]"
+                    style={{
+                        display: "-webkit-box",
+                        WebkitBoxOrient: "vertical",
+                        WebkitLineClamp: 1,
+                        }}
+                >
+                    {event.eventCity}
+
+                </p>
+                )}
+                </div>
+              </div>
             <p
                 className="overflow-ellipsis max-w-[100px]"
                 style={{

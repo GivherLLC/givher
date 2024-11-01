@@ -12,12 +12,23 @@ clientName: California LGBTQ Foundation
 eventButtonTextOne: Reserve Now
 eventButtonLinkOne: mailto:alina@givher.com
 eventDescription:
-  - paragraph: Experience an unforgettable evening with the CA LGBTQ Foundation and
-      esteemed guests, the California Legislative LGBTQ Caucus, in the stunning
-      Napa Valley. Indulge in a delightful dinner, captivating discussions, and
-      a night at one of the most sought out resorts in all of Napa Valley.
+  - paragraph: Join us for an unforgettable evening that promises to be both
+      inspiring and transformative with the CA LGBTQ Foundation and the renowned
+      California Legislative LGBTQ Caucus in the breathtaking Napa Valley!
+      Picture yourself indulging in a gourmet dinner, surrounded by like-minded
+      individuals, engaging in thought-provoking discussions that matter, all
+      while soaking in the ambiance of one of Napa's most coveted resorts.  This
+      is not just another event; it’s an exclusive opportunity to connect
+      intimately with the Foundation’s leadership and distinguished guests.
+      You'll leave with a renewed sense of purpose and a deeper understanding of
+      how the Foundation is reshaping its vision to empower LGBTQ+
+      communities.   Don’t miss your chance to be part of this special
+      gathering, where camaraderie and collaboration pave the way for meaningful
+      change. Secure your spot now for an inspiring and connecting night—this is
+      an event you won't want to miss!
 boldedEventInformation:
-  - line: Limited Sponsors Spots. Act Fast.
+  - line: Limited Sponsorships Opportunities. Act Fast.
 detailImage: /uploads/ca-lgbtq_eventpageimage.png
 postponed: false
+hideEvent: true
 ---

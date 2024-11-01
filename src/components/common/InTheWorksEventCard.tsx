@@ -5,15 +5,15 @@ import { EventType } from "@/types/types";
 
 export default function InTheWorksEventCard({event, postponedEventText, clientLogo, showTag}:{event:EventType, postponedEventText:string, clientLogo: string, showTag: boolean}){
     return (
-      <div className={`flex flex-col gap-[1.5rem] sm:gap-[0rem] border border-navySmoke dark:border-softOpal rounded-[10px] pl-[0.75rem] sm:pl-[1.5rem] pt-[1rem] pb-[2rem] h-content w-full max-w-[375px] shadow-custom-shadow dark:shadow-custom-shadow-darkmode`}>
+      <div className={`flex flex-col gap-[1.5rem] xl:gap-[0rem] border border-navySmoke dark:border-softOpal rounded-[10px] pl-[0.75rem] xl:pl-[1.5rem] pt-[1rem] pb-[2rem] h-content w-full max-w-[375px] shadow-custom-shadow dark:shadow-custom-shadow-darkmode`}>
         <div className="flex flex-col justify-between h-full gap-[1rem]">
         <div className="flex justify-between gap-[1rem]">
             <div className="max-w-[50%] h-[100px] flex items-center dark:bg-softOpal p-[0.5rem] rounded-md">
               <Image src={clientLogo} width={280} height={175} className="w-auto max-h-[80px]" alt={`${event.clientName} logo`}/>
             </div>
-            <div className="relative flex flex-col gap-[0.75rem] sm:gap-0 sm:flex-row items-end sm:items-start">
+            <div className="relative flex flex-col gap-[0.75rem] xl:gap-0 xl:flex-row items-end xl:items-start">
               {showTag && (
-              <div className="relative font-visbyBold px-[1rem] py-[0.5rem] bg-navySmoke text-softOpal text-[0.85rem] border border-black border-r-0 h-min rounded-l-3xl sm:mr-[-1rem] sm:pr-[1.25rem] z-0">
+              <div className="relative font-visbyBold px-[1rem] py-[0.5rem] bg-navySmoke text-softOpal text-[0.85rem] border border-black border-r-0 h-min rounded-l-3xl xl:mr-[-1rem] xl:pr-[1.25rem] z-0">
                 In the Works
               </div>
                 )}
@@ -25,7 +25,7 @@ export default function InTheWorksEventCard({event, postponedEventText, clientLo
           </div>
 
           </div>
-          <div className="pr-[0.75rem] sm:pr-[1.5rem] flex flex-col justify-between h-full gap-[1rem]">
+          <div className="pr-[0.75rem] xl:pr-[1.5rem] flex flex-col justify-between h-full gap-[1rem]">
 
         <div>
             <div className="overflow-hidden">

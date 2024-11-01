@@ -19,5 +19,5 @@ boldedEventInformation:
   - line: SAVE TIME AT THE DOOR AND RSVP EARLY
 detailImage: /uploads/img_3458.jpg
 postponed: false
-hideEvent: true
+hideEvent: false
 ---

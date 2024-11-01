@@ -118,6 +118,12 @@ body {
   background-color: #C6AFC0;
 }
 
+@media (max-width: 768px) {
+  .event-carousel .flickity-page-dots {
+    display: none;
+  }
+}
+
 /* https://stackoverflow.com/questions/42714116/how-to-hide-border-flickity-in-chrome */
 /*This is bad for accessability, need to add focus to dots or nav*/
 .flickity-enabled:focus {

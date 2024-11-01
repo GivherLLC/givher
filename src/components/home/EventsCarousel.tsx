@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useEffect } from "react";
-import Image from "next/image";
 
 type EventsCarouselProps = {
     eventCarouselTitle: string;
@@ -54,13 +53,12 @@ export default function EventsCarousel({events}:{events:EventsCarouselProps}){
                     className="carousel-cell w-/2 mr-[2rem]"
                     >
                     <div className="rounded-[15px]">
-                        <Image
+                        <img
                             src={`${c.imageSrc}?w=297&h=390&q=75`}
                             alt={c.imageAlt}
                             width={297}
                             height={390}
                             className="rounded-[15px] flickity-lazyloaded"
-                            sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
                         />
                     </div>
                 </div>                    

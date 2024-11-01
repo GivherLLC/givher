@@ -8,6 +8,10 @@ eventType: 501(c)(3)
 eventCity: Sacramento, CA
 eventLocation: Good Luck Lounge
 clientName: California LGBTQ Foundation
+eventButtonTextOne: Guest List RSVP
+eventButtonLinkOne: https://www.universe.com/events/ca-legislative-lgbtq-caucus-swearing-in-celebration-tickets-J2S0CZ
+eventButtonTextTwo: Sponsor the Event
+eventButtonLinkTwo: mailto:alina@givher.com
 eventDescription:
   - paragraph: Join the California LGBTQ Foundation to celebrate the swearing-in of
       the newest members of the California Legislative LGBTQ+ Caucus at
@@ -16,7 +20,9 @@ eventDescription:
       VIP Sponsor only reception from 5:00 pm - 5:30 pm.
   - paragraph: Event will open to the public at 6:00 pm. Program will start at 6:30 pm.
 boldedEventInformation:
-  - line: SAVE TIME AT THE DOOR AND RSVP EARLY
+  - line: Join us for this exciting event, which is completely free to the public!
+      To ensure your entry, please RSVP and secure your spot on the guest list.
+      See you there!
 detailImage: /uploads/img_3458.jpg
 postponed: false
 hideEvent: false

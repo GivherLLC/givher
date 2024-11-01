@@ -30,5 +30,5 @@ boldedEventInformation:
   - line: Limited Sponsorships Opportunities. Act Fast.
 detailImage: /uploads/ca-lgbtq_eventpageimage.png
 postponed: false
-hideEvent: true
+hideEvent: false
 ---

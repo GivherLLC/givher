@@ -122,6 +122,17 @@ body {
   .event-carousel .flickity-page-dots {
     display: none;
   }
+
+  .flickity-page-dots {
+    height: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    
+  }
 }
 
 /* https://stackoverflow.com/questions/42714116/how-to-hide-border-flickity-in-chrome */

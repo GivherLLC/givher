@@ -11,6 +11,8 @@ eventLocation: Location given upon RSVP
 clientName: California LGBTQ Foundation
 eventButtonTextOne: Reserve Now
 eventButtonLinkOne: mailto:alina@givher.com
+eventButtonTextTwo: Event Flyer
+eventButtonLinkTwo: https://www.canva.com/design/DAGTS01Af6I/DpL-wOpYtcyaHeEohLZNmA/view?utm_content=DAGTS01Af6I&utm_campaign=designshare&utm_medium=link&utm_source=editor
 eventDescription:
   - paragraph: Join us for an unforgettable evening that promises to be both
       inspiring and transformative with the CA LGBTQ Foundation and the renowned

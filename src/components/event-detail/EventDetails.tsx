@@ -24,14 +24,14 @@ export default function EventDetails({event, postponedEventText}:{event:EventTyp
                             />
                         </div>
                         )}
-                    <div className="flex flex-col items-center lg:items-start">
+                    <div className="flex flex-col items-center lg:items-start gap-[1rem]">
                     {!!eventDescription && eventDescription.map((item, i) => (
                     <p key={i} className="text-black dark:text-softOpal">
                         {item.paragraph}
                     </p>
                     ))}
                     </div>
-                    <div className="flex flex-col">
+                    <div className="flex flex-col gap-[1rem]">
                         {!!boldedEventInformation && boldedEventInformation.map((item,i)=>(
                             <p key={i} className="text-black dark:text-softOpal font-visbyBold">{item.line}</p>
                         ))}

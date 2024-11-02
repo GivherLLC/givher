@@ -5,7 +5,22 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import getFooterData from '../../../lib/getFooterData';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
+
+export async function generateMetadata() {
+  return {
+    title: 'Givher Political Hospitality',
+    description: 'Givher is a dynamic and forward-thinking company specializing in fundraising, event development, and political hospitality.',
+    images: [
+      {
+        url: 'https://www.givher.com/opengraph-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Givher Event Banner'
+      }
+    ]
+  }
+}
 
 export default function RootLayout({
   children,

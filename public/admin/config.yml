@@ -253,4 +253,4 @@ collections:
           - { label: 'Line (add additional field for each line)', name: 'line',  widget: 'string', required: false }
       - { label: 'Event Detail Page Image (615w x 385h)', name: 'detailImage', widget: 'image', allowMultiple: false, required: false }
       - { label: 'Postponed', name: 'postponed', widget: 'boolean', default: false, required: true }
-      - { label: 'Hide Event (from Past Events)', hint: 'this is only for PAST events', name: 'hideEvent', widget: 'boolean', default: false, required: true }
+      - { label: 'Hide Event (from Past Events)', hint: 'this is only for PAST events', name: 'hideEvent', widget: 'boolean', default: false, required: false }

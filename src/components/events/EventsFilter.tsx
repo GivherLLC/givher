@@ -10,6 +10,7 @@ import useIsMobile from '@/hooks/useIsMobile';
 
 export default function EventsFilter({events, postponedEventText, clientImages}:{events:EventType[], postponedEventText:string, clientImages: ClientImage}){
   const [selectedCity, setSelectedCity] = useState<string>('');
+  const [selectedEventType, setSelectedEventType] = useState<string>('');
   const [selectedClient, setSelectedClient] = useState<string>('');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const today = new Date()
@@ -21,8 +22,10 @@ export default function EventsFilter({events, postponedEventText, clientImages}:
     return  events.filter((event: EventType) =>
     (!selectedCity || event.eventCity === selectedCity) &&
     (!selectedClient || event.clientName === selectedClient) &&
+    (!selectedEventType || event.eventType === selectedEventType) &&
     (
       searchQuery === '' ||
+      !!event.eventType && event.eventType.toLowerCase().includes(searchQuery.toLowerCase()) ||
       event.eventName.toLowerCase().includes(searchQuery.toLowerCase()) ||
       event.clientName.toLowerCase().includes(searchQuery.toLowerCase()) ||
       !!event.eventCity && event.eventCity.toLowerCase().includes(searchQuery.toLowerCase())
@@ -30,7 +33,7 @@ export default function EventsFilter({events, postponedEventText, clientImages}:
     (!startDate || event.firstDayOfEvent && new Date(event.firstDayOfEvent) >= startDate) &&
     (!endDate || event.firstDayOfEvent && new Date(event.firstDayOfEvent) <= endDate)
   );
-  },[endDate, searchQuery, selectedCity, selectedClient, startDate, events])
+  },[events, selectedCity, selectedClient, selectedEventType, searchQuery, startDate, endDate])
 
 
   const onChange = (dates: [Date | null, Date | null]) => {
@@ -39,13 +42,20 @@ export default function EventsFilter({events, postponedEventText, clientImages}:
     setEndDate(end);
   };
 
-  const cities: string[] = [...new Set(events.map((event: EventType) => event.eventCity).filter((city): city is string => city !== null))];
-  const clients: string[] = [...new Set(events.map((event: EventType) => event.clientName))];
+  const cities: string[] = [...new Set(filteredEvents.map((event: EventType) => event.eventCity).filter((city): city is string => city !== null))];
+  const clients: string[] = [...new Set(filteredEvents.map((event: EventType) => event.clientName))];
+  const eventTypes: string[] = [...new Set(
+    filteredEvents
+      .filter((event: EventType) => !!event.eventType) // Filter out events with null eventType
+      .map((event: EventType) => event.eventType as string) // Cast eventType as string
+  )];
 
   const handleCitySelect = (city: string) => {
     setSelectedCity(city);
   };
-
+  const handleEventTypeSelect = (client: string) => {
+    setSelectedEventType(client);
+  };
   const handleClientSelect = (client: string) => {
     setSelectedClient(client);
   };
@@ -57,6 +67,7 @@ export default function EventsFilter({events, postponedEventText, clientImages}:
   const clearSearch = () => {
     setSelectedCity("")
     setSelectedClient("")
+    setSelectedEventType("")
     setSearchQuery("")
     setStartDate(null)
     setEndDate(null)
@@ -66,6 +77,7 @@ export default function EventsFilter({events, postponedEventText, clientImages}:
     <div className='custom-date-picker-container flex flex-col gap-[1.5rem]'>
       <div className='w-full mx-auto md:mx-0'>
         <div className={`flex flex-col md:flex-row justify-start ${events.length < 3 ? "md:justify-start": "md:justify-center"} gap-[2rem] max-w-[398px] md:max-w-[unset] md:pr-[5rem] flex-wrap`}>
+          <DropdownFilter options={eventTypes} selected={selectedEventType} onSelect={handleEventTypeSelect} placeholder='Event Type'/>
           <DropdownFilter options={cities} selected={selectedCity} onSelect={handleCitySelect} placeholder='City'/>
           <DropdownFilter options={clients} selected={selectedClient} onSelect={handleClientSelect} placeholder='Client'/>
           <div className='relative flex gap-[1rem] items-center w-fit'>

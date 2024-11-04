@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Suspense} from "react";
 import EventButton from "../common/EventButton";
 import EventsFilter from "./EventsFilter";
 import { EventType } from "@/types/types";
@@ -15,7 +15,9 @@ export default function AllEvents({events, postponedEventText, allEventsSectionT
                         <EventButton text="Sign Up" link="/signup4emails" bg="mauvelous"/>
                     </div>
                 ):(
-                    <EventsFilter events={events} postponedEventText={postponedEventText} clientImages={clientImages}/>
+                    <Suspense>
+                        <EventsFilter events={events} postponedEventText={postponedEventText} clientImages={clientImages}/>
+                    </Suspense>
                 )}
             </div>
         </div>

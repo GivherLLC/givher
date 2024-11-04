@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import PastEventsHeader from "./PastEventsHeader";
 import PastEvents from "./PastEvents";
 import { PastEventsPageData, EventType, ClientImage } from "@/types/types";
@@ -7,7 +7,9 @@ export default function PastEventsPage({pageData, pastEvents, featuredPastEvents
     return (
         <>
             <PastEventsHeader headerData={pageData} featuredPastEvents={featuredPastEvents} clientLogos={clientLogos}/>
-            <PastEvents allPastEvents={pastEvents} clientLogos={clientLogos}/>
+            <Suspense>
+                <PastEvents allPastEvents={pastEvents} clientLogos={clientLogos}/>
+            </Suspense>
         </>
     )
 }

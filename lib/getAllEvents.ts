@@ -44,14 +44,14 @@ async function getAllEvents(): Promise<EventType[]> {
     } as EventType;
   });
 
-  // Sort events by date with fallback if `firstDayOfEvent` is null
-  return events.sort((a, b) => {
-    const timeZoneA = a.timeZone || 'UTC';
-    const timeZoneB = b.timeZone || 'UTC';
-    const firstDayA = a.firstDayOfEvent ? parseDateString(a.firstDayOfEvent, timeZoneA).getTime() : 0;
-    const firstDayB = b.firstDayOfEvent ? parseDateString(b.firstDayOfEvent, timeZoneB).getTime() : 0;
-    return firstDayA - firstDayB;
-  });
+// Sort events by `firstDayOfEvent` in descending order (newest to oldest)
+return events.sort((a, b) => {
+  const timeZoneA = a.timeZone || 'UTC';
+  const timeZoneB = b.timeZone || 'UTC';
+  const firstDayA = a.firstDayOfEvent ? parseDateString(a.firstDayOfEvent.split('.').join("/"), timeZoneA).getTime():0;
+  const firstDayB = b.firstDayOfEvent ? parseDateString(b.firstDayOfEvent.split('.').join("/"), timeZoneB).getTime():0;
+  return firstDayA - firstDayB;
+});
 }
 
 // Determine event status based on date and required fields

@@ -19,7 +19,7 @@ export default async function getAllClients(): Promise<Client[]> {
     const pastEvents = await getPastEvents();
 
     // Determine the event link based on current or past events
-    let eventLink = null;
+    let eventLink = "";
     if (currentEvents.some(event => event.clientName === clientName)) {
       eventLink = "current";
     } else if (pastEvents.some(event => event.clientName === clientName)) {

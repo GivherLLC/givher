@@ -2,14 +2,10 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ArrowLink from "../common/ArrowLink";
+import { Client } from "@/types/types";
 
 type ClientCardProps = {
-    clientInfo: {
-        clientName: string;
-        clientLogo: string;
-        clientWebsite: string;
-        clientW9Src: string;    
-    }
+    clientInfo: Client;
 }
 
 export default function ClientCard({clientInfo}:ClientCardProps){

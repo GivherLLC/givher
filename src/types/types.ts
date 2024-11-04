@@ -116,6 +116,7 @@ export type Client = {
     clientWebsite: string;
     clientW9Src: string;
     hideClient: boolean;
+    eventLink: string;
 }
 
 export interface ClientImage {

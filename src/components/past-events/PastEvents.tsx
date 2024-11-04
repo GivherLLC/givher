@@ -1,5 +1,6 @@
 'use client'
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { EventType, ClientImage } from "@/types/types";
 import DropdownFilter from '../events/DropdownFilter';
 import DatePicker from "react-datepicker";
@@ -8,13 +9,52 @@ import PastEventCard from "../common/PastEventCard";
 import useIsMobile from '@/hooks/useIsMobile';
 
 export default function PastEvents({allPastEvents, clientLogos}:{allPastEvents:EventType[], clientLogos:ClientImage}){
+    const searchParams = useSearchParams();
+    const isMobile = useIsMobile(768);
+    const today = new Date();
+  
     const [selectedEventType, setSelectedEventType] = useState<string>('');
     const [selectedClient, setSelectedClient] = useState<string>('');
     const [searchQuery, setSearchQuery] = useState<string>('');
-    const today = new Date()
     const [startDate, setStartDate] = useState<null | Date>(null);
     const [endDate, setEndDate] = useState<null | Date>(null);
-    const isMobile = useIsMobile(768);
+
+    // Flag to track if it's the initial load
+    const [isInitialLoad, setIsInitialLoad] = useState(true);
+
+    useEffect(() => {
+        const eventType = searchParams.get('eventType');
+        const client = searchParams.get('client');
+        const search = searchParams.get('search');
+        const start = searchParams.get('startDate');
+        const end = searchParams.get('endDate');
+    
+        setSelectedEventType(eventType || '');
+        setSelectedClient(client || '');
+        setSearchQuery(search || '');
+    
+        // Set date range from URL parameters if available
+        if (start && end) {
+          setStartDate(new Date(start));
+          setEndDate(new Date(end));
+        }
+    
+        // If filters are in the URL on the initial load, navigate to #past
+        if (isInitialLoad && (eventType || client || search || (start && end))) {
+          // Check if the user is already at the #past section
+          if (window.location.hash !== '#past') {
+            // Set location hash to jump directly without scrolling
+            window.location.hash = '#past';
+          } else {
+            // Use scrollIntoView only if the user isn't already at #past
+            const currentSection = document.getElementById("past");
+            if (currentSection) {
+              currentSection.scrollIntoView({ behavior: "smooth" });
+            }
+          }
+          setIsInitialLoad(false); // Disable initial load flag after navigating
+        }
+    }, [searchParams, isInitialLoad]);
 
     const filteredEvents = useMemo(()=>{
         return  allPastEvents.filter((event: EventType) =>
@@ -65,7 +105,7 @@ export default function PastEvents({allPastEvents, clientLogos}:{allPastEvents:E
       }
       
     return (
-        <section className="bg-softOpal dark:bg-navySmoke py-[2.5rem] flex justify-center">
+        <section id='past' className="bg-softOpal dark:bg-navySmoke py-[2.5rem] flex justify-center">
             <div className="flex flex-col w-full items-center justify-center gap-[2.5rem] max-w-[85.75rem] mx-[0.625rem] lg:mx-[1.5625rem]">
                 <div className='custom-date-picker-container flex flex-col gap-[1.5rem] w-full'>
                 <div className='w-full mx-auto md:mx-0'>

@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect } from "react";
+import ArrowLink from "../common/ArrowLink";
 
 type EventsCarouselProps = {
     eventCarouselTitle: string;
@@ -41,8 +42,8 @@ export default function EventsCarousel({events}:{events:EventsCarouselProps}){
 
     return (
         <div className="bg-softOpal dark:bg-navySmoke py-[2.5rem] flex justify-center">
-        <div className="flex flex-col gap-[2.5rem] justify-center w-full max-w-[85.75rem] mx-[0.625rem] md:mx-[1.5625rem] overflow-hidden">
-            <h1 className="font-visbyBold text-navySmoke dark:text-softOpal text-center">
+        <div className="flex flex-col justify-center w-full max-w-[85.75rem] mx-[0.625rem] md:mx-[1.5625rem] overflow-hidden">
+            <h1 className="font-visbyBold text-navySmoke dark:text-softOpal text-center py-[2.5rem]">
             {eventCarouselTitle}
             </h1>
             <div className="event-carousel relative">
@@ -64,7 +65,17 @@ export default function EventsCarousel({events}:{events:EventsCarouselProps}){
                 </div>                    
                 ))}
             </div>   
-            </div>         
+            <div className="flex w-full justify-center">
+                <ArrowLink 
+                    text="View Past Events"
+                    color="black" 
+                    darkModeColor="softOpal" 
+                    link="/past-events"
+                    borderColor="mauvelous" 
+                    openNewTab={false}
+                />
+                </div>         
+            </div>
         </div>
     )
 }

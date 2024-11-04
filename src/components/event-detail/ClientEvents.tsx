@@ -1,6 +1,7 @@
 import React from "react";
 import EventCard from "../common/EventCard";
 import InTheWorksEventCard from "../common/InTheWorksEventCard";
+import PastEventCard from "../common/PastEventCard";
 import { EventType } from "@/types/types";
 
 export default function ClientEvents({events, clientName, event, postponedEventText, clientImage }:{ events: EventType[], clientName:string, event: EventType, postponedEventText:string, clientImage: string}){
@@ -13,15 +14,19 @@ export default function ClientEvents({events, clientName, event, postponedEventT
                 <h1 className="font-visbyBold text-navySmoke dark:text-softOpal text-center lg:text-left">{clientName} Events</h1>
                 <div className={`flex flex-col lg:flex-row ${events.length < 3 ? "":"lg:justify-between"} gap-[2rem] items-center w-full`}>
                     {shownEvents.map((e, i)=>{
-                        if(e.eventStatus === "inTheWorks"){
+                        if(e.eventStatus === "event"){
+                            return (
+                                <EventCard key={`${i}-${e.clientName}-${e.eventName}-${e.firstDayOfEvent}`} event={e} postponedEventText={postponedEventText} clientLogo={clientImage} />
+
+                            )
+                        } else if(e.eventStatus === "inTheWorks") {
                             return (
                                 <InTheWorksEventCard key={`${i}-${e.clientName}-${e.eventName}-${e.firstDayOfEvent}`} event={e} postponedEventText={postponedEventText} clientLogo={clientImage} showTag={true}/>
 
                             )
                         } else {
                             return (
-                                <EventCard key={`${i}-${e.clientName}-${e.eventName}-${e.firstDayOfEvent}`} event={e} postponedEventText={postponedEventText} clientLogo={clientImage} />
-
+                                <PastEventCard key={`${i}-${e.clientName}-${e.eventName}-${e.firstDayOfEvent}`} event={e} clientLogo={clientImage}/>
                             )
                         }
 

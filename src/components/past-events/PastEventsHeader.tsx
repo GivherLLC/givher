@@ -10,7 +10,6 @@ export default function PastEventsHeader({headerData, featuredPastEvents, client
 
     const [activeIndex, setActiveIndex] = useState(0);
     const [showInfo, setShowInfo] = useState<EventType | null>(null);
-    console.log(showInfo)
 
     useEffect(()=>{
         //prevent scrolling behind open bio

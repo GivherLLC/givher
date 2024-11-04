@@ -16,13 +16,13 @@ export default function PastEventCard({event, clientLogo}:{event:EventType, clie
       return ()=>{
           document.body.style.overflow = 'unset';
       }
-    },[showInfo])
+    },[showInfo]);
 
     return (
-      <button onClick={()=>{setShowInfo(event)}} className={`group cursor-pointer flex flex-col gap-[1.5rem] sm:gap-[0rem] border border-navySmoke dark:border-softOpal rounded-[10px] pl-[0.75rem] sm:pl-[1.5rem] pt-[1rem] pb-[2rem] h-content w-full max-w-[375px] shadow-custom-shadow dark:shadow-custom-shadow-darkmode`}>
+      <button onClick={()=>{setShowInfo(event)}} className={`group cursor-pointer flex flex-col gap-[1.5rem] sm:gap-[0rem] border border-navySmoke dark:border-softOpal rounded-[10px] pt-[1rem] pb-[2rem] h-content w-full max-w-[375px] shadow-custom-shadow dark:shadow-custom-shadow-darkmode`}>
         <div className="flex flex-col justify-between h-full gap-[1rem]">
           <div className="flex justify-between">
-            <div className="max-w-[50%] h-[100px] flex items-center dark:bg-softOpal p-[0.5rem] rounded-md">
+            <div className="max-w-[50%] h-[100px] flex items-center dark:bg-softOpal p-[0.5rem] rounded-md pl-[0.25rem] sm:pl-[1rem]">
               <Image src={clientLogo} width={280} height={175} className="w-auto max-h-[80px]" alt={`${event.clientName} logo`}/>
             </div>
             <div className="relative flex flex-col gap-[0.75rem] xl:gap-0 xl:flex-row items-end xl:items-start">
@@ -36,7 +36,7 @@ export default function PastEventCard({event, clientLogo}:{event:EventType, clie
               )}
             </div>
           </div>
-          <div className="pr-[0.75rem] sm:pr-[1.5rem] flex flex-col justify-between h-full gap-[1rem]">
+          <div className="pr-[0.75rem] sm:pr-[1.5rem] flex flex-col justify-between h-full gap-[1rem] pl-[0.75rem] sm:pl-[1.5rem] text-left">
             <div>
                 <div className="overflow-hidden">
                   <p
@@ -124,10 +124,19 @@ export default function PastEventCard({event, clientLogo}:{event:EventType, clie
                                     <img alt={`${event.clientName} logo`} src={clientLogo} className="h-auto w-auto" />
                                 </div>
                                 <h2 className="text-softOpal text-[1.2rem] max-w-[375px] text-center md:text-left">Explore More from {event.clientName}</h2>
-                                    <div className="flex gap-[1rem] items-center justify-center flex-wrap md:min-w-[375px]">
-                                        {/* TO DO: MAKE LINK GO TO FILTER */}
-                                    <ButtonLink openNewTab bg="electricYellow" darkModeBg="electricYellow" text="Current Events" link=""/>
-                                    <ButtonLink openNewTab bg="mauvelous" darkModeBg="mauvelous" text="Past Events" link=""/>
+                                    <div className="flex gap-[1rem] items-center justify-center md:justify-between flex-wrap md:min-w-[375px]">
+                                    <ButtonLink bg="electricYellow" darkModeBg="electricYellow" text="Current Events" link={`/events?client=${encodeURIComponent(event.clientName)}`}/>
+                                    <ButtonLink
+                                      bg="mauvelous"
+                                      darkModeBg="mauvelous"
+                                      text="Past Events"
+                                      link={`/past-events?client=${encodeURIComponent(event.clientName)}`}
+                                      onClick={(e) => {
+                                          e.stopPropagation(); // Prevents the modal from closing due to "outside click"
+                                          setShowInfo(null); // Explicitly close the modal
+                                      }}
+                                  />
+
                                     </div>
 
                             </div>

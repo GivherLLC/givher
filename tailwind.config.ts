@@ -40,6 +40,9 @@ const config: Config = {
         'custom-shadow': '0 4px 20px 0 rgba(0,0,0,0.15)',
         'custom-shadow-darkmode': '0 4px 20px 0 rgba(248,249,238,0.15)'
       },
+      screens: {
+        xs: '375px',
+      },
     },
   },
   plugins: [],

@@ -6,6 +6,7 @@ import formatTimeTo12Hour from "@/utils/formatTime";
 import { format } from 'date-fns';
 import { toDate } from 'date-fns-tz';
 import { EventType, EventTypeData } from "@/types/types";
+import getPastEventsPageData from "./getPastEventsPageData";
 
 // Helper function to parse a date string in MM.DD.YYYY format
 const parseDateString = (dateString: string, timeZone: string) => {
@@ -98,24 +99,24 @@ async function getAllEvents(): Promise<EventType[]> {
   });
 
   const sortedEvents = events
-    .filter(event => {
-      const timeZone = event.timeZone || 'UTC'; // Default to UTC if no timeZone provided
+    // .filter(event => {
+    //   const timeZone = event.timeZone || 'UTC'; // Default to UTC if no timeZone provided
 
-      // Convert the period-separated date to a slash-separated date for parsing
-      const convertFirstDate = event.firstDayOfEvent.split('.').join("/");
-      const firstDay = parseDateString(convertFirstDate, timeZone);
-      const convertLastDate = event.lastDayOfEvent ? event.lastDayOfEvent.split('.').join("/") : convertFirstDate;
-      const lastDay = parseDateString(convertLastDate, timeZone);
+    //   // Convert the period-separated date to a slash-separated date for parsing
+    //   const convertFirstDate = event.firstDayOfEvent.split('.').join("/");
+    //   const firstDay = parseDateString(convertFirstDate, timeZone);
+    //   const convertLastDate = event.lastDayOfEvent ? event.lastDayOfEvent.split('.').join("/") : convertFirstDate;
+    //   const lastDay = parseDateString(convertLastDate, timeZone);
 
-      const firstDayString = format(firstDay, 'yyyy-MM-dd');
-      const lastDayString = format(lastDay, 'yyyy-MM-dd');
+    //   const firstDayString = format(firstDay, 'yyyy-MM-dd');
+    //   const lastDayString = format(lastDay, 'yyyy-MM-dd');
 
-      // Adjust for current date in the same time zone
-      const eventBeforeFirstDay = currentDateString <= firstDayString;
-      const eventBeforeLastDay = !!lastDayString && currentDateString <= lastDayString;
+    //   // Adjust for current date in the same time zone
+    //   const eventBeforeFirstDay = currentDateString <= firstDayString;
+    //   const eventBeforeLastDay = !!lastDayString && currentDateString <= lastDayString;
 
-      return eventBeforeFirstDay || eventBeforeLastDay;
-    })
+    //   return eventBeforeFirstDay || eventBeforeLastDay;
+    // })
     .sort((a, b) => {
       const timeZoneA = a.timeZone || 'UTC';
       const timeZoneB = b.timeZone || 'UTC';
@@ -145,10 +146,38 @@ async function getNonPastEvents(): Promise<EventType[]> {
   return allEvents.filter(event => event.eventStatus !== "past");
 }
 
-//returns only events that are in the past
+// Fetch and filter only past events
 async function getPastEvents(): Promise<EventType[]> {
   const allEvents = await getAllEvents();
   return allEvents.filter(event => event.eventStatus === "past");
 }
 
-export { getNonPastEvents, getPastEvents, getReadyEvents, getInTheWorksEvents };
+// Fetch only featured past event names from CMS
+async function getFeaturedPastEventNames(): Promise<string[]> {
+  const pastEventsPageData = await getPastEventsPageData(); // Fetch data from CMS
+  return pastEventsPageData.featuredPastEvents || [];
+}
+
+// Fetches full details for featured events by matching event names
+async function getFullDetailsForFeaturedEvents(featuredEventNames: string[]): Promise<EventType[]> {
+  const allPastEvents = await getPastEvents();
+  return allPastEvents.filter(event => featuredEventNames.includes(event.eventName));
+}
+
+// Main function to get featured past events or fallback to recent past events
+async function getFeaturedOrRecentPastEvents(): Promise<EventType[]> {
+  const featuredEventNames = await getFeaturedPastEventNames();
+
+  if (featuredEventNames.length > 0) {
+    // Fetch and return full details for featured events
+    return getFullDetailsForFeaturedEvents(featuredEventNames);
+  }
+
+  // Fallback to the 10 most recent past events if no featured events
+  const allPastEvents = await getPastEvents();
+  return allPastEvents.slice(0, 10); // Limits to the top 10 most recent past events
+}
+
+
+
+export { getNonPastEvents, getPastEvents, getFeaturedOrRecentPastEvents, getReadyEvents, getInTheWorksEvents };

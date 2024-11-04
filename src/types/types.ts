@@ -7,7 +7,13 @@ export interface EventsPageData {
     postponedEventText: string;
     givherFeaturedEvent: FeaturedEventType;
   }
-  
+
+export interface PastEventsPageData {
+  pastEventsPageTitle: string;
+  pastEventsPageSubtitle: string;
+  featuredPastEvents: string[] | null;
+}
+
 export interface EventsPageProps {
     events: EventType[];
     inTheWorksEvents: EventType[];

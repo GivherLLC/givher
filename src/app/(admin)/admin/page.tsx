@@ -15,11 +15,13 @@ export default function Admin() {
         </head>
         <body>
         <!-- Dashboard script-->
-        <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+        <script src="https://unpkg.com/decap-cms@3.3.3/dist/decap-cms.js"></script>
         <!-- netlify identity -->
         <script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         <!-- Customize the netlify identity widget to refresh on logout preventing users from using the cms when not logged in and then seeing an error -->
-        <script is:inline>netlifyIdentity.on('logout', () => location.reload());</script>
+        <script is:inline>
+          netlifyIdentity.on('logout', () => location.reload());
+        </script>
         <!-- Link the external script for previews -->
         <script src="/admin/clients-preview.js"></script>
         <script src="/admin/all-events-preview.js"></script>

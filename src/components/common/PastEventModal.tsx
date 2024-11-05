@@ -59,12 +59,12 @@ export default function PastEventModal({event, setShowInfo, clientLogo}:{event:E
                                 </div>
                         <p className="text-navySmoke dark:text-softOpal w-full sm:w-[unset] text-center sm:text-left">{event.firstDayOfEvent}{!!event.lastDayOfEvent && ` - ${event.lastDayOfEvent}`}</p>
                         <div className="w-full sm:w-fit flex justify-center sm:justify-start">
-                                <div className="h-fit w-fit px-[1rem] py-[0.5rem] bg-electricYellow rounded-3xl border border-x-navySmoke">
+                                <div className="h-fit w-fit px-[1rem] py-[0.5rem] bg-electricYellow rounded-3xl border border-x-navySmoke text-navySmoke font-visbyBold">
                                     {event.eventType}
                                 </div>
                             </div>
                     </div>
-                    <h2 className="order-1 md:order-2 font-visbyBold text-center md:text-left max-w-[500px]">{event.eventName}</h2>
+                    <h2 className="order-1 md:order-2 font-visbyBold text-navySmoke dark:text-softOpal text-center md:text-left max-w-[500px]">{event.eventName}</h2>
                     <div className="max-w-[500px] order-3">
                         <Image loading="lazy" height={385} width={615} src={event.detailImage!} alt={event.eventName} className="relative z-8" />
                     </div>

@@ -127,10 +127,32 @@ async function getClientEvents(eventSlugOrName: string): Promise<EventType[]> {
   if (!mainEvent) return [];
 
   const clientName = mainEvent.clientName;
-  return (await getAllEvents())
-    .filter(event => event.clientName === clientName && event.eventName !== mainEvent.eventName)
-    .slice(0, 3);
+  const allClientEvents = (await getAllEvents()).filter(
+    event => event.clientName === clientName && event.eventName !== mainEvent.eventName
+  );
+
+  // Count how many "event" or "inTheWorks" statuses the client has
+  const activeEventsCount = allClientEvents.filter(
+    event => event.eventStatus === "event" || event.eventStatus === "inTheWorks"
+  ).length;
+
+  // Determine if we should include past events or not
+  const filteredEvents = activeEventsCount >= 3
+    ? allClientEvents.filter(event => event.eventStatus !== "past") // Exclude past events if there are 3+ active ones
+    : allClientEvents;
+
+  // Sort events to move past events to the end
+  const sortedEvents = filteredEvents.sort((a, b) => {
+    if (a.eventStatus === "past" && b.eventStatus !== "past") return 1;
+    if (a.eventStatus !== "past" && b.eventStatus === "past") return -1;
+    return 0;
+  });
+
+  // Return up to 3 events
+  return sortedEvents.slice(0, 3);
 }
+
+
 
 export {
   getAllEvents,

@@ -7,7 +7,13 @@ export interface EventsPageData {
     postponedEventText: string;
     givherFeaturedEvent: FeaturedEventType;
   }
-  
+
+export interface PastEventsPageData {
+  pastEventsPageTitle: string;
+  pastEventsPageSubtitle: string;
+  featuredPastEvents: string[] | null;
+}
+
 export interface EventsPageProps {
     events: EventType[];
     inTheWorksEvents: EventType[];
@@ -110,6 +116,7 @@ export type Client = {
     clientWebsite: string;
     clientW9Src: string;
     hideClient: boolean;
+    eventLink: string;
 }
 
 export interface ClientImage {

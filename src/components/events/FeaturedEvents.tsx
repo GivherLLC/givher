@@ -104,7 +104,7 @@ export default function FeaturedEvents({events, clientImages, givherFeaturedEven
                                     <h1 className="font-visbyBold text-navySmoke dark:text-softOpal mb-[1rem]">{e.eventName}</h1>
                                         <div className="flex gap-[1rem] mb-[1rem] text-black dark:text-softOpal font-visbyBold">
                                             {e.firstDayOfEvent || e.timeOfYear && <p className="border-box text-black dark:text-softOpal font-visbyBold">{e.firstDayOfEvent ? e.firstDayOfEvent : e.timeOfYear? e.timeOfYear : "" }{!!e.lastDayOfEvent && ` - ${e.lastDayOfEvent}`}</p>}
-                                            {(e.firstDayOfEvent || e.timeOfYear) && e.eventCity && <div className="border-box dark:border-softOpal border-l border-[1.5px] border-black"/>}
+                                            {(e.firstDayOfEvent || e.timeOfYear) && e.eventCity && <div className="border-box dark:border-softOpal border-l border-[1.5px] border-navySmoke"/>}
                                             {e.eventCity && <p className="border-box text-black dark:text-softOpal font-visbyBold">{e.eventCity}</p>}
                                         </div>
                                     </div>
@@ -141,7 +141,7 @@ export default function FeaturedEvents({events, clientImages, givherFeaturedEven
                                 return (
                                     <div key={i} data-id={i} className="carousel-cell">
                                         <div>
-                                            <div className="bg-white w-full h-full max-w-[350px] max-h-[350px] md:max-h-[400px] md:max-w-[400px] rounded-2xl p-[1rem] border border-black flex items-center justify-center">
+                                            <div className="bg-white w-full h-full max-w-[350px] max-h-[350px] md:max-h-[400px] md:max-w-[400px] rounded-2xl p-[1rem] border border-navySmoke flex items-center justify-center">
                                             <Image
                                                 priority={i === 0 || i === 1}
                                                 src={e.clientImage}

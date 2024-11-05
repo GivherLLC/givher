@@ -19,6 +19,8 @@ buttonLink: /contact
 pageLinks:
   - linkText: Events
     link: /events
+  - linkText: Past Events
+    link: /past-events  
     external: false
   - linkText: Clients
     link: /clients

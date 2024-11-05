@@ -100,6 +100,22 @@ collections:
           - { label: 'Events Coming Soon Section Title', name: 'comingSoonEventsSectionTitle', widget: 'string' }
           - { label: 'Events Coming Soon Section Subtitle', name: 'comingSoonEventsSectionSubtitle', widget: 'string' }
           - { label: 'Text to Show for Postponed Events', name: 'postponedEventText', widget: 'string' }
+      - label: "Past Events Page"
+        name: "pastEventsPage"
+        file: "content/pages/past-events_page.yml"
+        fields:
+          - { label: 'Page Title', name: 'pastEventsPageTitle', widget: 'string' }
+          - { label: 'Page Subtitle', name: 'pastEventsPageSubtitle', widget: 'string' }
+          - label: 'Featured Past Events'
+            name: 'featuredPastEvents'
+            widget: 'relation'
+            collection: 'allEvents'
+            value_field: 'eventName'
+            search_fields: ['eventName']
+            display_fields: ["{{firstDayOfEvent}} - {{eventName}} - {{clientName}}"]
+            multiple: true
+            max: 10
+            required: false
       - label: "Team Page"
         name: "teamPage"
         file: "content/pages/team_page.yml"

@@ -30,7 +30,7 @@ export default function ClientCard({clientInfo}:ClientCardProps){
                 </div>
             </div>    
         </div>  
-        <div className="opacity-0 group-hover:opacity-100 pt-[0.5rem] text-visbyBold">
+        <div className="px-[1rem] opacity-0 group-hover:opacity-100 pt-[0.5rem] text-visbyBold">
             {eventLink && (
         <ArrowLink text={`View ${eventLink} Events`} color={"black"} darkModeColor={"softOpal"} link={`${eventLink === "current" ? `/events?client=${encodeURIComponent(clientName)}`:`/past-events?client=${encodeURIComponent(clientName)}`}`} className="justify-center md:justify-start text-[0.9rem]"/>
 

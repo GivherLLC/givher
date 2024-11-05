@@ -23,7 +23,7 @@ eventDescription:
 boldedEventInformation:
   - line: Please remember to bring an ID (it will be checked upon entry). Any large
       purses, bags, or backpacks will be subject to search.
-detailImage: https://actblue-indigo-uploads.s3.amazonaws.com/uploads/list-editor/b22573d9-f9f8-4801-8eaa-bf2f81b2b1c0-brandings/332417/header/image_url/beb0ec95-9beb-4d98-b5a6-b50f53bcad5b-electionnightbanner.png
+detailImage: /uploads/dr.-flo-for-mayor_eventpageimage.png
 postponed: false
 hideEvent: false
 ---

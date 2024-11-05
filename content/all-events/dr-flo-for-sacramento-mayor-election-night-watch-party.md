@@ -1,5 +1,5 @@
 ---
-available: false
+available: true
 eventName: Dr. Flo for Sacramento Mayor Election Night Watch Party
 slug: ""
 firstDayOfEvent: 11.05.2024

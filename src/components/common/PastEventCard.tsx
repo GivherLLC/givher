@@ -22,7 +22,7 @@ export default function PastEventCard({event, clientLogo}:{event:EventType, clie
       <button onClick={()=>{setShowInfo(event)}} className={`group cursor-pointer flex flex-col gap-[1.5rem] sm:gap-[0rem] border border-navySmoke dark:border-softOpal rounded-[10px] pt-[1rem] pb-[2rem] h-content w-full max-w-[375px] shadow-custom-shadow dark:shadow-custom-shadow-darkmode`}>
         <div className="flex flex-col justify-between h-full gap-[1rem]">
           <div className="flex justify-between">
-            <div className="max-w-[50%] h-[100px] flex items-center dark:bg-softOpal p-[0.5rem] rounded-md pl-[0.25rem] sm:pl-[1rem] ml-[1.5rem]">
+            <div className="max-w-[40%] h-[100px] flex items-center dark:bg-softOpal p-[0.5rem] rounded-md pl-[0.25rem] sm:pl-[1rem] ml-[1.5rem]">
               <Image src={clientLogo} width={280} height={175} className="w-auto max-h-[80px]" alt={`${event.clientName} logo`}/>
             </div>
             <div className="relative flex flex-col gap-[0.75rem] xl:gap-0 xl:flex-row items-end xl:items-start">

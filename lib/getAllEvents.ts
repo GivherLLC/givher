@@ -97,7 +97,7 @@ async function getNonPastEvents(): Promise<EventType[]> {
 
 async function getPastEvents(): Promise<EventType[]> {
   const allEvents = await getAllEvents();
-  return allEvents.filter(event => event.eventStatus === "past");
+  return allEvents.filter(event => event.eventStatus === "past" && !event.hideEvent);
 }
 
 // Fetch only featured past event names from CMS
@@ -128,7 +128,10 @@ async function getClientEvents(eventSlugOrName: string): Promise<EventType[]> {
 
   const clientName = mainEvent.clientName;
   const allClientEvents = (await getAllEvents()).filter(
-    event => event.clientName === clientName && event.eventName !== mainEvent.eventName
+    event => 
+      event.clientName === clientName &&
+      event.eventName !== mainEvent.eventName &&
+      !event.hideEvent // Exclude hidden events
   );
 
   // Count how many "event" or "inTheWorks" statuses the client has

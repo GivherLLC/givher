@@ -8,7 +8,7 @@ timeZone: America/Los_Angeles
 eventType: Candidate
 eventCity: Sacramento
 eventLocation: Tipsy Putt
-clientName: Microdosing Collective
+clientName: Dr. Flo Cofer for Sacramento Mayor
 eventButtonTextOne: I will join to celebrate!
 eventButtonLinkOne: https://secure.actblue.com/donate/bigparty
 eventDescription:

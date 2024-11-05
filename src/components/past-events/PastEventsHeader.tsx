@@ -77,7 +77,7 @@ export default function PastEventsHeader({headerData, featuredPastEvents, client
                 const priority = i === 0;
                 return (
                     <div key={`featured-past-e-${e.eventName}`} data-id={i} className="past-carousel-cell h-[400px] xs:h-[425px] sm:h-[225px] mr-[2rem] m-[2rem]">
-                    <div className="group cursor-pointer flex flex-col justify-between sm:flex-row rounded-xl overflow-hidden  w-[270px] xs:w-[325px] sm:w-[625px] border border-navySmoke shadow-custom-shadow">
+                    <div className="group cursor-pointer flex flex-col justify-between sm:flex-row rounded-xl overflow-hidden  w-[270px] xs:w-[325px] sm:w-[625px] border border-navySmoke dark:border-softOpal shadow-custom-shadow">
                         {e.detailImage && (
                             <Image
                             src={e.detailImage} 
@@ -88,7 +88,7 @@ export default function PastEventsHeader({headerData, featuredPastEvents, client
                             className="flickity-lazyloaded object-cover w-full max-w-[350px] h-auto rounded-s-xl" 
                             />
                         )}
-                        <div className="w-full sm:w-[275px] flex flex-col justify-between gap-[1.5rem] py-[2rem] pl-[1rem] border-navySmoke">
+                        <div className="w-full sm:w-[275px] flex flex-col justify-between gap-[1.5rem] py-[1rem] pl-[1rem] border-navySmoke">
                             <div className="flex justify-between items-center gap-[1rem]">
                                 <div className="text-[1.25rem] text-navySmoke dark:text-softOpal">{e.firstDayOfEvent}{!!e.lastDayOfEvent && ` - ${e.lastDayOfEvent}`}</div>
                                 <div className="font-visbyBold text-[0.85rem] px-[1rem] py-[0.5rem] text-navySmoke bg-mauvelous border border-navySmoke border-r-0 h-min rounded-l-3xl">

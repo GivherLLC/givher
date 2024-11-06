@@ -23,8 +23,6 @@ async function getAllEvents(): Promise<EventType[]> {
   }
 
   const fileNames = fs.readdirSync(eventsDirectory);
-  const currentDate = new Date();
-
   const events = fileNames.map((fileName) => {
     const filePath = path.join(eventsDirectory, fileName);
     const fileContents = fs.readFileSync(filePath, 'utf8');
@@ -32,6 +30,7 @@ async function getAllEvents(): Promise<EventType[]> {
     const data = fileData.data as unknown as EventTypeData; // Cast 'data' correctly
 
     const slug = data.slug ? data.slug.toLowerCase().replace(/\s+/g, '-') : getEventNameParam(data.eventName);
+    const currentDate = toDate(new Date(), { timeZone: data.timeZone });
     const eventStatus = getEventStatus(data, currentDate);
 
     return {
@@ -89,7 +88,14 @@ function getEventStatus(data: EventTypeData, currentDate: Date): "past" | "inThe
   // Determine if the current date is on or before the start or end dates
   const eventBeforeFirstDay = firstDayString && currentDateString <= firstDayString;
   const eventBeforeLastDay = lastDayString && currentDateString <= lastDayString;
-
+  console.log("Event:", data.eventName);
+  console.log("Current Date:", currentDateString, "in time zone:", data.timeZone || 'UTC');
+  console.log("Event First Day:", firstDayString);
+  console.log("Event Last Day:", lastDayString);
+  console.log("Event Before First Day:", eventBeforeFirstDay);
+  console.log("Event Before Last Day:", eventBeforeLastDay);
+  console.log("Calculated Event Status:", !eventBeforeFirstDay && !eventBeforeLastDay ? "past" : "event");
+  
   // Event is in the past only if it's after both the start and end dates
   if (!eventBeforeFirstDay && !eventBeforeLastDay) {
     return "past";

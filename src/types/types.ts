@@ -130,6 +130,8 @@ export interface ClientLogo {
 
 export interface ContactPageData {
     contactPageTitle: string;
+    contactPageSubTitle1: string;
+    contactPageSubTitle2: string;
     contactPhoneNumber: string;
     contactEmail: string;
 }

@@ -188,6 +188,7 @@ collections:
       - { label: 'Client Logo (400w)', name: 'clientLogo', widget: 'image', allow_multiple: false, required: true }
       - { label: 'Client Website', name: 'clientWebsite', widget: 'string', required: false }
       - { label: 'Client W9 Link (Google Drive)', name: 'clientW9Src', widget: 'string', required: false }
+      - { label: 'Past Client', name: 'pastClient', widget: 'boolean', default: false , required: false }
       - { label: 'Hide Client', hint: 'when toggled this client will no longer appear on the clients page', name: 'hideClient', widget: 'boolean', default: false , required: true }
   - name: 'allEvents'
     identifier_field: 'eventName'

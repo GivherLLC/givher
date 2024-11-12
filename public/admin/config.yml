@@ -146,6 +146,8 @@ collections:
         file: "content/pages/contact_page.yml"
         fields:
           - { label: 'Contact Page Title', name: 'contactPageTitle', widget: 'string' }
+          - { label: 'Contact Page Subtitle 1', name: 'contactPageSubTitle1', widget: 'string' }
+          - { label: 'Contact Page Subtitle 2', name: 'contactPageSubTitle2', widget: 'string' }
           - { label: 'Contact Phone Number', name: 'contactPhoneNumber', widget: 'string' }
           - { label: 'Contact Email', name: 'contactEmail', widget: 'string' }
       - label: "Sign Up For Emails Page"

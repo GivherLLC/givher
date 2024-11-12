@@ -1,8 +1,8 @@
 ---
 available: true
 eventName: 2nd Annual AAPI Leadership Summit
-slug: 
-firstDayOfEvent: 12.06.2024
+slug: null
+firstDayOfEvent: 02.21.2025
 eventTime: 08:00
 timeZone: America/Los_Angeles
 eventType: 501(c)(3)
@@ -26,5 +26,5 @@ eventDescription:
 boldedEventInformation:
   - line: Limited Tickets Available. This event will sale out!
 detailImage: /uploads/aapi-leadership-summit-2024_eventpageimage.png
-postponed: false
+postponed: true
 ---

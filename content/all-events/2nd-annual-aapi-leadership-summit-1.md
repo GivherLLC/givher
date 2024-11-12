@@ -1,6 +1,6 @@
 ---
 available: true
-eventName: 2nd Annual AAPI Leadership Summit
+eventName: NEW DATE!!! 2nd Annual AAPI Leadership Summit
 slug: null
 firstDayOfEvent: 02.21.2025
 eventTime: 08:00

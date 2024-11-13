@@ -266,7 +266,7 @@ export default function GalleryPage({
             group.images.map((image, imageIndex) => (
               <div
                 key={`${groupIndex} ${imageIndex}`}
-                className="group relative mb-4 ml-4 overflow-hidden bg-grey"
+                className="group relative mb-4 ml-4 overflow-hidden"
                 onClick={() => openModal(groupIndex, imageIndex)}
               >
                 {/* Overlay */}

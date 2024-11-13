@@ -19,8 +19,8 @@ export default function PastEventModal({event, setShowInfo, clientLogo}:{event:E
                 onClick={() => setShowInfo(null)}
                 className="group self-end flex flex-col items-center h-[50px] w-[50px] p-0 transition-transform absolute top-[0px] right-[0px]"
                 >
-                <div className="h-[2px] w-full bg-grey group-hover:bg-navySmoke absolute top-[50%] left-[50%] max-w-[20px] transform -translate-x-1/2 -translate-y-1/2 rotate-[-45deg] mt-0 transition-all ease-in-out" />
-                <div className="h-[2px] w-full bg-grey group-hover:bg-navySmoke absolute top-[50%] left-[50%] max-w-[20px] transform -translate-x-1/2 -translate-y-1/2 rotate-45 mt-0 transition-all ease-in-out" />
+                <div className="h-[2px] w-full bg-grey group-hover:bg-navySmoke dark:group-hover:bg-softOpal absolute top-[50%] left-[50%] max-w-[20px] transform -translate-x-1/2 -translate-y-1/2 rotate-[-45deg] mt-0 transition-all ease-in-out" />
+                <div className="h-[2px] w-full bg-grey group-hover:bg-navySmoke dark:group-hover:bg-softOpal absolute top-[50%] left-[50%] max-w-[20px] transform -translate-x-1/2 -translate-y-1/2 rotate-45 mt-0 transition-all ease-in-out" />
                 </button>
                 <div className="flex flex-col lg:flex-row gap-[1.5rem]">
                     <div className="flex flex-col items-center justify-center gap-[2rem] bg-navySmoke p-[1rem] lg:p-[4rem]">

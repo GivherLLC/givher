@@ -128,7 +128,7 @@ export default function PastEventsHeader({headerData, featuredPastEvents, client
                             <path d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8Z" fill="currentColor"></path>
                         </svg> 
                     </button>
-                    <div>
+                    <div className="text-navySmoke dark:text-softOpal">
                         {`${activeIndex + 1} / ${featuredPastEvents.length}`}
                     </div>
                     <button type="button" data-id="next" aria-label="Next Event" className="custom-next-button-past">

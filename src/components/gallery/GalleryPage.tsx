@@ -43,6 +43,16 @@ export default function GalleryPage({
     { label: "Other", value: "Other" },
   ];
 
+  useEffect(()=>{
+      //prevent scrolling behind open bio
+      if(isModalOpen){
+          document.body.style.overflow = 'hidden';
+      }
+      return ()=>{
+          document.body.style.overflow = 'unset';
+      }
+    },[isModalOpen])
+
   const existingEventTypes = new Set(galleryData.map((group) => group.eventType));
   const availableFilterOptions = filterOptions.filter((option) =>
     existingEventTypes.has(option.value)
@@ -105,7 +115,7 @@ export default function GalleryPage({
   }, []);
 
   const openModal = (groupIndex: number, imageIndex: number) => {
-    // Calculate the global index by summing up the lengths of images in the previous groups
+    // Set the global index, open modal, and initialize Flickity
     const globalIndex = visibleImages
       .slice(0, groupIndex)
       .reduce((sum, group) => sum + group.images.length, 0) + imageIndex;
@@ -117,7 +127,6 @@ export default function GalleryPage({
     setTimeout(() => {
       const Flickity = require("flickity-imagesloaded");
   
-      // Initialize Flickity after opening modal with the calculated global index
       flickityRef.current = new Flickity(".carousel", {
         cellAlign: "left",
         cellSelector: ".carousel-cell",
@@ -129,43 +138,75 @@ export default function GalleryPage({
         dragThreshold: 5,
         selectedAttraction: 0.05,
         friction: 0.8,
-        initialIndex: globalIndex, // Set the initial index to the global index
+        initialIndex: globalIndex,
       });
-
+  
       setIsFlickityReady(true);
   
-      // Set up passive event listeners
-      const carouselElement = document.querySelector(".carousel");
-      if (carouselElement) {
-        carouselElement.addEventListener("touchstart", () => {}, { passive: true });
-        carouselElement.addEventListener("touchmove", () => {}, { passive: true });
-        carouselElement.addEventListener("wheel", () => {}, { passive: true });
-      }
-  
-      // Add event listeners to custom buttons
-      const prevButton = document.querySelector(".custom-prev-button");
-      if (prevButton) {
-        prevButton.addEventListener("click", () => {
-          flickityRef.current?.previous();
-        });
-      }
-  
-      const nextButton = document.querySelector(".custom-next-button");
-      if (nextButton) {
-        nextButton.addEventListener("click", () => {
+      // Keyboard navigation event listener
+      const handleKeyDown = (event: KeyboardEvent) => {
+        if (event.key === "ArrowRight") {
           flickityRef.current?.next();
-        });
+        } else if (event.key === "ArrowLeft") {
+          flickityRef.current?.previous();
+        } else if (event.key === "Escape") {
+          closeModal();
+        }
+      };
+  
+      // Add keydown listener
+      document.addEventListener("keydown", handleKeyDown);
+  
+      // Set up passive listeners for touch and wheel events
+      const carouselElement = document.querySelector(".carousel");
+      const handleTouchStart = () => {};
+      const handleTouchMove = () => {};
+      const handleWheel = () => {};
+  
+      if (carouselElement) {
+        carouselElement.addEventListener("touchstart", handleTouchStart, { passive: true });
+        carouselElement.addEventListener("touchmove", handleTouchMove, { passive: true });
+        carouselElement.addEventListener("wheel", handleWheel, { passive: true });
       }
   
-      // Listen for the 'select' event to update the image index
-      flickityRef.current.on("select", () => {
-        const activeIndex = flickityRef.current.selectedIndex;
-        setCurrentImageIndex(activeIndex);
-      });
+      // Custom button listeners
+      const prevButton = document.querySelector(".custom-prev-button");
+      const handlePrevClick = () => flickityRef.current?.previous();
+      const nextButton = document.querySelector(".custom-next-button");
+      const handleNextClick = () => flickityRef.current?.next();
   
-      // Cleanup event listeners and destroy Flickity instance on component unmount
+      if (prevButton) prevButton.addEventListener("click", handlePrevClick);
+      if (nextButton) nextButton.addEventListener("click", handleNextClick);
+  
+      // Flickity 'select' event listener to update the image index
+      const handleSelect = () => setCurrentImageIndex(flickityRef.current?.selectedIndex || 0);
+      flickityRef.current.on("select", handleSelect);
+  
+      // Cleanup function for all listeners and Flickity instance
+      const cleanup = () => {
+        document.removeEventListener("keydown", handleKeyDown);
+  
+        if (carouselElement) {
+          carouselElement.removeEventListener("touchstart", handleTouchStart);
+          carouselElement.removeEventListener("touchmove", handleTouchMove);
+          carouselElement.removeEventListener("wheel", handleWheel);
+        }
+  
+        if (prevButton) prevButton.removeEventListener("click", handlePrevClick);
+        if (nextButton) nextButton.removeEventListener("click", handleNextClick);
+  
+        if (flickityRef.current) {
+          flickityRef.current.off("select", handleSelect);
+          flickityRef.current.destroy();
+          flickityRef.current = null;
+        }
+      };
+  
+      // Call cleanup when modal closes
+      return cleanup;
     }, 100); // Delay to ensure modal is fully open
   };
+  
 
   const closeModal = () => {
     setIsModalOpen(false);
@@ -179,12 +220,12 @@ export default function GalleryPage({
   return (
     <div className="bg-softOpal dark:bg-navySmoke py-12 md:py-18 flex justify-center">
       <div className="max-w-[85.75rem] flex flex-col gap-[1.5rem] mx-[0.625rem] lg:mx-[1.5625rem]">
-        <h1 className="font-visbyBold text-navySmoke dark:text-softOpal text-center">
+        <h1 className="font-visbyBold text-navySmoke dark:text-softOpal text-center mb-[2rem]">
           {galleryTitle}
         </h1>
 
         {/* Event Type Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-6">
+        <div className="flex flex-wrap justify-center gap-4 mb-[1.5rem]">
           <button
             onClick={() => {
               setSelectedEventType(null);
@@ -192,9 +233,9 @@ export default function GalleryPage({
             }}
             className={`px-4 py-2 font-visbyBold ${
                 selectedEventType === null
-                ? "text-mauvelous underline underline-offset-4"
-                : "text-navySmoke"
-          }`}
+                ? "text-mauvelous underline underline-offset-8"
+                : "text-navySmoke dark:text-softOpal"
+              }`}
           >
             All
           </button>
@@ -207,8 +248,8 @@ export default function GalleryPage({
               }}
               className={`px-4 py-2 font-visbyBold ${
                 selectedEventType === option.value
-                  ? "text-mauvelous underline underline-offset-4"
-                  : "text-navySmoke"
+                  ? "text-mauvelous underline underline-offset-8"
+                  : "text-navySmoke dark:text-softOpal"
               }`}
             >
               {option.label}
@@ -225,7 +266,7 @@ export default function GalleryPage({
             group.images.map((image, imageIndex) => (
               <div
                 key={`${groupIndex} ${imageIndex}`}
-                className="group relative image-wrapper mb-4 ml-4 overflow-hidden"
+                className="group relative mb-4 ml-4 overflow-hidden bg-grey"
                 onClick={() => openModal(groupIndex, imageIndex)}
               >
                 {/* Overlay */}
@@ -235,10 +276,11 @@ export default function GalleryPage({
                 <Image
                   src={image.image}
                   alt={`${group.eventType} ${group.clientName} ${group.galleryName}`}
-                  className="w-full h-auto transition-all duration-700 ease-in-out transform group-hover:scale-125"
+                  className="w-full h-auto transition-all duration-700 ease-in-out transform group-hover:scale-125 image-wrapper"
                   loading="lazy"
                   width={500}
                   height={500}
+                  onLoadingComplete={(img) => img.classList.add("image-loaded")}
                 />
               </div>
             ))
@@ -265,7 +307,7 @@ export default function GalleryPage({
               aria-label="Previous Image"
               className="custom-prev-button absolute left-4 top-1/2 rotate-[180deg] transform -translate-y-1/2 z-10 pointer-events-auto"
             >
-              <svg width="36" height="36" className="text-white">
+              <svg width="36" height="36" viewBox="0 0 24 24" className="text-white">
                 <path d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8Z" fill="currentColor" />
               </svg>
             </button>
@@ -275,7 +317,7 @@ export default function GalleryPage({
               aria-label="Next Event"
               className="custom-next-button absolute right-4 top-1/2 transform -translate-y-1/2 z-10 pointer-events-auto"
             >
-              <svg width="36" height="36" className="text-white">
+              <svg width="36" height="36" viewBox="0 0 24 24" className="text-white">
                 <path d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8Z" fill="currentColor" />
               </svg>
             </button>
@@ -290,7 +332,7 @@ export default function GalleryPage({
                     alt={`Expanded view ${index + 1}`}
                     width={800}
                     height={800}
-                    className="object-contain w-auto h-auto max-w-[90%] lg:max-w-[1500px] max-h-[calc(100vh-100px)]"
+                    className="object-contain w-full h-full max-w-[90%] lg:max-w-[1500px] max-h-[calc(100vh-100px)]"
                   />
                 )}
               </div>

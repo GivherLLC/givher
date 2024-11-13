@@ -14,9 +14,9 @@ export default function GalleryPage({
 }) {
   const breakpointColumns = {
     default: 3,
-    1400: 3,
-    700: 2,
-    500: 1,
+    1280: 3,
+    768: 2,
+    640: 1,
   };
 
   const [visibleImages, setVisibleImages] = useState<GalleryImageGroup[]>([]);
@@ -266,7 +266,7 @@ export default function GalleryPage({
             group.images.map((image, imageIndex) => (
               <div
                 key={`${groupIndex} ${imageIndex}`}
-                className="group relative mb-4 ml-4 overflow-hidden"
+                className="group relative mb-4 md:ml-4 overflow-hidden"
                 onClick={() => openModal(groupIndex, imageIndex)}
               >
                 {/* Overlay */}

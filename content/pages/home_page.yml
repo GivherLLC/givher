@@ -87,34 +87,3 @@ about:
       sectionImageSrc: /uploads/unique-perspective.svg
       sectionImageSrcDarkMode: /uploads/unique-perspective-darkmode.svg
   aboutTitle: About Us
-eventCarousel:
-  eventCarouselImages:
-    - imageAlt: Givher event decorations
-      imageSrc: /uploads/1.png
-    - imageAlt: A woman talking at a Givher event
-      imageSrc: /uploads/2.png
-    - imageAlt: A crowd of people hanging out at a Givher event
-      imageSrc: /uploads/3.png
-    - imageAlt: Alina and another person having a great time at a Givher event
-      imageSrc: /uploads/4.png
-    - imageAlt: Two people with a neon sign behind them at a Givher event
-      imageSrc: /uploads/5.png
-    - imageAlt: Two pillows on a couch at a Givher event
-      imageSrc: /uploads/6.png
-    - imageAlt: Alina and another person having a great time at a Givher event
-      imageSrc: /uploads/7.png
-    - imageAlt: A group of people posing on a stairwell at a Givher event
-      imageSrc: /uploads/8.png
-    - imageAlt: Bar decor at a Givher event
-      imageSrc: /uploads/9.png
-    - imageAlt: A group of people posing for a picture outside at a Givher event
-      imageSrc: /uploads/10.png
-    - imageAlt: A neon sign that says United For Diversity
-      imageSrc: /uploads/11.png
-    - imageAlt: Two people with a neon sign behind them at a Givher event
-      imageSrc: /uploads/12.png
-    - imageAlt: Decor at a Givher event
-      imageSrc: /uploads/13.png
-    - imageAlt: Two people posing for a picture at a Givher event
-      imageSrc: /uploads/14.png
-  eventCarouselTitle: Givher Events

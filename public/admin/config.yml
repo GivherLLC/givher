@@ -58,17 +58,6 @@ collections:
                   - { label: 'Section Image (600w x 285h)', name: 'sectionImageSrc', widget: 'image', allow_multiple: false, choose_url: false }
                   - { label: 'Section Image - Dark Mode (600w x 285h)', name: 'sectionImageSrcDarkMode', widget: 'image', allow_multiple: false, choose_url: false }
                   - { label: 'Description of Section Image', name: 'sectionImageAlt', widget: 'string' }
-          - label: 'Event Images Carousel'
-            name: 'eventCarousel'
-            widget: 'object'
-            fields:
-              - { label: 'Section Title', name: 'eventCarouselTitle', widget: 'string' }
-              - label: 'Images + Descriptions for Carousel'
-                name: 'eventCarouselImages'
-                widget: 'list'
-                fields:
-                  - { label: 'Image (594w x 780h)', name: 'imageSrc', widget: 'image', allow_multiple: false, choose_url: false }
-                  - { label: 'Description of Image', name: 'imageAlt', widget: 'string' }
       - label: "Clients Page"
         name: "clientPage"
         file: "content/pages/client_page.yml"

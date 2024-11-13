@@ -23,13 +23,6 @@ var HomePagePreview = createClass({
         aboutUsSectionsArray = aboutUsSections.toJS();
     }
 
-    var eventCarouselTitle = entry.getIn(['data', 'eventCarousel', 'eventCarouselTitle']);
-    var eventCarouselImages = entry.getIn(['data', 'eventCarousel', 'eventCarouselImages']);
-    var eventCarouselImagesArray;
-    if(eventCarouselImages){
-        eventCarouselImagesArray = eventCarouselImages.toJS();
-    }
-
       // Homepage Event Card Styles
       const containerStyle = {
         display: 'flex',
@@ -770,83 +763,6 @@ var HomePagePreview = createClass({
                 overflow: 'hidden',
                 },
             },
-            h(
-                'h1',
-                {
-                style: {
-                    color: '#2E363E',
-                    textAlign: 'center',
-                    margin: 0,
-                    marginBottom: '2.5rem',
-                },
-                },
-                eventCarouselTitle
-            ),
-            h(
-                'div',
-                {
-                style: {
-                    display: 'flex',
-                    gap: '0.5rem',
-                    overflowX: 'auto', // Enable horizontal scrolling
-                    scrollbarWidth: 'thin', // Thin scrollbar for Firefox
-                    WebkitOverflowScrolling: 'touch', // Enable smooth scrolling for mobile
-                },
-                },
-                eventCarouselImagesArray.map((c, i) =>
-                h(
-                    'div',
-                    {
-                    key: i,
-                    'data-id': 'card',
-                    style: {
-                        flex: '0 0 auto', // Flex basis for each card (prevents shrinking)
-                        width: '297px',
-                        marginRight: '1rem',
-                    },
-                    },
-                    h(
-                    'div',
-                    {
-                        style: {
-                        borderRadius: '15px',
-                        overflow: 'hidden',
-                        },
-                    },
-                    h('img', {
-                        src: c.imageSrc,
-                        alt: c.imageAlt,
-                        width: 297,
-                        height: 390,
-                        style: {
-                        borderRadius: '15px',
-                        objectFit: 'cover',
-                        },
-                    })
-                    )
-                )
-                )
-            ),
-            h('div', {
-                style: {
-                height: '75px',
-                width: '100%',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                gap: '1rem',
-                cursor: 'pointer',}
-            },
-            eventCarouselImagesArray.map((c, i) =>
-                h('div', {
-                    style: {
-                        height: '15px',
-                        width: '15px',
-                        borderRadius: '15px',
-                        backgroundColor: i === 0 ? '#C6AFC0' : 'grey',            
-                    }
-                })
-            ))
             )
         ),
     );

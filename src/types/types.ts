@@ -160,10 +160,6 @@ export interface HomePageData {
       aboutTitle: string;
       aboutUsSections: AboutUsSection[];
     };
-    eventCarousel: {
-      eventCarouselTitle: string;
-      eventCarouselImages: EventCarouselImage[];
-    };
   }
   
   export interface ServiceCarouselCard {

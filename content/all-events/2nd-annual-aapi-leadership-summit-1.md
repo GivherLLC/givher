@@ -25,6 +25,6 @@ eventDescription:
       headshot sessions, consultations, and business pop-ups on the side!
 boldedEventInformation:
   - line: Limited Tickets Available. This event will sale out!
-detailImage: /uploads/aapi-leadership-summit-2024_eventpageimage.png
+detailImage: /uploads/aapi-leadership-summit-2025_eventpageimage.png
 postponed: true
 ---

@@ -22,6 +22,9 @@ pageLinks:
   - linkText: Past Events
     link: /past-events  
     external: false
+  - linkText: Gallery
+    link: /gallery 
+    external: false
   - linkText: Clients
     link: /clients
     external: false

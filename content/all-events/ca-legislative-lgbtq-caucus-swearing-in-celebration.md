@@ -17,7 +17,7 @@ eventDescription:
       the newest members of the California Legislative LGBTQ+ Caucus at
       Sacramento's newest lounge, Good Luck Lounge.
   - paragraph: Sponsorship opportunities are available and all will include an
-      Exclusive VIP Sponsor only reception from 5:00 pm - 5:30 pm.
+      Exclusive VIP Sponsor only reception from 5:30 pm - 6:00 pm.
   - paragraph: "1.5k - 1 VIP reception entry, logo representation, and drink tickets. "
   - paragraph: 2.5k - 2 VIP reception entires, logo representation and drink tickets.
   - paragraph: "5k - 4 VIP reception entires, logo representation, drink tickets,

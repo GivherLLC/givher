@@ -140,6 +140,7 @@ export interface ContactPageData {
 
 export interface GalleryPageData {
   galleryTitle: string;
+  gallerySubTitle: string;
 }
 
 export interface HomePageData {
@@ -238,14 +239,10 @@ export interface HomePageData {
   }
 
   export interface GalleryImageGroup {
-    galleryName: string;
-    clientName?:string;
     eventType: string;
     images: ImageType[];
-    hideImages?:boolean;
   }
 
   export interface ImageType {
     image: string;
-    caption?: string;
   }

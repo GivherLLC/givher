@@ -150,6 +150,7 @@ collections:
         file: "content/pages/gallery_page.yml"
         fields:
           - { label: 'Gallery Page Title', name: 'galleryTitle', widget: 'string' }
+          - { label: 'Gallery Page SubTitle', name: 'gallerySubTitle', widget: 'string' }
       - label: "Footer"
         name: "footer"
         file: "content/footer/footer.yml"

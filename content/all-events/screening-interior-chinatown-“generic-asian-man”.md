@@ -15,9 +15,17 @@ eventButtonLinkTwo: https://www.imdb.com/video/vi951765273/?ref_=ext_shr_lnk
 eventDescription:
   - paragraph: The story of an Asian-American actor struggling against clichéd roles
       and stereotypes, both at work and in his personal life.
-  - paragraph: The TCL Chinese Theatre is home to the world's largest IMAX theater
-      and the only movie palace in California with an IMAX Laser projection
-      experience.
+  - paragraph: The TCL Chinese Theatre is the world's most iconic movie palace,
+      hosting over 50 events a year, including premieres and film festivals. In
+      2013, it entered a 10-year partnership with Chinese electronics
+      manufacturer TCL, leading to significant upgrades such as new seating, a
+      digital marquee, and enhanced audio-visual technology. Since its opening
+      in 1927, the theatre has been the site of major red carpet events and
+      features the Forecourt of the Stars, showcasing the handprints of
+      Hollywood's elite, solidifying its status as the most famous movie theatre
+      globally.
+boldedEventInformation:
+  - line: Q & A with Special Guests Immediately After the Screening
 detailImage: /uploads/tcl-chinese-theatre-imax-exterior.webp
 postponed: false
 hideEvent: false

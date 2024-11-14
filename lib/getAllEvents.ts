@@ -44,7 +44,7 @@ async function getAllEvents(): Promise<EventType[]> {
   });
 
 // Sort events by `firstDayOfEvent` in descending order (newest to oldest)
-return events.sort((a, b) => {
+return events.filter(e => !e.hideEvent).sort((a, b) => {
   const timeZoneA = a.timeZone || 'UTC';
   const timeZoneB = b.timeZone || 'UTC';
   const firstDayA = a.firstDayOfEvent ? parseDateString(a.firstDayOfEvent.split('.').join("/"), timeZoneA).getTime():0;

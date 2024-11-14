@@ -272,7 +272,7 @@ collections:
           - { label: 'Line (add additional field for each line)', name: 'line',  widget: 'string', required: false }
       - { label: 'Event Detail Page Image (615w x 385h)', name: 'detailImage', widget: 'image', allowMultiple: false, required: false, choose_url: false }
       - { label: 'Postponed', name: 'postponed', widget: 'boolean', default: false, required: true }
-      - { label: 'Hide Event (from Past Events)', hint: 'this is only for PAST events', name: 'hideEvent', widget: 'boolean', default: false, required: false }
+      - { label: 'Hide Event', hint: 'this will hide the event from current and past events', name: 'hideEvent', widget: 'boolean', default: false, required: false }
   - name: 'gallery'
     identifier_field: 'gallery'
     label: 'Image Gallery'

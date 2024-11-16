@@ -40,6 +40,7 @@ async function getAllEvents(): Promise<EventType[]> {
       firstDayOfEvent: data.firstDayOfEvent || null,
       lastDayOfEvent: data.lastDayOfEvent || null,
       eventTime: data.eventTime ? formatTimeTo12Hour(data.eventTime) : null,
+      eventEndTime: data.eventEndTime ? formatTimeTo12Hour(data.eventEndTime) : null,
     } as EventType;
   });
 

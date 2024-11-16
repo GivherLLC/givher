@@ -33,6 +33,7 @@ export type EventDetailPageProps = {
     slug: string;
     firstDayOfEvent:string | null;
     eventTime: string | null;
+    eventEndTime: string | null;
     lastDayOfEvent:string | null;
     timeOfYear: string | null;
     timeZone: string;
@@ -58,6 +59,7 @@ export type EventType = {
     slug: string;
     firstDayOfEvent:string | null;
     eventTime: string | null;
+    eventEndTime: string | null;
     lastDayOfEvent:string | null;
     timeOfYear: string | null;
     timeZone: string;

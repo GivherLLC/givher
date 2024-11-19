@@ -1,6 +1,6 @@
 ---
 available: true
-eventName: "Screening: Interior Chinatown “Generic Asian Man”"
+eventName: Screening of Episode from “Interior Chinatown”
 slug: AAPILCF-Screening-InteriorChinatown
 firstDayOfEvent: 12.04.2024
 eventTime: 19:30

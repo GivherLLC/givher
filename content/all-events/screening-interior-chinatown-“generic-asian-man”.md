@@ -10,7 +10,7 @@ eventCity: Hollywood, CA
 eventLocation: TCL Chinese Theatre
 clientName: Asian and Pacific Islander Legislative Caucus Foundation
 eventButtonTextOne: Reserve Seats Now
-eventButtonLinkOne: ""
+eventButtonLinkOne: https://www.eventbrite.com/e/interior-chinatown-screening-tickets-1076817974549?aff=oddtdtcreator
 eventButtonTextTwo: Official Trailer
 eventButtonLinkTwo: https://www.imdb.com/video/vi951765273/?ref_=ext_shr_lnk
 eventDescription:

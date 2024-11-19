@@ -41,7 +41,7 @@ boldedEventInformation:
       Legislative Caucus Foundation as a Section 501(c)(3) public charity. Gifts
       to the Foundation are tax deductible in the USA. The Federal Tax ID# is
       46-1937273
-detailImage: /uploads/tcl-chinese-theatre-imax-exterior.webp
+detailImage: /uploads/screening-interior-chinatown-“generic-asian-man”.png
 postponed: false
 hideEvent: false
 ---

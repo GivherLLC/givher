@@ -20,14 +20,15 @@ eventDescription:
       who won the National Book Award for fiction for his novel of the same
       name. Grab your tickets now, as they are available on a first-come,
       first-served basis!
-  - paragraph: "About Interior Chinatown: Based on Charles Yu's award-winning book
-      of the same name, the show follows the story of Willis Wu, a background
-      character trapped in a police procedural called Black & White. Relegated
-      to the background, Willis goes through the motions of his on-screen job,
-      waiting tables and dreaming about a whole world beyond Chinatown. When he
-      inadvertently becomes a witness to a crime, Willis begins to unravel a
-      criminal web in Chinatown, his family's buried history, and what it feels
-      like to be in the spotlight."
+  - paragraph: "About Interior Chinatown: Based on Series Creator & Executive
+      Producer/Showrunner Charles Yu award-winning book of the same name, the
+      show follows the story of Willis Wu, a background character trapped in a
+      police procedural called Black & White. Relegated to the background,
+      Willis goes through the motions of his on-screen job, waiting tables and
+      dreaming about a whole world beyond Chinatown. When he inadvertently
+      becomes a witness to a crime, Willis begins to unravel a criminal web in
+      Chinatown, his family's buried history, and what it feels like to be in
+      the spotlight."
   - paragraph: Interior Chinatown stars Jimmy O. Yang, Ronny Chieng, Chloe Bennet,
       Lisa Gilroy, Sullivan Jones, Archie Kao and Diana Lin. Series creator
       Charles Yu serves as executive producer, along with Dan Lin and Lindsey

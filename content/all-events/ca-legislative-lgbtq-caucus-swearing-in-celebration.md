@@ -18,9 +18,9 @@ eventDescription:
       Sacramento's newest lounge, Good Luck Lounge.
   - paragraph: Sponsorship opportunities are available and all will include an
       Exclusive VIP Sponsor only reception from 5:30 pm - 6:00 pm.
-  - paragraph: "1.5k - 1 VIP reception entry, logo representation, and drink tickets. "
-  - paragraph: 2.5k - 2 VIP reception entires, logo representation and drink tickets.
-  - paragraph: "5k - 4 VIP reception entires, logo representation, drink tickets,
+  - paragraph: "1.5k - 1 VIP reception ticket, logo representation, and drink tickets. "
+  - paragraph: 2.5k - 2 VIP reception tickets, logo representation and drink tickets.
+  - paragraph: "5k - 4 VIP reception tickets, logo representation, drink tickets,
       and verbal recognition. "
   - paragraph: Event will open to the public at 6:00 pm. Program will start at 6:30 pm.
   - paragraph: To ensure your entry, please RSVP and secure your spot on the guest

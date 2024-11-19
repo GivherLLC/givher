@@ -43,5 +43,5 @@ boldedEventInformation:
       46-1937273
 detailImage: /uploads/tcl-chinese-theatre-imax-exterior.webp
 postponed: false
-hideEvent: true
+hideEvent: false
 ---

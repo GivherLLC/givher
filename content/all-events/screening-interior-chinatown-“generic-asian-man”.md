@@ -6,8 +6,8 @@ firstDayOfEvent: 12.04.2024
 eventTime: 19:30
 timeZone: America/Los_Angeles
 eventType: 501(c)(3)
-eventCity: Hollywood, CA
-eventLocation: TCL Chinese Theatre
+eventCity: 6801 Hollywood Blvd, Hollywood, CA 90028
+eventLocation: TCL Chinese 6 Theatres
 clientName: Asian and Pacific Islander Legislative Caucus Foundation
 eventButtonTextOne: Reserve Seats Now
 eventButtonLinkOne: https://www.eventbrite.com/e/interior-chinatown-screening-tickets-1076817974549?aff=oddtdtcreator

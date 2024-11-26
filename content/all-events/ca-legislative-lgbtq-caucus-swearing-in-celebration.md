@@ -10,8 +10,8 @@ eventLocation: Good Luck Lounge
 clientName: California LGBTQ Foundation
 eventButtonTextOne: Guest List RSVP
 eventButtonLinkOne: https://www.universe.com/events/ca-legislative-lgbtq-caucus-swearing-in-celebration-tickets-J2S0CZ
-eventButtonTextTwo: Sponsor the Event
-eventButtonLinkTwo: mailto:alina@givher.com
+eventButtonTextTwo: Sponsorship Flyer
+eventButtonLinkTwo: https://www.canva.com/design/DAGU_QPY1ms/p9WXWrHscZfTtvAdrMP37g/view?utm_content=DAGU_QPY1ms&utm_campaign=designshare&utm_medium=link&utm_source=editor
 eventDescription:
   - paragraph: Join the California LGBTQ Foundation to celebrate the swearing-in of
       the newest members of the California Legislative LGBTQ+ Caucus at

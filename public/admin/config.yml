@@ -207,8 +207,15 @@ collections:
         required: false
         format: 'MM.DD.YYYY'
         time_format: false
-      - label: 'Time of Event (Single Day Events Only)'
+      - label: 'Start Time of Event (Single Day Events Only)'
         name: 'eventTime'
+        widget: 'datetime'
+        required: false
+        format: 'HH:mm'
+        time_format: 'HH:mm'
+        date_format: false
+      - label: 'End Time of Event (Single Day Events Only)'
+        name: 'eventEndTime'
         widget: 'datetime'
         required: false
         format: 'HH:mm'

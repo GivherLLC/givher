@@ -30,7 +30,7 @@ export async function generateMetadata({ params: { eventSlugOrName } }: EventDet
             url: 'https://www.givher.com/opengraph-image.png',
             width: 1200,
             height: 630,
-            alt: 'Givher Event Banner'
+            alt: 'Givher Political Hospitality'
           }
         ]
       },

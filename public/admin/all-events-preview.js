@@ -10,6 +10,7 @@ var EventPreview = createClass({
       var clientName = entry.getIn(['data', 'clientName']);
       var firstDayOfEvent = entry.getIn(['data', 'firstDayOfEvent']);
       var eventTime = entry.getIn(['data', 'eventTime']);
+      var eventEndTime = entry.getIn(['data', 'eventEndTime']);
       var lastDayOfEvent = entry.getIn(['data', 'lastDayOfEvent']);
       var eventCity = entry.getIn(['data', 'eventCity']);
       var eventLocation = entry.getIn(['data', 'eventLocation']);
@@ -72,7 +73,7 @@ var EventPreview = createClass({
     }      
 
     var timeFormatted = eventTime ? formatEventTime(eventTime):"";
-
+    var endTimeFormatted = eventEndTime ? formatEventTime(eventEndTime):"";
 
     // Homepage Event Card Styles
     const containerStyle = {
@@ -531,7 +532,7 @@ var EventPreview = createClass({
           h('h1', { style: headingStyle }, eventName),
           h('div', { style: { display: 'flex', gap: '1rem'}},
             h('h2', { style: { color: '#F8F9EE',fontWeight: 'bold', fontSize: '1.5rem', margin: 0 } }, eventCity),
-            h('h2', { style: { color: '#C6AFC0', fontSize: '1.5rem', textTransform: 'uppercase', margin: 0} }, timeFormatted)
+            h('h2', { style: { color: '#C6AFC0', fontSize: '1.5rem', textTransform: 'uppercase', margin: 0} }, `${timeFormatted} ${endTimeFormatted ? ` - ${endTimeFormatted}`:""}`)
           ),
           h(
             'div',

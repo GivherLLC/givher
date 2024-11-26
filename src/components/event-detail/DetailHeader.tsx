@@ -4,7 +4,7 @@ import { EventType } from "@/types/types";
 import ButtonLink from "../common/ButtonLink";
 
 export default function DetailHeader({event, postponedEventText, clientImage}:{event:EventType, postponedEventText:string, clientImage: string}){
-    const { eventName, eventCity, eventButtonTextOne, eventButtonLinkOne, eventLocation, firstDayOfEvent, lastDayOfEvent, eventTime } = event;
+    const { eventName, eventCity, eventButtonTextOne, eventButtonLinkOne, eventLocation, firstDayOfEvent, lastDayOfEvent, eventTime, eventEndTime } = event;
 
     return (
         <div className="bg-navySmoke py-[2.5rem] flex justify-center">
@@ -14,7 +14,9 @@ export default function DetailHeader({event, postponedEventText, clientImage}:{e
                     <p className="flex justify-center lg:justify-start gap-[1rem] flex-wrap"><span className="text-softOpal">{firstDayOfEvent}{!!lastDayOfEvent && ` - ${lastDayOfEvent}`}</span><span className="text-electricYellow">{eventLocation}</span></p>
                     {event.postponed && <div className="text-red">{postponedEventText}</div>}
                     <h1 className="font-visbyBold text-softOpal mb-[2rem] text-center lg:text-left">{eventName}</h1>
-                    <h2 className="font-visbyBold text-softOpal text-center lg:text-left">{eventCity} {!!eventTime && <span className="text-mauvelous text-2xl font-visbyBold pl-[1rem]">{eventTime}</span>}</h2>  
+                    <h2 className="font-visbyBold text-softOpal text-center lg:text-left">{eventCity} {!!eventTime && <span className="text-mauvelous text-2xl font-visbyBold pl-[1rem]">{eventTime}</span>}
+                    {!!eventEndTime && <span className="text-mauvelous text-2xl font-visbyBold pl-[1rem]">- {eventEndTime}</span>}
+                    </h2>  
                     <div className="flex gap-[1rem] lg:items-center justify-center lg:justify-start">
                         {eventButtonTextOne && eventButtonLinkOne && (
                         <ButtonLink openNewTab bg="electricYellow" darkModeBg="electricYellow" text={eventButtonTextOne} link={eventButtonLinkOne}/>

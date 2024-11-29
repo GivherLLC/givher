@@ -89,13 +89,6 @@ function getEventStatus(data: EventTypeData, currentDate: Date): "past" | "inThe
   // Determine if the current date is on or before the start or end dates
   const eventBeforeFirstDay = firstDayString && currentDateString <= firstDayString;
   const eventBeforeLastDay = lastDayString && currentDateString <= lastDayString;
-  console.log("Event:", data.eventName);
-  console.log("Current Date:", currentDateString, "in time zone:", data.timeZone || 'UTC');
-  console.log("Event First Day:", firstDayString);
-  console.log("Event Last Day:", lastDayString);
-  console.log("Event Before First Day:", eventBeforeFirstDay);
-  console.log("Event Before Last Day:", eventBeforeLastDay);
-  console.log("Calculated Event Status:", !eventBeforeFirstDay && !eventBeforeLastDay ? "past" : "event");
   
   // Event is in the past only if it's after both the start and end dates
   if (!eventBeforeFirstDay && !eventBeforeLastDay) {
@@ -127,7 +120,13 @@ async function getNonPastEvents(): Promise<EventType[]> {
 
 async function getPastEvents(): Promise<EventType[]> {
   const allEvents = await getAllEvents();
-  return allEvents.filter(event => event.eventStatus === "past" && !event.hideEvent);
+  return allEvents.filter(event => event.eventStatus === "past" && !event.hideEvent).sort((a, b) => {
+    const timeZoneA = a.timeZone || 'UTC';
+    const timeZoneB = b.timeZone || 'UTC';
+    const firstDayA = a.firstDayOfEvent ? parseDateString(a.firstDayOfEvent.split('.').join("/"), timeZoneA).getTime():0;
+    const firstDayB = b.firstDayOfEvent ? parseDateString(b.firstDayOfEvent.split('.').join("/"), timeZoneB).getTime():0;
+    return firstDayB - firstDayA;
+  });
 }
 
 // Fetch only featured past event names from CMS

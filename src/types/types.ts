@@ -138,6 +138,10 @@ export interface ContactPageData {
     contactEmail: string;
 }
 
+export interface GalleryPageData {
+  galleryTitle: string;
+}
+
 export interface HomePageData {
     video: {
       videoTitle: string;
@@ -235,4 +239,17 @@ export interface HomePageData {
     linkText: string;
     link: string;
     external: boolean;
+  }
+
+  export interface GalleryImageGroup {
+    galleryName: string;
+    clientName?:string;
+    eventType: string;
+    images: ImageType[];
+    hideImages?:boolean;
+  }
+
+  export interface ImageType {
+    image: string;
+    caption?: string;
   }

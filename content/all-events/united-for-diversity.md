@@ -18,11 +18,11 @@ eventDescription:
       Foundation, California Jewish Legislative Caucus Leadership Foundation &
       Southern California Edison International proudly invite you to join us for
       an evening at Ace of Spaces (R Street) on January 7th, 2024, at 5:30 PM,
-      to celebration and kick off the 2025 - 2026 legislative session. This
-      special event welcomes back the Capitol community in style. Dress in your
-      business or business casual attire and enjoy an evening filled with
-      inspiring speeches from our esteemed leaders, networking opportunities,
-      and a toast to new beginnings.
+      to celebration and kick off the 2025 - 2026 legislative session.
+  - paragraph: This special event welcomes back the Capitol community in style.
+      Dress in your business or business casual attire and enjoy an evening
+      filled with inspiring speeches from our esteemed leaders, networking
+      opportunities, and a toast to new beginnings.
 boldedEventInformation:
   - line: FREE TO ATTEND
   - line: Registration Is Required For Entry

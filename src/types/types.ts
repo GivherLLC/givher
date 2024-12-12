@@ -239,10 +239,17 @@ export interface HomePageData {
   }
 
   export interface GalleryImageGroup {
-    eventType: string;
+    eventType: GalleryEventType;
     images: ImageType[];
   }
+
+  export type GalleryEventType = 'small' | 'medium' | 'large' | 'all' | null;
 
   export interface ImageType {
     image: string;
   }
+
+export interface GalleryCopy {
+  galleryTitle: string;
+  gallerySubTitle: string;
+}

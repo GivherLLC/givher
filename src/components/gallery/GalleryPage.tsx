@@ -3,19 +3,19 @@
 import React, { useState, useEffect, useRef } from "react";
 import Masonry from "react-masonry-css";
 import Image from "next/image";
-import { GalleryImageGroup } from "@/types/types";
+import { GalleryImageGroup, GalleryCopy } from "@/types/types";
 
 export default function GalleryPage({
   galleryData,
-  galleryTitle,
+  galleryCopy,
 }: {
   galleryData: GalleryImageGroup[];
-  galleryTitle: string;
+  galleryCopy: GalleryCopy;
 }) {
   const breakpointColumns = {
     default: 3,
     1280: 3,
-    768: 2,
+    1024: 2,
     640: 1,
   };
 
@@ -35,12 +35,9 @@ export default function GalleryPage({
 
   // Define filter options in the desired order
   const filterOptions = [
-    { label: "501(c)(3)", value: "501(c)(3)" },
-    { label: "501(c)(4)", value: "501(c)(4)" },
-    { label: "Ballot Measure", value: "Ballot Measure" },
-    { label: "Candidate", value: "Candidate" },
-    { label: "PAC", value: "PAC" },
-    { label: "Other", value: "Other" },
+    { label: "Small", value: "small" },
+    { label: "Medium", value: "medium" },
+    { label: "Large", value: "large" },
   ];
 
   useEffect(()=>{
@@ -53,13 +50,8 @@ export default function GalleryPage({
       }
     },[isModalOpen])
 
-  const existingEventTypes = new Set(galleryData.map((group) => group.eventType));
-  const availableFilterOptions = filterOptions.filter((option) =>
-    existingEventTypes.has(option.value)
-  );
-
   const loadMoreImages = () => {
-    const itemsPerPage = 10;
+    const itemsPerPage = 5;
   
     // Filter gallery data based on selectedEventType
     const filteredData = selectedEventType
@@ -113,13 +105,21 @@ export default function GalleryPage({
       if (currentObserverRef) observer.unobserve(currentObserverRef);
     };
   }, []);
+  
 
   const openModal = (groupIndex: number, imageIndex: number) => {
-    // Set the global index, open modal, and initialize Flickity
     const globalIndex = visibleImages
-      .slice(0, groupIndex)
-      .reduce((sum, group) => sum + group.images.length, 0) + imageIndex;
+      .flatMap((group) => group.images)
+      .findIndex((_, index) => {
+        const flatIndex = visibleImages
+          .slice(0, groupIndex)
+          .reduce((sum, group) => sum + group.images.length, 0) + imageIndex;
+        return index === flatIndex;
+      });
   
+    console.log("Calculated Global Index:", globalIndex);
+  
+    // Set modal state
     setCurrentImageIndex(globalIndex);
     setIsModalOpen(true);
     setIsFlickityReady(false);
@@ -127,103 +127,61 @@ export default function GalleryPage({
     setTimeout(() => {
       const Flickity = require("flickity-imagesloaded");
   
+      // Destroy existing Flickity instance if it exists
+      if (flickityRef.current) {
+        flickityRef.current.destroy();
+      }
+  
+      // Initialize new Flickity instance
       flickityRef.current = new Flickity(".carousel", {
         cellAlign: "left",
         cellSelector: ".carousel-cell",
         imagesLoaded: true,
         prevNextButtons: false,
         pageDots: false,
-        percentPosition: false,
+        percentPosition: true,
         wrapAround: true,
         dragThreshold: 5,
-        selectedAttraction: 0.05,
+        selectedAttraction: 0.1,
         friction: 0.8,
         initialIndex: globalIndex,
+        accessibility: true,
       });
+  
+      console.log("Initialized Flickity at Index:", globalIndex);
   
       setIsFlickityReady(true);
   
-      // Keyboard navigation event listener
-      const handleKeyDown = (event: KeyboardEvent) => {
-        if (event.key === "ArrowRight") {
-          flickityRef.current?.next();
-        } else if (event.key === "ArrowLeft") {
-          flickityRef.current?.previous();
-        } else if (event.key === "Escape") {
-          closeModal();
-        }
-      };
-  
-      // Add keydown listener
-      document.addEventListener("keydown", handleKeyDown);
-  
-      // Set up passive listeners for touch and wheel events
-      const carouselElement = document.querySelector(".carousel");
-      const handleTouchStart = () => {};
-      const handleTouchMove = () => {};
-      const handleWheel = () => {};
-  
-      if (carouselElement) {
-        carouselElement.addEventListener("touchstart", handleTouchStart, { passive: true });
-        carouselElement.addEventListener("touchmove", handleTouchMove, { passive: true });
-        carouselElement.addEventListener("wheel", handleWheel, { passive: true });
-      }
-  
-      // Custom button listeners
-      const prevButton = document.querySelector(".custom-prev-button");
-      const handlePrevClick = () => flickityRef.current?.previous();
-      const nextButton = document.querySelector(".custom-next-button");
-      const handleNextClick = () => flickityRef.current?.next();
-  
-      if (prevButton) prevButton.addEventListener("click", handlePrevClick);
-      if (nextButton) nextButton.addEventListener("click", handleNextClick);
-  
-      // Flickity 'select' event listener to update the image index
-      const handleSelect = () => setCurrentImageIndex(flickityRef.current?.selectedIndex || 0);
-      flickityRef.current.on("select", handleSelect);
-  
-      // Cleanup function for all listeners and Flickity instance
-      const cleanup = () => {
-        document.removeEventListener("keydown", handleKeyDown);
-  
-        if (carouselElement) {
-          carouselElement.removeEventListener("touchstart", handleTouchStart);
-          carouselElement.removeEventListener("touchmove", handleTouchMove);
-          carouselElement.removeEventListener("wheel", handleWheel);
-        }
-  
-        if (prevButton) prevButton.removeEventListener("click", handlePrevClick);
-        if (nextButton) nextButton.removeEventListener("click", handleNextClick);
-  
-        if (flickityRef.current) {
-          flickityRef.current.off("select", handleSelect);
-          flickityRef.current.destroy();
-          flickityRef.current = null;
-        }
-      };
-  
-      // Call cleanup when modal closes
-      return cleanup;
-    }, 100); // Delay to ensure modal is fully open
+      // Sync current image index on Flickity's select event
+      flickityRef.current.on("select", () => {
+        setCurrentImageIndex(flickityRef.current.selectedIndex);
+      });  
+    }, 100); // Ensure the modal fully opens
   };
+  
   
 
   const closeModal = () => {
+    console.log(flickityRef.current)
     setIsModalOpen(false);
     setCurrentImageIndex(null);
+  
+    // Cleanup Flickity and remove event listeners
     if (flickityRef.current) {
       flickityRef.current.destroy();
       flickityRef.current = null;
+      console.log(flickityRef.current)
     }
   };
+  
 
   return (
     <div className="bg-softOpal dark:bg-navySmoke py-12 md:py-18 flex justify-center">
       <div className="max-w-[85.75rem] flex flex-col gap-[1.5rem] mx-[0.625rem] lg:mx-[1.5625rem]">
-        <h1 className="font-visbyBold text-navySmoke dark:text-softOpal text-center mb-[2rem]">
-          {galleryTitle}
+        <h1 className="font-visbyBold text-navySmoke dark:text-softOpal text-center mb-[1rem]">
+          {galleryCopy.galleryTitle}
         </h1>
-
+        <p className="text-navySmoke dark:text-softOpal max-w-[550px] text-center mx-auto">{galleryCopy.gallerySubTitle}</p>
         {/* Event Type Filter Buttons */}
         <div className="flex flex-wrap justify-center gap-4 mb-[1.5rem]">
           <button
@@ -239,7 +197,7 @@ export default function GalleryPage({
           >
             All
           </button>
-          {availableFilterOptions.map((option) => (
+          {filterOptions.map((option) => (
             <button
               key={option.value}
               onClick={() => {
@@ -266,7 +224,7 @@ export default function GalleryPage({
             group.images.map((image, imageIndex) => (
               <div
                 key={`${groupIndex} ${imageIndex}`}
-                className="group relative mb-4 md:ml-4 overflow-hidden"
+                className="group relative mb-4 sm:ml-4 overflow-hidden"
                 onClick={() => openModal(groupIndex, imageIndex)}
               >
                 {/* Overlay */}
@@ -275,7 +233,7 @@ export default function GalleryPage({
                 {/* Image with zoom effect */}
                 <Image
                   src={image.image}
-                  alt={`${group.eventType} ${group.clientName} ${group.galleryName}`}
+                  alt={`${group.eventType}`}
                   className="w-full h-auto transition-all duration-700 ease-in-out transform group-hover:scale-125 image-wrapper"
                   loading="lazy"
                   width={500}
@@ -306,6 +264,7 @@ export default function GalleryPage({
               type="button"
               aria-label="Previous Image"
               className="custom-prev-button absolute left-4 top-1/2 rotate-[180deg] transform -translate-y-1/2 z-10 pointer-events-auto"
+              onClick={() => flickityRef.current?.previous()}
             >
               <svg width="36" height="36" viewBox="0 0 24 24" className="text-white">
                 <path d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8Z" fill="currentColor" />
@@ -316,6 +275,7 @@ export default function GalleryPage({
               data-id="next"
               aria-label="Next Event"
               className="custom-next-button absolute right-4 top-1/2 transform -translate-y-1/2 z-10 pointer-events-auto"
+              onClick={() => flickityRef.current?.next()}
             >
               <svg width="36" height="36" viewBox="0 0 24 24" className="text-white">
                 <path d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8Z" fill="currentColor" />

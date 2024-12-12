@@ -30,7 +30,7 @@ export default async function Gallery() {
   const galleryPageData = getGalleryPageData();
 
   return (
-    <GalleryPage galleryData={galleryData} galleryTitle={galleryPageData.galleryTitle}/>
+    <GalleryPage galleryData={galleryData} galleryCopy={galleryPageData} />
   )
 }
 

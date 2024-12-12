@@ -15,7 +15,7 @@ export default function DetailHeader({event, postponedEventText, clientImage}:{e
                     {event.postponed && <div className="text-red">{postponedEventText}</div>}
                     <h1 className="font-visbyBold text-softOpal mb-[2rem] text-center lg:text-left">{eventName}</h1>
                     <h2 className="font-visbyBold text-softOpal text-center lg:text-left">{eventCity} {!!eventTime && <span className="text-mauvelous text-2xl font-visbyBold pl-[1rem]">{eventTime}</span>}
-                    {!!eventEndTime && <span className="text-mauvelous text-2xl font-visbyBold pl-[1rem]">- {eventEndTime}</span>}
+                    {!!eventEndTime && <span className="text-mauvelous text-2xl font-visbyBold"> - {eventEndTime}</span>}
                     </h2>  
                     <div className="flex gap-[1rem] lg:items-center justify-center lg:justify-start">
                         {eventButtonTextOne && eventButtonLinkOne && (

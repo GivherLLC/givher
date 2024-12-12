@@ -85,7 +85,7 @@ export default function PastEventsHeader({headerData, featuredPastEvents, client
                             height={300} 
                             width={473} 
                             priority={priority} 
-                            className="flickity-lazyloaded object-cover w-full max-w-[350px] h-auto rounded-s-xl" 
+                            className="flickity-lazyloaded object-cover w-full max-w-[350px] max-h-[222px] rounded-s-xl" 
                             />
                         )}
                         <div className="w-full sm:w-[275px] flex flex-col justify-between gap-[1.5rem] py-[1rem] pl-[1rem] border-navySmoke">

@@ -276,38 +276,35 @@ collections:
       - { label: 'Postponed', name: 'postponed', widget: 'boolean', default: false, required: true }
       - { label: 'Hide Event', hint: 'this will hide the event from current and past events', name: 'hideEvent', widget: 'boolean', default: false, required: false }
   - name: 'gallery'
-    identifier_field: 'galleryName'
     label: 'Image Gallery'
-    folder: 'content/gallery'
-    create: true  
-    fields:
-      - label: 'Gallery Name'
-        name: 'galleryName'
-        hint: 'help identify the image gallery for future reference'
-        widget: 'string'
-      - label: 'Client Name'
-        name: 'clientName'
-        widget: 'relation'
-        collection: 'clients'
-        value_field: 'clientName'
-        search_fields: ['clientName']
-        required: false
-      - label: 'Event Type'
-        name: 'eventType'
-        widget: 'select'
-        required: true
-        max: 1
-        options:
-          - { label: "501(c)(3)", value: "501(c)(3)"}
-          - { label: "501(c)(4)", value: "501(c)(4)"}
-          - { label: "PAC", value: "PAC"}
-          - { label: "Ballot Measure", value: "Ballot Measure"}
-          - { label: "Candidate", value: "Candidate"}
-          - { label: "Other", value: "Other"}
-      - label: "Images"
-        name: "images"
-        widget: "list"
+    files:
+      - label: 'Small Budget Images'
+        name: 'small'
+        file: "content/gallery/small_gallery.yml"
         fields:
-          - { label: "Image", name: "image", widget: "image" }
-          - { label: "Caption", name: "caption", widget: "string", required: false }
-      - { label: 'Hide Image Group', hint: 'when toggled this group of images will no longer appear on the gallery page', name: 'hideImages', widget: 'boolean', default: false, required: false   }
+        - label: "Images"
+          name: "images"
+          widget: "list"
+          fields:
+            - { label: "Image", name: "image", widget: "image" }
+            - { label: "Caption", name: "caption", widget: "string", required: false }
+      - label: 'Medium Budget Images'
+        name: 'medium'
+        file: "content/gallery/medium_gallery.yml"
+        fields:
+        - label: "Images"
+          name: "images"
+          widget: "list"
+          fields:
+            - { label: "Image", name: "image", widget: "image" }
+            - { label: "Caption", name: "caption", widget: "string", required: false }
+      - label: 'Large Budget Images'
+        name: 'large'
+        file: "content/gallery/large_gallery.yml"
+        fields:
+        - label: "Images"
+          name: "images"
+          widget: "list"
+          fields:
+            - { label: "Image", name: "image", widget: "image" }
+            - { label: "Caption", name: "caption", widget: "string", required: false }

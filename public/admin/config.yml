@@ -58,19 +58,23 @@ collections:
                   - { label: 'Section Image (600w x 285h)', name: 'sectionImageSrc', widget: 'image', allow_multiple: false, choose_url: false }
                   - { label: 'Section Image - Dark Mode (600w x 285h)', name: 'sectionImageSrcDarkMode', widget: 'image', allow_multiple: false, choose_url: false }
                   - { label: 'Description of Section Image', name: 'sectionImageAlt', widget: 'string' }
+          - label: 'Testimonials'
+            name: 'testimonialSection'
+            widget: 'object'
+            fields:
+              - { label: 'Testimonials Section Title', name: 'testimonialsSectionTitle', widget: 'string', required: false }
+              - label: 'Testimonials Carousel'
+                name: 'testimonials'
+                widget: 'list'
+                fields:
+                  - { label: 'Quotee Name', name: 'quoteeName', widget: 'string' }
+                  - { label: 'Quote', name: 'quote', widget: 'string' }
+                  - { label: 'Organization', name: 'organization', widget: 'string' }
       - label: "Clients Page"
         name: "clientPage"
         file: "content/pages/client_page.yml"
         fields:
           - { label: 'Client Page Title', name: 'clientsSectionTitle', widget: 'string' }
-          - { label: 'Testimonials Section Title', name: 'testimonialsSectionTitle', widget: 'string', required: false }
-          - label: 'Testimonials Carousel'
-            name: 'testimonials'
-            widget: 'list'
-            fields:
-              - { label: 'Quotee Name', name: 'quoteeName', widget: 'string' }
-              - { label: 'Quote', name: 'quote', widget: 'string' }
-              - { label: 'Organization', name: 'organization', widget: 'string' }
       - label: "Events Page"
         name: "eventsPage"
         file: "content/pages/events_page.yml"

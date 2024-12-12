@@ -17,9 +17,11 @@ type HomepageProps = {
 }
 
 const Services = lazy(() => import('./Services'));
+const Testimonials = lazy(() => import('./Testimonials'));
+
 
 export default function Homepage({ homepageInfo, events, postponedEventText, clientLogos, eventCardImages }:HomepageProps){
-    const { video, services, featuredEvents, about } = homepageInfo;
+    const { video, services, featuredEvents, about, testimonialSection } = homepageInfo;
   
     const upcomingEvents = events.slice(0, 3);
 
@@ -32,6 +34,7 @@ export default function Homepage({ homepageInfo, events, postponedEventText, cli
                 <UpcomingEvents title={featuredEvents.title} events={upcomingEvents} postponedEventText={postponedEventText} clientLogos={eventCardImages}/>
             )}
             <AboutUs aboutInfo={about}/>
+            <Testimonials testimonials={testimonialSection.testimonials} testimonialsSectionTitle={testimonialSection.testimonialsSectionTitle}/>
         </>
     )
 }

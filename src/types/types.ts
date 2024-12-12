@@ -102,15 +102,7 @@ export type FeaturedEventType = {
 
 export interface ClientsPageData {
     clientsSectionTitle: string;
-    testimonialsSectionTitle: string;
-    testimonials: TestimonialType[];
   }
-
-export type TestimonialType = {
-    quoteeName: string;
-    quote: string;
-    organization: string;
-}
 
 export type Client = {
     clientName: string;
@@ -143,6 +135,12 @@ export interface GalleryPageData {
   gallerySubTitle: string;
 }
 
+export type TestimonialType = {
+  quoteeName: string;
+  quote: string;
+  organization: string;
+}
+
 export interface HomePageData {
     video: {
       videoTitle: string;
@@ -161,6 +159,10 @@ export interface HomePageData {
       aboutTitle: string;
       aboutUsSections: AboutUsSection[];
     };
+    testimonialSection: {
+      testimonialsSectionTitle: string;
+      testimonials: TestimonialType[];
+    }
   }
   
   export interface ServiceCarouselCard {

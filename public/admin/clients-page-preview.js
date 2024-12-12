@@ -3,12 +3,6 @@ var ClientsPagePreview = createClass({
       var entry = this.props.entry;
 
       var clientsSectionTitle = entry.getIn(['data', 'clientsSectionTitle']);
-      var testimonialsSectionTitle = entry.getIn(['data', 'testimonialsSectionTitle']);
-      var testimonials = entry.getIn(['data', 'testimonials']);
-      var testimonialsArray;
-      if(testimonials){
-        testimonialsArray = testimonials.toJS();
-      }
 
       const containerStyle = {
         position: 'relative',
@@ -264,133 +258,7 @@ var ClientsPagePreview = createClass({
 
             
         )
-        ),
-        // Testimonials Section
-        h(
-            'div',
-            {
-            style: {
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                gap: '2.4rem',
-                backgroundColor: '#C6AFC0',
-                position: 'relative',
-                padding: '5rem 1rem'
-            },
-            },
-            testimonialsSectionTitle && h(
-                'h1',
-                {
-                    style: {
-                    color: '#2E363E',
-                    textAlign: 'center',
-                    margin: 0,
-                    },
-                },
-                testimonialsSectionTitle
-                ),
-            // Background Image (Geometric Pattern)
-            h('img', {
-                loading: 'lazy',
-                src: "/images/geometric-pattern.svg",
-                alt: 'geometric pattern',
-                width: 2000,
-                height: 788,
-                style: {
-                    width: '100%',
-                    position: 'absolute',
-                    bottom: 0,
-                    maxWidth: '1150px',
-                    height: 'auto',
-                    verticalAlign: 'middle',
-                },
-                }),    
-            // Testimonial Cards
-            h(
-            'div',
-            {
-                style: {
-                zIndex: 10,
-                display: 'flex',
-                justifyContent: 'center',
-                gap: '3rem',
-                overflowX: 'auto', // Enable horizontal scrolling
-                scrollbarWidth: 'thin', // Thin scrollbar for Firefox
-                WebkitOverflowScrolling: 'touch', // Enable smooth scrolling for mobile
-                },
-            },
-            testimonialsArray.map((testimonial, i) =>
-                h(
-                'div',
-                {
-                    key: i,
-                    style: {
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
-                    backgroundColor: '#FFFFFF',
-                    padding: '1.5rem',
-                    borderRadius: '25px',
-                    width: '272px',
-                    height: '373px',
-                    flex: '0 0 auto', // Flex basis for each card (prevents shrinking)
-                },
-                },
-                h(
-                    'div',
-                    {
-                    style: {
-                        display: 'flex',
-                        justifyContent: 'center',
-                    },
-                    },
-                    h('img', {
-                    style: {height: 'auto'},
-                    loading: 'lazy',
-                    src: "/images/clients/quote-1.png",
-                    width: 245,
-                    height: 40,
-                    alt: 'quotes with a line through them',
-                    })
-                ),
-                h(
-                    'q',
-                    {
-                    style: {
-                        color: '#000000',
-                        lineHeight: '1.5',
-                    },
-                    },
-                    testimonial.quote
-                ),
-                h(
-                    'div',
-                    null,
-                    h(
-                    'p',
-                    null,
-                    `- ${testimonial.quoteeName}`
-                    ),
-                    h(
-                    'p',
-                    {
-                        style: {
-                        color: '#000000',
-                        fontWeight: 'bold',
-                        marginLeft: '0.75rem',
-                        },
-                    },
-                    testimonial.organization
-                    )
-                )
-                )
-            )
-            ),
-
- 
-        )
-  
+        ),  
       )
 
     }

@@ -102,15 +102,7 @@ export type FeaturedEventType = {
 
 export interface ClientsPageData {
     clientsSectionTitle: string;
-    testimonialsSectionTitle: string;
-    testimonials: TestimonialType[];
   }
-
-export type TestimonialType = {
-    quoteeName: string;
-    quote: string;
-    organization: string;
-}
 
 export type Client = {
     clientName: string;
@@ -138,6 +130,17 @@ export interface ContactPageData {
     contactEmail: string;
 }
 
+export interface GalleryPageData {
+  galleryTitle: string;
+  gallerySubTitle: string;
+}
+
+export type TestimonialType = {
+  quoteeName: string;
+  quote: string;
+  organization: string;
+}
+
 export interface HomePageData {
     video: {
       videoTitle: string;
@@ -156,10 +159,10 @@ export interface HomePageData {
       aboutTitle: string;
       aboutUsSections: AboutUsSection[];
     };
-    eventCarousel: {
-      eventCarouselTitle: string;
-      eventCarouselImages: EventCarouselImage[];
-    };
+    testimonialSection: {
+      testimonialsSectionTitle: string;
+      testimonials: TestimonialType[];
+    }
   }
   
   export interface ServiceCarouselCard {
@@ -236,3 +239,19 @@ export interface HomePageData {
     link: string;
     external: boolean;
   }
+
+  export interface GalleryImageGroup {
+    eventType: GalleryEventType;
+    images: ImageType[];
+  }
+
+  export type GalleryEventType = 'small' | 'medium' | 'large' | 'all' | null;
+
+  export interface ImageType {
+    image: string;
+  }
+
+export interface GalleryCopy {
+  galleryTitle: string;
+  gallerySubTitle: string;
+}

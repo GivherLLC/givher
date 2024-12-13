@@ -33,13 +33,20 @@ export default function Footer({data}:FooterProps){
                         </div>
                     </div>
                     <div className="w-full h-full md:w-1/3 md:flex md:flex-col md:justify-between">
-                        <ul className="w-full flex flex-col items-center md:items-end h-full">
-                            {data.pageLinks.map((l)=>(
-                                <li key={l.linkText} className="text-navySmoke dark:text-softOpal  transition ease-in-out opacity-85 font-visbyBold hover:opacity-100 mb-[1rem] w-[110px] text-center md:text-left">
-                                    <Link href={l.link} {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}>{l.linkText}</Link>
-                                </li>
-                            ))}
+                    <div className="flex md:inline-flex justify-center md:justify-end">
+                        <ul className="grid grid-flow-row grid-cols-2 auto-cols-min gap-x-4">
+                        {data.pageLinks.map((l) => (
+                            <li
+                            key={l.linkText}
+                            className="text-navySmoke dark:text-softOpal transition ease-in-out opacity-85 font-visbyBold hover:opacity-100 mb-[1rem] w-[110px] text-center md:text-left"
+                            >
+                            <Link href={l.link} {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
+                                {l.linkText}
+                            </Link>
+                            </li>
+                        ))}
                         </ul>
+                    </div>
                         <div className="text-xs text-right hidden md:flex md:justify-end text-navySmoke dark:text-softOpal whitespace-nowrap gap-[5px]">
                             Made with <span className="dark:hidden">&#128420;</span><span className=" hidden dark:block">&#x1F90D;</span> by <Link href="https://leighdahlin.com/" className="underline" target="_blank" rel="noopener noreferrer">Leigh Dahlin</Link>
                         </div>

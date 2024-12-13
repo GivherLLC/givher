@@ -19,6 +19,7 @@ const config: Config = {
       white: "#ffffff",
       red: "#DC143C",
       overlay: "rgba(0,0,0,.75)",
+      zoomColor: "#00000024",
     },
     extend: {
       fontFamily: {

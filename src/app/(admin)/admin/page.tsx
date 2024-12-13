@@ -32,6 +32,9 @@ export default function Admin() {
         <script src="/admin/team-page-preview.js"></script>
         <script src="/admin/signup-page-preview.js"></script>
         <script src="/admin/footer-preview.js"></script>
+        <script src="/admin/small-gallery-page-preview.js"></script>
+        <script src="/admin/medium-gallery-page-preview.js"></script>
+        <script src="/admin/large-gallery-page-preview.js"></script>
         </body>`,
       }}
     />

@@ -22,13 +22,13 @@ var HomePagePreview = createClass({
     if(aboutUsSections){
         aboutUsSectionsArray = aboutUsSections.toJS();
     }
-
-    var eventCarouselTitle = entry.getIn(['data', 'eventCarousel', 'eventCarouselTitle']);
-    var eventCarouselImages = entry.getIn(['data', 'eventCarousel', 'eventCarouselImages']);
-    var eventCarouselImagesArray;
-    if(eventCarouselImages){
-        eventCarouselImagesArray = eventCarouselImages.toJS();
+    var testimonialsSectionTitle = entry.getIn(['data', 'testimonialsSectionTitle']);
+    var testimonials = entry.getIn(['data', 'testimonials']);
+    var testimonialsArray;
+    if(testimonials){
+      testimonialsArray = testimonials.toJS();
     }
+
 
       // Homepage Event Card Styles
       const containerStyle = {
@@ -745,110 +745,132 @@ var HomePagePreview = createClass({
             )
         ),
         
-        // Scrollable Event Carousel Section with inline styles
+        // Testimonials Section
         h(
-            'div',
-            {
-            style: {
-                backgroundColor: '#F8F9EE', // Soft Opal background
-                padding: '2.5rem 1rem',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-            },
-            },
-            h(
-            'div',
-            {
-                style: {
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                width: '100%',
-                maxWidth: '85.75rem',
-                margin: '0 0.625rem',
-                overflow: 'hidden',
-                },
-            },
-            h(
-                'h1',
-                {
-                style: {
-                    color: '#2E363E',
-                    textAlign: 'center',
-                    margin: 0,
-                    marginBottom: '2.5rem',
-                },
-                },
-                eventCarouselTitle
-            ),
-            h(
-                'div',
-                {
-                style: {
-                    display: 'flex',
-                    gap: '0.5rem',
-                    overflowX: 'auto', // Enable horizontal scrolling
-                    scrollbarWidth: 'thin', // Thin scrollbar for Firefox
-                    WebkitOverflowScrolling: 'touch', // Enable smooth scrolling for mobile
-                },
-                },
-                eventCarouselImagesArray.map((c, i) =>
-                h(
-                    'div',
-                    {
-                    key: i,
-                    'data-id': 'card',
-                    style: {
-                        flex: '0 0 auto', // Flex basis for each card (prevents shrinking)
-                        width: '297px',
-                        marginRight: '1rem',
-                    },
-                    },
-                    h(
-                    'div',
-                    {
-                        style: {
-                        borderRadius: '15px',
-                        overflow: 'hidden',
-                        },
-                    },
-                    h('img', {
-                        src: c.imageSrc,
-                        alt: c.imageAlt,
-                        width: 297,
-                        height: 390,
-                        style: {
-                        borderRadius: '15px',
-                        objectFit: 'cover',
-                        },
-                    })
-                    )
-                )
-                )
-            ),
-            h('div', {
-                style: {
-                height: '75px',
-                width: '100%',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                gap: '1rem',
-                cursor: 'pointer',}
-            },
-            eventCarouselImagesArray.map((c, i) =>
-                h('div', {
-                    style: {
-                        height: '15px',
-                        width: '15px',
-                        borderRadius: '15px',
-                        backgroundColor: i === 0 ? '#C6AFC0' : 'grey',            
-                    }
-                })
-            ))
-            )
-        ),
+          'div',
+          {
+          style: {
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '2.4rem',
+              backgroundColor: '#C6AFC0',
+              position: 'relative',
+              padding: '5rem 1rem'
+          },
+          },
+          testimonialsSectionTitle && h(
+              'h1',
+              {
+                  style: {
+                  color: '#2E363E',
+                  textAlign: 'center',
+                  margin: 0,
+                  },
+              },
+              testimonialsSectionTitle
+              ),
+          // Background Image (Geometric Pattern)
+          testimonialsArray? h('img', {
+              loading: 'lazy',
+              src: "/images/geometric-pattern.svg",
+              alt: 'geometric pattern',
+              width: 2000,
+              height: 788,
+              style: {
+                  width: '100%',
+                  position: 'absolute',
+                  bottom: 0,
+                  maxWidth: '1150px',
+                  height: 'auto',
+                  verticalAlign: 'middle',
+              },
+              }):null,    
+          // Testimonial Cards
+          h(
+          'div',
+          {
+              style: {
+              zIndex: 10,
+              display: 'flex',
+              justifyContent: 'center',
+              gap: '3rem',
+              overflowX: 'auto', // Enable horizontal scrolling
+              scrollbarWidth: 'thin', // Thin scrollbar for Firefox
+              WebkitOverflowScrolling: 'touch', // Enable smooth scrolling for mobile
+              },
+          },
+          testimonialsArray? testimonialsArray.map((testimonial, i) =>
+              h(
+              'div',
+              {
+                  key: i,
+                  style: {
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  backgroundColor: '#FFFFFF',
+                  padding: '1.5rem',
+                  borderRadius: '25px',
+                  width: '272px',
+                  height: '373px',
+                  flex: '0 0 auto', // Flex basis for each card (prevents shrinking)
+              },
+              },
+              h(
+                  'div',
+                  {
+                  style: {
+                      display: 'flex',
+                      justifyContent: 'center',
+                  },
+                  },
+                  h('img', {
+                  style: {height: 'auto'},
+                  loading: 'lazy',
+                  src: "/images/clients/quote-1.png",
+                  width: 245,
+                  height: 40,
+                  alt: 'quotes with a line through them',
+                  })
+              ),
+              h(
+                  'q',
+                  {
+                  style: {
+                      color: '#000000',
+                      lineHeight: '1.5',
+                  },
+                  },
+                  testimonial.quote
+              ),
+              h(
+                  'div',
+                  null,
+                  h(
+                  'p',
+                  null,
+                  `- ${testimonial.quoteeName}`
+                  ),
+                  h(
+                  'p',
+                  {
+                      style: {
+                      color: '#000000',
+                      fontWeight: 'bold',
+                      marginLeft: '0.75rem',
+                      },
+                  },
+                  testimonial.organization
+                  )
+              )
+              )
+          ):null,
+          ),
+
+
+      )
+
     );
       
     },

@@ -3,11 +3,17 @@ import EventDetailPage from "@/components/event-detail/EventDetailPage";
 import { Metadata } from "next";
 import getEventNameParam from "@/utils/getEventNameParam";
 import getEventsPageData from "../../../../../../lib/getEventsPageData";
-import { getReadyEvents, getEventBySlugOrName, getClientEvents } from "../../../../../../lib/getAllEvents";
+import {
+  getReadyEvents,
+  getEventBySlugOrName,
+  getClientEvents,
+} from "../../../../../../lib/getAllEvents";
 import getAllClientImages from "../../../../../../lib/getAllClientImages";
 import { EventDetailPageProps } from "@/types/types";
 
-export async function generateMetadata({ params: { eventSlugOrName } }: EventDetailPageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params: { eventSlugOrName },
+}: EventDetailPageProps): Promise<Metadata> {
   const decodedParam = decodeURIComponent(eventSlugOrName);
 
   const event = await getEventBySlugOrName(decodedParam);
@@ -15,7 +21,7 @@ export async function generateMetadata({ params: { eventSlugOrName } }: EventDet
   if (event) {
     const title = `${event.eventName} | Givher Event`;
     const description = `Event details for ${event.clientName}'s event ${event.eventName}`;
-    const url = `/events/detail/${event.slug}`;  // Ensure slug is used in the URL
+    const url = `/events/detail/${event.slug}`; // Ensure slug is used in the URL
     return {
       title,
       description,
@@ -27,12 +33,12 @@ export async function generateMetadata({ params: { eventSlugOrName } }: EventDet
         type: "website",
         images: [
           {
-            url: 'https://www.givher.com/opengraph-image.png',
+            url: "https://www.givher.com/opengraph-image.png",
             width: 1200,
             height: 630,
-            alt: 'Givher Political Hospitality'
-          }
-        ]
+            alt: "Givher Political Hospitality",
+          },
+        ],
       },
     };
   } else {
@@ -42,13 +48,15 @@ export async function generateMetadata({ params: { eventSlugOrName } }: EventDet
   }
 }
 
-export default async function EventsDetailPage({ params: { eventSlugOrName } }: EventDetailPageProps) {
+export default async function EventsDetailPage({
+  params: { eventSlugOrName },
+}: EventDetailPageProps) {
   const decodedParam = decodeURIComponent(eventSlugOrName);
   const eventsPageData = getEventsPageData();
   const [event, clientImages, clientEvents] = await Promise.all([
     getEventBySlugOrName(decodedParam),
     getAllClientImages(),
-    getClientEvents(decodedParam)
+    getClientEvents(decodedParam),
   ]);
 
   if (event) {
@@ -80,4 +88,4 @@ export async function generateStaticParams() {
   }));
 
   return params;
-};
+}

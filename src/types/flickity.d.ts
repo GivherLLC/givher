@@ -1,5 +1,5 @@
 declare global {
-    interface Window {
-      Flickity: any;
-    }
+  interface Window {
+    Flickity: any;
   }
+}

@@ -3,24 +3,30 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Ramenson';
-  src: local('Ramenson'), url('../fonts/ramenson.woff') format('woff');
+  font-family: "Ramenson";
+  src:
+    local("Ramenson"),
+    url("../fonts/ramenson.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Visby';
-  src: local('Visby'), url('../fonts/VisbyCF-Regular.woff') format('woff');
+  font-family: "Visby";
+  src:
+    local("Visby"),
+    url("../fonts/VisbyCF-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'VisbyBold';
-  src: local('VisbyBold'), url('../fonts/VisbyCF-Bold.woff') format('woff');
+  font-family: "VisbyBold";
+  src:
+    local("VisbyBold"),
+    url("../fonts/VisbyCF-Bold.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -40,8 +46,9 @@
   }
 }
 
-html, body {
-  font-family: 'Visby', sans-serif !important;
+html,
+body {
+  font-family: "Visby", sans-serif !important;
 }
 
 html {
@@ -54,7 +61,8 @@ h1 {
 
   @media (max-width: 768px) {
     font-size: 2.25rem;
-  }}
+  }
+}
 
 h2 {
   font-size: 1.5rem;
@@ -67,7 +75,14 @@ p {
 }
 
 body {
-  font-family: Visby, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-family:
+    Visby,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif;
   font-display: swap;
   height: 100%;
   color: rgb(var(--foreground-rgb));
@@ -81,7 +96,12 @@ body {
 
 .custom-mask {
   -webkit-mask: linear-gradient(90deg, transparent, #fff 10% 80%, transparent);
-  mask: linear-gradient(90deg, transparent, #fff 10% 80%, transparent); /* Standard syntax */
+  mask: linear-gradient(
+    90deg,
+    transparent,
+    #fff 10% 80%,
+    transparent
+  ); /* Standard syntax */
 }
 
 /* Flickity */
@@ -94,7 +114,6 @@ body {
   align-items: center;
   gap: 1rem;
   cursor: pointer;
-  
 }
 
 .dot:hover {
@@ -111,11 +130,11 @@ body {
 }
 
 .dot.is-selected {
-  background-color: #F8F9EE;
+  background-color: #f8f9ee;
 }
 
 .event-carousel .dot.is-selected {
-  background-color: #C6AFC0;
+  background-color: #c6afc0;
 }
 
 @media (max-width: 768px) {
@@ -131,7 +150,6 @@ body {
     align-items: center;
     gap: 1rem;
     cursor: pointer;
-    
   }
 }
 
@@ -146,14 +164,14 @@ body {
 }
 
 .flickity-button {
-  background: #F8F9EE;
-  border: 1px solid #2E363E;
+  background: #f8f9ee;
+  border: 1px solid #2e363e;
   padding: 7px;
   border-radius: 10px;
 }
 
 .flickity-button-icon {
-  fill: #2E363E;
+  fill: #2e363e;
 }
 
 .flickity-button:disabled {
@@ -210,12 +228,17 @@ body {
   object-position: center;
   z-index: 2;
   opacity: 1;
-  transition: opacity 0s,transform .4s,-webkit-transform .4s;
+  transition:
+    opacity 0s,
+    transform 0.4s,
+    -webkit-transform 0.4s;
 }
-.featured-carousel .carousel-cell:first-child:has(~.is-selected:last-child) > div,
-.featured-carousel .carousel-cell.is-selected+.carousel-cell > div {
+.featured-carousel
+  .carousel-cell:first-child:has(~ .is-selected:last-child)
+  > div,
+.featured-carousel .carousel-cell.is-selected + .carousel-cell > div {
   opacity: 0.5;
-  transform: scale(.87);
+  transform: scale(0.87);
 }
 
 #carousel-content-inner .carousel-content {
@@ -225,20 +248,20 @@ body {
 }
 
 #carousel-content-inner .carousel-content.active {
-    opacity: 1;
-    visibility: visible;
-    position: relative;
-    transform: translateY(0);
-    transition: all .5s;
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+  transform: translateY(0);
+  transition: all 0.5s;
 }
 
-@media(min-width: 1372px){
+@media (min-width: 1372px) {
   .services-carousel .flickity-page-dots {
     display: none;
-  } 
+  }
 }
 
-@media(max-width: 768px){
+@media (max-width: 768px) {
   h1 {
     font-size: 1.75rem;
   }
@@ -256,7 +279,9 @@ body {
 .image-wrapper {
   opacity: 0;
   transform: scale(0.9);
-  transition: opacity 1.5s ease, transform 1.5s ease;
+  transition:
+    opacity 1.5s ease,
+    transform 1.5s ease;
 }
 
 .image-loaded {

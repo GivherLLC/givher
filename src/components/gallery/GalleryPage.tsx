@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import Masonry from "react-masonry-css";
 import Image from "next/image";
 import { GalleryImageGroup, GalleryCopy } from "@/types/types";
@@ -22,6 +22,7 @@ export default function GalleryPage({
   const [visibleImages, setVisibleImages] = useState<GalleryImageGroup[]>([]);
   const [page, setPage] = useState(1);
   const [selectedEventType, setSelectedEventType] = useState<string | null>(null);
+  const [showScrollTopButton, setShowScrollTopButton] = useState(false);
   const observerRef = useRef<HTMLDivElement | null>(null);
 
   // Modal state
@@ -173,7 +174,47 @@ export default function GalleryPage({
       console.log(flickityRef.current)
     }
   };
+
+  const handleFilterButtonClick = useCallback((filterOption: string) => {
+    if (filterOption === "all") {
+      setSelectedEventType(null);
+    } else {
+      setSelectedEventType(filterOption === selectedEventType ? null : filterOption);
+    }
   
+    setPage(1);
+  
+    // Check if the user has scrolled below the sticky menu
+    const stickyMenuOffset = 95; // Adjust this value if needed
+    if (window.scrollY > stickyMenuOffset) {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  }, [selectedEventType, setSelectedEventType, setPage]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const stickyMenuOffset = 315; // Adjust to match your sticky menu offset
+      console.log(window.scrollY)
+      console.log(stickyMenuOffset)
+      setShowScrollTopButton(window.scrollY > stickyMenuOffset);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+    
 
   return (
     <div className="bg-softOpal dark:bg-navySmoke py-12 md:py-18 flex justify-center">
@@ -183,13 +224,11 @@ export default function GalleryPage({
         </h1>
         <p className="text-navySmoke dark:text-softOpal max-w-[550px] text-center mx-auto">{galleryCopy.gallerySubTitle}</p>
         {/* Event Type Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-[1.5rem]">
+        <div className="sticky top-[95px] z-20">
+        <div className="flex flex-wrap justify-center md:gap-4 bg-softOpal dark:bg-navySmoke px-[1rem] py-[1rem] rounded-[30px] w-fit mx-auto">
           <button
-            onClick={() => {
-              setSelectedEventType(null);
-              setPage(1);
-            }}
-            className={`px-4 py-2 font-visbyBold ${
+            onClick={()=>{handleFilterButtonClick("all")}}
+            className={`px-2 md:px-4 font-visbyBold z-7 ${
                 selectedEventType === null
                 ? "text-mauvelous underline underline-offset-8"
                 : "text-navySmoke dark:text-softOpal"
@@ -200,11 +239,8 @@ export default function GalleryPage({
           {filterOptions.map((option) => (
             <button
               key={option.value}
-              onClick={() => {
-                setSelectedEventType(option.value === selectedEventType ? null : option.value);
-                setPage(1);
-              }}
-              className={`px-4 py-2 font-visbyBold ${
+              onClick={() => {handleFilterButtonClick(option.value)}}
+              className={`px-2 md:px-4 font-visbyBold ${
                 selectedEventType === option.value
                   ? "text-mauvelous underline underline-offset-8"
                   : "text-navySmoke dark:text-softOpal"
@@ -213,18 +249,31 @@ export default function GalleryPage({
               {option.label}
             </button>
           ))}
+          
+        </div>
+        {showScrollTopButton && (
+        <button
+          onClick={scrollToTop}
+          className="mt-[10px] bg-mauvelous text-navySmoke px-4 py-2 rounded-full shadow-lg transition-opacity duration-300 flex gap-[0.5rem] cursor-pointer mx-auto"
+        >
+          <p className="font-visbyBold">Scroll to Top</p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="overflow-hidden text-black cursor-pointer align-middle" transform="rotate(-90)">
+            <path d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8Z" fill="currentColor"></path>
+          </svg>
+        </button>
+      )}
         </div>
 
         <Masonry
           breakpointCols={breakpointColumns}
-          className="flex w-auto"
+          className="flex w-auto mt-[1.5rem]"
           columnClassName="masonry-column"
         >
           {visibleImages.flatMap((group, groupIndex) =>
             group.images.map((image, imageIndex) => (
               <div
                 key={`${groupIndex} ${imageIndex}`}
-                className="group relative mb-4 sm:ml-4 overflow-hidden"
+                className="group relative mb-4 sm:ml-4 overflow-hidden z-5"
                 onClick={() => openModal(groupIndex, imageIndex)}
               >
                 {/* Overlay */}

@@ -253,20 +253,20 @@ export default function GalleryPage({
         </div>
         {showScrollTopButton && (
         <button
-          onClick={scrollToTop}
-          className="mt-[10px] bg-mauvelous text-navySmoke px-4 py-2 rounded-full shadow-lg transition-opacity duration-300 flex gap-[0.5rem] cursor-pointer mx-auto"
-        >
-          <p className="font-visbyBold">Scroll to Top</p>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="overflow-hidden text-black cursor-pointer align-middle" transform="rotate(-90)">
-            <path d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8Z" fill="currentColor"></path>
-          </svg>
-        </button>
+        onClick={scrollToTop}
+        className="absolute left-1/2 transform -translate-x-1/2 mt-[7px] bg-mauvelous text-navySmoke px-4 py-2 rounded-full shadow-lg transition-opacity duration-300 flex items-center gap-[0.5rem] cursor-pointer"
+      >
+        <p className="font-visbyBold">Scroll to Top</p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="overflow-hidden text-black cursor-pointer align-middle" transform="rotate(-90)">
+          <path d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8Z" fill="currentColor"></path>
+        </svg>
+      </button>
       )}
-        </div>
+      </div>
 
         <Masonry
           breakpointCols={breakpointColumns}
-          className="flex w-auto mt-[1.5rem]"
+          className="flex w-auto mt-[1rem]"
           columnClassName="masonry-column"
         >
           {visibleImages.flatMap((group, groupIndex) =>

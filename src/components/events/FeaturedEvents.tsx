@@ -108,7 +108,7 @@ export default function FeaturedEvents({
   }, []); // Empty dependency array ensures the effect runs only once on mount
 
   return (
-    <div className="bg-softOpal dark:bg-navySmoke pt-[2.5rem] md:py-[2.5rem] flex justify-center relative overflow-hidden">
+    <div className="bg-softOpal dark:bg-navySmoke pt-[2.5rem] md:py-[2.5rem] flex justify-center relative md:max-h-[480px] overflow-hidden">
       <div className="relative w-full h-full flex flex-col items-center justify-center gap-[2.5rem] max-w-[85.75rem] mx-[0.625rem] lg:mx-[1.5625rem]">
         <div
           id="carousel-inner"
@@ -227,7 +227,7 @@ export default function FeaturedEvents({
               </div>
             )}
           </div>
-          <div className="carousel featured-carousel order-1 md:order-2 relative h-full">
+          <div className="carousel featured-carousel order-1 md:order-2 relative h-full max-h-[350px] md:max-h-[unset] overflow-hidden md:overflow-visible">
             <Image
               priority={true}
               src="/images/events/paint-splatter-large.png"
@@ -244,6 +244,7 @@ export default function FeaturedEvents({
                     <div className="bg-white w-full h-full max-w-[350px] max-h-[350px] md:max-h-[400px] md:max-w-[400px] rounded-2xl p-[1rem] border border-navySmoke flex items-center justify-center">
                       <Image
                         priority={i === 0 || i === 1}
+                        loading={i === 0 || i === 1 ? 'eager' : 'lazy'}
                         src={e.clientImage}
                         alt={e.eventName}
                         width={325}

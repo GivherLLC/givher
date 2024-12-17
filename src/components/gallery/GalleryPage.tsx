@@ -302,7 +302,7 @@ export default function GalleryPage({
                   src={image.image}
                   alt={`${group.eventType}`}
                   className="w-full h-auto transition-all duration-700 ease-in-out transform group-hover:scale-125 image-wrapper"
-                  loading="lazy"
+                  loading={groupIndex === 1 ? 'eager' : 'lazy'}
                   width={500}
                   height={500}
                   onLoadingComplete={(img) => img.classList.add('image-loaded')}
@@ -378,6 +378,7 @@ export default function GalleryPage({
                       alt={`Expanded view ${index + 1}`}
                       width={800}
                       height={800}
+                      loading="lazy"
                       className="object-contain w-full h-full max-w-[90%] lg:max-w-[1500px] max-h-[calc(100vh-100px)]"
                     />
                   )}

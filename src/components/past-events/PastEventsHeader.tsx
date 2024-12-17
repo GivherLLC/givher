@@ -83,7 +83,7 @@ export default function PastEventsHeader({
         <p className="text-navySmoke dark:text-softOpal max-w-[650px] text-center">
           {pastEventsPageSubtitle}
         </p>
-        <div className="past-events-carousel w-[290px] xs:w-[350px] sm:w-[650px] overflow-hidden">
+        <div className="past-events-carousel w-[290px] xs:w-[350px] sm:w-[650px] h-[485px] sm:h-[279px] overflow-hidden">
           {featuredPastEvents.map((e, i) => {
             const priority = i === 0;
             return (

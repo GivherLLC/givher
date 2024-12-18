@@ -175,13 +175,13 @@ export default function PastEvents({
                 <DatePicker
                   selected={startDate}
                   onChange={onChange}
-                  startDate={startDate}
-                  endDate={endDate}
                   selectsRange
                   placeholderText="Select Dates"
                   minDate={today}
                   dateFormat="MM/dd/yyyy"
                   closeOnScroll={true}
+                  {...(startDate && { startDate: startDate })}
+                  {...(endDate && { endDate: endDate })}
                   {...(isMobile && { withPortal: true })}
                   className={`${startDate && endDate ? 'min-w-[225px]' : 'max-w-[150px]'} custom-date-picker-container cursor-pointer font-medium color-black focus:outline-none bg-softOpal text-navySmoke dark:text-softOpal dark:bg-navySmoke placeholder:text-black dark:placeholder:text-softOpal`}
                 />

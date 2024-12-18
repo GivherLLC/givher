@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import React, { useState, useEffect, useMemo } from "react";
-import { useSearchParams } from "next/navigation";
-import DropdownFilter from "./DropdownFilter";
-import { EventType, ClientImage } from "@/types/types";
-import EventCard from "../common/EventCard";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import useIsMobile from "@/hooks/useIsMobile";
+import React, { useState, useEffect, useMemo } from 'react';
+import { useSearchParams } from 'next/navigation';
+import DropdownFilter from './DropdownFilter';
+import { EventType, ClientImage } from '@/types/types';
+import EventCard from '../common/EventCard';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import useIsMobile from '@/hooks/useIsMobile';
 
 export default function EventsFilter({
   events,
@@ -22,10 +22,10 @@ export default function EventsFilter({
   const isMobile = useIsMobile(768);
   const today = new Date();
 
-  const [selectedCity, setSelectedCity] = useState<string>("");
-  const [selectedEventType, setSelectedEventType] = useState<string>("");
-  const [selectedClient, setSelectedClient] = useState<string>("");
-  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [selectedCity, setSelectedCity] = useState<string>('');
+  const [selectedEventType, setSelectedEventType] = useState<string>('');
+  const [selectedClient, setSelectedClient] = useState<string>('');
+  const [searchQuery, setSearchQuery] = useState<string>('');
   const [startDate, setStartDate] = useState<null | Date>(null);
   const [endDate, setEndDate] = useState<null | Date>(null);
 
@@ -34,17 +34,17 @@ export default function EventsFilter({
 
   // Set filters from URL query parameters on component mount
   useEffect(() => {
-    const city = searchParams.get("city");
-    const eventType = searchParams.get("eventType");
-    const client = searchParams.get("client");
-    const search = searchParams.get("search");
-    const start = searchParams.get("startDate");
-    const end = searchParams.get("endDate");
+    const city = searchParams.get('city');
+    const eventType = searchParams.get('eventType');
+    const client = searchParams.get('client');
+    const search = searchParams.get('search');
+    const start = searchParams.get('startDate');
+    const end = searchParams.get('endDate');
 
-    setSelectedCity(city || "");
-    setSelectedEventType(eventType || "");
-    setSelectedClient(client || "");
-    setSearchQuery(search || "");
+    setSelectedCity(city || '');
+    setSelectedEventType(eventType || '');
+    setSelectedClient(client || '');
+    setSearchQuery(search || '');
 
     // Set date range from URL parameters if available
     if (start && end) {
@@ -57,9 +57,9 @@ export default function EventsFilter({
       isInitialLoad &&
       (city || eventType || client || search || (start && end))
     ) {
-      const currentSection = document.getElementById("current");
+      const currentSection = document.getElementById('current');
       if (currentSection) {
-        currentSection.scrollIntoView({ behavior: "smooth" });
+        currentSection.scrollIntoView({ behavior: 'smooth' });
       }
       setIsInitialLoad(false); // Disable initial load flag after scrolling
     }
@@ -71,7 +71,7 @@ export default function EventsFilter({
         (!selectedCity || event.eventCity === selectedCity) &&
         (!selectedClient || event.clientName === selectedClient) && // Apply client filter here
         (!selectedEventType || event.eventType === selectedEventType) &&
-        (searchQuery === "" ||
+        (searchQuery === '' ||
           (!!event.eventType &&
             event.eventType
               .toLowerCase()
@@ -86,8 +86,7 @@ export default function EventsFilter({
           (event.firstDayOfEvent &&
             new Date(event.firstDayOfEvent) >= startDate)) &&
         (!endDate ||
-          (event.firstDayOfEvent &&
-            new Date(event.firstDayOfEvent) <= endDate)),
+          (event.firstDayOfEvent && new Date(event.firstDayOfEvent) <= endDate))
     );
   }, [
     events,
@@ -112,10 +111,10 @@ export default function EventsFilter({
     setSearchQuery(e.target.value);
 
   const clearSearch = () => {
-    setSelectedCity("");
-    setSelectedClient("");
-    setSelectedEventType("");
-    setSearchQuery("");
+    setSelectedCity('');
+    setSelectedClient('');
+    setSelectedEventType('');
+    setSearchQuery('');
     setStartDate(null);
     setEndDate(null);
   };
@@ -124,7 +123,7 @@ export default function EventsFilter({
     ...new Set(
       events
         .map((event) => event.eventCity)
-        .filter((city): city is string => !!city),
+        .filter((city): city is string => !!city)
     ),
   ];
   const clients: string[] = [
@@ -134,7 +133,7 @@ export default function EventsFilter({
     ...new Set(
       events
         .filter((event) => !!event.eventType)
-        .map((event) => event.eventType as string),
+        .map((event) => event.eventType as string)
     ),
   ];
 
@@ -145,7 +144,7 @@ export default function EventsFilter({
     >
       <div className="w-full mx-auto md:mx-0">
         <div
-          className={`flex flex-col md:flex-row justify-start ${events.length < 3 ? "md:justify-start" : "md:justify-center"} gap-[2rem] max-w-[398px] md:max-w-[unset] md:pr-[5rem] flex-wrap`}
+          className={`flex flex-col md:flex-row justify-start ${events.length < 3 ? 'md:justify-start' : 'md:justify-center'} gap-[2rem] max-w-[398px] md:max-w-[unset] md:pr-[5rem] flex-wrap`}
         >
           <DropdownFilter
             options={eventTypes}
@@ -169,15 +168,15 @@ export default function EventsFilter({
             <DatePicker
               selected={startDate}
               onChange={onChange}
-              startDate={startDate}
-              endDate={endDate}
               selectsRange
               placeholderText="Select Dates"
               minDate={today}
               dateFormat="MM/dd/yyyy"
               closeOnScroll={true}
+              {...(startDate && { startDate: startDate })}
+              {...(endDate && { endDate: endDate })}
               {...(isMobile && { withPortal: true })}
-              className={`${startDate && endDate ? "min-w-[225px]" : "max-w-[150px]"} custom-date-picker-container cursor-pointer font-medium color-black focus:outline-none bg-softOpal text-navySmoke dark:text-softOpal dark:bg-navySmoke placeholder:text-black dark:placeholder:text-softOpal`}
+              className={`${startDate && endDate ? 'min-w-[225px]' : 'max-w-[150px]'} custom-date-picker-container cursor-pointer font-medium color-black focus:outline-none bg-softOpal text-navySmoke dark:text-softOpal dark:bg-navySmoke placeholder:text-black dark:placeholder:text-softOpal`}
             />
             {startDate && endDate && (
               <button
@@ -204,7 +203,7 @@ export default function EventsFilter({
             />
             {searchQuery && (
               <button
-                onClick={() => setSearchQuery("")}
+                onClick={() => setSearchQuery('')}
                 className="h-[15px] w-[15px]"
               >
                 <div

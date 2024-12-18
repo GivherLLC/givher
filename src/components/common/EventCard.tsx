@@ -1,7 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { EventType } from "@/types/types";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { EventType } from '@/types/types';
 
 export default function EventCard({
   event,
@@ -40,17 +40,17 @@ export default function EventCard({
               <p
                 className="overflow-ellipsis font-visbyBold text-navySmoke text-[23px] dark:text-softOpal h-[69px]"
                 style={{
-                  display: "-webkit-box",
-                  WebkitBoxOrient: "vertical",
+                  display: '-webkit-box',
+                  WebkitBoxOrient: 'vertical',
                   WebkitLineClamp: 2,
                 }}
               >
                 {event.eventName}
               </p>
             </div>
-            {event.postponed && (
-              <div className="text-red pt-[1rem]">{postponedEventText}</div>
-            )}
+            <div className="text-red min-h-[26px]">
+              {event.postponed && postponedEventText}
+            </div>
           </div>
           <div className="text-navySmoke dark:text-softOpal h-[48px] overflow-hidden flex justify-between gap-[1rem]">
             <div className="flex gap-[0.5rem] items-center">
@@ -67,8 +67,8 @@ export default function EventCard({
                   <p
                     className="overflow-ellipsis max-w-[240px]"
                     style={{
-                      display: "-webkit-box",
-                      WebkitBoxOrient: "vertical",
+                      display: '-webkit-box',
+                      WebkitBoxOrient: 'vertical',
                       WebkitLineClamp: 1,
                     }}
                   >
@@ -78,8 +78,8 @@ export default function EventCard({
                 <p
                   className="overflow-ellipsis max-w-[240px]"
                   style={{
-                    display: "-webkit-box",
-                    WebkitBoxOrient: "vertical",
+                    display: '-webkit-box',
+                    WebkitBoxOrient: 'vertical',
                     WebkitLineClamp: 1,
                   }}
                 >

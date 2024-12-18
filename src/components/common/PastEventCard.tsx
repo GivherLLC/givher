@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
-import PastEventModal from "./PastEventModal";
-import { EventType } from "@/types/types";
+import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+import PastEventModal from './PastEventModal';
+import { EventType } from '@/types/types';
 
 export default function PastEventCard({
   event,
@@ -17,10 +17,10 @@ export default function PastEventCard({
   useEffect(() => {
     //prevent scrolling behind open bio
     if (showInfo) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = 'hidden';
     }
     return () => {
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = 'unset';
     };
   }, [showInfo]);
 
@@ -55,12 +55,12 @@ export default function PastEventCard({
         </div>
         <div className="pr-[0.75rem] sm:pr-[1.5rem] flex flex-col justify-between h-full gap-[1rem] pl-[0.75rem] sm:pl-[1.5rem] text-left">
           <div>
-            <div className="overflow-hidden">
+            <div className="overflow-hidden pb-[26px]">
               <p
                 className="overflow-ellipsis font-visbyBold text-navySmoke text-[23px] dark:text-softOpal h-[69px]"
                 style={{
-                  display: "-webkit-box",
-                  WebkitBoxOrient: "vertical",
+                  display: '-webkit-box',
+                  WebkitBoxOrient: 'vertical',
                   WebkitLineClamp: 2,
                 }}
               >
@@ -83,8 +83,8 @@ export default function PastEventCard({
                   <p
                     className="overflow-ellipsis max-w-[240px]"
                     style={{
-                      display: "-webkit-box",
-                      WebkitBoxOrient: "vertical",
+                      display: '-webkit-box',
+                      WebkitBoxOrient: 'vertical',
                       WebkitLineClamp: 1,
                     }}
                   >
@@ -94,8 +94,8 @@ export default function PastEventCard({
                 <p
                   className="overflow-ellipsis max-w-[240px]"
                   style={{
-                    display: "-webkit-box",
-                    WebkitBoxOrient: "vertical",
+                    display: '-webkit-box',
+                    WebkitBoxOrient: 'vertical',
                     WebkitLineClamp: 1,
                   }}
                 >
@@ -121,7 +121,7 @@ export default function PastEventCard({
       </div>
       <div
         data-id="bio"
-        className={`transition-opacity duration-300 ease-in-out z-[101] ${showInfo ? "opacity-100" : "opacity-0"}`}
+        className={`transition-opacity duration-300 ease-in-out z-[101] ${showInfo ? 'opacity-100' : 'opacity-0'}`}
       >
         {showInfo && (
           <PastEventModal

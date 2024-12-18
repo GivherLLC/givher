@@ -1,7 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import EventButton from "./EventButton";
-import { EventType } from "@/types/types";
+import React from 'react';
+import Image from 'next/image';
+import EventButton from './EventButton';
+import { EventType } from '@/types/types';
 
 export default function InTheWorksEventCard({
   event,
@@ -48,21 +48,21 @@ export default function InTheWorksEventCard({
               <p
                 className="overflow-ellipsis font-visbyBold text-navySmoke text-[23px] dark:text-softOpal h-[69px]"
                 style={{
-                  display: "-webkit-box",
-                  WebkitBoxOrient: "vertical",
+                  display: '-webkit-box',
+                  WebkitBoxOrient: 'vertical',
                   WebkitLineClamp: 2,
                 }}
               >
                 {event.eventName}
               </p>
             </div>
-            {event.postponed && (
-              <div className="text-red pt-[1rem]">{postponedEventText}</div>
-            )}
+            <div className="text-red min-h-[26px]">
+              {event.postponed && postponedEventText}
+            </div>
           </div>
           <div className="text-navySmoke dark:text-softOpal h-[48px] overflow-hidden flex justify-between gap-[1rem]">
             <div
-              className={`flex gap-[0.5rem] ${!event.eventCity || !event.eventLocation ? "items-start" : "items-center"}`}
+              className={`flex gap-[0.5rem] ${!event.eventCity || !event.eventLocation ? 'items-start' : 'items-center'}`}
             >
               <Image
                 loading="lazy"
@@ -78,8 +78,8 @@ export default function InTheWorksEventCard({
                     <p
                       className="overflow-ellipsis max-w-[240px]"
                       style={{
-                        display: "-webkit-box",
-                        WebkitBoxOrient: "vertical",
+                        display: '-webkit-box',
+                        WebkitBoxOrient: 'vertical',
                         WebkitLineClamp: 1,
                       }}
                     >
@@ -91,8 +91,8 @@ export default function InTheWorksEventCard({
                   <p
                     className="overflow-ellipsis max-w-[240px]"
                     style={{
-                      display: "-webkit-box",
-                      WebkitBoxOrient: "vertical",
+                      display: '-webkit-box',
+                      WebkitBoxOrient: 'vertical',
                       WebkitLineClamp: 1,
                     }}
                   >
@@ -104,8 +104,8 @@ export default function InTheWorksEventCard({
             <p
               className="overflow-ellipsis max-w-[100px]"
               style={{
-                display: "-webkit-box",
-                WebkitBoxOrient: "vertical",
+                display: '-webkit-box',
+                WebkitBoxOrient: 'vertical',
                 WebkitLineClamp: 3,
               }}
             >
@@ -113,7 +113,7 @@ export default function InTheWorksEventCard({
                 ? event.firstDayOfEvent
                 : event.timeOfYear
                   ? event.timeOfYear
-                  : ""}
+                  : ''}
               {!!event.lastDayOfEvent && ` - ${event.lastDayOfEvent}`}
             </p>
           </div>

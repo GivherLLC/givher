@@ -45,6 +45,14 @@ export default function GalleryPage({
     { label: 'Large', value: 'large' },
   ];
 
+  //scroll to top of page when open
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
+  }, []);
+
   useEffect(() => {
     //prevent scrolling behind open bio
     if (isModalOpen) {

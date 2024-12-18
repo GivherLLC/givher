@@ -1,30 +1,30 @@
-import React from "react";
-import EventsPage from "@/components/events/EventsPage";
+import React from 'react';
+import EventsPage from '@/components/events/EventsPage';
 import {
   getReadyEvents,
   getInTheWorksEvents,
-} from "../../../../lib/getAllEvents";
-import getEventsPageData from "../../../../lib/getEventsPageData";
-import getAllClientImages from "../../../../lib/getAllClientImages";
+} from '../../../../lib/getAllEvents';
+import getEventsPageData from '../../../../lib/getEventsPageData';
+import getAllClientImages from '../../../../lib/getAllClientImages';
 
 export async function generateMetadata() {
   return {
-    title: "Events | Givher",
+    title: 'Events | Givher',
     description:
-      "View the schedule and details of upcoming events hosted or managed by Givher, specializing in fundraising and engagement initiatives.",
+      'View the schedule and details of upcoming events hosted or managed by Givher, specializing in fundraising and engagement initiatives.',
     openGraph: {
-      title: "Events | Givher",
+      title: 'Events | Givher',
       description:
-        "View the schedule and details of upcoming events hosted or managed by Givher, specializing in fundraising and engagement initiatives.",
-      url: "/events",
-      siteName: "Givher",
-      type: "website",
+        'View the schedule and details of upcoming events hosted or managed by Givher, specializing in fundraising and engagement initiatives.',
+      url: '/events',
+      siteName: 'Givher',
+      type: 'website',
       images: [
         {
-          url: "https://www.givher.com/opengraph-image.png",
+          url: 'https://www.givher.com/opengraph-image.png',
           width: 1200,
           height: 630,
-          alt: "Givher Political Hospitality",
+          alt: 'Givher Political Hospitality',
         },
       ],
     },

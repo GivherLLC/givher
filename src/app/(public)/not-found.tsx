@@ -1,9 +1,9 @@
-import React from "react";
-import ButtonLink from "@/components/common/ButtonLink";
+import React from 'react';
+import ButtonLink from '@/components/common/ButtonLink';
 
 export async function generateMetadata() {
   return {
-    title: "Page Not Found",
+    title: 'Page Not Found',
   };
 }
 

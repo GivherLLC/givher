@@ -1,7 +1,7 @@
-import React from "react";
-import Link from "next/link";
-import { ContactPageData } from "@/types/types";
-import MailChimpForm from "./MailChimpForm";
+import React from 'react';
+import Link from 'next/link';
+import { ContactPageData } from '@/types/types';
+import MailChimpForm from './MailChimpForm';
 
 type ContactPageProps = {
   contactData: ContactPageData;

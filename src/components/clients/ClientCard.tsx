@@ -1,8 +1,8 @@
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import ArrowLink from "../common/ArrowLink";
-import { Client } from "@/types/types";
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import ArrowLink from '../common/ArrowLink';
+import { Client } from '@/types/types';
 
 type ClientCardProps = {
   clientInfo: Client;
@@ -52,9 +52,9 @@ export default function ClientCard({ clientInfo }: ClientCardProps) {
         {eventLink && (
           <ArrowLink
             text={`View ${eventLink} Events`}
-            color={"black"}
-            darkModeColor={"softOpal"}
-            link={`${eventLink === "current" ? `/events?client=${encodeURIComponent(clientName)}` : `/past-events?client=${encodeURIComponent(clientName)}`}`}
+            color={'black'}
+            darkModeColor={'softOpal'}
+            link={`${eventLink === 'current' ? `/events?client=${encodeURIComponent(clientName)}` : `/past-events?client=${encodeURIComponent(clientName)}`}`}
             className="justify-center md:justify-start text-[0.9rem]"
           />
         )}

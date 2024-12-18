@@ -1,5 +1,6 @@
 'use client';
 import React, { useEffect } from 'react';
+import Image from 'next/image';
 import TestimonialCard from './TestimonialCard';
 import { TestimonialType } from '@/types/types';
 
@@ -13,6 +14,7 @@ export default function Testimonials({
   testimonialsSectionTitle,
 }: TestimonialsProps) {
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     const Flickity = require('flickity-imagesloaded');
     const flkty = new Flickity('.testimonials-carousel', {
       cellAlign: 'center',
@@ -47,7 +49,7 @@ export default function Testimonials({
         <h1 className="font-visbyBold text-navySmoke dark:text-softOpal pt-[2.5rem]">
           {testimonialsSectionTitle}
         </h1>
-        <img
+        <Image
           loading="lazy"
           src={'/images/geometric-pattern.svg'}
           alt="geometric pattern"

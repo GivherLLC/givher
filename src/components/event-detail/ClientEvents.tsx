@@ -1,8 +1,8 @@
-import React from "react";
-import EventCard from "../common/EventCard";
-import InTheWorksEventCard from "../common/InTheWorksEventCard";
-import PastEventCard from "../common/PastEventCard";
-import { EventType } from "@/types/types";
+import React from 'react';
+import EventCard from '../common/EventCard';
+import InTheWorksEventCard from '../common/InTheWorksEventCard';
+import PastEventCard from '../common/PastEventCard';
+import { EventType } from '@/types/types';
 
 export default function ClientEvents({
   events,
@@ -31,10 +31,10 @@ export default function ClientEvents({
           {clientName} Events
         </h1>
         <div
-          className={`flex flex-col lg:flex-row ${events.length < 3 ? "" : "lg:justify-between"} gap-[2rem] items-center w-full`}
+          className={`flex flex-col lg:flex-row ${events.length < 3 ? '' : 'lg:justify-between'} gap-[2rem] items-center w-full`}
         >
           {shownEvents.map((e, i) => {
-            if (e.eventStatus === "event") {
+            if (e.eventStatus === 'event') {
               return (
                 <EventCard
                   key={`${i}-${e.clientName}-${e.eventName}-${e.firstDayOfEvent}`}
@@ -43,7 +43,7 @@ export default function ClientEvents({
                   clientLogo={clientImage}
                 />
               );
-            } else if (e.eventStatus === "inTheWorks") {
+            } else if (e.eventStatus === 'inTheWorks') {
               return (
                 <InTheWorksEventCard
                   key={`${i}-${e.clientName}-${e.eventName}-${e.firstDayOfEvent}`}

@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import GoogleForm from '../GoogleForm';
 import { SignUpForEmailsData } from '@/types/types';
 
@@ -13,7 +14,7 @@ export default function SignUpForEmailsForm({ data }: SignUpForEmailsProps) {
         <h1 className="font-visbyBold text-navySmoke dark:text-softOpal">
           {data.signupTitle}
         </h1>
-        <img
+        <Image
           src={'/images/geometric-pattern.svg'}
           loading="eager"
           alt="geometic pattern"

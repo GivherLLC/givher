@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Masonry from 'react-masonry-css';
 import Image from 'next/image';
 import { GalleryImageGroup, GalleryCopy } from '@/types/types';
+import Flickity from 'flickity';
 
 export default function GalleryPage({
   galleryData,
@@ -33,7 +34,7 @@ export default function GalleryPage({
   const [currentImageIndex, setCurrentImageIndex] = useState<number | null>(
     null
   );
-  const flickityRef = useRef<any | null>(null);
+  const flickityRef = useRef<Flickity | null>(null);
 
   // Define filtered images based on visible images
   const allImages = visibleImages.flatMap((group) => group.images);
@@ -63,7 +64,7 @@ export default function GalleryPage({
     };
   }, [isModalOpen]);
 
-  const loadMoreImages = () => {
+  const loadMoreImages = useCallback(() => {
     const itemsPerPage = 5;
 
     // Filter gallery data based on selectedEventType
@@ -76,14 +77,14 @@ export default function GalleryPage({
 
     // Update visible images to include only the current filtered data up to the specified page
     setVisibleImages(nextPageImages);
-  };
+  }, [galleryData, page, selectedEventType]);
 
   // Effect to handle resetting page and visibleImages on filter change
   useEffect(() => {
     setPage(1); // Reset to the first page whenever the filter changes
     setVisibleImages([]); // Clear the visible images
     loadMoreImages(); // Load the first page of filtered data
-  }, [selectedEventType]);
+  }, [selectedEventType, setPage, setVisibleImages, loadMoreImages]);
 
   // Effect to load more images when the page increments
   useEffect(() => {
@@ -98,7 +99,7 @@ export default function GalleryPage({
     if (page * itemsPerPage <= filteredData.length) {
       loadMoreImages();
     }
-  }, [page]);
+  }, [page, loadMoreImages, galleryData, selectedEventType]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -137,12 +138,8 @@ export default function GalleryPage({
     setIsFlickityReady(false);
 
     setTimeout(() => {
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
       const Flickity = require('flickity-imagesloaded');
-
-      // Destroy existing Flickity instance if it exists
-      if (flickityRef.current) {
-        flickityRef.current.destroy();
-      }
 
       // Initialize new Flickity instance
       flickityRef.current = new Flickity('.carousel', {
@@ -164,10 +161,12 @@ export default function GalleryPage({
 
       setIsFlickityReady(true);
 
-      // Sync current image index on Flickity's select event
-      flickityRef.current.on('select', () => {
-        setCurrentImageIndex(flickityRef.current.selectedIndex);
-      });
+      if (flickityRef.current) {
+        // Sync current image index on Flickity's select event
+        flickityRef.current.on('select', () => {
+          setCurrentImageIndex(flickityRef.current!.selectedIndex);
+        });
+      }
     }, 100); // Ensure the modal fully opens
   };
 

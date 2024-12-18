@@ -33,7 +33,7 @@ export default function TeamPage({ data }: TeamPageProps) {
         <div
           className={`w-full flex flex-col flex-wrap xl:flex-row gap-[5rem] ${teamMembers.length > 2 ? 'justify-between' : 'justify-around'}`}
         >
-          {teamMembers.map((t, i) => (
+          {teamMembers.map((t) => (
             <div
               key={t.name}
               data-id={t.name}
@@ -60,11 +60,11 @@ export default function TeamPage({ data }: TeamPageProps) {
                 <div className="h-[3px] w-[50px] bg-mauvelous" />
                 <div data-id="jay-icons" className="flex gap-[2rem] mb-[1rem]">
                   {t.iconLinks.map((i) => (
-                    <Link key={i.iconImageAlt} href={i.iconLink}>
+                    <Link key={i.imageAlt} href={i.iconLink}>
                       <Image
                         priority={true}
                         src={i.iconImageSrc}
-                        alt={i.iconImageAlt}
+                        alt={i.imageAlt}
                         height={27}
                         width={27}
                         className="dark:hidden hover:scale-[1.1] transition-transform ease-in-out"
@@ -72,7 +72,7 @@ export default function TeamPage({ data }: TeamPageProps) {
                       <Image
                         priority={true}
                         src={i.darkmodeSrc}
-                        alt={i.iconImageAlt}
+                        alt={i.imageAlt}
                         height={27}
                         width={27}
                         className="hidden dark:block hover:scale-[1.1] transition-transform ease-in-out"
@@ -132,11 +132,11 @@ export default function TeamPage({ data }: TeamPageProps) {
                     </p>
                     <div data-id="jay-icons" className="flex gap-[2rem]">
                       {showBio.iconLinks.map((i) => (
-                        <Link key={i.iconImageAlt} href={i.iconLink}>
+                        <Link key={i.imageAlt} href={i.iconLink}>
                           <Image
                             loading="lazy"
                             src={i.iconImageSrc}
-                            alt={i.iconImageAlt}
+                            alt={i.imageAlt}
                             height={27}
                             width={27}
                             className="w-[20px] h-[20px] dark:hidden hover:scale-[1.1] transition-transform ease-in-out"
@@ -144,7 +144,7 @@ export default function TeamPage({ data }: TeamPageProps) {
                           <Image
                             loading="lazy"
                             src={i.darkmodeSrc}
-                            alt={i.iconImageAlt}
+                            alt={i.imageAlt}
                             height={27}
                             width={27}
                             className="w-[20px] h-[20px] hidden dark:block hover:scale-[1.1] transition-transform ease-in-out"

@@ -1,5 +1,5 @@
 // components/AdminLayout.tsx
-import React from "react";
+import React from 'react';
 
 const AdminLayout = ({ children }: { children: React.ReactNode }) => {
   return (

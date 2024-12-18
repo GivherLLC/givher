@@ -1,7 +1,7 @@
-import React from "react";
-import AllClients from "./AllClients";
-import { Client } from "@/types/types";
-import { ClientsPageData } from "@/types/types";
+import React from 'react';
+import AllClients from './AllClients';
+import { Client } from '@/types/types';
+import { ClientsPageData } from '@/types/types';
 
 export default function ClientsPage({
   clients,

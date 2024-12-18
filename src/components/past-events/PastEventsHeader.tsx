@@ -30,6 +30,7 @@ export default function PastEventsHeader({
   }, [showInfo]);
 
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     const Flickity = require('flickity-imagesloaded');
     const flkty = new Flickity('.past-events-carousel', {
       cellAlign: 'center', // Align cells to the center

@@ -3,30 +3,30 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Ramenson";
+  font-family: 'Ramenson';
   src:
-    local("Ramenson"),
-    url("../fonts/ramenson.woff") format("woff");
+    local('Ramenson'),
+    url('../fonts/ramenson.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Visby";
+  font-family: 'Visby';
   src:
-    local("Visby"),
-    url("../fonts/VisbyCF-Regular.woff") format("woff");
+    local('Visby'),
+    url('../fonts/VisbyCF-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "VisbyBold";
+  font-family: 'VisbyBold';
   src:
-    local("VisbyBold"),
-    url("../fonts/VisbyCF-Bold.woff") format("woff");
+    local('VisbyBold'),
+    url('../fonts/VisbyCF-Bold.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -48,7 +48,7 @@
 
 html,
 body {
-  font-family: "Visby", sans-serif !important;
+  font-family: 'Visby', sans-serif !important;
 }
 
 html {
@@ -79,7 +79,7 @@ body {
     Visby,
     -apple-system,
     BlinkMacSystemFont,
-    "Segoe UI",
+    'Segoe UI',
     Helvetica,
     Arial,
     sans-serif;

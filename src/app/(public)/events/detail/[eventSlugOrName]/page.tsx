@@ -1,15 +1,15 @@
-import React from "react";
-import EventDetailPage from "@/components/event-detail/EventDetailPage";
-import { Metadata } from "next";
-import getEventNameParam from "@/utils/getEventNameParam";
-import getEventsPageData from "../../../../../../lib/getEventsPageData";
+import React from 'react';
+import EventDetailPage from '@/components/event-detail/EventDetailPage';
+import { Metadata } from 'next';
+import getEventNameParam from '@/utils/getEventNameParam';
+import getEventsPageData from '../../../../../../lib/getEventsPageData';
 import {
   getReadyEvents,
   getEventBySlugOrName,
   getClientEvents,
-} from "../../../../../../lib/getAllEvents";
-import getAllClientImages from "../../../../../../lib/getAllClientImages";
-import { EventDetailPageProps } from "@/types/types";
+} from '../../../../../../lib/getAllEvents';
+import getAllClientImages from '../../../../../../lib/getAllClientImages';
+import { EventDetailPageProps } from '@/types/types';
 
 export async function generateMetadata({
   params: { eventSlugOrName },
@@ -29,21 +29,21 @@ export async function generateMetadata({
         title,
         description,
         url,
-        siteName: "Givher",
-        type: "website",
+        siteName: 'Givher',
+        type: 'website',
         images: [
           {
-            url: "https://www.givher.com/opengraph-image.png",
+            url: 'https://www.givher.com/opengraph-image.png',
             width: 1200,
             height: 630,
-            alt: "Givher Political Hospitality",
+            alt: 'Givher Political Hospitality',
           },
         ],
       },
     };
   } else {
     return {
-      title: "Event Not Found",
+      title: 'Event Not Found',
     };
   }
 }

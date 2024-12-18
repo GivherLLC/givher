@@ -1,6 +1,6 @@
-import React from "react";
-import ClientCard from "./ClientCard";
-import { Client } from "@/types/types";
+import React from 'react';
+import ClientCard from './ClientCard';
+import { Client } from '@/types/types';
 
 type AllClientsProps = {
   clients: Client[];

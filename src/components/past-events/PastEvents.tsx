@@ -244,7 +244,7 @@ export default function PastEvents({
             </div>
           </div>
           <div className="flex flex-wrap gap-[4rem] min-h-[286px] sm:min-h-[400px]">
-            {filteredEvents.map((e: EventType, i: number) => {
+            {filteredEvents.map((e: EventType) => {
               const clientLogo = clientLogos[e.clientName];
 
               return (

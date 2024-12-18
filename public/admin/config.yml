@@ -9,18 +9,30 @@ collections:
   - name: 'pages'
     label: 'Pages'
     files:
-      - label: "Home Page"
-        name: "homePage"
-        file: "content/pages/home_page.yml"
+      - label: 'Home Page'
+        name: 'homePage'
+        file: 'content/pages/home_page.yml'
         fields:
           - label: 'Video (Top of Homepage)'
             name: 'video'
             widget: 'object'
             fields:
               - { label: 'Video Title', name: 'videoTitle', widget: 'string' }
-              - { label: 'Video Description', name: 'videoDescription', widget: 'string' }
-              - { label: 'Video Button Text', name: 'videoButtonText', widget: 'string' }
-              - { label: 'Video Button Link', name: 'videoButtonLink', widget: 'string' }
+              - {
+                  label: 'Video Description',
+                  name: 'videoDescription',
+                  widget: 'string',
+                }
+              - {
+                  label: 'Video Button Text',
+                  name: 'videoButtonText',
+                  widget: 'string',
+                }
+              - {
+                  label: 'Video Button Link',
+                  name: 'videoButtonLink',
+                  widget: 'string',
+                }
           - label: 'Services'
             name: 'services'
             widget: 'object'
@@ -33,17 +45,45 @@ collections:
                 widget: 'list'
                 fields:
                   - { label: 'Title', name: 'cardTitle', widget: 'string' }
-                  - { label: 'Description', name: 'cardDescription', widget: 'string' }
-                  - { label: 'Background Image (450w x 350h)', name: 'cardImageSrc', widget: 'image', allow_multiple: false, choose_url: false }
-                  - { label: 'Background Image Dark Mode (350w x 350h)', name: 'cardImageSrcDarkMode', widget: 'image', allow_multiple: false, choose_url: false }
-                  - { label: 'Description of Image', name: 'cardImageAlt', widget: 'string' }
-                  - { label: 'Link Text', name: 'cardLinkText', widget: 'string' }
+                  - {
+                      label: 'Description',
+                      name: 'cardDescription',
+                      widget: 'string',
+                    }
+                  - {
+                      label: 'Background Image (450w x 350h)',
+                      name: 'cardImageSrc',
+                      widget: 'image',
+                      allow_multiple: false,
+                      choose_url: false,
+                    }
+                  - {
+                      label: 'Background Image Dark Mode (350w x 350h)',
+                      name: 'cardImageSrcDarkMode',
+                      widget: 'image',
+                      allow_multiple: false,
+                      choose_url: false,
+                    }
+                  - {
+                      label: 'Description of Image',
+                      name: 'cardImageAlt',
+                      widget: 'string',
+                    }
+                  - {
+                      label: 'Link Text',
+                      name: 'cardLinkText',
+                      widget: 'string',
+                    }
                   - { label: 'Link', name: 'cardLink', widget: 'string' }
           - label: 'Featured Events Section'
             name: 'featuredEvents'
             widget: 'object'
             fields:
-              - { label: 'Featured Events Title', name: 'title', widget: 'string' }
+              - {
+                  label: 'Featured Events Title',
+                  name: 'title',
+                  widget: 'string',
+                }
           - label: 'About Us'
             name: 'about'
             widget: 'object'
@@ -53,123 +93,313 @@ collections:
                 name: 'aboutUsSections'
                 widget: 'list'
                 fields:
-                  - { label: 'Section Title', name: 'sectionTitle', widget: 'string' }
-                  - { label: 'Section Paragraph Text', name: 'sectionText', widget: 'string' }
-                  - { label: 'Section Image (600w x 285h)', name: 'sectionImageSrc', widget: 'image', allow_multiple: false, choose_url: false }
-                  - { label: 'Section Image - Dark Mode (600w x 285h)', name: 'sectionImageSrcDarkMode', widget: 'image', allow_multiple: false, choose_url: false }
-                  - { label: 'Description of Section Image', name: 'sectionImageAlt', widget: 'string' }
+                  - {
+                      label: 'Section Title',
+                      name: 'sectionTitle',
+                      widget: 'string',
+                    }
+                  - {
+                      label: 'Section Paragraph Text',
+                      name: 'sectionText',
+                      widget: 'string',
+                    }
+                  - {
+                      label: 'Section Image (600w x 285h)',
+                      name: 'sectionImageSrc',
+                      widget: 'image',
+                      allow_multiple: false,
+                      choose_url: false,
+                    }
+                  - {
+                      label: 'Section Image - Dark Mode (600w x 285h)',
+                      name: 'sectionImageSrcDarkMode',
+                      widget: 'image',
+                      allow_multiple: false,
+                      choose_url: false,
+                    }
+                  - {
+                      label: 'Description of Section Image',
+                      name: 'sectionImageAlt',
+                      widget: 'string',
+                    }
           - label: 'Testimonials'
             name: 'testimonialSection'
             widget: 'object'
             fields:
-              - { label: 'Testimonials Section Title', name: 'testimonialsSectionTitle', widget: 'string', required: false }
+              - {
+                  label: 'Testimonials Section Title',
+                  name: 'testimonialsSectionTitle',
+                  widget: 'string',
+                  required: false,
+                }
               - label: 'Testimonials Carousel'
                 name: 'testimonials'
                 widget: 'list'
                 fields:
-                  - { label: 'Quotee Name', name: 'quoteeName', widget: 'string' }
+                  - {
+                      label: 'Quotee Name',
+                      name: 'quoteeName',
+                      widget: 'string',
+                    }
                   - { label: 'Quote', name: 'quote', widget: 'string' }
-                  - { label: 'Organization', name: 'organization', widget: 'string' }
-      - label: "Clients Page"
-        name: "clientPage"
-        file: "content/pages/client_page.yml"
+                  - {
+                      label: 'Organization',
+                      name: 'organization',
+                      widget: 'string',
+                    }
+      - label: 'Clients Page'
+        name: 'clientPage'
+        file: 'content/pages/client_page.yml'
         fields:
-          - { label: 'Client Page Title', name: 'clientsSectionTitle', widget: 'string' }
-      - label: "Events Page"
-        name: "eventsPage"
-        file: "content/pages/events_page.yml"
+          - {
+              label: 'Client Page Title',
+              name: 'clientsSectionTitle',
+              widget: 'string',
+            }
+      - label: 'Events Page'
+        name: 'eventsPage'
+        file: 'content/pages/events_page.yml'
         fields:
           - label: 'Givher (Featured Event at Top)'
             name: 'givherFeaturedEvent'
             widget: 'object'
             fields:
               - { label: 'Title', name: 'eventName', widget: 'string' }
-              - { label: 'Event City', name: 'eventCity', widget: 'string', required: false }
-              - { label: 'Event Start Date', name: 'firstDayOfEvent', widget: 'datetime', required: false }
-              - { label: 'Button Text', name: 'eventButtonTextOne', widget: 'string', required: true }
-              - { label: 'Button Link', name: 'eventButtonLinkOne', widget: 'string', required: true }
-              - { label: 'Image (380w x 348h)', name: 'clientImage', widget: 'image', allow_multiple: false, choose_url: false }
-          - { label: 'All Events Section Title', name: 'allEventsSectionTitle', widget: 'string' }
-          - { label: 'Events Coming Soon Section Title', name: 'comingSoonEventsSectionTitle', widget: 'string' }
-          - { label: 'Events Coming Soon Section Subtitle', name: 'comingSoonEventsSectionSubtitle', widget: 'string' }
-          - { label: 'Text to Show for Postponed Events', name: 'postponedEventText', widget: 'string' }
-      - label: "Past Events Page"
-        name: "pastEventsPage"
-        file: "content/pages/past-events_page.yml"
+              - {
+                  label: 'Event City',
+                  name: 'eventCity',
+                  widget: 'string',
+                  required: false,
+                }
+              - {
+                  label: 'Event Start Date',
+                  name: 'firstDayOfEvent',
+                  widget: 'datetime',
+                  required: false,
+                }
+              - {
+                  label: 'Button Text',
+                  name: 'eventButtonTextOne',
+                  widget: 'string',
+                  required: true,
+                }
+              - {
+                  label: 'Button Link',
+                  name: 'eventButtonLinkOne',
+                  widget: 'string',
+                  required: true,
+                }
+              - {
+                  label: 'Image (380w x 348h)',
+                  name: 'clientImage',
+                  widget: 'image',
+                  allow_multiple: false,
+                  choose_url: false,
+                }
+          - {
+              label: 'All Events Section Title',
+              name: 'allEventsSectionTitle',
+              widget: 'string',
+            }
+          - {
+              label: 'Events Coming Soon Section Title',
+              name: 'comingSoonEventsSectionTitle',
+              widget: 'string',
+            }
+          - {
+              label: 'Events Coming Soon Section Subtitle',
+              name: 'comingSoonEventsSectionSubtitle',
+              widget: 'string',
+            }
+          - {
+              label: 'Text to Show for Postponed Events',
+              name: 'postponedEventText',
+              widget: 'string',
+            }
+      - label: 'Past Events Page'
+        name: 'pastEventsPage'
+        file: 'content/pages/past-events_page.yml'
         fields:
-          - { label: 'Page Title', name: 'pastEventsPageTitle', widget: 'string' }
-          - { label: 'Page Subtitle', name: 'pastEventsPageSubtitle', widget: 'string' }
+          - {
+              label: 'Page Title',
+              name: 'pastEventsPageTitle',
+              widget: 'string',
+            }
+          - {
+              label: 'Page Subtitle',
+              name: 'pastEventsPageSubtitle',
+              widget: 'string',
+            }
           - label: 'Featured Past Events'
             name: 'featuredPastEvents'
             widget: 'relation'
             collection: 'allEvents'
             value_field: 'eventName'
             search_fields: ['eventName']
-            display_fields: ["{{firstDayOfEvent}} - {{eventName}} - {{clientName}}"]
+            display_fields:
+              ['{{firstDayOfEvent}} - {{eventName}} - {{clientName}}']
             multiple: true
             max: 10
             required: false
-      - label: "Team Page"
-        name: "teamPage"
-        file: "content/pages/team_page.yml"
+      - label: 'Team Page'
+        name: 'teamPage'
+        file: 'content/pages/team_page.yml'
         fields:
-          - { label: 'Team Page Title', name: 'teamPageTitle', widget: 'string' }
+          - {
+              label: 'Team Page Title',
+              name: 'teamPageTitle',
+              widget: 'string',
+            }
           - label: 'Team Members'
             name: 'teamMembers'
             widget: 'list'
             fields:
-              - { label: 'Team Member Full Name', name: 'name', widget: 'string' }
+              - {
+                  label: 'Team Member Full Name',
+                  name: 'name',
+                  widget: 'string',
+                }
               - { label: 'Team Member Title', name: 'title', widget: 'string' }
-              - { label: 'Team Member Image (1024w x 1024h)', name: 'imageSrc',  widget: 'image', allow_multiple: false, choose_url: false }
+              - {
+                  label: 'Team Member Image (1024w x 1024h)',
+                  name: 'imageSrc',
+                  widget: 'image',
+                  allow_multiple: false,
+                  choose_url: false,
+                }
               - label: 'Icon Links'
                 name: 'iconLinks'
                 widget: 'list'
                 fields:
-                  - { label: 'Icon Image (80 x 80)', name: 'iconImageSrc',  widget: 'image', allow_multiple: false, choose_url: false }
-                  - { label: 'Icon Image - Dark Mode (80 x 80)', name: 'darkmodeSrc',  widget: 'image', allow_multiple: false, choose_url: false }
-                  - { label: 'Description of Icon', name: 'iconImageAlt', widget: 'string' }
+                  - {
+                      label: 'Icon Image (80 x 80)',
+                      name: 'iconImageSrc',
+                      widget: 'image',
+                      allow_multiple: false,
+                      choose_url: false,
+                    }
+                  - {
+                      label: 'Icon Image - Dark Mode (80 x 80)',
+                      name: 'darkmodeSrc',
+                      widget: 'image',
+                      allow_multiple: false,
+                      choose_url: false,
+                    }
+                  - {
+                      label: 'Description of Icon',
+                      name: 'iconImageAlt',
+                      widget: 'string',
+                    }
                   - { label: 'Icon Link', name: 'iconLink', widget: 'string' }
               - label: 'Bio'
                 name: 'bio'
                 widget: 'list'
                 fields:
-                  - { label: 'Paragraph (add additional field for each paragraph)', name: 'paragraph',  widget: 'string' }
-      - label: "Contact Page"
-        name: "contactPage"
-        file: "content/pages/contact_page.yml"
+                  - {
+                      label: 'Paragraph (add additional field for each paragraph)',
+                      name: 'paragraph',
+                      widget: 'string',
+                    }
+      - label: 'Contact Page'
+        name: 'contactPage'
+        file: 'content/pages/contact_page.yml'
         fields:
-          - { label: 'Contact Page Title', name: 'contactPageTitle', widget: 'string' }
-          - { label: 'Contact Page Subtitle 1', name: 'contactPageSubTitle1', widget: 'string' }
-          - { label: 'Contact Page Subtitle 2', name: 'contactPageSubTitle2', widget: 'string' }
-          - { label: 'Contact Phone Number', name: 'contactPhoneNumber', widget: 'string' }
+          - {
+              label: 'Contact Page Title',
+              name: 'contactPageTitle',
+              widget: 'string',
+            }
+          - {
+              label: 'Contact Page Subtitle 1',
+              name: 'contactPageSubTitle1',
+              widget: 'string',
+            }
+          - {
+              label: 'Contact Page Subtitle 2',
+              name: 'contactPageSubTitle2',
+              widget: 'string',
+            }
+          - {
+              label: 'Contact Phone Number',
+              name: 'contactPhoneNumber',
+              widget: 'string',
+            }
           - { label: 'Contact Email', name: 'contactEmail', widget: 'string' }
-      - label: "Sign Up For Emails Page"
-        name: "signUpPage"
-        file: "content/pages/signup_page.yml"
+      - label: 'Sign Up For Emails Page'
+        name: 'signUpPage'
+        file: 'content/pages/signup_page.yml'
         fields:
-          - { label: 'Sign Up Page Title', name: 'signupTitle', widget: 'string' }
-          - { label: 'Google Form Embed Link', name: 'googleFormLink', widget: 'string' }
-      - label: "Gallery Page"
-        name: "galleryPage"
-        file: "content/pages/gallery_page.yml"
+          - {
+              label: 'Sign Up Page Title',
+              name: 'signupTitle',
+              widget: 'string',
+            }
+          - {
+              label: 'Google Form Embed Link',
+              name: 'googleFormLink',
+              widget: 'string',
+            }
+      - label: 'Gallery Page'
+        name: 'galleryPage'
+        file: 'content/pages/gallery_page.yml'
         fields:
-          - { label: 'Gallery Page Title', name: 'galleryTitle', widget: 'string' }
-          - { label: 'Gallery Page SubTitle', name: 'gallerySubTitle', widget: 'string' }
-      - label: "Footer"
-        name: "footer"
-        file: "content/footer/footer.yml"
+          - {
+              label: 'Gallery Page Title',
+              name: 'galleryTitle',
+              widget: 'string',
+            }
+          - {
+              label: 'Gallery Page SubTitle',
+              name: 'gallerySubTitle',
+              widget: 'string',
+            }
+      - label: 'Footer'
+        name: 'footer'
+        file: 'content/footer/footer.yml'
         fields:
-          - { label: 'Footer Logo (380w x 348h)', name: 'footerLogo', widget: 'image', allow_multiple: false, choose_url: false }
-          - { label: 'Footer Logo - Dark Mode (380w x 348h)', name: 'darkModeLogoSrc', widget: 'image', allow_multiple: false, choose_url: false }
+          - {
+              label: 'Footer Logo (380w x 348h)',
+              name: 'footerLogo',
+              widget: 'image',
+              allow_multiple: false,
+              choose_url: false,
+            }
+          - {
+              label: 'Footer Logo - Dark Mode (380w x 348h)',
+              name: 'darkModeLogoSrc',
+              widget: 'image',
+              allow_multiple: false,
+              choose_url: false,
+            }
           - label: 'Footer Icons Links'
             name: 'iconLinks'
             widget: 'list'
             fields:
-              - { label: 'Icon Image (80 x 80)', name: 'iconImageSrc', widget: 'image', allow_multiple: false, choose_url: false }
-              - { label: 'Icon Image - Dark Mode (80 x 80)', name: 'darkmodeSrc', widget: 'image', allow_multiple: false, choose_url: false }
-              - { label: 'Description of Icon', name: 'imageAlt', widget: 'string' }
+              - {
+                  label: 'Icon Image (80 x 80)',
+                  name: 'iconImageSrc',
+                  widget: 'image',
+                  allow_multiple: false,
+                  choose_url: false,
+                }
+              - {
+                  label: 'Icon Image - Dark Mode (80 x 80)',
+                  name: 'darkmodeSrc',
+                  widget: 'image',
+                  allow_multiple: false,
+                  choose_url: false,
+                }
+              - {
+                  label: 'Description of Icon',
+                  name: 'imageAlt',
+                  widget: 'string',
+                }
               - { label: 'Icon Link', name: 'iconLink', widget: 'string' }
-          - { label: 'Title Above Button', name: 'buttonTitle', widget: 'string' }
+          - {
+              label: 'Title Above Button',
+              name: 'buttonTitle',
+              widget: 'string',
+            }
           - { label: 'Button Text', name: 'buttonText', widget: 'string' }
           - { label: 'Button Link', name: 'buttonLink', widget: 'string' }
           - label: 'Page Links'
@@ -185,21 +415,73 @@ collections:
     folder: 'content/clients'
     create: true
     fields:
-      - { label: 'Client Name', name: 'clientName', widget: 'string', required: true }
-      - { label: 'Client Logo (400w)', name: 'clientLogo', widget: 'image', allow_multiple: false, required: true, choose_url: false }
-      - { label: 'Client Website', name: 'clientWebsite', widget: 'string', required: false }
-      - { label: 'Client W9 Link (Google Drive)', name: 'clientW9Src', widget: 'string', required: false }
-      - { label: 'Past Client', name: 'pastClient', widget: 'boolean', default: false , required: false }
-      - { label: 'Hide Client', hint: 'when toggled this client will no longer appear on the clients page', name: 'hideClient', widget: 'boolean', default: false , required: true }
+      - {
+          label: 'Client Name',
+          name: 'clientName',
+          widget: 'string',
+          required: true,
+        }
+      - {
+          label: 'Client Logo (400w)',
+          name: 'clientLogo',
+          widget: 'image',
+          allow_multiple: false,
+          required: true,
+          choose_url: false,
+        }
+      - {
+          label: 'Client Website',
+          name: 'clientWebsite',
+          widget: 'string',
+          required: false,
+        }
+      - {
+          label: 'Client W9 Link (Google Drive)',
+          name: 'clientW9Src',
+          widget: 'string',
+          required: false,
+        }
+      - {
+          label: 'Past Client',
+          name: 'pastClient',
+          widget: 'boolean',
+          default: false,
+          required: false,
+        }
+      - {
+          label: 'Hide Client',
+          hint: 'when toggled this client will no longer appear on the clients page',
+          name: 'hideClient',
+          widget: 'boolean',
+          default: false,
+          required: true,
+        }
   - name: 'allEvents'
     identifier_field: 'eventName'
     label: 'All Events'
     folder: 'content/all-events'
     create: true
     fields:
-      - { label: 'All Event Details Available', name: 'available', widget: 'boolean', default: false, required: true }
-      - { label: 'Event Name', name: 'eventName', widget: 'string', required: true }
-      - { label: 'Givher Event Detail Page Url (ex: givher.com/events/detail/[YOUR-INPUT])', hint: '"new-event" would results in url: givher.com/events/detail/new-event', name: 'slug', widget: 'string', required: false }
+      - {
+          label: 'All Event Details Available',
+          name: 'available',
+          widget: 'boolean',
+          default: false,
+          required: true,
+        }
+      - {
+          label: 'Event Name',
+          name: 'eventName',
+          widget: 'string',
+          required: true,
+        }
+      - {
+          label: 'Givher Event Detail Page Url (ex: givher.com/events/detail/[YOUR-INPUT])',
+          hint: '"new-event" would results in url: givher.com/events/detail/new-event',
+          name: 'slug',
+          widget: 'string',
+          required: false,
+        }
       - label: 'Event Start Date'
         name: 'firstDayOfEvent'
         widget: 'datetime'
@@ -226,7 +508,12 @@ collections:
         required: false
         format: 'MM.DD.YYYY'
         time_format: false
-      - { label: 'Time of Year (if no date available)', name: 'timeOfYear', widget: 'string', required: false }
+      - {
+          label: 'Time of Year (if no date available)',
+          name: 'timeOfYear',
+          widget: 'string',
+          required: false,
+        }
       - label: 'Event Time Zone'
         name: 'timeZone'
         widget: 'select'
@@ -234,25 +521,35 @@ collections:
         max: 1
         default: 'America/Los_Angeles'
         options:
-          - { label: "PT (Los Angeles)", value: "America/Los_Angeles"}
-          - { label: "ET (New York)", value: "America/New_York"}
-          - { label: "MST (Phoenix)", value: "America/Phoenix"}
-          - { label: "MT (Denver)", value: "America/Denver"}
-          - { label: "AKT (Anchorage)", value: "America/Anchorage"}
-          - { label: "HAT (Honolulu)", value: "Pacific/Honolulu"}
+          - { label: 'PT (Los Angeles)', value: 'America/Los_Angeles' }
+          - { label: 'ET (New York)', value: 'America/New_York' }
+          - { label: 'MST (Phoenix)', value: 'America/Phoenix' }
+          - { label: 'MT (Denver)', value: 'America/Denver' }
+          - { label: 'AKT (Anchorage)', value: 'America/Anchorage' }
+          - { label: 'HAT (Honolulu)', value: 'Pacific/Honolulu' }
       - label: 'Event Type'
         name: 'eventType'
         widget: 'select'
         required: false
         max: 1
         options:
-          - { label: "501(c)(3)", value: "501(c)(3)"}
-          - { label: "501(c)(4)", value: "501(c)(4)"}
-          - { label: "PAC", value: "PAC"}
-          - { label: "Ballot Measure", value: "Ballot Measure"}
-          - { label: "Candidate", value: "Candidate"}
-      - { label: 'Event City', name: 'eventCity', widget: 'string', required: false }
-      - { label: 'Event Location', name: 'eventLocation', widget: 'string', required: false }
+          - { label: '501(c)(3)', value: '501(c)(3)' }
+          - { label: '501(c)(4)', value: '501(c)(4)' }
+          - { label: 'PAC', value: 'PAC' }
+          - { label: 'Ballot Measure', value: 'Ballot Measure' }
+          - { label: 'Candidate', value: 'Candidate' }
+      - {
+          label: 'Event City',
+          name: 'eventCity',
+          widget: 'string',
+          required: false,
+        }
+      - {
+          label: 'Event Location',
+          name: 'eventLocation',
+          widget: 'string',
+          required: false,
+        }
       - label: 'Client Name'
         name: 'clientName'
         widget: 'relation'
@@ -260,55 +557,120 @@ collections:
         value_field: 'clientName'
         search_fields: ['clientName']
         required: true
-      - { label: 'Event Button #1 - Text', name: 'eventButtonTextOne', widget: 'string', required: false }
-      - { label: 'Event Button #1 - Link', name: 'eventButtonLinkOne', widget: 'string', required: false }
-      - { label: 'Event Button #2 - Text', name: 'eventButtonTextTwo', widget: 'string', required: false }
-      - { label: 'Event Button #2 - Link', name: 'eventButtonLinkTwo', widget: 'string', required: false }
+      - {
+          label: 'Event Button #1 - Text',
+          name: 'eventButtonTextOne',
+          widget: 'string',
+          required: false,
+        }
+      - {
+          label: 'Event Button #1 - Link',
+          name: 'eventButtonLinkOne',
+          widget: 'string',
+          required: false,
+        }
+      - {
+          label: 'Event Button #2 - Text',
+          name: 'eventButtonTextTwo',
+          widget: 'string',
+          required: false,
+        }
+      - {
+          label: 'Event Button #2 - Link',
+          name: 'eventButtonLinkTwo',
+          widget: 'string',
+          required: false,
+        }
       - label: 'Event Description'
         name: 'eventDescription'
         widget: 'list'
         fields:
-          - { label: 'Paragraph (add additional field for each paragraph)', name: 'paragraph',  widget: 'string', required: false }
+          - {
+              label: 'Paragraph (add additional field for each paragraph)',
+              name: 'paragraph',
+              widget: 'string',
+              required: false,
+            }
         required: false
       - label: 'Bolded Information'
         name: 'boldedEventInformation'
         widget: 'list'
         required: false
         fields:
-          - { label: 'Line (add additional field for each line)', name: 'line',  widget: 'string', required: false }
-      - { label: 'Event Detail Page Image (615w x 385h)', name: 'detailImage', widget: 'image', allow_multiple: false, required: false, choose_url: false }
-      - { label: 'Postponed', name: 'postponed', widget: 'boolean', default: false, required: true }
-      - { label: 'Hide Event', hint: 'this will hide the event from current and past events', name: 'hideEvent', widget: 'boolean', default: false, required: false }
+          - {
+              label: 'Line (add additional field for each line)',
+              name: 'line',
+              widget: 'string',
+              required: false,
+            }
+      - {
+          label: 'Event Detail Page Image (615w x 385h)',
+          name: 'detailImage',
+          widget: 'image',
+          allow_multiple: false,
+          required: false,
+          choose_url: false,
+        }
+      - {
+          label: 'Postponed',
+          name: 'postponed',
+          widget: 'boolean',
+          default: false,
+          required: true,
+        }
+      - {
+          label: 'Hide Event',
+          hint: 'this will hide the event from current and past events',
+          name: 'hideEvent',
+          widget: 'boolean',
+          default: false,
+          required: false,
+        }
   - name: 'gallery'
     label: 'Image Gallery'
     files:
       - label: 'Small Budget Images'
         name: 'small'
-        file: "content/gallery/small_gallery.yml"
+        file: 'content/gallery/small_gallery.yml'
         fields:
-        - label: "Images"
-          name: "images"
-          widget: "list"
-          fields:
-            - { label: "Image", name: "image", widget: "image" }
-            - { label: "Caption", name: "caption", widget: "string", required: false }
+          - label: 'Images'
+            name: 'images'
+            widget: 'list'
+            fields:
+              - { label: 'Image', name: 'image', widget: 'image' }
+              - {
+                  label: 'Caption',
+                  name: 'caption',
+                  widget: 'string',
+                  required: false,
+                }
       - label: 'Medium Budget Images'
         name: 'medium'
-        file: "content/gallery/medium_gallery.yml"
+        file: 'content/gallery/medium_gallery.yml'
         fields:
-        - label: "Images"
-          name: "images"
-          widget: "list"
-          fields:
-            - { label: "Image", name: "image", widget: "image" }
-            - { label: "Caption", name: "caption", widget: "string", required: false }
+          - label: 'Images'
+            name: 'images'
+            widget: 'list'
+            fields:
+              - { label: 'Image', name: 'image', widget: 'image' }
+              - {
+                  label: 'Caption',
+                  name: 'caption',
+                  widget: 'string',
+                  required: false,
+                }
       - label: 'Large Budget Images'
         name: 'large'
-        file: "content/gallery/large_gallery.yml"
+        file: 'content/gallery/large_gallery.yml'
         fields:
-        - label: "Images"
-          name: "images"
-          widget: "list"
-          fields:
-            - { label: "Image", name: "image", widget: "image" }
-            - { label: "Caption", name: "caption", widget: "string", required: false }
+          - label: 'Images'
+            name: 'images'
+            widget: 'list'
+            fields:
+              - { label: 'Image', name: 'image', widget: 'image' }
+              - {
+                  label: 'Caption',
+                  name: 'caption',
+                  widget: 'string',
+                  required: false,
+                }

@@ -1,7 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import { EventType } from "@/types/types";
-import ButtonLink from "../common/ButtonLink";
+import React from 'react';
+import Image from 'next/image';
+import { EventType } from '@/types/types';
+import ButtonLink from '../common/ButtonLink';
 
 export default function DetailHeader({
   event,
@@ -43,7 +43,7 @@ export default function DetailHeader({
             {eventName}
           </h1>
           <h2 className="font-visbyBold text-softOpal text-center lg:text-left">
-            {eventCity}{" "}
+            {eventCity}{' '}
             {!!eventTime && (
               <span className="text-mauvelous text-2xl font-visbyBold pl-[1rem]">
                 {eventTime}
@@ -51,7 +51,7 @@ export default function DetailHeader({
             )}
             {!!eventEndTime && (
               <span className="text-mauvelous text-2xl font-visbyBold">
-                {" "}
+                {' '}
                 - {eventEndTime}
               </span>
             )}

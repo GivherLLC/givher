@@ -1,11 +1,11 @@
-import React from "react";
-import { EventType } from "@/types/types";
-import DetailHeader from "./DetailHeader";
+import React from 'react';
+import { EventType } from '@/types/types';
+import DetailHeader from './DetailHeader';
 
-import { lazy } from "react";
+import { lazy } from 'react';
 
-const EventDetails = lazy(() => import("./EventDetails"));
-const ClientEvents = lazy(() => import("./ClientEvents"));
+const EventDetails = lazy(() => import('./EventDetails'));
+const ClientEvents = lazy(() => import('./ClientEvents'));
 
 export default function EventDetailPage({
   event,

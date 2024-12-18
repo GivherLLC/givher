@@ -1,10 +1,10 @@
-import React from "react";
-import FeaturedEvents from "./FeaturedEvents";
-import InTheWorks from "./InTheWorks";
-import { EventsPageProps } from "@/types/types";
-import { lazy } from "react";
+import React from 'react';
+import FeaturedEvents from './FeaturedEvents';
+import InTheWorks from './InTheWorks';
+import { EventsPageProps } from '@/types/types';
+import { lazy } from 'react';
 
-const AllEvents = lazy(() => import("./AllEvents"));
+const AllEvents = lazy(() => import('./AllEvents'));
 
 const EventsPage = ({
   events,

@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 type AboutUsProps = {
   aboutTitle: string;
@@ -40,7 +41,7 @@ export default function AboutUs({ aboutInfo }: { aboutInfo: AboutUsProps }) {
                 <div
                   className={`w-full flex justify-center items-center ${even ? 'lg:justify-end' : 'lg:justify-start'}`}
                 >
-                  <img
+                  <Image
                     loading="lazy"
                     src={s.sectionImageSrc}
                     alt={s.sectionImageAlt}
@@ -48,7 +49,7 @@ export default function AboutUs({ aboutInfo }: { aboutInfo: AboutUsProps }) {
                     width={500}
                     className="sm:max-w-[300px] lg:max-w-[500px] xl:max-w-[600px] max-h-[285px] h-auto dark:hidden"
                   />
-                  <img
+                  <Image
                     loading="lazy"
                     src={s.sectionImageSrcDarkMode}
                     alt={s.sectionImageAlt}

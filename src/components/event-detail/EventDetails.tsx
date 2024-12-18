@@ -1,7 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import { EventType } from "@/types/types";
-import ArrowLink from "../common/ArrowLink";
+import React from 'react';
+import Image from 'next/image';
+import { EventType } from '@/types/types';
+import ArrowLink from '../common/ArrowLink';
 
 export default function EventDetails({
   event,
@@ -35,10 +35,10 @@ export default function EventDetails({
             (eventButtonTextTwo && eventButtonLinkTwo)) && (
             <div className="flex">
               <ArrowLink
-                text={eventButtonTextTwo || eventButtonTextOne || ""}
+                text={eventButtonTextTwo || eventButtonTextOne || ''}
                 color="black"
                 darkModeColor="softOpal"
-                link={eventButtonLinkTwo || eventButtonLinkOne || "#"}
+                link={eventButtonLinkTwo || eventButtonLinkOne || '#'}
                 borderColor="mauvelous"
                 openNewTab={true}
               />
@@ -69,7 +69,7 @@ export default function EventDetails({
             loading="lazy"
             height={311}
             width={322}
-            src={"/images/events/paint-splatter-small.svg"}
+            src={'/images/events/paint-splatter-small.svg'}
             alt="paint splatter"
             className="absolute left-[30%] lg:left-[-23%] bottom-[-23%] z-0"
           />

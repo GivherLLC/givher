@@ -9,9 +9,10 @@ eventLocation: Private Location
 clientName: Planned Parenthood Affiliates of California
 eventButtonTextOne: Event Website
 eventButtonLinkOne: https://events.givher.com/ppacpinkcircus2025
-eventButtonTextTwo: ""
+eventButtonTextTwo: ''
 eventDescription:
-  - paragraph: Planned Parenthood Affiliates of California presents the 4th Annual
+  - paragraph:
+      Planned Parenthood Affiliates of California presents the 4th Annual
       Pink Fundraiser. Space is limited. Individual tickets will go on sale
       closer to the event date if space is available. Sponsorship tickets are
       first come first serve.

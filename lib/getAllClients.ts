@@ -1,17 +1,17 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import { Client } from "@/types/types";
-import { getReadyEvents, getPastEvents } from "./getAllEvents";
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+import { Client } from '@/types/types';
+import { getReadyEvents, getPastEvents } from './getAllEvents';
 
 export default async function getAllClients(): Promise<Client[]> {
-  const clientDirectory = path.join(process.cwd(), "content/clients");
+  const clientDirectory = path.join(process.cwd(), 'content/clients');
   const fileNames = fs.readdirSync(clientDirectory);
 
   const clients = await Promise.all(
     fileNames.map(async (fileName) => {
       const filePath = path.join(clientDirectory, fileName);
-      const fileContents = fs.readFileSync(filePath, "utf8");
+      const fileContents = fs.readFileSync(filePath, 'utf8');
       const { data } = matter(fileContents);
 
       // Fetch events for this client
@@ -20,11 +20,11 @@ export default async function getAllClients(): Promise<Client[]> {
       const pastEvents = await getPastEvents();
 
       // Determine the event link based on current or past events
-      let eventLink = "";
+      let eventLink = '';
       if (currentEvents.some((event) => event.clientName === clientName)) {
-        eventLink = "current";
+        eventLink = 'current';
       } else if (pastEvents.some((event) => event.clientName === clientName)) {
-        eventLink = "past";
+        eventLink = 'past';
       }
 
       return {
@@ -35,7 +35,7 @@ export default async function getAllClients(): Promise<Client[]> {
         hideClient: data.hideClient,
         eventLink, // Add the computed eventLink field
       };
-    }),
+    })
   );
 
   return clients;

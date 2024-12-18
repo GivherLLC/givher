@@ -1,7 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import ButtonLink from "./ButtonLink";
-import { EventType } from "@/types/types";
+import React from 'react';
+import Image from 'next/image';
+import ButtonLink from './ButtonLink';
+import { EventType } from '@/types/types';
 
 export default function PastEventModal({
   event,

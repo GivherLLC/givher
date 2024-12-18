@@ -1,13 +1,13 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 type ArrowLinkProps = {
   text: string;
-  color: "softOpal" | "black";
-  darkModeColor: "softOpal" | "black";
+  color: 'softOpal' | 'black';
+  darkModeColor: 'softOpal' | 'black';
   link: string;
-  borderColor?: "mauvelous" | "electricYellow";
+  borderColor?: 'mauvelous' | 'electricYellow';
   openNewTab?: boolean;
   className?: string;
 };
@@ -25,10 +25,10 @@ export default function ArrowLink({
     <Link
       href={link}
       className={`group/link flex gap-[1rem] items-center ${className}`}
-      {...(openNewTab ? { target: "_blank" } : {})}
+      {...(openNewTab ? { target: '_blank' } : {})}
     >
       <p
-        className={`text-${color} dark:text-${darkModeColor} ${borderColor ? `border-b-[3px] border-${borderColor}` : ""} capitalize`}
+        className={`text-${color} dark:text-${darkModeColor} ${borderColor ? `border-b-[3px] border-${borderColor}` : ''} capitalize`}
       >
         {text}
       </p>

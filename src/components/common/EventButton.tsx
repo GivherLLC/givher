@@ -1,10 +1,10 @@
-import React from "react";
-import Link from "next/link";
+import React from 'react';
+import Link from 'next/link';
 
 type EventButtonProps = {
   text: string;
   link: string;
-  bg: "mauvelous" | "electricYellow";
+  bg: 'mauvelous' | 'electricYellow';
   openNewTab?: boolean;
 };
 
@@ -19,9 +19,9 @@ export default function EventButton({
       <Link
         href={link}
         {...(openNewTab
-          ? { target: "_blank", rel: "noopener noreferrer" }
+          ? { target: '_blank', rel: 'noopener noreferrer' }
           : {})}
-        className={`${bg === "mauvelous" ? "bg-mauvelous" : "bg-electricYellow"} text-navySmoke text-[0.75rem] uppercase font-visbyBold py-[10px] px-[20px] rounded-[12px] border-[3px] border-navySmoke relative z-10 block group-hover:transform group-hover:translate-x-[-2px] group-hover:translate-y-[-2px]`}
+        className={`${bg === 'mauvelous' ? 'bg-mauvelous' : 'bg-electricYellow'} text-navySmoke text-[0.75rem] uppercase font-visbyBold py-[10px] px-[20px] rounded-[12px] border-[3px] border-navySmoke relative z-10 block group-hover:transform group-hover:translate-x-[-2px] group-hover:translate-y-[-2px]`}
       >
         {text}
       </Link>

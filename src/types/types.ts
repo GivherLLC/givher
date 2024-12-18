@@ -1,5 +1,3 @@
-import { getInTheWorksEvents } from '../../lib/getAllEvents';
-
 export interface EventsPageData {
   allEventsSectionTitle: string;
   comingSoonEventsSectionTitle: string;
@@ -198,13 +196,6 @@ export interface TeamMember {
   imageSrc: string;
   iconLinks: IconLink[];
   bio: BioParagraph[];
-}
-
-export interface IconLink {
-  iconImageSrc: string;
-  darkmodeSrc: string;
-  iconImageAlt: string;
-  iconLink: string;
 }
 
 export interface BioParagraph {

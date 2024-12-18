@@ -1,7 +1,7 @@
 // DropdownFilter.tsx
-"use client";
+'use client';
 
-import React, { ChangeEvent, useEffect } from "react";
+import React, { ChangeEvent } from 'react';
 
 interface DropdownFilterProps {
   options: string[];
@@ -27,7 +27,7 @@ const DropdownFilter: React.FC<DropdownFilterProps> = ({
         aria-label={placeholder}
         aria-labelledby={placeholder}
         onChange={handleChange}
-        className={`bg-softOpal dark:bg-navySmoke text-navySmoke dark:text-softOpal font-medium w-full ${selected ? "w-full" : "max-w-[100px]"} cursor-pointer text-ellipsis overflow-hidden whitespace-nowrap pr-[30px] min-w-[130px] focus:outline-none border-none`}
+        className={`bg-softOpal dark:bg-navySmoke text-navySmoke dark:text-softOpal font-medium w-full ${selected ? 'w-full' : 'max-w-[100px]'} cursor-pointer text-ellipsis overflow-hidden whitespace-nowrap pr-[30px] min-w-[130px] focus:outline-none border-none`}
         value={selected}
       >
         <option value="">{placeholder}</option>
@@ -44,7 +44,7 @@ const DropdownFilter: React.FC<DropdownFilterProps> = ({
       {selected && (
         <button
           onClick={() => {
-            onSelect("");
+            onSelect('');
           }}
           className="absolute right-[25px] p-0 ml-auto h-[15px] w-[15px]"
         >

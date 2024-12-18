@@ -1,14 +1,14 @@
-import React from "react";
-import Link from "next/link";
+import React from 'react';
+import Link from 'next/link';
 
 type ButtonLinkProps = {
-  bg: "softOpal" | "navySmoke" | "mauvelous" | "electricYellow" | "transparent";
+  bg: 'softOpal' | 'navySmoke' | 'mauvelous' | 'electricYellow' | 'transparent';
   darkModeBg:
-    | "softOpal"
-    | "navySmoke"
-    | "mauvelous"
-    | "electricYellow"
-    | "transparent";
+    | 'softOpal'
+    | 'navySmoke'
+    | 'mauvelous'
+    | 'electricYellow'
+    | 'transparent';
   text: string;
   link: string;
   className?: string;
@@ -21,14 +21,14 @@ export default function ButtonLink({
   darkModeBg,
   text,
   link,
-  className = "",
+  className = '',
   openNewTab = false,
   onClick,
 }: ButtonLinkProps) {
   return (
     <Link
       href={link}
-      {...(openNewTab ? { target: "_blank" } : {})}
+      {...(openNewTab ? { target: '_blank' } : {})}
       onClick={onClick} // Conditionally apply onClick if provided
       className={`bg-${bg} ${className} dark:bg-${darkModeBg} p-[0.75rem] min-w-[175px] rounded-[.25rem] font-visbyBold text-black text-center bg-opacity-85 hover:bg-opacity-100 transition-opacity ease-in-out`}
     >

@@ -53,6 +53,7 @@ export default function FeaturedEvents({
   }, [givherFeaturedEvent, events, clientImages]);
 
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     const Flickity = require('flickity-imagesloaded');
     const flkty = new Flickity('.carousel', {
       cellAlign: 'left',

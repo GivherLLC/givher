@@ -1,6 +1,4 @@
-import React from "react";
-import ButtonLink from "../common/ButtonLink";
-// import "./MailChimpForm.css"; // Optional: you can move Mailchimp CSS here
+import React from 'react';
 
 export default function MailChimpForm() {
   return (
@@ -108,17 +106,17 @@ export default function MailChimpForm() {
               <div
                 className="response"
                 id="mce-error-response"
-                style={{ display: "none" }}
+                style={{ display: 'none' }}
               ></div>
               <div
                 className="response"
                 id="mce-success-response"
-                style={{ display: "none" }}
+                style={{ display: 'none' }}
               ></div>
             </div>
             <div
               aria-hidden="true"
-              style={{ position: "absolute", left: "-5000px" }}
+              style={{ position: 'absolute', left: '-5000px' }}
             >
               <input
                 type="text"

@@ -1,8 +1,8 @@
-import React, { Suspense } from "react";
-import EventButton from "../common/EventButton";
-import EventsFilter from "./EventsFilter";
-import { EventType } from "@/types/types";
-import { ClientImage } from "@/types/types";
+import React, { Suspense } from 'react';
+import EventButton from '../common/EventButton';
+import EventsFilter from './EventsFilter';
+import { EventType } from '@/types/types';
+import { ClientImage } from '@/types/types';
 
 export default function AllEvents({
   events,

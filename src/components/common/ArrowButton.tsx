@@ -1,10 +1,10 @@
-import React from "react";
-import Image from "next/image";
+import React from 'react';
+import Image from 'next/image';
 
 type ArrowLinkProps = {
   text: string;
-  color: "softOpal" | "black";
-  darkModeColor: "softOpal" | "black";
+  color: 'softOpal' | 'black';
+  darkModeColor: 'softOpal' | 'black';
   onClickFunction: () => undefined;
 };
 

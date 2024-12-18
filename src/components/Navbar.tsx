@@ -1,15 +1,17 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import useIsMobile from '@/hooks/useIsMobile';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 export default function Navbar() {
   const [navOpen, setNavOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
   const [mounted, setMounted] = useState(false);
   const isMobile = useIsMobile(1024);
+  const router = useRouter();
 
   useEffect(() => {
     if (navOpen && !isMobile) {
@@ -69,10 +71,26 @@ export default function Navbar() {
     }
   }, [darkMode, mounted]);
 
+  const handleNavigation = useCallback(
+    (href: string) => {
+      if (isMobile) {
+        router.push(href);
+        setTimeout(() => {
+          setNavOpen(false);
+        }, 300);
+      }
+    },
+    [isMobile, setNavOpen, router]
+  );
+
   return (
     <header className="sticky top-0 z-40 shadow-lg bg-softOpal dark:bg-navySmoke flex justify-center">
       <div className="max-w-[85.75rem] w-full flex flex-row justify-between py-[1rem] mx-[0.625rem] lg:mx-[1.5625rem] relative">
-        <Link href="/" aria-label="Givher Home">
+        <button
+          onClick={() => handleNavigation('/')}
+          role="link"
+          aria-label="Givher Home"
+        >
           <Image
             src={'/images/givher-logo-navySmoke.png'}
             alt="Givher Logo"
@@ -89,7 +107,7 @@ export default function Navbar() {
             className="hidden dark:block w-auto h-[50px] image-rendering-crisp-edges"
             priority={true}
           />
-        </Link>
+        </button>
         <div
           data-id="dark mode toggle"
           className="hidden lg:flex justify-center items-center gap-[1rem]"
@@ -184,51 +202,46 @@ export default function Navbar() {
       {navOpen && (
         <div className="fixed top-[82px] h-screen w-screen bg-softOpal dark:bg-navySmoke">
           <nav className="flex flex-col items-center font-visbyBold gap-10 px-5 py-10">
-            <Link
-              href="/clients/"
-              onClick={() => {
-                setNavOpen(!navOpen);
-              }}
-              className="text-navySmoke dark:text-electricYellow font-visbyBold hover:text-navySmoke"
+            <button
+              onClick={() => handleNavigation('/clients/')}
+              className="text-navySmoke dark:text-electricYellow font-visbyBold hover:text-navySmoke focus:outline-none"
+              role="link"
+              aria-label="Navigate to Contact page"
             >
               Clients
-            </Link>
-            <Link
-              href="/events/"
-              onClick={() => {
-                setNavOpen(!navOpen);
-              }}
-              className="text-navySmoke dark:text-electricYellow font-visbyBold hover:text-navySmoke"
+            </button>
+            <button
+              onClick={() => handleNavigation('/events/')}
+              className="text-navySmoke dark:text-electricYellow font-visbyBold hover:text-navySmoke focus:outline-none"
+              role="link"
+              aria-label="Navigate to Events page"
             >
               Events
-            </Link>
-            <Link
-              href="/gallery/"
-              onClick={() => {
-                setNavOpen(!navOpen);
-              }}
-              className="text-navySmoke dark:text-electricYellow font-visbyBold hover:text-navySmoke"
+            </button>
+            <button
+              onClick={() => handleNavigation('/gallery/')}
+              className="text-navySmoke dark:text-electricYellow font-visbyBold hover:text-navySmoke focus:outline-none"
+              role="link"
+              aria-label="Navigate to Gallery page"
             >
               Gallery
-            </Link>
-            <Link
-              href="/team/"
-              onClick={() => {
-                setNavOpen(!navOpen);
-              }}
-              className="text-navySmoke dark:text-electricYellow font-visbyBold hover:text-navySmoke"
+            </button>
+            <button
+              onClick={() => handleNavigation('/team/')}
+              className="text-navySmoke dark:text-electricYellow font-visbyBold hover:text-navySmoke focus:outline-none"
+              role="link"
+              aria-label="Navigate to Team page"
             >
               Team
-            </Link>
-            <Link
-              href="/contact/"
-              onClick={() => {
-                setNavOpen(!navOpen);
-              }}
-              className="text-navySmoke dark:text-electricYellow font-visbyBold hover:text-navySmoke"
+            </button>
+            <button
+              onClick={() => handleNavigation('/contact/')}
+              className="text-navySmoke dark:text-electricYellow font-visbyBold hover:text-navySmoke focus:outline-none"
+              role="link"
+              aria-label="Navigate to Contact page"
             >
               Contact
-            </Link>
+            </button>
           </nav>
           <div
             data-id="dark mode toggle"

@@ -29,7 +29,8 @@ eventDescription:
       becomes a witness to a crime, Willis begins to unravel a criminal web in
       Chinatown, his family's buried history, and what it feels like to be in
       the spotlight."
-  - paragraph: Interior Chinatown stars Jimmy O. Yang, Ronny Chieng, Chloe Bennet,
+  - paragraph:
+      Interior Chinatown stars Jimmy O. Yang, Ronny Chieng, Chloe Bennet,
       Lisa Gilroy, Sullivan Jones, Archie Kao and Diana Lin. Series creator
       Charles Yu serves as executive producer, along with Dan Lin and Lindsey
       Liberatore for Rideback; Jeff Skoll, Miura Kite and Elsie Choi for

@@ -20,10 +20,10 @@ pageLinks:
   - linkText: Events
     link: /events
   - linkText: Past Events
-    link: /past-events  
+    link: /past-events
     external: false
   - linkText: Gallery
-    link: /gallery 
+    link: /gallery
     external: false
   - linkText: Clients
     link: /clients

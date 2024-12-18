@@ -13,20 +13,24 @@ eventButtonLinkOne: https://www.universe.com/events/ca-legislative-lgbtq-caucus-
 eventButtonTextTwo: Sponsorship Flyer
 eventButtonLinkTwo: https://www.canva.com/design/DAGU_QPY1ms/p9WXWrHscZfTtvAdrMP37g/view?utm_content=DAGU_QPY1ms&utm_campaign=designshare&utm_medium=link&utm_source=editor
 eventDescription:
-  - paragraph: Join the California LGBTQ Foundation to celebrate the swearing-in of
+  - paragraph:
+      Join the California LGBTQ Foundation to celebrate the swearing-in of
       the newest members of the California Legislative LGBTQ+ Caucus at
       Sacramento's newest lounge, Good Luck Lounge.
   - paragraph: Sponsorship opportunities are available and all will include an
       Exclusive VIP Sponsor only reception from 5:30 pm - 6:00 pm.
-  - paragraph: "1.5k - 1 VIP reception ticket, logo representation, and drink tickets. "
+  - paragraph: '1.5k - 1 VIP reception ticket, logo representation, and drink tickets. '
   - paragraph: 2.5k - 2 VIP reception tickets, logo representation and drink tickets.
-  - paragraph: "5k - 4 VIP reception tickets, logo representation, drink tickets,
-      and verbal recognition. "
+  - paragraph:
+      '5k - 4 VIP reception tickets, logo representation, drink tickets,
+      and verbal recognition. '
   - paragraph: Event will open to the public at 6:00 pm. Program will start at 6:30 pm.
-  - paragraph: To ensure your entry, please RSVP and secure your spot on the guest
+  - paragraph:
+      To ensure your entry, please RSVP and secure your spot on the guest
       list. See you there!
 boldedEventInformation:
-  - line: Attendance at this event by a public official will constitute acceptance
+  - line:
+      Attendance at this event by a public official will constitute acceptance
       of a reportable gift. The Internal Revenue Service recognizes the
       California LGBTQ Foundation as a Section 501(c)(3) public charity. Gifts
       to the California LGBTQ Foundation are tax-deductible in the U.S.A. The

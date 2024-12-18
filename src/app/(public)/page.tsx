@@ -8,11 +8,14 @@ import getAllClientImages from '../../../lib/getAllClientImages';
 
 export async function generateMetadata() {
   return {
+    metadataBase: new URL('https://www.givher.com'),
     title: 'Givher Political Hospitality',
-    description: 'Givher is a dynamic and forward-thinking company specializing in fundraising, event development, and political hospitality.',
+    description:
+      'Givher is a dynamic and forward-thinking company specializing in fundraising, event development, and political hospitality.',
     openGraph: {
       title: 'Givher Political Hospitality',
-      description: 'Givher is a dynamic and forward-thinking company specializing in fundraising, event development, and political hospitality.',
+      description:
+        'Givher is a dynamic and forward-thinking company specializing in fundraising, event development, and political hospitality.',
       url: '/',
       siteName: 'Givher',
       type: 'website',
@@ -21,14 +24,14 @@ export async function generateMetadata() {
           url: 'https://www.givher.com/opengraph-image.png',
           width: 1200,
           height: 630,
-          alt: 'Givher Political Hospitality'
-        }
-      ]
-      }
-    }
+          alt: 'Givher Political Hospitality',
+        },
+      ],
+    },
+  };
 }
 
-export default async function Home() { 
+export default async function Home() {
   const homepageInfo = getHomePageData();
   const eventsPageData = getEventsPageData();
 
@@ -39,6 +42,12 @@ export default async function Home() {
   ]);
 
   return (
-    <Homepage homepageInfo={homepageInfo} events={events} postponedEventText={eventsPageData.postponedEventText} clientLogos={clientLogos} eventCardImages={clientImages}/>
-  )
+    <Homepage
+      homepageInfo={homepageInfo}
+      events={events}
+      postponedEventText={eventsPageData.postponedEventText}
+      clientLogos={clientLogos}
+      eventCardImages={clientImages}
+    />
+  );
 }

@@ -1,7 +1,7 @@
 // DropdownFilter.tsx
-'use client'
+'use client';
 
-import React, { ChangeEvent, useEffect } from 'react';
+import React, { ChangeEvent } from 'react';
 
 interface DropdownFilterProps {
   options: string[];
@@ -10,40 +10,54 @@ interface DropdownFilterProps {
   placeholder?: string;
 }
 
-const DropdownFilter: React.FC<DropdownFilterProps> = ({ options, selected, onSelect, placeholder }) => {
+const DropdownFilter: React.FC<DropdownFilterProps> = ({
+  options,
+  selected,
+  onSelect,
+  placeholder,
+}) => {
   const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
     const newValue = e.target.value;
     onSelect(newValue);
   };
 
   return (
-    <div className='relative flex items-center'>
-    <select
-      aria-label={placeholder}
-      aria-labelledby={placeholder}
-      onChange={handleChange}
-      className={`bg-softOpal dark:bg-navySmoke text-navySmoke dark:text-softOpal font-medium w-full ${selected ? "w-full":"max-w-[100px]"} cursor-pointer text-ellipsis overflow-hidden whitespace-nowrap pr-[30px] min-w-[130px] focus:outline-none border-none`}
-      value={selected}
-    >
-      <option value="">{placeholder}</option>
-      {options.map((option, index) => (
-        <option key={index} value={option} className='bg-softOpal text-navySmoke'>
-          {option}
-        </option>
-      ))}
-    </select>
-    {selected && (
-      <button
-        onClick={()=>{onSelect('')}}
-        className="absolute right-[25px] p-0 ml-auto h-[15px] w-[15px]"
+    <div className="relative flex items-center">
+      <select
+        aria-label={placeholder}
+        aria-labelledby={placeholder}
+        onChange={handleChange}
+        className={`bg-softOpal dark:bg-navySmoke text-navySmoke dark:text-softOpal font-medium w-full ${selected ? 'w-full' : 'max-w-[100px]'} cursor-pointer text-ellipsis overflow-hidden whitespace-nowrap pr-[30px] min-w-[130px] focus:outline-none border-none`}
+        value={selected}
       >
-          <div className={`h-[2px] w-full bg-navySmoke dark:bg-softOpal transform translate-y-[25%] rotate-[-45deg]`}/>
-          <div className={`h-[2px] w-full bg-navySmoke dark:bg-softOpal transform -translate-y-[50%] rotate-45`}/>
-      </button>
-    )}
+        <option value="">{placeholder}</option>
+        {options.map((option, index) => (
+          <option
+            key={index}
+            value={option}
+            className="bg-softOpal text-navySmoke"
+          >
+            {option}
+          </option>
+        ))}
+      </select>
+      {selected && (
+        <button
+          onClick={() => {
+            onSelect('');
+          }}
+          className="absolute right-[25px] p-0 ml-auto h-[15px] w-[15px]"
+        >
+          <div
+            className={`h-[2px] w-full bg-navySmoke dark:bg-softOpal transform translate-y-[25%] rotate-[-45deg]`}
+          />
+          <div
+            className={`h-[2px] w-full bg-navySmoke dark:bg-softOpal transform -translate-y-[50%] rotate-45`}
+          />
+        </button>
+      )}
     </div>
   );
 };
 
 export default DropdownFilter;
-

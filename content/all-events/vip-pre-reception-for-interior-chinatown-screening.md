@@ -1,7 +1,7 @@
 ---
 available: true
 eventName: VIP Pre-Reception for Interior Chinatown Screening
-slug: ""
+slug: ''
 firstDayOfEvent: 12.04.2024
 eventTime: 17:30
 timeZone: America/Los_Angeles
@@ -10,7 +10,7 @@ eventCity: Hollywood, CA
 eventLocation: TCL Chinese Theatre
 clientName: Asian and Pacific Islander Legislative Caucus Foundation
 eventButtonTextOne: Sponsor The Event
-eventButtonLinkOne: ""
+eventButtonLinkOne: ''
 eventButtonTextTwo: Official Trailer
 eventButtonLinkTwo: https://www.imdb.com/video/vi951765273/?ref_=ext_shr_lnk
 eventDescription:

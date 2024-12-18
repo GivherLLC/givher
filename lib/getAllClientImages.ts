@@ -1,9 +1,11 @@
-import path from "path";
-import fs from "fs";
-import matter from "gray-matter";
+import path from 'path';
+import fs from 'fs';
+import matter from 'gray-matter';
 
 // Function to get all client images and return an object with client names as keys
-export default async function getAllClientImages(): Promise<Record<string, string>> {
+export default async function getAllClientImages(): Promise<
+  Record<string, string>
+> {
   const clientDirectory = path.join(process.cwd(), 'content/clients');
 
   // Check if the directory exists

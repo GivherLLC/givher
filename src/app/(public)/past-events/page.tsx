@@ -1,7 +1,10 @@
 import React from 'react';
 import PastEventsPage from '@/components/past-events/PastEventsPage';
 import getPastEventsPageData from '../../../../lib/getPastEventsPageData';
-import { getPastEvents, getFeaturedOrRecentPastEvents } from '../../../../lib/getAllEvents';
+import {
+  getPastEvents,
+  getFeaturedOrRecentPastEvents,
+} from '../../../../lib/getAllEvents';
 import getAllClientImages from '../../../../lib/getAllClientImages';
 
 export async function generateMetadata() {
@@ -19,14 +22,14 @@ export async function generateMetadata() {
           url: 'https://www.givher.com/opengraph-image.png',
           width: 1200,
           height: 630,
-          alt: 'Givher Political Hospitality'
-        }
-      ]
-      }
-    }
+          alt: 'Givher Political Hospitality',
+        },
+      ],
+    },
+  };
 }
 
-export default async function PastEvents() { 
+export default async function PastEvents() {
   const pageData = getPastEventsPageData();
   const [pastEvents, featuredPastEvents, clientLogos] = await Promise.all([
     getPastEvents(),
@@ -34,9 +37,12 @@ export default async function PastEvents() {
     getAllClientImages(),
   ]);
 
-  
-
   return (
-    <PastEventsPage pageData={pageData} pastEvents={pastEvents} featuredPastEvents={featuredPastEvents} clientLogos={clientLogos}/>
-  )
+    <PastEventsPage
+      pageData={pageData}
+      pastEvents={pastEvents}
+      featuredPastEvents={featuredPastEvents}
+      clientLogos={clientLogos}
+    />
+  );
 }

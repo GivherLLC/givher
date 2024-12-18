@@ -31,7 +31,8 @@ eventDescription:
       an event you won't want to miss!
 boldedEventInformation:
   - line: Limited Sponsorships Opportunities. Act Fast.
-  - line: Attendance at this event by a public official will constitute acceptance
+  - line:
+      Attendance at this event by a public official will constitute acceptance
       of a reportable gift. The Internal Revenue Service recognizes the
       California LGBTQ Foundation as a Section 501(c)(3) public charity. Gifts
       to the California LGBTQ Foundation are tax-deductible in the U.S.A. The

@@ -17,7 +17,6 @@ This is the repository for Givher's website. It is built using React and Next.js
 - **Team**: Meet the team at Givher.
 - **Contact**: How to get in touch with Givher.
 
-
 ## Technologies Used
 
 - **React**: JavaScript library for building user interfaces.

@@ -3,15 +3,17 @@ import path from 'path';
 import matter from 'gray-matter';
 import { GalleryImageGroup, ImageType } from '@/types/types';
 
-export default async function getAllGalleryImages(): Promise<GalleryImageGroup[]> {
+export default async function getAllGalleryImages(): Promise<
+  GalleryImageGroup[]
+> {
   const galleryDirectory = path.join(process.cwd(), 'content/gallery');
   const fileNames = fs.readdirSync(galleryDirectory);
 
   const shuffleArray = <T>(array: T[]): T[] => {
     return array
       .map((item) => ({ ...item, sortKey: Math.random() })) // Add a random key
-      .sort((a, b) => a.sortKey - b.sortKey)               // Sort by random key
-      .map(({ sortKey, ...item }) => item as T);           // Explicitly cast back to T
+      .sort((a, b) => a.sortKey - b.sortKey) // Sort by random key
+      .map(({ sortKey, ...item }) => item as T); // Explicitly cast back to T
   };
 
   const galleryImages = await Promise.all(

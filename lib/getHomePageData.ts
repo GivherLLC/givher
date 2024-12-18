@@ -7,7 +7,7 @@ import { HomePageData } from '@/types/types';
 export default function getHomePageData(): HomePageData {
   const filePath = path.join(process.cwd(), 'content/pages/home_page.yml');
   const fileContents = fs.readFileSync(filePath, 'utf8');
-  
+
   // Use js-yaml to parse the YAML file
   const data = yaml.load(fileContents) as HomePageData;
 

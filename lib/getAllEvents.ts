@@ -1,15 +1,17 @@
-import path from "path";
-import fs from "fs";
-import matter, { GrayMatterFile } from "gray-matter";
+import path from 'path';
+import fs from 'fs';
+import matter, { GrayMatterFile } from 'gray-matter';
 import { toDate, format } from 'date-fns-tz';
-import getEventNameParam from "@/utils/getEventNameParam";
-import formatTimeTo12Hour from "@/utils/formatTime";
-import getPastEventsPageData from "./getPastEventsPageData";
-import { EventType, EventTypeData } from "@/types/types";
+import getEventNameParam from '@/utils/getEventNameParam';
+import formatTimeTo12Hour from '@/utils/formatTime';
+import getPastEventsPageData from './getPastEventsPageData';
+import { EventType, EventTypeData } from '@/types/types';
 
 // Helper function to parse a date string in MM.DD.YYYY format
 const parseDateString = (dateString: string, timeZone: string) => {
-  const [month, day, year] = dateString.split('/').map(part => parseInt(part, 10));
+  const [month, day, year] = dateString
+    .split('/')
+    .map((part) => parseInt(part, 10));
   const date = new Date(year, month - 1, day);
   return toDate(date, { timeZone });
 };
@@ -29,7 +31,9 @@ async function getAllEvents(): Promise<EventType[]> {
     const fileData = matter(fileContents) as GrayMatterFile<string>;
     const data = fileData.data as unknown as EventTypeData; // Cast 'data' correctly
 
-    const slug = data.slug ? data.slug.toLowerCase().replace(/\s+/g, '-') : getEventNameParam(data.eventName);
+    const slug = data.slug
+      ? data.slug.toLowerCase().replace(/\s+/g, '-')
+      : getEventNameParam(data.eventName);
     const currentDate = toDate(new Date(), { timeZone: data.timeZone });
     const eventStatus = getEventStatus(data, currentDate);
 
@@ -40,21 +44,38 @@ async function getAllEvents(): Promise<EventType[]> {
       firstDayOfEvent: data.firstDayOfEvent || null,
       lastDayOfEvent: data.lastDayOfEvent || null,
       eventTime: data.eventTime ? formatTimeTo12Hour(data.eventTime) : null,
-      eventEndTime: data.eventEndTime ? formatTimeTo12Hour(data.eventEndTime) : null,
+      eventEndTime: data.eventEndTime
+        ? formatTimeTo12Hour(data.eventEndTime)
+        : null,
     } as EventType;
   });
 
-// Sort events by `firstDayOfEvent` in descending order (newest to oldest)
-return events.filter(e => !e.hideEvent).sort((a, b) => {
-  const timeZoneA = a.timeZone || 'UTC';
-  const timeZoneB = b.timeZone || 'UTC';
-  const firstDayA = a.firstDayOfEvent ? parseDateString(a.firstDayOfEvent.split('.').join("/"), timeZoneA).getTime():0;
-  const firstDayB = b.firstDayOfEvent ? parseDateString(b.firstDayOfEvent.split('.').join("/"), timeZoneB).getTime():0;
-  return firstDayA - firstDayB;
-});
+  // Sort events by `firstDayOfEvent` in descending order (newest to oldest)
+  return events
+    .filter((e) => !e.hideEvent)
+    .sort((a, b) => {
+      const timeZoneA = a.timeZone || 'UTC';
+      const timeZoneB = b.timeZone || 'UTC';
+      const firstDayA = a.firstDayOfEvent
+        ? parseDateString(
+            a.firstDayOfEvent.split('.').join('/'),
+            timeZoneA
+          ).getTime()
+        : 0;
+      const firstDayB = b.firstDayOfEvent
+        ? parseDateString(
+            b.firstDayOfEvent.split('.').join('/'),
+            timeZoneB
+          ).getTime()
+        : 0;
+      return firstDayA - firstDayB;
+    });
 }
 
-function getEventStatus(data: EventTypeData, currentDate: Date): "past" | "inTheWorks" | "event" {
+function getEventStatus(
+  data: EventTypeData,
+  currentDate: Date
+): 'past' | 'inTheWorks' | 'event' {
   const requiredFields = [
     data.available,
     data.eventName,
@@ -68,7 +89,9 @@ function getEventStatus(data: EventTypeData, currentDate: Date): "past" | "inThe
 
   // Helper function to parse date with timezone in MM.DD.YYYY format, ignoring time
   const parseDateWithTimezone = (dateString: string, timeZone: string) => {
-    const [month, day, year] = dateString.split('.').map(part => parseInt(part, 10));
+    const [month, day, year] = dateString
+      .split('.')
+      .map((part) => parseInt(part, 10));
     const date = new Date(year, month - 1, day);
     // Format to 'yyyy-MM-dd' to consider only the date in the specified time zone
     return format(date, 'yyyy-MM-dd', { timeZone });
@@ -81,52 +104,68 @@ function getEventStatus(data: EventTypeData, currentDate: Date): "past" | "inThe
 
   const lastDayString = data.lastDayOfEvent
     ? parseDateWithTimezone(data.lastDayOfEvent, data.timeZone || 'UTC')
-    : firstDayString;  // If no end date, use start date
+    : firstDayString; // If no end date, use start date
 
   // Format current date in the event's timezone, considering only the date
-  const currentDateString = format(currentDate, 'yyyy-MM-dd', { timeZone: data.timeZone || 'UTC' });
+  const currentDateString = format(currentDate, 'yyyy-MM-dd', {
+    timeZone: data.timeZone || 'UTC',
+  });
 
   // Determine if the current date is on or before the start or end dates
-  const eventBeforeFirstDay = firstDayString && currentDateString <= firstDayString;
-  const eventBeforeLastDay = lastDayString && currentDateString <= lastDayString;
-  
+  const eventBeforeFirstDay =
+    firstDayString && currentDateString <= firstDayString;
+  const eventBeforeLastDay =
+    lastDayString && currentDateString <= lastDayString;
+
   // Event is in the past only if it's after both the start and end dates
   if (!eventBeforeFirstDay && !eventBeforeLastDay) {
-    return "past";
+    return 'past';
   }
-  
-  if (!data.available || requiredFields.some(field => field === null)) {
-    return "inTheWorks";
+
+  if (!data.available || requiredFields.some((field) => field === null)) {
+    return 'inTheWorks';
   }
-  
-  return "event";
+
+  return 'event';
 }
 
 // Filter functions to get specific event subsets
 async function getReadyEvents(): Promise<EventType[]> {
   const allEvents = await getAllEvents();
-  return allEvents.filter(event => event.eventStatus === "event");
+  return allEvents.filter((event) => event.eventStatus === 'event');
 }
 
 async function getInTheWorksEvents(): Promise<EventType[]> {
   const allEvents = await getAllEvents();
-  return allEvents.filter(event => event.eventStatus === "inTheWorks");
+  return allEvents.filter((event) => event.eventStatus === 'inTheWorks');
 }
 
 async function getNonPastEvents(): Promise<EventType[]> {
   const allEvents = await getAllEvents();
-  return allEvents.filter(event => event.eventStatus !== "past");
+  return allEvents.filter((event) => event.eventStatus !== 'past');
 }
 
 async function getPastEvents(): Promise<EventType[]> {
   const allEvents = await getAllEvents();
-  return allEvents.filter(event => event.eventStatus === "past" && !event.hideEvent).sort((a, b) => {
-    const timeZoneA = a.timeZone || 'UTC';
-    const timeZoneB = b.timeZone || 'UTC';
-    const firstDayA = a.firstDayOfEvent ? parseDateString(a.firstDayOfEvent.split('.').join("/"), timeZoneA).getTime():0;
-    const firstDayB = b.firstDayOfEvent ? parseDateString(b.firstDayOfEvent.split('.').join("/"), timeZoneB).getTime():0;
-    return firstDayB - firstDayA;
-  });
+  return allEvents
+    .filter((event) => event.eventStatus === 'past' && !event.hideEvent)
+    .sort((a, b) => {
+      const timeZoneA = a.timeZone || 'UTC';
+      const timeZoneB = b.timeZone || 'UTC';
+      const firstDayA = a.firstDayOfEvent
+        ? parseDateString(
+            a.firstDayOfEvent.split('.').join('/'),
+            timeZoneA
+          ).getTime()
+        : 0;
+      const firstDayB = b.firstDayOfEvent
+        ? parseDateString(
+            b.firstDayOfEvent.split('.').join('/'),
+            timeZoneB
+          ).getTime()
+        : 0;
+      return firstDayB - firstDayA;
+    });
 }
 
 // Fetch only featured past event names from CMS
@@ -140,14 +179,22 @@ async function getFeaturedOrRecentPastEvents(): Promise<EventType[]> {
   const allPastEvents = await getPastEvents();
 
   return featuredEventNames.length
-    ? allPastEvents.filter(event => featuredEventNames.includes(event.eventName))
+    ? allPastEvents.filter((event) =>
+        featuredEventNames.includes(event.eventName)
+      )
     : allPastEvents.slice(0, 10);
 }
 
 // Fetch specific event by slug or name
-async function getEventBySlugOrName(slugOrName: string): Promise<EventType | null> {
+async function getEventBySlugOrName(
+  slugOrName: string
+): Promise<EventType | null> {
   const allEvents = await getAllEvents();
-  return allEvents.find(event => event.slug === slugOrName || event.eventName === slugOrName) || null;
+  return (
+    allEvents.find(
+      (event) => event.slug === slugOrName || event.eventName === slugOrName
+    ) || null
+  );
 }
 
 // Fetch up to three other events by the same client for the given event
@@ -157,7 +204,7 @@ async function getClientEvents(eventSlugOrName: string): Promise<EventType[]> {
 
   const clientName = mainEvent.clientName;
   const allClientEvents = (await getAllEvents()).filter(
-    event => 
+    (event) =>
       event.clientName === clientName &&
       event.eventName !== mainEvent.eventName &&
       !event.hideEvent // Exclude hidden events
@@ -165,26 +212,26 @@ async function getClientEvents(eventSlugOrName: string): Promise<EventType[]> {
 
   // Count how many "event" or "inTheWorks" statuses the client has
   const activeEventsCount = allClientEvents.filter(
-    event => event.eventStatus === "event" || event.eventStatus === "inTheWorks"
+    (event) =>
+      event.eventStatus === 'event' || event.eventStatus === 'inTheWorks'
   ).length;
 
   // Determine if we should include past events or not
-  const filteredEvents = activeEventsCount >= 3
-    ? allClientEvents.filter(event => event.eventStatus !== "past") // Exclude past events if there are 3+ active ones
-    : allClientEvents;
+  const filteredEvents =
+    activeEventsCount >= 3
+      ? allClientEvents.filter((event) => event.eventStatus !== 'past') // Exclude past events if there are 3+ active ones
+      : allClientEvents;
 
   // Sort events to move past events to the end
   const sortedEvents = filteredEvents.sort((a, b) => {
-    if (a.eventStatus === "past" && b.eventStatus !== "past") return 1;
-    if (a.eventStatus !== "past" && b.eventStatus === "past") return -1;
+    if (a.eventStatus === 'past' && b.eventStatus !== 'past') return 1;
+    if (a.eventStatus !== 'past' && b.eventStatus === 'past') return -1;
     return 0;
   });
 
   // Return up to 3 events
   return sortedEvents.slice(0, 3);
 }
-
-
 
 export {
   getAllEvents,

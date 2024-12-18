@@ -7,7 +7,8 @@ video:
 services:
   sevicesCarouselCards:
     - cardTitle: Professional Fundraising
-      cardDescription: Fundraising is pivotal in sustaining and expanding essential
+      cardDescription:
+        Fundraising is pivotal in sustaining and expanding essential
         services and contributing to the mission of your brand. Givher offers
         expertise in developing effective fundraising strategies to help you
         achieve your goals.
@@ -17,7 +18,8 @@ services:
       cardImageSrc: /uploads/fundraising.png
       cardImageSrcDarkMode: /uploads/fundraising-darkmode.png
     - cardTitle: Event Management
-      cardDescription: Events are vital for raising awareness, educating, and engaging
+      cardDescription:
+        Events are vital for raising awareness, educating, and engaging
         communities. Givher provides comprehensive event development services to
         make events effective and memorable.
       cardImageAlt: A graphic demonstrating planning
@@ -42,7 +44,8 @@ featuredEvents:
 about:
   aboutUsSections:
     - sectionTitle: Forward Thinking
-      sectionText: Givher is a dynamic and forward-thinking company specializing in
+      sectionText:
+        Givher is a dynamic and forward-thinking company specializing in
         fundraising, event development, and political hospitality. Founded and
         led by Alina Hernandez, a robust policy and advocacy leader, Givher
         provides services to non-profit organizations, political action
@@ -53,7 +56,8 @@ about:
       sectionImageSrcDarkMode: /uploads/forward-thinking-darkmode.svg
       sectionImageAlt: Outline drawing of a brain and heart shaking hands
     - sectionTitle: Effective and Innovative
-      sectionText: At the heart of Givher's mission is a commitment to effective and
+      sectionText:
+        At the heart of Givher's mission is a commitment to effective and
         innovative fundraising strategies. Understanding the unique challenges
         in securing financial support, Givher offers a comprehensive suite of
         services tailored to each client's specific objectives. These services
@@ -65,7 +69,8 @@ about:
       sectionImageAlt: Outline drawing of a red carpet
       sectionImageSrcDarkMode: /uploads/effective-and-innovative-darkmode.svg
     - sectionTitle: Raising Awareness
-      sectionText: In addition to fundraising, Givher excels in event development.
+      sectionText:
+        In addition to fundraising, Givher excels in event development.
         Recognizing the critical role of events in raising awareness and
         engaging stakeholders, Givher takes a holistic approach to event
         planning and execution. From conceptualizing event themes that resonate
@@ -77,7 +82,8 @@ about:
       sectionImageSrc: /uploads/raising-awareness.svg
       sectionImageSrcDarkMode: /uploads/raising-awareness-darkmode.svg
     - sectionTitle: Unique Perspective
-      sectionText: Combining Alina's experience in public policy, technology, and
+      sectionText:
+        Combining Alina's experience in public policy, technology, and
         various artistic and educational pursuits, their diverse background
         provides a rich and unique perspective that guides the company's
         approach. With a passion for advancing equality and representation,
@@ -99,19 +105,22 @@ testimonialSection:
         inevitable.
       organization: Deveau Burr Group
     - quoteeName: Chris Bollinger
-      quote: Givher LLC is an exceptional organization. Alina treats every donor like
+      quote:
+        Givher LLC is an exceptional organization. Alina treats every donor like
         a VIP, ensuring we're informed, engaged, and genuinely appreciated. I feel
         my donations are part of a larger movement towards positive change.
       organization: Bollinger Government Affairs
     - quoteeName: Assemblymember Evan Low
-      quote: Givher transformed our fundraising and event management! Their tailored
+      quote:
+        Givher transformed our fundraising and event management! Their tailored
         approach and top-notch support made a real difference for us. We're beyond
         grateful! 🌟
       organization: API Legislative Caucus Foundation
     - quoteeName: John Robert Downs, Executive Director
-      quote: "\"Alina brought both expertise and warmth to our work with Givher. Her
-        understanding of California's legislative process was impressive, and
+      quote:
+        '"Alina brought both expertise and warmth to our work with Givher. Her
+        understanding of California''s legislative process was impressive, and
         Givher’s strategic approach to logistics ensured that every detail of our
         lobby day flowed seamlessly. Alina’s genuine interest in our mission made
-        us feel seen and fully supported at every step.\""
+        us feel seen and fully supported at every step."'
       organization: Microdosing Collective

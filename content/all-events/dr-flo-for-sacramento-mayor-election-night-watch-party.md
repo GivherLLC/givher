@@ -1,7 +1,7 @@
 ---
 available: true
 eventName: Dr. Flo for Sacramento Mayor Election Night Watch Party
-slug: ""
+slug: ''
 firstDayOfEvent: 11.05.2024
 eventTime: 20:00
 timeZone: America/Los_Angeles
@@ -17,11 +17,13 @@ eventDescription:
       historic moment!
   - paragraph: Bring your friends, families, and neighbors and join Dr. Flo, our
       next Mayor of Sacramento -- as we imagine a future where More is Possible!
-  - paragraph: This event is FREE but please RSVP here so we have an accurate head
+  - paragraph:
+      This event is FREE but please RSVP here so we have an accurate head
       count. Donations are appreciated up until election day to help us reach
       more voters and win!
 boldedEventInformation:
-  - line: Please remember to bring an ID (it will be checked upon entry). Any large
+  - line:
+      Please remember to bring an ID (it will be checked upon entry). Any large
       purses, bags, or backpacks will be subject to search.
 detailImage: /uploads/dr.-flo-for-mayor_eventpageimage.png
 postponed: false

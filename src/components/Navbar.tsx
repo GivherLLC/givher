@@ -73,12 +73,10 @@ export default function Navbar() {
 
   const handleNavigation = useCallback(
     (href: string) => {
-      if (isMobile) {
-        router.push(href);
-        setTimeout(() => {
-          setNavOpen(false);
-        }, 300);
-      }
+      router.push(href);
+      setTimeout(() => {
+        setNavOpen(false);
+      }, 500);
     },
     [isMobile, setNavOpen, router]
   );

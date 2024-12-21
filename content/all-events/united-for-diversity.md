@@ -19,6 +19,7 @@ eventDescription:
       Southern California Edison International proudly invite you to join us for
       an evening at Ace of Spaces (R Street) on January 7th, 2024, at 5:30 PM,
       to celebration and kick off the 2025 - 2026 legislative session.
+  - paragraph: The speaking program will begin promptly at 6:30 pm.
   - paragraph: This special event welcomes back the Capitol community in style.
       Dress in your business or business casual attire and enjoy an evening
       filled with inspiring speeches from our esteemed leaders, networking

@@ -26,5 +26,5 @@ eventDescription:
 boldedEventInformation:
   - line: Limited Tickets Available. This event will sale out!
 detailImage: /uploads/aapi-leadership-summit-2025_eventpageimage.png
-postponed: true
+postponed: false
 ---

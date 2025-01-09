@@ -10,6 +10,8 @@ eventType: 501(c)(3)
 eventCity: San Diego, CA
 eventLocation: Pendry San Diego
 clientName: California LGBTQ Foundation
+eventButtonTextOne: Event Flyer
+eventButtonLinkOne: https://events.givher.com/calgbtq-sd-pride#ca-lgbtq-foundation-san-diego-flyer
 eventDescription:
   - paragraph: Get ready to celebrate love, diversity, and community at the
       California LGBTQ+ Foundation's Pride Retreat 2025! Join us from July 10–12

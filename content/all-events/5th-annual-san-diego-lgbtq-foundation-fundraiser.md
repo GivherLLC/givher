@@ -20,5 +20,13 @@ eventDescription:
       and exclusive perks, including spa treatments, commemorative gifts, and
       more. Let’s make this Pride an unforgettable celebration of equality and
       inclusion! 🌈
+  - paragraph: 🌈 Rainbow Sponsorship - $35K 🍳 Brunch for 6 🍽️ Dinner for 6 💆‍♀️
+      3 spa treatments 🛏️ 3 rooms for 2 nights 🎁 Commemorative gift
+  - paragraph: ✨ Gold Sponsorship - $25K 🍳 Brunch for 4 🍽️ Dinner for 4 💆‍♀️ 2
+      spa treatments 🛏️ 2 rooms for 2 nights 🎁 Commemorative gift
+  - paragraph: 🥈 Silver Sponsorship - $15K 🍳 Brunch for 2 🍽️ Dinner for 2 💆‍♀️ 1
+      spa treatment 🛏️ 1 room for 2 nights 🎁 Commemorative gift
+  - paragraph: 🥂 Brunch-Only Sponsorship - $10K 🍳 Brunch for 2
+  - paragraph: 🌟 All sponsorship levels include logo representation.
 postponed: false
 ---

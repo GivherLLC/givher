@@ -30,5 +30,6 @@ eventDescription:
       spa treatment 🛏️ 1 room for 2 nights 🎁 Commemorative gift
   - paragraph: 🥂 Brunch-Only Sponsorship - $10K 🍳 Brunch for 2
   - paragraph: 🌟 All sponsorship levels include logo representation.
+detailImage: /uploads/sd-pride-celebration-1-.png
 postponed: false
 ---

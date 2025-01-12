@@ -10,7 +10,7 @@ type FloatingLogosProps = {
 
 export default function FloatingLogos({ logos }: FloatingLogosProps) {
   return (
-    <div className="bg-white dark:bg-navySmoke ">
+    <div className="bg-white dark:bg-softOpal">
       <div className="h-[1px] bg-gradient-to-r from-mauvelous to-navySmoke dark:to-electricYellow w-full" />
       <div className="py-[2.5rem] flex justify-center overflow-hidden">
         <div className="flex w-full justify-center">

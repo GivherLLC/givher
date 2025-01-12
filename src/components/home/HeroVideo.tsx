@@ -48,7 +48,7 @@ export default function HeroVideo({ data }: HeroVideoProps) {
           controls
           playsInline
           aria-hidden={true}
-          src={'/videos/3-compressed-720p.hevc.mp4'}
+          src={'/videos/mobile-video.hevc.mp4'}
           className="lg:hidden w-full h-full bg-black object-cover absolute overflow-clip top-0 opacity-75"
         />
       </div>

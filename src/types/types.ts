@@ -36,7 +36,10 @@ export type EventTypeData = {
   timeOfYear: string | null;
   timeZone: string;
   eventType: string | null;
+  eventAddress: string | null;
   eventCity: string | null;
+  eventState: string | null;
+  eventZipCode: string | null;
   eventLocation: string | null;
   clientName: string;
   eventButtonTextOne: string | null;
@@ -61,7 +64,10 @@ export type EventType = {
   timeOfYear: string | null;
   timeZone: string;
   eventType: string | null;
+  eventAddress: string | null;
   eventCity: string | null;
+  eventState: string | null;
+  eventZipCode: string | null;
   eventLocation: string | null;
   clientName: string;
   eventButtonTextOne: string | null;
@@ -89,6 +95,7 @@ export type FeaturedEventType = {
   slug: string;
   eventName: string;
   eventCity: string | null;
+  eventState: string | null;
   eventButtonTextOne: string | null;
   eventButtonLinkOne: string | null;
   clientImage: string;

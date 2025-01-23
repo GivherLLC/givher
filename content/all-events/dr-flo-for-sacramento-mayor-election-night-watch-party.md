@@ -7,6 +7,7 @@ eventTime: 20:00
 timeZone: America/Los_Angeles
 eventType: Candidate
 eventCity: Sacramento
+eventState: CA
 eventLocation: Tipsy Putt
 clientName: Dr. Flo Cofer for Sacramento Mayor
 eventButtonTextOne: I will join to celebrate!

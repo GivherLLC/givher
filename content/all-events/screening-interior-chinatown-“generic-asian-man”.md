@@ -6,7 +6,10 @@ firstDayOfEvent: 12.04.2024
 eventTime: 19:30
 timeZone: America/Los_Angeles
 eventType: 501(c)(3)
-eventCity: 6801 Hollywood Blvd, Hollywood, CA 90028
+eventAddress: 6801 Hollywood Blvd
+eventCity: Hollywood
+eventState: CA
+eventZipCode: 90028
 eventLocation: TCL Chinese 6 Theatres
 clientName: Asian and Pacific Islander Legislative Caucus Foundation
 eventButtonTextOne: Reserve Seats Now

@@ -6,7 +6,8 @@ eventTime: 18:00
 lastDayOfEvent: 01.14.2025
 timeZone: America/Los_Angeles
 eventType: 501(c)(3)
-eventCity: Napa, CA
+eventCity: Napa
+eventState: CA
 eventLocation: Location given upon RSVP
 clientName: California LGBTQ Foundation
 eventButtonTextOne: Reserve Now

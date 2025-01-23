@@ -5,7 +5,8 @@ firstDayOfEvent: 12.02.2024
 eventTime: 17:30
 timeZone: America/Los_Angeles
 eventType: 501(c)(3)
-eventCity: Sacramento, CA
+eventCity: Sacramento
+eventState: CA
 eventLocation: Good Luck Lounge
 clientName: California LGBTQ Foundation
 eventButtonTextOne: Guest List RSVP

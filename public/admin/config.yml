@@ -180,6 +180,12 @@ collections:
                   required: false,
                 }
               - {
+                  label: 'Event Zip Code',
+                  name: 'eventZipCode',
+                  widget: 'string',
+                  required: false,
+                }
+              - {
                   label: 'Event Start Date',
                   name: 'firstDayOfEvent',
                   widget: 'datetime',

@@ -172,6 +172,14 @@ collections:
                   required: false,
                 }
               - {
+                  label: 'Event State',
+                  hint: 'use state abbreviation, ex: CA for California',
+                  name: 'eventState',
+                  widget: 'string',
+                  default: 'CA',
+                  required: false,
+                }
+              - {
                   label: 'Event Start Date',
                   name: 'firstDayOfEvent',
                   widget: 'datetime',
@@ -461,6 +469,8 @@ collections:
     label: 'All Events'
     folder: 'content/all-events'
     create: true
+    sortable_fields: ['eventName', 'clientName', 'firstDayOfEvent']
+    summary: '{{firstDayOfEvent}} - {{clientName}} - {{eventName}}'
     fields:
       - {
           label: 'All Event Details Available',
@@ -539,9 +549,24 @@ collections:
           - { label: 'Ballot Measure', value: 'Ballot Measure' }
           - { label: 'Candidate', value: 'Candidate' }
       - {
+          label: 'Event Address1 + Address2',
+          hint: 'Separate Address1 and Address to with a comma. Ex: Address1, Address2',
+          name: 'eventAddress',
+          widget: 'string',
+          required: false,
+        }
+      - {
           label: 'Event City',
           name: 'eventCity',
           widget: 'string',
+          required: false,
+        }
+      - {
+          label: 'Event State',
+          hint: 'use state abbreviation, ex: CA for California',
+          name: 'eventState',
+          widget: 'string',
+          default: 'CA',
           required: false,
         }
       - {
@@ -581,6 +606,9 @@ collections:
           widget: 'string',
           required: false,
         }
+      - label: 'Event Description NEW'
+        name: 'eventDescriptionMarkdown'
+        widget: 'markdown'
       - label: 'Event Description'
         name: 'eventDescription'
         widget: 'list'

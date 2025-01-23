@@ -130,8 +130,6 @@ export default function GalleryPage({
         return index === flatIndex;
       });
 
-    console.log('Calculated Global Index:', globalIndex);
-
     // Set modal state
     setCurrentImageIndex(globalIndex);
     setIsModalOpen(true);
@@ -157,8 +155,6 @@ export default function GalleryPage({
         accessibility: true,
       });
 
-      console.log('Initialized Flickity at Index:', globalIndex);
-
       setIsFlickityReady(true);
 
       if (flickityRef.current) {
@@ -171,7 +167,6 @@ export default function GalleryPage({
   };
 
   const closeModal = () => {
-    console.log(flickityRef.current);
     setIsModalOpen(false);
     setCurrentImageIndex(null);
 
@@ -179,7 +174,6 @@ export default function GalleryPage({
     if (flickityRef.current) {
       flickityRef.current.destroy();
       flickityRef.current = null;
-      console.log(flickityRef.current);
     }
   };
 
@@ -210,8 +204,6 @@ export default function GalleryPage({
   useEffect(() => {
     const handleScroll = () => {
       const stickyMenuOffset = 315; // Adjust to match your sticky menu offset
-      console.log(window.scrollY);
-      console.log(stickyMenuOffset);
       setShowScrollTopButton(window.scrollY > stickyMenuOffset);
     };
 

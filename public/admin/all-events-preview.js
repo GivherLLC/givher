@@ -12,7 +12,10 @@ var EventPreview = createClass({
     var eventTime = entry.getIn(['data', 'eventTime']);
     var eventEndTime = entry.getIn(['data', 'eventEndTime']);
     var lastDayOfEvent = entry.getIn(['data', 'lastDayOfEvent']);
+    var eventAddress = entry.getIn(['data', 'eventAddress']);
     var eventCity = entry.getIn(['data', 'eventCity']);
+    var eventState = entry.getIn(['data', 'eventState']);
+    var eventZipCode = entry.getIn(['data', 'eventZipCode']);
     var eventLocation = entry.getIn(['data', 'eventLocation']);
     var eventType = entry.getIn(['data', 'eventType']);
     var eventButtonTextOne = entry.getIn(['data', 'eventButtonTextOne']);
@@ -24,11 +27,22 @@ var EventPreview = createClass({
     var detailImage = detailImageRaw
       ? this.props.getAsset(detailImageRaw)
       : null; // Only resolve the image if it's not null/undefined
-    var eventDescription = entry.getIn(['data', 'eventDescription']);
-    var eventDescriptionArray;
-    if (eventDescription) {
-      eventDescriptionArray = eventDescription.toJS();
-    }
+    var eventDescription = entry.getIn(['data', 'eventDescriptionMarkdown']);
+    const convertMarkdownToHtml = (markdown) => {
+      return (
+        `<div style="margin-bottom: 1rem;">` +
+        markdown
+          .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Convert bold (**text**)
+          .replace(
+            /(?:\*|_)(.*?)(?:\*|_)/g,
+            '<span style="font-style: italic;">$1</span>'
+          ) + // Convert italic (*text*)
+        `</div>`
+      );
+    };
+
+    const processedContent = convertMarkdownToHtml(eventDescription);
+
     var boldedEventInformation = entry.getIn([
       'data',
       'boldedEventInformation',
@@ -46,6 +60,7 @@ var EventPreview = createClass({
         isValid: !!firstDayOfEvent,
       },
       { field: eventCity, label: 'Event City', isValid: !!eventCity },
+      { field: eventState, label: 'Event State', isValid: !!eventState },
       {
         field: eventLocation,
         label: 'Event Location',
@@ -83,11 +98,6 @@ var EventPreview = createClass({
 
       // Convert the hours to 12-hour format
       const hours12 = hours % 12 || 12; // Convert 0 (midnight) or 12 (noon) to 12
-
-      // If the time is exactly on the hour, omit the minutes
-      if (minutes === 0) {
-        return `${hours12} ${period}`;
-      }
 
       // Otherwise, return the full formatted time in hh:mm AM/PM format
       return `${hours12}:${minutes.toString().padStart(2, '0')} ${period}`;
@@ -189,7 +199,7 @@ var EventPreview = createClass({
     const detailContainerStyle = {
       display: 'flex',
       flexDirection: 'column',
-      gap: '1.5rem',
+      gap: '2rem',
       justifyContent: 'center',
       width: '50%',
     };
@@ -208,7 +218,6 @@ var EventPreview = createClass({
       fontSize: '2.5rem',
       lineHeight: 1.25,
       margin: 0,
-      marginBottom: '2rem',
     };
 
     const detailHeadingStyle = {
@@ -222,6 +231,7 @@ var EventPreview = createClass({
     const subheadingStyle = {
       color: '#FCFC62',
       margin: 0,
+      fontWeight: 'bold',
     };
 
     const buttonLinkStyle = {
@@ -412,7 +422,7 @@ var EventPreview = createClass({
                         maxWidth: '240px',
                       },
                     },
-                    eventCity
+                    `${eventCity}, ${eventState}`
                   )
                 )
               ),
@@ -684,51 +694,67 @@ var EventPreview = createClass({
         h(
           'div',
           { style: detailContainerStyle },
+          h('h1', { style: headingStyle }, eventName),
+          postponed
+            ? h('div', { style: { color: 'red' } }, '* Event Postponed')
+            : '',
           h(
             'div',
-            { style: { display: 'flex', gap: '1rem' } },
+            {
+              style: {
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.5rem',
+              },
+            },
             h(
               'p',
-              { style: { color: '#F8F9EE', margin: 0 } },
+              { style: { color: '#C6AFC0', margin: 0 } },
               `${firstDayOfEvent} ${lastDayOfEvent ? ` - ${lastDayOfEvent}` : ''}`
             ),
             h(
               'p',
-              { style: subheadingStyle },
-              `${eventLocation ? eventLocation : ''}`
-            )
-          ),
-          postponed
-            ? h('div', { style: { color: 'red' } }, '* Event Postponed')
-            : '',
-          h('h1', { style: headingStyle }, eventName),
-          h(
-            'div',
-            { style: { display: 'flex', gap: '1rem' } },
-            h(
-              'h2',
               {
                 style: {
                   color: '#F8F9EE',
-                  fontWeight: 'bold',
-                  fontSize: '1.5rem',
-                  margin: 0,
-                },
-              },
-              eventCity
-            ),
-            h(
-              'h2',
-              {
-                style: {
-                  color: '#C6AFC0',
-                  fontSize: '1.5rem',
-                  textTransform: 'uppercase',
                   margin: 0,
                 },
               },
               `${timeFormatted} ${endTimeFormatted ? ` - ${endTimeFormatted}` : ''}`
             )
+          ),
+          h(
+            'div',
+            {
+              style: {
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.5rem',
+              },
+            },
+            h(
+              'p',
+              { style: subheadingStyle },
+              `${eventLocation ? eventLocation : ''}`
+            ),
+            h(
+              'p',
+              {
+                style: {
+                  color: '#F8F9EE',
+                  fontWeight: 'bold',
+                  margin: 0,
+                },
+              },
+              `${eventAddress ? `${eventAddress}, ` : ''}${eventCity}${eventState ? `, ${eventState}` : ''}${eventZipCode ? eventZipCode : ''}`
+            )
+          ),
+          h(
+            'div',
+            { style: { display: 'flex', gap: '0.75rem' } },
+            h('p', { style: { color: '#F8F9EE' } }, 'Google Calendar'),
+            h('p', { style: { color: '#F8F9EE' } }, 'Outlook Calendar'),
+            h('p', { style: { color: '#F8F9EE' } }, 'ISC')
           ),
           h(
             'div',
@@ -819,40 +845,18 @@ var EventPreview = createClass({
               width: '20',
             })
           ),
-          eventDescriptionArray
-            ? eventDescriptionArray.map((desc, index) =>
-                h(
-                  'p',
-                  {
-                    key: index,
-                    style: {
-                      color: '#000',
-                      margin: 0,
-                      lineHeight: 1.5,
-                      fontSize: '1rem',
-                    },
-                  },
-                  desc.paragraph
-                )
-              )
-            : '',
-          boldedInfoArray
-            ? boldedInfoArray.map((info, index) => {
-                return h(
-                  'p',
-                  {
-                    key: index,
-                    style: {
-                      fontWeight: 'bold',
-                      margin: 0,
-                      lineHeight: 1.5,
-                      fontSize: '1rem',
-                    },
-                  },
-                  info.line
-                );
-              })
-            : ''
+          h('div', {
+            style: {
+              width: '100%',
+              maxWidth: '1000px',
+              display: 'flex',
+              flexDirection: 'column',
+              textAlign: 'left',
+              whiteSpace: 'pre-wrap', // Preserves spaces and line breaks, and wraps text
+              overflowWrap: 'break-word', // Prevents long words from overflowing
+            },
+            dangerouslySetInnerHTML: { __html: processedContent },
+          })
         ),
         h(
           'div',

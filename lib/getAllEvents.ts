@@ -16,6 +16,11 @@ const parseDateString = (dateString: string, timeZone: string) => {
   return toDate(date, { timeZone });
 };
 
+const displayDate = (dateString: string, timeZone: string) => {
+  const date = parseDateString(dateString.split('.').join('/'), timeZone);
+  return format(date, 'EEEE, MMMM d, yyyy', { timeZone });
+};
+
 // Main function to fetch all events with enriched metadata
 async function getAllEvents(): Promise<EventType[]> {
   const eventsDirectory = path.join(process.cwd(), 'content/all-events');
@@ -43,6 +48,14 @@ async function getAllEvents(): Promise<EventType[]> {
       eventStatus,
       firstDayOfEvent: data.firstDayOfEvent || null,
       lastDayOfEvent: data.lastDayOfEvent || null,
+      displayDateFirst:
+        data.firstDayOfEvent && data.timeZone
+          ? displayDate(data.firstDayOfEvent, data.timeZone)
+          : null,
+      displayDateLast:
+        data.lastDayOfEvent && data.timeZone
+          ? displayDate(data.lastDayOfEvent, data.timeZone)
+          : null,
       eventTime: data.eventTime ? formatTimeTo12Hour(data.eventTime) : null,
       eventEndTime: data.eventEndTime
         ? formatTimeTo12Hour(data.eventEndTime)
@@ -81,9 +94,10 @@ function getEventStatus(
     data.eventName,
     data.firstDayOfEvent,
     data.eventCity,
+    data.eventState,
     data.eventLocation,
     data.clientName,
-    data.eventDescription,
+    data.eventDescriptionMarkdown,
     data.detailImage,
   ];
 

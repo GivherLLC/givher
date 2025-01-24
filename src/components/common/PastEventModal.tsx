@@ -76,7 +76,9 @@ export default function PastEventModal({
                 />
                 <div className="flex flex-col text-navySmoke dark:text-softOpal">
                   <p>{event.eventLocation}</p>
-                  <p>{event.eventCity}</p>
+                  <p>
+                    {event.eventCity}, {event.eventState}
+                  </p>
                 </div>
               </div>
               <p className="text-navySmoke dark:text-softOpal w-full sm:w-[unset] text-center sm:text-left">

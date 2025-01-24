@@ -26,6 +26,7 @@ export default function FeaturedEvents({
         clientName,
         eventName,
         eventCity,
+        eventState,
         eventButtonTextOne,
         eventButtonLinkOne,
         firstDayOfEvent,
@@ -39,6 +40,7 @@ export default function FeaturedEvents({
         slug,
         eventName,
         eventCity,
+        eventState,
         eventButtonTextOne,
         eventButtonLinkOne,
         clientImage,
@@ -148,9 +150,9 @@ export default function FeaturedEvents({
                         {(e.firstDayOfEvent || e.timeOfYear) && e.eventCity && (
                           <div className="border-box dark:border-softOpal border-l border-[1.5px] border-navySmoke" />
                         )}
-                        {e.eventCity && (
+                        {e.eventCity && e.eventState && (
                           <p className="border-box text-black dark:text-softOpal font-visbyBold">
-                            {e.eventCity}
+                            {e.eventCity}, {e.eventState}
                           </p>
                         )}
                       </div>

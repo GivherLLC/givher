@@ -87,7 +87,7 @@ export default function InTheWorksEventCard({
                     </p>
                   )}
                 </div>
-                {event.eventCity && (
+                {event.eventCity && event.eventState && (
                   <p
                     className="overflow-ellipsis max-w-[240px]"
                     style={{
@@ -96,7 +96,7 @@ export default function InTheWorksEventCard({
                       WebkitLineClamp: 1,
                     }}
                   >
-                    {event.eventCity}
+                    {event.eventCity}, {event.eventState}
                   </p>
                 )}
               </div>

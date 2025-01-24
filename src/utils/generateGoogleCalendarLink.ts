@@ -43,8 +43,6 @@ export const generateGoogleCalendarLink = (event: {
     timeZone: string
   ): Date | null => {
     try {
-      // console.log(`Parsing date: ${dateString} with timezone: ${timeZone}`);
-
       const [month, day, year] = dateString
         .split('.')
         .map((part) => parseInt(part, 10));
@@ -54,7 +52,6 @@ export const generateGoogleCalendarLink = (event: {
         return null;
       }
 
-      // Create the date object in UTC (without timezone offset)
       const date = new Date(Date.UTC(year, month - 1, day));
 
       if (isNaN(date.getTime())) {
@@ -62,13 +59,7 @@ export const generateGoogleCalendarLink = (event: {
         return null;
       }
 
-      // console.log('Parsed Date:', date);
-
-      // Convert the date to the specified timezone
-      const zonedDate = toDate(date, { timeZone });
-      // console.log('Zoned Date:', zonedDate);
-
-      return zonedDate;
+      return toDate(date, { timeZone });
     } catch (error) {
       console.error(`Error parsing date: ${dateString}`, error);
       return null;
@@ -84,8 +75,6 @@ export const generateGoogleCalendarLink = (event: {
       console.error('Date string is null or undefined');
       return null;
     }
-
-    // console.log(`Formatting date for calendar: ${dateStr} at time ${timeStr}`);
 
     const parsedDate = parseDateString(dateStr, timeZone);
     if (!parsedDate || isNaN(parsedDate.getTime())) {
@@ -120,26 +109,18 @@ export const generateGoogleCalendarLink = (event: {
       parsedDate.setHours(0, 0, 0, 0);
     }
 
-    // console.log('Final Parsed Date:', parsedDate);
-
-    try {
-      const formattedDate = format(parsedDate, "yyyyMMdd'T'HHmmss");
-      // console.log(`Formatted date for calendar: ${formattedDate}`);
-      return formattedDate;
-    } catch (error) {
-      console.error('Error formatting date for calendar:', error);
-      return null;
-    }
+    return format(parsedDate, "yyyyMMdd'T'HHmmss");
   };
 
   const isMultiDay = Boolean(
     firstDayOfEvent && lastDayOfEvent && firstDayOfEvent !== lastDayOfEvent
   );
+  const isAllDaySingleDay = !lastDayOfEvent && !eventTime;
 
   const startDate = formatDateForCalendar(
     firstDayOfEvent,
-    isMultiDay ? null : eventTime,
-    isMultiDay
+    isMultiDay || isAllDaySingleDay ? null : eventTime,
+    isMultiDay || isAllDaySingleDay
   );
 
   let correctedEndDate = isMultiDay
@@ -160,17 +141,17 @@ export const generateGoogleCalendarLink = (event: {
   }
 
   const formattedLocation = [eventLocation, displayAddress]
-    .filter(Boolean) // Removes empty/null values
+    .filter(Boolean)
     .join(', ');
 
-  // console.log(`Start Date: ${startDate}, End Date: ${correctedEndDate}`);
-
-  // Generate Google Calendar link with correct timezone
+  // Generate Google Calendar link with correct timezone and availability status
   const googleCalendarLink = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
     eventName
   )}&dates=${startDate}/${correctedEndDate}&details=${encodeURIComponent(
     eventDescriptionMarkdown || ''
-  )}&location=${encodeURIComponent(formattedLocation || '')}&ctz=${encodeURIComponent(timeZone)}`;
+  )}&location=${encodeURIComponent(formattedLocation || '')}&ctz=${encodeURIComponent(
+    timeZone
+  )}${isAllDaySingleDay ? '&trp=true' : ''}`; // Add trp=true for free status
 
   return googleCalendarLink;
 };

@@ -1,5 +1,5 @@
 import { toDate } from 'date-fns-tz';
-import { format } from 'date-fns';
+import { format, addDays } from 'date-fns';
 
 export const generateICSFile = (event: {
   eventName: string;
@@ -43,7 +43,6 @@ export const generateICSFile = (event: {
     timeZone: string
   ): Date | null => {
     try {
-      //   console.log(`Parsing date: ${dateString} with timezone: ${timeZone}`);
       const formattedDateString = dateString.replace(/\./g, '/');
       const [month, day, year] = formattedDateString
         .split('/')
@@ -55,12 +54,7 @@ export const generateICSFile = (event: {
       }
 
       const date = new Date(Date.UTC(year, month - 1, day));
-      //   console.log('Parsed Date:', date);
-
-      const zonedDate = toDate(date, { timeZone });
-      //   console.log('Zoned Date:', zonedDate);
-
-      return zonedDate;
+      return toDate(date, { timeZone });
     } catch (error) {
       console.error(`Invalid date format: ${dateString}`, error);
       return null;
@@ -77,8 +71,6 @@ export const generateICSFile = (event: {
       return null;
     }
 
-    // console.log(`Formatting date for ICS: ${dateStr} at time ${timeStr}`);
-
     const parsedDate = parseDateString(dateStr, timeZone);
     if (!parsedDate || isNaN(parsedDate.getTime())) {
       console.error(`Failed to parse date: ${dateStr}`);
@@ -86,8 +78,7 @@ export const generateICSFile = (event: {
     }
 
     if (isAllDay) {
-      // Format for all-day event (YYYYMMDD)
-      return format(parsedDate, 'yyyyMMdd');
+      return format(parsedDate, 'yyyyMMdd'); // All-day event (YYYYMMDD)
     }
 
     if (timeStr) {
@@ -113,42 +104,38 @@ export const generateICSFile = (event: {
       parsedDate.setHours(0, 0, 0, 0);
     }
 
-    // console.log('Parsed Date Before Conversion:', parsedDate);
-
-    const zonedDate = toDate(parsedDate, { timeZone });
-    // console.log('Zoned Date (corrected for timezone):', zonedDate);
-
-    try {
-      const formattedDate = format(zonedDate, "yyyyMMdd'T'HHmmss'Z'");
-      //   console.log(`Formatted date for ICS: ${formattedDate}`);
-      return formattedDate;
-    } catch (error) {
-      console.error('Error formatting date for ICS:', error);
-      return null;
-    }
+    return format(parsedDate, "yyyyMMdd'T'HHmmss'Z'");
   };
 
   const isMultiDay = Boolean(
     firstDayOfEvent && lastDayOfEvent && firstDayOfEvent !== lastDayOfEvent
   );
 
+  const isAllDaySingleDay = !lastDayOfEvent && !eventTime && !eventEndTime;
+
   const startDate = formatDateForICS(
     firstDayOfEvent,
-    isMultiDay ? null : eventTime,
-    isMultiDay
+    isMultiDay || isAllDaySingleDay ? null : eventTime,
+    isMultiDay || isAllDaySingleDay
   );
 
-  const endDate = isMultiDay
-    ? formatDateForICS(lastDayOfEvent, null, true) // Treat multi-day event as all-day
+  let endDate = isMultiDay
+    ? formatDateForICS(lastDayOfEvent, null, true)
     : formatDateForICS(firstDayOfEvent, eventEndTime);
+
+  // Fix multi-day end date to ensure it includes the full last day
+  if (isMultiDay && lastDayOfEvent) {
+    const parsedEndDate = parseDateString(lastDayOfEvent, timeZone);
+    if (parsedEndDate) {
+      const adjustedEndDate = format(addDays(parsedEndDate, 1), 'yyyyMMdd');
+      endDate = adjustedEndDate;
+    }
+  }
 
   if (!startDate || !endDate) {
     console.error('Date formatting failed.');
     return null;
   }
-
-  //   console.log('DATE CHECK');
-  //   console.log(`Start Date: ${startDate}, End Date: ${endDate}`);
 
   const escapeICSString = (str: string | null): string =>
     str
@@ -159,7 +146,7 @@ export const generateICSFile = (event: {
       : '';
 
   const formattedLocation = [eventLocation, displayAddress]
-    .filter(Boolean) // Removes empty/null values
+    .filter(Boolean)
     .join(', ');
 
   const icsContent =
@@ -170,20 +157,16 @@ export const generateICSFile = (event: {
     `UID:${Date.now()}@givher.com\r\n` +
     `DTSTAMP:${format(new Date(), "yyyyMMdd'T'HHmmss'Z'")}\r\n` +
     `${
-      isMultiDay
+      isMultiDay || isAllDaySingleDay
         ? `DTSTART;VALUE=DATE:${startDate}\r\nDTEND;VALUE=DATE:${endDate}\r\n`
         : `DTSTART;TZID=${timeZone}:${startDate}\r\nDTEND;TZID=${timeZone}:${endDate}\r\n`
     }` +
     `SUMMARY:${escapeICSString(eventName)}\r\n` +
     `DESCRIPTION:${escapeICSString(eventDescriptionMarkdown)}\r\n` +
     `LOCATION:${escapeICSString(formattedLocation)}\r\n` +
+    (isAllDaySingleDay ? `X-MICROSOFT-CDO-BUSYSTATUS:FREE\r\n` : '') +
     `END:VEVENT\r\n` +
     `END:VCALENDAR`.replace(/\n/g, '\r\n').trim();
-
-  //   console.log('CHECK OUTPUT');
-  //   console.log(
-  //     `data:text/calendar;charset=utf-8,${encodeURIComponent(icsContent)}`
-  //   );
 
   return `data:text/calendar;charset=utf-8,${encodeURIComponent(icsContent)}`;
 };

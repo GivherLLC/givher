@@ -59,8 +59,7 @@ export const generateOutlookCalendarLink = (event: {
         return null;
       }
 
-      const zonedDate = toDate(date, { timeZone });
-      return zonedDate;
+      return toDate(date, { timeZone });
     } catch (error) {
       console.error(`Error parsing date: ${dateString}`, error);
       return null;
@@ -116,11 +115,12 @@ export const generateOutlookCalendarLink = (event: {
   const isMultiDay = Boolean(
     firstDayOfEvent && lastDayOfEvent && firstDayOfEvent !== lastDayOfEvent
   );
+  const isAllDaySingleDay = !lastDayOfEvent && !eventTime && !eventEndTime;
 
   const startDate = formatDateForCalendar(
     firstDayOfEvent,
-    isMultiDay ? null : eventTime,
-    isMultiDay
+    isMultiDay || isAllDaySingleDay ? null : eventTime,
+    isMultiDay || isAllDaySingleDay
   );
 
   let correctedEndDate = isMultiDay
@@ -144,14 +144,14 @@ export const generateOutlookCalendarLink = (event: {
     .filter(Boolean) // Removes empty/null values
     .join(', ');
 
-  // Generate Outlook Calendar link with correct timezone
+  // Generate Outlook Calendar link with correct timezone and availability status
   const outlookCalendarLink = `https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&subject=${encodeURIComponent(
     eventName
   )}&startdt=${startDate}&enddt=${correctedEndDate}&location=${encodeURIComponent(
     formattedLocation || ''
   )}&body=${encodeURIComponent(eventDescriptionMarkdown || '')}&allday=${
-    isMultiDay ? 'true' : 'false'
-  }&timezone=${encodeURIComponent(timeZone)}`;
+    isMultiDay || isAllDaySingleDay ? 'true' : 'false'
+  }${isAllDaySingleDay ? '&showas=free' : ''}&timezone=${encodeURIComponent(timeZone)}`;
 
   return outlookCalendarLink;
 };

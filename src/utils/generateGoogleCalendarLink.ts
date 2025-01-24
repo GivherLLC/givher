@@ -112,6 +112,35 @@ export const generateGoogleCalendarLink = (event: {
     return format(parsedDate, "yyyyMMdd'T'HHmmss");
   };
 
+  const getDefaultEndTime = (eventTime: string | null): string | null => {
+    if (!eventTime) return null;
+
+    const timeParts = eventTime.match(/(\d+):(\d+)\s?(AM|PM)/i);
+    if (timeParts) {
+      let hours = parseInt(timeParts[1]);
+      const minutes = timeParts[2];
+      const period = timeParts[3]?.toUpperCase();
+
+      // Handle AM/PM conversion
+      if (period === 'PM' && hours < 12) {
+        hours += 12;
+      }
+      if (period === 'AM' && hours === 12) {
+        hours = 0; // Midnight edge case
+      }
+
+      // Add 1 hour and handle 24-hour wrap-around
+      hours = (hours + 1) % 24;
+      const newPeriod = hours >= 12 ? 'PM' : 'AM';
+      const adjustedHours = hours > 12 ? hours - 12 : hours === 0 ? 12 : hours;
+
+      return `${adjustedHours}:${minutes} ${newPeriod}`;
+    }
+
+    console.error(`Invalid time format: ${eventTime}`);
+    return null;
+  };
+
   const isMultiDay = Boolean(
     firstDayOfEvent && lastDayOfEvent && firstDayOfEvent !== lastDayOfEvent
   );
@@ -125,7 +154,10 @@ export const generateGoogleCalendarLink = (event: {
 
   let correctedEndDate = isMultiDay
     ? formatDateForCalendar(lastDayOfEvent, null, true) + 'T000000'
-    : formatDateForCalendar(firstDayOfEvent, eventEndTime);
+    : formatDateForCalendar(
+        firstDayOfEvent,
+        eventEndTime ? eventEndTime : getDefaultEndTime(eventTime)
+      );
 
   if (isMultiDay && lastDayOfEvent) {
     const parsedEndDate = parseDateString(lastDayOfEvent, timeZone);

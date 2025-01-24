@@ -612,31 +612,10 @@ collections:
           widget: 'string',
           required: false,
         }
-      - label: 'Event Description NEW'
+      - label: 'Event Description (NEW)'
         name: 'eventDescriptionMarkdown'
         widget: 'markdown'
-      - label: 'Event Description'
-        name: 'eventDescription'
-        widget: 'list'
-        fields:
-          - {
-              label: 'Paragraph (add additional field for each paragraph)',
-              name: 'paragraph',
-              widget: 'string',
-              required: false,
-            }
         required: false
-      - label: 'Bolded Information'
-        name: 'boldedEventInformation'
-        widget: 'list'
-        required: false
-        fields:
-          - {
-              label: 'Line (add additional field for each line)',
-              name: 'line',
-              widget: 'string',
-              required: false,
-            }
       - {
           label: 'Event Detail Page Image (615w x 385h)',
           name: 'detailImage',

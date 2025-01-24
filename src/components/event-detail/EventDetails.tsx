@@ -51,7 +51,7 @@ export default async function EventDetails({
             </div>
           )}
           <div
-            className="flex flex-col text-left gap-[1rem] prose-strong:font-visbyBold prose-em:italic"
+            className="flex flex-col text-left gap-[1rem] prose-strong:font-visbyBold prose-em:italic text-navySmoke dark:text-softOpal"
             dangerouslySetInnerHTML={{ __html: contentHtml }}
           />
         </div>

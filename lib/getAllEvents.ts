@@ -21,6 +21,16 @@ const displayDate = (dateString: string, timeZone: string) => {
   return format(date, 'EEEE, MMMM d, yyyy', { timeZone });
 };
 
+const formatAddress = (
+  eventAddress: string | null,
+  eventCity: string | null,
+  eventState: string | null,
+  eventZipCode: string | null
+) =>
+  [eventAddress, eventCity, eventState, eventZipCode]
+    .filter(Boolean)
+    .join(', ');
+
 // Main function to fetch all events with enriched metadata
 async function getAllEvents(): Promise<EventType[]> {
   const eventsDirectory = path.join(process.cwd(), 'content/all-events');
@@ -42,6 +52,13 @@ async function getAllEvents(): Promise<EventType[]> {
     const currentDate = toDate(new Date(), { timeZone: data.timeZone });
     const eventStatus = getEventStatus(data, currentDate);
 
+    const displayAddress = formatAddress(
+      data.eventAddress,
+      data.eventCity,
+      data.eventState,
+      data.eventZipCode
+    );
+
     return {
       ...data,
       slug,
@@ -60,6 +77,7 @@ async function getAllEvents(): Promise<EventType[]> {
       eventEndTime: data.eventEndTime
         ? formatTimeTo12Hour(data.eventEndTime)
         : null,
+      displayAddress,
     } as EventType;
   });
 

@@ -3,7 +3,8 @@ available: true
 eventName: 2nd Annual AAPI Leadership Summit
 slug: null
 firstDayOfEvent: 02.21.2025
-eventTime: 08:00
+eventTime: 09:00
+eventEndTime: 21:00
 timeZone: America/Los_Angeles
 eventType: 501(c)(3)
 eventAddress: 4000 Warner Blvd.

@@ -3,11 +3,14 @@ available: true
 eventName: 5th Annual San Diego LGBTQ+ Foundation Fundraiser
 slug: sd-pride-celebration
 firstDayOfEvent: 07.10.2025
-eventTime: ""
+eventTime: ''
 lastDayOfEvent: 07.12.2025
 timeZone: America/Los_Angeles
 eventType: 501(c)(3)
-eventCity: San Diego, CA
+eventAddress: 550 J St
+eventCity: San Diego
+eventState: CA
+eventZipCode: 92101
 eventLocation: Pendry San Diego
 clientName: California LGBTQ Foundation
 eventButtonTextOne: Event Flyer

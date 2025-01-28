@@ -6,7 +6,8 @@ eventTime: 17:30
 eventEndTime: 20:00
 timeZone: America/Los_Angeles
 eventType: 501(c)(3)
-eventCity: Sacramento, CA
+eventCity: Sacramento
+eventState: CA
 eventLocation: Ace of Spades
 clientName: California LGBTQ Foundation
 eventButtonTextOne: REGISTER

@@ -6,7 +6,8 @@ firstDayOfEvent: 12.05.2024
 eventTime: 19:00
 timeZone: America/Los_Angeles
 eventType: PAC
-eventCity: Anaheim, CA
+eventCity: Anaheim
+eventState: CA
 eventLocation: Anaheim Marriott
 clientName: California School Board Association PAC
 eventButtonTextOne: Sponsorship and Ticket Details

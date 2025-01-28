@@ -2,8 +2,10 @@ import React from 'react';
 import Image from 'next/image';
 import { EventType } from '@/types/types';
 import ArrowLink from '../common/ArrowLink';
+import { remark } from 'remark';
+import html from 'remark-html';
 
-export default function EventDetails({
+export default async function EventDetails({
   event,
   postponedEventText,
 }: {
@@ -12,14 +14,18 @@ export default function EventDetails({
 }) {
   const {
     eventName,
-    eventDescription,
+    eventDescriptionMarkdown,
     eventButtonTextOne,
     eventButtonLinkOne,
     eventButtonTextTwo,
     eventButtonLinkTwo,
-    boldedEventInformation,
     detailImage,
   } = event;
+
+  const processedContent = await remark()
+    .use(html)
+    .process(eventDescriptionMarkdown || '');
+  const contentHtml = processedContent.toString();
 
   return (
     <div className="bg-softOpal dark:bg-navySmoke py-[4.5rem] flex justify-center overflow-hidden">
@@ -44,25 +50,10 @@ export default function EventDetails({
               />
             </div>
           )}
-          <div className="flex flex-col items-center lg:items-start gap-[1rem]">
-            {!!eventDescription &&
-              eventDescription.map((item, i) => (
-                <p key={i} className="text-black dark:text-softOpal">
-                  {item.paragraph}
-                </p>
-              ))}
-          </div>
-          <div className="flex flex-col gap-[1rem]">
-            {!!boldedEventInformation &&
-              boldedEventInformation.map((item, i) => (
-                <p
-                  key={i}
-                  className="text-black dark:text-softOpal font-visbyBold"
-                >
-                  {item.line}
-                </p>
-              ))}
-          </div>
+          <div
+            className="flex flex-col text-left gap-[1rem] prose-strong:font-visbyBold prose-em:italic text-navySmoke dark:text-softOpal"
+            dangerouslySetInnerHTML={{ __html: contentHtml }}
+          />
         </div>
         <div className="w-full lg:w-1/2 relative flex justify-center lg:justify-end">
           <Image
@@ -71,7 +62,7 @@ export default function EventDetails({
             width={322}
             src={'/images/events/paint-splatter-small.svg'}
             alt="paint splatter"
-            className="absolute left-[30%] lg:left-[-23%] bottom-[-23%] z-0"
+            className="absolute right-[30%] lg:right-[-23%] bottom-[-23%] z-0"
           />
           <Image
             loading="lazy"

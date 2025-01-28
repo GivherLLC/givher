@@ -36,14 +36,24 @@ export type EventTypeData = {
   timeOfYear: string | null;
   timeZone: string;
   eventType: string | null;
+  eventAddress: string | null;
   eventCity: string | null;
+  eventState: string | null;
+  eventZipCode: string | null;
   eventLocation: string | null;
   clientName: string;
   eventButtonTextOne: string | null;
   eventButtonLinkOne: string | null;
   eventButtonTextTwo: string | null;
   eventButtonLinkTwo: string | null;
+  eventDescriptionMarkdown: string | null;
+  /**
+   * @deprecated Use `eventDescriptionMarkdown` instead
+   */
   eventDescription: EventDescriptionItem[] | null;
+  /**
+   * @deprecated Use `eventDescriptionMarkdown` instead
+   */
   boldedEventInformation: BoldedEventInformationItem[] | null;
   detailImage: string | null;
   postponed: boolean;
@@ -55,20 +65,33 @@ export type EventType = {
   eventName: string;
   slug: string;
   firstDayOfEvent: string | null;
+  displayDateFirst: string | null;
   eventTime: string | null;
   eventEndTime: string | null;
   lastDayOfEvent: string | null;
+  displayDateLast: string | null;
   timeOfYear: string | null;
   timeZone: string;
   eventType: string | null;
+  displayAddress: string | null;
+  eventAddress: string | null;
   eventCity: string | null;
+  eventState: string | null;
+  eventZipCode: string | null;
   eventLocation: string | null;
   clientName: string;
   eventButtonTextOne: string | null;
   eventButtonLinkOne: string | null;
   eventButtonTextTwo: string | null;
   eventButtonLinkTwo: string | null;
+  eventDescriptionMarkdown: string | null;
+  /**
+   * @deprecated Use `eventDescriptionMarkdown` instead
+   */
   eventDescription: EventDescriptionItem[] | null;
+  /**
+   * @deprecated Use `eventDescriptionMarkdown` instead
+   */
   boldedEventInformation: BoldedEventInformationItem[] | null;
   detailImage: string | null;
   postponed: boolean;
@@ -89,6 +112,7 @@ export type FeaturedEventType = {
   slug: string;
   eventName: string;
   eventCity: string | null;
+  eventState: string | null;
   eventButtonTextOne: string | null;
   eventButtonLinkOne: string | null;
   clientImage: string;

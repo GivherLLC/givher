@@ -6,7 +6,8 @@ firstDayOfEvent: 12.04.2024
 eventTime: 17:30
 timeZone: America/Los_Angeles
 eventType: 501(c)(3)
-eventCity: Hollywood, CA
+eventCity: Hollywood
+eventState: CA
 eventLocation: TCL Chinese Theatre
 clientName: Asian and Pacific Islander Legislative Caucus Foundation
 eventButtonTextOne: Sponsor The Event

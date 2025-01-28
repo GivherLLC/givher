@@ -83,7 +83,7 @@ export default function EventCard({
                     WebkitLineClamp: 1,
                   }}
                 >
-                  {event.eventCity}
+                  {event.eventCity}, {event.eventState}
                 </p>
               </div>
             </div>

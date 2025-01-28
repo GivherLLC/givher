@@ -5,7 +5,8 @@ firstDayOfEvent: 10.16.2024
 eventTime: 18:00
 timeZone: America/Los_Angeles
 eventType: PAC
-eventCity: Sacramento, CA
+eventCity: Sacramento
+eventState: CA
 eventLocation: The Mix Downtown
 clientName: California Primary Care Association
 eventButtonTextOne: Ticket & Sponsorship Information

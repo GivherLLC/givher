@@ -15,6 +15,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.16",
     "@typescript-eslint/parser": "^8.18.1",
     "date-fns": "^4.1.0",
     "date-fns-tz": "^3.2.0",

@@ -4,7 +4,8 @@ eventName: Pink Circus
 firstDayOfEvent: 09.06.2025
 timeZone: America/Los_Angeles
 eventType: 501(c)(4)
-eventCity: Sacramento, CA
+eventCity: Sacramento
+eventState: CA
 eventLocation: Private Location
 clientName: Planned Parenthood Affiliates of California
 eventButtonTextOne: Event Website

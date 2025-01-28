@@ -20,9 +20,7 @@ function formatTimeTo12Hour(time: string | number): string {
   const formattedHour = hours % 12 || 12; // Convert 24-hour to 12-hour format
 
   // Return formatted time
-  return minutes === 0
-    ? `${formattedHour} ${period}` // On the hour, no minutes
-    : `${formattedHour}:${minutes.toString().padStart(2, '0')} ${period}`; // Include minutes
+  return `${formattedHour}:${minutes.toString().padStart(2, '0')} ${period}`; // Include minutes
 }
 
 export default formatTimeTo12Hour;

@@ -3,10 +3,14 @@ available: true
 eventName: 2nd Annual AAPI Leadership Summit
 slug: null
 firstDayOfEvent: 02.21.2025
-eventTime: 08:00
+eventTime: 09:00
+eventEndTime: 21:00
 timeZone: America/Los_Angeles
 eventType: 501(c)(3)
-eventCity: Burbank, CA
+eventAddress: 4000 Warner Blvd.
+eventCity: Burbank
+eventState: CA
+eventZipCode: 91522
 eventLocation: Warner Bros. Studio
 clientName: Asian and Pacific Islander Legislative Caucus Foundation
 eventButtonTextOne: Event Website
@@ -27,7 +31,8 @@ eventDescriptionMarkdown: >-
 
   **Limited Tickets Available. This event will sale out!**
 eventDescription:
-  - paragraph: The highly-anticipated 2025 Leadership Summit is a must-attend event
+  - paragraph:
+      The highly-anticipated 2025 Leadership Summit is a must-attend event
       for current and aspiring Asian American and Pacific Islander leaders!
       Here, AAPI elected officials and aspiring professionals can participate in
       critical discussions with key partners, stakeholders, celebrities,

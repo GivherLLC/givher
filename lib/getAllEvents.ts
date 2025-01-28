@@ -16,6 +16,21 @@ const parseDateString = (dateString: string, timeZone: string) => {
   return toDate(date, { timeZone });
 };
 
+const displayDate = (dateString: string, timeZone: string) => {
+  const date = parseDateString(dateString.split('.').join('/'), timeZone);
+  return format(date, 'EEEE, MMMM d, yyyy', { timeZone });
+};
+
+const formatAddress = (
+  eventAddress: string | null,
+  eventCity: string | null,
+  eventState: string | null,
+  eventZipCode: string | null
+) =>
+  [eventAddress, eventCity, eventState, eventZipCode]
+    .filter(Boolean)
+    .join(', ');
+
 // Main function to fetch all events with enriched metadata
 async function getAllEvents(): Promise<EventType[]> {
   const eventsDirectory = path.join(process.cwd(), 'content/all-events');
@@ -37,16 +52,32 @@ async function getAllEvents(): Promise<EventType[]> {
     const currentDate = toDate(new Date(), { timeZone: data.timeZone });
     const eventStatus = getEventStatus(data, currentDate);
 
+    const displayAddress = formatAddress(
+      data.eventAddress,
+      data.eventCity,
+      data.eventState,
+      data.eventZipCode
+    );
+
     return {
       ...data,
       slug,
       eventStatus,
       firstDayOfEvent: data.firstDayOfEvent || null,
       lastDayOfEvent: data.lastDayOfEvent || null,
+      displayDateFirst:
+        data.firstDayOfEvent && data.timeZone
+          ? displayDate(data.firstDayOfEvent, data.timeZone)
+          : null,
+      displayDateLast:
+        data.lastDayOfEvent && data.timeZone
+          ? displayDate(data.lastDayOfEvent, data.timeZone)
+          : null,
       eventTime: data.eventTime ? formatTimeTo12Hour(data.eventTime) : null,
       eventEndTime: data.eventEndTime
         ? formatTimeTo12Hour(data.eventEndTime)
         : null,
+      displayAddress,
     } as EventType;
   });
 
@@ -81,9 +112,10 @@ function getEventStatus(
     data.eventName,
     data.firstDayOfEvent,
     data.eventCity,
+    data.eventState,
     data.eventLocation,
     data.clientName,
-    data.eventDescription,
+    data.eventDescriptionMarkdown,
     data.detailImage,
   ];
 

@@ -99,7 +99,7 @@ export default function PastEventCard({
                     WebkitLineClamp: 1,
                   }}
                 >
-                  {event.eventCity}
+                  {event.eventCity}, {event.eventState}
                 </p>
               </div>
             </div>

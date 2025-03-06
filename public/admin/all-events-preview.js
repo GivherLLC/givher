@@ -41,16 +41,9 @@ var EventPreview = createClass({
       );
     };
 
-    const processedContent = convertMarkdownToHtml(eventDescription);
-
-    var boldedEventInformation = entry.getIn([
-      'data',
-      'boldedEventInformation',
-    ]);
-    var boldedInfoArray;
-    if (boldedEventInformation) {
-      boldedInfoArray = boldedEventInformation.toJS();
-    }
+    const processedContent = eventDescription
+      ? convertMarkdownToHtml(eventDescription)
+      : '';
 
     var validationFields = [
       { field: eventName, label: 'Event Name', isValid: !!eventName },

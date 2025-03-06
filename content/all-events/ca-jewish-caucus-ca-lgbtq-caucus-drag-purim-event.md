@@ -12,10 +12,10 @@ eventCity: Sacramento
 eventState: CA
 eventLocation: Good Luck Lounge
 clientName: California LGBTQ Foundation
-eventButtonTextOne: Inside the Event
-eventButtonLinkOne: ""
-eventButtonTextTwo: Event Website
-eventButtonLinkTwo: https://www.universe.com/events/ca-jewish-caucus-ca-lgbtq-caucus-drag-purim-event-tickets-4B23SM
+eventButtonTextOne: RSVP
+eventButtonLinkOne: https://www.universe.com/events/ca-jewish-caucus-ca-lgbtq-caucus-drag-purim-event-tickets-4B23SM
+eventButtonTextTwo: Sponsor This Event
+eventButtonLinkTwo: mailto:events@givher.com
 eventDescriptionMarkdown: >-
   Join us for an eventful evening, co-hosted by the California Legislative
   Jewish Caucus and California Legislative LGBTQ Caucus, to celebrate Purim in

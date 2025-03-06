@@ -1,5 +1,5 @@
 ---
-available: false
+available: true
 eventName: CA Jewish Caucus & CA LGBTQ Caucus - Drag Purim Event
 slug: givher.com/events/detail/purim25
 firstDayOfEvent: 03.17.2025
@@ -11,16 +11,16 @@ eventCity: Sacramento
 eventState: CA
 eventLocation: Good Luck Lounge
 clientName: California LGBTQ Foundation
-eventButtonTextOne: Get Tickets
-eventButtonLinkOne: https://www.universe.com/events/ca-jewish-caucus-ca-lgbtq-caucus-drag-purim-event-tickets-4B23SM
+eventButtonTextOne: ""
+eventButtonLinkOne: ""
+eventButtonTextTwo: Event Website
+eventButtonLinkTwo: https://www.universe.com/events/ca-jewish-caucus-ca-lgbtq-caucus-drag-purim-event-tickets-4B23SM
 eventDescriptionMarkdown: >-
   Join us for an eventful evening, co-hosted by the California Legislative
   Jewish Caucus and California Legislative LGBTQ Caucus, to celebrate Purim in
   style! This in-person event is a DRAG-tastic opportunity to celebrate Purim,
   the jubilant Jewish holiday that is celebrated every year to commemorate the
   Jewish hero Esther saving her community from peril.
-
-
 
 
   Date: Wednesday, March 17, 2025
@@ -39,9 +39,6 @@ eventDescriptionMarkdown: >-
 
 
   Don't miss out on joining Members of the Jewish and LGBTQ Caucuses at this Reception & Drag Show as we celebrate this Drag Purim Event. We can't wait to see you there!
-
-
-  \_\_\_\_\_\_
 
 
   \*This event is a joint fundraiser for both the LGBTQ and Jewish Foundations and, therefore, is not reportable\*

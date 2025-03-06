@@ -1,7 +1,7 @@
 ---
 available: true
 eventName: CA Jewish Caucus & CA LGBTQ Caucus - Drag Purim Event
-slug: purim25
+slug: ""
 firstDayOfEvent: 03.17.2025
 eventTime: 17:30
 eventEndTime: 19:30
@@ -13,7 +13,7 @@ eventState: CA
 eventLocation: Good Luck Lounge
 clientName: California LGBTQ Foundation
 eventButtonTextOne: Inside the Event
-eventButtonLinkOne: givher.com/events/detail/purim-25
+eventButtonLinkOne: ""
 eventButtonTextTwo: Event Website
 eventButtonLinkTwo: https://www.universe.com/events/ca-jewish-caucus-ca-lgbtq-caucus-drag-purim-event-tickets-4B23SM
 eventDescriptionMarkdown: >-

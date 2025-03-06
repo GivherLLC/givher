@@ -1,7 +1,7 @@
 ---
 available: true
 eventName: CA Jewish Caucus & CA LGBTQ Caucus - Drag Purim Event
-slug: givher.com/events/detail/purim25
+slug: givher.com/events/detail/purim-25
 firstDayOfEvent: 03.17.2025
 eventTime: 17:30
 timeZone: America/Los_Angeles

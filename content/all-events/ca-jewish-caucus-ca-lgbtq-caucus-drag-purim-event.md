@@ -12,7 +12,7 @@ eventState: CA
 eventLocation: Good Luck Lounge
 clientName: California LGBTQ Foundation
 eventButtonTextOne: Inside the Event
-eventButtonLinkOne: givher.com/events/detail/purim25
+eventButtonLinkOne: givher.com/events/detail/purim-25
 eventButtonTextTwo: Event Website
 eventButtonLinkTwo: https://www.universe.com/events/ca-jewish-caucus-ca-lgbtq-caucus-drag-purim-event-tickets-4B23SM
 eventDescriptionMarkdown: >-

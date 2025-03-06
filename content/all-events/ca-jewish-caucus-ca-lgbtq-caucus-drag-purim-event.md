@@ -4,6 +4,7 @@ eventName: CA Jewish Caucus & CA LGBTQ Caucus - Drag Purim Event
 slug: purim25
 firstDayOfEvent: 03.17.2025
 eventTime: 17:30
+eventEndTime: 19:30
 timeZone: America/Los_Angeles
 eventType: 501(c)(3)
 eventAddress: 1421 R Street

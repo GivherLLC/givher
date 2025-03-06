@@ -33,16 +33,23 @@ eventDescriptionMarkdown: >-
   Location: Good Luck Lounge
 
 
-  Should you wish to dress up/participate in Drag to celebrate Purim, here's an external reference point (not associated with the Members of either Caucus or the CA LGBTQ Foundation): https://www.pinterest.ca/pin/512636370099963009/. 
+  Should you wish to dress up/participate in Drag to celebrate Purim, here's an *[external reference point](https://www.pinterest.ca/pin/512636370099963009/)* (not associated with the Members of either Caucus or the CA LGBTQ Foundation).
 
 
-  To learn more about the significance of dressing in accordance, here's an external reference point (not associated with the Members of either Caucus or the CA LGBTQ Foundation): https://www.myjewishlearning.com/article/why-do-jews-wear-costumes-on-purim/. 
+  To learn more about the significance of dressing in accordance, here's an [external reference point](https://www.myjewishlearning.com/article/why-do-jews-wear-costumes-on-purim/) (not associated with the Members of either Caucus or the CA LGBTQ Foundation).
 
 
   Don't miss out on joining Members of the Jewish and LGBTQ Caucuses at this Reception & Drag Show as we celebrate this Drag Purim Event. We can't wait to see you there!
 
 
-  \*This event is a joint fundraiser for both the LGBTQ and Jewish Foundations and, therefore, is not reportable\*
+
+
+
+
+  *The California LGBTQ Foundation and the California Jewish Legislative Caucus Foundation are 501(c)(3) charitable organizations.  Contributions are tax-deductible as charitable contributions to the extent permitted by law.*
+
+
+  **This event is a joint fundraiser for both the LGBTQ and Jewish Foundations and, therefore, is not reportable.**
 detailImage: /uploads/purim.png
 postponed: false
 hideEvent: false

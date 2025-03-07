@@ -10,7 +10,7 @@ eventCity: Sacramento
 eventState: CA
 eventLocation: Mix Downtown
 clientName: Asian and Pacific Islander Legislative Caucus Foundation
-eventButtonTextOne: Inside The Event
+eventButtonTextOne: ""
 eventButtonTextTwo: ""
 eventButtonLinkTwo: ""
 eventDescriptionMarkdown: >-

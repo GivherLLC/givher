@@ -1,6 +1,7 @@
 ---
 available: true
-eventName: CA Jewish Caucus & CA LGBTQ Caucus - Drag Purim Event
+eventName: CA Jewish Legislative Caucus Leadership Foundation & CA LGBTQ Caucus
+  - Drag Purim Event
 slug: ""
 firstDayOfEvent: 03.17.2025
 eventTime: 17:30
@@ -17,11 +18,12 @@ eventButtonLinkOne: https://www.universe.com/events/ca-jewish-caucus-ca-lgbtq-ca
 eventButtonTextTwo: Sponsor This Event
 eventButtonLinkTwo: mailto:events@givher.com
 eventDescriptionMarkdown: >-
-  Join us for an eventful evening, co-hosted by the California Legislative
-  Jewish Caucus and California Legislative LGBTQ Caucus, to celebrate Purim in
-  style! This in-person event is a DRAG-tastic opportunity to celebrate Purim,
-  the jubilant Jewish holiday that is celebrated every year to commemorate the
-  Jewish hero Esther saving her community from peril.
+  Join us for an eventful evening, co-hosted by the California Jewish
+  Legislative Caucus Leadership Foundation and California Legislative LGBTQ
+  Caucus, to celebrate Purim in style! This in-person event is a DRAG-tastic
+  opportunity to celebrate Purim, the jubilant Jewish holiday that is celebrated
+  every year to commemorate the Jewish hero Esther saving her community from
+  peril.
 
 
   Date: Wednesday, March 17, 2025
@@ -42,11 +44,7 @@ eventDescriptionMarkdown: >-
   Don't miss out on joining Members of the Jewish and LGBTQ Caucuses at this Reception & Drag Show as we celebrate this Drag Purim Event. We can't wait to see you there!
 
 
-
-
-
-
-  *The California LGBTQ Foundation and the California Jewish Legislative Caucus Foundation are 501(c)(3) charitable organizations.  Contributions are tax-deductible as charitable contributions to the extent permitted by law.*
+  *The California LGBTQ Foundation and the California Jewish Legislative Caucus Leadership Foundation are 501(c)(3) charitable organizations.  Contributions are tax-deductible as charitable contributions to the extent permitted by law.*
 
 
   **This event is a joint fundraiser for both the LGBTQ and Jewish Foundations and, therefore, is not reportable.**

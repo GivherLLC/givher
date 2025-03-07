@@ -11,8 +11,8 @@ eventState: CA
 eventLocation: Mix Downtown
 clientName: Asian and Pacific Islander Legislative Caucus Foundation
 eventButtonTextOne: Inside The Event
-eventButtonTextTwo: Sponsor This Event
-eventButtonLinkTwo: mailto:events@givher.com
+eventButtonTextTwo: ""
+eventButtonLinkTwo: ""
 eventDescriptionMarkdown: >-
   Join the AAPI Legislative Caucus Foundation for Our Annual Reception
   Fundraiser!

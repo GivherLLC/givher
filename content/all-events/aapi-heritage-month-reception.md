@@ -59,7 +59,7 @@ eventDescriptionMarkdown: >-
 
 
   The Internal Revenue Service recognizes the Asian Pacific Islander Legislative Caucus Foundation as a Section 501(c)3 public charity. Gifts to the foundation are tax-deductible in the U.S. The federal tax ID# is 46-1937273.
-detailImage: /uploads/givher-website_event-detail-page-image-615w-x-385h-.png
+detailImage: /uploads/givher-website_event-detail-page-image-615w-x-385h-4-.png
 postponed: false
 hideEvent: false
 ---

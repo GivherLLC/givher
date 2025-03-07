@@ -1,5 +1,5 @@
 ---
-available: false
+available: true
 eventName: AAPI Heritage Month Reception
 firstDayOfEvent: 05.12.2025
 eventTime: 17:00

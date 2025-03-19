@@ -2,7 +2,8 @@
 available: true
 eventName: CPCA PAC Day At The Capitol
 firstDayOfEvent: 04.22.2025
-eventTime: 17:30
+eventTime: 16:30
+eventEndTime: 18:30
 timeZone: America/Los_Angeles
 eventType: PAC
 eventAddress: 1525 L St

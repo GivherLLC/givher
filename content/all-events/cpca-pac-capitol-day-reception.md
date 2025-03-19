@@ -16,7 +16,7 @@ eventButtonLinkOne: https://www.efundraisingconnections.com/c/CaliforniaHealthAd
 eventButtonTextTwo: Sponsor This Event
 eventButtonLinkTwo: mailto:events@givher.com
 eventDescriptionMarkdown: >-
-  Join us for an evening of advocacy and connection! Your contribution helps us
+  Join us for an evening of cocktails and connection! Your contribution helps us
   fight for your rights—not just today, but for the future.
 
 

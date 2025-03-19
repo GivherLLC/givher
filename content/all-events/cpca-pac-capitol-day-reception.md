@@ -10,16 +10,22 @@ eventCity: Sacramento
 eventState: CA
 eventLocation: The Mix Downtown
 clientName: California Primary Care Association
-eventButtonTextOne: Donate
+eventButtonTextOne: Make Your Monthly Contribution
 eventButtonLinkOne: https://www.efundraisingconnections.com/c/CaliforniaHealthAdvocatesPAC
 eventButtonTextTwo: Sponsor This Event
 eventButtonLinkTwo: mailto:events@givher.com
 eventDescriptionMarkdown: >-
   Join us for an evening of advocacy and connection! Your contribution helps us
-  fight for your rights. 
+  fight for your rights—not just today, but for the future.
 
 
-  Sign up to make $30 monthly donation or make a one-time donation of $350.
+  A **monthly donation of $30** isn’t just a gift—it’s an investment in lasting change. Policy and advocacy take time, strategy, and resources. A Political Action Committee (PAC) allows us to support leaders and initiatives that align with your values, ensuring your voice is heard where decisions are made.
+
+
+  By giving monthly, you help sustain our ongoing efforts, allowing us to plan strategically, respond swiftly, and fight for the policies that impact your daily life. 
+
+
+  **Make a lasting impact. Sign up to donate $30 monthly or make a one-time contribution of $350 today.**
 detailImage: /uploads/givher-website_event-detail-page-image-615w-x-385h-2.png
 postponed: false
 hideEvent: false

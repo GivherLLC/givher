@@ -1,6 +1,6 @@
 ---
 available: true
-eventName: CPCA PAC Day At The Capitol
+eventName: CPCA PAC Day at the Capitol
 firstDayOfEvent: 04.22.2025
 eventTime: 16:30
 eventEndTime: 18:30

@@ -1,6 +1,6 @@
 ---
 available: true
-eventName: CPCA PAC Day at the Capitol
+eventName: CPCA Advocates PAC Day at the Capitol Reception
 firstDayOfEvent: 04.22.2025
 eventTime: 16:30
 eventEndTime: 18:30

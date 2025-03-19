@@ -19,10 +19,10 @@ eventDescriptionMarkdown: >-
   fight for your rights—not just today, but for the future.
 
 
-  A **monthly donation of $30** isn’t just a gift—it’s an investment in lasting change. Policy and advocacy take time, strategy, and resources. A Political Action Committee (PAC) allows us to support leaders and initiatives that align with your values, ensuring your voice is heard where decisions are made.
+  A **monthly donation of $30** isn’t just support—it’s a commitment to the long game. Policy and advocacy don’t happen overnight. Real change takes persistence, strategy, and the resources to sustain momentum.
 
 
-  By giving monthly, you help sustain our ongoing efforts, allowing us to plan strategically, respond swiftly, and fight for the policies that impact your daily life. 
+  By giving monthly, you provide the stability needed to plan ahead, respond effectively, and ensure ongoing influence where it matters most. Your support fuels critical advocacy efforts, helping protect and advance the policies that shape your daily life.
 
 
   **Make a lasting impact. Sign up to donate $30 monthly or make a one-time contribution of $350 today.**

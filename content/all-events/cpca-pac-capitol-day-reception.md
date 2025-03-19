@@ -27,7 +27,7 @@ eventDescriptionMarkdown: >-
 
 
   **Make a lasting impact. Sign up to donate $30 monthly or make a one-time contribution of $350 to enter the VIP area.**
-detailImage: /uploads/givher-website_event-detail-page-image-615w-x-385h-2.png
+detailImage: /uploads/givher-website_event-detail-page-image-615w-x-385h-3.png
 postponed: false
 hideEvent: false
 ---

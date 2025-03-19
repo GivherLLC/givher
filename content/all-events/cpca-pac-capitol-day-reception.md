@@ -17,7 +17,7 @@ eventButtonTextTwo: Sponsor This Event
 eventButtonLinkTwo: mailto:events@givher.com
 eventDescriptionMarkdown: >-
   Join us for an evening of cocktails and connection! Your contribution helps us
-  fight for your rights—not just today, but for the future.
+  fight for healthcare rights—not just today, but for the future.
 
 
   A **monthly donation of $30** isn’t just support—it’s a commitment to the long game. Policy and advocacy don’t happen overnight. Real change takes persistence, strategy, and the resources to sustain momentum.

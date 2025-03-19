@@ -26,7 +26,7 @@ eventDescriptionMarkdown: >-
   By giving monthly, you provide the stability needed to plan ahead, respond effectively, and ensure ongoing influence where it matters most. Your support fuels critical advocacy efforts, helping protect and advance the policies that shape your daily life.
 
 
-  **Make a lasting impact. Sign up to donate $30 monthly or make a one-time contribution of $350 today.**
+  **Make a lasting impact. Sign up to donate $30 monthly or make a one-time contribution of $350 to enter the VIP area.**
 detailImage: /uploads/givher-website_event-detail-page-image-615w-x-385h-2.png
 postponed: false
 hideEvent: false

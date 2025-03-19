@@ -1,5 +1,5 @@
 ---
-available: false
+available: true
 eventName: CPCA PAC Capitol Day Reception
 firstDayOfEvent: 04.23.2025
 eventTime: 17:30

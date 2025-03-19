@@ -1,7 +1,7 @@
 ---
 available: true
-eventName: CPCA PAC Capitol Day Reception
-firstDayOfEvent: 04.23.2025
+eventName: CPCA PAC Day At The Capitol
+firstDayOfEvent: 04.22.2025
 eventTime: 17:30
 timeZone: America/Los_Angeles
 eventType: PAC

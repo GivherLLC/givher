@@ -10,7 +10,7 @@ eventAddress: 1525 L St
 eventCity: Sacramento
 eventState: CA
 eventLocation: The Mix Downtown
-clientName: California Primary Care Association
+clientName: CPCA Advocates
 eventButtonTextOne: Make Your Monthly Contribution
 eventButtonLinkOne: https://www.efundraisingconnections.com/c/CaliforniaHealthAdvocatesPAC
 eventButtonTextTwo: Sponsor This Event

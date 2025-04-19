@@ -17,7 +17,7 @@ eventDescriptionMarkdown: >-
 
 
 
-  ### **Schedule:**
+  ## **Schedule:**
 
 
   **5:30 PM** – Registration Opens, Cocktails & Mingling
@@ -31,7 +31,7 @@ eventDescriptionMarkdown: >-
 
 
 
-  ### **Tickets:**
+  ## **Tickets:**
 
 
   **$10 if purchased before May 1**

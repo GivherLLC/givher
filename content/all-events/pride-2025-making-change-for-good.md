@@ -20,27 +20,28 @@ eventDescriptionMarkdown: >-
 
 
 
-  ## **Schedule:**
+  > ## **Schedule:**
+
+  >
+
+  > * **5:30 PM** – Registration Opens, Cocktails & Mingling
+
+  > * **6:30 PM** – Program Begins
+
+  > * **9:00 PM** – Event Ends
 
 
-  **5:30 PM** – Registration Opens, Cocktails & Mingling
 
 
-  **6:30 PM** – Program Begins
+  > ## **Tickets:**
 
+  >
 
-  **9:00 PM** – Event Ends
+  > **$10 if purchased before May 1** 
 
+  >
 
-
-
-  ## **Tickets:**
-
-
-  **$10 if purchased before May 1**
-
-
-  **$25 after and at the door**
+  > **$25 after and at the door**
 
 
 

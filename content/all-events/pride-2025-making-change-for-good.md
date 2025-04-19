@@ -15,6 +15,8 @@ eventDescriptionMarkdown: >-
   Celebrate Pride with us on Monday, June 23, 2025, at Ace of Spades in Sacramento from 5:30 PM to 9:00 PM. Enjoy cocktails, bites, and great company as we come together for an evening of community and inspiration.
 
 
+
+
   ### **Schedule:**
 
 
@@ -36,6 +38,8 @@ eventDescriptionMarkdown: >-
 
 
   **$25 after and at the door**
+
+
 
 
 

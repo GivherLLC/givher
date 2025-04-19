@@ -8,7 +8,7 @@ eventState: CA
 eventLocation: Ace of Spades
 clientName: California LGBTQ Foundation
 eventDescriptionMarkdown: >-
-  # **Join the California LGBTQ+ Foundation for a Wicked Pride Month
+  ## **Join the California LGBTQ+ Foundation for a Wicked Pride Month
   Celebration!**
 
 
@@ -20,7 +20,7 @@ eventDescriptionMarkdown: >-
 
 
 
-  > ## **Schedule:**
+  > ### **Schedule:**
 
   >
 
@@ -33,7 +33,7 @@ eventDescriptionMarkdown: >-
 
 
 
-  > ## **Tickets:**
+  > ### **Tickets:**
 
   >
 

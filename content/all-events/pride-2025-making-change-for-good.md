@@ -8,11 +8,14 @@ eventState: CA
 eventLocation: Ace of Spades
 clientName: California LGBTQ Foundation
 eventDescriptionMarkdown: >-
-  ## **Join the California LGBTQ+ Foundation for a Wicked Pride Month
+  # **Join the California LGBTQ+ Foundation for a Wicked Pride Month
   Celebration!**
 
 
-  Celebrate Pride with us on Monday, June 23, 2025, at Ace of Spades in Sacramento from 5:30 PM to 9:00 PM. Enjoy cocktails, bites, and great company as we come together for an evening of community and inspiration.
+  Celebrate Pride with us on Monday, **June 23, 2025, at Ace of Spades in Sacramento from 5:30 PM to 9:00 PM**. 
+
+
+  Enjoy cocktails, bites, and great company as we come together for an evening of community and inspiration.
 
 
 

@@ -33,6 +33,7 @@ export default async function getAllClients(): Promise<Client[]> {
         clientWebsite: data.clientWebsite,
         clientW9Src: data.clientW9Src,
         hideClient: data.hideClient,
+        pastClient: data.pastClient,
         eventLink, // Add the computed eventLink field
       };
     })

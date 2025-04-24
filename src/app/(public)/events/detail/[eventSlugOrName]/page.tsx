@@ -1,3 +1,5 @@
+export const revalidate = 86400;
+
 import React from 'react';
 import EventDetailPage from '@/components/event-detail/EventDetailPage';
 import { Metadata } from 'next';

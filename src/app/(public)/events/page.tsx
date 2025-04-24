@@ -1,4 +1,4 @@
-export const revalidate = 10;
+export const revalidate = 86400;
 
 import React from 'react';
 import EventsPage from '@/components/events/EventsPage';

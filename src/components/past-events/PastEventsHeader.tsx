@@ -93,16 +93,17 @@ export default function PastEventsHeader({
                 data-id={i}
                 className="past-carousel-cell h-[400px] xs:h-[425px] sm:h-[225px] mr-[2rem] m-[2rem]"
               >
-                <div className="group cursor-pointer flex flex-col justify-between sm:flex-row rounded-xl overflow-hidden  w-[270px] xs:w-[325px] sm:w-[625px] border border-navySmoke dark:border-softOpal shadow-custom-shadow">
+                <div className="group cursor-pointer flex flex-col justify-between sm:flex-row rounded-xl overflow-hidden h-[222px] w-[270px] xs:w-[325px] sm:w-[625px] border border-navySmoke dark:border-softOpal shadow-custom-shadow">
                   {e.detailImage && (
-                    <Image
-                      src={e.detailImage}
-                      alt={e.eventName}
-                      height={300}
-                      width={473}
-                      priority={priority}
-                      className="flickity-lazyloaded object-cover w-full max-w-[350px] max-h-[222px] rounded-s-xl"
-                    />
+                    <div className="relative w-full h-[222px] max-w-[350px]">
+                      <Image
+                        src={e.detailImage}
+                        alt={e.eventName}
+                        fill
+                        priority={priority}
+                        className="object-cover object-right rounded-s-xl"
+                      />
+                    </div>
                   )}
                   <div className="w-full sm:w-[275px] flex flex-col justify-between gap-[1.5rem] py-[1rem] pl-[1rem] border-navySmoke">
                     <div className="flex justify-between items-center gap-[1rem]">

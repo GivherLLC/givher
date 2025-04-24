@@ -1,3 +1,5 @@
+export const revalidate = 86400;
+
 import React from 'react';
 import PastEventsPage from '@/components/past-events/PastEventsPage';
 import getPastEventsPageData from '../../../../lib/getPastEventsPageData';

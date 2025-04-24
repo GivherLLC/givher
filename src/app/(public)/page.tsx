@@ -1,3 +1,5 @@
+export const revalidate = 86400;
+
 import React from 'react';
 import Homepage from '@/components/home/HomepageV2';
 import { getNonPastEvents } from '../../../lib/getAllEvents';

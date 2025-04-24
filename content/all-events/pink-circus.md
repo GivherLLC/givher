@@ -9,6 +9,8 @@ available: true
 eventName: PPAC's Annual Pink Party
 slug: pinkponyclub
 firstDayOfEvent: 09.06.2025
+eventTime: 19:00
+eventEndTime: 22:00
 timeZone: America/Los_Angeles
 eventType: 501(c)(4)
 eventCity: Sacramento
@@ -17,6 +19,28 @@ eventLocation: Private Location
 clientName: Planned Parenthood Affiliates of California
 eventButtonTextOne: ""
 eventButtonTextTwo: ""
+eventDescriptionMarkdown: >-
+  Howdy, partner! We’re invitin’ y’all to grab your best cowboy boots and mark
+  your calendars for a pink western party to raise funds for Planned Parenthood
+  Affiliates of California (PPAC)
+
+
+
+
+  **TICKETS ON SALE MAY 1st at 10:00 AM**
+
+
+
+
+  **Event Details:** Chris Melendrez | chris.melendrez@ppacca.org
+
+
+  **Tickets & Sponsorship:** Alina Hernandez | alina@givher.com
+
+
+
+
+  *Contributions or gifts to Planned Parenthood Affiliates of California are not tax deductible as charitable contributions.*
 detailImage: ""
 postponed: false
 boldedEventInformation:

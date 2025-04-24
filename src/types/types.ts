@@ -132,6 +132,7 @@ export type Client = {
   clientW9Src: string;
   hideClient: boolean;
   eventLink: string;
+  pastClient: boolean;
 };
 
 export interface ClientImage {

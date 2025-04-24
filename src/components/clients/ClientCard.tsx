@@ -9,47 +9,71 @@ type ClientCardProps = {
 };
 
 export default function ClientCard({ clientInfo }: ClientCardProps) {
-  const { clientName, clientLogo, clientWebsite, clientW9Src, eventLink } =
-    clientInfo;
+  const {
+    clientName,
+    clientLogo,
+    clientWebsite,
+    clientW9Src,
+    eventLink,
+    pastClient,
+  } = clientInfo;
   return (
-    <div className="group">
-      <div className="relative bg-white rounded-[20px] border border-1 border-mauvelous flex items-center justify-center w-[280px] h-[175px]">
+    <div className="group relative">
+      {!!pastClient && (
+        <div className="bg-electricYellow text-navySmoke font-visbyBold shadow-custom-shadow-small text-[12px] px-3 py-1 w-fit rounded-2xl absolute right-[-3px] top-[-13px] z-20">
+          Past Client
+        </div>
+      )}
+      <div className="relative bg-white rounded-xl shadow-custom-shadow-clients dark:shadow-custom-shadow-darkmode flex items-center justify-center w-[280px] h-[175px]">
         <Image
           priority={true}
           src={clientLogo}
           alt={`${clientName} logo`}
           width={280}
           height={175}
-          className="rounded-[20px] max-w-[250px] w-auto max-h-[150px] h-auto"
+          className="rounded-xl max-w-[250px] w-auto max-h-[150px] h-auto"
         />
-        <div className="absolute top-0 rounded-[20px] hidden group-hover:flex bg-opacity-80 bg-navySmoke h-full w-full px-[1rem] py-[1.5rem] flex-col justify-between">
+        <div className="absolute top-0 rounded-xl hidden group-hover:flex bg-opacity-80 bg-navySmoke h-full w-full px-[1rem] py-[1.5rem] flex-col justify-between">
           <p className="text-softOpal">{clientName}</p>
           <div className="flex justify-between">
-            {clientWebsite && (
+            {pastClient ? (
               <Link
                 className={`bg-electricYellow p-[0.75rem] min-w-[120px] rounded-[.5rem] font-medium text-black text-center`}
-                href={clientWebsite}
+                href={`/past-events?client=${encodeURIComponent(clientName)}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Website
+                View Past Events
               </Link>
-            )}
-            {clientW9Src && (
-              <Link
-                className={`bg-softOpal p-[0.75rem] min-w-[120px] rounded-[.5rem] font-medium text-black text-center`}
-                href={clientW9Src}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                W-9
-              </Link>
+            ) : (
+              <>
+                {clientWebsite && (
+                  <Link
+                    className={`bg-electricYellow p-[0.75rem] min-w-[120px] rounded-[.5rem] font-medium text-black text-center`}
+                    href={clientWebsite}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Website
+                  </Link>
+                )}
+                {clientW9Src && (
+                  <Link
+                    className={`bg-softOpal p-[0.75rem] min-w-[120px] rounded-[.5rem] font-medium text-black text-center`}
+                    href={clientW9Src}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    W-9
+                  </Link>
+                )}
+              </>
             )}
           </div>
         </div>
       </div>
       <div className="px-[1rem] opacity-0 group-hover:opacity-100 pt-[0.5rem] text-visbyBold">
-        {eventLink && (
+        {eventLink && !pastClient && (
           <ArrowLink
             text={`View ${eventLink} Events`}
             color={'black'}

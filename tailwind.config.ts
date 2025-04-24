@@ -40,6 +40,8 @@ const config: Config = {
       },
       boxShadow: {
         'custom-shadow': '0 4px 20px 0 rgba(0,0,0,0.15)',
+        'custom-shadow-small': '0px 1px 4px rgba(0, 0, 0, 0.16)',
+        'custom-shadow-clients': '0px 3px 8px rgba(0, 0, 0, 0.24)',
         'custom-shadow-darkmode': '0 4px 20px 0 rgba(248,249,238,0.15)',
       },
       screens: {

@@ -8,7 +8,7 @@ eventType: PAC
 eventCity: Sacramento
 eventState: CA
 eventLocation: The Mix Downtown
-clientName: California Primary Care Association
+clientName: CPCA Advocates
 eventButtonTextOne: Ticket & Sponsorship Information
 eventButtonLinkOne: https://events.givher.com/cpca-pac-30th-anniversary
 eventDescription:

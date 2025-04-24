@@ -1,4 +1,4 @@
-export const revalidate = 86400;
+export const revalidate = 3600;
 
 import React from 'react';
 import PastEventsPage from '@/components/past-events/PastEventsPage';

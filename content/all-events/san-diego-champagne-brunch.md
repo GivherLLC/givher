@@ -1,6 +1,6 @@
 ---
 available: true
-eventName: San Diego Champagne Brunch
+eventName: San Diego Pride Under Pressure Champagne Brunch
 slug: https://victoryfund.org/event/sandiego/
 firstDayOfEvent: 05.18.2025
 eventTime: 11:00

@@ -8,7 +8,7 @@ timeZone: America/Los_Angeles
 eventAddress: 1001 Stadium Dr, Inglewood, CA 90301
 eventState: CA
 eventLocation: SoFi Stadium
-clientName: California LGBTQ Foundation
+clientName: Asian and Pacific Islander Legislative Caucus Foundation
 postponed: false
 hideEvent: false
 ---

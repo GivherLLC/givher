@@ -1,7 +1,7 @@
 ---
 available: true
 eventName: San Diego Pride Under Pressure Champagne Brunch
-slug: https://victoryfund.org/event/sandiego/
+slug: ""
 firstDayOfEvent: 05.18.2025
 eventTime: 11:00
 eventEndTime: 14:00
@@ -11,6 +11,8 @@ eventCity: San Diego
 eventState: CA
 eventLocation: The Westin San Diego Gaslamp Quarter
 clientName: LGBTQ+ Victory Fund
+eventButtonTextOne: Get Tickets
+eventButtonLinkOne: https://victoryfund.org/event/sandiego/
 eventDescriptionMarkdown: >-
   Join the LGBTQ+ Victory Fund, elected officials, and leaders from San Diego
   and beyond to toast LGBTQ+ political power and support LGBTQ+ candidates.

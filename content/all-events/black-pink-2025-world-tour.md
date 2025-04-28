@@ -9,8 +9,8 @@ eventAddress: 1001 Stadium Dr, Inglewood, CA 90301
 eventState: CA
 eventLocation: SoFi Stadium
 clientName: Asian and Pacific Islander Legislative Caucus Foundation
-eventButtonTextOne: Get Tickets
-eventButtonLinkOne: https://www.sofistadium.com/events/detail/blackpink-2025-july13
+eventButtonTextOne: ""
+eventButtonLinkOne: ""
 postponed: false
 hideEvent: false
 ---

@@ -1,12 +1,12 @@
 ---
-eventButtonLinkOne: ""
+eventButtonLinkOne: https://www.eventbrite.com/e/pink-pony-club-tickets-1316915272029?aff=oddtdtcreator
 eventDescription:
   - paragraph: Planned Parenthood Affiliates of California presents the 4th Annual
       Pink Fundraiser. Space is limited. Individual tickets will go on sale
       closer to the event date if space is available. Sponsorship tickets are
       first come first serve.
 available: true
-eventName: PPAC's Annual Pink Party
+eventName: PPAC's Pink Pony Club
 slug: pinkponyclub
 firstDayOfEvent: 09.06.2025
 eventTime: 19:00
@@ -17,7 +17,7 @@ eventCity: Sacramento
 eventState: CA
 eventLocation: Private Location
 clientName: Planned Parenthood Affiliates of California
-eventButtonTextOne: ""
+eventButtonTextOne: Tickets
 eventButtonTextTwo: ""
 eventDescriptionMarkdown: >-
   Howdy, partner! We’re invitin’ y’all to grab your best cowboy boots and mark

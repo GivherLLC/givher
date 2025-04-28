@@ -9,8 +9,8 @@ eventCity: Los Angeles
 eventState: CA
 eventLocation: Crypto.com Arena in Los Angeles, CA
 clientName: California LGBTQ Foundation
-eventButtonTextOne: Tickets
-eventButtonLinkOne: https://www.wnba.com/game/1022500187/IND-vs-LAS
+eventButtonTextOne: ""
+eventButtonLinkOne: ""
 postponed: false
 hideEvent: false
 ---

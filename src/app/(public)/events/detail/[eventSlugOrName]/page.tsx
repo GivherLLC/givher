@@ -11,12 +11,12 @@ import {
   getClientEvents,
 } from '../../../../../../lib/getAllEvents';
 import getAllClientImages from '../../../../../../lib/getAllClientImages';
-import { EventDetailPageProps } from '@/types/types';
+// import { EventDetailPageProps } from '@/types/types';
 
-export async function generateMetadata({
-  params: { eventSlugOrName },
-}: EventDetailPageProps): Promise<Metadata> {
-  const decodedParam = decodeURIComponent(eventSlugOrName);
+// TEMPORARY: use 'any' for params due to Next.js 15 typing bug
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export async function generateMetadata({ params }: any): Promise<Metadata> {
+  const decodedParam = decodeURIComponent(params.eventSlugOrName);
 
   const event = await getEventBySlugOrName(decodedParam);
 
@@ -50,10 +50,10 @@ export async function generateMetadata({
   }
 }
 
-export default async function EventsDetailPage({
-  params: { eventSlugOrName },
-}: EventDetailPageProps) {
-  const decodedParam = decodeURIComponent(eventSlugOrName);
+// TEMPORARY: use 'any' for params due to Next.js 15 typing bug
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default async function EventsDetailPage({ params }: any) {
+  const decodedParam = decodeURIComponent(params.eventSlugOrName);
   const eventsPageData = getEventsPageData();
   const [event, clientImages, clientEvents] = await Promise.all([
     getEventBySlugOrName(decodedParam),

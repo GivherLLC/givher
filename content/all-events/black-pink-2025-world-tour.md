@@ -5,6 +5,7 @@ slug: ""
 firstDayOfEvent: 07.13.2025
 eventTime: 20:00
 timeZone: America/Los_Angeles
+eventType: 501(c)(3)
 eventAddress: 1001 Stadium Dr, Inglewood, CA 90301
 eventState: CA
 eventLocation: SoFi Stadium

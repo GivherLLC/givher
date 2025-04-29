@@ -3,6 +3,7 @@ available: true
 eventName: "Pride 2025: Making Change For Good"
 firstDayOfEvent: 06.23.2025
 timeZone: America/Los_Angeles
+eventType: 501(c)(3)
 eventCity: Sacramento
 eventState: CA
 eventLocation: Ace of Spades

@@ -32,6 +32,7 @@ eventDescriptionMarkdown: >-
 
 
   For sponsorships and more information, contact events@victoryfund.org.
+detailImage: /uploads/victory-graphic.png
 postponed: false
 hideEvent: false
 ---

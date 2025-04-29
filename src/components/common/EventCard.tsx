@@ -20,13 +20,21 @@ export default function EventCard({
       <div className="flex flex-col justify-between h-full gap-[1rem]">
         <div className="flex justify-between">
           <div className="max-w-[50%] h-[100px] flex items-center dark:bg-softOpal p-[0.5rem] rounded-md">
-            <Image
-              src={clientLogo}
-              width={280}
-              height={175}
-              className="w-auto max-h-[80px]"
-              alt={`${event.clientName} logo`}
-            />
+            {clientLogo.endsWith('.svg') ? (
+              <img
+                src={clientLogo}
+                alt={`${event.clientName} logo`}
+                className="w-auto max-h-[80px] h-[80px]"
+              />
+            ) : (
+              <Image
+                src={clientLogo}
+                width={280}
+                height={175}
+                alt={`${event.clientName} logo`}
+                className="w-auto max-h-[80px]"
+              />
+            )}
           </div>
           {event.eventType && (
             <div className="font-visbyBold text-[0.85rem] px-[1rem] py-[0.5rem] text-navySmoke bg-electricYellow border border-navySmoke border-r-0 h-min rounded-l-3xl">

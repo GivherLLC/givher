@@ -55,24 +55,26 @@ export default async function EventDetails({
             dangerouslySetInnerHTML={{ __html: contentHtml }}
           />
         </div>
-        <div className="w-full lg:w-1/2 relative flex justify-center lg:justify-end">
-          <Image
-            loading="lazy"
-            height={311}
-            width={322}
-            src={'/images/events/paint-splatter-small.svg'}
-            alt="paint splatter"
-            className="absolute right-[30%] lg:right-[-23%] bottom-[-23%] z-0"
-          />
-          <Image
-            loading="lazy"
-            height={385}
-            width={615}
-            src={detailImage!}
-            alt={eventName}
-            className="relative z-8"
-          />
-        </div>
+        {detailImage && (
+          <div className="w-full lg:w-1/2 relative flex justify-center lg:justify-end">
+            <Image
+              loading="lazy"
+              height={311}
+              width={322}
+              src={'/images/events/paint-splatter-small.svg'}
+              alt="paint splatter"
+              className="absolute right-[30%] lg:right-[-23%] bottom-[-23%] z-0"
+            />
+            <Image
+              loading="lazy"
+              height={385}
+              width={615}
+              src={detailImage!}
+              alt={eventName}
+              className="relative z-8"
+            />
+          </div>
+        )}
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ firstDayOfEvent: 05.18.2025
 eventTime: 11:00
 eventEndTime: 14:00
 timeZone: America/Los_Angeles
+eventType: PAC
 eventAddress: 910 Broadway Circle San Diego, CA 92101
 eventCity: San Diego
 eventState: CA

@@ -1,4 +1,5 @@
 export const revalidate = 43200;
+export const dynamic = 'force-dynamic';
 
 import React from 'react';
 import EventDetailPage from '@/components/event-detail/EventDetailPage';
@@ -11,19 +12,19 @@ import {
   getClientEvents,
 } from '../../../../../../lib/getAllEvents';
 import getAllClientImages from '../../../../../../lib/getAllClientImages';
-// import { EventDetailPageProps } from '@/types/types';
 
-// TEMPORARY: use 'any' for params due to Next.js 15 typing bug
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function generateMetadata({ params }: any): Promise<Metadata> {
-  const decodedParam = decodeURIComponent(params.eventSlugOrName);
+  const param = await params;
+  const decodedParam = decodeURIComponent(param.eventSlugOrName);
 
   const event = await getEventBySlugOrName(decodedParam);
 
   if (event) {
     const title = `${event.eventName} | Givher Event`;
     const description = `Event details for ${event.clientName}'s event ${event.eventName}`;
-    const url = `/events/detail/${event.slug}`; // Ensure slug is used in the URL
+    const url = `/events/detail/${event.slug}`;
+
     return {
       title,
       description,
@@ -50,10 +51,11 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
   }
 }
 
-// TEMPORARY: use 'any' for params due to Next.js 15 typing bug
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default async function EventsDetailPage({ params }: any) {
-  const decodedParam = decodeURIComponent(params.eventSlugOrName);
+  const param = await params;
+  const decodedParam = decodeURIComponent(param.eventSlugOrName);
+
   const eventsPageData = getEventsPageData();
   const [event, clientImages, clientEvents] = await Promise.all([
     getEventBySlugOrName(decodedParam),
@@ -84,10 +86,8 @@ export default async function EventsDetailPage({ params }: any) {
 }
 
 export async function generateStaticParams() {
-  const events = await getReadyEvents(); // Only includes fully ready events
-  const params = events.map((event) => ({
-    eventSlugOrName: event.slug || getEventNameParam(event.eventName), // Prioritize slug for static params
+  const events = await getReadyEvents();
+  return events.map((event) => ({
+    eventSlugOrName: event.slug || getEventNameParam(event.eventName),
   }));
-
-  return params;
 }

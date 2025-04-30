@@ -131,6 +131,8 @@ export default function PastEventsHeader({
                       onClick={() => {
                         setShowInfo(e);
                       }}
+                      tabIndex={activeIndex === i ? 0 : -1}
+                      aria-hidden={activeIndex !== i}
                       className="w-fit relative transition duration-300 before:bg-black before:rounded-[12px] before:h-[calc(100%+3px)] before:w-[calc(100%+3.5px)] before:absolute before:left-0 before:top-0 before:transition before:transform before:translate-x-[2px] before:translate-y-[2px]"
                     >
                       <div

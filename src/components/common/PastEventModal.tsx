@@ -91,9 +91,9 @@ export default function PastEventModal({
                 </div>
               </div>
             </div>
-            <h3 className="order-1 md:order-2 font-visbyBold text-navySmoke dark:text-softOpal text-center md:text-left max-w-[500px]">
+            <h2 className="order-1 md:order-2 font-visbyBold text-navySmoke dark:text-softOpal text-center md:text-left max-w-[500px]">
               {event.eventName}
-            </h3>
+            </h2>
             <div className="max-w-[500px] order-3">
               <Image
                 loading="lazy"

@@ -76,7 +76,9 @@ export default function DetailHeader({
             {eventName}
           </h1>
           {event.postponed && (
-            <div className="text-red">{postponedEventText}</div>
+            <div className="text-red dark:text-electricYellow">
+              {postponedEventText}
+            </div>
           )}
           <div className="flex flex-col gap-[0.5rem] text-center lg:text-left">
             <p className="text-mauvelous font-visbyBold">

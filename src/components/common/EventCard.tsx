@@ -56,7 +56,7 @@ export default function EventCard({
                 {event.eventName}
               </h3>
             </div>
-            <div className="text-red min-h-[26px]">
+            <div className="text-red dark:text-electricYellow min-h-[26px]">
               {event.postponed && postponedEventText}
             </div>
           </div>

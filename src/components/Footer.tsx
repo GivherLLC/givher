@@ -62,9 +62,9 @@ export default function Footer({ data }: FooterProps) {
               ))}
             </div>
             <div className="flex flex-col items-center justify-between gap-[2rem]">
-              <p className="text-navySmoke dark:text-softOpal uppercase font-visbyBold text-center max-w-[375px] text-[1.5rem]">
+              <h2 className="text-navySmoke dark:text-softOpal uppercase font-visbyBold text-center max-w-[375px] text-[1.5rem]">
                 {data.buttonTitle}
-              </p>
+              </h2>
               <ButtonLink
                 bg="mauvelous"
                 darkModeBg="electricYellow"

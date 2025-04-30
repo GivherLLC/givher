@@ -56,7 +56,7 @@ export default function PastEventCard({
         <div className="pr-[0.75rem] sm:pr-[1.5rem] flex flex-col justify-between h-full gap-[1rem] pl-[0.75rem] sm:pl-[1.5rem] text-left">
           <div>
             <div className="overflow-hidden pb-[26px]">
-              <p
+              <h3
                 className="overflow-ellipsis font-visbyBold text-navySmoke text-[23px] dark:text-softOpal h-[69px]"
                 style={{
                   display: '-webkit-box',
@@ -65,7 +65,7 @@ export default function PastEventCard({
                 }}
               >
                 {event.eventName}
-              </p>
+              </h3>
             </div>
           </div>
           <div className="text-navySmoke dark:text-softOpal h-[48px] overflow-hidden flex justify-between gap-[1rem]">

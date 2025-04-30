@@ -35,7 +35,9 @@ export default async function EventDetails({
             {eventName}
           </h2>
           {event.postponed && (
-            <div className="text-red">{postponedEventText}</div>
+            <div className="text-red dark:text-electricYellow">
+              {postponedEventText}
+            </div>
           )}
           {((eventButtonTextOne && eventButtonTextTwo) ||
             (eventButtonTextTwo && eventButtonLinkTwo)) && (

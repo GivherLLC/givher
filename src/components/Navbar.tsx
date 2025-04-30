@@ -117,6 +117,7 @@ export default function Navbar() {
             htmlFor="dark-mode-web"
             className="relative inline-block w-[60px] h-[34px] cursor-pointer"
           >
+            <span className="sr-only">Toggle Dark Mode</span>
             <span
               className={`absolute rounded-[34px] top-0 left-0 right-0 bottom-0 transition before:absolute before:h-[26px] before:w-[26px] before:left-[4px] before:bottom-[4px] before:transition-all before:rounded-[50%] ${
                 darkMode
@@ -259,6 +260,7 @@ export default function Navbar() {
               htmlFor="dark-mode-mobile"
               className="relative inline-block w-[60px] h-[34px] cursor-pointer"
             >
+              <span className="sr-only">Toggle Dark Mode</span>
               <span
                 className={`absolute rounded-[34px] top-0 left-0 right-0 bottom-0 transition before:absolute before:h-[26px] before:w-[26px] before:left-[4px] before:bottom-[4px] before:transition-all before:rounded-[50%] ${
                   darkMode

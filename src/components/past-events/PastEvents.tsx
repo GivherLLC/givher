@@ -177,6 +177,7 @@ export default function PastEvents({
                     Date range
                   </label>
                   <DatePicker
+                    id="date-range-picker"
                     selected={startDate}
                     onChange={onChange}
                     selectsRange
@@ -229,6 +230,7 @@ export default function PastEvents({
                   </label>
 
                   <input
+                    id="search-input"
                     type="text"
                     value={searchQuery}
                     onChange={handleSearchInputChange}

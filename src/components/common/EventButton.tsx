@@ -23,7 +23,7 @@ export default function EventButton({
           : {})}
         className={`${bg === 'mauvelous' ? 'bg-mauvelous' : 'bg-electricYellow'} 
         text-navySmoke text-[0.75rem] uppercase font-visbyBold py-[10px] px-[20px] 
-        rounded-[12px] border-[3px] border-navySmoke relative z-10 block
+        rounded-[12px] border-[3px] border-black relative z-10 block
         group-hover:transform group-hover:translate-x-[-2px] group-hover:translate-y-[-2px]
         group-focus-visible:transform group-focus-visible:translate-x-[-2px] group-focus-visible:translate-y-[-2px] focus:outline-none focus-visible:ring-2 focus-visible:ring-softOpal
       `}

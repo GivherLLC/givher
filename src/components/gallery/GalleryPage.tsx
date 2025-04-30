@@ -238,8 +238,8 @@ export default function GalleryPage({
               }}
               className={`px-2 md:px-4 font-visbyBold z-7 ${
                 selectedEventType === null
-                  ? 'text-mauvelous dark:text-electricYellow underline underline-offset-8'
-                  : 'text-navySmoke dark:text-softOpal'
+                  ? 'text-navySmoke opacity-100 dark:text-electricYellow underline underline-offset-8'
+                  : 'text-navySmoke opacity-70 dark:text-softOpal'
               }`}
             >
               All
@@ -252,8 +252,8 @@ export default function GalleryPage({
                 }}
                 className={`px-2 md:px-4 font-visbyBold ${
                   selectedEventType === option.value
-                    ? 'text-mauvelous underline underline-offset-8'
-                    : 'text-navySmoke dark:text-softOpal'
+                    ? 'text-navySmoke opacity-100 underline underline-offset-8'
+                    : 'text-navySmoke opacity-70 dark:text-softOpal'
                 }`}
               >
                 {option.label}
@@ -316,7 +316,7 @@ export default function GalleryPage({
 
         {/* Modal */}
         {isModalOpen && currentImageIndex !== null && (
-          <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+          <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
             <button
               type="button"
               data-id="Close Button"

@@ -160,7 +160,7 @@ export default function TeamPage({ data }: TeamPageProps) {
                     </div>
                   </div>
                   <div className="flex flex-col justify-center gap-[1rem] md:px-[2rem]">
-                    {showBio.bio.map((p, i) => (
+                    {showBio.bio.map((p) => (
                       <p
                         key={p.paragraph}
                         className="text-black dark:text-softOpal text-sm md:text-base"

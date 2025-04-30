@@ -25,7 +25,6 @@ const DropdownFilter: React.FC<DropdownFilterProps> = ({
     <div className="relative flex items-center">
       <select
         aria-label={placeholder}
-        aria-labelledby={placeholder}
         onChange={handleChange}
         className={`bg-softOpal dark:bg-navySmoke text-navySmoke dark:text-softOpal font-medium w-full ${selected ? 'w-full' : 'max-w-[100px]'} cursor-pointer text-ellipsis overflow-hidden whitespace-nowrap pr-[30px] min-w-[130px] focus:outline-none border-none`}
         value={selected}

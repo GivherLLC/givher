@@ -122,6 +122,7 @@ export default function MailChimpForm() {
                 type="text"
                 name="b_77ae79c55230b72dc58df0cdb_72c5afb896"
                 tabIndex={-1}
+                aria-hidden="true"
               />
             </div>
             <div className="clear">

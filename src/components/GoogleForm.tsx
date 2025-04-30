@@ -9,6 +9,8 @@ export default function GoogleForm({ formLink }: { formLink: string }) {
           src={formLink}
           width="640"
           height="821"
+          role="form"
+          aria-label="Sign-up form for Givher event invites"
         >
           Loading…
         </iframe>

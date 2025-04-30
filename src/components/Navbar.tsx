@@ -94,7 +94,7 @@ export default function Navbar() {
           />
           <Image
             src={'/images/givher-logo-electricYellow.png'}
-            alt="Givher Logo"
+            alt="Dark Mode Givher Logo"
             width={210}
             height={92}
             className="hidden dark:block w-auto h-[50px] image-rendering-crisp-edges"
@@ -116,6 +116,7 @@ export default function Navbar() {
           <label
             htmlFor="dark-mode-web"
             className="relative inline-block w-[60px] h-[34px] cursor-pointer"
+            aria-hidden="true"
           >
             <span
               className={`absolute rounded-[34px] top-0 left-0 right-0 bottom-0 transition before:absolute before:h-[26px] before:w-[26px] before:left-[4px] before:bottom-[4px] before:transition-all before:rounded-[50%] ${
@@ -123,7 +124,7 @@ export default function Navbar() {
                   ? 'bg-softOpal before:bg-mauvelous before:translate-x-[26px]'
                   : 'bg-grey before:bg-softOpal'
               }`}
-            ></span>
+            />
           </label>
           <p className="text-black dark:text-mauvelous">Dark Mode</p>
         </div>
@@ -258,6 +259,7 @@ export default function Navbar() {
             <label
               htmlFor="dark-mode-mobile"
               className="relative inline-block w-[60px] h-[34px] cursor-pointer"
+              aria-hidden="true"
             >
               <span
                 className={`absolute rounded-[34px] top-0 left-0 right-0 bottom-0 transition before:absolute before:h-[26px] before:w-[26px] before:left-[4px] before:bottom-[4px] before:transition-all before:rounded-[50%] ${
@@ -265,7 +267,7 @@ export default function Navbar() {
                     ? 'bg-softOpal before:bg-mauvelous before:translate-x-[26px]'
                     : 'bg-grey before:bg-softOpal'
                 }`}
-              ></span>
+              />
             </label>
             <p className="text-black dark:text-mauvelous">Dark Mode</p>
           </div>

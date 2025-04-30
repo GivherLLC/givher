@@ -26,7 +26,7 @@ export default function Footer({ data }: FooterProps) {
             <Image
               src={data.darkModeLogoSrc}
               loading="lazy"
-              alt="Givher Logo"
+              alt="Dark Mode Givher Logo"
               className="hidden dark:block max-w-[174px]"
               height={348}
               width={380}
@@ -62,9 +62,9 @@ export default function Footer({ data }: FooterProps) {
               ))}
             </div>
             <div className="flex flex-col items-center justify-between gap-[2rem]">
-              <h3 className="text-navySmoke dark:text-softOpal uppercase font-visbyBold text-center max-w-[375px]">
+              <p className="text-navySmoke dark:text-softOpal uppercase font-visbyBold text-center max-w-[375px] text-[1.5rem]">
                 {data.buttonTitle}
-              </h3>
+              </p>
               <ButtonLink
                 bg="mauvelous"
                 darkModeBg="electricYellow"

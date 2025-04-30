@@ -46,7 +46,7 @@ export default function InTheWorksEventCard({
           <div>
             <div className="overflow-hidden">
               <h3
-                className="overflow-ellipsis font-visbyBold text-navySmoke text-[23px] dark:text-softOpal h-[69px]"
+                className="overflow-ellipsis font-visbyBold text-navySmoke text-[23px] dark:text-softOpal h-[60px]"
                 style={{
                   display: '-webkit-box',
                   WebkitBoxOrient: 'vertical',

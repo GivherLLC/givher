@@ -55,9 +55,9 @@ export default function PastEventCard({
         </div>
         <div className="pr-[0.75rem] sm:pr-[1.5rem] flex flex-col justify-between h-full gap-[1rem] pl-[0.75rem] sm:pl-[1.5rem] text-left">
           <div>
-            <div className="overflow-hidden pb-[26px]">
+            <div className="overflow-hidden mb-[26px]">
               <h3
-                className="overflow-ellipsis font-visbyBold text-navySmoke text-[23px] dark:text-softOpal h-[69px]"
+                className="overflow-ellipsis font-visbyBold text-navySmoke text-[23px] dark:text-softOpal h-[60px]"
                 style={{
                   display: '-webkit-box',
                   WebkitBoxOrient: 'vertical',

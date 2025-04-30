@@ -31,7 +31,7 @@ export default function PastEventModal({
           <div className="h-[2px] w-full bg-grey group-hover:bg-navySmoke dark:group-hover:bg-softOpal absolute top-[50%] left-[50%] max-w-[20px] transform -translate-x-1/2 -translate-y-1/2 rotate-45 mt-0 transition-all ease-in-out" />
         </button>
         <div className="flex flex-col lg:flex-row gap-[1.5rem]">
-          <div className="flex flex-col items-center justify-center gap-[2rem] bg-navySmoke p-[1rem] lg:p-[4rem]">
+          <div className="flex flex-col items-center justify-between gap-[2rem] bg-navySmoke py-[2.75rem] px-[1rem] lg:py-[2.5rem] lg:px-[4rem]">
             <div className="bg-white rounded-xl p-[1rem] max-w-[375px] min-h-[200px] w-full flex items-center justify-center">
               <Image
                 height={450}
@@ -41,26 +41,28 @@ export default function PastEventModal({
                 className="h-auto w-auto"
               />
             </div>
-            <h3 className="text-softOpal text-[1.2rem] max-w-[375px] text-center md:text-left">
-              Explore More from {event.clientName}
-            </h3>
-            <div className="flex gap-[1rem] items-center justify-center md:justify-between flex-wrap md:min-w-[375px]">
-              <ButtonLink
-                bg="electricYellow"
-                darkModeBg="electricYellow"
-                text="Current Events"
-                link={`/events?client=${encodeURIComponent(event.clientName)}`}
-              />
-              <ButtonLink
-                bg="mauvelous"
-                darkModeBg="mauvelous"
-                text="Past Events"
-                link={`/past-events?client=${encodeURIComponent(event.clientName)}`}
-                onClick={(e) => {
-                  e.stopPropagation(); // Prevents the modal from closing due to "outside click"
-                  setShowInfo(null); // Explicitly close the modal
-                }}
-              />
+            <div className="flex flex-col gap-[1.5rem]">
+              <h3 className="text-softOpal text-[1.2rem] max-w-[375px] text-center md:text-left">
+                Explore more from {event.clientName}
+              </h3>
+              <div className="flex gap-[1rem] items-center justify-center md:justify-between flex-wrap md:min-w-[375px]">
+                <ButtonLink
+                  bg="electricYellow"
+                  darkModeBg="electricYellow"
+                  text="Current Events"
+                  link={`/events?client=${encodeURIComponent(event.clientName)}`}
+                />
+                <ButtonLink
+                  bg="mauvelous"
+                  darkModeBg="mauvelous"
+                  text="Past Events"
+                  link={`/past-events?client=${encodeURIComponent(event.clientName)}`}
+                  onClick={(e) => {
+                    e.stopPropagation(); // Prevents the modal from closing due to "outside click"
+                    setShowInfo(null); // Explicitly close the modal
+                  }}
+                />
+              </div>
             </div>
           </div>
           <div className="w-full flex flex-col justify-center items-center lg:justify-between gap-[2rem] lg:gap-[1rem] px-[2rem] p-[2rem] lg:px-[1rem] lg:py-[2.5rem]">
@@ -91,7 +93,7 @@ export default function PastEventModal({
                 </div>
               </div>
             </div>
-            <h2 className="order-1 md:order-2 font-visbyBold text-navySmoke dark:text-softOpal text-center md:text-left max-w-[500px]">
+            <h2 className="order-1 md:order-2 font-visbyBold text-navySmoke dark:text-softOpal text-center md:text-left max-w-[500px] text-[1.5rem]">
               {event.eventName}
             </h2>
             <div className="max-w-[500px] order-3">

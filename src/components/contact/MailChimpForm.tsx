@@ -130,7 +130,7 @@ export default function MailChimpForm() {
                 type="submit"
                 name="subscribe"
                 id="mc-embedded-subscribe"
-                className="button cursor-pointer bg-mauvelous dark:bg-mauvelous p-[0.75rem] min-w-[175px] rounded-[.25rem] font-visbyBold text-navySmoke text-center bg-opacity-85 hover:bg-opacity-100 transition-opacity ease-in-out mt-[1.25rem]"
+                className="button cursor-pointer bg-mauvelous dark:bg-electricYellow p-[0.75rem] min-w-[175px] rounded-[.25rem] font-visbyBold text-navySmoke text-center bg-opacity-85 hover:bg-opacity-100 transition-opacity ease-in-out mt-[1.25rem]"
                 value="Subscribe"
               />
             </div>

@@ -238,7 +238,7 @@ export default function GalleryPage({
               }}
               className={`px-2 md:px-4 font-visbyBold z-7 ${
                 selectedEventType === null
-                  ? 'text-mauvelous underline underline-offset-8'
+                  ? 'text-mauvelous dark:text-electricYellow underline underline-offset-8'
                   : 'text-navySmoke dark:text-softOpal'
               }`}
             >
@@ -263,7 +263,7 @@ export default function GalleryPage({
           {showScrollTopButton && (
             <button
               onClick={scrollToTop}
-              className="absolute left-1/2 transform -translate-x-1/2 mt-[7px] bg-mauvelous text-navySmoke px-4 py-2 rounded-full shadow-lg transition-opacity duration-300 flex items-center gap-[0.5rem] cursor-pointer"
+              className="absolute left-1/2 transform -translate-x-1/2 mt-[7px] bg-mauvelous dark:bg-electricYellow text-navySmoke px-4 py-2 rounded-full shadow-lg transition-opacity duration-300 flex items-center gap-[0.5rem] cursor-pointer"
             >
               <p className="font-visbyBold">Scroll to Top</p>
               <svg

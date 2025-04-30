@@ -126,7 +126,7 @@ export default function Navbar() {
               }`}
             />
           </label>
-          <p className="text-black dark:text-mauvelous">Dark Mode</p>
+          <p className="text-black dark:text-softOpal">Dark Mode</p>
         </div>
         <nav className="flex flex-row gap-[1rem] font-medium items-center">
           <ul className="hidden lg:flex justify-center items-center gap-[3rem]">
@@ -269,7 +269,7 @@ export default function Navbar() {
                 }`}
               />
             </label>
-            <p className="text-black dark:text-mauvelous">Dark Mode</p>
+            <p className="text-black dark:text-softOpal">Dark Mode</p>
           </div>
         </div>
       )}

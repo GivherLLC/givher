@@ -21,7 +21,7 @@ export default function EventDetailPage({
   const client = event.clientName;
 
   return (
-    <>
+    <main>
       <DetailHeader
         event={event}
         postponedEventText={postponedEventText}
@@ -37,6 +37,6 @@ export default function EventDetailPage({
           clientImage={clientImage}
         />
       )}
-    </>
+    </main>
   );
 }

@@ -22,7 +22,7 @@ const EventsPage = ({
   };
 
   return (
-    <div className="min-h-[calc(100vh-360px)] bg-softOpal dark:bg-navySmoke">
+    <main className="min-h-[calc(100vh-360px)] bg-softOpal dark:bg-navySmoke">
       <FeaturedEvents
         events={featuredEvents()}
         clientImages={clientImagesObject}
@@ -43,7 +43,7 @@ const EventsPage = ({
           clientImages={clientImagesObject}
         />
       )}
-    </div>
+    </main>
   );
 };
 

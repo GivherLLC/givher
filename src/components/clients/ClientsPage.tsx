@@ -11,9 +11,11 @@ export default function ClientsPage({
   clientsPageData: ClientsPageData;
 }) {
   return (
-    <AllClients
-      clients={clients}
-      clientsSectionTitle={clientsPageData.clientsSectionTitle}
-    />
+    <main>
+      <AllClients
+        clients={clients}
+        clientsSectionTitle={clientsPageData.clientsSectionTitle}
+      />
+    </main>
   );
 }

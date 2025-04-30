@@ -15,7 +15,7 @@ export default function PastEventsPage({
   clientLogos: ClientImage;
 }) {
   return (
-    <main>
+    <>
       <PastEventsHeader
         headerData={pageData}
         featuredPastEvents={featuredPastEvents}
@@ -24,6 +24,6 @@ export default function PastEventsPage({
       <Suspense>
         <PastEvents allPastEvents={pastEvents} clientLogos={clientLogos} />
       </Suspense>
-    </main>
+    </>
   );
 }

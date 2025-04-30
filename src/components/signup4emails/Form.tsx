@@ -9,7 +9,7 @@ type SignUpForEmailsProps = {
 
 export default function SignUpForEmailsForm({ data }: SignUpForEmailsProps) {
   return (
-    <main className="bg-mauvelous dark:bg-navySmoke py-[2.5rem] flex justify-center h-full">
+    <div className="bg-mauvelous dark:bg-navySmoke py-[2.5rem] flex justify-center h-full">
       <div className="relative flex flex-col w-full items-center justify-center max-w-[85.75rem] px-[0.625rem] lg:px-[1.5625rem]">
         <h1 className="font-visbyBold text-navySmoke dark:text-softOpal">
           {data.signupTitle}
@@ -24,6 +24,6 @@ export default function SignUpForEmailsForm({ data }: SignUpForEmailsProps) {
         />
         <GoogleForm formLink={data.googleFormLink} />
       </div>
-    </main>
+    </div>
   );
 }

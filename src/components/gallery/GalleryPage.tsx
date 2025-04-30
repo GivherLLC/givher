@@ -221,7 +221,7 @@ export default function GalleryPage({
   };
 
   return (
-    <main className="bg-softOpal dark:bg-navySmoke py-12 md:py-18 flex justify-center">
+    <div className="bg-softOpal dark:bg-navySmoke py-12 md:py-18 flex justify-center">
       <div className="max-w-[85.75rem] flex flex-col gap-[1.5rem] mx-[0.625rem] lg:mx-[1.5625rem]">
         <h1 className="font-visbyBold text-navySmoke dark:text-softOpal text-center mb-[1rem]">
           {galleryCopy.galleryTitle}
@@ -392,6 +392,6 @@ export default function GalleryPage({
           </div>
         )}
       </div>
-    </main>
+    </div>
   );
 }

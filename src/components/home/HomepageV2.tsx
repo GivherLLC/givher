@@ -37,7 +37,7 @@ export default function Homepage({
   const upcomingEvents = events.slice(0, 3);
 
   return (
-    <main>
+    <>
       <HeroVideo data={video} />
       <FloatingLogos logos={clientLogos} />
       <Services services={services} />
@@ -54,6 +54,6 @@ export default function Homepage({
         testimonials={testimonialSection.testimonials}
         testimonialsSectionTitle={testimonialSection.testimonialsSectionTitle}
       />
-    </main>
+    </>
   );
 }

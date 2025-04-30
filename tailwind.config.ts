@@ -14,7 +14,7 @@ const config: Config = {
       mauvelous: '#C6AFC0',
       softOpal: '#F8F9EE',
       electricYellow: '#FCFC62',
-      black: '#000000',
+      black: '#1A1A1A',
       shadowColor: 'rgba(0,0,0,.15)',
       grey: '#d3d5d7',
       white: '#ffffff',

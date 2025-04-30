@@ -40,8 +40,6 @@ export default function ClientCard({ clientInfo }: ClientCardProps) {
               <Link
                 className={`bg-electricYellow p-[0.75rem] min-w-[120px] rounded-[.5rem] font-medium text-black text-center`}
                 href={`/past-events?client=${encodeURIComponent(clientName)}`}
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 View Past Events
               </Link>

@@ -1,17 +1,16 @@
 'use client';
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import useIsMobile from '@/hooks/useIsMobile';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 
 export default function Navbar() {
   const [navOpen, setNavOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
   const [mounted, setMounted] = useState(false);
   const isMobile = useIsMobile(1024);
-  const router = useRouter();
+  const firstNavLinkRef = useRef<HTMLAnchorElement | null>(null);
 
   useEffect(() => {
     if (navOpen && !isMobile) {
@@ -71,23 +70,25 @@ export default function Navbar() {
     }
   }, [darkMode, mounted]);
 
-  const handleNavigation = useCallback(
-    (href: string) => {
-      router.push(href);
-      setTimeout(() => {
-        setNavOpen(false);
-      }, 500);
-    },
-    [isMobile, setNavOpen, router]
-  );
+  useEffect(() => {
+    if (navOpen && firstNavLinkRef.current) {
+      firstNavLinkRef.current.focus();
+    }
+  }, [navOpen]);
+
+  const closeNavWithDelay = () => {
+    setTimeout(() => {
+      setNavOpen(false);
+    }, 150);
+  };
 
   return (
     <header className="sticky top-0 z-40 shadow-lg bg-softOpal dark:bg-navySmoke flex justify-center">
       <div className="max-w-[85.75rem] w-full flex flex-row justify-between py-[1rem] mx-[0.625rem] lg:mx-[1.5625rem] relative">
-        <button
-          onClick={() => handleNavigation('/')}
-          role="link"
+        <Link
+          href="/"
           aria-label="Givher Home"
+          className="focus:outline-none focus-visible:ring-2 focus-visible:ring-mauvelous rounded"
         >
           <Image
             src={'/images/givher-logo-navySmoke.png'}
@@ -99,47 +100,46 @@ export default function Navbar() {
           />
           <Image
             src={'/images/givher-logo-electricYellow.png'}
-            alt="Givher Logo"
+            alt="Dark Mode Givher Logo"
             width={210}
             height={92}
             className="hidden dark:block w-auto h-[50px] image-rendering-crisp-edges"
             priority={true}
           />
-        </button>
+        </Link>
         <div
-          data-id="dark mode toggle"
+          data-id="dark mode toggle web"
           className="hidden lg:flex justify-center items-center gap-[1rem]"
         >
+          <input
+            type="checkbox"
+            id="dark-mode-web"
+            checked={darkMode}
+            onChange={() => setDarkMode(!darkMode)}
+            className="sr-only"
+            aria-label="Toggle Dark Mode"
+          />
           <label
-            id="switch"
-            className="relative inline-block w-[60px] h-[34px]"
+            htmlFor="dark-mode-web"
+            className="relative inline-block w-[60px] h-[34px] cursor-pointer"
           >
-            <input
-              aria-label="Dark Mode"
-              aria-labelledby="Dark Mode"
-              type="checkbox"
-              onChange={() => {
-                setDarkMode(!darkMode);
-              }}
-              className="h-[0px] w-[0px] appearance-none"
-            />
+            <span className="sr-only">Toggle Dark Mode</span>
             <span
-              id="slider round"
-              className={`absolute cursor-pointer rounded-[34px] top-0 left-0 right-0 bottom-0 transition before:absolute before:h-[26px] before:w-[26px] before:left-[4px] before:bottom-[4px] before:transition-all before:rounded-[50%] ${
+              className={`absolute rounded-[34px] top-0 left-0 right-0 bottom-0 transition before:absolute before:h-[26px] before:w-[26px] before:left-[4px] before:bottom-[4px] before:transition-all before:rounded-[50%] ${
                 darkMode
                   ? 'bg-softOpal before:bg-mauvelous before:translate-x-[26px]'
                   : 'bg-grey before:bg-softOpal'
               }`}
-            ></span>
+            />
           </label>
-          <p className="text-black dark:text-mauvelous">Dark Mode</p>
+          <p className="text-black dark:text-softOpal">Dark Mode</p>
         </div>
         <nav className="flex flex-row gap-[1rem] font-medium items-center">
           <ul className="hidden lg:flex justify-center items-center gap-[3rem]">
             <li className="w-[66px] flex justify-center">
               <Link
                 href="/clients/"
-                className="text-navySmoke dark:text-electricYellow font-visbyBold opacity-85 hover:opacity-100 transition-font duration-200 ease-in-out"
+                className="text-navySmoke dark:text-electricYellow font-visbyBold opacity-85 hover:opacity-100 transition-font duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-mauvelous rounded"
               >
                 Clients
               </Link>
@@ -147,7 +147,7 @@ export default function Navbar() {
             <li className="w-[66px] flex justify-center">
               <Link
                 href="/events/"
-                className="text-navySmoke dark:text-electricYellow font-visbyBold opacity-85 hover:opacity-100 duration-200 ease-in-out"
+                className="text-navySmoke dark:text-electricYellow font-visbyBold opacity-85 hover:opacity-100 duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-mauvelous rounded"
               >
                 Events
               </Link>
@@ -155,7 +155,7 @@ export default function Navbar() {
             <li className="w-[66px] flex justify-center">
               <Link
                 href="/gallery/"
-                className="text-navySmoke dark:text-electricYellow font-visbyBold opacity-85 hover:opacity-100 duration-200 ease-in-out"
+                className="text-navySmoke dark:text-electricYellow font-visbyBold opacity-85 hover:opacity-100 duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-mauvelous rounded"
               >
                 Gallery
               </Link>
@@ -163,7 +163,7 @@ export default function Navbar() {
             <li className="w-[66px] flex justify-center">
               <Link
                 href="/team/"
-                className="text-navySmoke dark:text-electricYellow font-visbyBold opacity-85 hover:opacity-100 duration-200 ease-in-out"
+                className="text-navySmoke dark:text-electricYellow font-visbyBold opacity-85 hover:opacity-100 duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-mauvelous rounded"
               >
                 Team
               </Link>
@@ -171,7 +171,7 @@ export default function Navbar() {
             <li className="w-[66px] flex justify-center">
               <Link
                 href="/contact/"
-                className="text-navySmoke dark:text-electricYellow font-visbyBold opacity-85 hover:opacity-100 duration-200 ease-in-out"
+                className="text-navySmoke dark:text-electricYellow font-visbyBold opacity-85 hover:opacity-100 duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-mauvelous rounded"
               >
                 Contact
               </Link>
@@ -182,8 +182,9 @@ export default function Navbar() {
             onClick={() => {
               setNavOpen(!navOpen);
             }}
-            className="flex lg:hidden relative flex-col items-center justify-between h-[50px] w-[50px] p-0 ml-auto"
+            className="flex lg:hidden relative flex-col items-center justify-between h-[50px] w-[50px] p-0 ml-auto focus:outline-none focus-visible:ring-2 focus-visible:ring-mauvelous rounded"
             aria-label="Open/Close Menu"
+            aria-expanded={navOpen}
           >
             <div
               className={`h-[2px] w-full bg-navySmoke dark:bg-electricYellow absolute right-[50%] max-w-[20px] top-[50%] transition-all duration-250 ease-in ${navOpen ? 'transform -translate-x-1/2 -translate-y-1/2 rotate-[-45deg] mt-0' : 'mt-[-5px]'}`}
@@ -199,73 +200,87 @@ export default function Navbar() {
       </div>
       {navOpen && (
         <div className="fixed top-[82px] h-screen w-screen bg-softOpal dark:bg-navySmoke">
-          <nav className="flex flex-col items-center font-visbyBold gap-10 px-5 py-10">
-            <button
-              onClick={() => handleNavigation('/clients/')}
-              className="text-navySmoke dark:text-electricYellow font-visbyBold hover:text-navySmoke focus:outline-none"
-              role="link"
-              aria-label="Navigate to Contact page"
-            >
-              Clients
-            </button>
-            <button
-              onClick={() => handleNavigation('/events/')}
-              className="text-navySmoke dark:text-electricYellow font-visbyBold hover:text-navySmoke focus:outline-none"
-              role="link"
-              aria-label="Navigate to Events page"
-            >
-              Events
-            </button>
-            <button
-              onClick={() => handleNavigation('/gallery/')}
-              className="text-navySmoke dark:text-electricYellow font-visbyBold hover:text-navySmoke focus:outline-none"
-              role="link"
-              aria-label="Navigate to Gallery page"
-            >
-              Gallery
-            </button>
-            <button
-              onClick={() => handleNavigation('/team/')}
-              className="text-navySmoke dark:text-electricYellow font-visbyBold hover:text-navySmoke focus:outline-none"
-              role="link"
-              aria-label="Navigate to Team page"
-            >
-              Team
-            </button>
-            <button
-              onClick={() => handleNavigation('/contact/')}
-              className="text-navySmoke dark:text-electricYellow font-visbyBold hover:text-navySmoke focus:outline-none"
-              role="link"
-              aria-label="Navigate to Contact page"
-            >
-              Contact
-            </button>
+          <nav>
+            <ul className="flex flex-col items-center font-visbyBold gap-10 px-5 py-10">
+              <li>
+                <Link
+                  href="/clients/"
+                  onClick={closeNavWithDelay}
+                  ref={firstNavLinkRef}
+                  className="text-center px-3 py-2 text-navySmoke dark:text-electricYellow font-visbyBold hover:text-navySmoke focus:outline-none focus-visible:ring-2 focus-visible:ring-mauvelous rounded"
+                  aria-label="Navigate to Clients page"
+                >
+                  Clients
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/events/"
+                  onClick={closeNavWithDelay}
+                  className="text-center px-3 py-2 text-navySmoke dark:text-electricYellow font-visbyBold hover:text-navySmoke focus:outline-none focus-visible:ring-2 focus-visible:ring-mauvelous rounded"
+                  aria-label="Navigate to Clients page"
+                >
+                  Events
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/gallery/"
+                  onClick={closeNavWithDelay}
+                  className="text-center px-3 py-2 text-navySmoke dark:text-electricYellow font-visbyBold hover:text-navySmoke focus:outline-none focus-visible:ring-2 focus-visible:ring-mauvelous rounded"
+                  aria-label="Navigate to Clients page"
+                >
+                  Gallery
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/team/"
+                  onClick={closeNavWithDelay}
+                  className="text-center px-3 py-2 text-navySmoke dark:text-electricYellow font-visbyBold hover:text-navySmoke focus:outline-none focus-visible:ring-2 focus-visible:ring-mauvelous rounded"
+                  aria-label="Navigate to Clients page"
+                >
+                  Team
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact/"
+                  onClick={closeNavWithDelay}
+                  className="text-center px-3 py-2 text-navySmoke dark:text-electricYellow font-visbyBold hover:text-navySmoke focus:outline-none focus-visible:ring-2 focus-visible:ring-mauvelous rounded"
+                  aria-label="Navigate to Clients page"
+                >
+                  Contact
+                </Link>
+              </li>
+            </ul>
           </nav>
           <div
-            data-id="dark mode toggle"
+            data-id="dark mode toggle mobile"
             className="flex justify-center items-center gap-[1rem] mt-[1rem]"
           >
+            <input
+              type="checkbox"
+              id="dark-mode-mobile"
+              checked={darkMode}
+              onChange={() => setDarkMode(!darkMode)}
+              className="sr-only"
+              aria-label="Toggle Dark Mode"
+            />
             <label
-              id="switch"
-              className="relative inline-block w-[60px] h-[34px]"
+              htmlFor="dark-mode-mobile"
+              className="relative inline-block w-[60px] h-[34px] cursor-pointer"
             >
-              <input
-                type="checkbox"
-                onChange={() => {
-                  setDarkMode(!darkMode);
-                }}
-                className="h-[0px] w-[0px]"
-              />
+              <span className="sr-only">Toggle Dark Mode</span>
               <span
-                id="slider round"
-                className={`absolute cursor-pointer rounded-[34px] top-0 left-0 right-0 bottom-0 transition before:absolute before:h-[26px] before:w-[26px] before:left-[4px] before:bottom-[4px] before:transition-all before:rounded-[50%] ${
+                className={`absolute rounded-[34px] top-0 left-0 right-0 bottom-0 transition before:absolute before:h-[26px] before:w-[26px] before:left-[4px] before:bottom-[4px] before:transition-all before:rounded-[50%] ${
                   darkMode
                     ? 'bg-softOpal before:bg-mauvelous before:translate-x-[26px]'
                     : 'bg-grey before:bg-softOpal'
                 }`}
-              ></span>
+              />
             </label>
-            <p className="text-black dark:text-mauvelous">Dark Mode</p>
+            <p className="text-black dark:text-softOpal">Dark Mode</p>
           </div>
         </div>
       )}

@@ -45,8 +45,8 @@ export default function InTheWorksEventCard({
         <div className="pr-[0.75rem] xl:pr-[1.5rem] flex flex-col justify-between h-full gap-[1rem]">
           <div>
             <div className="overflow-hidden">
-              <p
-                className="overflow-ellipsis font-visbyBold text-navySmoke text-[23px] dark:text-softOpal h-[69px]"
+              <h3
+                className="overflow-ellipsis font-visbyBold text-navySmoke text-[23px] dark:text-softOpal h-[60px]"
                 style={{
                   display: '-webkit-box',
                   WebkitBoxOrient: 'vertical',
@@ -54,9 +54,9 @@ export default function InTheWorksEventCard({
                 }}
               >
                 {event.eventName}
-              </p>
+              </h3>
             </div>
-            <div className="text-red min-h-[26px]">
+            <div className="text-red dark:text-electricYellow min-h-[26px]">
               {event.postponed && postponedEventText}
             </div>
           </div>

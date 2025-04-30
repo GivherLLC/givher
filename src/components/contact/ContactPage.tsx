@@ -9,7 +9,7 @@ type ContactPageProps = {
 
 export default function ContactPage({ contactData }: ContactPageProps) {
   return (
-    <>
+    <main>
       <div className="bg-mauvelous dark:bg-navySmoke py-[3rem] md:py-[4.5rem] flex justify-center">
         <div className="max-w-[85.75rem] flex flex-col gap-[1.5rem] mx-[0.625rem] lg:mx-[1.5625rem]">
           <div className="flex flex-col lg:flex-row w-full">
@@ -51,6 +51,6 @@ export default function ContactPage({ contactData }: ContactPageProps) {
           <MailChimpForm />
         </div>
       </div>
-    </>
+    </main>
   );
 }

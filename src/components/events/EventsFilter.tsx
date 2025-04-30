@@ -165,19 +165,25 @@ export default function EventsFilter({
             placeholder="Client"
           />
           <div className="relative flex gap-[1rem] items-center w-fit">
-            <DatePicker
-              selected={startDate}
-              onChange={onChange}
-              selectsRange
-              placeholderText="Select Dates"
-              minDate={today}
-              dateFormat="MM/dd/yyyy"
-              closeOnScroll={true}
-              {...(startDate && { startDate: startDate })}
-              {...(endDate && { endDate: endDate })}
-              {...(isMobile && { withPortal: true })}
-              className={`${startDate && endDate ? 'min-w-[225px]' : 'max-w-[150px]'} custom-date-picker-container cursor-pointer font-medium color-black focus:outline-none bg-softOpal text-navySmoke dark:text-softOpal dark:bg-navySmoke placeholder:text-black dark:placeholder:text-softOpal`}
-            />
+            <div>
+              <label htmlFor="date-range-picker" className="sr-only">
+                Date range
+              </label>
+              <DatePicker
+                id="date-range-picker"
+                selected={startDate}
+                onChange={onChange}
+                selectsRange
+                placeholderText="Select Dates"
+                minDate={today}
+                dateFormat="MM/dd/yyyy"
+                closeOnScroll={true}
+                {...(startDate && { startDate: startDate })}
+                {...(endDate && { endDate: endDate })}
+                {...(isMobile && { withPortal: true })}
+                className={`${startDate && endDate ? 'min-w-[225px]' : 'max-w-[150px]'} custom-date-picker-container cursor-pointer font-medium color-black focus:outline-none bg-softOpal text-navySmoke dark:text-softOpal dark:bg-navySmoke placeholder:text-black dark:placeholder:text-softOpal`}
+              />
+            </div>
             {startDate && endDate && (
               <button
                 onClick={() => onChange([null, null])}
@@ -194,13 +200,19 @@ export default function EventsFilter({
           </div>
 
           <div className="relative flex gap-[1rem] w-fit">
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={handleSearchInputChange}
-              placeholder="Search"
-              className="pl-[5px] focus:outline-none border-b-[1px] bg-softOpal text-navySmoke dark:text-softOpal dark:bg-navySmoke border-navySmoke dark:border-softOpal placeholder:text-black dark:placeholder:text-softOpal font-medium"
-            />
+            <div>
+              <label htmlFor="search-input" className="sr-only">
+                Search
+              </label>
+              <input
+                id="search-input"
+                type="text"
+                value={searchQuery}
+                onChange={handleSearchInputChange}
+                placeholder="Search"
+                className="pl-[5px] focus:outline-none border-b-[1px] bg-softOpal text-navySmoke dark:text-softOpal dark:bg-navySmoke border-navySmoke dark:border-softOpal placeholder:text-black dark:placeholder:text-softOpal font-medium"
+              />
+            </div>
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}

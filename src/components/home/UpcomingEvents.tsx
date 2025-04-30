@@ -19,9 +19,9 @@ export default function UpcomingEvents({
       <div
         className={`flex flex-col w-full items-center justify-center gap-[2.5rem] max-w-[85.75rem] px-[0.625rem] md:px-[1.5625rem]`}
       >
-        <h1 className="font-visbyBold text-navySmoke dark:text-softOpal">
+        <h2 className="font-visbyBold text-navySmoke dark:text-softOpal">
           {title}
-        </h1>
+        </h2>
         <div
           className={`flex flex-col lg:flex-row justify-center ${events.length < 3 ? '' : 'lg:justify-between'} gap-[1rem] items-center w-full max-w-[85.75rem]`}
         >

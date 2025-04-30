@@ -76,22 +76,22 @@ export default function PastEventsHeader({
   }, [featuredPastEvents]); // Empty dependency array ensures the effect runs only once on mount
 
   return (
-    <section className="bg-softOpal dark:bg-navySmoke py-[2.5rem] flex justify-center">
-      <div className="flex flex-col w-full items-center justify-center gap-[2.5rem] max-w-[85.75rem] mx-[0.625rem] lg:mx-[1.5625rem]">
+    <section className="bg-softOpal dark:bg-navySmoke pt-[2.5rem] pb-[1rem] lg:pb-[2.5rem] flex justify-center">
+      <div className="flex flex-col w-full items-center justify-center gap-[1rem] lg:gap-[2.5rem] max-w-[85.75rem] mx-[0.625rem] lg:mx-[1.5625rem]">
         <h1 className="font-visbyBold text-navySmoke dark:text-softOpal">
           {pastEventsPageTitle}
         </h1>
         <p className="text-navySmoke dark:text-softOpal max-w-[650px] text-center">
           {pastEventsPageSubtitle}
         </p>
-        <div className="past-events-carousel w-[290px] xs:w-[350px] sm:w-[650px] h-[485px] sm:h-[279px] overflow-hidden">
+        <div className="past-events-carousel w-[290px] xs:w-[350px] sm:w-[650px] sm:h-[279px] overflow-hidden">
           {featuredPastEvents.map((e, i) => {
             const priority = i === 0;
             return (
               <div
                 key={`featured-past-e-${e.eventName}`}
                 data-id={i}
-                className="past-carousel-cell h-[400px] xs:h-[425px] sm:h-[225px] mr-[2rem] m-[2rem]"
+                className="past-carousel-cell sm:h-[225px] mr-[2rem] m-[2rem]"
               >
                 <div className="group cursor-pointer flex flex-col justify-between sm:flex-row rounded-xl overflow-hidden h-[222px] w-[270px] xs:w-[325px] sm:w-[625px] border border-navySmoke dark:border-softOpal shadow-custom-shadow">
                   {e.detailImage && (
@@ -131,6 +131,8 @@ export default function PastEventsHeader({
                       onClick={() => {
                         setShowInfo(e);
                       }}
+                      tabIndex={activeIndex === i ? 0 : -1}
+                      aria-hidden={activeIndex !== i}
                       className="w-fit relative transition duration-300 before:bg-black before:rounded-[12px] before:h-[calc(100%+3px)] before:w-[calc(100%+3.5px)] before:absolute before:left-0 before:top-0 before:transition before:transform before:translate-x-[2px] before:translate-y-[2px]"
                     >
                       <div

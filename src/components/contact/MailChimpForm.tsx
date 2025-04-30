@@ -16,7 +16,7 @@ export default function MailChimpForm() {
             id="mc_embed_signup_scroll"
             className="flex flex-col gap-[1rem] rounded-lg py-[1.5rem] px-[1.25rem] w-full"
           >
-            <h2 className="font-visbyBold text-navySmoke dark:text-softOpal mb-[2rem]">
+            <h2 className="font-visbyBold text-[1.5rem] text-navySmoke dark:text-softOpal mb-[2rem]">
               Let&apos;s Chat!
             </h2>
             {/* <div className="indicates-required">
@@ -122,6 +122,7 @@ export default function MailChimpForm() {
                 type="text"
                 name="b_77ae79c55230b72dc58df0cdb_72c5afb896"
                 tabIndex={-1}
+                aria-hidden="true"
               />
             </div>
             <div className="clear">
@@ -129,7 +130,7 @@ export default function MailChimpForm() {
                 type="submit"
                 name="subscribe"
                 id="mc-embedded-subscribe"
-                className="button cursor-pointer bg-mauvelous dark:bg-mauvelous p-[0.75rem] min-w-[175px] rounded-[.25rem] font-visbyBold text-navySmoke text-center bg-opacity-85 hover:bg-opacity-100 transition-opacity ease-in-out mt-[1.25rem]"
+                className="button cursor-pointer bg-mauvelous dark:bg-electricYellow p-[0.75rem] min-w-[175px] rounded-[.25rem] font-visbyBold text-navySmoke text-center bg-opacity-85 hover:bg-opacity-100 transition-opacity ease-in-out mt-[1.25rem]"
                 value="Subscribe"
               />
             </div>

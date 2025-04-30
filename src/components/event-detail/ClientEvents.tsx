@@ -27,9 +27,9 @@ export default function ClientEvents({
       <div
         className={`flex flex-col w-full items-center justify-center gap-[2.5rem] px-[0.625rem] max-w-[85.75rem] md:px-[1.5625rem]`}
       >
-        <h1 className="font-visbyBold text-navySmoke dark:text-softOpal text-center lg:text-left">
+        <h2 className="font-visbyBold text-navySmoke dark:text-softOpal text-center lg:text-left">
           {clientName} Events
-        </h1>
+        </h2>
         <div
           className={`flex flex-col lg:flex-row ${events.length < 3 ? '' : 'lg:justify-between'} gap-[2rem] items-center w-full`}
         >

@@ -28,9 +28,9 @@ export default function ButtonLink({
   return (
     <Link
       href={link}
-      {...(openNewTab ? { target: '_blank' } : {})}
+      {...(openNewTab ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
       onClick={onClick} // Conditionally apply onClick if provided
-      className={`bg-${bg} ${className} dark:bg-${darkModeBg} p-[0.75rem] min-w-[175px] rounded-[.25rem] font-visbyBold text-black text-center bg-opacity-85 hover:bg-opacity-100 transition-opacity ease-in-out`}
+      className={`bg-${bg} ${className} dark:bg-${darkModeBg} p-[0.75rem] min-w-[175px] rounded-[.25rem] font-visbyBold text-black text-center hover:outline hover:outline-black hover:outline-1 bg-opacity-85 hover:bg-opacity-100 transition-opacity ease-in-out focus:outline focus:outline-2 focus:outline-electricYellow focus-visible:outline focus-visible:outline-2 focus-visible:outline-electricYellow`}
     >
       {text}
     </Link>

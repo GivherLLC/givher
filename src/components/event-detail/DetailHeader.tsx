@@ -76,7 +76,9 @@ export default function DetailHeader({
             {eventName}
           </h1>
           {event.postponed && (
-            <div className="text-red">{postponedEventText}</div>
+            <div className="text-red dark:text-electricYellow">
+              {postponedEventText}
+            </div>
           )}
           <div className="flex flex-col gap-[0.5rem] text-center lg:text-left">
             <p className="text-mauvelous font-visbyBold">
@@ -110,7 +112,7 @@ export default function DetailHeader({
                   target="_blank"
                   rel="noopener noreferrer"
                   href={googleCalendarLink}
-                  className="text-softOpal"
+                  className="text-softOpal underline focus:outline-none focus-visible:ring-2 focus-visible:ring-mauvelous rounded"
                 >
                   Google Calendar
                 </Link>
@@ -121,7 +123,7 @@ export default function DetailHeader({
                 target="_blank"
                 rel="noopener noreferrer"
                 href={outlookCalendarLink}
-                className="text-softOpal"
+                className="text-softOpal underline focus:outline-none focus-visible:ring-2 focus-visible:ring-mauvelous rounded"
               >
                 Outlook Calendar
               </Link>
@@ -131,7 +133,7 @@ export default function DetailHeader({
                 target="_blank"
                 rel="noopener noreferrer"
                 href={icsFile}
-                className="text-softOpal"
+                className="text-softOpal underline focus:outline-none focus-visible:ring-2 focus-visible:ring-mauvelous rounded"
               >
                 ICS
               </Link>

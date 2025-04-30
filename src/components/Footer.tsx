@@ -26,7 +26,7 @@ export default function Footer({ data }: FooterProps) {
             <Image
               src={data.darkModeLogoSrc}
               loading="lazy"
-              alt="Givher Logo"
+              alt="Dark Mode Givher Logo"
               className="hidden dark:block max-w-[174px]"
               height={348}
               width={380}
@@ -40,6 +40,7 @@ export default function Footer({ data }: FooterProps) {
                   href={i.iconLink}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="focus:outline-none focus-visible:ring-2 focus-visible:ring-mauvelous rounded p-2"
                 >
                   <Image
                     src={i.iconImageSrc}
@@ -47,7 +48,7 @@ export default function Footer({ data }: FooterProps) {
                     alt={i.imageAlt}
                     height={30}
                     width={30}
-                    className="dark:hidden hover:scale-[1.1] transition-transform ease-in-out"
+                    className="dark:hidden hover:scale-[1.1] focus-visible:scale-[1.1] transition-transform ease-in-out"
                   />
                   <Image
                     src={i.darkmodeSrc}
@@ -55,13 +56,13 @@ export default function Footer({ data }: FooterProps) {
                     alt={i.imageAlt}
                     height={30}
                     width={30}
-                    className="hidden dark:block hover:scale-[1.1] transition-transform ease-in-out"
+                    className="hidden dark:block hover:scale-[1.1]focus-visible:scale-[1.1] transition-transform ease-in-out"
                   />
                 </Link>
               ))}
             </div>
             <div className="flex flex-col items-center justify-between gap-[2rem]">
-              <h2 className="text-navySmoke dark:text-softOpal uppercase font-visbyBold text-center max-w-[375px]">
+              <h2 className="text-navySmoke dark:text-softOpal uppercase font-visbyBold text-center max-w-[375px] text-[1.5rem]">
                 {data.buttonTitle}
               </h2>
               <ButtonLink
@@ -82,6 +83,7 @@ export default function Footer({ data }: FooterProps) {
                   >
                     <Link
                       href={l.link}
+                      className="focus:outline-none focus-visible:ring-2 focus-visible:ring-mauvelous rounded"
                       {...(l.external
                         ? { target: '_blank', rel: 'noopener noreferrer' }
                         : {})}
@@ -97,7 +99,7 @@ export default function Footer({ data }: FooterProps) {
               <span className=" hidden dark:block">&#x1F90D;</span> by{' '}
               <Link
                 href="https://leighdahlin.com/"
-                className="underline"
+                className="underline focus:outline-none focus-visible:ring-2 focus-visible:ring-mauvelous rounded"
                 target="_blank"
                 rel="noopener noreferrer"
               >

@@ -51,16 +51,16 @@ export default function TeamPage({ data }: TeamPageProps) {
                 className="w-full max-w-[400px] mb-[1rem] cursor-pointer"
               />
               <div className="flex flex-col gap-[1rem] justify-center items-center">
-                <h3 className="font-visbyBold text-navySmoke dark:text-electricYellow text-[2rem] text-center">
+                <h2 className="font-visbyBold text-navySmoke dark:text-electricYellow text-[2rem] text-center">
                   {t.name}
-                </h3>
+                </h2>
                 <p className="text-navySmoke dark:text-softOpal text-[1.25rem] text-center">
                   {t.title}
                 </p>
                 <div className="h-[3px] w-[50px] bg-mauvelous" />
                 <div
                   data-id="team-member-icons"
-                  className="flex gap-[2rem] mb-[1rem]"
+                  className="flex items-center gap-[2rem] mb-[1rem]"
                 >
                   {t.iconLinks.map((i) => (
                     <Link key={i.iconLink} href={i.iconLink}>

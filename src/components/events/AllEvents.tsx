@@ -21,9 +21,9 @@ export default function AllEvents({
       className="bg-softOpal dark:bg-navySmoke my-[2.5rem] flex justify-center scroll-pt-[82px]"
     >
       <div className="flex flex-col w-full justify-center gap-[1rem] max-w-[85.75rem] mx-[0.625rem] lg:mx-[1.5625rem]">
-        <h1 className="font-visbyBold text-navySmoke dark:text-softOpal">
+        <h2 className="font-visbyBold text-navySmoke dark:text-softOpal">
           {allEventsSectionTitle}
-        </h1>
+        </h2>
         {!events.length ? (
           <div className="h-full flex flex-col justify-center md:justify-start items-start gap-[1.5rem]">
             <p className="text-black dark:text-softOpal">

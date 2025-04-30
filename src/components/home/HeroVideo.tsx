@@ -1,4 +1,6 @@
+'use client';
 import React from 'react';
+import { useEffect, useState } from 'react';
 import ButtonLink from '../common/ButtonLink';
 
 type HeroVideoProps = {
@@ -13,6 +15,15 @@ type HeroVideoProps = {
 export default function HeroVideo({ data }: HeroVideoProps) {
   const { videoTitle, videoDescription, videoButtonText, videoButtonLink } =
     data;
+
+  const [shouldPlayVideo, setShouldPlayVideo] = useState(true);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (mediaQuery.matches) {
+      setShouldPlayVideo(false);
+    }
+  }, []);
 
   return (
     <div className="flex flex-col justify-start overflow-hidden min-h-[600px]">
@@ -29,28 +40,30 @@ export default function HeroVideo({ data }: HeroVideoProps) {
             link={videoButtonLink}
           />
         </div>
-        <video
-          id="home-video"
-          autoPlay
-          loop
-          muted
-          controls
-          playsInline
-          aria-hidden={true}
-          src={'/videos/final-video.hevc.mp4'}
-          className="hidden lg:block w-full h-full bg-black object-cover absolute overflow-clip top-0 opacity-75"
-        />
-        <video
-          id="home-video-mobile"
-          autoPlay
-          loop
-          muted
-          controls
-          playsInline
-          aria-hidden={true}
-          src={'/videos/mobile-video.hevc.mp4'}
-          className="lg:hidden w-full h-full bg-black object-cover absolute overflow-clip top-0 opacity-75"
-        />
+        {shouldPlayVideo && (
+          <>
+            <video
+              id="home-video"
+              autoPlay
+              loop
+              muted
+              playsInline
+              controls
+              src={'/videos/final-video.hevc.mp4'}
+              className="hidden lg:block w-full h-full bg-black object-cover absolute overflow-clip top-0 opacity-75"
+            />
+            <video
+              id="home-video-mobile"
+              autoPlay
+              loop
+              muted
+              playsInline
+              controls
+              src={'/videos/mobile-video.hevc.mp4'}
+              className="lg:hidden w-full h-full bg-black object-cover absolute overflow-clip top-0 opacity-75"
+            />
+          </>
+        )}
       </div>
     </div>
   );

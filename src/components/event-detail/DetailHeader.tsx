@@ -110,7 +110,7 @@ export default function DetailHeader({
                   target="_blank"
                   rel="noopener noreferrer"
                   href={googleCalendarLink}
-                  className="text-softOpal"
+                  className="text-softOpal underline focus:outline-none focus-visible:ring-2 focus-visible:ring-mauvelous rounded"
                 >
                   Google Calendar
                 </Link>
@@ -121,7 +121,7 @@ export default function DetailHeader({
                 target="_blank"
                 rel="noopener noreferrer"
                 href={outlookCalendarLink}
-                className="text-softOpal"
+                className="text-softOpal underline focus:outline-none focus-visible:ring-2 focus-visible:ring-mauvelous rounded"
               >
                 Outlook Calendar
               </Link>
@@ -131,7 +131,7 @@ export default function DetailHeader({
                 target="_blank"
                 rel="noopener noreferrer"
                 href={icsFile}
-                className="text-softOpal"
+                className="text-softOpal underline focus:outline-none focus-visible:ring-2 focus-visible:ring-mauvelous rounded"
               >
                 ICS
               </Link>

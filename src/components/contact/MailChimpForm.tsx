@@ -16,9 +16,9 @@ export default function MailChimpForm() {
             id="mc_embed_signup_scroll"
             className="flex flex-col gap-[1rem] rounded-lg py-[1.5rem] px-[1.25rem] w-full"
           >
-            <h2 className="font-visbyBold text-navySmoke dark:text-softOpal mb-[2rem]">
+            <h3 className="font-visbyBold text-navySmoke dark:text-softOpal mb-[2rem]">
               Let&apos;s Chat!
-            </h2>
+            </h3>
             {/* <div className="indicates-required">
                             <span className="asterisk">*</span> required
                         </div> */}

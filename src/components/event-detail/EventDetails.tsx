@@ -31,9 +31,9 @@ export default async function EventDetails({
     <div className="bg-softOpal dark:bg-navySmoke py-[4.5rem] flex justify-center overflow-hidden">
       <div className="flex flex-col lg:flex-row w-full items-center justify-between lg:justify-between gap-[2.5rem] lg:max-w-[1200px] mx-[0.625rem] lg:mx-[1.5625rem]">
         <div className="w-full h-full max-w-[615px] lg:w-1/2 flex flex-col gap-[1rem]">
-          <h1 className="font-visbyBold text-navySmoke dark:text-softOpal">
+          <h2 className="font-visbyBold text-navySmoke dark:text-softOpal">
             {eventName}
-          </h1>
+          </h2>
           {event.postponed && (
             <div className="text-red">{postponedEventText}</div>
           )}

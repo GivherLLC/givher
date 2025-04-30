@@ -17,9 +17,9 @@ export default function AboutUs({ aboutInfo }: { aboutInfo: AboutUsProps }) {
   return (
     <div className="bg-white dark:bg-navySmoke py-[2.5rem] flex justify-center">
       <div className="flex flex-col w-full items-center justify-center gap-[2.5rem] max-w-[85.75rem] mx-[0.625rem] lg:mx-[1.5625rem]">
-        <h1 className="font-visbyBold text-navySmoke dark:text-softOpal">
+        <h2 className="font-visbyBold text-navySmoke dark:text-softOpal">
           {aboutTitle}
-        </h1>
+        </h2>
         <div className="flex flex-col gap-[4rem] lg:gap-[8rem] w-full">
           {aboutUsSections.map((s, i) => {
             const even = i % 2 === 0;
@@ -31,9 +31,9 @@ export default function AboutUs({ aboutInfo }: { aboutInfo: AboutUsProps }) {
                 <div
                   className={`flex flex-col gap-[1rem] max-w-[500px] lg:mt-[2rem] items-start mx-auto lg:mx-0`}
                 >
-                  <h2 className="inline  pb-[1rem] border-b-[15px] border-mauvelous dark:border-electricYellow text-black dark:text-softOpal">
+                  <h3 className="inline  pb-[1rem] border-b-[15px] border-mauvelous dark:border-electricYellow text-black dark:text-softOpal">
                     {s.sectionTitle}
-                  </h2>
+                  </h3>
                   <p className="h-full flex items-center text-black dark:text-softOpal">
                     {s.sectionText}
                   </p>

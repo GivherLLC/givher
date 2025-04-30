@@ -15,7 +15,7 @@ export default function EventCard({
   return (
     <Link
       href={`/events/detail/${event.slug}`}
-      className={`group cursor-pointer flex flex-col gap-[1.5rem] sm:gap-[0rem] border border-navySmoke dark:border-softOpal rounded-[10px] pl-[0.75rem] sm:pl-[1.5rem] pt-[1rem] pb-[2rem] h-content w-full max-w-[375px] shadow-custom-shadow dark:shadow-custom-shadow-darkmode`}
+      className={`group cursor-pointer flex flex-col gap-[1.5rem] sm:gap-[0rem] border border-navySmoke dark:border-softOpal rounded-[10px] pl-[0.75rem] sm:pl-[1.5rem] pt-[1rem] pb-[2rem] h-content w-full max-w-[375px] shadow-custom-shadow dark:shadow-custom-shadow-darkmode focus:outline-none focus-visible:ring-2 focus-visible:ring-mauvelous`}
     >
       <div className="flex flex-col justify-between h-full gap-[1rem]">
         <div className="flex justify-between">
@@ -45,7 +45,7 @@ export default function EventCard({
         <div className="pr-[0.75rem] sm:pr-[1.5rem] flex flex-col justify-between h-full gap-[1rem]">
           <div>
             <div className="overflow-hidden">
-              <p
+              <h3
                 className="overflow-ellipsis font-visbyBold text-navySmoke text-[23px] dark:text-softOpal h-[69px]"
                 style={{
                   display: '-webkit-box',
@@ -54,7 +54,7 @@ export default function EventCard({
                 }}
               >
                 {event.eventName}
-              </p>
+              </h3>
             </div>
             <div className="text-red min-h-[26px]">
               {event.postponed && postponedEventText}

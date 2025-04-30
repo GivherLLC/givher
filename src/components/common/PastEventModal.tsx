@@ -41,9 +41,9 @@ export default function PastEventModal({
                 className="h-auto w-auto"
               />
             </div>
-            <h2 className="text-softOpal text-[1.2rem] max-w-[375px] text-center md:text-left">
+            <h3 className="text-softOpal text-[1.2rem] max-w-[375px] text-center md:text-left">
               Explore More from {event.clientName}
-            </h2>
+            </h3>
             <div className="flex gap-[1rem] items-center justify-center md:justify-between flex-wrap md:min-w-[375px]">
               <ButtonLink
                 bg="electricYellow"
@@ -91,9 +91,9 @@ export default function PastEventModal({
                 </div>
               </div>
             </div>
-            <h2 className="order-1 md:order-2 font-visbyBold text-navySmoke dark:text-softOpal text-center md:text-left max-w-[500px]">
+            <h3 className="order-1 md:order-2 font-visbyBold text-navySmoke dark:text-softOpal text-center md:text-left max-w-[500px]">
               {event.eventName}
-            </h2>
+            </h3>
             <div className="max-w-[500px] order-3">
               <Image
                 loading="lazy"

@@ -51,20 +51,23 @@ export default function TeamPage({ data }: TeamPageProps) {
                 className="w-full max-w-[400px] mb-[1rem] cursor-pointer"
               />
               <div className="flex flex-col gap-[1rem] justify-center items-center">
-                <h2 className="font-visbyBold text-navySmoke dark:text-electricYellow text-[2rem] text-center">
+                <h3 className="font-visbyBold text-navySmoke dark:text-electricYellow text-[2rem] text-center">
                   {t.name}
-                </h2>
+                </h3>
                 <p className="text-navySmoke dark:text-softOpal text-[1.25rem] text-center">
                   {t.title}
                 </p>
                 <div className="h-[3px] w-[50px] bg-mauvelous" />
-                <div data-id="jay-icons" className="flex gap-[2rem] mb-[1rem]">
+                <div
+                  data-id="team-member-icons"
+                  className="flex gap-[2rem] mb-[1rem]"
+                >
                   {t.iconLinks.map((i) => (
-                    <Link key={i.imageAlt} href={i.iconLink}>
+                    <Link key={i.iconLink} href={i.iconLink}>
                       <Image
                         priority={true}
                         src={i.iconImageSrc}
-                        alt={i.imageAlt}
+                        alt="icon"
                         height={27}
                         width={27}
                         className="dark:hidden hover:scale-[1.1] transition-transform ease-in-out"
@@ -72,7 +75,7 @@ export default function TeamPage({ data }: TeamPageProps) {
                       <Image
                         priority={true}
                         src={i.darkmodeSrc}
-                        alt={i.imageAlt}
+                        alt="icon"
                         height={27}
                         width={27}
                         className="hidden dark:block hover:scale-[1.1] transition-transform ease-in-out"
@@ -124,19 +127,22 @@ export default function TeamPage({ data }: TeamPageProps) {
                       alt="Jay Franco headshot"
                       className="max-w-[325px] mb-[1rem] cursor-pointer"
                     />
-                    <h2 className="font-visbyBold text-black dark:text-softOpal text-[1.5rem]">
+                    <h3 className="font-visbyBold text-black dark:text-softOpal text-[1.5rem]">
                       {showBio.name}
-                    </h2>
+                    </h3>
                     <p className="text-black dark:text-softOpal text-[1rem]">
                       {showBio.title}
                     </p>
-                    <div data-id="jay-icons" className="flex gap-[2rem]">
+                    <div
+                      data-id="team-member-icons"
+                      className="flex gap-[2rem]"
+                    >
                       {showBio.iconLinks.map((i) => (
                         <Link key={i.imageAlt} href={i.iconLink}>
                           <Image
                             loading="lazy"
                             src={i.iconImageSrc}
-                            alt={i.imageAlt}
+                            alt="icon"
                             height={27}
                             width={27}
                             className="w-[20px] h-[20px] dark:hidden hover:scale-[1.1] transition-transform ease-in-out"
@@ -144,7 +150,7 @@ export default function TeamPage({ data }: TeamPageProps) {
                           <Image
                             loading="lazy"
                             src={i.darkmodeSrc}
-                            alt={i.imageAlt}
+                            alt="icon"
                             height={27}
                             width={27}
                             className="w-[20px] h-[20px] hidden dark:block hover:scale-[1.1] transition-transform ease-in-out"
@@ -156,7 +162,7 @@ export default function TeamPage({ data }: TeamPageProps) {
                   <div className="flex flex-col justify-center gap-[1rem] md:px-[2rem]">
                     {showBio.bio.map((p, i) => (
                       <p
-                        key={i}
+                        key={p.paragraph}
                         className="text-black dark:text-softOpal text-sm md:text-base"
                       >
                         {p.paragraph}

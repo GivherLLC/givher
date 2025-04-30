@@ -138,7 +138,7 @@ export default function TeamPage({ data }: TeamPageProps) {
                       className="flex gap-[2rem]"
                     >
                       {showBio.iconLinks.map((i) => (
-                        <Link key={i.imageAlt} href={i.iconLink}>
+                        <Link key={i.iconLink} href={i.iconLink}>
                           <Image
                             loading="lazy"
                             src={i.iconImageSrc}

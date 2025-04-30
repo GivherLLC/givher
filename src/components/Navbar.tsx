@@ -76,6 +76,12 @@ export default function Navbar() {
     }
   }, [navOpen]);
 
+  const closeNavWithDelay = () => {
+    setTimeout(() => {
+      setNavOpen(false);
+    }, 150);
+  };
+
   return (
     <header className="sticky top-0 z-40 shadow-lg bg-softOpal dark:bg-navySmoke flex justify-center">
       <div className="max-w-[85.75rem] w-full flex flex-row justify-between py-[1rem] mx-[0.625rem] lg:mx-[1.5625rem] relative">
@@ -199,6 +205,7 @@ export default function Navbar() {
               <li>
                 <Link
                   href="/clients/"
+                  onClick={closeNavWithDelay}
                   ref={firstNavLinkRef}
                   className="text-center px-3 py-2 text-navySmoke dark:text-electricYellow font-visbyBold hover:text-navySmoke focus:outline-none focus-visible:ring-2 focus-visible:ring-mauvelous rounded"
                   aria-label="Navigate to Clients page"
@@ -209,6 +216,7 @@ export default function Navbar() {
               <li>
                 <Link
                   href="/events/"
+                  onClick={closeNavWithDelay}
                   className="text-center px-3 py-2 text-navySmoke dark:text-electricYellow font-visbyBold hover:text-navySmoke focus:outline-none focus-visible:ring-2 focus-visible:ring-mauvelous rounded"
                   aria-label="Navigate to Clients page"
                 >
@@ -218,6 +226,7 @@ export default function Navbar() {
               <li>
                 <Link
                   href="/gallery/"
+                  onClick={closeNavWithDelay}
                   className="text-center px-3 py-2 text-navySmoke dark:text-electricYellow font-visbyBold hover:text-navySmoke focus:outline-none focus-visible:ring-2 focus-visible:ring-mauvelous rounded"
                   aria-label="Navigate to Clients page"
                 >
@@ -227,6 +236,7 @@ export default function Navbar() {
               <li>
                 <Link
                   href="/team/"
+                  onClick={closeNavWithDelay}
                   className="text-center px-3 py-2 text-navySmoke dark:text-electricYellow font-visbyBold hover:text-navySmoke focus:outline-none focus-visible:ring-2 focus-visible:ring-mauvelous rounded"
                   aria-label="Navigate to Clients page"
                 >
@@ -236,6 +246,7 @@ export default function Navbar() {
               <li>
                 <Link
                   href="/contact/"
+                  onClick={closeNavWithDelay}
                   className="text-center px-3 py-2 text-navySmoke dark:text-electricYellow font-visbyBold hover:text-navySmoke focus:outline-none focus-visible:ring-2 focus-visible:ring-mauvelous rounded"
                   aria-label="Navigate to Clients page"
                 >

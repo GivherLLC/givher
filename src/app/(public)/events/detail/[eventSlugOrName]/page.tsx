@@ -14,47 +14,44 @@ import {
 import getAllClientImages from '../../../../../../lib/getAllClientImages';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export async function generateMetadata({ params }: any): Promise<Metadata> {
-  const param = await params;
-  const decodedParam = decodeURIComponent(param.eventSlugOrName);
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export async function generateMetadata(props: any): Promise<Metadata> {
+  const params = await props.params;
+  const decodedParam = decodeURIComponent(params.eventSlugOrName);
 
   const event = await getEventBySlugOrName(decodedParam);
 
-  if (event) {
-    const title = `${event.eventName} | Givher Event`;
-    const description = `Event details for ${event.clientName}'s event ${event.eventName}`;
-    const url = `/events/detail/${event.slug}`;
+  if (!event) return { title: 'Event Not Found' };
 
-    return {
+  const title = `${event.eventName} | Givher Event`;
+  const description = `Event details for ${event.clientName}'s event ${event.eventName}`;
+  const url = `/events/detail/${event.slug}`;
+
+  return {
+    title,
+    description,
+    openGraph: {
       title,
       description,
-      openGraph: {
-        title,
-        description,
-        url,
-        siteName: 'Givher',
-        type: 'website',
-        images: [
-          {
-            url: 'https://www.givher.com/opengraph-image.png',
-            width: 1200,
-            height: 630,
-            alt: 'Givher Political Hospitality',
-          },
-        ],
-      },
-    };
-  } else {
-    return {
-      title: 'Event Not Found',
-    };
-  }
+      url,
+      siteName: 'Givher',
+      type: 'website',
+      images: [
+        {
+          url: 'https://www.givher.com/opengraph-image.png',
+          width: 1200,
+          height: 630,
+          alt: 'Givher Political Hospitality',
+        },
+      ],
+    },
+  };
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default async function EventsDetailPage({ params }: any) {
-  const param = await params;
-  const decodedParam = decodeURIComponent(param.eventSlugOrName);
+export default async function EventsDetailPage(props: any) {
+  const params = await props.params;
+  const decodedParam = decodeURIComponent(params.eventSlugOrName);
 
   const eventsPageData = getEventsPageData();
   const [event, clientImages, clientEvents] = await Promise.all([
@@ -63,25 +60,25 @@ export default async function EventsDetailPage({ params }: any) {
     getClientEvents(decodedParam),
   ]);
 
-  if (event) {
-    const clientImage = clientImages[event.clientName];
-
+  if (!event) {
     return (
-      <EventDetailPage
-        event={event}
-        clientEvents={clientEvents}
-        postponedEventText={eventsPageData.postponedEventText}
-        clientImage={clientImage}
-      />
+      <div className="bg-white dark:bg-navySmoke w-full min-h-[calc(100vh-408px)] flex items-center justify-center">
+        <h1 className="font-visbyBold text-mauvelous dark:text-softOpal">
+          Oops! Event not found.
+        </h1>
+      </div>
     );
   }
 
+  const clientImage = clientImages[event.clientName];
+
   return (
-    <div className="bg-white dark:bg-navySmoke w-full min-h-[calc(100vh-408px)] flex items-center justify-center">
-      <h1 className="font-visbyBold text-mauvelous dark:text-softOpal">
-        Oops! Event not found.
-      </h1>
-    </div>
+    <EventDetailPage
+      event={event}
+      clientEvents={clientEvents}
+      postponedEventText={eventsPageData.postponedEventText}
+      clientImage={clientImage}
+    />
   );
 }
 

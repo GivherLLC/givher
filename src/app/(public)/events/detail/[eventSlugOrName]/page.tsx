@@ -21,7 +21,9 @@ export async function generateMetadata(props: any): Promise<Metadata> {
 
   const event = await getEventBySlugOrName(decodedParam);
 
-  if (!event) return { title: 'Event Not Found' };
+  if (!event) {
+    return { title: 'Event Not Found' };
+  }
 
   const title = `${event.eventName} | Givher Event`;
   const description = `Event details for ${event.clientName}'s event ${event.eventName}`;

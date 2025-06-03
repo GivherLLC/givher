@@ -252,7 +252,7 @@ export default function GalleryPage({
                 }}
                 className={`px-2 md:px-4 font-visbyBold ${
                   selectedEventType === option.value
-                    ? 'text-navySmoke opacity-100 underline underline-offset-8'
+                    ? 'text-navySmoke dark:text-electricYellow opacity-100 underline underline-offset-8'
                     : 'text-navySmoke opacity-70 dark:text-softOpal'
                 }`}
               >

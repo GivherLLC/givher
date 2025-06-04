@@ -34,13 +34,21 @@ export default function PastEventCard({
       <div className="flex flex-col justify-between h-full gap-[1rem]">
         <div className="flex justify-between">
           <div className="max-w-[40%] h-[100px] flex items-center dark:bg-softOpal p-[0.5rem] rounded-md pl-[0.25rem] sm:pl-[1rem] ml-[1.5rem]">
-            <Image
-              src={clientLogo}
-              width={280}
-              height={175}
-              className="w-auto max-h-[80px]"
-              alt={`${event.clientName} logo`}
-            />
+            {clientLogo.endsWith('.svg') ? (
+              <img
+                src={clientLogo}
+                alt={`${event.clientName} logo`}
+                className="w-auto max-h-[80px] h-[80px]"
+              />
+            ) : (
+              <Image
+                src={clientLogo}
+                width={280}
+                height={175}
+                alt={`${event.clientName} logo`}
+                className="w-auto max-h-[80px]"
+              />
+            )}
           </div>
           <div className="relative flex flex-col gap-[0.75rem] xl:gap-0 xl:flex-row items-end xl:items-start">
             <div className="relative font-visbyBold px-[1rem] py-[0.5rem] bg-navySmoke dark:bg-mauvelous dark:text-navySmoke text-softOpal text-[0.85rem] border border-navySmoke border-r-0 h-min rounded-l-3xl xl:mr-[-1rem] xl:pr-[1.25rem] z-0 italic">

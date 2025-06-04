@@ -21,13 +21,21 @@ export default function InTheWorksEventCard({
       <div className="flex flex-col justify-between h-full gap-[1rem]">
         <div className="flex justify-between gap-[1rem]">
           <div className="max-w-[50%] h-[100px] flex items-center dark:bg-softOpal p-[0.5rem] rounded-md">
-            <Image
-              src={clientLogo}
-              width={280}
-              height={175}
-              className="w-auto max-h-[80px]"
-              alt={`${event.clientName} logo`}
-            />
+            {clientLogo.endsWith('.svg') ? (
+              <img
+                src={clientLogo}
+                alt={`${event.clientName} logo`}
+                className="w-auto max-h-[80px] h-[80px]"
+              />
+            ) : (
+              <Image
+                src={clientLogo}
+                width={280}
+                height={175}
+                alt={`${event.clientName} logo`}
+                className="w-auto max-h-[80px]"
+              />
+            )}
           </div>
           <div className="relative flex flex-col gap-[0.75rem] xl:gap-0 xl:flex-row items-end xl:items-start">
             {showTag && (

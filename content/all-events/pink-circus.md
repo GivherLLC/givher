@@ -25,22 +25,28 @@ eventDescriptionMarkdown: >-
   Affiliates of California (PPAC)
 
 
+  **Gold**: $10,000 (six (6) tickets, logo display on the event website & digital assets, logo or name presented on main stage sponsor video, Inclusion of logo throughout the venue, social media shoutout, verbal acknowledgment during the main program)
 
 
-  **TICKETS ON SALE MAY 1st at 10:00 AM**
+  **Rose Gold**: $5,000 (four (4) tickets, logo display on the event website & digital assets, logo or name presented on main stage sponsor video, social media shoutout)
 
 
+  **White Gold**: $2,500 (two (2) tickets, logo display on the event website & digital assets, logo or name presented on the main stage sponsor video)
+
+
+  *Presenting, bar/food, and program sponsorships are available too.*
+
+
+  Individual VIPink and General Admission Tickets are available [here](https://www.eventbrite.com/e/pink-pony-club-tickets-1316915272029?aff=oddtdtcreator).
 
 
   **Event Details:** Chris Melendrez | chris.melendrez@ppacca.org
 
 
-  **Tickets & Sponsorship:** Alina Hernandez | alina@givher.com
+  **Tickets & Sponsorship:** Alina Hernandez | events@givher.com
 
 
-
-
-  *Contributions or gifts to Planned Parenthood Affiliates of California are not tax deductible as charitable contributions.*
+  *This event is a fundraiser and supports the 501(c)(4). Contributions or gifts to Planned Parenthood Affiliates of California are not tax deductible as charitable contributions.*
 detailImage: ""
 postponed: false
 boldedEventInformation:

@@ -3,10 +3,7 @@ export const revalidate = 3600;
 import React from 'react';
 import PastEventsPage from '@/components/past-events/PastEventsPage';
 import getPastEventsPageData from '../../../../lib/getPastEventsPageData';
-import {
-  getPastEvents,
-  getFeaturedOrRecentPastEvents,
-} from '../../../../lib/getAllEvents';
+import { getAllEvents } from '../../../../lib/getAllEvents';
 import getAllClientImages from '../../../../lib/getAllClientImages';
 
 export async function generateMetadata() {
@@ -33,17 +30,15 @@ export async function generateMetadata() {
 
 export default async function PastEvents() {
   const pageData = getPastEventsPageData();
-  const [pastEvents, featuredPastEvents, clientLogos] = await Promise.all([
-    getPastEvents(),
-    getFeaturedOrRecentPastEvents(),
+  const [allEvents, clientLogos] = await Promise.all([
+    getAllEvents(),
     getAllClientImages(),
   ]);
 
   return (
     <PastEventsPage
       pageData={pageData}
-      pastEvents={pastEvents}
-      featuredPastEvents={featuredPastEvents}
+      allEvents={allEvents}
       clientLogos={clientLogos}
     />
   );

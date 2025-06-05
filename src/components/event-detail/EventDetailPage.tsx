@@ -1,5 +1,6 @@
 import React from 'react';
-import { EventType } from '@/types/types';
+
+import { EventTypeWithDisplayInfo } from '@/types/types';
 import DetailHeader from './DetailHeader';
 
 import { lazy } from 'react';
@@ -13,8 +14,8 @@ export default function EventDetailPage({
   postponedEventText,
   clientImage,
 }: {
-  event: EventType;
-  clientEvents: EventType[];
+  event: EventTypeWithDisplayInfo;
+  clientEvents: EventTypeWithDisplayInfo[];
   postponedEventText: string;
   clientImage: string;
 }) {
@@ -31,7 +32,7 @@ export default function EventDetailPage({
       {!!clientEvents.length && (
         <ClientEvents
           clientName={client}
-          events={clientEvents}
+          allEvents={clientEvents}
           event={event}
           postponedEventText={postponedEventText}
           clientImage={clientImage}

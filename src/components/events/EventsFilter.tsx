@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useSearchParams } from 'next/navigation';
 import DropdownFilter from './DropdownFilter';
-import { EventType, ClientImage } from '@/types/types';
+import { EventTypeWithStatus, ClientImage } from '@/types/types';
 import EventCard from '../common/EventCard';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -14,7 +14,7 @@ export default function EventsFilter({
   postponedEventText,
   clientImages,
 }: {
-  events: EventType[];
+  events: EventTypeWithStatus[];
   postponedEventText: string;
   clientImages: ClientImage;
 }) {
@@ -67,7 +67,7 @@ export default function EventsFilter({
 
   const filteredEvents = useMemo(() => {
     return events.filter(
-      (event: EventType) =>
+      (event: EventTypeWithStatus) =>
         (!selectedCity || event.eventCity === selectedCity) &&
         (!selectedClient || event.clientName === selectedClient) && // Apply client filter here
         (!selectedEventType || event.eventType === selectedEventType) &&
@@ -230,7 +230,7 @@ export default function EventsFilter({
         </div>
       </div>
       <div className="flex flex-wrap gap-[4rem] min-h-[286px] sm:min-h-[400px]">
-        {filteredEvents.map((e: EventType, i: number) => (
+        {filteredEvents.map((e: EventTypeWithStatus, i: number) => (
           <EventCard
             key={`${i}-${e.clientName}-${e.eventName}-${e.firstDayOfEvent}`}
             event={e}

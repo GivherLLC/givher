@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import EventButton from '../common/EventButton';
 import EventsFilter from './EventsFilter';
-import { EventType } from '@/types/types';
+import { EventTypeWithStatus } from '@/types/types';
 import { ClientImage } from '@/types/types';
 
 export default function AllEvents({
@@ -10,7 +10,7 @@ export default function AllEvents({
   allEventsSectionTitle,
   clientImages,
 }: {
-  events: EventType[];
+  events: EventTypeWithStatus[];
   postponedEventText: string;
   allEventsSectionTitle: string;
   clientImages: ClientImage;

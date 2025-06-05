@@ -1,14 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { EventType } from '@/types/types';
+import { EventTypeWithStatus } from '@/types/types';
 
 export default function EventCard({
   event,
   postponedEventText,
   clientLogo,
 }: {
-  event: EventType;
+  event: EventTypeWithStatus;
   postponedEventText: string;
   clientLogo: string;
 }) {

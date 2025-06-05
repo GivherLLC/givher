@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import EventButton from './EventButton';
-import { EventType } from '@/types/types';
+import { EventTypeWithStatus } from '@/types/types';
 
 export default function InTheWorksEventCard({
   event,
@@ -9,7 +9,7 @@ export default function InTheWorksEventCard({
   clientLogo,
   showTag,
 }: {
-  event: EventType;
+  event: EventTypeWithStatus;
   postponedEventText: string;
   clientLogo: string;
   showTag: boolean;

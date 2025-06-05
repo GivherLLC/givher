@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { EventType } from '@/types/types';
+import { EventTypeWithDisplayInfo } from '@/types/types';
 import ButtonLink from '../common/ButtonLink';
 import { generateICSFile } from '@/utils/generateISC';
 import { generateGoogleCalendarLink } from '@/utils/generateGoogleCalendarLink';
@@ -12,7 +12,7 @@ export default function DetailHeader({
   postponedEventText,
   clientImage,
 }: {
-  event: EventType;
+  event: EventTypeWithDisplayInfo;
   postponedEventText: string;
   clientImage: string;
 }) {

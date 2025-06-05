@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { EventType } from '@/types/types';
+import { EventTypeWithDisplayInfo } from '@/types/types';
 import ArrowLink from '../common/ArrowLink';
 import { remark } from 'remark';
 import html from 'remark-html';
@@ -9,7 +9,7 @@ export default async function EventDetails({
   event,
   postponedEventText,
 }: {
-  event: EventType;
+  event: EventTypeWithDisplayInfo;
   postponedEventText: string;
 }) {
   const {

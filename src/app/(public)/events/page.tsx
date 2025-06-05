@@ -1,11 +1,6 @@
-export const revalidate = 3600;
-
 import React from 'react';
 import EventsPage from '@/components/events/EventsPage';
-import {
-  getReadyEvents,
-  getInTheWorksEvents,
-} from '../../../../lib/getAllEvents';
+import { getAllEvents } from '../../../../lib/getAllEvents';
 import getEventsPageData from '../../../../lib/getEventsPageData';
 import getAllClientImages from '../../../../lib/getAllClientImages';
 
@@ -36,18 +31,16 @@ export async function generateMetadata() {
 export default async function EventsPageWrapper() {
   const eventsPageData = getEventsPageData();
 
-  const [readyEvents, inTheWorksEvents, clientImages] = await Promise.all([
-    getReadyEvents(),
-    getInTheWorksEvents(),
+  const [allEvents, clientImages] = await Promise.all([
+    getAllEvents(),
     getAllClientImages(),
   ]);
 
   return (
     <EventsPage
-      events={readyEvents}
+      allEvents={allEvents}
       eventsPageData={eventsPageData}
       clientImagesObject={clientImages}
-      inTheWorksEvents={inTheWorksEvents}
     />
   );
 }

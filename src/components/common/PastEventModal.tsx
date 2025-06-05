@@ -1,15 +1,15 @@
 import React from 'react';
 import Image from 'next/image';
 import ButtonLink from './ButtonLink';
-import { EventType } from '@/types/types';
+import { EventTypeWithStatus } from '@/types/types';
 
 export default function PastEventModal({
   event,
   setShowInfo,
   clientLogo,
 }: {
-  event: EventType;
-  setShowInfo: (set: null | EventType) => void;
+  event: EventTypeWithStatus;
+  setShowInfo: (set: null | EventTypeWithStatus) => void;
   clientLogo: string;
 }) {
   return (

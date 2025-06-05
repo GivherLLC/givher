@@ -1,8 +1,6 @@
-export const revalidate = 3600;
-
 import React from 'react';
 import Homepage from '@/components/home/HomepageV2';
-import { getNonPastEvents } from '../../../lib/getAllEvents';
+import { getAllEvents } from '../../../lib/getAllEvents';
 import getEventsPageData from '../../../lib/getEventsPageData';
 import getAllClientLogos from '../../../lib/getAllClientLogos';
 import getHomePageData from '../../../lib/getHomePageData';
@@ -38,7 +36,7 @@ export default async function Home() {
   const eventsPageData = getEventsPageData();
 
   const [events, clientLogos, clientImages] = await Promise.all([
-    getNonPastEvents(),
+    getAllEvents(),
     getAllClientLogos(),
     getAllClientImages(),
   ]);

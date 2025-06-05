@@ -3,16 +3,16 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import PastEventModal from './PastEventModal';
-import { EventType } from '@/types/types';
+import { EventTypeWithStatus } from '@/types/types';
 
 export default function PastEventCard({
   event,
   clientLogo,
 }: {
-  event: EventType;
+  event: EventTypeWithStatus;
   clientLogo: string;
 }) {
-  const [showInfo, setShowInfo] = useState<EventType | null>(null);
+  const [showInfo, setShowInfo] = useState<EventTypeWithStatus | null>(null);
 
   useEffect(() => {
     //prevent scrolling behind open bio

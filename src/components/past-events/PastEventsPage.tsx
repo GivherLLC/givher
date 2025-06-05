@@ -1,19 +1,30 @@
+'use client';
+
 import React, { Suspense } from 'react';
 import PastEventsHeader from './PastEventsHeader';
 import PastEvents from './PastEvents';
-import { PastEventsPageData, EventType, ClientImage } from '@/types/types';
+import {
+  PastEventsPageData,
+  EventTypeWithDisplayInfo,
+  ClientImage,
+} from '@/types/types';
+import {
+  getFeaturedOrRecentPastEvents,
+  getPastEvents,
+} from '@/utils/getEvents';
 
 export default function PastEventsPage({
   pageData,
-  pastEvents,
-  featuredPastEvents,
+  allEvents,
   clientLogos,
 }: {
   pageData: PastEventsPageData;
-  pastEvents: EventType[];
-  featuredPastEvents: EventType[];
+  allEvents: EventTypeWithDisplayInfo[];
   clientLogos: ClientImage;
 }) {
+  const featuredPastEvents = getFeaturedOrRecentPastEvents(allEvents, pageData);
+  const pastEvents = getPastEvents(allEvents);
+
   return (
     <>
       <PastEventsHeader

@@ -1,21 +1,21 @@
-import React from 'react';
-
-import { lazy } from 'react';
+'use client';
+import React, { lazy } from 'react';
 
 import HeroVideo from './HeroVideo';
 import FloatingLogos from './FloatingLogos';
 import UpcomingEvents from './UpcomingEvents';
 import AboutUs from './AboutUs';
 import {
-  EventType,
+  EventTypeWithDisplayInfo,
   ClientLogo,
   HomePageData,
   ClientImage,
 } from '@/types/types';
+import { getNonPastEvents } from '@/utils/getEvents';
 
 type HomepageProps = {
   homepageInfo: HomePageData;
-  events: EventType[];
+  events: EventTypeWithDisplayInfo[];
   postponedEventText: string;
   clientLogos: ClientLogo[];
   eventCardImages: ClientImage;
@@ -34,7 +34,8 @@ export default function Homepage({
   const { video, services, featuredEvents, about, testimonialSection } =
     homepageInfo;
 
-  const upcomingEvents = events.slice(0, 3);
+  const nonPastEvents = getNonPastEvents(events);
+  const upcomingEvents = nonPastEvents.slice(0, 3);
 
   return (
     <>

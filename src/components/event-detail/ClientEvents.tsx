@@ -1,22 +1,26 @@
+'use client';
+
 import React from 'react';
 import EventCard from '../common/EventCard';
 import InTheWorksEventCard from '../common/InTheWorksEventCard';
 import PastEventCard from '../common/PastEventCard';
-import { EventType } from '@/types/types';
+import { EventTypeWithDisplayInfo } from '@/types/types';
+import { getAllEventsWithStatus } from '@/utils/getEvents';
 
 export default function ClientEvents({
-  events,
+  allEvents,
   clientName,
   event,
   postponedEventText,
   clientImage,
 }: {
-  events: EventType[];
+  allEvents: EventTypeWithDisplayInfo[];
   clientName: string;
-  event: EventType;
+  event: EventTypeWithDisplayInfo;
   postponedEventText: string;
   clientImage: string;
 }) {
+  const events = getAllEventsWithStatus(allEvents);
   const { eventName } = event;
   const shownEvents = events
     .filter((e) => e.eventName !== eventName)

@@ -36,7 +36,7 @@ export default function ClientCard({ clientInfo }: ClientCardProps) {
         <div className="absolute top-0 rounded-xl hidden group-hover:flex bg-opacity-80 bg-navySmoke h-full w-full px-[1rem] py-[1.5rem] flex-col justify-between">
           <p className="text-softOpal">{clientName}</p>
           <div className="flex justify-between">
-            {pastClient ? (
+            {pastClient && eventLink ? (
               <Link
                 className={`bg-electricYellow p-[0.75rem] min-w-[120px] rounded-[.5rem] font-medium text-black text-center`}
                 href={`/past-events?client=${encodeURIComponent(clientName)}`}
@@ -44,28 +44,30 @@ export default function ClientCard({ clientInfo }: ClientCardProps) {
                 View Past Events
               </Link>
             ) : (
-              <>
-                {clientWebsite && (
-                  <Link
-                    className={`bg-electricYellow p-[0.75rem] min-w-[120px] rounded-[.5rem] font-medium text-black text-center`}
-                    href={clientWebsite}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Website
-                  </Link>
-                )}
-                {clientW9Src && (
-                  <Link
-                    className={`bg-softOpal p-[0.75rem] min-w-[120px] rounded-[.5rem] font-medium text-black text-center`}
-                    href={clientW9Src}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    W-9
-                  </Link>
-                )}
-              </>
+              !pastClient && (
+                <>
+                  {clientWebsite && (
+                    <Link
+                      className={`bg-electricYellow p-[0.75rem] min-w-[120px] rounded-[.5rem] font-medium text-black text-center`}
+                      href={clientWebsite}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Website
+                    </Link>
+                  )}
+                  {clientW9Src && (
+                    <Link
+                      className={`bg-softOpal p-[0.75rem] min-w-[120px] rounded-[.5rem] font-medium text-black text-center`}
+                      href={clientW9Src}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      W-9
+                    </Link>
+                  )}
+                </>
+              )
             )}
           </div>
         </div>

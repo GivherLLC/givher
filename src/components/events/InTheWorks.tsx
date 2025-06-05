@@ -1,9 +1,9 @@
 import React from 'react';
 import InTheWorksEventCard from '../common/InTheWorksEventCard';
-import { EventType, ClientImage } from '@/types/types';
+import { EventTypeWithStatus, ClientImage } from '@/types/types';
 
 type ComingSoonProps = {
-  comingEvents: EventType[];
+  comingEvents: EventTypeWithStatus[];
   postponedEventText: string;
   title: string;
   subtitle: string;

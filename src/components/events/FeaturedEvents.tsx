@@ -2,10 +2,10 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import Image from 'next/image';
 import EventButton from '../common/EventButton';
-import { EventType, FeaturedEventType } from '@/types/types';
+import { EventTypeWithStatus, FeaturedEventType } from '@/types/types';
 
 type FeaturedEventsProps = {
-  events: EventType[];
+  events: EventTypeWithStatus[];
   clientImages: Record<string, string>;
   givherFeaturedEvent: FeaturedEventType;
 };

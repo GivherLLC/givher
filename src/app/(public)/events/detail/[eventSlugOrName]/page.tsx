@@ -1,24 +1,23 @@
-export const revalidate = 43200;
-
 import React from 'react';
 import EventDetailPage from '@/components/event-detail/EventDetailPage';
 import { Metadata } from 'next';
 import getEventNameParam from '@/utils/getEventNameParam';
 import getEventsPageData from '../../../../../../lib/getEventsPageData';
+import { getAllEvents } from '../../../../../../lib/getAllEvents';
+import getAllClientImages from '../../../../../../lib/getAllClientImages';
+import { EventDetailPageProps } from '@/types/types';
 import {
   getReadyEvents,
   getEventBySlugOrName,
   getClientEvents,
-} from '../../../../../../lib/getAllEvents';
-import getAllClientImages from '../../../../../../lib/getAllClientImages';
-import { EventDetailPageProps } from '@/types/types';
+} from '@/utils/getEvents';
 
 export async function generateMetadata({
   params: { eventSlugOrName },
 }: EventDetailPageProps): Promise<Metadata> {
   const decodedParam = decodeURIComponent(eventSlugOrName);
-
-  const event = await getEventBySlugOrName(decodedParam);
+  const allEvents = await getAllEvents();
+  const event = getEventBySlugOrName(decodedParam, allEvents);
 
   if (event) {
     const title = `${event.eventName} | Givher Event`;
@@ -55,11 +54,13 @@ export default async function EventsDetailPage({
 }: EventDetailPageProps) {
   const decodedParam = decodeURIComponent(eventSlugOrName);
   const eventsPageData = getEventsPageData();
-  const [event, clientImages, clientEvents] = await Promise.all([
-    getEventBySlugOrName(decodedParam),
+  const [allEvents, clientImages] = await Promise.all([
+    getAllEvents(),
     getAllClientImages(),
-    getClientEvents(decodedParam),
   ]);
+
+  const event = getEventBySlugOrName(decodedParam, allEvents);
+  const clientEvents = getClientEvents(decodedParam, allEvents);
 
   if (event) {
     const clientImage = clientImages[event.clientName];
@@ -84,7 +85,8 @@ export default async function EventsDetailPage({
 }
 
 export async function generateStaticParams() {
-  const events = await getReadyEvents(); // Only includes fully ready events
+  const allEvents = await getAllEvents();
+  const events = getReadyEvents(allEvents);
   const params = events.map((event) => ({
     eventSlugOrName: event.slug || getEventNameParam(event.eventName), // Prioritize slug for static params
   }));

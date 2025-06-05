@@ -13,8 +13,7 @@ export interface PastEventsPageData {
 }
 
 export interface EventsPageProps {
-  events: EventType[];
-  inTheWorksEvents: EventType[];
+  allEvents: EventTypeWithDisplayInfo[];
   eventsPageData: EventsPageData;
   clientImagesObject: ClientImage;
 }
@@ -60,20 +59,20 @@ export type EventTypeData = {
   hideEvent: boolean;
 };
 
+/**
+ * @deprecated Use `EventTypeWithDisplayInfo` or `EventTypeWithStatus` instead
+ */
 export type EventType = {
   available: boolean;
   eventName: string;
   slug: string;
   firstDayOfEvent: string | null;
-  displayDateFirst: string | null;
   eventTime: string | null;
   eventEndTime: string | null;
   lastDayOfEvent: string | null;
-  displayDateLast: string | null;
   timeOfYear: string | null;
   timeZone: string;
   eventType: string | null;
-  displayAddress: string | null;
   eventAddress: string | null;
   eventCity: string | null;
   eventState: string | null;
@@ -96,6 +95,15 @@ export type EventType = {
   detailImage: string | null;
   postponed: boolean;
   hideEvent: boolean;
+};
+
+export type EventTypeWithDisplayInfo = EventTypeData & {
+  displayDateFirst: string | null;
+  displayDateLast: string | null;
+  displayAddress: string | null;
+};
+
+export type EventTypeWithStatus = EventTypeWithDisplayInfo & {
   eventStatus: 'event' | 'inTheWorks' | 'past';
 };
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import ArrowLink from '../common/ArrowLink';
 import EventCard from '../common/EventCard';
-import { EventType, ClientImage } from '@/types/types';
+import { EventTypeWithStatus, ClientImage } from '@/types/types';
 
 export default function UpcomingEvents({
   title,
@@ -10,7 +10,7 @@ export default function UpcomingEvents({
   clientLogos,
 }: {
   title: string;
-  events: EventType[];
+  events: EventTypeWithStatus[];
   postponedEventText: string;
   clientLogos: ClientImage;
 }) {

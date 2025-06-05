@@ -2,7 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { Client } from '@/types/types';
-import { getReadyEvents, getPastEvents } from './getAllEvents';
+import { getAllEvents } from './getAllEvents';
+import { getReadyEvents, getPastEvents } from '@/utils/getEvents';
 
 export default async function getAllClients(): Promise<Client[]> {
   const clientDirectory = path.join(process.cwd(), 'content/clients');
@@ -16,8 +17,9 @@ export default async function getAllClients(): Promise<Client[]> {
 
       // Fetch events for this client
       const clientName = data.clientName;
-      const currentEvents = await getReadyEvents();
-      const pastEvents = await getPastEvents();
+      const allEvents = await getAllEvents();
+      const currentEvents = getReadyEvents(allEvents);
+      const pastEvents = getPastEvents(allEvents);
 
       // Determine the event link based on current or past events
       let eventLink = '';

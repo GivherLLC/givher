@@ -1,22 +1,27 @@
+'use client';
+
 import React from 'react';
 import FeaturedEvents from './FeaturedEvents';
 import InTheWorks from './InTheWorks';
 import { EventsPageProps } from '@/types/types';
 import { lazy } from 'react';
+import { getReadyEvents } from '@/utils/getEvents';
+import { getInTheWorksEvents } from '@/utils/getEvents';
 
 const AllEvents = lazy(() => import('./AllEvents'));
 
 const EventsPage = ({
-  events,
+  allEvents,
   eventsPageData,
   clientImagesObject,
-  inTheWorksEvents,
 }: EventsPageProps) => {
   const postponedEventText = eventsPageData.postponedEventText;
+  const readyEvents = getReadyEvents(allEvents);
+  const inTheWorksEvents = getInTheWorksEvents(allEvents);
 
-  // Featured events function as defined
+  // Featured readyEvents function as defined
   const featuredEvents = () => {
-    return events.slice(0, 4).map((event) => ({
+    return readyEvents.slice(0, 4).map((event) => ({
       ...event,
     }));
   };
@@ -29,7 +34,7 @@ const EventsPage = ({
         givherFeaturedEvent={eventsPageData.givherFeaturedEvent}
       />
       <AllEvents
-        events={events}
+        events={readyEvents}
         postponedEventText={postponedEventText}
         allEventsSectionTitle={eventsPageData.allEventsSectionTitle}
         clientImages={clientImagesObject}

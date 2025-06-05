@@ -1,5 +1,3 @@
-export const revalidate = 86400;
-
 import React from 'react';
 import ClientsPage from '@/components/clients/ClientsPage';
 import getAllClients from '../../../../lib/getAllClients';

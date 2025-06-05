@@ -3,7 +3,11 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import PastEventModal from '../common/PastEventModal';
-import { PastEventsPageData, EventType, ClientImage } from '@/types/types';
+import {
+  PastEventsPageData,
+  EventTypeWithStatus,
+  ClientImage,
+} from '@/types/types';
 
 export default function PastEventsHeader({
   headerData,
@@ -11,13 +15,13 @@ export default function PastEventsHeader({
   clientLogos,
 }: {
   headerData: PastEventsPageData;
-  featuredPastEvents: EventType[];
+  featuredPastEvents: EventTypeWithStatus[];
   clientLogos: ClientImage;
 }) {
   const { pastEventsPageTitle, pastEventsPageSubtitle } = headerData;
 
   const [activeIndex, setActiveIndex] = useState(0);
-  const [showInfo, setShowInfo] = useState<EventType | null>(null);
+  const [showInfo, setShowInfo] = useState<EventTypeWithStatus | null>(null);
 
   useEffect(() => {
     //prevent scrolling behind open bio

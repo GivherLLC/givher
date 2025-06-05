@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useMemo, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { EventType, ClientImage } from '@/types/types';
+import { EventTypeWithStatus, ClientImage } from '@/types/types';
 import DropdownFilter from '../events/DropdownFilter';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -12,7 +12,7 @@ export default function PastEvents({
   allPastEvents,
   clientLogos,
 }: {
-  allPastEvents: EventType[];
+  allPastEvents: EventTypeWithStatus[];
   clientLogos: ClientImage;
 }) {
   const searchParams = useSearchParams();
@@ -64,7 +64,7 @@ export default function PastEvents({
 
   const filteredEvents = useMemo(() => {
     return allPastEvents.filter(
-      (event: EventType) =>
+      (event: EventTypeWithStatus) =>
         (!selectedClient || event.clientName === selectedClient) &&
         (!selectedEventType || event.eventType === selectedEventType) &&
         (searchQuery === '' ||
@@ -100,13 +100,15 @@ export default function PastEvents({
   };
 
   const clients: string[] = [
-    ...new Set(filteredEvents.map((event: EventType) => event.clientName)),
+    ...new Set(
+      filteredEvents.map((event: EventTypeWithStatus) => event.clientName)
+    ),
   ];
   const eventTypes: string[] = [
     ...new Set(
       filteredEvents
-        .filter((event: EventType) => !!event.eventType) // Filter out events with null eventType
-        .map((event: EventType) => event.eventType as string) // Cast eventType as string
+        .filter((event: EventTypeWithStatus) => !!event.eventType) // Filter out events with null eventType
+        .map((event: EventTypeWithStatus) => event.eventType as string) // Cast eventType as string
     ),
   ];
 
@@ -257,7 +259,7 @@ export default function PastEvents({
             </div>
           </div>
           <div className="flex flex-wrap gap-[4rem] min-h-[286px] sm:min-h-[400px]">
-            {filteredEvents.map((e: EventType) => {
+            {filteredEvents.map((e: EventTypeWithStatus) => {
               const clientLogo = clientLogos[e.clientName];
 
               return (

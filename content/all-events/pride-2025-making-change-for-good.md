@@ -8,6 +8,8 @@ eventCity: Sacramento
 eventState: CA
 eventLocation: Ace of Spades
 clientName: California LGBTQ Foundation
+eventButtonTextOne: GA Tickets
+eventButtonLinkOne: https://www.universe.com/events/california-lgbtq-caucus-presents-making-change-for-good-pride-celebration-tickets-S8R5D4
 eventDescriptionMarkdown: >-
   ## **Join the California LGBTQ+ Foundation for a Wicked Pride Month
   Celebration!**

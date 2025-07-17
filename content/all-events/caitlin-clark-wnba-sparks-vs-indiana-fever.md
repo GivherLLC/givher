@@ -12,7 +12,7 @@ eventState: CA
 eventLocation: Crypto.com Arena in Los Angeles, CA
 clientName: California LGBTQ Foundation
 eventButtonTextOne: RSVP
-eventButtonLinkOne: <a href="mailto:events@givher.com">
+eventButtonLinkOne: mailto:events@givher.com
 eventDescriptionMarkdown: Join the California LGBTQ Foundation to see the LA
   Sparks, Kelsey Plum and DEARICA HAMBY take on Caitlin Clark and Aaliyah Boston
   of the Indian Fever.

@@ -65,11 +65,6 @@ var EventPreview = createClass({
         label: 'Event Description',
         isValid: !!eventDescription,
       },
-      {
-        field: detailImageRaw,
-        label: 'Event Detail Page Image',
-        isValid: !!detailImageRaw,
-      },
     ];
 
     // Generate validation errors based on fields
@@ -460,7 +455,7 @@ var EventPreview = createClass({
         h(
           'p',
           {},
-          'You must complete the data below. If the minimum data requirements are not met, this event will be shown in the "In the Works" section of the Events page.'
+          'You have indicated that all details are available. You must complete the data below. If the minimum data requirements are not met, this event will be shown in the "In the Works" section of the Events page.'
         )
       ),
       // Validation Section (if there are errors)

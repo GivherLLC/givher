@@ -18,7 +18,6 @@ const getEventStatus = (data: EventTypeWithDisplayInfo) => {
       data.eventLocation,
       data.clientName,
       data.eventDescriptionMarkdown,
-      data.detailImage,
     ];
 
     // Helper function to parse date with timezone in MM.DD.YYYY format, ignoring time
@@ -56,7 +55,10 @@ const getEventStatus = (data: EventTypeWithDisplayInfo) => {
       return 'past';
     }
 
-    if (!data.available || requiredFields.some((field) => field === null)) {
+    if (
+      !data.available ||
+      requiredFields.some((field) => field == null || field === '')
+    ) {
       return 'inTheWorks';
     }
 

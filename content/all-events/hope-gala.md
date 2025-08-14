@@ -1,6 +1,6 @@
 ---
 available: true
-eventName: Hope Gala
+eventName: Annual Hope Gala
 firstDayOfEvent: 09.27.2025
 eventTime: 17:00
 eventEndTime: 21:00

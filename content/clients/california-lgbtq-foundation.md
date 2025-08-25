@@ -2,6 +2,6 @@
 clientName: California LGBTQ Foundation
 clientLogo: /uploads/hp-california-lgbtq-foundation-1.png
 clientWebsite: https://calgbtfoundation.org/
-clientW9Src: https://drive.google.com/file/d/1uGvHxu2fbZDryoJwtU9JwjhmwIQ3O8TV/view?usp=sharing
+clientW9Src: https://drive.google.com/drive/u/0/folders/1sj1VG0oB72drHOzZ1u9AdAUgMDpqBEAX
 hideClient: false
 ---

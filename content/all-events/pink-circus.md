@@ -1,5 +1,5 @@
 ---
-eventButtonLinkOne: https://www.eventbrite.com/e/pink-pony-club-tickets-1316915272029?aff=oddtdtcreator
+eventButtonLinkOne: https://events.givher.com/ppacpinkponyclub
 eventDescription:
   - paragraph: Planned Parenthood Affiliates of California presents the 4th Annual
       Pink Fundraiser. Space is limited. Individual tickets will go on sale
@@ -17,7 +17,7 @@ eventCity: Sacramento
 eventState: CA
 eventLocation: Private Location
 clientName: Planned Parenthood Affiliates of California
-eventButtonTextOne: Tickets
+eventButtonTextOne: Event Website
 eventButtonTextTwo: ""
 eventDescriptionMarkdown: >-
   Howdy, partner! We’re invitin’ y’all to grab your best cowboy boots and mark

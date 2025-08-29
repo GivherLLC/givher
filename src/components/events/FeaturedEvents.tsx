@@ -233,7 +233,7 @@ export default function FeaturedEvents({
           <div className="carousel featured-carousel order-1 md:order-2 relative h-full max-h-[350px] md:max-h-[unset] overflow-hidden md:overflow-visible">
             <Image
               priority={true}
-              src="/images/events/paint-splatter-large.png"
+              src="/images/events/paint-splatter-large.webp"
               alt="paint splatter"
               height={435}
               width={595}

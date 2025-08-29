@@ -63,7 +63,7 @@ export default async function EventDetails({
               loading="lazy"
               height={311}
               width={322}
-              src={'/images/events/paint-splatter-small.svg'}
+              src={'/images/events/paint-splatter-small.webp'}
               alt="paint splatter"
               className="absolute right-[30%] lg:right-[-23%] bottom-[-23%] z-0"
             />

@@ -2,14 +2,15 @@ teamPageTitle: Team
 teamMembers:
   - name: Alina Hernandez
     title: Founder & Principal
-    imageSrc: /uploads/alina-headshot.png
+    imageSrc: /uploads/alina-headshot.webp
     iconLinks:
       - iconImageSrc: /uploads/mail-icon.svg
         darkmodeSrc: /uploads/mail-icon-darkmode.svg
         iconImageAlt: Email icon
         iconLink: mailto:alina@givher.com
     bio:
-      - paragraph: Alina Hernandez (she/they) is known for their quiet yet influential
+      - paragraph:
+          Alina Hernandez (she/they) is known for their quiet yet influential
           presence. With a gift for making people feel heard and valued, Alina
           treats each individual with the star quality they inherently possess.
           This approach resonates deeply in every space they occupy. Alina's
@@ -17,7 +18,8 @@ teamMembers:
           unconventional. Alina is a unique example of authenticity, living a
           life marked by joy, creativity, and an unyielding commitment to
           treating everyone with kindness and respect.
-      - paragraph: As the founder and principal of Givher, Alina has demonstrated
+      - paragraph:
+          As the founder and principal of Givher, Alina has demonstrated
           exceptional leadership in fundraising, event development, and
           political hospitality, leveraging their extensive background in policy
           and advocacy. Before founding Givher, Alina played pivotal roles in
@@ -29,14 +31,15 @@ teamMembers:
           meaningful success.
   - name: Jay Franco
     title: Director of Operations
-    imageSrc: /uploads/jay-headshot.png
+    imageSrc: /uploads/jay-headshot.webp
     iconLinks:
       - iconImageSrc: /uploads/mail-icon.svg
         darkmodeSrc: /uploads/mail-icon-darkmode.svg
         iconImageAlt: Email icon
         iconLink: mailto:jay@givher.com
     bio:
-      - paragraph: "Jay Franco is a community advocate residing on Miwok/Nisenan land.
+      - paragraph:
+          "Jay Franco is a community advocate residing on Miwok/Nisenan land.
           He has gained much of his experience as a field coordinator working
           within many local grassroots initiatives focused on social justice and
           community development. The most notable of these experiences was a
@@ -45,7 +48,8 @@ teamMembers:
           efforts, alongside the Sac Kids First Coalition, were captured in the
           award-winning documentary, 'City Rising: Youth & Democracy,' produced
           by KCET/PBS SoCal."
-      - paragraph: He participated in various community-led workshops and fellowships
+      - paragraph:
+          He participated in various community-led workshops and fellowships
           aimed to develop regional leaders with a racial-equity lens. He
           received training in youth mental health first aid and previously led
           after school programs for high schoolers centered around

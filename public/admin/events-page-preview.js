@@ -266,7 +266,7 @@ var EventsPagePreview = createClass({
               bottom: '-15%',
               zIndex: 0,
             },
-            src: '/images/events/paint-splatter-large.png',
+            src: '/images/events/paint-splatter-large.webp',
             height: 435,
             width: 595,
           })

@@ -953,7 +953,7 @@ var HomePagePreview = createClass({
         testimonialsArray
           ? h('img', {
               loading: 'lazy',
-              src: '/images/geometric-pattern.svg',
+              src: '/images/geometric-pattern.webp',
               alt: 'geometric pattern',
               width: 2000,
               height: 788,

@@ -96,7 +96,7 @@ var ContactPagePreview = createClass({
             },
             h('img', {
               loading: 'eager',
-              src: '/images/geometric-pattern.svg',
+              src: '/images/geometric-pattern.webp',
               alt: 'geometric pattern',
               width: 1000,
               height: 294,

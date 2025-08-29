@@ -91,7 +91,7 @@ export default function Navbar() {
           className="focus:outline-none focus-visible:ring-2 focus-visible:ring-mauvelous rounded"
         >
           <Image
-            src={'/images/givher-logo-navySmoke.png'}
+            src={'/images/givher-logo-navySmoke.webp'}
             alt="Givher Logo"
             width={210}
             height={92}
@@ -99,7 +99,7 @@ export default function Navbar() {
             priority={true}
           />
           <Image
-            src={'/images/givher-logo-electricYellow.png'}
+            src={'/images/givher-logo-electricYellow.webp'}
             alt="Dark Mode Givher Logo"
             width={210}
             height={92}

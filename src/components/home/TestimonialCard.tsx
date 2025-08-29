@@ -12,7 +12,7 @@ export default function TestimonialCard({
       <div className="flex justify-center">
         <Image
           loading="lazy"
-          src={'/images/clients/quote-1.svg'}
+          src={'/images/clients/quote-1.webp'}
           width={245}
           height={40}
           alt="quotes with a line through them"

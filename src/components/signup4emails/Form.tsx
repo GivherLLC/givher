@@ -15,7 +15,7 @@ export default function SignUpForEmailsForm({ data }: SignUpForEmailsProps) {
           {data.signupTitle}
         </h1>
         <Image
-          src={'/images/geometric-pattern.svg'}
+          src={'/images/geometric-pattern.webp'}
           loading="eager"
           alt="geometic pattern"
           width={2000}

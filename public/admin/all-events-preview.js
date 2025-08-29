@@ -857,7 +857,7 @@ var EventPreview = createClass({
             },
           },
           h('img', {
-            src: '/images/events/paint-splatter-small.svg',
+            src: '/images/events/paint-splatter-small.webp',
             alt: 'paint splatter',
             height: '311',
             width: '322',

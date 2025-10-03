@@ -47,19 +47,42 @@ eventDescriptionMarkdown: >-
   ---
 
 
-  🎟️ Sponsorship Levels (includes tickets and recognition):
+  **🎟️ Sponsorship Levels (includes tickets and recognition)**
 
 
-  **$10,000** – 5 Tickets (Presenting Sponsor)
+  **💥 Defender of the Frontline – $10,000**
 
-  **$5,000** – 3 Tickets  
+  - 4 Tickets
 
-  **$1,500** – 1 Ticket  
+  - Premier recognition on cruise signage and speaking remarks
+
+  - Featured logo or name in post-event thank you  
+
+  - Most visible show of political partnership
 
 
-  **Food and drinks included.**  
+  **🔥 Health Justice Champion – $5,000**
 
-  **Capacity is very limited. Reserve your spot ASAP**
+  - 2 Tickets  
+
+  - Recognition on cruise materials and post cruise thank you
+
+
+  **⚖️ Community Care Advocate – $2,500**
+
+  - 1 Ticket  
+
+  - Recognition in group listing at event and post cruise thank-you  
+
+
+  **🚨 Primary Care Defender – $1,000**
+
+  - 1 Ticket  
+
+  - Admission only (limited availability at this level)
+
+
+  *Only 30 seats available. All levels include food, drinks, and political impact.*
 
 
   **RSVP:** alina@givher.com

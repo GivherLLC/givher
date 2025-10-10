@@ -30,7 +30,7 @@ eventDescriptionMarkdown: >-
   ---
 
 
-  California’s community health centers are the frontline defense for millions, including the workers who power our state.
+  California’s community health centers are the frontline defense for millions.
 
 
   When our clinics suffer, our entire economy does.  
@@ -75,7 +75,7 @@ eventDescriptionMarkdown: >-
   - Recognition in group listing at event and post cruise thank-you  
 
 
-  **🚨 Primary Care Defender – $1,000**
+  **🚨 CPCA MEMBER ONLY Primary Care Defender – $500**
 
   - 1 Ticket  
 

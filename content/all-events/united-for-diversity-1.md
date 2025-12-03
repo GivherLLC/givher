@@ -1,7 +1,7 @@
 ---
 available: false
 eventName: United for Diversity
-firstDayOfEvent: 12.03.2025
+firstDayOfEvent: 01.07.2026
 timeZone: America/Los_Angeles
 eventType: 501(c)(3)
 eventAddress: ""

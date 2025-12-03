@@ -10,7 +10,7 @@ eventState: CA
 clientName: California LGBTQ Foundation
 eventButtonTextTwo: Sponsor the Event
 eventButtonLinkTwo: mailto:events@givher.com
-detailImage: ""
+detailImage: /uploads/hp-california-lgbtq-foundation-1.webp
 postponed: false
 hideEvent: false
 ---

@@ -1,7 +1,7 @@
 ---
 available: false
 eventName: San Diego Annual Fundraiser
-slug: givher.com/events/detail/SD-Fundraiser
+slug: SD-Fundraiser
 firstDayOfEvent: 07.09.2026
 lastDayOfEvent: 07.11.2026
 timeZone: America/Los_Angeles

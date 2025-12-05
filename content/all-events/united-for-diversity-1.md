@@ -1,6 +1,7 @@
 ---
 available: false
 eventName: United for Diversity
+slug: United-for-Diversity
 firstDayOfEvent: 01.07.2026
 timeZone: America/Los_Angeles
 eventType: 501(c)(3)

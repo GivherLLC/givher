@@ -1,7 +1,7 @@
 ---
 available: false
 eventName: Pride at the Capitol
-slug: givher.com/events/detail/pride-at-the-capitol
+slug: pride-at-the-capitol
 firstDayOfEvent: 06.22.2026
 timeZone: America/Los_Angeles
 eventType: 501(c)(3)

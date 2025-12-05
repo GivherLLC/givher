@@ -1,6 +1,7 @@
 ---
 available: false
 eventName: PPAC Annual Pink Party
+slug: PinkParty
 firstDayOfEvent: 09.19.2026
 lastDayOfEvent: ""
 timeZone: America/Los_Angeles

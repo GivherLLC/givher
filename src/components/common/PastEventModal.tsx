@@ -30,7 +30,7 @@ export default function PastEventModal({
           <div className="h-[2px] w-full bg-grey group-hover:bg-navySmoke dark:group-hover:bg-softOpal absolute top-[50%] left-[50%] max-w-[20px] transform -translate-x-1/2 -translate-y-1/2 rotate-[-45deg] mt-0 transition-all ease-in-out" />
           <div className="h-[2px] w-full bg-grey group-hover:bg-navySmoke dark:group-hover:bg-softOpal absolute top-[50%] left-[50%] max-w-[20px] transform -translate-x-1/2 -translate-y-1/2 rotate-45 mt-0 transition-all ease-in-out" />
         </button>
-        <div className="flex flex-col lg:flex-row gap-[1.5rem]">
+        <div className="flex flex-col-reverse lg:flex-row gap-[1.5rem]">
           <div className="flex flex-col items-center justify-between gap-[2rem] bg-navySmoke py-[2.75rem] px-[1rem] lg:py-[2.5rem] lg:px-[4rem]">
             <div className="bg-white rounded-xl p-[1rem] max-w-[375px] min-h-[200px] w-full flex items-center justify-center">
               <Image
@@ -42,10 +42,10 @@ export default function PastEventModal({
               />
             </div>
             <div className="flex flex-col gap-[1.5rem]">
-              <h3 className="text-softOpal text-[1.2rem] max-w-[375px] text-center md:text-left">
+              <h3 className="text-softOpal text-[1.2rem] max-w-[375px] text-center lg:text-left">
                 Explore more from {event.clientName}
               </h3>
-              <div className="flex gap-[1rem] items-center justify-center md:justify-between flex-wrap md:min-w-[375px]">
+              <div className="flex gap-[1rem] items-center justify-center lg:justify-between flex-wrap lg:min-w-[375px]">
                 <ButtonLink
                   bg="electricYellow"
                   darkModeBg="electricYellow"
@@ -65,8 +65,10 @@ export default function PastEventModal({
               </div>
             </div>
           </div>
-          <div className="w-full flex flex-col justify-center items-center lg:justify-between gap-[2rem] lg:gap-[1rem] px-[2rem] p-[2rem] lg:px-[1rem] lg:py-[2.5rem]">
-            <div className="order-2 md:order-1 max-w-[500px] sm:max-w-[unset] w-full flex flex-col sm:flex-row justify-between flex-wrap gap-[1rem] lg:pr-[2rem] mb-[1rem]">
+          <div
+            className={`w-full flex flex-col justify-center items-center ${event.detailImage ? 'lg:justify-between' : ''} gap-[2rem] lg:gap-[1rem] px-[2rem] p-[2rem] lg:px-[1rem] lg:py-[2.5rem]`}
+          >
+            <div className="order-2 lg:order-1 max-w-[500px] lg:max-w-[unset] w-full flex flex-col items-center lg:items-start sm:flex-row justify-between flex-wrap gap-[1rem] lg:pr-[2rem] mb-[1rem]">
               <div className="flex gap-[0.5rem] items-center mx-auto sm:mx-0">
                 <Image
                   loading="lazy"
@@ -93,18 +95,20 @@ export default function PastEventModal({
                 </div>
               </div>
             </div>
-            <h2 className="order-1 md:order-2 font-visbyBold text-navySmoke dark:text-softOpal text-center md:text-left max-w-[500px] text-[1.5rem]">
+            <h2 className="order-1 lg:order-2 font-visbyBold text-navySmoke dark:text-softOpal text-center lg:text-left max-w-[500px] text-[1.5rem]">
               {event.eventName}
             </h2>
             <div className="max-w-[500px] order-3">
-              <Image
-                loading="lazy"
-                height={385}
-                width={615}
-                src={event.detailImage!}
-                alt={event.eventName}
-                className="relative z-8"
-              />
+              {event.detailImage && (
+                <Image
+                  loading="lazy"
+                  height={385}
+                  width={615}
+                  src={event.detailImage!}
+                  alt={event.eventName}
+                  className="relative z-8"
+                />
+              )}
             </div>
           </div>
         </div>

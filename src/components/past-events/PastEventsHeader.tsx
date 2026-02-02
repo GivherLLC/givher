@@ -109,7 +109,9 @@ export default function PastEventsHeader({
                       />
                     </div>
                   )}
-                  <div className="w-full sm:w-[275px] flex flex-col justify-between gap-[1.5rem] py-[1rem] pl-[1rem] border-navySmoke">
+                  <div
+                    className={`w-full ${e.detailImage ? 'sm:w-[275px]' : ''} flex flex-col justify-between gap-[1.5rem] py-[1rem] pl-[1rem] border-navySmoke`}
+                  >
                     <div className="flex justify-between items-center gap-[1rem]">
                       <div className="text-[1.25rem] text-navySmoke dark:text-softOpal">
                         {e.firstDayOfEvent}

@@ -25,7 +25,7 @@ export default function PastEventCard({
   }, [showInfo]);
 
   return (
-    <button
+    <div
       onClick={() => {
         setShowInfo(event);
       }}
@@ -139,6 +139,6 @@ export default function PastEventCard({
           />
         )}
       </div>
-    </button>
+    </div>
   );
 }

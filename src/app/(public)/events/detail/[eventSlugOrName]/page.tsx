@@ -1,59 +1,61 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import EventDetailPage from '@/components/event-detail/EventDetailPage';
-import { Metadata } from 'next';
 import getEventNameParam from '@/utils/getEventNameParam';
 import getEventsPageData from '../../../../../../lib/getEventsPageData';
 import { getAllEvents } from '../../../../../../lib/getAllEvents';
 import getAllClientImages from '../../../../../../lib/getAllClientImages';
-import { EventDetailPageProps } from '@/types/types';
 import {
   getReadyEvents,
   getEventBySlugOrName,
   getClientEvents,
 } from '@/utils/getEvents';
 
-export async function generateMetadata({
-  params: { eventSlugOrName },
-}: EventDetailPageProps): Promise<Metadata> {
+type Params = { eventSlugOrName: string };
+
+export async function generateMetadata(props: {
+  params: Promise<Params>;
+}): Promise<Metadata> {
+  const { eventSlugOrName } = await props.params;
+
   const decodedParam = decodeURIComponent(eventSlugOrName);
   const allEvents = await getAllEvents();
   const event = getEventBySlugOrName(decodedParam, allEvents);
 
-  if (event) {
-    const title = `${event.eventName} | Givher Event`;
-    const description = `Event details for ${event.clientName}'s event ${event.eventName}`;
-    const url = `/events/detail/${event.slug}`; // Ensure slug is used in the URL
-    return {
+  if (!event) return { title: 'Event Not Found' };
+
+  const title = `${event.eventName} | Givher Event`;
+  const description = `Event details for ${event.clientName}'s event ${event.eventName}`;
+
+  return {
+    title,
+    description,
+    openGraph: {
       title,
       description,
-      openGraph: {
-        title,
-        description,
-        url,
-        siteName: 'Givher',
-        type: 'website',
-        images: [
-          {
-            url: 'https://www.givher.com/opengraph-image.png',
-            width: 1200,
-            height: 630,
-            alt: 'Givher Political Hospitality',
-          },
-        ],
-      },
-    };
-  } else {
-    return {
-      title: 'Event Not Found',
-    };
-  }
+      url: `https://www.givher.com/events/detail/${event.slug}`,
+      siteName: 'Givher',
+      type: 'website',
+      images: [
+        {
+          url: 'https://www.givher.com/opengraph-image.png',
+          width: 1200,
+          height: 630,
+          alt: 'Givher Political Hospitality',
+        },
+      ],
+    },
+  };
 }
 
-export default async function EventsDetailPage({
-  params: { eventSlugOrName },
-}: EventDetailPageProps) {
+export default async function EventsDetailPage(props: {
+  params: Promise<Params>;
+}) {
+  const { eventSlugOrName } = await props.params;
+
   const decodedParam = decodeURIComponent(eventSlugOrName);
   const eventsPageData = getEventsPageData();
+
   const [allEvents, clientImages] = await Promise.all([
     getAllEvents(),
     getAllClientImages(),
@@ -64,7 +66,6 @@ export default async function EventsDetailPage({
 
   if (event) {
     const clientImage = clientImages[event.clientName];
-
     return (
       <EventDetailPage
         event={event}
@@ -87,9 +88,8 @@ export default async function EventsDetailPage({
 export async function generateStaticParams() {
   const allEvents = await getAllEvents();
   const events = getReadyEvents(allEvents);
-  const params = events.map((event) => ({
-    eventSlugOrName: event.slug || getEventNameParam(event.eventName), // Prioritize slug for static params
-  }));
 
-  return params;
+  return events.map((event) => ({
+    eventSlugOrName: event.slug || getEventNameParam(event.eventName),
+  }));
 }

@@ -1,5 +1,5 @@
 ---
-available: false
+available: true
 eventName: 2026 Rainbow Cup
 slug: RainbowCup
 firstDayOfEvent: 07.09.2026
@@ -14,6 +14,7 @@ eventButtonTextOne: Sponsor the Event
 eventButtonLinkOne: mailto:alina@givher.com
 eventButtonTextTwo: Event Flyer
 eventButtonLinkTwo: https://drive.google.com/file/d/1ngzsvGhLuUylsd_vQKreYAenS_JJvVKH/view?usp=sharing
+eventDescriptionMarkdown: Space is limited.
 detailImage: /uploads/hp-california-lgbtq-foundation-1.webp
 postponed: false
 hideEvent: false

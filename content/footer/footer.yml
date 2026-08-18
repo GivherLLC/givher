@@ -13,12 +13,13 @@ iconLinks:
     darkmodeSrc: /uploads/phone-icon-darkmode.svg
     imageAlt: Phone icon
     iconLink: tel:+916-296-4656
-buttonTitle: SIGN UP NOW FOR EVENT AND FUNDRAISING UPDATES
+buttonTitle: SIGN UP NOW UPDATES
 buttonText: Sign Up
 buttonLink: /contact
 pageLinks:
   - linkText: Events
     link: /events
+    external: false
   - linkText: Past Events
     link: /past-events
     external: false
@@ -31,6 +32,3 @@ pageLinks:
   - linkText: Contact
     link: /contact
     external: false
-  - linkText: Marketing Kit
-    link: https://drive.google.com/drive/folders/1MqXIb1rcy_O-UdC0dOmAWMTCrQfycC8D?usp=sharing
-    external: true
